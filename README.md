@@ -1,2 +1,2 @@
-# cheatsheets
-A collection of Cheatsheets for various Programming Languages &amp; Utilities, created on Obsidian.
+# blog
+A collection of article sketches for publishing on personal website, created on Obsidian.
