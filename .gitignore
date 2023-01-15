@@ -1,0 +1,6 @@
+# .gitignore file for: blog
+# Ignore .obsidian folder on any subfolder using ** wildcard
+**/.obsidian/
+
+# Ignore desktop.ini
+desktop.ini
