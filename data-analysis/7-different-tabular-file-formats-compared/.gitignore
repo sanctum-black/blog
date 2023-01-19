@@ -1,0 +1,12 @@
+# .gitignore file for: blog/data-analysis/7-different-tabular-file-formats-compared
+# Ignore .obsidian folder
+.obsidian/
+
+# Ignore all featured image
+*.jpg
+
+# Ignore large data set
+datasets/charts.csv
+
+# Ignore desktop.ini
+desktop.ini
