@@ -1,11 +1,13 @@
 # 6 Big Data File Formats Compared, Pt. 2
-In the first part of this 3-article series, we...
+In the first part of this 3-article series, we introduced the concepts of **columnar file formats** & **row-based file formats**. We also defined **serialization** and **deserialization**, and provided an overview of six relevant Big Data file formats. Finally, we went over some examples involving the writing of objects to these file formats using Python. 
 
-In this section, we will focus on reading the files we created on part 1.
+In this section, we will focus on **reading** the files we created.
+
+---
 
 ## Table of Contents
 1. Preparing the files
-2. Reading With Python
+2. Reading with Python
 	1. csv
 	2. txt
 	3. Feather
@@ -15,12 +17,30 @@ In this section, we will focus on reading the files we created on part 1.
 5. Conclusions
 6. References
 
-## 1. Preparing the files
-On our last session we generated a total of 14 files:
-`01_dataset_method_1.csv`
-`02_dataset_method_2.csv`
+---
 
-We will use these files to continue with the reading section. Files can also be found on the blog article repo.
+## 1. Preparing the files
+On our last session we generated a total of 12 files:
+
+| File Name | Format | Method Used |
+| ----- | ----- | ----- |
+| `01_dataset_method_1.csv` | CSV | `numpy.tofile()` |
+| `02_dataset_method_2.csv` | CSV | `numpy.savetext()` |
+| `03_dataset_method_3.csv` | CSV | `pandas.DataFrame.to_csv()` |
+| `04_dataset_method_1.txt` | TXT | `numpy.savetext()` |
+| `05_dataset_method_2.txt` | TXT | `pandas.DataFrame.to_csv()` |
+| `06_dataset_method_1.feather` | Feather | `pandas.DataFrame.to_feather()` |
+| `07_dataset_method_2.parquet` | Parquet | `pandas.DataFrame.to_parquet()` |
+| `08_dataset_method_2.parquet` | Parquet | `pandas.DataFrame.to_parquet()` |
+| `09_dataset_method_3.parquet` | Parquet | `pandas.DataFrame.to_parquet()` |
+| `10_dataset_method_1.avro` | Avro | `fastavro` |
+| `11_dataset_method_1.pickle` | Pickle | `.pickle.dump()` |
+| `12_dataset_method_2.pickle` | Pickle | `.pickle.dumps()` |
+
+We will use these outputs to continue with the reading section.
+
+Files can be found on the blog article repo [`outputs`](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared/outputs) folder.
+Python scripts can also be found in the [blog article repo](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared).
 
 ### 1.1 Non-serialized formats
 As opposed to the serialized formats, **non-serialized** formats do not convert the object into a stream of bytes. We will explain serialization formats in more detail further on. The most common non-serialization formats are csv & txt files.
