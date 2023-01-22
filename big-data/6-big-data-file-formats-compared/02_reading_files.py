@@ -12,270 +12,165 @@ Part of Blog Article: 6-big-data-file-formats-compared
 """
 
 # -------------------------------
-# 1. Creating an arraw of mixed data types
+# -------------------------------
+# Introduction
+# -------------------------------
 # -------------------------------
 
-# Import NumPy module
+# In this file, we will review different methods for reading different
+# file formats using Python.
+
+# -------------------------------
+# -------------------------------
+# Reading files with Python
+# -------------------------------
+# -------------------------------
+
+# Importing all required modules beforehand
+import csv
 import numpy as np
-
-# Define headers
-headers = ['Name', 'Age', 'Occupation', 'Country', 'State', 'City']
-
-# Define rows
-entry_1 = ['Joe', 20, 'Student', 'United States', 'Kansas', 'Kansas City']
-entry_2 = ['Chloe', 37, 'Detective', 'United States', 'California', 'Los Angeles']
-entry_3 = ['Dan', 39, 'Detective', 'United States', 'California', 'Los Angeles']
-
-# Create array
-arr = np.asarray([headers, entry_1, entry_2, entry_3])
-
-
-# -------------------------------
-# 2. Writing files with Python.
-# -------------------------------
-
-# -------------------------------
-# 2.1 csv
-# -------------------------------
-
-# 1. Using the numpy.tofile() method
-# -------------------------------
-
-# Export data to csv using numpy.tofile() method
-arr.tofile('dataset_method_1.csv', sep = ',')
-
-
-# 2. Using the numpy.savetext() method
-# -------------------------------
-
-# Export data to csv using numpy.savetext() method
-np.savetxt('dataset_method_2.csv', arr, fmt = '%s', delimiter = ',', newline = '\n')
-
-
-# 3. Using the pandas.DataFrame.to_csv() method
-# -------------------------------
-
-# Import pandas module
 import pandas as pd
-
-# Convert our array to a pandas.DataFrame object
-# Extract data & columns separately
-df = pd.DataFrame(data = arr[1:], columns = arr[:1][0])
-
-# Export data to csv using pandas.DataFrame.to_csv() method
-df.to_csv('dataset_method_3.csv', index = False)
-
-
-# -------------------------------
-# 2.2 txt
-# -------------------------------
-
-# 2. Using the numpy.savetext() method
-# -------------------------------
-
-# Export data to txt using numpy.savetext() method
-np.savetxt('dataset_method_1.txt', arr, fmt = '%s', delimiter = '\t', newline = '\n')
-
-
-# 3. Using the pandas.DataFrame.to_csv() method
-# -------------------------------
-
-# Convert our array to a pandas.DataFrame object
-# Extract data & columns separately
-df = pd.DataFrame(data = arr[1:], columns = arr[:1][0])
-
-# Export data to txt using pandas.DataFrame.to_csv() method
-df.to_csv('dataset_method_2.txt', sep = '\t', index = False)
-
-
-# -------------------------------
-# 2.3 Feather
-# -------------------------------
-
-# Export data to feather using pandas.DataFrame.to_feather() method
-df.to_feather('dataset_method_1.feather')
-
-
-# -------------------------------
-# 2.4 Parquet
-# -------------------------------
-
-# Use pandas.DataFrame.to_parquet() without partitioning
-df.to_parquet('dataset_method_1.parquet')
-
-# Use pandas.DataFrame.to_parquet() with single partitioning
-df.to_parquet('dataset_method_2.parquet', partition_cols = 'State')
-
-# Use pandas.DataFrame.to_parquet() with multi-partitioning
-df.to_parquet('dataset_method_3.parquet', partition_cols = ['State', 'City'])
-
-
-# -------------------------------
-# 2.5 Avro
-# -------------------------------
-
-# 1. Using the fastavro module
-# -------------------------------
-
-# Import fastavro modules
-from fastavro import writer, parse_schema
-
-# Cast age to int type
-df['Age'] = df['Age'].astype('int')
-
-# Verify casting
-df.dtypes
-
-# Define the schema
-schema = {
-    'type': 'record',
-    'name': 'dataset',
-    'namespace': 'dataset',
-    'doc': 'This schema consists of 1 int type and 7 string types',
-    'fields': [
-        {'name': 'Name', 'type': 'string'},
-        {'name': 'Age', 'type': 'int'},
-        {'name': 'Occupation', 'type': 'string'},
-        {'name': 'Country', 'type': 'string'},
-        {'name': 'State', 'type': 'string'},
-        {'name': 'City', 'type': 'string'}
-    ]
-}
-
-# Parse the schema
-parsed_schema = parse_schema(schema)
-
-# Convert pd.DataFrame to records (list of dictionaries)
-records = df.to_dict('records')
-
-# Write to Avro file
-with open('dataset_method_1.avro', 'wb') as out:
-    writer(out, parsed_schema, records)
-
-
-# -------------------------------
-# 2.6 Pickle
-# -------------------------------
-
-# 1. Writing a .pickle file as an open file
-# -------------------------------
-
-# Import pickle library
+from fastavro import reader
 import pickle
 
-# Open a file to store the data
-file = open('dataset_method_1.pickle', 'wb')
-
-# Write open file to disk
-pickle.dump(records, file)
-
-
-# 2. Writing a .pickle file as a byte string
+# -------------------------------
+# 1. CSV
 # -------------------------------
 
-# Define a pickle object
-my_pickled_object = pickle.dumps(records)
-
-# Check the pickle object data type
-type(my_pickled_object)
-
-# Write byte string to disk
-with open('dataset_method_2.pickle','wb') as out:
-    out.write(my_pickled_object)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# -------------------------------
-# 1. Reading files with Python
+# 1.1 Using the csv.reader() method
 # -------------------------------
 
+# Declare an empty list object
+lol = []
+
+# Define the file handler, and open in read mode
+with open("outputs/02_dataset_method_2.csv", 'r') as file:
+  csvreader = csv.reader(file)
+  # Iterate over rows and append to list
+  for row in csvreader:
+      lol.append(row)
+      
+# Close the Text Wrapper object
+file.close()
+
+# Build a numpy.ndarray object from a list of lists
+arr = np.array(lol)
+
+# Build a pandas.DataFrame object from numpy.ndarray object
+df = pd.DataFrame(arr[1:], columns = arr[0])
+
+# 1.2 Using the pandas.read_csv() method
 # -------------------------------
-# 1.1 csv
 
-# I. Reading csv files using csv.reader()
+# Read the csv file and import to pandas.DataFrame object
+df = pd.read_csv("outputs/02_dataset_method_2.csv")
 
-# Import csv module
-import csv
+# -------------------------------
+# 2. TXT
+# -------------------------------
 
-# Open filename as csv.reader object
-with open(filename, 'r') as csvfile:
+# 2.1 Using the built-in Python file handler
+# -------------------------------
 
-	# Use csv.reader() method to convert object to iterable
-    csvreader = csv.reader(csvfile)
+# Declare an empty list object
+lol = []
+
+# Define the file handler, and open in read mode
+with open("outputs/04_dataset_method_1.txt", 'r') as file:
+    # Read the entire content and split with newlines
+    content = file.read().split('\n')
     
-    # Print first column values by iterating through rows in csvreader object
-    for row in csvreader:
-        print(row[0])
+    # For every newline, split in tab delimitors
+    for entry in content:
+        entry = entry.split('\t')
+        # Append each splitted entry in list of lists
+        lol.append(entry)
 
+# Close the TextIOWrapper object
+file.close()
 
-# II. Reading csv files using pandas.read_csv()
+# Return the results 
+lol
 
-# Import Pandas module
-import pandas as pd
+# Remove last entry using inplace method .pop()
+lol.pop()
 
-# Read filename and save as pandas dataframe object df
-df = pd.read_csv(filename)
+# Convert list of lists to 
+arr = np.array(lol)
 
-# Get the first 5 elements
-df.head()
+# Convert arr to pandas.DataFrame object
+df = pd.DataFrame(arr[1:], columns = arr[0])
 
+# 2.2 Using the pandas.DataFrame.read_csv() method
+# -------------------------------
 
-# III. Reading csv files using numpy.loadfromtxt()
+# Read the txt file and import to pandas.DataFrame object
+df = pd.read_csv("outputs/04_dataset_method_1.txt", sep = '\t')
 
+# -------------------------------
+# 3. Feather
+# -------------------------------
 
+# 3.1 Using pandas.DataFrame.read_feather() method
+# -------------------------------
 
-# IV. Reading csv files using csv.reader()
+# Read the .feather file and import to pandas.DataFrame object
+df = pd.read_feather("outputs/06_dataset_method_1.feather")
+
+# -------------------------------
+# 4. Parquet
+# -------------------------------
+
+# 4.1 Using pandas.read_parquet() method for non-partitioned files
+# -------------------------------
+
+# Read the parquet non-partitioned file and import to pandas.DataFrame object
+df = pd.read_parquet("outputs/07_dataset_method_1.parquet")
+
+# 4.2 Using pandas.read_parquet() for single and multi-partitioned files
+# -------------------------------
+
+# Read the parquet single-partitioned file and import to pandas.DataFrame object
+df = pd.read_parquet("outputs/08_dataset_method_2.parquet")
+
+# Read the parquet multi-partitioned file and import to pandas.DataFrame object
+df = pd.read_parquet("outputs/09_dataset_method_3.parquet")
 
 
 # -------------------------------
-# 1.1 txt
+# 5. Avro
+# -------------------------------
 
+# 5.1 Using the fastavro reader method
+# -------------------------------
+
+# Declare an empty list of dictionaries
+lod = []
+
+# Use the Python file handler along with the fastavro reader method
+with open('outputs/10_dataset_method_1.avro', 'rb') as fo:
+    avro_reader = reader(fo)
+    for record in avro_reader:
+        lod.append(record)
+
+# Close the BufferedReader object
+fo.close()
+
+# Convert list of dictionaries to DataFrame
+df = pd.DataFrame.from_dict(lod)
 
 # -------------------------------
-# 1.1 JSON
-
-
+# 6. Pickle
 # -------------------------------
-# 1.1 Feather
 
-
+# 6.1 Using .pickle.load() to read from an open file
 # -------------------------------
-# 1.1 Parquet
 
+# Use the Python file handler
+with open('outputs/11_dataset_method_1.pickle', 'rb') as file:
+    my_pickled_object = pickle.load(file)
 
-# -------------------------------
-# 1.1 Avro
-
-
-# -------------------------------
-# 1.1 XML
-
+# Close the BufferedReader object
+file.close()
 
 

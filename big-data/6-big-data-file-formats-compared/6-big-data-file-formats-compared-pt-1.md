@@ -22,7 +22,7 @@ We'll be using Python scripts which you can get from the [Blog Article Repo](htt
 		- [Avro](#23-avro)
 		- [Pickle](#24-pickle)
 - [Creating a Data Set](#creating-a-data-set)
-- [Writing With Python](#writing-with-python)
+- [Writing with Python](#writing-with-python)
 	- [CSV](#1-csv)
 		- [Using numpy.tofile()](#11-using-numpytofile)
 		- [Using  numpy.savetext()](#12-using-numpysavetext)
@@ -174,7 +174,7 @@ Once we have our data set as a `numpy.ndarray` object `arr` and out `outputs` fo
 
 ---
 
-## Writing With Python
+## Writing with Python
 
 ### 1. CSV
 There are five primary methods for writing a CSV file using Python, although we'll only be covering three:
@@ -517,6 +517,9 @@ Finally, we can write our list of records to a `.avro` file using the Python fil
 # Write to Avro file
 with open('outputs/10_dataset_method_1.avro', 'wb') as out:
     writer(out, parsed_schema, records)
+
+# Close the BuffredWriter object
+out.close()
 ```
 
 The `wb` parameter denotes we're writing a binary file.
@@ -579,6 +582,9 @@ We will next write our string of bytes as a `.pickle` file in memory using the P
 # Write byte string to disk
 with open('outputs/12_dataset_method_2.pickle','wb') as out:
     out.write(my_pickled_object)
+
+# Close the BufferedWriter object
+out.close()
 ```
 
 ##### **Output**
