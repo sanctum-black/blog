@@ -13,9 +13,9 @@ We'll be using Python scripts which you can get from the [Blog Article Repo](htt
 
 ## Table of Contents
 - [Overview](#overview)
-	1. [Non-serialized formats](#1-non-serialized formats)
-		1. [CSV]()
-		2. [TXT]()
+	- [Non-serialized formats](#1-non-serialized formats)
+		- [CSV]()
+		- [TXT]()
 	2. [Serialized formats]()
 		1. [Feather]()
 		2. [Parquet]()
