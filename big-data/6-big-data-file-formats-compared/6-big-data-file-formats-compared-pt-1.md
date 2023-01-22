@@ -12,8 +12,8 @@ We'll be using Python scripts which you can get from the [Blog Article Repo](htt
 ---
 
 ## Table of Contents
-1. [Overview](#overview)
-	1. [Non-serialized formats](1-non-serialized formats)
+- [Overview](#overview)
+	1. [Non-serialized formats](#1-non-serialized formats)
 		1. [CSV]()
 		2. [TXT]()
 	2. [Serialized formats]()
@@ -21,8 +21,8 @@ We'll be using Python scripts which you can get from the [Blog Article Repo](htt
 		2. [Parquet]()
 		3. [Avro]()
 		4. [Pickle]()
-2. [Creating a Data Set]()
-3. [Writing With Python]()
+- [Creating a Data Set]()
+- [Writing With Python]()
 	1. [CSV]()
 		1. [Using numpy.tofile()]()
 		2. [Using  numpy.savetext()]()
@@ -41,8 +41,8 @@ We'll be using Python scripts which you can get from the [Blog Article Repo](htt
 	6. [Pickle]()
 		1. [Using .pickle.dump() to write as an open file]()
 		2. [Using .pickle.dumps() to write as a byte string]()
-4. [Conclusions]()
-5. [References]()
+- [Conclusions]()
+- [References]()
 
 ---
 
