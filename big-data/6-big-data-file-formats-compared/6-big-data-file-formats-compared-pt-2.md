@@ -8,23 +8,23 @@ We'll be using Python scripts which you can get from the [Blog Article Repo](ht
 ---
 
 ## Table of Contents
-- [Preparing the files](#creating-a-data-set)
+- [Preparing the files](#preparing-the-files)
 - [Reading with Python](#reading-with-python)
 	- [CSV](#1-csv)
-		- [Using csv.reader()](#11-using-numpytofile)
-		- [Using pandas.read_csv()](#12-using-numpysavetext)
+		- [Using csv.reader()](#11-using-csvreader)
+		- [Using pandas.read_csv()](#12-using-pandasread_csv)
 	- [TXT](#2-txt)
-		- [Using the built-in Python file handler](#21-using-numpysavetext)
-		- [Using pandas.read_csv()](#22-using-pandasdataframeto_csv)
+		- [Using the built-in Python file handler](#21-using-the-built-in-python-file-handler)
+		- [Using pandas.read_csv()](#22-using-pandasread_csv)
 	- [Feather](#3-feather)
-		- [Using pandas.read_feather()](#31-using-pandasdataframeto_feather)
+		- [Using pandas.read_feather()](#31-using-pandasread_feather)
 	- [Parquet](#4-parquet)
-		- [Using pandas.read_parquet() for non-partitioned files](#41-using-pandasdataframeto_parquet-without-partitioning)
-		- [Using pandas.read_parquet() for single and multi-partitioned files](#42-using-pandasdataframeto_parquet-with-a-single-partition)
+		- [Using pandas.read_parquet() for non-partitioned files](#41-using-pandasread_parquet-for-non-partitioned-files)
+		- [Using pandas.read_parquet() for single and multi-partitioned files](#42-using-pandasread_parquet-for-single-and-multi-partitioned-files)
 	- [Avro](#5-avro)
-		- [Using fastavro reader](#51-using-fastavro-python-file-handler)
+		- [Using fastavro reader](#51-using-fastavro-reader)
 	- [Pickle](#6-pickle)
-		- [Using pickle.load() to read from an open file](#61-using-pickledump-to-write-as-an-open-file)
+		- [Using pickle.load() to read from an open file](#61-using-pickleload-to-read-from-an-open-file)
 - [Conclusions](#conclusions)
 - [References](#references)
 
@@ -192,7 +192,7 @@ And the best thing is, we don't even have to specify the first row as our header
 ### 2. TXT
 There are two primary methods for reading a TXT file using Python:
 
-#### 1.1 Using the built-in Python file handler
+#### 2.1 Using the built-in Python file handler
 Similar to the `csv.reader()` methodology previously shown, we can make use of the built-in Python file handler:
 
 ##### **Code**
