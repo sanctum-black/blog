@@ -47,6 +47,7 @@ On our last session we generated a total of 12 files:
 | `10_dataset_method_1.avro` | Avro | `fastavro` |
 | `11_dataset_method_1.pickle` | Pickle | `pickle.dump()` |
 | `12_dataset_method_2.pickle` | Pickle | `pickle.dumps()` |
+
 *Table 1. Files written on Part 1 of Article Series*
 
 
