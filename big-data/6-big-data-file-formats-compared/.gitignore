@@ -8,5 +8,8 @@
 # Ignore large data set
 datasets/charts.csv
 
+# Ignore performance test data sets
+performance_tests/
+
 # Ignore desktop.ini
 desktop.ini

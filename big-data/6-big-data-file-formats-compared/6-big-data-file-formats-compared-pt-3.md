@@ -8,15 +8,108 @@ We will then conclude this series by reviewing specific use-cases for each one o
 ---
 
 ## Table of Contents
-- Side-by-Side Comparison & Performance Tests
+- Preparing the data set
+- Experiment design
+- Writing performance tests
+- Reading performance tests
+- Overall performance results
 - Use Cases
 - Conclusions
 - References
 
 ---
 
+## Preparing the data set
+In order to reduce noise in our performance measurements, for this section we will employ a slightly larger file. We will be using the `Spotify Charts` data set (`2.48 GB`) published by `DHRUVIL DAVE`, which you can download from [Kaggle](https://www.kaggle.com/datasets/dhruvildave/spotify-charts).
+
+We can start by importing all the required modules:
+
+##### **Code**
+```Python
+import csv
+import numpy as np
+import pandas as pd
+from fastavro import reader, writer, parse_schema
+import pickle
+import time
+import os
+```
+
+Then, we can read the data set as a `pandas.DataFrame` object:
+
+##### **Code**
+```Python
+# Load csv file as pandas.DataFrame object
+df = pd.read_csv('datasets/charts.csv')
+```
+
+This should take a couple of minutes, depending on the specifications of your machine.
+
+Upon concluding, we should end up with a `pandas.DataFrame` object `df` with the following shape:
+
+##### **Code**
+```Python
+# Get the shape of the object
+df.shape
+```
+
+##### **Output**
+```
+(26173514, 9)
+```
+
+Meaning 26,173,514 rows by 9 columns.
+
+Lastly, we will create a new directory where we will store all of our written files:
+
+##### **Code**
+```PowerShell
+mkdir performance_tests
+```
+
+Now, we're ready to start designing our experiment.
+
+---
+
+## Experiment design
+For both writing & reading performance tests, we will be using a collection of measurements per file format. This is always good practice in experimental design, and will help us calculate a complete set of descriptive statistics.
+
+Our experiment for the writing process will consist of the following steps:
+1. Define the variables to measure.
+2. Set the number of trials as a control variable.
+3. Begin with the first trial, measuring variables of interest.
+5. Store measurements.
+6. Repeat for the other file formats.
+7. Repeat steps 2 through 6, changing the control variable (*number of trials*).
+8. Consolidate results and perform a statistical description.
+
+Our experiment for the reading process will consist of the following steps:
+1. Define the variables to measure.
+2. Set the number of trials as a control variable.
+3. Begin with the first trial, measuring variables of interest.
+5. Store measurements.
+6. Clear memory
+7. Repeat for the other file formats.
+8. Repeat steps 2 through 6, changing the control variable (*number of trials*).
+9. Consolidate results and perform a statistical description.
+
+---
+
+## Writing performance tests
+We will start by defining a set of control variables:
+
+##### **Code**
+```Python
+# Define n number of trials
+n3 = 20
+```
+
+We will then declare a function that will accept 
+
+---
+
 ## Side-by-Side Comparison & Performance Tests
-For this section, we will employ a slightly larger file. We will be using the `Spotify Charts` data set (`2.48 GB`) published by `DHRUVIL DAVE`, which you can download from [Kaggle](https://www.kaggle.com/datasets/dhruvildave/spotify-charts).
+
 
 **Code**
 
