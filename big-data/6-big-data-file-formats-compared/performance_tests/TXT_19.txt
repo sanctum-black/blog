@@ -1,0 +1,1001 @@
+	Unnamed: 0	title	rank	date	artist	url	region	chart	trend	streams
+0	0	Chantaje (feat. Maluma)	1	1483228800000000000	Shakira	https://open.spotify.com/track/6mICuAdrwEjh6Y6lroV2Kg	Argentina	top200	SAME_POSITION	253019
+1	1	Vente Pa' Ca (feat. Maluma)	2	1483228800000000000	Ricky Martin	https://open.spotify.com/track/7DM4BPaS7uofFul3ywMe46	Argentina	top200	MOVE_UP	223988
+2	2	Reggaetón Lento (Bailemos)	3	1483228800000000000	CNCO	https://open.spotify.com/track/3AEZUABDXNtecAOSC1qTfo	Argentina	top200	MOVE_DOWN	210943
+3	3	Safari	4	1483228800000000000	J Balvin, Pharrell Williams, BIA, Sky	https://open.spotify.com/track/6rQSrBHf7HlZjtcMZ4S4bO	Argentina	top200	SAME_POSITION	173865
+4	4	Shaky Shaky	5	1483228800000000000	Daddy Yankee	https://open.spotify.com/track/58IL315gMSTD37DOZPJ2hf	Argentina	top200	MOVE_UP	153956
+5	5	Traicionera	6	1483228800000000000	Sebastian Yatra	https://open.spotify.com/track/5J1c3M4EldCfNxXwrwt8mT	Argentina	top200	MOVE_DOWN	151140
+6	6	Cuando Se Pone a Bailar	7	1483228800000000000	Rombai	https://open.spotify.com/track/1MpKZi1zTXpERKwxmOu1PH	Argentina	top200	MOVE_DOWN	148369
+7	7	Otra vez (feat. J Balvin)	8	1483228800000000000	Zion & Lennox	https://open.spotify.com/track/3QwBODjSEzelZyVjxPOHdq	Argentina	top200	MOVE_DOWN	143004
+8	8	La Bicicleta	9	1483228800000000000	Carlos Vives, Shakira	https://open.spotify.com/track/0sXvAOmXgjR2QUqLK1MltU	Argentina	top200	MOVE_UP	126389
+9	9	Dile Que Tu Me Quieres	10	1483228800000000000	Ozuna	https://open.spotify.com/track/20ZAJdsKB5IGbGj4ilRt2o	Argentina	top200	MOVE_DOWN	112012
+10	10	Andas En Mi Cabeza	11	1483228800000000000	Chino & Nacho, Daddy Yankee	https://open.spotify.com/track/5mey7CLLuFToM2P68Qu1gF	Argentina	top200	SAME_POSITION	110395
+11	11	Desde Esa Noche (feat. Maluma)	12	1483228800000000000	Thalia	https://open.spotify.com/track/1pWYnQIlqxTh5bxuPmTG4E	Argentina	top200	MOVE_UP	104592
+12	12	Borro Cassette	13	1483228800000000000	Maluma	https://open.spotify.com/track/6DUdDIRgLqCGq1DwkNWQTN	Argentina	top200	MOVE_UP	101535
+13	13	Gyal You A Party Animal - Remix	14	1483228800000000000	Charly Black, Daddy Yankee	https://open.spotify.com/track/1AkTW13ysu0AJrwuM6UY0I	Argentina	top200	MOVE_DOWN	99722
+14	14	Me llamas (feat. Maluma) - Remix	15	1483228800000000000	Piso 21	https://open.spotify.com/track/5hEM0JchdVzQ5PwvSfITeX	Argentina	top200	MOVE_DOWN	95010
+15	15	La Bicicleta (feat. Maluma) - Remix	16	1483228800000000000	Carlos Vives, Shakira	https://open.spotify.com/track/7IRuf7FrdQvOGs0g9mSNGr	Argentina	top200	MOVE_UP	92723
+16	16	DUELE EL CORAZON (feat. Wisin)	17	1483228800000000000	Enrique Iglesias	https://open.spotify.com/track/6YZdkObH88npeKrrkb8Ggf	Argentina	top200	MOVE_UP	91325
+17	17	Let Me Love You	18	1483228800000000000	DJ Snake, Justin Bieber	https://open.spotify.com/track/4pdPtRcBmOSQDlJ3Fk945m	Argentina	top200	MOVE_DOWN	87926
+18	18	La Noche No Es para Dormir	19	1483228800000000000	Mano Arriba	https://open.spotify.com/track/3gEebOzxHpEwElicl1XBy0	Argentina	top200	SAME_POSITION	87033
+19	19	Vacaciones	20	1483228800000000000	Wisin	https://open.spotify.com/track/3dQDid3IUNhZy1OehIfYfE	Argentina	top200	MOVE_DOWN	86103
+20	20	Rockabye (feat. Sean Paul & Anne-Marie)	21	1483228800000000000	Clean Bandit	https://open.spotify.com/track/5knuzwU65gJK7IF5yJsuaW	Argentina	top200	SAME_POSITION	76123
+21	21	Carnavalintro	22	1483228800000000000	Chano	https://open.spotify.com/track/0tGAPnTFwRJA6FZgYZ0BAe	Argentina	top200	MOVE_UP	71963
+22	22	Ay Mi Dios (feat. Pitbull, Yandel & Chacal)	23	1483228800000000000	IAmChino, El Chacal	https://open.spotify.com/track/6stYbAJgTszHAHZMPxWWCY	Argentina	top200	MOVE_UP	71892
+23	23	One Dance	24	1483228800000000000	Drake, WizKid, Kyla	https://open.spotify.com/track/1xznGGDReH1oQq0xzbwXa3	Argentina	top200	MOVE_UP	71498
+24	24	My Way	25	1483228800000000000	Calvin Harris	https://open.spotify.com/track/1vvNmPOiUuyCbgWmtc6yfm	Argentina	top200	SAME_POSITION	70795
+25	25	Cold Water (feat. Justin Bieber & MØ)	26	1483228800000000000	Major Lazer	https://open.spotify.com/track/6DNtNfH8hXkqOX1sjqmI7p	Argentina	top200	SAME_POSITION	70260
+26	26	La Gozadera (feat. Marc Anthony)	27	1483228800000000000	Gente De Zona	https://open.spotify.com/track/0OMRAvrtLWE2TvcXorRiB9	Argentina	top200	MOVE_UP	70028
+27	27	Llamame Mas Temprano	28	1483228800000000000	Mano Arriba	https://open.spotify.com/track/5aHJug2wnupoGfgfxRudsk	Argentina	top200	MOVE_UP	69382
+28	28	Starboy	29	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5aAx2yezTd8zXrkmtKl66Z	Argentina	top200	SAME_POSITION	65518
+29	29	Manicomio	30	1483228800000000000	Cosculluela	https://open.spotify.com/track/3n58u3LOFw8mITLvfPvQBz	Argentina	top200	MOVE_DOWN	64998
+30	30	Cuatro Babys (feat. Trap Capos, Noriel, Bryant Myers & Juhn)	31	1483228800000000000	Maluma	https://open.spotify.com/track/0JoHqmlqE0W0i9prt6kcHR	Argentina	top200	MOVE_DOWN	64907
+31	31	Don't Wanna Know	32	1483228800000000000	Maroon 5, Kendrick Lamar	https://open.spotify.com/track/5MFzQMkrl1FOOng9tq6R9r	Argentina	top200	MOVE_DOWN	61714
+32	32	Sin Contrato (feat. Don Omar & Wisin) - Remix	33	1483228800000000000	Maluma	https://open.spotify.com/track/2xNZeeqmwMPVKnD7FSQfgt	Argentina	top200	MOVE_UP	59903
+33	33	24K Magic	34	1483228800000000000	Bruno Mars	https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P	Argentina	top200	MOVE_DOWN	58801
+34	34	"CAN'T STOP THE FEELING! (Original Song from DreamWorks Animation's ""TROLLS"")"	35	1483228800000000000	Justin Timberlake	https://open.spotify.com/track/6JV2JOEocMgcZxYSZelKcc	Argentina	top200	MOVE_UP	56170
+35	35	Fuego	36	1483228800000000000	Juanes	https://open.spotify.com/track/0mwPE0lPOgnWf2bo14xedJ	Argentina	top200	MOVE_UP	55902
+36	36	Bobo	37	1483228800000000000	J Balvin	https://open.spotify.com/track/7AtlMCIauSQZqiXSlbBPW6	Argentina	top200	MOVE_UP	55360
+37	37	In the Name of Love	38	1483228800000000000	Martin Garrix, Bebe Rexha	https://open.spotify.com/track/04DwTuZ2VBdJCCC5TROn7L	Argentina	top200	MOVE_DOWN	54980
+38	38	Tu Ritmo	39	1483228800000000000	Los Bonnitos	https://open.spotify.com/track/0BFgCEE7ozbyB1PpLpLyhM	Argentina	top200	MOVE_UP	54081
+39	39	I Took A Pill In Ibiza - Seeb Remix	40	1483228800000000000	Mike Posner	https://open.spotify.com/track/17Fd6Yb7mSbinKG8LoWfFl	Argentina	top200	MOVE_DOWN	53270
+40	40	Ya Me Enteré (feat. Nicky Jam) - Urban Version	41	1483228800000000000	Reik	https://open.spotify.com/track/2SSYqDX8KTgy01NlqtUo0F	Argentina	top200	MOVE_DOWN	52907
+41	41	No Quiere Enamorarse (Remix) [feat. Daddy Yankee]	42	1483228800000000000	Ozuna	https://open.spotify.com/track/4vlbjBSMqycZk6t4HVRpnC	Argentina	top200	MOVE_DOWN	52670
+42	42	Te Quiero Pa´Mi	43	1483228800000000000	Don Omar, Zion & Lennox	https://open.spotify.com/track/3BY2mafsbsoKGqS380Xnuz	Argentina	top200	MOVE_DOWN	51352
+43	43	Sin Contrato (feat. Fifth Harmony)	44	1483228800000000000	Maluma	https://open.spotify.com/track/09S64DUkxIX9EwIaULu6yN	Argentina	top200	MOVE_UP	51115
+44	44	Picky	45	1483228800000000000	Joey Montana	https://open.spotify.com/track/4tPL9PeVZY4c0jUPtSD5nx	Argentina	top200	MOVE_UP	51113
+45	45	Work	46	1483228800000000000	Rihanna, Drake	https://open.spotify.com/track/14WWzenpaEgQZlqPq2nk4v	Argentina	top200	MOVE_DOWN	50655
+46	46	Noche Loca	47	1483228800000000000	Marama, Rombai	https://open.spotify.com/track/0gzcET27nREY6aD8LJU9wD	Argentina	top200	MOVE_UP	49100
+47	47	Don't Let Me Down (feat. Daya)	48	1483228800000000000	The Chainsmokers	https://open.spotify.com/track/0QsvXIfqM0zZoerQfsI9lm	Argentina	top200	MOVE_DOWN	48767
+48	48	Hasta el Amanecer	49	1483228800000000000	Nicky Jam	https://open.spotify.com/track/5Fim1gaXBgsiFfsQAfQSDS	Argentina	top200	MOVE_UP	47672
+49	49	Le Hace Falta un Beso	50	1483228800000000000	Agapornis	https://open.spotify.com/track/300xUYXWhFA6Q1sbNvVItP	Argentina	top200	MOVE_UP	45251
+50	50	Cake By The Ocean	51	1483228800000000000	DNCE	https://open.spotify.com/track/2aFiaMXmWsM3Vj72F9ksBl	Argentina	top200	SAME_POSITION	44524
+51	51	Chillax (feat. Ky-Mani Marley)	52	1483228800000000000	Farruko	https://open.spotify.com/track/1lxswgIpzV6HhENRvkflES	Argentina	top200	MOVE_DOWN	44495
+52	52	Loquita	53	1483228800000000000	Marama	https://open.spotify.com/track/2xjcDF21U2ccgE2LEeiMbf	Argentina	top200	MOVE_UP	43894
+53	53	Te Vas	54	1483228800000000000	Ozuna	https://open.spotify.com/track/2twUPIYOTqVivev47pf7bU	Argentina	top200	MOVE_DOWN	43704
+54	54	Closer	55	1483228800000000000	The Chainsmokers, Halsey	https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw	Argentina	top200	MOVE_DOWN	43403
+55	55	Locuras contigo	56	1483228800000000000	Rombai	https://open.spotify.com/track/5jMvnSyOgGY8JpvHqeyVOg	Argentina	top200	MOVE_UP	43260
+56	56	Treat You Better	57	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4Hf7WnR761jpxPr5D46Bcd	Argentina	top200	MOVE_DOWN	42815
+57	57	Era Tranquila	58	1483228800000000000	Marama	https://open.spotify.com/track/5OqaLWo9WbNPWDilrwNwzt	Argentina	top200	MOVE_UP	42785
+58	58	Baila	59	1483228800000000000	Agapornis	https://open.spotify.com/track/3iS4VBJ3Bg1HyL3e6WNpgi	Argentina	top200	SAME_POSITION	42127
+59	59	Nena	60	1483228800000000000	Marama	https://open.spotify.com/track/347TStOSY6IOqMB84Rpxwk	Argentina	top200	MOVE_UP	41737
+60	60	Deja De Llorar	61	1483228800000000000	El Polaco	https://open.spotify.com/track/3tddzXTgneWrkV2cYNUBZe	Argentina	top200	MOVE_UP	40065
+61	61	El Perdedor	62	1483228800000000000	Maluma	https://open.spotify.com/track/1iEwyiSLAunPR6uouANE0O	Argentina	top200	MOVE_DOWN	39691
+62	62	Traicionera - Remix	63	1483228800000000000	Sebastian Yatra, Cosculluela, Cali Y El Dandee	https://open.spotify.com/track/2webQDZmtGioeu3zUUi9We	Argentina	top200	MOVE_DOWN	37518
+63	63	Yo te propongo	64	1483228800000000000	Rombai	https://open.spotify.com/track/0YFoSD5VhoVrRbrnFERpVM	Argentina	top200	MOVE_UP	36808
+64	64	El Perdedor (feat. Yandel) - The Remix	65	1483228800000000000	Maluma	https://open.spotify.com/track/4QsPTKvdpgkA7mBAvclZTa	Argentina	top200	MOVE_DOWN	36510
+65	65	Lo Intentamos	66	1483228800000000000	Marama	https://open.spotify.com/track/4Kzk0koKwzCMiIx4rAqCZp	Argentina	top200	MOVE_UP	35965
+66	66	Hasta la luna	67	1483228800000000000	#TocoParaVos	https://open.spotify.com/track/1A3yLIqelu1D7MCtw06Cu7	Argentina	top200	MOVE_UP	35806
+67	67	Comerte a Besos	68	1483228800000000000	Pijama Party, Cande Buasso	https://open.spotify.com/track/4UHZMWgKDjJ1zS0t6f6qPv	Argentina	top200	MOVE_DOWN	34879
+68	68	La Mordidita (feat. Yotuel)	69	1483228800000000000	Ricky Martin	https://open.spotify.com/track/00i0O74dXdaKKdCrqHnfXm	Argentina	top200	MOVE_UP	34638
+69	69	Ginza	70	1483228800000000000	J Balvin	https://open.spotify.com/track/5N8nNuTmIzkZOfcxXlygUw	Argentina	top200	MOVE_UP	34542
+70	70	Call On Me - Ryan Riback Extended Remix	71	1483228800000000000	Starley	https://open.spotify.com/track/78rIJddV4X0HkNAInEcYde	Argentina	top200	MOVE_DOWN	33892
+71	71	El Perdón	72	1483228800000000000	Nicky Jam, Enrique Iglesias	https://open.spotify.com/track/7qCAVkHWZkF44OzOUKf8Cr	Argentina	top200	MOVE_UP	33188
+72	72	Pasarla Bien	73	1483228800000000000	Marama	https://open.spotify.com/track/0ZzVPCGdkpKcxAzMNDD5UZ	Argentina	top200	MOVE_UP	33111
+73	73	No Llores	74	1483228800000000000	LOAN	https://open.spotify.com/track/07GOnZWIiHWjLzUsaTv5yO	Argentina	top200	MOVE_DOWN	32778
+74	74	Would I Lie to You - Radio Edit	75	1483228800000000000	David Guetta, Cedric Gervais, Chris Willis	https://open.spotify.com/track/4PdJSsESm34djLfBde9Pr2	Argentina	top200	MOVE_DOWN	32198
+75	75	I Feel It Coming	76	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5GXAXm5YOmYT0kL5jHvYBt	Argentina	top200	MOVE_DOWN	30754
+76	76	Baila Conmigo	77	1483228800000000000	Juan Magán, Luciana	https://open.spotify.com/track/772io14jrMTxGJbijtDccQ	Argentina	top200	MOVE_UP	30623
+77	77	Una Cerveza	78	1483228800000000000	Rafaga	https://open.spotify.com/track/3LNZSTiwQYL7BnTfHvIOII	Argentina	top200	MOVE_UP	30368
+78	78	Me Ama Me Odia	79	1483228800000000000	Ozuna, Cosculluela, Revol	https://open.spotify.com/track/6041gM9Th1ViQcnzkIxnuv	Argentina	top200	MOVE_DOWN	29979
+79	79	Just Hold On	80	1483228800000000000	Steve Aoki, Louis Tomlinson	https://open.spotify.com/track/3EmmCZoqpWOTY1g2GBwJoR	Argentina	top200	MOVE_DOWN	29609
+80	80	Side To Side	81	1483228800000000000	Ariana Grande, Nicki Minaj	https://open.spotify.com/track/4pLwZjInHj3SimIyN9SnOz	Argentina	top200	MOVE_DOWN	29228
+81	81	Bailame Despacio	82	1483228800000000000	Xantos, Dynell	https://open.spotify.com/track/4OaTpLJIa2harufGxfOPUu	Argentina	top200	MOVE_DOWN	28781
+82	82	Todo Comenzó Bailando	83	1483228800000000000	Marama	https://open.spotify.com/track/2rrWhFrcSZcZQ2SDKPGKQ6	Argentina	top200	MOVE_UP	28728
+83	83	Cheap Thrills Remix (feat. Nicky Jam)	84	1483228800000000000	Sia	https://open.spotify.com/track/59iNA6gwthoTJ6IgpBGGHW	Argentina	top200	MOVE_UP	28288
+84	84	Se Pone Loca	85	1483228800000000000	CantoParaBailar, Lucas Sugo	https://open.spotify.com/track/0FVuUna31PTRmWGLs8W1o4	Argentina	top200	MOVE_UP	27694
+85	85	Cheap Thrills	86	1483228800000000000	Sia	https://open.spotify.com/track/27SdWb2rFzO6GWiYDBTD9j	Argentina	top200	MOVE_DOWN	26885
+86	86	Work from Home (feat. Ty Dolla $ign)	87	1483228800000000000	Fifth Harmony	https://open.spotify.com/track/4tCtwWceOPWzenK2HAIJSb	Argentina	top200	MOVE_DOWN	26840
+87	87	We Don't Talk Anymore (feat. Selena Gomez)	88	1483228800000000000	Charlie Puth	https://open.spotify.com/track/68EMU2RD1ECNeOeJ5qAXCV	Argentina	top200	MOVE_DOWN	26777
+88	88	Diles (feat. Arcangel, Nengo Flow, Dj Luian & Mambo Kings)	89	1483228800000000000	Ozuna, Bad Bunny, Farruko, Ñengo Flow	https://open.spotify.com/track/2FrnTVSHjgnEylKGdHRUK1	Argentina	top200	MOVE_DOWN	25622
+89	89	Pájaro Cantor	90	1483228800000000000	Abel Pintos	https://open.spotify.com/track/16rQTTMtbn0ODLyflr0O6Q	Argentina	top200	MOVE_UP	25525
+90	90	Hasta Que Se Seque el Malecón (feat. Farruko) - Remix	91	1483228800000000000	Jacob Forever	https://open.spotify.com/track/6sMPwcpYtxm1mlgYbp1B0t	Argentina	top200	MOVE_UP	24999
+91	91	Amor y dolor	92	1483228800000000000	Carlos Baute, Alexis y Fido	https://open.spotify.com/track/4efQTJSX6Jca1hHZNi74Zd	Argentina	top200	MOVE_DOWN	24874
+92	92	Si Te Vas	93	1483228800000000000	Agapornis	https://open.spotify.com/track/3HoTiqEEY2SmTeq1XGINo3	Argentina	top200	MOVE_UP	24819
+93	93	Papi Shampu	94	1483228800000000000	Papichamp	https://open.spotify.com/track/0o221VNm4azkzYYLtxDGgV	Argentina	top200	MOVE_UP	24369
+94	94	Ruleta Rusa	95	1483228800000000000	Kevin Roldan	https://open.spotify.com/track/77KHmKnBmVGTjRCeMVXpWH	Argentina	top200	MOVE_DOWN	24358
+95	95	Dale Tu Amor (feat. El Polaco)	96	1483228800000000000	Agapornis	https://open.spotify.com/track/3W9HjL7lmbYXL4kQ1kicH3	Argentina	top200	MOVE_UP	24345
+96	96	Me Reclama	97	1483228800000000000	Mambo Kingz, DJ Luian, Luigi 21 Plus, Ozuna	https://open.spotify.com/track/4ojwGTehgBRAg52jbFgzJg	Argentina	top200	MOVE_DOWN	24260
+97	97	Márchate ahora	98	1483228800000000000	Los Totora	https://open.spotify.com/track/3voxukrHBXctzxdSbCycey	Argentina	top200	MOVE_UP	24133
+98	98	Bronceado	99	1483228800000000000	Marama	https://open.spotify.com/track/4smbzhaRt7EYwO73SmFXyR	Argentina	top200	MOVE_UP	24077
+99	99	Te Vas - Version Cumbia	100	1483228800000000000	aLee DJ, Zeta Music	https://open.spotify.com/track/0j8zA8KrITjLVoAm3H3X6u	Argentina	top200	MOVE_UP	23981
+100	100	Bailando - Spanish Version	101	1483228800000000000	Enrique Iglesias, Descemer Bueno, Gente De Zona	https://open.spotify.com/track/32lm3769IRfcnrQV11LO4E	Argentina	top200	MOVE_UP	23646
+101	101	Llegaste tú (feat. Reykon)	102	1483228800000000000	Sofía Reyes	https://open.spotify.com/track/79Bm3DTEYuQsDpUVHbSRsL	Argentina	top200	MOVE_DOWN	23181
+102	102	Corazon De Seda (feat. Ozuna)	155	1483228800000000000	Klasico	https://open.spotify.com/track/0uRHot8ml8U8cYVwwzMwNT	Argentina	top200	MOVE_DOWN	18065
+103	103	Por Fin Te Encontré	103	1483228800000000000	Cali Y El Dandee, Juan Magán, Sebastian Yatra	https://open.spotify.com/track/3GpvoKKWZyTwgbLEM9RmWM	Argentina	top200	SAME_POSITION	23178
+104	104	Fuiste	104	1483228800000000000	Gilda	https://open.spotify.com/track/3jxP1S0xXvPBry3scDZj6h	Argentina	top200	NEW_ENTRY	23090
+105	105	No Me Arrepiento de Este Amor	105	1483228800000000000	Gilda	https://open.spotify.com/track/6Bj9aK0jTMmjUp1y4Z7SVz	Argentina	top200	NEW_ENTRY	23046
+106	106	Encantadora (feat. Farruko & Zion & Lennox) - Remix	106	1483228800000000000	Yandel, Egbert Rosa aka Haze	https://open.spotify.com/track/0EpFfFZpCuqYFzHvxOtrZS	Argentina	top200	MOVE_DOWN	22948
+107	107	Si Te Dejas Llevar (feat. Juanka)	107	1483228800000000000	Ozuna	https://open.spotify.com/track/7rDi4fIeHSM3KAUYAKYMMN	Argentina	top200	MOVE_DOWN	22878
+108	108	Sola Otra Vez	108	1483228800000000000	El Polaco	https://open.spotify.com/track/1zwH02KhFWC4wOtiZ1We1g	Argentina	top200	MOVE_UP	22560
+109	109	Curiosidad	109	1483228800000000000	Rombai	https://open.spotify.com/track/4PCVVIrUDldF5r7RXtOB5W	Argentina	top200	MOVE_UP	22396
+110	110	Te Amo y Odio	110	1483228800000000000	Marama	https://open.spotify.com/track/5TA9pPL5ATRFcyI9rRBMQ0	Argentina	top200	MOVE_UP	22073
+111	111	The Greatest (feat. Kendrick Lamar)	111	1483228800000000000	Sia	https://open.spotify.com/track/7xHWNBFm6ObGEQPaUxHuKO	Argentina	top200	MOVE_DOWN	22060
+112	112	Ride	112	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW	Argentina	top200	MOVE_DOWN	22015
+113	113	Mi tesoro (feat. Nicky Jam)	113	1483228800000000000	Zion & Lennox	https://open.spotify.com/track/5HABnFSYvl6mTmg8nSdzHa	Argentina	top200	MOVE_DOWN	21803
+114	114	743	114	1483228800000000000	Miranda!	https://open.spotify.com/track/08WLghN4UZFMGN532uvako	Argentina	top200	SAME_POSITION	21584
+115	115	Dame la Mano	115	1483228800000000000	Los Bonnitos	https://open.spotify.com/track/2zrcunkMh2pG74NKLQagf7	Argentina	top200	MOVE_UP	21405
+116	116	Love Yourself	116	1483228800000000000	Justin Bieber	https://open.spotify.com/track/3hB5DgAiMAQ4DzYbsMq1IT	Argentina	top200	MOVE_DOWN	21354
+117	117	Una historia	117	1483228800000000000	#TocoParaVos	https://open.spotify.com/track/6Ol4gn2vFyn4dckha1fGaN	Argentina	top200	MOVE_UP	21108
+118	118	La Llave	118	1483228800000000000	Agapornis	https://open.spotify.com/track/1v78qANb9b176fgEzR2eaW	Argentina	top200	MOVE_UP	20952
+119	119	De Pies A Cabeza	119	1483228800000000000	Maná, Nicky Jam	https://open.spotify.com/track/2CkHE54EH44Qj945ynQRw7	Argentina	top200	MOVE_DOWN	20942
+120	120	Me Estoy Enamorando	120	1483228800000000000	Agapornis	https://open.spotify.com/track/0mX14Kpe4VTYmkqRgGslT5	Argentina	top200	MOVE_UP	20900
+121	121	Ella	121	1483228800000000000	Agapornis	https://open.spotify.com/track/6LxbbZYulsV3tCZvKpJgSh	Argentina	top200	SAME_POSITION	20643
+122	122	This Is What You Came For (feat. Rihanna)	122	1483228800000000000	Calvin Harris	https://open.spotify.com/track/0azC730Exh71aQlOt9Zj3y	Argentina	top200	MOVE_DOWN	20349
+123	123	Andas En Mi Cabeza - Remix	123	1483228800000000000	Chino & Nacho, Daddy Yankee, Don Omar, Wisin	https://open.spotify.com/track/733ybNEEEXHYxfk8sK6MRO	Argentina	top200	MOVE_DOWN	20121
+124	124	This Girl (Kungs Vs. Cookin' On 3 Burners)	124	1483228800000000000	Kungs	https://open.spotify.com/track/0tICYNayWWhH9GPeFrfjfD	Argentina	top200	MOVE_DOWN	19920
+125	125	Yo Tomo Licor	125	1483228800000000000	Amar Azul	https://open.spotify.com/track/5EHRc2WJASyZg3alJqsbqU	Argentina	top200	NEW_ENTRY	19889
+126	126	Hoy	126	1483228800000000000	Agapornis	https://open.spotify.com/track/11aJTEmPwKKoKRTpsudE1H	Argentina	top200	MOVE_UP	19864
+127	127	Sorry	127	1483228800000000000	Justin Bieber	https://open.spotify.com/track/69bp2EbF7Q2rqc5N3ylezZ	Argentina	top200	MOVE_DOWN	19775
+128	128	No Te Vayas	128	1483228800000000000	Marama	https://open.spotify.com/track/6lip7aGS7oXloGk1XFCqWH	Argentina	top200	MOVE_UP	19753
+129	129	Un Beso	129	1483228800000000000	Danny Paz, El Villano	https://open.spotify.com/track/0mDYDLR1KToBR4plxAj4O4	Argentina	top200	MOVE_UP	19697
+130	130	Hoy Acá en el Baile (Cara de Gitana) - Versión el Pepo	130	1483228800000000000	El Pepo	https://open.spotify.com/track/74onbSJ49kgKFGrwUwY9oC	Argentina	top200	NEW_ENTRY	19577
+131	131	Fanática Sensual	131	1483228800000000000	Plan B	https://open.spotify.com/track/1BygxKyZjq2xjQiFMkSFGp	Argentina	top200	MOVE_UP	19523
+132	132	Trumpets	132	1483228800000000000	Sak Noel & Salvi, Sean Paul	https://open.spotify.com/track/5dH7o4TP3HYLvCjo4QAhhv	Argentina	top200	MOVE_DOWN	19427
+133	133	Sola (Remix) [feat. Daddy Yankee, Wisin, Farruko, Zion & Lennox]	133	1483228800000000000	Anuel AA	https://open.spotify.com/track/5q2JbCNi4FcnglgPfxcV65	Argentina	top200	MOVE_DOWN	19335
+134	134	Heathens	134	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/6i0V12jOa3mr6uu4WYhUBr	Argentina	top200	MOVE_DOWN	19334
+135	135	Ocho Cuarenta	135	1483228800000000000	Rodrigo	https://open.spotify.com/track/6jDx3MNG0yJdrvEBZohKBE	Argentina	top200	NEW_ENTRY	19319
+136	136	El Taxi	136	1483228800000000000	"Pitbull, Sensato, Osmani Garcia ""La Voz"""	https://open.spotify.com/track/501PoxE6Qti2ekECimQeXK	Argentina	top200	NEW_ENTRY	19272
+137	137	The Mack	137	1483228800000000000	Nevada, Mark Morrison, Fetty Wap	https://open.spotify.com/track/7aV2mflaASUmGhCErm7kBO	Argentina	top200	MOVE_DOWN	19192
+138	138	Que Bonito	138	1483228800000000000	Banda XXI	https://open.spotify.com/track/3XmpHN0jwCV1unk8ygs1Ku	Argentina	top200	NEW_ENTRY	19093
+139	139	El chisme	139	1483228800000000000	Reykon	https://open.spotify.com/track/4VXejnj5WgM6H72ct2fSgQ	Argentina	top200	MOVE_DOWN	18931
+140	140	Hymn for the Weekend - Seeb Remix	140	1483228800000000000	Coldplay	https://open.spotify.com/track/1OAiWI2oPmglaOiv9fdioU	Argentina	top200	MOVE_DOWN	18823
+141	141	Acércate (feat. Nicky Jam) - Remix	141	1483228800000000000	De La Ghetto	https://open.spotify.com/track/35OC6rMxa8lJi8eDiUVShS	Argentina	top200	MOVE_DOWN	18810
+142	142	Si ella quisiera	142	1483228800000000000	Justin Quiles	https://open.spotify.com/track/7cIkMEpDhT7Vpw1FHOQqKC	Argentina	top200	MOVE_DOWN	18769
+143	143	El Bombón	143	1483228800000000000	Los Palmeras	https://open.spotify.com/track/68drjp77R32xEkzP1vxlF6	Argentina	top200	NEW_ENTRY	18741
+144	144	Hello	144	1483228800000000000	KAROL G, Ozuna	https://open.spotify.com/track/1PGENMzwUy16wlpZiuLS65	Argentina	top200	MOVE_DOWN	18555
+145	145	Cuando Me Enamoro	145	1483228800000000000	Banda XXI	https://open.spotify.com/track/7IUFDlflcQjHNxg8H0us34	Argentina	top200	NEW_ENTRY	18527
+146	146	Yo tambien	146	1483228800000000000	Rombai	https://open.spotify.com/track/1EK5Sm4E09P1lcdyKsygoV	Argentina	top200	MOVE_UP	18433
+147	147	Soy Cordobes	147	1483228800000000000	Rodrigo	https://open.spotify.com/track/5wG4J1UECH0c42YhMhSkcS	Argentina	top200	NEW_ENTRY	18428
+148	148	Linda	148	1483228800000000000	Marka Akme	https://open.spotify.com/track/5L4iwTXzuuWcV0m0sEDrgj	Argentina	top200	MOVE_UP	18284
+149	149	Nunca me Faltes	149	1483228800000000000	Antonio Rios	https://open.spotify.com/track/3YCcsuRdJArE4rsAG5V3sW	Argentina	top200	NEW_ENTRY	18253
+150	150	Segundas Intenciones	150	1483228800000000000	Rombai	https://open.spotify.com/track/1y2jGfgALBBNZL6tXPI2Ke	Argentina	top200	MOVE_UP	18247
+151	151	La Ventanita	151	1483228800000000000	Grupo Sombras	https://open.spotify.com/track/2dfnK7rHRibkQR93iZn7Z2	Argentina	top200	NEW_ENTRY	18237
+152	152	Chica Real	152	1483228800000000000	El Villano	https://open.spotify.com/track/0KrNNpgu7qGQPNQAQBLGwX	Argentina	top200	MOVE_UP	18209
+153	153	Pierde Los Modales	153	1483228800000000000	J Balvin, Daddy Yankee	https://open.spotify.com/track/4r3itKA9HEJo48RG65OEnt	Argentina	top200	MOVE_DOWN	18126
+154	154	Una Cita - Remix	154	1483228800000000000	Alkilados, Nicky Jam, J Alvarez, El Roockie	https://open.spotify.com/track/6v3QCw4ca5cR4VkzpG0PHy	Argentina	top200	MOVE_DOWN	18103
+155	155	743	88	1483315200000000000	Miranda!	https://open.spotify.com/track/08WLghN4UZFMGN532uvako	Argentina	top200	MOVE_UP	20351
+156	156	Olvídala	156	1483228800000000000	Banda XXI	https://open.spotify.com/track/1cJNFxiyjh8Ooqg5U4752G	Argentina	top200	NEW_ENTRY	17636
+157	157	La Cumbita	157	1483228800000000000	Tambó Tambó	https://open.spotify.com/track/4De1d3fqH4Pnb6K20sRVBa	Argentina	top200	NEW_ENTRY	17626
+158	158	Si me dices que sí (feat. Nicky Jam)	158	1483228800000000000	Cosculluela	https://open.spotify.com/track/3noN1TxpjbjjmKqssghvg8	Argentina	top200	MOVE_DOWN	17442
+159	159	Otra copa (feat. Farruko)	159	1483228800000000000	Justin Quiles	https://open.spotify.com/track/5KX51uLJYo1S1MmITG7lHD	Argentina	top200	MOVE_DOWN	17336
+160	160	Hola	160	1483228800000000000	Joey Montana	https://open.spotify.com/track/03h8eaVgdJJ14cCKiO4ONX	Argentina	top200	MOVE_DOWN	17168
+161	161	No Me Olvides	161	1483228800000000000	La Beriso	https://open.spotify.com/track/7LDUiraavMZ6mb8hK3mXkj	Argentina	top200	MOVE_DOWN	17000
+162	162	Adios	162	1483228800000000000	Rombai	https://open.spotify.com/track/6cwrN0Go9VBDFj4n7riKPU	Argentina	top200	NEW_ENTRY	16874
+163	163	Acá Estoy	163	1483228800000000000	El Reja	https://open.spotify.com/track/5LRSzLW5nw0j1tglHlNOHp	Argentina	top200	SAME_POSITION	16865
+164	164	Stressed Out	164	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn	Argentina	top200	MOVE_DOWN	16845
+165	165	Si Ella Quisiera - Remix	165	1483228800000000000	Justin Quiles, Yandel, Gadiel	https://open.spotify.com/track/0A2h9QjoPdbVwa9LFiijqM	Argentina	top200	MOVE_DOWN	16789
+166	166	Amores Como el Nuestro	166	1483228800000000000	Los Charros	https://open.spotify.com/track/6z6aUQtuqZzq2tbyVwHO6n	Argentina	top200	NEW_ENTRY	16760
+167	167	Taste Of Love	167	1483228800000000000	Maxi Trusso	https://open.spotify.com/track/0Xry4aZncthPqpSjFhgsHl	Argentina	top200	MOVE_DOWN	16734
+168	168	Que Raro	168	1483228800000000000	Feid, J Balvin	https://open.spotify.com/track/3kg9JvQe6QJFKUQCN1oIQz	Argentina	top200	MOVE_DOWN	16670
+169	169	Te busco (feat. Nicky Jam)	169	1483228800000000000	Cosculluela	https://open.spotify.com/track/6wHm04cn5HxK6pE2ITEdUS	Argentina	top200	MOVE_DOWN	16642
+170	170	I Will Be There (feat. ChocQuibTown)	170	1483228800000000000	Agapornis, Come & C	https://open.spotify.com/track/60LbXuVjG11t0cIendTtHh	Argentina	top200	SAME_POSITION	16424
+171	171	Una Noche Contigo	171	1483228800000000000	Marama, Rombai	https://open.spotify.com/track/5wWwIYTCgkiYfR5ZVZT3Go	Argentina	top200	NEW_ENTRY	16390
+172	172	Sin Contrato	172	1483228800000000000	Maluma	https://open.spotify.com/track/3yHJs5NmQk2ROAWCfjniXV	Argentina	top200	MOVE_DOWN	16305
+173	173	Como Le Digo	173	1483228800000000000	Rodrigo	https://open.spotify.com/track/4nH1lpWkgzQPpTYPPjWKaI	Argentina	top200	NEW_ENTRY	16260
+174	174	Cheap Thrills	174	1483228800000000000	Corta La Bocha	https://open.spotify.com/track/0gMpULrVyvPX3rWGfQUfea	Argentina	top200	MOVE_UP	16202
+175	175	Light It Up (feat. Nyla & Fuse ODG) - Remix	175	1483228800000000000	Major Lazer	https://open.spotify.com/track/0L7loeTIg6akW84aEQZpCT	Argentina	top200	MOVE_DOWN	16184
+176	176	La Ocasion (feat. Arcangel, Ozuna & Anuel Aa)	176	1483228800000000000	De La Ghetto, Mambo Kingz, DJ Luian	https://open.spotify.com/track/498YWgZPJWIA4lphXtCNma	Argentina	top200	MOVE_DOWN	16131
+177	177	Cuando Pase El Temblor - Remasterizado 2007	177	1483228800000000000	Soda Stereo	https://open.spotify.com/track/3uMYq07Kj5m564OQwdSCrD	Argentina	top200	MOVE_DOWN	16070
+178	178	Jamas	178	1483228800000000000	RC BAND	https://open.spotify.com/track/3bdgsOwSmdtKfo0K02BT8P	Argentina	top200	MOVE_UP	16013
+179	179	Deja Que Te Bese	179	1483228800000000000	Alejandro Sanz, Marc Anthony	https://open.spotify.com/track/0s6yB0ZFl1LvYHAnGhXFga	Argentina	top200	MOVE_DOWN	15920
+180	180	Time of Our Lives	180	1483228800000000000	Pitbull, Ne-Yo	https://open.spotify.com/track/2bJvI42r8EF3wxjOuDav4r	Argentina	top200	NEW_ENTRY	15837
+181	181	Gyal You A Party Animal	181	1483228800000000000	Charly Black	https://open.spotify.com/track/1mSzZKMIPZIkn3jFV7v62b	Argentina	top200	MOVE_DOWN	15804
+182	182	Perfect Strangers	182	1483228800000000000	Jonas Blue, JP Cooper	https://open.spotify.com/track/5bZtRlMBU76vHuDOb1GM5u	Argentina	top200	MOVE_DOWN	15747
+183	183	Ego	183	1483228800000000000	Lali	https://open.spotify.com/track/27xe7DYBq1xD5LIfkIrpAj	Argentina	top200	MOVE_DOWN	15701
+184	184	Se Parece Más A Ti	184	1483228800000000000	Jambao	https://open.spotify.com/track/4bWdlExSeKAotB6uJwxFlf	Argentina	top200	NEW_ENTRY	15600
+185	185	Persiana Americana	185	1483228800000000000	Agapornis	https://open.spotify.com/track/4amGeAvkzFunJTHZ0KJZba	Argentina	top200	NEW_ENTRY	15501
+186	186	Carnaval	186	1483228800000000000	Maluma	https://open.spotify.com/track/1nO4EGuBjR75IGbFYzqPxO	Argentina	top200	MOVE_DOWN	14952
+187	187	Quiero Que Sepas	187	1483228800000000000	Juan Magán	https://open.spotify.com/track/0fm7fJ4aZv6Wx0klIcyXPz	Argentina	top200	MOVE_DOWN	14900
+188	188	Adventure of a Lifetime	188	1483228800000000000	Coldplay	https://open.spotify.com/track/69uxyAqqPIsUyTO8txoP2M	Argentina	top200	MOVE_DOWN	14834
+189	189	Volaré	189	1483228800000000000	Benjamín Amadeo	https://open.spotify.com/track/34mvkVskpYxe7CfkEs3XCY	Argentina	top200	MOVE_DOWN	14786
+190	190	The Greatest	190	1483228800000000000	Sia	https://open.spotify.com/track/6bLopGnirdrilrpdVB6Um1	Argentina	top200	MOVE_DOWN	14783
+191	191	Madrugada	191	1483228800000000000	La Beriso	https://open.spotify.com/track/4SGCn3ZVXa7bepHuAdQvC9	Argentina	top200	MOVE_DOWN	14684
+192	192	What Do You Mean?	192	1483228800000000000	Justin Bieber	https://open.spotify.com/track/3pzjHKrQSvXGHQ98dx18HI	Argentina	top200	MOVE_DOWN	14498
+193	193	En La Intimidad	193	1483228800000000000	Ozuna	https://open.spotify.com/track/0QetVR4wwvyiTezQeFNdeZ	Argentina	top200	MOVE_DOWN	14484
+194	194	Tus Ojos No Me Ven	194	1483228800000000000	Agapornis	https://open.spotify.com/track/5lZzrsIShvSlXlYlJiaiEf	Argentina	top200	NEW_ENTRY	14483
+195	195	Una Ráfaga de Amor	195	1483228800000000000	Rafaga	https://open.spotify.com/track/4i5NFoPWqTqlsR4WyoVFtB	Argentina	top200	NEW_ENTRY	14419
+196	196	Sólo necesito	196	1483228800000000000	#TocoParaVos	https://open.spotify.com/track/7kK1cPOZ9RxZcgamiYysxw	Argentina	top200	NEW_ENTRY	14397
+197	197	Lean On (feat. MØ & DJ Snake)	197	1483228800000000000	Major Lazer	https://open.spotify.com/track/4WjH9Bzt3kx7z8kl0awxh4	Argentina	top200	MOVE_DOWN	14304
+198	198	Sugar	198	1483228800000000000	Maroon 5	https://open.spotify.com/track/494OU6M7NOf4ICYb4zWCf5	Argentina	top200	MOVE_DOWN	14248
+199	199	No hay más nada	199	1483228800000000000	Los Totora	https://open.spotify.com/track/2nruW43pcr20cNm3DBCDbz	Argentina	top200	NEW_ENTRY	14232
+200	200	Tal Vez	200	1483228800000000000	Marama	https://open.spotify.com/track/6aZOHHz5AvwM4MA6ygFjIY	Argentina	top200	NEW_ENTRY	14204
+201	201	Starboy	1	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5aAx2yezTd8zXrkmtKl66Z	Australia	top200	MOVE_UP	107350
+202	202	Rockabye (feat. Sean Paul & Anne-Marie)	2	1483228800000000000	Clean Bandit	https://open.spotify.com/track/5knuzwU65gJK7IF5yJsuaW	Australia	top200	MOVE_UP	105111
+203	203	Closer	3	1483228800000000000	The Chainsmokers, Halsey	https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw	Australia	top200	MOVE_DOWN	100617
+204	204	"I Don’t Wanna Live Forever (Fifty Shades Darker) - From ""Fifty Shades Darker (Original Motion Picture Soundtrack)"""	4	1483228800000000000	ZAYN, Taylor Swift	https://open.spotify.com/track/3NdDpSvN911VPGivFlV5d0	Australia	top200	MOVE_UP	88335
+205	205	Call On Me - Ryan Riback Extended Remix	5	1483228800000000000	Starley	https://open.spotify.com/track/78rIJddV4X0HkNAInEcYde	Australia	top200	MOVE_UP	83729
+206	206	Say You Won't Let Go	6	1483228800000000000	James Arthur	https://open.spotify.com/track/5uCax9HTNlzGybIStD3vDh	Australia	top200	MOVE_UP	81542
+207	207	I Feel It Coming	7	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5GXAXm5YOmYT0kL5jHvYBt	Australia	top200	MOVE_UP	81455
+208	208	Sexual	8	1483228800000000000	NEIKED, Dyo	https://open.spotify.com/track/3AsAuGTaDQzavZZThyYlop	Australia	top200	MOVE_DOWN	80609
+209	209	Let Me Love You	9	1483228800000000000	DJ Snake, Justin Bieber	https://open.spotify.com/track/4pdPtRcBmOSQDlJ3Fk945m	Australia	top200	MOVE_DOWN	75363
+210	210	The Mack	10	1483228800000000000	Nevada, Mark Morrison, Fetty Wap	https://open.spotify.com/track/7aV2mflaASUmGhCErm7kBO	Australia	top200	MOVE_UP	74950
+211	211	Don't Wanna Know	11	1483228800000000000	Maroon 5, Kendrick Lamar	https://open.spotify.com/track/5MFzQMkrl1FOOng9tq6R9r	Australia	top200	MOVE_UP	72216
+212	212	24K Magic	12	1483228800000000000	Bruno Mars	https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P	Australia	top200	SAME_POSITION	72054
+213	213	Stranger (feat. Elliphant)	13	1483228800000000000	Peking Duk	https://open.spotify.com/track/0jVPEBd4wyHupkTHwzQRyc	Australia	top200	SAME_POSITION	70552
+214	214	Cold Water (feat. Justin Bieber & MØ)	14	1483228800000000000	Major Lazer	https://open.spotify.com/track/6DNtNfH8hXkqOX1sjqmI7p	Australia	top200	MOVE_DOWN	68561
+215	215	Black Beatles	15	1483228800000000000	Rae Sremmurd, Gucci Mane	https://open.spotify.com/track/6fujklziTHa8uoM5OQSfIo	Australia	top200	MOVE_DOWN	67650
+216	216	Fresh Eyes	16	1483228800000000000	Andy Grammer	https://open.spotify.com/track/4nMlau89VAjmV7agkl7OY3	Australia	top200	MOVE_UP	65459
+217	217	Love$ick (feat. A$AP Rocky)	17	1483228800000000000	Mura Masa	https://open.spotify.com/track/7Kq16WtEJzdRSNQgdXsn7Y	Australia	top200	SAME_POSITION	64332
+218	218	I Would Like	18	1483228800000000000	Zara Larsson	https://open.spotify.com/track/4Q4jmPHwu0wrJvqrld0FQ6	Australia	top200	MOVE_UP	63033
+219	219	Scars To Your Beautiful	19	1483228800000000000	Alessia Cara	https://open.spotify.com/track/0prNGof3XqfTvNDxHonvdK	Australia	top200	MOVE_UP	62689
+220	220	Fake Love	20	1483228800000000000	Drake	https://open.spotify.com/track/343YBumqHu19cGoGARUTsd	Australia	top200	MOVE_DOWN	62524
+221	221	Capsize	21	1483228800000000000	FRENSHIP, Emily Warren	https://open.spotify.com/track/2XMTqoHHSH0lvuXrvIEdco	Australia	top200	MOVE_UP	60863
+222	222	All We Know	22	1483228800000000000	The Chainsmokers, Phoebe Ryan	https://open.spotify.com/track/2rizacJSyD9S1IQUxUxnsK	Australia	top200	MOVE_UP	60512
+223	223	Starving	23	1483228800000000000	Hailee Steinfeld, Grey, Zedd	https://open.spotify.com/track/1qOLh0tI7trd1zdDKxYZTe	Australia	top200	MOVE_UP	60100
+224	224	My Way	24	1483228800000000000	Calvin Harris	https://open.spotify.com/track/1vvNmPOiUuyCbgWmtc6yfm	Australia	top200	MOVE_DOWN	57205
+225	225	In the Name of Love	25	1483228800000000000	Martin Garrix, Bebe Rexha	https://open.spotify.com/track/04DwTuZ2VBdJCCC5TROn7L	Australia	top200	MOVE_UP	57085
+226	226	All Night	26	1483228800000000000	The Vamps, Matoma	https://open.spotify.com/track/4b4KcovePX8Ke2cLIQTLM0	Australia	top200	MOVE_UP	56014
+227	227	One Dance	27	1483228800000000000	Drake, WizKid, Kyla	https://open.spotify.com/track/1xznGGDReH1oQq0xzbwXa3	Australia	top200	MOVE_DOWN	55526
+228	228	Just Hold On	28	1483228800000000000	Steve Aoki, Louis Tomlinson	https://open.spotify.com/track/3EmmCZoqpWOTY1g2GBwJoR	Australia	top200	MOVE_UP	54925
+229	229	By Your Side	29	1483228800000000000	Jonas Blue, RAYE	https://open.spotify.com/track/1D3ODoXHBLpdxolZRHWV1j	Australia	top200	SAME_POSITION	54698
+230	230	Say It (feat. Tove Lo)	30	1483228800000000000	Flume	https://open.spotify.com/track/4sQMalN597HdggTu196aL0	Australia	top200	MOVE_DOWN	54379
+231	231	Catch 22 (feat. Anne-Marie)	31	1483228800000000000	Illy	https://open.spotify.com/track/2bWrml86uwGVvznX8KKtwx	Australia	top200	MOVE_UP	53622
+232	232	Cocoon	32	1483228800000000000	Milky Chance	https://open.spotify.com/track/0L87MffumRNWrY2SNUFcvs	Australia	top200	MOVE_UP	52765
+233	233	Mercy	33	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4TZy1wLyHec06pwgFYDh1a	Australia	top200	MOVE_UP	50681
+234	234	Now and Later	34	1483228800000000000	Sage The Gemini	https://open.spotify.com/track/08WPvDEsHvTFuB9w8tC2OS	Australia	top200	MOVE_DOWN	49628
+235	235	Shed a Light	35	1483228800000000000	Robin Schulz, David Guetta, Cheat Codes	https://open.spotify.com/track/1cG0umU5TKStygKsPFZ9pY	Australia	top200	MOVE_UP	48701
+236	236	The Ocean (feat. Shy Martin)	36	1483228800000000000	Mike Perry	https://open.spotify.com/track/2CPqh63wRVscbceKcPxwvv	Australia	top200	MOVE_DOWN	48445
+237	237	Setting Fires	37	1483228800000000000	The Chainsmokers, XYLØ	https://open.spotify.com/track/0B8B8cVRFIG1yznoQe7c9s	Australia	top200	MOVE_UP	47468
+238	238	Trust Nobody (feat. Selena Gomez & Tory Lanez)	38	1483228800000000000	Cashmere Cat	https://open.spotify.com/track/2wDjpPW3HZdA9quPPmZAMu	Australia	top200	MOVE_UP	45886
+239	239	"CAN'T STOP THE FEELING! (Original Song from DreamWorks Animation's ""TROLLS"")"	39	1483228800000000000	Justin Timberlake	https://open.spotify.com/track/6JV2JOEocMgcZxYSZelKcc	Australia	top200	MOVE_DOWN	45779
+240	240	Side To Side	40	1483228800000000000	Ariana Grande, Nicki Minaj	https://open.spotify.com/track/4pLwZjInHj3SimIyN9SnOz	Australia	top200	MOVE_DOWN	45680
+241	241	Love on Me	41	1483228800000000000	Galantis, Hook N Sling	https://open.spotify.com/track/2MHCiOohBZEQuLgDTPvSzF	Australia	top200	MOVE_UP	42626
+242	242	Never Be Like You	42	1483228800000000000	Flume, kai	https://open.spotify.com/track/12REd1n8PeiHHWOh066tpr	Australia	top200	MOVE_DOWN	40297
+243	243	Chameleon	43	1483228800000000000	PNAU	https://open.spotify.com/track/4rex1k9pBVFaIVKBBssZzi	Australia	top200	MOVE_DOWN	40114
+244	244	Perfect Strangers	44	1483228800000000000	Jonas Blue, JP Cooper	https://open.spotify.com/track/5bZtRlMBU76vHuDOb1GM5u	Australia	top200	MOVE_UP	39312
+245	245	Dancing On My Own	45	1483228800000000000	Calum Scott	https://open.spotify.com/track/02WacdrRpm4zlP8H7X6bnQ	Australia	top200	MOVE_UP	37738
+246	246	Redbone	46	1483228800000000000	Childish Gambino	https://open.spotify.com/track/3kxfsdsCpFgN412fpnW85Y	Australia	top200	MOVE_UP	35557
+247	247	Papercuts (feat. Vera Blue)	47	1483228800000000000	Illy	https://open.spotify.com/track/6vXHaWpqkbuvzIDvR3LnKd	Australia	top200	MOVE_DOWN	35532
+248	248	Bad Things (with Camila Cabello)	48	1483228800000000000	Machine Gun Kelly	https://open.spotify.com/track/1PSBzsahR2AKwLJgx8ehBj	Australia	top200	MOVE_UP	35340
+249	249	Juju on That Beat (TZ Anthem)	49	1483228800000000000	Zay Hilfigerrr, Zayion McCall	https://open.spotify.com/track/1lItf5ZXJc1by9SbPeljFd	Australia	top200	MOVE_DOWN	35018
+250	250	Don't Let Me Down (feat. Daya)	50	1483228800000000000	The Chainsmokers	https://open.spotify.com/track/0QsvXIfqM0zZoerQfsI9lm	Australia	top200	MOVE_DOWN	34061
+251	251	The Greatest (feat. Kendrick Lamar)	51	1483228800000000000	Sia	https://open.spotify.com/track/7xHWNBFm6ObGEQPaUxHuKO	Australia	top200	MOVE_UP	32679
+252	252	This Is What You Came For (feat. Rihanna)	52	1483228800000000000	Calvin Harris	https://open.spotify.com/track/0azC730Exh71aQlOt9Zj3y	Australia	top200	MOVE_DOWN	30804
+253	253	Treat You Better	53	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4Hf7WnR761jpxPr5D46Bcd	Australia	top200	MOVE_UP	29086
+254	254	Heathens	54	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/6i0V12jOa3mr6uu4WYhUBr	Australia	top200	MOVE_UP	28821
+255	255	Sorry	55	1483228800000000000	Justin Bieber	https://open.spotify.com/track/69bp2EbF7Q2rqc5N3ylezZ	Australia	top200	MOVE_DOWN	28250
+256	256	Love Me Now	56	1483228800000000000	John Legend	https://open.spotify.com/track/6nxQdXa1uAL0rY72wPZu89	Australia	top200	MOVE_UP	27967
+257	257	Make Me (Cry)	57	1483228800000000000	Noah Cyrus, Labrinth	https://open.spotify.com/track/2BrzlUj1u1CtvaJDGIKpsP	Australia	top200	MOVE_UP	27541
+258	258	After the Afterparty (feat. Lil Yachty)	58	1483228800000000000	Charli XCX	https://open.spotify.com/track/0y8Wf6ltWpGCpgqVa21QNX	Australia	top200	MOVE_UP	27506
+259	259	Cheap Thrills	59	1483228800000000000	Sia	https://open.spotify.com/track/27SdWb2rFzO6GWiYDBTD9j	Australia	top200	MOVE_DOWN	27371
+260	260	I Took A Pill In Ibiza - Seeb Remix	60	1483228800000000000	Mike Posner	https://open.spotify.com/track/17Fd6Yb7mSbinKG8LoWfFl	Australia	top200	MOVE_DOWN	26302
+261	261	Lean On (feat. MØ & DJ Snake)	61	1483228800000000000	Major Lazer	https://open.spotify.com/track/4WjH9Bzt3kx7z8kl0awxh4	Australia	top200	MOVE_DOWN	26286
+262	262	Final Song	62	1483228800000000000	MØ	https://open.spotify.com/track/4qqArAiTPueDxIp7cf87h7	Australia	top200	MOVE_UP	25547
+263	263	"How Far I'll Go - From ""Moana"""	63	1483228800000000000	Alessia Cara	https://open.spotify.com/track/5hYTyyh2odQKphUbMqc5gN	Australia	top200	MOVE_UP	25477
+264	264	Bad and Boujee (feat. Lil Uzi Vert)	64	1483228800000000000	Migos	https://open.spotify.com/track/4Km5HrUvYTaSUfiSGPJeQR	Australia	top200	MOVE_UP	25042
+265	265	Broccoli (feat. Lil Yachty)	65	1483228800000000000	Shelley FKA DRAM	https://open.spotify.com/track/7yyRTcZmCiyzzJlNzGC9Ol	Australia	top200	MOVE_UP	24648
+266	266	Party Monster	66	1483228800000000000	The Weeknd	https://open.spotify.com/track/4F7A0DXBrmUAkp32uenhZt	Australia	top200	MOVE_DOWN	24466
+267	267	Oh Lord	67	1483228800000000000	MiC LOWRY	https://open.spotify.com/track/1sTUEdVO85YU8Ymk2jeAls	Australia	top200	MOVE_UP	24463
+268	268	Shout Out to My Ex	68	1483228800000000000	Little Mix	https://open.spotify.com/track/0YHUITU3w6ws1v8ehT264g	Australia	top200	MOVE_UP	24031
+269	269	Please Don't Go	69	1483228800000000000	Joel Adams	https://open.spotify.com/track/3cNjgVBKTJ1SvKhunrCdVy	Australia	top200	MOVE_UP	23598
+270	270	On Hold	70	1483228800000000000	The xx	https://open.spotify.com/track/5CPqOpKSk0QcJ3dGdaWcRB	Australia	top200	MOVE_UP	23595
+271	271	Drinkee	71	1483228800000000000	Sofi Tukker	https://open.spotify.com/track/3REzEumDuXBpQH45WEHAr6	Australia	top200	SAME_POSITION	22725
+272	272	Too Good	72	1483228800000000000	Drake, Rihanna	https://open.spotify.com/track/11KJSRSgaDxqydKYiD2Jew	Australia	top200	MOVE_DOWN	22704
+273	273	Love Yourself	73	1483228800000000000	Justin Bieber	https://open.spotify.com/track/3hB5DgAiMAQ4DzYbsMq1IT	Australia	top200	MOVE_UP	22608
+274	274	Work from Home (feat. Ty Dolla $ign)	74	1483228800000000000	Fifth Harmony	https://open.spotify.com/track/4tCtwWceOPWzenK2HAIJSb	Australia	top200	MOVE_UP	22188
+275	275	Human	75	1483228800000000000	Rag'n'Bone Man	https://open.spotify.com/track/58zsLZPvfflaiIbNWoA22O	Australia	top200	MOVE_UP	21806
+276	276	Frozen	76	1483228800000000000	PON CHO, Paige IV	https://open.spotify.com/track/2TdJsyNijI5jUvMnsjQcb3	Australia	top200	MOVE_UP	21464
+277	277	Water Under the Bridge	77	1483228800000000000	Adele	https://open.spotify.com/track/4vb4mFvYsr2h6enhjJsq9Y	Australia	top200	MOVE_UP	21383
+278	278	We Don't Talk Anymore (feat. Selena Gomez)	78	1483228800000000000	Charlie Puth	https://open.spotify.com/track/68EMU2RD1ECNeOeJ5qAXCV	Australia	top200	MOVE_UP	21150
+279	279	1955	79	1483228800000000000	Hilltop Hoods, Montaigne, Tom Thum	https://open.spotify.com/track/6oSmp7qnvAxUXeUKhl67a6	Australia	top200	MOVE_DOWN	21112
+280	280	Hymn for the Weekend - Seeb Remix	80	1483228800000000000	Coldplay	https://open.spotify.com/track/1OAiWI2oPmglaOiv9fdioU	Australia	top200	MOVE_UP	20557
+281	281	Deja Vu	81	1483228800000000000	J. Cole	https://open.spotify.com/track/6I6NX6tjGsxFAsIfGzY9lJ	Australia	top200	MOVE_UP	20549
+282	282	Panda	82	1483228800000000000	Desiigner	https://open.spotify.com/track/5OOkp4U9P9oL23maHFHL1h	Australia	top200	MOVE_DOWN	20513
+283	283	On Your Side	83	1483228800000000000	The Veronicas	https://open.spotify.com/track/7mTgsbq7n8jgnwLswpgugB	Australia	top200	MOVE_UP	20333
+284	284	Adore	84	1483228800000000000	Amy Shark	https://open.spotify.com/track/1rPCgtaIF0CyKRgAwhtpbF	Australia	top200	MOVE_UP	20175
+285	285	Caroline	85	1483228800000000000	Aminé	https://open.spotify.com/track/7FB8l7UA1HKqnuSLjP9qDc	Australia	top200	MOVE_UP	20087
+286	286	Fast Car	86	1483228800000000000	Jonas Blue, Dakota	https://open.spotify.com/track/6OZh916QF8XNunWaP97WEZ	Australia	top200	MOVE_DOWN	19949
+287	287	7 Years	87	1483228800000000000	Lukas Graham	https://open.spotify.com/track/7129iqBafaphfc3WPCGC0L	Australia	top200	MOVE_UP	19933
+288	288	i hate u, i love u (feat. olivia o'brien)	88	1483228800000000000	gnash	https://open.spotify.com/track/7vRriwrloYVaoAe3a9wJHe	Australia	top200	MOVE_UP	19906
+289	289	The Greatest	89	1483228800000000000	Sia	https://open.spotify.com/track/6bLopGnirdrilrpdVB6Um1	Australia	top200	MOVE_UP	19773
+290	290	What Do You Mean?	90	1483228800000000000	Justin Bieber	https://open.spotify.com/track/3pzjHKrQSvXGHQ98dx18HI	Australia	top200	MOVE_DOWN	19290
+291	291	Ride	91	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW	Australia	top200	MOVE_UP	19163
+292	292	Into You	92	1483228800000000000	Ariana Grande	https://open.spotify.com/track/7yHEDfrJNd0zWOfXwydNH0	Australia	top200	MOVE_UP	19070
+293	293	Faded	93	1483228800000000000	Alan Walker	https://open.spotify.com/track/7gHs73wELdeycvS48JfIos	Australia	top200	MOVE_UP	18903
+294	294	Sucker for Pain (with Wiz Khalifa, Imagine Dragons, Logic & Ty Dolla $ign feat. X Ambassadors)	94	1483228800000000000	Lil Wayne	https://open.spotify.com/track/4dASQiO1Eoo3RJvt74FtXB	Australia	top200	MOVE_UP	18355
+295	295	Work	95	1483228800000000000	Rihanna, Drake	https://open.spotify.com/track/14WWzenpaEgQZlqPq2nk4v	Australia	top200	MOVE_DOWN	18321
+296	296	Cool Girl	96	1483228800000000000	Tove Lo	https://open.spotify.com/track/5dKyZWlgjWw1oJgLa4GCZD	Australia	top200	MOVE_UP	18260
+297	297	Let Me Hold You (Turn Me On)	97	1483228800000000000	Dante Klein, Cheat Codes	https://open.spotify.com/track/0lmdsH1MIoLsMymnNpd6HU	Australia	top200	MOVE_UP	18256
+298	298	Light It Up (feat. Nyla & Fuse ODG) - Remix	98	1483228800000000000	Major Lazer	https://open.spotify.com/track/0L7loeTIg6akW84aEQZpCT	Australia	top200	MOVE_UP	18095
+299	299	Sunset Lover	99	1483228800000000000	Petit Biscuit	https://open.spotify.com/track/0hNduWmlWmEmuwEFcYvRu1	Australia	top200	MOVE_UP	17989
+300	300	Stressed Out	100	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn	Australia	top200	MOVE_UP	17845
+301	301	Send My Love (To Your New Lover)	101	1483228800000000000	Adele	https://open.spotify.com/track/4BHzQ9C00ceJxfG16AlNWb	Australia	top200	MOVE_UP	17830
+302	302	Come First	102	1483228800000000000	Terror Jr	https://open.spotify.com/track/5fo4LbJ8lOaB54wcM5wPMv	Australia	top200	MOVE_UP	17666
+303	303	Sex	103	1483228800000000000	Cheat Codes, Kris Kross Amsterdam	https://open.spotify.com/track/5DA77EqppDmCTWGovd4oTP	Australia	top200	MOVE_UP	17071
+304	304	Cake By The Ocean	104	1483228800000000000	DNCE	https://open.spotify.com/track/2aFiaMXmWsM3Vj72F9ksBl	Australia	top200	MOVE_UP	16870
+305	305	Needed Me	105	1483228800000000000	Rihanna	https://open.spotify.com/track/1Tt4sE4pXi57mTD1GCzsqm	Australia	top200	MOVE_UP	16772
+306	306	Mr. Brightside	106	1483228800000000000	The Killers	https://open.spotify.com/track/7oK9VyNzrYvRFo7nQEYkWN	Australia	top200	MOVE_DOWN	16740
+307	307	Rockin’	107	1483228800000000000	The Weeknd	https://open.spotify.com/track/36YCdzT57us0LhDmCYtrNE	Australia	top200	MOVE_UP	16651
+308	308	Riptide	108	1483228800000000000	Vance Joy	https://open.spotify.com/track/7yq4Qj7cqayVTp3FF9CWbm	Australia	top200	MOVE_UP	16366
+309	309	Thinking out Loud	109	1483228800000000000	Ed Sheeran	https://open.spotify.com/track/1Slwb6dOYkBlWal1PGtnNg	Australia	top200	MOVE_UP	16061
+310	310	Gold	110	1483228800000000000	Kiiara	https://open.spotify.com/track/6WhzFzROw3aq3rPWjgYlxr	Australia	top200	MOVE_DOWN	16001
+311	311	Controlla	111	1483228800000000000	Drake	https://open.spotify.com/track/6F609ICg9Spjrw1epsAnpa	Australia	top200	MOVE_UP	15990
+312	312	Uptown Funk (feat. Bruno Mars)	112	1483228800000000000	Mark Ronson	https://open.spotify.com/track/32OlwWuMpZ6b0aN2RZOeMS	Australia	top200	MOVE_DOWN	15767
+313	313	Sugar	126	1483315200000000000	Maroon 5	https://open.spotify.com/track/494OU6M7NOf4ICYb4zWCf5	Brazil	top200	MOVE_DOWN	37128
+314	314	Roses (feat. ROZES)	113	1483228800000000000	The Chainsmokers	https://open.spotify.com/track/6O6M7pJLABmfBRoGZMu76Y	Australia	top200	MOVE_UP	15465
+315	315	"Lose Yourself - From ""8 Mile"" Soundtrack"	114	1483228800000000000	Eminem	https://open.spotify.com/track/5Z01UMMf7V1o0MzF86s6WJ	Australia	top200	MOVE_UP	15026
+316	316	This Girl (Kungs Vs. Cookin' On 3 Burners)	115	1483228800000000000	Kungs	https://open.spotify.com/track/0tICYNayWWhH9GPeFrfjfD	Australia	top200	MOVE_DOWN	15022
+317	317	Hello	116	1483228800000000000	Adele	https://open.spotify.com/track/4sPmO7WMQUAf45kwMOtONw	Australia	top200	MOVE_UP	14778
+318	318	Lush Life	117	1483228800000000000	Zara Larsson	https://open.spotify.com/track/1rIKgCH4H52lrvDcz50hS8	Australia	top200	MOVE_UP	14768
+319	319	All My Friends (feat. Tinashe & Chance the Rapper)	118	1483228800000000000	Snakehips	https://open.spotify.com/track/6TaqooOXAEcijL6G1AWS2K	Australia	top200	MOVE_DOWN	14554
+320	320	It's Gotta Be You	119	1483228800000000000	Isaiah Firebrace	https://open.spotify.com/track/6cAKeFFYW2aClZSUyvqAEW	Australia	top200	MOVE_UP	14552
+321	321	Alarm	120	1483228800000000000	Anne-Marie	https://open.spotify.com/track/0OwX5aROoW1Iip8FV51Efg	Australia	top200	MOVE_UP	14519
+322	322	Ignition - Remix	121	1483228800000000000	R. Kelly	https://open.spotify.com/track/5dNfHmqgr128gMY2tc5CeJ	Australia	top200	MOVE_DOWN	14465
+323	323	Ni**as In Paris	122	1483228800000000000	JAY-Z, Kanye West	https://open.spotify.com/track/2KpCpk6HjXXLb7nnXoXA5O	Australia	top200	MOVE_DOWN	14334
+324	324	All Time Low	123	1483228800000000000	Jon Bellion	https://open.spotify.com/track/1CnPYaKxTVb4LWOtiGOm0m	Australia	top200	NEW_ENTRY	14308
+325	325	PILLOWTALK	124	1483228800000000000	ZAYN	https://open.spotify.com/track/0PDUDa38GO8lMxLCRc4lL1	Australia	top200	MOVE_UP	14087
+326	326	Middle	125	1483228800000000000	DJ Snake, Bipolar Sunshine	https://open.spotify.com/track/4OZEu0Vwq0RB2LAq14v99n	Australia	top200	MOVE_UP	13969
+327	327	Stronger	126	1483228800000000000	Kanye West	https://open.spotify.com/track/6C7RJEIUDqKkJRZVWdkfkH	Australia	top200	MOVE_DOWN	13966
+328	328	Versace on the Floor	127	1483228800000000000	Bruno Mars	https://open.spotify.com/track/0kN8xEmgMW9mh7UmDYHlJP	Australia	top200	NEW_ENTRY	13938
+329	329	Lot to Learn	128	1483228800000000000	Luke Christopher	https://open.spotify.com/track/2HzfRSfCogBSsgW2CckVA2	Australia	top200	NEW_ENTRY	13897
+330	330	Bounce Back	129	1483228800000000000	Big Sean	https://open.spotify.com/track/0SGkqnVQo9KPytSri1H6cF	Australia	top200	MOVE_UP	13871
+331	331	Can't Feel My Face	130	1483228800000000000	The Weeknd	https://open.spotify.com/track/6RsWqX8zABZLhZydXxEFOm	Australia	top200	MOVE_DOWN	13682
+332	332	Talk Is Cheap	131	1483228800000000000	Chet Faker	https://open.spotify.com/track/7bliRZuMFa2JmUzzNd62kk	Australia	top200	NEW_ENTRY	13660
+333	333	Sidewalks	132	1483228800000000000	The Weeknd, Kendrick Lamar	https://open.spotify.com/track/4h90qkbnW1Qq6pBhoPvwko	Australia	top200	NEW_ENTRY	13475
+334	334	Stitches	133	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/1WP1r7fuvRqZRnUaTi2I1Q	Australia	top200	MOVE_UP	13435
+335	335	Ain't My Fault	134	1483228800000000000	Zara Larsson	https://open.spotify.com/track/0ADG9OgdVTL7fgREP75BrZ	Australia	top200	NEW_ENTRY	13364
+336	336	In My Blood	135	1483228800000000000	The Veronicas	https://open.spotify.com/track/0x4GHzCjY5MGQ960CHnVHz	Australia	top200	MOVE_UP	13270
+337	337	Fading	136	1483228800000000000	Vallis Alps	https://open.spotify.com/track/2fKEunM0KZVpVLwlvmVlDZ	Australia	top200	NEW_ENTRY	13243
+338	338	Immortal	137	1483228800000000000	J. Cole	https://open.spotify.com/track/6AGON2BGdPmPMJGiiNuuwl	Australia	top200	NEW_ENTRY	13217
+339	339	Chantaje (feat. Maluma)	138	1483228800000000000	Shakira	https://open.spotify.com/track/6mICuAdrwEjh6Y6lroV2Kg	Australia	top200	NEW_ENTRY	13216
+340	340	This Town	139	1483228800000000000	Niall Horan	https://open.spotify.com/track/5nA67Y0XX9JipZwYxX7Gl7	Australia	top200	NEW_ENTRY	12969
+341	341	Photograph	140	1483228800000000000	Ed Sheeran	https://open.spotify.com/track/6fxVffaTuwjgEk5h9QyRjy	Australia	top200	NEW_ENTRY	12891
+342	342	Gold Digger	141	1483228800000000000	Kanye West, Jamie Foxx	https://open.spotify.com/track/5XJJdNPkwmbUwE79gv0NxK	Australia	top200	MOVE_UP	12701
+343	343	Pumped Up Kicks	142	1483228800000000000	Foster The People	https://open.spotify.com/track/7w87IxuO7BDcJ3YUqCyMTT	Australia	top200	MOVE_DOWN	12679
+344	344	Rooting For You	143	1483228800000000000	London Grammar	https://open.spotify.com/track/2nAAFnHiXRdWhsqoeqhhnr	Australia	top200	NEW_ENTRY	12503
+345	345	No Role Modelz	144	1483228800000000000	J. Cole	https://open.spotify.com/track/62vpWI1CHwFy7tMIcSStl8	Australia	top200	NEW_ENTRY	12451
+346	346	King Kunta	145	1483228800000000000	Kendrick Lamar	https://open.spotify.com/track/0N3W5peJUQtI4eyR6GJT5O	Australia	top200	MOVE_DOWN	12441
+347	347	Titanium (feat. Sia)	146	1483228800000000000	David Guetta	https://open.spotify.com/track/2dOTkLZFbpNXrhc24CnTFd	Australia	top200	MOVE_DOWN	12433
+348	348	Famous	147	1483228800000000000	Kanye West	https://open.spotify.com/track/19a3JfW8BQwqHWUMbcqSx8	Australia	top200	MOVE_UP	12343
+349	349	V. 3005	148	1483228800000000000	Childish Gambino	https://open.spotify.com/track/7wwifjNAb172PtDpKK3CoR	Australia	top200	NEW_ENTRY	12321
+350	350	No Scrubs	149	1483228800000000000	TLC	https://open.spotify.com/track/1KGi9sZVMeszgZOWivFpxs	Australia	top200	MOVE_DOWN	12277
+351	351	Alone	150	1483228800000000000	Alan Walker	https://open.spotify.com/track/0JiVRyTJcJnmlwCZ854K4p	Australia	top200	NEW_ENTRY	12260
+352	352	Me, Myself & I	151	1483228800000000000	G-Eazy, Bebe Rexha	https://open.spotify.com/track/40YcuQysJ0KlGQTeGUosTC	Australia	top200	MOVE_UP	12190
+353	353	Hear Me Now	152	1483228800000000000	Alok, Bruno Martini, Zeeba	https://open.spotify.com/track/1a5Yu5L18qNxVhXx38njON	Australia	top200	NEW_ENTRY	12185
+354	354	Millionaire (feat. Nelly)	153	1483228800000000000	Cash Cash, Digital Farm Animals	https://open.spotify.com/track/3UDXkdQquqCEAJdNAsA1wO	Australia	top200	NEW_ENTRY	12179
+355	355	Hey Ya!	154	1483228800000000000	Outkast	https://open.spotify.com/track/2PpruBYCo4H7WOBJ7Q2EwM	Australia	top200	MOVE_DOWN	12147
+356	356	Hotline Bling	155	1483228800000000000	Drake	https://open.spotify.com/track/2FBUoWkIuQXwayw2RNo5l6	Australia	top200	MOVE_UP	12142
+357	357	Can't Hold Us - feat. Ray Dalton	156	1483228800000000000	Macklemore & Ryan Lewis	https://open.spotify.com/track/3bidbhpOYeV4knp8AIu8Xn	Australia	top200	NEW_ENTRY	12141
+358	358	My House	157	1483228800000000000	Flo Rida	https://open.spotify.com/track/6Knv6wdA0luoMUuuoYi2i1	Australia	top200	MOVE_UP	12109
+359	359	All Night (feat. Knox Fortune)	158	1483228800000000000	Chance the Rapper	https://open.spotify.com/track/60xaS8mYBKUW4VQQ666N0T	Australia	top200	MOVE_DOWN	12094
+360	360	Weak	159	1483228800000000000	AJR	https://open.spotify.com/track/3E2Zh20GDCR9B1EYjfXWyv	Australia	top200	NEW_ENTRY	11853
+361	361	Light	160	1483228800000000000	San Holo	https://open.spotify.com/track/7zTx8ePYAmPFQuxP3xlXZn	Australia	top200	NEW_ENTRY	11662
+362	362	No Money	161	1483228800000000000	Galantis	https://open.spotify.com/track/0gb1J5UrTpzaU1s3nupgCd	Australia	top200	MOVE_UP	11661
+363	363	Let It Go	162	1483228800000000000	James Bay	https://open.spotify.com/track/13HVjjWUZFaWilh2QUJKsP	Australia	top200	NEW_ENTRY	11626
+364	364	No Problem (feat. Lil Wayne & 2 Chainz)	163	1483228800000000000	Chance the Rapper	https://open.spotify.com/track/0v9Wz8o0BT8DU38R4ddjeH	Australia	top200	NEW_ENTRY	11556
+365	365	Where Are Ü Now (with Justin Bieber)	164	1483228800000000000	Jack Ü, Skrillex, Diplo	https://open.spotify.com/track/66hayvUbTotekKU3H4ta1f	Australia	top200	MOVE_DOWN	11427
+366	366	Blow Your Mind (Mwah)	165	1483228800000000000	Dua Lipa	https://open.spotify.com/track/2eAAEa8pxKF7My0EO4rFgR	Australia	top200	NEW_ENTRY	11405
+367	367	Set In Stone	166	1483228800000000000	Guy Sebastian	https://open.spotify.com/track/4ZfpHQ2mkA4HYZtVWBfOCK	Australia	top200	NEW_ENTRY	11358
+368	368	Starboy - Kygo Remix	167	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/6L778PA16SuyYvFhqnMndY	Australia	top200	NEW_ENTRY	11281
+369	369	Chill Bill (feat. J. Davi$ & Spooks)	168	1483228800000000000	Rob $tone	https://open.spotify.com/track/5uDASfU19gDxSjW8cnCaBp	Australia	top200	NEW_ENTRY	11245
+370	370	Wonderwall - Remastered	169	1483228800000000000	Oasis	https://open.spotify.com/track/5qqabIl2vWzo9ApSC317sa	Australia	top200	MOVE_UP	11143
+371	371	Let Her Go	170	1483228800000000000	Passenger	https://open.spotify.com/track/2jyjhRf6DVbMPU5zxagN2h	Australia	top200	NEW_ENTRY	11123
+372	372	Cheerleader - Felix Jaehn Remix Radio Edit	171	1483228800000000000	OMI	https://open.spotify.com/track/7vFoFDWqTX0mHzLfrF1Cfy	Australia	top200	MOVE_UP	10873
+373	373	September Song	172	1483228800000000000	JP Cooper	https://open.spotify.com/track/0FuTx2s3YH1ppmtiM6l0zI	Australia	top200	NEW_ENTRY	10851
+374	374	Seven Nation Army	173	1483228800000000000	The White Stripes	https://open.spotify.com/track/1jNOi6m3Hn8nLEeHCp5Msr	Australia	top200	NEW_ENTRY	10843
+375	375	How Far I'll Go	174	1483228800000000000	Auli'i Cravalho	https://open.spotify.com/track/6mb6lVLNrcUgLnEN8QnDJd	Australia	top200	NEW_ENTRY	10810
+376	376	I Got You	175	1483228800000000000	Bebe Rexha	https://open.spotify.com/track/1FUViuNSldssMIawrOXF2i	Australia	top200	NEW_ENTRY	10653
+377	377	Hoops	176	1483228800000000000	The Rubens	https://open.spotify.com/track/4yUZPM6OfAY1KJik9rsveW	Australia	top200	NEW_ENTRY	10639
+378	378	That's What I Like	177	1483228800000000000	Bruno Mars	https://open.spotify.com/track/0KKkJNfGyhkQ5aFogxQAPU	Australia	top200	NEW_ENTRY	10556
+379	379	Working For It	178	1483228800000000000	ZHU, Skrillex, THEY.	https://open.spotify.com/track/2HJQcyUpmUuvzS5vBAICIc	Australia	top200	MOVE_DOWN	10530
+380	380	False Alarm	179	1483228800000000000	Matoma, Becky Hill	https://open.spotify.com/track/7gZQfdEQpmwAoPHSbEHzms	Australia	top200	NEW_ENTRY	10521
+381	381	Time of Our Lives	180	1483228800000000000	Pitbull, Ne-Yo	https://open.spotify.com/track/2bJvI42r8EF3wxjOuDav4r	Australia	top200	MOVE_DOWN	10472
+382	382	Steady 1234 (feat. Jasmine Thompson & Skizzy Mars)	181	1483228800000000000	Vice	https://open.spotify.com/track/40UroIGvsMPLPBYwH8rMNA	Australia	top200	NEW_ENTRY	10404
+383	383	You & Me	182	1483228800000000000	Marc E. Bassy, G-Eazy	https://open.spotify.com/track/4QdovcM8j50QPlyR7tH4xe	Australia	top200	NEW_ENTRY	10401
+384	384	Downtown (feat. Melle Mel, Grandmaster Caz, Kool Moe Dee & Eric Nally)	183	1483228800000000000	Macklemore, Ryan Lewis, Grandmaster Melle Mel	https://open.spotify.com/track/5pfJsMwoRYKampPay8amX0	Australia	top200	NEW_ENTRY	10392
+385	385	Is This Love - Remix	184	1483228800000000000	Bob Marley & The Wailers, LVNDSCAPE, Bolier	https://open.spotify.com/track/1w5sLDYzYAGI0AkLc6FPlO	Australia	top200	NEW_ENTRY	10371
+386	386	Wolfie (feat. Julia Stone)	185	1483228800000000000	Golden Features	https://open.spotify.com/track/6rKmnzp0nUpHvjLK7FXSnP	Australia	top200	NEW_ENTRY	10232
+387	387	Jumpman	186	1483228800000000000	Drake, Future	https://open.spotify.com/track/27GmP9AWRs744SzKcpJsTZ	Australia	top200	NEW_ENTRY	10091
+388	388	Six Feet Under	187	1483228800000000000	The Weeknd	https://open.spotify.com/track/4mU5iXHeLgbR94siF7p1sY	Australia	top200	NEW_ENTRY	10030
+389	389	Solo Dance	188	1483228800000000000	Martin Jensen	https://open.spotify.com/track/6HUnnBwYZqcED1eQztxMBN	Australia	top200	NEW_ENTRY	10009
+390	390	Crazy	189	1483228800000000000	Gnarls Barkley	https://open.spotify.com/track/1vxw6aYJls2oq3gW0DujAo	Australia	top200	NEW_ENTRY	9997
+391	391	Party (feat. Usher & Gucci Mane)	190	1483228800000000000	Chris Brown	https://open.spotify.com/track/05Z7jet4VDNVgNQWcYHnrk	Australia	top200	NEW_ENTRY	9994
+392	392	Georgia	191	1483228800000000000	Vance Joy	https://open.spotify.com/track/6Fha6tXHkL3r9m9nNqQG8p	Australia	top200	NEW_ENTRY	9960
+393	393	Without Me	192	1483228800000000000	Eminem	https://open.spotify.com/track/7lQ8MOhq6IN2w8EYcFNSUk	Australia	top200	NEW_ENTRY	9940
+394	394	The Hills	193	1483228800000000000	The Weeknd	https://open.spotify.com/track/25khomWgBVamSdKw7hzm3l	Australia	top200	NEW_ENTRY	9938
+395	395	See You Again (feat. Charlie Puth)	194	1483228800000000000	Wiz Khalifa	https://open.spotify.com/track/6IcrwGdIvRsrImOnoYfG9Z	Australia	top200	NEW_ENTRY	9919
+396	396	Chunky	195	1483228800000000000	Bruno Mars	https://open.spotify.com/track/0mBKv9DkYfQHjdMcw2jdyI	Australia	top200	NEW_ENTRY	9907
+397	397	You Were Right	196	1483228800000000000	RÜFÜS DU SOL	https://open.spotify.com/track/77lqbary6vt1DSc1MBN6sx	Australia	top200	NEW_ENTRY	9869
+398	398	Black Barbies	197	1483228800000000000	Nicki Minaj, Mike WiLL Made-It	https://open.spotify.com/track/3y9cCbnBn0zjkJa2YkOj70	Australia	top200	NEW_ENTRY	9844
+399	399	pick up the phone	198	1483228800000000000	Young Thug, Travis Scott	https://open.spotify.com/track/20dP2DaMHIAmwWAbp7peSr	Australia	top200	NEW_ENTRY	9827
+400	400	Under the Bridge	199	1483228800000000000	Red Hot Chili Peppers	https://open.spotify.com/track/3d9DChrdc6BOeFsbrZ3Is0	Australia	top200	NEW_ENTRY	9823
+401	401	Ocean Drive	200	1483228800000000000	Duke Dumont	https://open.spotify.com/track/0k93MXOj0kSXo84SvSDeUz	Australia	top200	NEW_ENTRY	9790
+402	402	Alone	1	1483228800000000000	Alan Walker	https://open.spotify.com/track/0JiVRyTJcJnmlwCZ854K4p	Austria	top200	MOVE_UP	12990
+403	403	Rockabye (feat. Sean Paul & Anne-Marie)	2	1483228800000000000	Clean Bandit	https://open.spotify.com/track/5knuzwU65gJK7IF5yJsuaW	Austria	top200	MOVE_DOWN	12897
+404	404	Chöre	3	1483228800000000000	Mark Forster	https://open.spotify.com/track/2nYpbaLykC2cjU8Yt5KF1v	Austria	top200	MOVE_UP	10852
+405	405	Bad Ideas	4	1483228800000000000	Alle Farben	https://open.spotify.com/track/76gwG061wqdatYhicO2hG4	Austria	top200	MOVE_DOWN	10837
+406	406	Closer	5	1483228800000000000	The Chainsmokers, Halsey	https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw	Austria	top200	SAME_POSITION	10317
+407	407	"I Don’t Wanna Live Forever (Fifty Shades Darker) - From ""Fifty Shades Darker (Original Motion Picture Soundtrack)"""	6	1483228800000000000	ZAYN, Taylor Swift	https://open.spotify.com/track/3NdDpSvN911VPGivFlV5d0	Austria	top200	MOVE_UP	9551
+408	408	Starboy	7	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5aAx2yezTd8zXrkmtKl66Z	Austria	top200	MOVE_UP	9165
+409	409	Call On Me - Ryan Riback Extended Remix	8	1483228800000000000	Starley	https://open.spotify.com/track/78rIJddV4X0HkNAInEcYde	Austria	top200	MOVE_DOWN	9146
+410	410	Say You Won't Let Go	9	1483228800000000000	James Arthur	https://open.spotify.com/track/5uCax9HTNlzGybIStD3vDh	Austria	top200	MOVE_UP	8756
+411	411	Shed a Light	10	1483228800000000000	Robin Schulz, David Guetta, Cheat Codes	https://open.spotify.com/track/1cG0umU5TKStygKsPFZ9pY	Austria	top200	SAME_POSITION	8726
+412	412	Let Me Love You	11	1483228800000000000	DJ Snake, Justin Bieber	https://open.spotify.com/track/4pdPtRcBmOSQDlJ3Fk945m	Austria	top200	MOVE_DOWN	8363
+413	413	My Way	12	1483228800000000000	Calvin Harris	https://open.spotify.com/track/1vvNmPOiUuyCbgWmtc6yfm	Austria	top200	MOVE_DOWN	7873
+414	414	Just Hold On	13	1483228800000000000	Steve Aoki, Louis Tomlinson	https://open.spotify.com/track/3EmmCZoqpWOTY1g2GBwJoR	Austria	top200	MOVE_UP	7780
+415	415	Don't Wanna Know	14	1483228800000000000	Maroon 5, Kendrick Lamar	https://open.spotify.com/track/5MFzQMkrl1FOOng9tq6R9r	Austria	top200	MOVE_DOWN	7747
+416	416	Solo Dance	15	1483228800000000000	Martin Jensen	https://open.spotify.com/track/6HUnnBwYZqcED1eQztxMBN	Austria	top200	SAME_POSITION	7535
+417	417	Now and Later	16	1483228800000000000	Sage The Gemini	https://open.spotify.com/track/08WPvDEsHvTFuB9w8tC2OS	Austria	top200	MOVE_UP	7194
+418	418	Lot to Learn	17	1483228800000000000	Luke Christopher	https://open.spotify.com/track/2HzfRSfCogBSsgW2CckVA2	Austria	top200	MOVE_UP	7019
+419	419	All Night	71	1483228800000000000	The Vamps, Matoma	https://open.spotify.com/track/4b4KcovePX8Ke2cLIQTLM0	Austria	top200	MOVE_UP	2869
+420	420	Would I Lie to You - Radio Edit	18	1483228800000000000	David Guetta, Cedric Gervais, Chris Willis	https://open.spotify.com/track/4PdJSsESm34djLfBde9Pr2	Austria	top200	MOVE_DOWN	6960
+421	421	Black Beatles	19	1483228800000000000	Rae Sremmurd, Gucci Mane	https://open.spotify.com/track/6fujklziTHa8uoM5OQSfIo	Austria	top200	MOVE_UP	6954
+422	422	Mercy	20	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4TZy1wLyHec06pwgFYDh1a	Austria	top200	MOVE_UP	6887
+423	423	In the Name of Love	21	1483228800000000000	Martin Garrix, Bebe Rexha	https://open.spotify.com/track/04DwTuZ2VBdJCCC5TROn7L	Austria	top200	SAME_POSITION	6754
+424	424	One Dance	22	1483228800000000000	Drake, WizKid, Kyla	https://open.spotify.com/track/1xznGGDReH1oQq0xzbwXa3	Austria	top200	MOVE_DOWN	6515
+425	425	Human	23	1483228800000000000	Rag'n'Bone Man	https://open.spotify.com/track/58zsLZPvfflaiIbNWoA22O	Austria	top200	MOVE_UP	6350
+426	426	Don't Let Me Down (feat. Daya)	24	1483228800000000000	The Chainsmokers	https://open.spotify.com/track/0QsvXIfqM0zZoerQfsI9lm	Austria	top200	MOVE_DOWN	5942
+427	427	Cold Water (feat. Justin Bieber & MØ)	25	1483228800000000000	Major Lazer	https://open.spotify.com/track/6DNtNfH8hXkqOX1sjqmI7p	Austria	top200	MOVE_DOWN	5788
+428	428	Heathens	26	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/6i0V12jOa3mr6uu4WYhUBr	Austria	top200	MOVE_UP	5779
+429	429	Scars To Your Beautiful	27	1483228800000000000	Alessia Cara	https://open.spotify.com/track/0prNGof3XqfTvNDxHonvdK	Austria	top200	MOVE_UP	5556
+430	430	No Lie	28	1483228800000000000	Sean Paul, Dua Lipa	https://open.spotify.com/track/3cFsmM51N5zMAuu1nNY4Tw	Austria	top200	SAME_POSITION	5439
+431	431	What Is Love 2016	29	1483228800000000000	Lost Frequencies	https://open.spotify.com/track/5hIR7SX1fSrr5evIAPDY5o	Austria	top200	MOVE_UP	5359
+432	432	All We Know	30	1483228800000000000	The Chainsmokers, Phoebe Ryan	https://open.spotify.com/track/2rizacJSyD9S1IQUxUxnsK	Austria	top200	SAME_POSITION	5340
+433	433	The Mack	31	1483228800000000000	Nevada, Mark Morrison, Fetty Wap	https://open.spotify.com/track/7aV2mflaASUmGhCErm7kBO	Austria	top200	MOVE_DOWN	5325
+434	434	By Your Side	32	1483228800000000000	Jonas Blue, RAYE	https://open.spotify.com/track/1D3ODoXHBLpdxolZRHWV1j	Austria	top200	MOVE_UP	5231
+435	435	Dye My Hair	33	1483228800000000000	ALMA	https://open.spotify.com/track/5NafFxaLg9Ep21oTHBw7Zq	Austria	top200	MOVE_DOWN	5192
+436	436	Love Me Now	34	1483228800000000000	John Legend	https://open.spotify.com/track/6nxQdXa1uAL0rY72wPZu89	Austria	top200	MOVE_UP	5188
+437	437	Cheap Thrills	35	1483228800000000000	Sia	https://open.spotify.com/track/27SdWb2rFzO6GWiYDBTD9j	Austria	top200	MOVE_DOWN	5187
+438	438	Treat You Better	36	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4Hf7WnR761jpxPr5D46Bcd	Austria	top200	MOVE_DOWN	5017
+439	439	Jedermann	37	1483228800000000000	Pizzera & Jaus	https://open.spotify.com/track/4rkEjyRMjc6rcj7WROZ9XK	Austria	top200	MOVE_UP	4932
+440	440	Bonfire	38	1483228800000000000	Felix Jaehn, ALMA	https://open.spotify.com/track/5hz9DEkahyWoTs3rxJOTtw	Austria	top200	MOVE_DOWN	4790
+441	441	Ohne mein Team	39	1483228800000000000	Bonez MC, RAF Camora, Maxwell	https://open.spotify.com/track/05Mp2UJulSttxQ4E6hQPH3	Austria	top200	MOVE_UP	4737
+442	442	iPhone 17 (feat. Moé)	40	1483228800000000000	KC Rebell	https://open.spotify.com/track/6rwCkGBh7CV6pcdxZKbcsG	Austria	top200	MOVE_UP	4691
+443	443	The Ocean (feat. Shy Martin)	41	1483228800000000000	Mike Perry	https://open.spotify.com/track/2CPqh63wRVscbceKcPxwvv	Austria	top200	MOVE_DOWN	4644
+444	444	24K Magic	42	1483228800000000000	Bruno Mars	https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P	Austria	top200	MOVE_UP	4558
+445	445	Alarm	43	1483228800000000000	Anne-Marie	https://open.spotify.com/track/0OwX5aROoW1Iip8FV51Efg	Austria	top200	MOVE_DOWN	4362
+446	446	Final Song	44	1483228800000000000	MØ	https://open.spotify.com/track/4qqArAiTPueDxIp7cf87h7	Austria	top200	MOVE_DOWN	4337
+447	447	"CAN'T STOP THE FEELING! (Original Song from DreamWorks Animation's ""TROLLS"")"	45	1483228800000000000	Justin Timberlake	https://open.spotify.com/track/6JV2JOEocMgcZxYSZelKcc	Austria	top200	MOVE_DOWN	4310
+448	448	Starving	46	1483228800000000000	Hailee Steinfeld, Grey, Zedd	https://open.spotify.com/track/1qOLh0tI7trd1zdDKxYZTe	Austria	top200	MOVE_UP	4288
+449	449	I Feel It Coming	47	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5GXAXm5YOmYT0kL5jHvYBt	Austria	top200	MOVE_UP	4275
+450	450	Faded	48	1483228800000000000	Alan Walker	https://open.spotify.com/track/7gHs73wELdeycvS48JfIos	Austria	top200	MOVE_DOWN	4184
+451	451	I Took A Pill In Ibiza - Seeb Remix	49	1483228800000000000	Mike Posner	https://open.spotify.com/track/17Fd6Yb7mSbinKG8LoWfFl	Austria	top200	MOVE_DOWN	4175
+452	452	Holz	50	1483228800000000000	257ers	https://open.spotify.com/track/7eINNUMHd6YAPldsUlCz9q	Austria	top200	SAME_POSITION	3968
+453	453	Stressed Out	51	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn	Austria	top200	SAME_POSITION	3869
+454	454	Side To Side	52	1483228800000000000	Ariana Grande, Nicki Minaj	https://open.spotify.com/track/4pLwZjInHj3SimIyN9SnOz	Austria	top200	MOVE_UP	3833
+455	455	Ride	53	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW	Austria	top200	MOVE_UP	3624
+456	456	Hear Me Now	54	1483228800000000000	Alok, Bruno Martini, Zeeba	https://open.spotify.com/track/1a5Yu5L18qNxVhXx38njON	Austria	top200	MOVE_UP	3596
+457	457	Sexual	55	1483228800000000000	NEIKED, Dyo	https://open.spotify.com/track/3AsAuGTaDQzavZZThyYlop	Austria	top200	MOVE_UP	3472
+458	458	Light It Up (feat. Nyla & Fuse ODG) - Remix	56	1483228800000000000	Major Lazer	https://open.spotify.com/track/0L7loeTIg6akW84aEQZpCT	Austria	top200	MOVE_DOWN	3466
+459	459	Sucker for Pain (with Wiz Khalifa, Imagine Dragons, Logic & Ty Dolla $ign feat. X Ambassadors)	57	1483228800000000000	Lil Wayne	https://open.spotify.com/track/4dASQiO1Eoo3RJvt74FtXB	Austria	top200	MOVE_UP	3423
+460	460	Fake Love	58	1483228800000000000	Drake	https://open.spotify.com/track/343YBumqHu19cGoGARUTsd	Austria	top200	MOVE_UP	3382
+461	461	Hallelujah	59	1483228800000000000	Pentatonix	https://open.spotify.com/track/550rQQCGkrTzvp4SfpOPzx	Austria	top200	MOVE_UP	3356
+462	462	The Greatest	60	1483228800000000000	Sia	https://open.spotify.com/track/6bLopGnirdrilrpdVB6Um1	Austria	top200	SAME_POSITION	3317
+463	463	Fast Car	61	1483228800000000000	Jonas Blue, Dakota	https://open.spotify.com/track/6OZh916QF8XNunWaP97WEZ	Austria	top200	MOVE_DOWN	3277
+464	464	Chantaje (feat. Maluma)	62	1483228800000000000	Shakira	https://open.spotify.com/track/6mICuAdrwEjh6Y6lroV2Kg	Austria	top200	MOVE_UP	3245
+465	465	Never Give Up	63	1483228800000000000	Sia	https://open.spotify.com/track/1ssmjAYSU5PbmsjLq5yrNH	Austria	top200	MOVE_DOWN	3241
+466	466	Water Under the Bridge	64	1483228800000000000	Adele	https://open.spotify.com/track/4vb4mFvYsr2h6enhjJsq9Y	Austria	top200	MOVE_UP	3114
+467	467	Sex	65	1483228800000000000	Cheat Codes, Kris Kross Amsterdam	https://open.spotify.com/track/5DA77EqppDmCTWGovd4oTP	Austria	top200	MOVE_DOWN	3107
+468	468	Capsize	66	1483228800000000000	FRENSHIP, Emily Warren	https://open.spotify.com/track/2XMTqoHHSH0lvuXrvIEdco	Austria	top200	SAME_POSITION	3086
+469	469	Love on Me	67	1483228800000000000	Galantis, Hook N Sling	https://open.spotify.com/track/2MHCiOohBZEQuLgDTPvSzF	Austria	top200	MOVE_DOWN	3018
+470	470	Miss You	68	1483228800000000000	James Hersey	https://open.spotify.com/track/7of1slAJIWrXxP8ikAHxje	Austria	top200	MOVE_UP	2944
+471	471	Work from Home (feat. Ty Dolla $ign)	69	1483228800000000000	Fifth Harmony	https://open.spotify.com/track/4tCtwWceOPWzenK2HAIJSb	Austria	top200	MOVE_DOWN	2911
+472	472	Palmen aus Gold	70	1483228800000000000	Bonez MC, RAF Camora	https://open.spotify.com/track/0t4v7Q4yzb9SOQohayL33W	Austria	top200	MOVE_UP	2875
+473	473	Cocoon	72	1483228800000000000	Milky Chance	https://open.spotify.com/track/0L87MffumRNWrY2SNUFcvs	Austria	top200	MOVE_UP	2865
+474	474	Perfect Strangers	73	1483228800000000000	Jonas Blue, JP Cooper	https://open.spotify.com/track/5bZtRlMBU76vHuDOb1GM5u	Austria	top200	MOVE_DOWN	2841
+475	475	Steady 1234 (feat. Jasmine Thompson & Skizzy Mars)	74	1483228800000000000	Vice	https://open.spotify.com/track/40UroIGvsMPLPBYwH8rMNA	Austria	top200	MOVE_UP	2798
+476	476	Sunset Lover	75	1483228800000000000	Petit Biscuit	https://open.spotify.com/track/0hNduWmlWmEmuwEFcYvRu1	Austria	top200	MOVE_UP	2756
+477	477	Tuesday	76	1483228800000000000	Burak Yeter, Danelle Sandoval	https://open.spotify.com/track/7abpmGpF7PGep2rDU68GBR	Austria	top200	MOVE_UP	2700
+478	478	Kokaina	77	1483228800000000000	Miami Yacine	https://open.spotify.com/track/2KHbPYI22yWIOgWUsApYIS	Austria	top200	MOVE_UP	2634
+479	479	Palmen aus Plastik	78	1483228800000000000	Bonez MC, RAF Camora	https://open.spotify.com/track/6wHRm1KR8pzVDPdmR6Qovj	Austria	top200	MOVE_UP	2627
+480	480	Me, Myself & I	79	1483228800000000000	G-Eazy, Bebe Rexha	https://open.spotify.com/track/40YcuQysJ0KlGQTeGUosTC	Austria	top200	MOVE_DOWN	2612
+481	481	I Was Wrong - Robin Schulz Remix	80	1483228800000000000	A R I Z O N A	https://open.spotify.com/track/3TZ3MiMILR5wrQbbWiFUwI	Austria	top200	MOVE_UP	2604
+482	482	Don't Be So Shy - Filatov & Karas Remix	81	1483228800000000000	Imany	https://open.spotify.com/track/00vk0sEfb6mr2ehwSw0Uhn	Austria	top200	MOVE_DOWN	2559
+483	483	Stoff und Schnaps	82	1483228800000000000	Lil Kleine, Ronnie Flex	https://open.spotify.com/track/463oFGElXVcP8ueC72zvMj	Austria	top200	MOVE_DOWN	2523
+484	484	The Greatest (feat. Kendrick Lamar)	83	1483228800000000000	Sia	https://open.spotify.com/track/7xHWNBFm6ObGEQPaUxHuKO	Austria	top200	MOVE_DOWN	2431
+485	485	Let Me Hold You (Turn Me On)	84	1483228800000000000	Dante Klein, Cheat Codes	https://open.spotify.com/track/0lmdsH1MIoLsMymnNpd6HU	Austria	top200	MOVE_DOWN	2426
+486	486	Hymn for the Weekend - Seeb Remix	85	1483228800000000000	Coldplay	https://open.spotify.com/track/1OAiWI2oPmglaOiv9fdioU	Austria	top200	MOVE_DOWN	2422
+487	487	No Money	86	1483228800000000000	Galantis	https://open.spotify.com/track/0gb1J5UrTpzaU1s3nupgCd	Austria	top200	MOVE_DOWN	2405
+488	488	Your Soul (Holding On)	87	1483228800000000000	RHODES, Felix Jaehn	https://open.spotify.com/track/4nxvRweTK5ZZhbH3G7PuEn	Austria	top200	MOVE_DOWN	2362
+489	489	Ain't My Fault	88	1483228800000000000	Zara Larsson	https://open.spotify.com/track/0ADG9OgdVTL7fgREP75BrZ	Austria	top200	MOVE_DOWN	2358
+490	490	Sorry	89	1483228800000000000	Justin Bieber	https://open.spotify.com/track/69bp2EbF7Q2rqc5N3ylezZ	Austria	top200	MOVE_UP	2347
+491	491	Hulapalu	90	1483228800000000000	Andreas Gabalier	https://open.spotify.com/track/7zja6rwquGA6vzLolzKrda	Austria	top200	MOVE_UP	2346
+492	492	Dancing On My Own	91	1483228800000000000	Calum Scott	https://open.spotify.com/track/02WacdrRpm4zlP8H7X6bnQ	Austria	top200	MOVE_UP	2313
+493	493	Panda	92	1483228800000000000	Desiigner	https://open.spotify.com/track/5OOkp4U9P9oL23maHFHL1h	Austria	top200	SAME_POSITION	2304
+494	494	Weak	93	1483228800000000000	AJR	https://open.spotify.com/track/3E2Zh20GDCR9B1EYjfXWyv	Austria	top200	MOVE_UP	2271
+495	495	Lost on You	94	1483228800000000000	LP	https://open.spotify.com/track/3SqvR3HYLlCTYzbDXJ52OC	Austria	top200	MOVE_UP	2269
+496	496	Ham kummst	95	1483228800000000000	Seiler und Speer	https://open.spotify.com/track/30t2cItUPY7CvZOup7zptn	Austria	top200	MOVE_UP	2234
+497	497	Fresh Eyes	96	1483228800000000000	Andy Grammer	https://open.spotify.com/track/4nMlau89VAjmV7agkl7OY3	Austria	top200	MOVE_UP	2200
+498	498	Cake By The Ocean	97	1483228800000000000	DNCE	https://open.spotify.com/track/2aFiaMXmWsM3Vj72F9ksBl	Austria	top200	MOVE_DOWN	2158
+499	499	Make Me (Cry)	98	1483228800000000000	Noah Cyrus, Labrinth	https://open.spotify.com/track/2BrzlUj1u1CtvaJDGIKpsP	Austria	top200	MOVE_UP	2122
+500	500	Work	99	1483228800000000000	Rihanna, Drake	https://open.spotify.com/track/14WWzenpaEgQZlqPq2nk4v	Austria	top200	MOVE_DOWN	2118
+501	501	Setting Fires	100	1483228800000000000	The Chainsmokers, XYLØ	https://open.spotify.com/track/0B8B8cVRFIG1yznoQe7c9s	Austria	top200	MOVE_DOWN	2065
+502	502	We Don't Talk Anymore (feat. Selena Gomez)	101	1483228800000000000	Charlie Puth	https://open.spotify.com/track/68EMU2RD1ECNeOeJ5qAXCV	Austria	top200	MOVE_UP	2025
+503	503	Musik sein	102	1483228800000000000	Wincent Weiss	https://open.spotify.com/track/1UXyQicTgZI4PT4zflpodi	Austria	top200	MOVE_UP	2011
+504	504	Bad Things (with Camila Cabello)	103	1483228800000000000	Machine Gun Kelly	https://open.spotify.com/track/1PSBzsahR2AKwLJgx8ehBj	Austria	top200	MOVE_UP	1995
+505	505	Sing Me to Sleep	104	1483228800000000000	Alan Walker	https://open.spotify.com/track/2Fjz5ZC5BvFdCqcnTZ3ilH	Austria	top200	MOVE_UP	1988
+506	506	The Sound of Silence	105	1483228800000000000	Disturbed	https://open.spotify.com/track/0eZBeB2xFIS65jQHerispi	Austria	top200	MOVE_UP	1968
+507	507	I Would Like	106	1483228800000000000	Zara Larsson	https://open.spotify.com/track/4Q4jmPHwu0wrJvqrld0FQ6	Austria	top200	MOVE_UP	1957
+508	508	Broccoli (feat. Lil Yachty)	107	1483228800000000000	Shelley FKA DRAM	https://open.spotify.com/track/7yyRTcZmCiyzzJlNzGC9Ol	Austria	top200	MOVE_UP	1955
+509	509	Don't You Know - Radio Edit	108	1483228800000000000	Kungs, Jamie N Commons	https://open.spotify.com/track/0cAuqPI1R8RlFsXXWWO039	Austria	top200	MOVE_UP	1917
+510	510	This Is What You Came For (feat. Rihanna)	109	1483228800000000000	Calvin Harris	https://open.spotify.com/track/0azC730Exh71aQlOt9Zj3y	Austria	top200	MOVE_DOWN	1912
+511	511	Please Tell Rosie	110	1483228800000000000	Alle Farben, Younotus	https://open.spotify.com/track/2IDDQFHRf9iH35jeL89uNs	Austria	top200	MOVE_UP	1909
+512	512	Bad and Boujee (feat. Lil Uzi Vert)	111	1483228800000000000	Migos	https://open.spotify.com/track/4Km5HrUvYTaSUfiSGPJeQR	Austria	top200	MOVE_UP	1898
+513	513	Ain't Your Mama	112	1483228800000000000	Jennifer Lopez	https://open.spotify.com/track/2hgzdQdnfWwtdpZbhZlV72	Austria	top200	MOVE_DOWN	1898
+514	514	What Do You Love	113	1483228800000000000	Seeb, Jacob Banks	https://open.spotify.com/track/0h4FK0CnlZ3oJnZ6quEk1P	Austria	top200	MOVE_DOWN	1893
+515	515	This Girl (Kungs Vs. Cookin' On 3 Burners)	114	1483228800000000000	Kungs	https://open.spotify.com/track/0tICYNayWWhH9GPeFrfjfD	Austria	top200	MOVE_DOWN	1881
+516	516	Trust Nobody (feat. Selena Gomez & Tory Lanez)	115	1483228800000000000	Cashmere Cat	https://open.spotify.com/track/2wDjpPW3HZdA9quPPmZAMu	Austria	top200	MOVE_UP	1871
+517	517	Love Yourself	116	1483228800000000000	Justin Bieber	https://open.spotify.com/track/3hB5DgAiMAQ4DzYbsMq1IT	Austria	top200	MOVE_DOWN	1869
+518	518	An ihnen vorbei	117	1483228800000000000	Bonez MC, RAF Camora	https://open.spotify.com/track/7istTRCq9OK5cEC8sPAc50	Austria	top200	MOVE_UP	1853
+519	519	i hate u, i love u (feat. olivia o'brien)	118	1483228800000000000	gnash	https://open.spotify.com/track/7vRriwrloYVaoAe3a9wJHe	Austria	top200	MOVE_UP	1818
+520	520	Heatwave (feat. Akon)	119	1483228800000000000	Robin Schulz	https://open.spotify.com/track/2KMJ5CoxY4ECG9TZyNWmpv	Austria	top200	MOVE_DOWN	1807
+521	521	Dynamite (feat. Pretty Sister)	120	1483228800000000000	Nause	https://open.spotify.com/track/2Ae5awwKvQpTBKQHr1TYCg	Austria	top200	MOVE_UP	1794
+522	522	I'm in Love with the Coco	121	1483228800000000000	Hitimpulse	https://open.spotify.com/track/7sU6BDmS1qwb78OpUMARPb	Austria	top200	MOVE_DOWN	1753
+523	523	Wenn sie tanzt	122	1483228800000000000	Max Giesinger	https://open.spotify.com/track/5yKfZwcuSoEkOemLJX6hEm	Austria	top200	MOVE_UP	1753
+524	524	I Got You	123	1483228800000000000	Bebe Rexha	https://open.spotify.com/track/1FUViuNSldssMIawrOXF2i	Austria	top200	MOVE_UP	1729
+525	525	Too Good	81	1483228800000000000	Drake, Rihanna	https://open.spotify.com/track/11KJSRSgaDxqydKYiD2Jew	Belgium	top200	MOVE_UP	3857
+526	526	Can't Hold Us - feat. Ray Dalton	124	1483228800000000000	Macklemore & Ryan Lewis	https://open.spotify.com/track/3bidbhpOYeV4knp8AIu8Xn	Austria	top200	MOVE_DOWN	1709
+527	527	Die Immer Lacht - Radio 2016 Mix	125	1483228800000000000	Stereoact, Kerstin Ott	https://open.spotify.com/track/2qOMpFfLZ0agDTouBxUDCb	Austria	top200	MOVE_DOWN	1698
+528	528	Shout Out to My Ex	126	1483228800000000000	Little Mix	https://open.spotify.com/track/0YHUITU3w6ws1v8ehT264g	Austria	top200	MOVE_DOWN	1684
+529	529	7 Years	127	1483228800000000000	Lukas Graham	https://open.spotify.com/track/7129iqBafaphfc3WPCGC0L	Austria	top200	MOVE_UP	1665
+530	530	Wonderwall - Remastered	128	1483228800000000000	Oasis	https://open.spotify.com/track/5qqabIl2vWzo9ApSC317sa	Austria	top200	MOVE_UP	1645
+531	531	Spirits	129	1483228800000000000	The Strumbellas	https://open.spotify.com/track/2H6dHxAxGq5oQ9EiinNpXT	Austria	top200	MOVE_UP	1631
+532	532	"How Far I'll Go - From ""Moana"""	130	1483228800000000000	Alessia Cara	https://open.spotify.com/track/5hYTyyh2odQKphUbMqc5gN	Austria	top200	MOVE_UP	1630
+533	533	Inside the Lines (feat. Casso)	131	1483228800000000000	Mike Perry	https://open.spotify.com/track/3qaYuV5XZAwiOvGE91HhwS	Austria	top200	MOVE_UP	1619
+534	534	Bianco	132	1483228800000000000	Yung Hurn, RIN	https://open.spotify.com/track/0ekFioHmdtwcITYOYXavl6	Austria	top200	MOVE_UP	1599
+535	535	Sofia	133	1483228800000000000	Alvaro Soler	https://open.spotify.com/track/1VoHrSS3QQ6TbpabLrFiYb	Austria	top200	MOVE_UP	1586
+536	536	Lush Life	134	1483228800000000000	Zara Larsson	https://open.spotify.com/track/1rIKgCH4H52lrvDcz50hS8	Austria	top200	MOVE_DOWN	1586
+537	537	"Lose Yourself - From ""8 Mile"" Soundtrack"	135	1483228800000000000	Eminem	https://open.spotify.com/track/5Z01UMMf7V1o0MzF86s6WJ	Austria	top200	MOVE_UP	1576
+538	538	Wannabe	136	1483228800000000000	Spice Girls	https://open.spotify.com/track/1Je1IMUlBXcx1Fz0WE7oPT	Austria	top200	MOVE_DOWN	1573
+539	539	Love On The Brain	137	1483228800000000000	Rihanna	https://open.spotify.com/track/2aksifNn5ph8igDOkPBA02	Austria	top200	MOVE_UP	1572
+540	540	Places	138	1483228800000000000	Martin Solveig, Ina Wroldsen	https://open.spotify.com/track/6O85MfGECKBqAK2MgSbCaj	Austria	top200	MOVE_DOWN	1561
+541	541	Mörder	139	1483228800000000000	Bonez MC, RAF Camora, Gzuz	https://open.spotify.com/track/6v6xHeuMLbCuddN0ETrGhs	Austria	top200	MOVE_UP	1541
+542	542	Juju on That Beat (TZ Anthem)	140	1483228800000000000	Zay Hilfigerrr, Zayion McCall	https://open.spotify.com/track/1lItf5ZXJc1by9SbPeljFd	Austria	top200	MOVE_UP	1520
+543	543	Roses (feat. ROZES)	141	1483228800000000000	The Chainsmokers	https://open.spotify.com/track/6O6M7pJLABmfBRoGZMu76Y	Austria	top200	MOVE_UP	1512
+544	544	My House	142	1483228800000000000	Flo Rida	https://open.spotify.com/track/6Knv6wdA0luoMUuuoYi2i1	Austria	top200	MOVE_DOWN	1512
+545	545	Hey Baby	143	1483228800000000000	Dimitri Vegas & Like Mike, Diplo, Deb’s Daughter	https://open.spotify.com/track/6yc377A8qxHIjPUcjGD4ET	Austria	top200	MOVE_DOWN	1510
+546	546	Willst du	144	1483228800000000000	Alligatoah	https://open.spotify.com/track/3g62kHCCbNwhEKYywx5Xwz	Austria	top200	MOVE_UP	1503
+547	547	Don't Stop Believin'	145	1483228800000000000	Journey	https://open.spotify.com/track/4bHsxqR3GMrXTxEPLuK5ue	Austria	top200	MOVE_UP	1501
+548	548	All Time Low	146	1483228800000000000	Jon Bellion	https://open.spotify.com/track/1CnPYaKxTVb4LWOtiGOm0m	Austria	top200	MOVE_UP	1490
+549	549	This Town	147	1483228800000000000	Niall Horan	https://open.spotify.com/track/5nA67Y0XX9JipZwYxX7Gl7	Austria	top200	NEW_ENTRY	1440
+550	550	False Alarm	148	1483228800000000000	Matoma, Becky Hill	https://open.spotify.com/track/7gZQfdEQpmwAoPHSbEHzms	Austria	top200	MOVE_DOWN	1436
+551	551	Bailar (feat. Elvis Crespo) - Radio Edit	149	1483228800000000000	Deorro	https://open.spotify.com/track/1HCw8XKtTgWWU3JlEUR0qQ	Austria	top200	MOVE_DOWN	1436
+552	552	Love My Life	150	1483228800000000000	Robbie Williams	https://open.spotify.com/track/1YW369EbVyjpeLE3YbsjKQ	Austria	top200	MOVE_UP	1427
+553	553	Lean On (feat. MØ & DJ Snake)	151	1483228800000000000	Major Lazer	https://open.spotify.com/track/4WjH9Bzt3kx7z8kl0awxh4	Austria	top200	MOVE_UP	1425
+554	554	Boom (feat. MOTi, TY Dolla $ign, Wizkid & Kranium)	152	1483228800000000000	Major Lazer	https://open.spotify.com/track/3ghPeGA7IkGIZsrIKw9wbi	Austria	top200	MOVE_DOWN	1422
+555	555	Stitches	153	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/1WP1r7fuvRqZRnUaTi2I1Q	Austria	top200	MOVE_UP	1418
+556	556	Atemlos durch die Nacht	154	1483228800000000000	Helene Fischer	https://open.spotify.com/track/5fPGpdC4tmcVMmTuJV2HRg	Austria	top200	MOVE_DOWN	1409
+557	557	Wake Up Where You Are	155	1483228800000000000	State of Sound	https://open.spotify.com/track/2s76aKBWKShlwPC4xTtEEE	Austria	top200	MOVE_DOWN	1398
+558	558	Come First	156	1483228800000000000	Terror Jr	https://open.spotify.com/track/5fo4LbJ8lOaB54wcM5wPMv	Austria	top200	NEW_ENTRY	1396
+559	559	Taped up Heart (feat. Clara Mae)	157	1483228800000000000	KREAM	https://open.spotify.com/track/26hcyzSE154xMZCbFdtInA	Austria	top200	MOVE_UP	1386
+560	560	Party Monster	158	1483228800000000000	The Weeknd	https://open.spotify.com/track/4F7A0DXBrmUAkp32uenhZt	Austria	top200	MOVE_DOWN	1386
+561	561	Stronger	159	1483228800000000000	Kanye West	https://open.spotify.com/track/6C7RJEIUDqKkJRZVWdkfkH	Austria	top200	MOVE_DOWN	1375
+562	562	Sugar (feat. Francesco Yates)	160	1483228800000000000	Robin Schulz	https://open.spotify.com/track/5tf1VVWniHgryyumXyJM7w	Austria	top200	MOVE_DOWN	1371
+563	563	Let's Hurt Tonight	161	1483228800000000000	OneRepublic	https://open.spotify.com/track/1oc4kHthIpfa2jQnIL33GE	Austria	top200	NEW_ENTRY	1357
+564	564	Soits lebn	162	1483228800000000000	Seiler und Speer	https://open.spotify.com/track/6pC9WwxPwliXagk4L8cnuD	Austria	top200	MOVE_UP	1354
+565	565	Too Good	163	1483228800000000000	Drake, Rihanna	https://open.spotify.com/track/11KJSRSgaDxqydKYiD2Jew	Austria	top200	MOVE_DOWN	1350
+566	566	10 Jahre	164	1483228800000000000	Gzuz, LX, Bonez MC, Maxwell	https://open.spotify.com/track/3KbCjPkewCmJt09FYtyVK5	Austria	top200	MOVE_UP	1342
+567	567	Whispering Still (feat. Charity Children) - Little Rose Remix	165	1483228800000000000	SRTW	https://open.spotify.com/track/3D3Tkk0d9UmECpH5Fprmuv	Austria	top200	NEW_ENTRY	1331
+568	568	Mr. Brightside	166	1483228800000000000	The Killers	https://open.spotify.com/track/7oK9VyNzrYvRFo7nQEYkWN	Austria	top200	MOVE_DOWN	1325
+569	569	Without Me	167	1483228800000000000	Eminem	https://open.spotify.com/track/7lQ8MOhq6IN2w8EYcFNSUk	Austria	top200	NEW_ENTRY	1312
+570	570	Once In a While	168	1483228800000000000	Timeflies	https://open.spotify.com/track/6cREm4bV7V79Yxdilx9HDo	Austria	top200	MOVE_DOWN	1309
+571	571	Photograph	169	1483228800000000000	Ed Sheeran	https://open.spotify.com/track/6fxVffaTuwjgEk5h9QyRjy	Austria	top200	NEW_ENTRY	1303
+572	572	Feel the Love - Sam Feldt Edit	170	1483228800000000000	Janieck	https://open.spotify.com/track/3fJua408ovMRQ0JYGepaAY	Austria	top200	MOVE_UP	1303
+573	573	Please Don't Go	171	1483228800000000000	Joel Adams	https://open.spotify.com/track/3cNjgVBKTJ1SvKhunrCdVy	Austria	top200	NEW_ENTRY	1299
+574	574	Irgendwas (feat. Bengio)	172	1483228800000000000	Yvonne Catterfeld	https://open.spotify.com/track/3qlF4ENgFTbAbPZfFF9lxt	Austria	top200	NEW_ENTRY	1296
+575	575	Do It Right	173	1483228800000000000	Martin Solveig, Tkay Maidza	https://open.spotify.com/track/767AsV1cQwmOU4PJG96MzO	Austria	top200	MOVE_DOWN	1291
+576	576	Bleib in der Schule	174	1483228800000000000	Trailerpark	https://open.spotify.com/track/0QjewL57d6QobAvn1JoQd9	Austria	top200	NEW_ENTRY	1276
+577	577	Ahnma	175	1483228800000000000	Beginner, Gzuz, Gentleman	https://open.spotify.com/track/5CXjevTAQIYO1Z0yyiOOno	Austria	top200	MOVE_DOWN	1273
+578	578	Never Be Like You	176	1483228800000000000	Flume, kai	https://open.spotify.com/track/12REd1n8PeiHHWOh066tpr	Austria	top200	MOVE_DOWN	1264
+579	579	Feel (feat. Sena Sener) - Radio Edit	177	1483228800000000000	Mahmut Orhan, Sena Şener	https://open.spotify.com/track/7Is0OPWVcN8DdZpcNuClcy	Austria	top200	MOVE_DOWN	1258
+580	580	DUELE EL CORAZON (feat. Wisin)	178	1483228800000000000	Enrique Iglesias	https://open.spotify.com/track/6YZdkObH88npeKrrkb8Ggf	Austria	top200	MOVE_DOWN	1253
+581	581	Lighthouse - Andrelli Remix	179	1483228800000000000	Hearts & Colors	https://open.spotify.com/track/04CttTezSnv71USiiG9mIo	Austria	top200	NEW_ENTRY	1249
+582	582	Geiles Leben - Madizin Single Mix	180	1483228800000000000	Glasperlenspiel	https://open.spotify.com/track/4GyG53nBdaEvSEn9o8roA2	Austria	top200	MOVE_DOWN	1248
+583	583	Talking to You	181	1483228800000000000	Izzy Bizu	https://open.spotify.com/track/3N08HLCSwOHhMQKJGIZ7rE	Austria	top200	MOVE_DOWN	1247
+584	584	'Till I Collapse	182	1483228800000000000	Eminem, Nate Dogg	https://open.spotify.com/track/6yr8GiTHWvFfi4o6Q5ebdT	Austria	top200	NEW_ENTRY	1246
+585	585	Waves	183	1483228800000000000	Dean Lewis	https://open.spotify.com/track/64xJ1MMFxxK6osZxJH857T	Austria	top200	NEW_ENTRY	1238
+586	586	Not Going Home (feat. Gia Koka)	184	1483228800000000000	DVBBS, CMC$	https://open.spotify.com/track/042x9bsUBWW2fJgJ6fUh61	Austria	top200	NEW_ENTRY	1236
+587	587	Find You (feat. Jake Reese)	185	1483228800000000000	Topic	https://open.spotify.com/track/64qGiwJq4tO4wrxiY9CWjE	Austria	top200	MOVE_DOWN	1235
+588	588	Cake - Challenge Version	186	1483228800000000000	Flo Rida, 99 Percent	https://open.spotify.com/track/6t2ubAB4iSYOuIpRAOGd4t	Austria	top200	NEW_ENTRY	1224
+589	589	Billie Jean	187	1483228800000000000	Michael Jackson	https://open.spotify.com/track/5ChkMS8OtdzJeqyybCc9R5	Austria	top200	MOVE_DOWN	1223
+590	590	Oceans Away	188	1483228800000000000	A R I Z O N A	https://open.spotify.com/track/6A8dnC0xkiuWN4BshmTB2I	Austria	top200	NEW_ENTRY	1214
+591	591	Lost Boy	189	1483228800000000000	Ruth B.	https://open.spotify.com/track/0zMzyHAeMvwq5CRstru1Fp	Austria	top200	NEW_ENTRY	1209
+592	592	Hello	190	1483228800000000000	Adele	https://open.spotify.com/track/4sPmO7WMQUAf45kwMOtONw	Austria	top200	MOVE_UP	1191
+593	593	Light	191	1483228800000000000	San Holo	https://open.spotify.com/track/7zTx8ePYAmPFQuxP3xlXZn	Austria	top200	NEW_ENTRY	1188
+594	594	Erkläre mir die Liebe	192	1483228800000000000	Philipp Poisel	https://open.spotify.com/track/3FTKzJI05mtKBIouwQcEpZ	Austria	top200	NEW_ENTRY	1186
+595	595	Purple Lamborghini (with Rick Ross)	193	1483228800000000000	Skrillex	https://open.spotify.com/track/6JyuJFedEvPmdWQW0PkbGJ	Austria	top200	MOVE_DOWN	1185
+596	596	Wir sind groß	194	1483228800000000000	Mark Forster	https://open.spotify.com/track/0bZcstGSV52WWUR8WkrW5p	Austria	top200	NEW_ENTRY	1180
+597	597	Love Me	195	1483228800000000000	Jane XØ	https://open.spotify.com/track/1kFJTEnAvJ70S5mXplUAFR	Austria	top200	MOVE_DOWN	1177
+598	598	Boyfriends	196	1483228800000000000	Marco Wagner, Die Obersteirer	https://open.spotify.com/track/2tUxTQSGGteM7HljpqWU6J	Austria	top200	MOVE_DOWN	1173
+599	599	Love$ick (feat. A$AP Rocky)	197	1483228800000000000	Mura Masa	https://open.spotify.com/track/7Kq16WtEJzdRSNQgdXsn7Y	Austria	top200	MOVE_DOWN	1172
+600	600	Mama Said	198	1483228800000000000	Lukas Graham	https://open.spotify.com/track/7675gjlUZzneYiMrQ9Inx8	Austria	top200	MOVE_DOWN	1166
+601	601	Nobody Does It Better	199	1483228800000000000	Michael Calfan	https://open.spotify.com/track/1BMwsK4pa9KhiFmOp1oCjf	Austria	top200	MOVE_DOWN	1163
+602	602	Into You	200	1483228800000000000	Ariana Grande	https://open.spotify.com/track/7yHEDfrJNd0zWOfXwydNH0	Austria	top200	MOVE_DOWN	1159
+603	603	Hey Baby	1	1483228800000000000	Dimitri Vegas & Like Mike, Diplo, Deb’s Daughter	https://open.spotify.com/track/6yc377A8qxHIjPUcjGD4ET	Belgium	top200	MOVE_UP	23277
+604	604	Closer	2	1483228800000000000	The Chainsmokers, Halsey	https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw	Belgium	top200	MOVE_DOWN	17456
+605	605	Starboy	3	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5aAx2yezTd8zXrkmtKl66Z	Belgium	top200	MOVE_UP	17374
+606	606	Rockabye (feat. Sean Paul & Anne-Marie)	4	1483228800000000000	Clean Bandit	https://open.spotify.com/track/5knuzwU65gJK7IF5yJsuaW	Belgium	top200	MOVE_UP	16763
+607	607	What Is Love 2016	5	1483228800000000000	Lost Frequencies	https://open.spotify.com/track/5hIR7SX1fSrr5evIAPDY5o	Belgium	top200	MOVE_UP	16197
+608	608	Let Me Love You	6	1483228800000000000	DJ Snake, Justin Bieber	https://open.spotify.com/track/4pdPtRcBmOSQDlJ3Fk945m	Belgium	top200	MOVE_DOWN	15810
+609	609	Until the End (feat. Raphaella)	7	1483228800000000000	Henri PFR	https://open.spotify.com/track/61VEcQZQZUF4o7QgXsOFjB	Belgium	top200	MOVE_UP	13510
+610	610	One Dance	8	1483228800000000000	Drake, WizKid, Kyla	https://open.spotify.com/track/1xznGGDReH1oQq0xzbwXa3	Belgium	top200	MOVE_DOWN	12964
+611	611	24K Magic	9	1483228800000000000	Bruno Mars	https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P	Belgium	top200	MOVE_DOWN	12661
+612	612	Call On Me - Ryan Riback Extended Remix	10	1483228800000000000	Starley	https://open.spotify.com/track/78rIJddV4X0HkNAInEcYde	Belgium	top200	MOVE_UP	12506
+613	613	Say You Won't Let Go	11	1483228800000000000	James Arthur	https://open.spotify.com/track/5uCax9HTNlzGybIStD3vDh	Belgium	top200	MOVE_UP	12262
+614	614	"CAN'T STOP THE FEELING! (Original Song from DreamWorks Animation's ""TROLLS"")"	12	1483228800000000000	Justin Timberlake	https://open.spotify.com/track/6JV2JOEocMgcZxYSZelKcc	Belgium	top200	MOVE_DOWN	11819
+615	615	Don't Wanna Know	13	1483228800000000000	Maroon 5, Kendrick Lamar	https://open.spotify.com/track/5MFzQMkrl1FOOng9tq6R9r	Belgium	top200	MOVE_UP	11503
+616	616	Ziet Em Duun - Regi & Lester Williams Remix	14	1483228800000000000	Van Echelpoel	https://open.spotify.com/track/5rRGbD1s7gQWnWwn0O3no2	Belgium	top200	MOVE_UP	11474
+617	617	In the Name of Love	15	1483228800000000000	Martin Garrix, Bebe Rexha	https://open.spotify.com/track/04DwTuZ2VBdJCCC5TROn7L	Belgium	top200	MOVE_UP	11144
+618	618	"I Don’t Wanna Live Forever (Fifty Shades Darker) - From ""Fifty Shades Darker (Original Motion Picture Soundtrack)"""	16	1483228800000000000	ZAYN, Taylor Swift	https://open.spotify.com/track/3NdDpSvN911VPGivFlV5d0	Belgium	top200	MOVE_UP	10970
+619	619	Black Beatles	17	1483228800000000000	Rae Sremmurd, Gucci Mane	https://open.spotify.com/track/6fujklziTHa8uoM5OQSfIo	Belgium	top200	MOVE_UP	10654
+620	620	Ziet Em Duun	18	1483228800000000000	Van Echelpoel	https://open.spotify.com/track/6WBPdOrzwCo3AXg2kGGD7x	Belgium	top200	MOVE_UP	10475
+621	621	I Feel It Coming	19	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5GXAXm5YOmYT0kL5jHvYBt	Belgium	top200	MOVE_DOWN	10351
+622	622	Don't Let Me Down (feat. Daya)	20	1483228800000000000	The Chainsmokers	https://open.spotify.com/track/0QsvXIfqM0zZoerQfsI9lm	Belgium	top200	MOVE_DOWN	9625
+623	623	Just Hold On	21	1483228800000000000	Steve Aoki, Louis Tomlinson	https://open.spotify.com/track/3EmmCZoqpWOTY1g2GBwJoR	Belgium	top200	MOVE_UP	9473
+624	624	Cheap Thrills	22	1483228800000000000	Sia	https://open.spotify.com/track/27SdWb2rFzO6GWiYDBTD9j	Belgium	top200	MOVE_DOWN	9453
+625	625	Cold Water (feat. Justin Bieber & MØ)	23	1483228800000000000	Major Lazer	https://open.spotify.com/track/6DNtNfH8hXkqOX1sjqmI7p	Belgium	top200	MOVE_DOWN	9196
+626	626	Human	24	1483228800000000000	Rag'n'Bone Man	https://open.spotify.com/track/58zsLZPvfflaiIbNWoA22O	Belgium	top200	MOVE_UP	9094
+627	627	Treat You Better	25	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4Hf7WnR761jpxPr5D46Bcd	Belgium	top200	MOVE_DOWN	8969
+628	628	Starving	26	1483228800000000000	Hailee Steinfeld, Grey, Zedd	https://open.spotify.com/track/1qOLh0tI7trd1zdDKxYZTe	Belgium	top200	MOVE_DOWN	8874
+629	629	My Way	27	1483228800000000000	Calvin Harris	https://open.spotify.com/track/1vvNmPOiUuyCbgWmtc6yfm	Belgium	top200	MOVE_DOWN	8780
+630	630	Bobo	47	1483315200000000000	J Balvin	https://open.spotify.com/track/7AtlMCIauSQZqiXSlbBPW6	Colombia	top200	MOVE_DOWN	12594
+631	631	Hey Baby - Mattn vs. Regi Remix	28	1483228800000000000	Dimitri Vegas & Like Mike, Diplo, Deb’s Daughter	https://open.spotify.com/track/2q7vWE2hIS1Kj3ShkcKkIS	Belgium	top200	MOVE_UP	8752
+632	632	Fake Love	29	1483228800000000000	Drake	https://open.spotify.com/track/343YBumqHu19cGoGARUTsd	Belgium	top200	SAME_POSITION	8711
+633	633	Sexual	30	1483228800000000000	NEIKED, Dyo	https://open.spotify.com/track/3AsAuGTaDQzavZZThyYlop	Belgium	top200	MOVE_UP	8475
+634	634	Mercy	31	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4TZy1wLyHec06pwgFYDh1a	Belgium	top200	MOVE_UP	8433
+635	635	All We Know	32	1483228800000000000	The Chainsmokers, Phoebe Ryan	https://open.spotify.com/track/2rizacJSyD9S1IQUxUxnsK	Belgium	top200	MOVE_DOWN	8390
+636	636	Heathens	33	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/6i0V12jOa3mr6uu4WYhUBr	Belgium	top200	SAME_POSITION	8367
+637	637	If You Believe	34	1483228800000000000	D5R, Maureen	https://open.spotify.com/track/4FbcVWgOjljdetmSqzM7NN	Belgium	top200	MOVE_UP	7819
+638	638	Love Me Now	35	1483228800000000000	John Legend	https://open.spotify.com/track/6nxQdXa1uAL0rY72wPZu89	Belgium	top200	MOVE_UP	7567
+639	639	Side To Side	36	1483228800000000000	Ariana Grande, Nicki Minaj	https://open.spotify.com/track/4pLwZjInHj3SimIyN9SnOz	Belgium	top200	MOVE_UP	7287
+640	640	Work from Home (feat. Ty Dolla $ign)	37	1483228800000000000	Fifth Harmony	https://open.spotify.com/track/4tCtwWceOPWzenK2HAIJSb	Belgium	top200	MOVE_DOWN	7277
+641	641	Bad Things (with Camila Cabello)	38	1483228800000000000	Machine Gun Kelly	https://open.spotify.com/track/1PSBzsahR2AKwLJgx8ehBj	Belgium	top200	MOVE_UP	7136
+642	642	This Is What You Came For (feat. Rihanna)	39	1483228800000000000	Calvin Harris	https://open.spotify.com/track/0azC730Exh71aQlOt9Zj3y	Belgium	top200	MOVE_DOWN	6975
+643	643	All Night	40	1483228800000000000	The Vamps, Matoma	https://open.spotify.com/track/4b4KcovePX8Ke2cLIQTLM0	Belgium	top200	MOVE_UP	6954
+644	644	Love Yourself	41	1483228800000000000	Justin Bieber	https://open.spotify.com/track/3hB5DgAiMAQ4DzYbsMq1IT	Belgium	top200	MOVE_DOWN	5923
+645	645	Believer	42	1483228800000000000	Major Lazer, Showtek	https://open.spotify.com/track/2mFVt6vCOcR71lw3kY2UZB	Belgium	top200	MOVE_UP	5778
+646	646	Billie Jean	43	1483228800000000000	Michael Jackson	https://open.spotify.com/track/5ChkMS8OtdzJeqyybCc9R5	Belgium	top200	MOVE_DOWN	5767
+647	647	I Took A Pill In Ibiza - Seeb Remix	44	1483228800000000000	Mike Posner	https://open.spotify.com/track/17Fd6Yb7mSbinKG8LoWfFl	Belgium	top200	MOVE_UP	5718
+648	648	The Mack	45	1483228800000000000	Nevada, Mark Morrison, Fetty Wap	https://open.spotify.com/track/7aV2mflaASUmGhCErm7kBO	Belgium	top200	MOVE_UP	5627
+649	649	By Your Side	46	1483228800000000000	Jonas Blue, RAYE	https://open.spotify.com/track/1D3ODoXHBLpdxolZRHWV1j	Belgium	top200	MOVE_UP	5529
+650	650	I Would Like	47	1483228800000000000	Zara Larsson	https://open.spotify.com/track/4Q4jmPHwu0wrJvqrld0FQ6	Belgium	top200	MOVE_UP	5492
+651	651	Sunset Lover	48	1483228800000000000	Petit Biscuit	https://open.spotify.com/track/0hNduWmlWmEmuwEFcYvRu1	Belgium	top200	MOVE_UP	5479
+652	652	Now and Later	49	1483228800000000000	Sage The Gemini	https://open.spotify.com/track/08WPvDEsHvTFuB9w8tC2OS	Belgium	top200	MOVE_UP	5433
+653	653	Scars To Your Beautiful	50	1483228800000000000	Alessia Cara	https://open.spotify.com/track/0prNGof3XqfTvNDxHonvdK	Belgium	top200	MOVE_UP	5368
+654	654	Send My Love (To Your New Lover)	51	1483228800000000000	Adele	https://open.spotify.com/track/4BHzQ9C00ceJxfG16AlNWb	Belgium	top200	MOVE_DOWN	5063
+655	655	Afraid	52	1483228800000000000	Curtis Alto	https://open.spotify.com/track/2ey5jG9boqrojvpZC3SGVR	Belgium	top200	MOVE_UP	5059
+656	656	Goud	53	1483228800000000000	Bazart	https://open.spotify.com/track/5J59VOgvclrhLDYUoH5OaW	Belgium	top200	MOVE_UP	5047
+657	657	"How Far I'll Go - From ""Moana"""	54	1483228800000000000	Alessia Cara	https://open.spotify.com/track/5hYTyyh2odQKphUbMqc5gN	Belgium	top200	MOVE_UP	4971
+658	658	Perfect Strangers	55	1483228800000000000	Jonas Blue, JP Cooper	https://open.spotify.com/track/5bZtRlMBU76vHuDOb1GM5u	Belgium	top200	MOVE_UP	4860
+659	659	We Don't Talk Anymore (feat. Selena Gomez)	56	1483228800000000000	Charlie Puth	https://open.spotify.com/track/68EMU2RD1ECNeOeJ5qAXCV	Belgium	top200	MOVE_UP	4860
+660	660	"Happy - From ""Despicable Me 2"""	57	1483228800000000000	Pharrell Williams	https://open.spotify.com/track/5b88tNINg4Q4nrRbrCXUmg	Belgium	top200	MOVE_DOWN	4832
+661	661	Can't Hold Us - feat. Ray Dalton	58	1483228800000000000	Macklemore & Ryan Lewis	https://open.spotify.com/track/3bidbhpOYeV4knp8AIu8Xn	Belgium	top200	MOVE_DOWN	4777
+662	662	Lot to Learn	59	1483228800000000000	Luke Christopher	https://open.spotify.com/track/2HzfRSfCogBSsgW2CckVA2	Belgium	top200	MOVE_UP	4766
+663	663	Hello	60	1483228800000000000	Adele	https://open.spotify.com/track/4sPmO7WMQUAf45kwMOtONw	Belgium	top200	MOVE_UP	4677
+664	664	Chantaje (feat. Maluma)	61	1483228800000000000	Shakira	https://open.spotify.com/track/6mICuAdrwEjh6Y6lroV2Kg	Belgium	top200	MOVE_UP	4635
+665	665	Into You	62	1483228800000000000	Ariana Grande	https://open.spotify.com/track/7yHEDfrJNd0zWOfXwydNH0	Belgium	top200	MOVE_DOWN	4629
+666	666	Shed a Light	63	1483228800000000000	Robin Schulz, David Guetta, Cheat Codes	https://open.spotify.com/track/1cG0umU5TKStygKsPFZ9pY	Belgium	top200	MOVE_UP	4617
+667	667	Light It Up (feat. Nyla & Fuse ODG) - Remix	64	1483228800000000000	Major Lazer	https://open.spotify.com/track/0L7loeTIg6akW84aEQZpCT	Belgium	top200	MOVE_UP	4586
+668	668	The Ocean (feat. Shy Martin)	65	1483228800000000000	Mike Perry	https://open.spotify.com/track/2CPqh63wRVscbceKcPxwvv	Belgium	top200	MOVE_UP	4396
+669	669	Broccoli (feat. Lil Yachty)	66	1483228800000000000	Shelley FKA DRAM	https://open.spotify.com/track/7yyRTcZmCiyzzJlNzGC9Ol	Belgium	top200	MOVE_UP	4353
+670	670	Panda	67	1483228800000000000	Desiigner	https://open.spotify.com/track/5OOkp4U9P9oL23maHFHL1h	Belgium	top200	MOVE_UP	4307
+671	671	Ride	68	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW	Belgium	top200	MOVE_UP	4256
+672	672	Sorry	69	1483228800000000000	Justin Bieber	https://open.spotify.com/track/69bp2EbF7Q2rqc5N3ylezZ	Belgium	top200	MOVE_UP	4190
+673	673	Titanium (feat. Sia)	70	1483228800000000000	David Guetta	https://open.spotify.com/track/2dOTkLZFbpNXrhc24CnTFd	Belgium	top200	MOVE_DOWN	4170
+674	674	This Girl (Kungs Vs. Cookin' On 3 Burners)	71	1483228800000000000	Kungs	https://open.spotify.com/track/0tICYNayWWhH9GPeFrfjfD	Belgium	top200	MOVE_UP	4160
+675	675	I Want You Back	72	1483228800000000000	The Jackson 5	https://open.spotify.com/track/3b0EOvScbZUc0qJx0E1L2z	Belgium	top200	MOVE_DOWN	4153
+676	676	Ain't No Mountain High Enough	73	1483228800000000000	Marvin Gaye, Tammi Terrell	https://open.spotify.com/track/2H3ZUSE54pST4ubRd5FzFR	Belgium	top200	MOVE_DOWN	4122
+677	677	Never Be Like You	74	1483228800000000000	Flume, kai	https://open.spotify.com/track/12REd1n8PeiHHWOh066tpr	Belgium	top200	MOVE_UP	4097
+678	678	Bohemian Rhapsody - Remastered 2011	75	1483228800000000000	Queen	https://open.spotify.com/track/1AhDOtG9vPSOmsWgNW0BEY	Belgium	top200	MOVE_DOWN	4015
+679	679	Stressed Out	76	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn	Belgium	top200	MOVE_UP	3995
+680	680	Way down We Go	77	1483228800000000000	KALEO	https://open.spotify.com/track/0y1QJc3SJVPKJ1OvFmFqe6	Belgium	top200	MOVE_DOWN	3976
+681	681	Faded	78	1483228800000000000	Alan Walker	https://open.spotify.com/track/7gHs73wELdeycvS48JfIos	Belgium	top200	MOVE_UP	3922
+682	682	Lost on You	79	1483228800000000000	LP	https://open.spotify.com/track/3SqvR3HYLlCTYzbDXJ52OC	Belgium	top200	MOVE_UP	3893
+683	683	Hymn for the Weekend - Seeb Remix	80	1483228800000000000	Coldplay	https://open.spotify.com/track/1OAiWI2oPmglaOiv9fdioU	Belgium	top200	MOVE_UP	3862
+684	684	Work	82	1483228800000000000	Rihanna, Drake	https://open.spotify.com/track/14WWzenpaEgQZlqPq2nk4v	Belgium	top200	MOVE_UP	3855
+685	685	The Greatest	83	1483228800000000000	Sia	https://open.spotify.com/track/6bLopGnirdrilrpdVB6Um1	Belgium	top200	MOVE_DOWN	3815
+686	686	Respect	84	1483228800000000000	Aretha Franklin	https://open.spotify.com/track/7s25THrKz86DM225dOYwnr	Belgium	top200	MOVE_DOWN	3796
+687	687	The Greatest (feat. Kendrick Lamar)	85	1483228800000000000	Sia	https://open.spotify.com/track/7xHWNBFm6ObGEQPaUxHuKO	Belgium	top200	MOVE_UP	3795
+688	688	What Is Love 2016 - Regi & Lester Williams Remix	86	1483228800000000000	Lost Frequencies	https://open.spotify.com/track/4LQ0lpEPEOvPLtGmRqe8n6	Belgium	top200	NEW_ENTRY	3787
+689	689	7 Years	87	1483228800000000000	Lukas Graham	https://open.spotify.com/track/7129iqBafaphfc3WPCGC0L	Belgium	top200	MOVE_UP	3744
+690	690	Water Under the Bridge	88	1483228800000000000	Adele	https://open.spotify.com/track/4vb4mFvYsr2h6enhjJsq9Y	Belgium	top200	MOVE_UP	3703
+691	691	Fast Car	89	1483228800000000000	Jonas Blue, Dakota	https://open.spotify.com/track/6OZh916QF8XNunWaP97WEZ	Belgium	top200	MOVE_UP	3680
+692	692	Lean On (feat. MØ & DJ Snake)	90	1483228800000000000	Major Lazer	https://open.spotify.com/track/4WjH9Bzt3kx7z8kl0awxh4	Belgium	top200	MOVE_UP	3633
+693	693	Weak	91	1483228800000000000	AJR	https://open.spotify.com/track/3E2Zh20GDCR9B1EYjfXWyv	Belgium	top200	MOVE_UP	3574
+694	694	Trust Nobody (feat. Selena Gomez & Tory Lanez)	92	1483228800000000000	Cashmere Cat	https://open.spotify.com/track/2wDjpPW3HZdA9quPPmZAMu	Belgium	top200	MOVE_UP	3498
+695	695	Thinking out Loud	93	1483228800000000000	Ed Sheeran	https://open.spotify.com/track/1Slwb6dOYkBlWal1PGtnNg	Belgium	top200	MOVE_UP	3495
+696	696	Hear Me Now	94	1483228800000000000	Alok, Bruno Martini, Zeeba	https://open.spotify.com/track/1a5Yu5L18qNxVhXx38njON	Belgium	top200	MOVE_UP	3483
+697	697	Cake By The Ocean	95	1483228800000000000	DNCE	https://open.spotify.com/track/2aFiaMXmWsM3Vj72F9ksBl	Belgium	top200	MOVE_DOWN	3444
+698	698	Don't Stop Me Now - Remastered 2011	96	1483228800000000000	Queen	https://open.spotify.com/track/5T8EDUDqKcs6OSOwEsfqG7	Belgium	top200	MOVE_DOWN	3425
+699	699	Solo Dance	97	1483228800000000000	Martin Jensen	https://open.spotify.com/track/6HUnnBwYZqcED1eQztxMBN	Belgium	top200	MOVE_UP	3421
+700	700	Bad and Boujee (feat. Lil Uzi Vert)	98	1483228800000000000	Migos	https://open.spotify.com/track/4Km5HrUvYTaSUfiSGPJeQR	Belgium	top200	MOVE_UP	3392
+701	701	i hate u, i love u (feat. olivia o'brien)	99	1483228800000000000	gnash	https://open.spotify.com/track/7vRriwrloYVaoAe3a9wJHe	Belgium	top200	MOVE_UP	3362
+702	702	Shout Out to My Ex	100	1483228800000000000	Little Mix	https://open.spotify.com/track/0YHUITU3w6ws1v8ehT264g	Belgium	top200	MOVE_UP	3342
+703	703	Sex	101	1483228800000000000	Cheat Codes, Kris Kross Amsterdam	https://open.spotify.com/track/5DA77EqppDmCTWGovd4oTP	Belgium	top200	MOVE_UP	3340
+704	704	Million Eyes	102	1483228800000000000	Loïc Nottet	https://open.spotify.com/track/63qapUS8yLKz0tb0eOgOTF	Belgium	top200	MOVE_UP	3335
+705	705	Setting Fires	103	1483228800000000000	The Chainsmokers, XYLØ	https://open.spotify.com/track/0B8B8cVRFIG1yznoQe7c9s	Belgium	top200	MOVE_UP	3333
+706	706	Last Christmas	104	1483228800000000000	Wham!	https://open.spotify.com/track/2FRnf9qhLbvw8fu4IBXx78	Belgium	top200	MOVE_UP	3323
+707	707	Steady 1234 (feat. Jasmine Thompson & Skizzy Mars)	105	1483228800000000000	Vice	https://open.spotify.com/track/40UroIGvsMPLPBYwH8rMNA	Belgium	top200	MOVE_UP	3314
+708	708	All Time Low	106	1483228800000000000	Jon Bellion	https://open.spotify.com/track/1CnPYaKxTVb4LWOtiGOm0m	Belgium	top200	MOVE_UP	3299
+709	709	Capsize	107	1483228800000000000	FRENSHIP, Emily Warren	https://open.spotify.com/track/2XMTqoHHSH0lvuXrvIEdco	Belgium	top200	MOVE_UP	3284
+710	710	Make Me (Cry)	108	1483228800000000000	Noah Cyrus, Labrinth	https://open.spotify.com/track/2BrzlUj1u1CtvaJDGIKpsP	Belgium	top200	MOVE_UP	3278
+711	711	All I Want for Christmas Is You	109	1483228800000000000	Mariah Carey	https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn	Belgium	top200	MOVE_UP	3246
+712	712	Dynamite (feat. Pretty Sister)	110	1483228800000000000	Nause	https://open.spotify.com/track/2Ae5awwKvQpTBKQHr1TYCg	Belgium	top200	MOVE_UP	3230
+713	713	Alone	111	1483228800000000000	Alan Walker	https://open.spotify.com/track/0JiVRyTJcJnmlwCZ854K4p	Belgium	top200	MOVE_UP	3194
+714	714	Final Song	112	1483228800000000000	MØ	https://open.spotify.com/track/4qqArAiTPueDxIp7cf87h7	Belgium	top200	MOVE_UP	3187
+715	715	Superstition - Single Version	113	1483228800000000000	Stevie Wonder	https://open.spotify.com/track/5lXcSvHRVjQJ3LB2rLKQog	Belgium	top200	MOVE_DOWN	3166
+716	716	Lighthouse - Andrelli Remix	114	1483228800000000000	Hearts & Colors	https://open.spotify.com/track/04CttTezSnv71USiiG9mIo	Belgium	top200	MOVE_UP	3149
+717	717	Wake Up Where You Are	115	1483228800000000000	State of Sound	https://open.spotify.com/track/2s76aKBWKShlwPC4xTtEEE	Belgium	top200	MOVE_UP	3146
+718	718	You Can Call Me Al	116	1483228800000000000	Paul Simon	https://open.spotify.com/track/0qxYx4F3vm1AOnfux6dDxP	Belgium	top200	MOVE_DOWN	3123
+719	719	Sucker for Pain (with Wiz Khalifa, Imagine Dragons, Logic & Ty Dolla $ign feat. X Ambassadors)	117	1483228800000000000	Lil Wayne	https://open.spotify.com/track/4dASQiO1Eoo3RJvt74FtXB	Belgium	top200	MOVE_UP	3119
+720	720	"Stayin' Alive - From ""Saturday Night Fever"" Soundtrack"	118	1483228800000000000	Bee Gees	https://open.spotify.com/track/6v3xCVgM73PGb0JIlF264a	Belgium	top200	MOVE_DOWN	3117
+721	721	Ain't My Fault	119	1483228800000000000	Zara Larsson	https://open.spotify.com/track/0ADG9OgdVTL7fgREP75BrZ	Belgium	top200	MOVE_UP	3027
+722	722	Wake Me Up Before You Go-Go	120	1483228800000000000	Wham!	https://open.spotify.com/track/0ikz6tENMONtK6qGkOrU3c	Belgium	top200	MOVE_UP	3017
+723	723	I Got You	121	1483228800000000000	Bebe Rexha	https://open.spotify.com/track/1FUViuNSldssMIawrOXF2i	Belgium	top200	MOVE_UP	3013
+724	724	Dancing On My Own	122	1483228800000000000	Calum Scott	https://open.spotify.com/track/02WacdrRpm4zlP8H7X6bnQ	Belgium	top200	MOVE_UP	2996
+725	725	Party Monster	123	1483228800000000000	The Weeknd	https://open.spotify.com/track/4F7A0DXBrmUAkp32uenhZt	Belgium	top200	MOVE_UP	2993
+726	726	Beautiful Life (feat. Sandro Cavazza)	124	1483228800000000000	Lost Frequencies	https://open.spotify.com/track/5QdB0HJmTHkPvyJhKfQLM1	Belgium	top200	MOVE_UP	2971
+727	727	Light	125	1483228800000000000	San Holo	https://open.spotify.com/track/7zTx8ePYAmPFQuxP3xlXZn	Belgium	top200	MOVE_UP	2911
+728	728	Don't Be So Shy - Filatov & Karas Remix	126	1483228800000000000	Imany	https://open.spotify.com/track/00vk0sEfb6mr2ehwSw0Uhn	Belgium	top200	MOVE_UP	2900
+729	729	Squa	127	1483228800000000000	Nekfeu	https://open.spotify.com/track/11hj8c8BCRd5ND3CRhZSvt	Belgium	top200	MOVE_UP	2894
+730	730	Taped up Heart (feat. Clara Mae)	128	1483228800000000000	KREAM	https://open.spotify.com/track/26hcyzSE154xMZCbFdtInA	Belgium	top200	MOVE_UP	2877
+731	731	Uptown Funk (feat. Bruno Mars)	129	1483228800000000000	Mark Ronson	https://open.spotify.com/track/32OlwWuMpZ6b0aN2RZOeMS	Belgium	top200	MOVE_UP	2835
+732	732	Careless Whisper	130	1483228800000000000	George Michael	https://open.spotify.com/track/2R7858bg0GHuBBxjTyOL7N	Belgium	top200	MOVE_UP	2813
+733	733	This Town	131	1483228800000000000	Niall Horan	https://open.spotify.com/track/5nA67Y0XX9JipZwYxX7Gl7	Belgium	top200	MOVE_UP	2813
+734	734	This One's for You (feat. Zara Larsson) (Official Song UEFA EURO 2016)	132	1483228800000000000	David Guetta	https://open.spotify.com/track/46NBoIAHrmR7qcUGCIFEjR	Belgium	top200	MOVE_UP	2809
+735	735	Chaos	133	1483228800000000000	Bazart	https://open.spotify.com/track/10fcTZSwDNmpDyhK9aexg7	Belgium	top200	MOVE_UP	2804
+736	736	No Money	134	1483228800000000000	Galantis	https://open.spotify.com/track/0gb1J5UrTpzaU1s3nupgCd	Belgium	top200	MOVE_UP	2798
+737	737	Photograph	135	1483228800000000000	Ed Sheeran	https://open.spotify.com/track/6fxVffaTuwjgEk5h9QyRjy	Belgium	top200	NEW_ENTRY	2780
+738	738	Alarm	136	1483228800000000000	Anne-Marie	https://open.spotify.com/track/0OwX5aROoW1Iip8FV51Efg	Belgium	top200	MOVE_DOWN	2764
+739	739	Lush Life	137	1483228800000000000	Zara Larsson	https://open.spotify.com/track/1rIKgCH4H52lrvDcz50hS8	Belgium	top200	MOVE_UP	2723
+740	740	Someone Like You	138	1483228800000000000	Adele	https://open.spotify.com/track/4kflIGfjdZJW4ot2ioixTB	Belgium	top200	MOVE_UP	2711
+741	741	Brown Eyed Girl	139	1483228800000000000	Van Morrison	https://open.spotify.com/track/3yrSvpt2l1xhsV9Em88Pul	Belgium	top200	MOVE_DOWN	2710
+742	742	Juju on That Beat (TZ Anthem)	140	1483228800000000000	Zay Hilfigerrr, Zayion McCall	https://open.spotify.com/track/1lItf5ZXJc1by9SbPeljFd	Belgium	top200	MOVE_UP	2698
+743	743	Mauvaise graine	141	1483228800000000000	Nekfeu	https://open.spotify.com/track/4kKJ5CjwCtksszPMntho4N	Belgium	top200	MOVE_UP	2682
+744	744	DUELE EL CORAZON (feat. Wisin)	142	1483228800000000000	Enrique Iglesias	https://open.spotify.com/track/6YZdkObH88npeKrrkb8Ggf	Belgium	top200	MOVE_DOWN	2679
+745	745	Twist And Shout - Remastered	143	1483228800000000000	The Beatles	https://open.spotify.com/track/4Z1fbYp0HuxLBje4MOZcSD	Belgium	top200	MOVE_DOWN	2673
+746	746	Pumped Up Kicks	144	1483228800000000000	Foster The People	https://open.spotify.com/track/7w87IxuO7BDcJ3YUqCyMTT	Belgium	top200	MOVE_DOWN	2652
+747	747	Controlla	145	1483228800000000000	Drake	https://open.spotify.com/track/6F609ICg9Spjrw1epsAnpa	Belgium	top200	MOVE_UP	2648
+748	748	Not Going Home (feat. Gia Koka)	146	1483228800000000000	DVBBS, CMC$	https://open.spotify.com/track/042x9bsUBWW2fJgJ6fUh61	Belgium	top200	MOVE_UP	2631
+749	749	Gold	147	1483228800000000000	Kiiara	https://open.spotify.com/track/6WhzFzROw3aq3rPWjgYlxr	Belgium	top200	MOVE_DOWN	2616
+750	750	Me, Myself & I	148	1483228800000000000	G-Eazy, Bebe Rexha	https://open.spotify.com/track/40YcuQysJ0KlGQTeGUosTC	Belgium	top200	MOVE_UP	2614
+751	751	Please Don't Go	149	1483228800000000000	Joel Adams	https://open.spotify.com/track/3cNjgVBKTJ1SvKhunrCdVy	Belgium	top200	MOVE_UP	2579
+752	752	Tchikita	150	1483228800000000000	Jul	https://open.spotify.com/track/6bXd0YhKLCTvlLVc4tErH9	Belgium	top200	MOVE_UP	2570
+753	753	Wonderwall - Remastered	151	1483228800000000000	Oasis	https://open.spotify.com/track/5qqabIl2vWzo9ApSC317sa	Belgium	top200	MOVE_UP	2569
+754	754	Sultans Of Swing	152	1483228800000000000	Dire Straits	https://open.spotify.com/track/3LTMnFa0hhwisyq6ILahyj	Belgium	top200	NEW_ENTRY	2531
+755	755	Saturne	153	1483228800000000000	Nekfeu, Sneazzy, S.Pri Noir	https://open.spotify.com/track/5t9fmZx0pcNxLykKTv6eOe	Belgium	top200	NEW_ENTRY	2530
+756	756	Call Me Maybe	154	1483228800000000000	Carly Rae Jepsen	https://open.spotify.com/track/20I6sIOMTCkB6w7ryavxtO	Belgium	top200	MOVE_DOWN	2516
+757	757	Smells Like Teen Spirit	155	1483228800000000000	Nirvana	https://open.spotify.com/track/5ghIJDpPoe3CfHMGu71E6T	Belgium	top200	NEW_ENTRY	2516
+758	758	Some Kind Of Drug (feat. Marc E. Bassy)	156	1483228800000000000	G-Eazy	https://open.spotify.com/track/1Bqxj0aH5KewYHKUg1IdrF	Belgium	top200	MOVE_UP	2510
+759	759	What Do You Mean?	157	1483228800000000000	Justin Bieber	https://open.spotify.com/track/3pzjHKrQSvXGHQ98dx18HI	Belgium	top200	MOVE_UP	2481
+760	760	Sofia	158	1483228800000000000	Alvaro Soler	https://open.spotify.com/track/1VoHrSS3QQ6TbpabLrFiYb	Belgium	top200	MOVE_UP	2478
+761	761	Afro Trap Pt. 7 (La puissance)	159	1483228800000000000	MHD	https://open.spotify.com/track/6x8j5V85ZJHtvOSjSamcVc	Belgium	top200	NEW_ENTRY	2461
+762	762	Oh Lord	160	1483228800000000000	MiC LOWRY	https://open.spotify.com/track/1sTUEdVO85YU8Ymk2jeAls	Belgium	top200	MOVE_UP	2456
+763	763	Are You With Me - Radio Edit	161	1483228800000000000	Lost Frequencies	https://open.spotify.com/track/2glGP8kEfACgJdZ86kWxhN	Belgium	top200	MOVE_UP	2443
+764	764	When We Were Young	162	1483228800000000000	Adele	https://open.spotify.com/track/7IWkJwX9C0J7tHurTD7ViL	Belgium	top200	MOVE_UP	2436
+765	765	DKR	163	1483228800000000000	Booba	https://open.spotify.com/track/1iDQ2zCOU1uYeR8QcpqUZb	Belgium	top200	NEW_ENTRY	2433
+766	766	Stay (feat. Maty Noyes)	164	1483228800000000000	Kygo	https://open.spotify.com/track/2FiSTH0GYpIioUgjfzMIja	Belgium	top200	MOVE_UP	2414
+767	767	My Girl	165	1483228800000000000	The Temptations	https://open.spotify.com/track/6RrXd9Hph4hYR4bf3dbM6H	Belgium	top200	MOVE_DOWN	2412
+768	768	Réalité augmentée	166	1483228800000000000	Nekfeu	https://open.spotify.com/track/5jGuAvPX3Ufo55DIZlCaHq	Belgium	top200	NEW_ENTRY	2407
+769	769	Stand by Me	167	1483228800000000000	Otis Redding	https://open.spotify.com/track/1aj4GXfmEYXfdVZohCpNKu	Belgium	top200	MOVE_DOWN	2398
+770	770	Let Me Hold You (Turn Me On)	168	1483228800000000000	Dante Klein, Cheat Codes	https://open.spotify.com/track/0lmdsH1MIoLsMymnNpd6HU	Belgium	top200	MOVE_DOWN	2395
+771	771	(I Can't Get No) Satisfaction - Mono Version / Remastered 2002	169	1483228800000000000	The Rolling Stones	https://open.spotify.com/track/7fSGbZLhWlAiCC3HDPAULu	Belgium	top200	MOVE_DOWN	2384
+772	772	September	170	1483228800000000000	Earth, Wind & Fire	https://open.spotify.com/track/1mqlc0vEP9mU1kZgTi6LIQ	Belgium	top200	MOVE_UP	2357
+773	773	Love on Me	171	1483228800000000000	Galantis, Hook N Sling	https://open.spotify.com/track/2MHCiOohBZEQuLgDTPvSzF	Belgium	top200	MOVE_DOWN	2353
+774	774	(What A) Wonderful World - Remastered	172	1483228800000000000	Sam Cooke	https://open.spotify.com/track/27K3ZDS5B4fwjhwyihrdzC	Belgium	top200	MOVE_DOWN	2346
+775	775	Onizuka	173	1483228800000000000	PNL	https://open.spotify.com/track/4GCIYE1x1TWJCChPkpy9by	Belgium	top200	NEW_ENTRY	2346
+776	776	Take Me To Church	174	1483228800000000000	Hozier	https://open.spotify.com/track/0IqKeD8ZSP72KbGYyzEcAs	Belgium	top200	MOVE_UP	2339
+777	777	Hey Baby - Emma Bale Remix	175	1483228800000000000	Dimitri Vegas & Like Mike, Diplo	https://open.spotify.com/track/1otd0blWh5gi7v2NmOZPLk	Belgium	top200	NEW_ENTRY	2328
+778	778	The Sound of Silence	176	1483228800000000000	Disturbed	https://open.spotify.com/track/0eZBeB2xFIS65jQHerispi	Belgium	top200	MOVE_UP	2311
+779	779	ABC	177	1483228800000000000	The Jackson 5	https://open.spotify.com/track/6cb0HzFQPN4BGADOmSzPCw	Belgium	top200	MOVE_DOWN	2305
+780	780	Horizon	178	1483228800000000000	Tourist LeMC, Spiritually Wally	https://open.spotify.com/track/4PsohxvstXN2aaYCNQrCvm	Belgium	top200	NEW_ENTRY	2300
+781	781	Let Her Go	179	1483228800000000000	Passenger	https://open.spotify.com/track/2jyjhRf6DVbMPU5zxagN2h	Belgium	top200	NEW_ENTRY	2300
+782	782	Let It Go	180	1483228800000000000	James Bay	https://open.spotify.com/track/13HVjjWUZFaWilh2QUJKsP	Belgium	top200	NEW_ENTRY	2289
+783	783	I Got It Bad (And That Ain't Good)	181	1483228800000000000	Oscar Peterson	https://open.spotify.com/track/663AsNVDAv5qjD1pTpbaDV	Belgium	top200	NEW_ENTRY	2287
+784	784	All of Me	182	1483228800000000000	John Legend	https://open.spotify.com/track/2q6tgiA9tpb6DMguABwCWE	Belgium	top200	NEW_ENTRY	2284
+785	785	Paper Planes	183	1483228800000000000	M.I.A.	https://open.spotify.com/track/1kusepF3AacIEtUTYrw4GV	Belgium	top200	MOVE_DOWN	2274
+786	786	You Can't Hurry Love - 2016 Remaster	184	1483228800000000000	Phil Collins	https://open.spotify.com/track/4YwbSZaYeYja8Umyt222Qf	Belgium	top200	MOVE_DOWN	2270
+787	787	Sugar (feat. Francesco Yates)	185	1483228800000000000	Robin Schulz	https://open.spotify.com/track/5tf1VVWniHgryyumXyJM7w	Belgium	top200	MOVE_DOWN	2268
+788	788	The Scientist	186	1483228800000000000	Coldplay	https://open.spotify.com/track/75JFxkI2RXiU7L9VXzMkle	Belgium	top200	NEW_ENTRY	2267
+789	789	Signed, Sealed, Delivered (I'm Yours)	187	1483228800000000000	Stevie Wonder	https://open.spotify.com/track/3M5eeHXgG4VplKNcsBC8Dj	Belgium	top200	MOVE_DOWN	2241
+790	790	Stay A While	188	1483228800000000000	Dimitri Vegas & Like Mike	https://open.spotify.com/track/7GnbL96pHeYnzY5Rr1nYir	Belgium	top200	MOVE_DOWN	2215
+791	791	Say It (feat. Tove Lo)	189	1483228800000000000	Flume	https://open.spotify.com/track/4sQMalN597HdggTu196aL0	Belgium	top200	MOVE_DOWN	2214
+792	792	Spirits	190	1483228800000000000	The Strumbellas	https://open.spotify.com/track/2H6dHxAxGq5oQ9EiinNpXT	Belgium	top200	MOVE_UP	2208
+793	793	Aloha	191	1483228800000000000	Møme, Merryn Jeann	https://open.spotify.com/track/6HViP4DVYa8gQtxLndmhwu	Belgium	top200	MOVE_DOWN	2199
+794	794	Needed Me	192	1483228800000000000	Rihanna	https://open.spotify.com/track/1Tt4sE4pXi57mTD1GCzsqm	Belgium	top200	MOVE_DOWN	2185
+795	795	Should I Stay or Should I Go - Remastered	193	1483228800000000000	The Clash	https://open.spotify.com/track/39shmbIHICJ2Wxnk1fPSdz	Belgium	top200	MOVE_DOWN	2165
+796	796	Humanoïde	194	1483228800000000000	Nekfeu	https://open.spotify.com/track/6YHNKVx7gSsOX7xq6jaqeq	Belgium	top200	NEW_ENTRY	2162
+797	797	Sex on Fire	195	1483228800000000000	Kings of Leon	https://open.spotify.com/track/0ntQJM78wzOLVeCUAW7Y45	Belgium	top200	NEW_ENTRY	2151
+798	798	Make You Feel My Love	196	1483228800000000000	Adele	https://open.spotify.com/track/7rPLZ8Krm6CZIbraFUlnWZ	Belgium	top200	NEW_ENTRY	2146
+799	799	Cheerleader - Felix Jaehn Remix Radio Edit	197	1483228800000000000	OMI	https://open.spotify.com/track/7vFoFDWqTX0mHzLfrF1Cfy	Belgium	top200	MOVE_DOWN	2142
+800	800	Miss You	198	1483228800000000000	James Hersey	https://open.spotify.com/track/7of1slAJIWrXxP8ikAHxje	Belgium	top200	MOVE_DOWN	2138
+801	801	Nacht	199	1483228800000000000	Bazart	https://open.spotify.com/track/52HSRlOSKjwxHEpn1YkBr0	Belgium	top200	NEW_ENTRY	2135
+802	802	Hey Ya!	200	1483228800000000000	Outkast	https://open.spotify.com/track/2PpruBYCo4H7WOBJ7Q2EwM	Belgium	top200	MOVE_DOWN	2133
+803	803	Reggaetón Lento (Bailemos)	1	1483228800000000000	CNCO	https://open.spotify.com/track/3AEZUABDXNtecAOSC1qTfo	Bolivia	top200	SAME_POSITION	6784
+804	804	Otra vez (feat. J Balvin)	2	1483228800000000000	Zion & Lennox	https://open.spotify.com/track/3QwBODjSEzelZyVjxPOHdq	Bolivia	top200	SAME_POSITION	5748
+805	805	Chantaje (feat. Maluma)	3	1483228800000000000	Shakira	https://open.spotify.com/track/6mICuAdrwEjh6Y6lroV2Kg	Bolivia	top200	SAME_POSITION	5506
+806	806	Vente Pa' Ca (feat. Maluma)	4	1483228800000000000	Ricky Martin	https://open.spotify.com/track/7DM4BPaS7uofFul3ywMe46	Bolivia	top200	MOVE_UP	4804
+807	807	Traicionera	5	1483228800000000000	Sebastian Yatra	https://open.spotify.com/track/5J1c3M4EldCfNxXwrwt8mT	Bolivia	top200	MOVE_DOWN	4780
+808	808	Safari	6	1483228800000000000	J Balvin, Pharrell Williams, BIA, Sky	https://open.spotify.com/track/6rQSrBHf7HlZjtcMZ4S4bO	Bolivia	top200	SAME_POSITION	4399
+809	809	Let Me Love You	7	1483228800000000000	DJ Snake, Justin Bieber	https://open.spotify.com/track/4pdPtRcBmOSQDlJ3Fk945m	Bolivia	top200	SAME_POSITION	3542
+810	810	La Bicicleta	8	1483228800000000000	Carlos Vives, Shakira	https://open.spotify.com/track/0sXvAOmXgjR2QUqLK1MltU	Bolivia	top200	MOVE_UP	3507
+811	811	Ay Mi Dios (feat. Pitbull, Yandel & Chacal)	9	1483228800000000000	IAmChino, El Chacal	https://open.spotify.com/track/6stYbAJgTszHAHZMPxWWCY	Bolivia	top200	MOVE_DOWN	3446
+812	812	Me llamas (feat. Maluma) - Remix	10	1483228800000000000	Piso 21	https://open.spotify.com/track/5hEM0JchdVzQ5PwvSfITeX	Bolivia	top200	SAME_POSITION	2979
+813	813	Closer	11	1483228800000000000	The Chainsmokers, Halsey	https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw	Bolivia	top200	MOVE_DOWN	2898
+814	814	Shaky Shaky	12	1483228800000000000	Daddy Yankee	https://open.spotify.com/track/58IL315gMSTD37DOZPJ2hf	Bolivia	top200	MOVE_UP	2882
+815	815	Vacaciones	13	1483228800000000000	Wisin	https://open.spotify.com/track/3dQDid3IUNhZy1OehIfYfE	Bolivia	top200	MOVE_UP	2747
+816	816	Andas En Mi Cabeza	14	1483228800000000000	Chino & Nacho, Daddy Yankee	https://open.spotify.com/track/5mey7CLLuFToM2P68Qu1gF	Bolivia	top200	MOVE_UP	2735
+817	817	Don't Wanna Know	15	1483228800000000000	Maroon 5, Kendrick Lamar	https://open.spotify.com/track/5MFzQMkrl1FOOng9tq6R9r	Bolivia	top200	MOVE_DOWN	2566
+818	818	Dile Que Tu Me Quieres	16	1483228800000000000	Ozuna	https://open.spotify.com/track/20ZAJdsKB5IGbGj4ilRt2o	Bolivia	top200	MOVE_UP	2504
+819	819	Starboy	17	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5aAx2yezTd8zXrkmtKl66Z	Bolivia	top200	MOVE_DOWN	2480
+820	820	One Dance	18	1483228800000000000	Drake, WizKid, Kyla	https://open.spotify.com/track/1xznGGDReH1oQq0xzbwXa3	Bolivia	top200	MOVE_DOWN	2449
+821	821	Me Llamas	19	1483228800000000000	Piso 21	https://open.spotify.com/track/3jpqMaJREkmVDYlRvW1qWC	Bolivia	top200	SAME_POSITION	2221
+822	822	Borro Cassette	20	1483228800000000000	Maluma	https://open.spotify.com/track/6DUdDIRgLqCGq1DwkNWQTN	Bolivia	top200	MOVE_UP	2216
+823	823	DUELE EL CORAZON (feat. Wisin)	21	1483228800000000000	Enrique Iglesias	https://open.spotify.com/track/6YZdkObH88npeKrrkb8Ggf	Bolivia	top200	MOVE_UP	2214
+824	824	Me Rehúso	22	1483228800000000000	Danny Ocean	https://open.spotify.com/track/6De0lHrwBfPfrhorm9q1Xl	Bolivia	top200	MOVE_UP	2114
+825	825	24K Magic	23	1483228800000000000	Bruno Mars	https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P	Bolivia	top200	MOVE_UP	2102
+826	826	We Don't Talk Anymore (feat. Selena Gomez)	24	1483228800000000000	Charlie Puth	https://open.spotify.com/track/68EMU2RD1ECNeOeJ5qAXCV	Bolivia	top200	MOVE_DOWN	2090
+827	827	In the Name of Love	25	1483228800000000000	Martin Garrix, Bebe Rexha	https://open.spotify.com/track/04DwTuZ2VBdJCCC5TROn7L	Bolivia	top200	MOVE_DOWN	2085
+828	828	I Took A Pill In Ibiza - Seeb Remix	26	1483228800000000000	Mike Posner	https://open.spotify.com/track/17Fd6Yb7mSbinKG8LoWfFl	Bolivia	top200	MOVE_DOWN	2084
+829	829	Cold Water (feat. Justin Bieber & MØ)	27	1483228800000000000	Major Lazer	https://open.spotify.com/track/6DNtNfH8hXkqOX1sjqmI7p	Bolivia	top200	MOVE_DOWN	2082
+830	830	Cuatro Babys (feat. Trap Capos, Noriel, Bryant Myers & Juhn)	28	1483228800000000000	Maluma	https://open.spotify.com/track/0JoHqmlqE0W0i9prt6kcHR	Bolivia	top200	MOVE_DOWN	2081
+831	831	Noche Loca	29	1483228800000000000	Marama, Rombai	https://open.spotify.com/track/0gzcET27nREY6aD8LJU9wD	Bolivia	top200	MOVE_UP	2046
+832	832	Chillax (feat. Ky-Mani Marley)	30	1483228800000000000	Farruko	https://open.spotify.com/track/1lxswgIpzV6HhENRvkflES	Bolivia	top200	MOVE_UP	2004
+833	833	My Way	31	1483228800000000000	Calvin Harris	https://open.spotify.com/track/1vvNmPOiUuyCbgWmtc6yfm	Bolivia	top200	MOVE_DOWN	1987
+834	834	Desde Esa Noche (feat. Maluma)	32	1483228800000000000	Thalia	https://open.spotify.com/track/1pWYnQIlqxTh5bxuPmTG4E	Bolivia	top200	MOVE_UP	1957
+835	835	Gyal You A Party Animal - Remix	33	1483228800000000000	Charly Black, Daddy Yankee	https://open.spotify.com/track/1AkTW13ysu0AJrwuM6UY0I	Bolivia	top200	MOVE_DOWN	1925
+836	836	Gyal You A Party Animal	34	1483228800000000000	Charly Black	https://open.spotify.com/track/1mSzZKMIPZIkn3jFV7v62b	Bolivia	top200	MOVE_UP	1912
+837	837	Bailame Despacio	35	1483228800000000000	Xantos, Dynell	https://open.spotify.com/track/4OaTpLJIa2harufGxfOPUu	Bolivia	top200	SAME_POSITION	1819
+838	838	Don't Let Me Down (feat. Daya)	36	1483228800000000000	The Chainsmokers	https://open.spotify.com/track/0QsvXIfqM0zZoerQfsI9lm	Bolivia	top200	MOVE_DOWN	1803
+839	839	Bobo	37	1483228800000000000	J Balvin	https://open.spotify.com/track/7AtlMCIauSQZqiXSlbBPW6	Bolivia	top200	MOVE_UP	1742
+840	840	Treat You Better	38	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4Hf7WnR761jpxPr5D46Bcd	Bolivia	top200	MOVE_DOWN	1738
+841	841	Muchachita	39	1483228800000000000	Bonny Lovy	https://open.spotify.com/track/0B38YZydPDJz9N4uR9hULg	Bolivia	top200	MOVE_UP	1724
+842	842	Rockabye (feat. Sean Paul & Anne-Marie)	40	1483228800000000000	Clean Bandit	https://open.spotify.com/track/5knuzwU65gJK7IF5yJsuaW	Bolivia	top200	MOVE_DOWN	1642
+843	843	Ya Me Enteré (feat. Nicky Jam) - Urban Version	41	1483228800000000000	Reik	https://open.spotify.com/track/2SSYqDX8KTgy01NlqtUo0F	Bolivia	top200	MOVE_DOWN	1615
+844	844	Heathens	42	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/6i0V12jOa3mr6uu4WYhUBr	Bolivia	top200	MOVE_DOWN	1498
+845	845	"CAN'T STOP THE FEELING! (Original Song from DreamWorks Animation's ""TROLLS"")"	43	1483228800000000000	Justin Timberlake	https://open.spotify.com/track/6JV2JOEocMgcZxYSZelKcc	Bolivia	top200	MOVE_UP	1492
+846	846	Ride	44	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW	Bolivia	top200	MOVE_DOWN	1461
+847	847	Side To Side	45	1483228800000000000	Ariana Grande, Nicki Minaj	https://open.spotify.com/track/4pLwZjInHj3SimIyN9SnOz	Bolivia	top200	MOVE_DOWN	1440
+848	848	La Gozadera (feat. Marc Anthony)	46	1483228800000000000	Gente De Zona	https://open.spotify.com/track/0OMRAvrtLWE2TvcXorRiB9	Bolivia	top200	MOVE_UP	1435
+849	849	Hasta el Amanecer	47	1483228800000000000	Nicky Jam	https://open.spotify.com/track/5Fim1gaXBgsiFfsQAfQSDS	Bolivia	top200	MOVE_UP	1387
+850	850	Cheap Thrills	48	1483228800000000000	Sia	https://open.spotify.com/track/27SdWb2rFzO6GWiYDBTD9j	Bolivia	top200	MOVE_DOWN	1385
+851	851	Amor y dolor	49	1483228800000000000	Carlos Baute, Alexis y Fido	https://open.spotify.com/track/4efQTJSX6Jca1hHZNi74Zd	Bolivia	top200	MOVE_DOWN	1381
+852	852	Trumpets	50	1483228800000000000	Sak Noel & Salvi, Sean Paul	https://open.spotify.com/track/5dH7o4TP3HYLvCjo4QAhhv	Bolivia	top200	MOVE_UP	1376
+853	853	Loquita	51	1483228800000000000	Marama	https://open.spotify.com/track/2xjcDF21U2ccgE2LEeiMbf	Bolivia	top200	MOVE_UP	1336
+854	854	El chisme	52	1483228800000000000	Reykon	https://open.spotify.com/track/4VXejnj5WgM6H72ct2fSgQ	Bolivia	top200	MOVE_DOWN	1307
+855	855	Baila Conmigo	53	1483228800000000000	Juan Magán, Luciana	https://open.spotify.com/track/772io14jrMTxGJbijtDccQ	Bolivia	top200	MOVE_DOWN	1273
+856	856	Te Quiero Pa´Mi	54	1483228800000000000	Don Omar, Zion & Lennox	https://open.spotify.com/track/3BY2mafsbsoKGqS380Xnuz	Bolivia	top200	MOVE_DOWN	1266
+857	857	Por Fin Te Encontré	55	1483228800000000000	Cali Y El Dandee, Juan Magán, Sebastian Yatra	https://open.spotify.com/track/3GpvoKKWZyTwgbLEM9RmWM	Bolivia	top200	MOVE_UP	1235
+858	858	I Feel It Coming	56	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5GXAXm5YOmYT0kL5jHvYBt	Bolivia	top200	MOVE_DOWN	1215
+859	859	Locuras contigo	57	1483228800000000000	Rombai	https://open.spotify.com/track/5jMvnSyOgGY8JpvHqeyVOg	Bolivia	top200	MOVE_UP	1201
+860	860	Light It Up (feat. Nyla & Fuse ODG) - Remix	58	1483228800000000000	Major Lazer	https://open.spotify.com/track/0L7loeTIg6akW84aEQZpCT	Bolivia	top200	MOVE_UP	1157
+861	861	Traicionera - Remix	59	1483228800000000000	Sebastian Yatra, Cosculluela, Cali Y El Dandee	https://open.spotify.com/track/2webQDZmtGioeu3zUUi9We	Bolivia	top200	MOVE_UP	1145
+862	862	Work	60	1483228800000000000	Rihanna, Drake	https://open.spotify.com/track/14WWzenpaEgQZlqPq2nk4v	Bolivia	top200	MOVE_UP	1125
+863	863	Ando	61	1483228800000000000	Bonny Lovy	https://open.spotify.com/track/5a9pr1jMpFgOL9o8HHZU7z	Bolivia	top200	MOVE_UP	1101
+864	864	Tan Fácil	62	1483228800000000000	CNCO	https://open.spotify.com/track/1TxgZRcy3kZ7JaEp88MDbC	Bolivia	top200	MOVE_DOWN	1052
+865	865	Middle	63	1483228800000000000	DJ Snake, Bipolar Sunshine	https://open.spotify.com/track/4OZEu0Vwq0RB2LAq14v99n	Bolivia	top200	MOVE_DOWN	1043
+866	866	This Is What You Came For (feat. Rihanna)	64	1483228800000000000	Calvin Harris	https://open.spotify.com/track/0azC730Exh71aQlOt9Zj3y	Bolivia	top200	MOVE_UP	1036
+867	867	Cake By The Ocean	65	1483228800000000000	DNCE	https://open.spotify.com/track/2aFiaMXmWsM3Vj72F9ksBl	Bolivia	top200	MOVE_DOWN	1025
+868	868	Fuego	66	1483228800000000000	Juanes	https://open.spotify.com/track/0mwPE0lPOgnWf2bo14xedJ	Bolivia	top200	MOVE_DOWN	1003
+869	869	Deu Onda	1	1483228800000000000	MC G15	https://open.spotify.com/track/0EPxmvsG1BY5td4aTOkWBF	Brazil	top200	SAME_POSITION	612271
+870	870	Hear Me Now	2	1483228800000000000	Alok, Bruno Martini, Zeeba	https://open.spotify.com/track/1a5Yu5L18qNxVhXx38njON	Brazil	top200	SAME_POSITION	269574
+871	871	10% - Ao Vivo	3	1483228800000000000	Maiara & Maraisa	https://open.spotify.com/track/2wFnRPjuqwNySFiK0Qfg8L	Brazil	top200	MOVE_UP	228307
+872	872	Eu Sei de Cor - Ao Vivo | Acústico	4	1483228800000000000	Marília Mendonça	https://open.spotify.com/track/45wqPwIH4A5cr2IyyD4WKf	Brazil	top200	MOVE_DOWN	217394
+873	873	Meu Coração Deu PT - Ao Vivo	5	1483228800000000000	Wesley Safadão, Matheus & Kauan	https://open.spotify.com/track/6zCqeUUqLb2CapBmVwAHll	Brazil	top200	MOVE_UP	214171
+874	874	Medo Bobo - Ao Vivo	6	1483228800000000000	Maiara & Maraisa	https://open.spotify.com/track/2CW04trIoYMbroZWDzPAjs	Brazil	top200	SAME_POSITION	209183
+875	875	Sim ou não (participação especial Maluma)	7	1483228800000000000	Anitta	https://open.spotify.com/track/4FxumkF81ICxITeqxx4nK9	Brazil	top200	MOVE_UP	192220
+876	876	Closer	8	1483228800000000000	The Chainsmokers, Halsey	https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw	Brazil	top200	MOVE_DOWN	190936
+877	877	50 Reais	9	1483228800000000000	Naiara Azevedo, Maiara & Maraisa	https://open.spotify.com/track/2DAGCHu5aoo2FOjmtU9ojo	Brazil	top200	MOVE_UP	185333
+878	878	Infiel - Ao Vivo	10	1483228800000000000	Marília Mendonça	https://open.spotify.com/track/38MpAndIjGAyVdcC6npX95	Brazil	top200	MOVE_UP	183344
+879	879	Decide Aí - Na Praia / Ao Vivo	11	1483228800000000000	Matheus & Kauan	https://open.spotify.com/track/0jIitZeIQRTaZgFQf2WpGK	Brazil	top200	MOVE_UP	166355
+880	880	Te Assumi Pro Brasil - Ao Vivo	12	1483228800000000000	Matheus & Kauan	https://open.spotify.com/track/2d3TbSkAscvT3QRQalq6uT	Brazil	top200	MOVE_DOWN	160261
+881	881	Malandramente	13	1483228800000000000	DENNIS, MC Nandinho, Nego Bam	https://open.spotify.com/track/7DRP2VOMpy1rrk3iYFLCW9	Brazil	top200	MOVE_UP	156803
+882	882	Cold Water (feat. Justin Bieber & MØ)	14	1483228800000000000	Major Lazer	https://open.spotify.com/track/6DNtNfH8hXkqOX1sjqmI7p	Brazil	top200	MOVE_UP	152426
+883	883	Starboy	15	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5aAx2yezTd8zXrkmtKl66Z	Brazil	top200	MOVE_DOWN	152291
+884	884	O Nosso Santo Bateu - Na Praia / Ao Vivo	16	1483228800000000000	Matheus & Kauan	https://open.spotify.com/track/6SwI4OplF8m5NH8wHKIps8	Brazil	top200	MOVE_UP	151785
+885	885	Let Me Love You	17	1483228800000000000	DJ Snake, Justin Bieber	https://open.spotify.com/track/4pdPtRcBmOSQDlJ3Fk945m	Brazil	top200	MOVE_DOWN	151704
+886	886	Eu, Você, O Mar e Ela	18	1483228800000000000	Luan Santana	https://open.spotify.com/track/000xYdQfIZ4pDmBGzQalKU	Brazil	top200	MOVE_DOWN	147937
+887	887	Como Faz Com Ela - Ao Vivo	19	1483228800000000000	Marília Mendonça	https://open.spotify.com/track/2Gvn46nwyQhUnQiFhlP7WX	Brazil	top200	MOVE_UP	146556
+888	888	E Essa Boca Aí? - Ao Vivo	20	1483228800000000000	Bruninho & Davi	https://open.spotify.com/track/6vve9WKW5I7fQzkU8dNsUE	Brazil	top200	SAME_POSITION	143845
+889	889	Paredes - Ao Vivo	21	1483228800000000000	Jorge & Mateus	https://open.spotify.com/track/2GfxgssRHvY1azHtaRqKoK	Brazil	top200	MOVE_DOWN	142894
+890	890	Como É Que a Gente Fica - Ao Vivo	22	1483228800000000000	Henrique & Juliano	https://open.spotify.com/track/41mt7YrfLrIc4EQJZFCJtw	Brazil	top200	MOVE_UP	141131
+891	891	One Dance	23	1483228800000000000	Drake, WizKid, Kyla	https://open.spotify.com/track/1xznGGDReH1oQq0xzbwXa3	Brazil	top200	MOVE_DOWN	139770
+892	892	Tumbalatum	24	1483228800000000000	MC Kevinho	https://open.spotify.com/track/4aAq1afusFG6jRiOSHQZvN	Brazil	top200	MOVE_UP	136943
+893	893	Homem de Família - Ao Vivo	25	1483228800000000000	Gusttavo Lima	https://open.spotify.com/track/12wiyBZqQ3mOU7AfygXJCw	Brazil	top200	MOVE_UP	136816
+894	894	Ou Some Ou Soma - Ao Vivo	26	1483228800000000000	Jorge & Mateus	https://open.spotify.com/track/3dRBzTOu9polrH9U6Vh2zw	Brazil	top200	MOVE_UP	134120
+895	895	Flyva	145	1483315200000000000	Volkan	https://open.spotify.com/track/6W2OooyxIA7ypic7POmpOy	Denmark	top200	NEW_ENTRY	7789
+896	896	Malbec (Part. DENNIS) (feat. DENNIS) - Ao Vivo	27	1483228800000000000	Henrique & Diego	https://open.spotify.com/track/5SnQDj5REQVvAdSlhqkEcE	Brazil	top200	MOVE_UP	133072
+897	897	My Way	28	1483228800000000000	Calvin Harris	https://open.spotify.com/track/1vvNmPOiUuyCbgWmtc6yfm	Brazil	top200	MOVE_DOWN	132365
+898	898	Sosseguei - Ao Vivo	29	1483228800000000000	Jorge & Mateus	https://open.spotify.com/track/1xFgXCY8Zvo76gHg4RgUaU	Brazil	top200	MOVE_UP	128396
+899	899	Don't Wanna Know	30	1483228800000000000	Maroon 5, Kendrick Lamar	https://open.spotify.com/track/5MFzQMkrl1FOOng9tq6R9r	Brazil	top200	MOVE_DOWN	126564
+900	900	Na Hora da Raiva - Ao Vivo	31	1483228800000000000	Henrique & Juliano	https://open.spotify.com/track/0Zu7NVn4IvfYuEIrD11UVr	Brazil	top200	MOVE_UP	121644
+901	901	Side To Side	32	1483228800000000000	Ariana Grande, Nicki Minaj	https://open.spotify.com/track/4pLwZjInHj3SimIyN9SnOz	Brazil	top200	MOVE_DOWN	120947
+902	902	24K Magic	33	1483228800000000000	Bruno Mars	https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P	Brazil	top200	MOVE_DOWN	119691
+903	903	Bumbum Granada	34	1483228800000000000	Mc's Zaac & Jerry Smith	https://open.spotify.com/track/4SCH5CuivFcShLpTg8lYOf	Brazil	top200	MOVE_UP	119022
+904	904	Você Merece Cachê - Ao Vivo	35	1483228800000000000	Israel Novaes, Wesley Safadão	https://open.spotify.com/track/1ypcU9264wnBwPvmrIy4fx	Brazil	top200	MOVE_UP	117785
+905	905	Louca de Saudade - Ao Vivo	36	1483228800000000000	Jorge & Mateus	https://open.spotify.com/track/2InJDvDcA4RXEeA9njdibl	Brazil	top200	MOVE_DOWN	113836
+906	906	Chantaje (feat. Maluma)	37	1483228800000000000	Shakira	https://open.spotify.com/track/6mICuAdrwEjh6Y6lroV2Kg	Brazil	top200	MOVE_DOWN	112718
+907	907	Nada Nada - Ao Vivo	38	1483228800000000000	Henrique & Juliano	https://open.spotify.com/track/0GR7ZABhVF9GbxghIx2RRv	Brazil	top200	MOVE_UP	111963
+908	908	Vou Voando - Ao Vivo	39	1483228800000000000	Jorge & Mateus	https://open.spotify.com/track/1WCn5QBp0Kl9uHrR0J02GS	Brazil	top200	MOVE_DOWN	110788
+909	909	Sorry	40	1483228800000000000	Justin Bieber	https://open.spotify.com/track/69bp2EbF7Q2rqc5N3ylezZ	Brazil	top200	MOVE_DOWN	110417
+910	910	A Rosa E O Beija-Flor - Na Praia / Ao Vivo	41	1483228800000000000	Matheus & Kauan	https://open.spotify.com/track/4GQVVsUnMbZeKIx9vguKlg	Brazil	top200	MOVE_DOWN	109567
+911	911	Aquele 1% - Ao Vivo	42	1483228800000000000	Marcos & Belutti, Wesley Safadão	https://open.spotify.com/track/62LiYpeFoJaixqkaNRGg47	Brazil	top200	MOVE_UP	106028
+912	912	Seu Polícia - Ao Vivo	43	1483228800000000000	Zé Neto & Cristiano	https://open.spotify.com/track/7CmuLM2vfzA78iHeqastoP	Brazil	top200	MOVE_UP	105441
+913	913	Flor e o Beija-Flor - Ao Vivo	44	1483228800000000000	Henrique & Juliano, Marília Mendonça	https://open.spotify.com/track/0phVJ23NJlruwtt1XCm94N	Brazil	top200	MOVE_UP	103771
+914	914	Pra Sempre Com Você - Ao Vivo	45	1483228800000000000	Jorge & Mateus	https://open.spotify.com/track/2KGv51jgAz8OTjNPyRryfq	Brazil	top200	MOVE_DOWN	103167
+915	915	Cheap Thrills	46	1483228800000000000	Sia	https://open.spotify.com/track/27SdWb2rFzO6GWiYDBTD9j	Brazil	top200	MOVE_DOWN	100713
+916	916	Ela Só Quer Paz	47	1483228800000000000	Projota	https://open.spotify.com/track/3mTUqLbtWm2DAEwvQTyu4d	Brazil	top200	MOVE_DOWN	98622
+917	917	Rockabye (feat. Sean Paul & Anne-Marie)	48	1483228800000000000	Clean Bandit	https://open.spotify.com/track/5knuzwU65gJK7IF5yJsuaW	Brazil	top200	MOVE_DOWN	93502
+918	918	Suíte 14 (feat. Mc Guimê) - Ao Vivo	49	1483228800000000000	Henrique & Diego, MC Guime	https://open.spotify.com/track/4lbPwb1Beo7JU2VwuJRTeR	Brazil	top200	MOVE_UP	91197
+919	919	Treat You Better	50	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4Hf7WnR761jpxPr5D46Bcd	Brazil	top200	MOVE_DOWN	88841
+920	920	Bom	51	1483228800000000000	LUDMILLA	https://open.spotify.com/track/25SL3ZSbEGtu4oU14xllMQ	Brazil	top200	MOVE_UP	88012
+921	921	In the Name of Love	52	1483228800000000000	Martin Garrix, Bebe Rexha	https://open.spotify.com/track/04DwTuZ2VBdJCCC5TROn7L	Brazil	top200	MOVE_DOWN	86200
+922	922	Na Ponta Ela Fica	53	1483228800000000000	Delano	https://open.spotify.com/track/1OtZIaJBXo3Pe6nfaMsjKT	Brazil	top200	MOVE_UP	85139
+923	923	Sou eu	54	1483228800000000000	LUDMILLA	https://open.spotify.com/track/1Tn0msQvQMbD6woO9VnEG3	Brazil	top200	MOVE_UP	84670
+924	924	Estaca Zero	55	1483228800000000000	Luan Santana, Ivete Sangalo	https://open.spotify.com/track/5OZqnhkGUxuSuW2P7CzH7y	Brazil	top200	MOVE_DOWN	84609
+925	925	Impasse - Ao Vivo	56	1483228800000000000	Marília Mendonça, Henrique & Juliano	https://open.spotify.com/track/5s2ydrmJOiPeZGx4S4X8Aw	Brazil	top200	MOVE_UP	81318
+926	926	Que Sorte A Nossa - Live	57	1483228800000000000	Matheus & Kauan	https://open.spotify.com/track/4rWCLK8mfQ6JpArmgIT8aK	Brazil	top200	MOVE_UP	80504
+927	927	I Took A Pill In Ibiza - Seeb Remix	58	1483228800000000000	Mike Posner	https://open.spotify.com/track/17Fd6Yb7mSbinKG8LoWfFl	Brazil	top200	MOVE_DOWN	79898
+928	928	This Is What You Came For (feat. Rihanna)	59	1483228800000000000	Calvin Harris	https://open.spotify.com/track/0azC730Exh71aQlOt9Zj3y	Brazil	top200	MOVE_UP	78357
+929	929	Work	60	1483228800000000000	Rihanna, Drake	https://open.spotify.com/track/14WWzenpaEgQZlqPq2nk4v	Brazil	top200	MOVE_UP	78310
+930	930	"CAN'T STOP THE FEELING! (Original Song from DreamWorks Animation's ""TROLLS"")"	61	1483228800000000000	Justin Timberlake	https://open.spotify.com/track/6JV2JOEocMgcZxYSZelKcc	Brazil	top200	MOVE_DOWN	77131
+931	931	Just Hold On	62	1483228800000000000	Steve Aoki, Louis Tomlinson	https://open.spotify.com/track/3EmmCZoqpWOTY1g2GBwJoR	Brazil	top200	MOVE_DOWN	76973
+932	932	Don't Let Me Down (feat. Daya)	63	1483228800000000000	The Chainsmokers	https://open.spotify.com/track/0QsvXIfqM0zZoerQfsI9lm	Brazil	top200	MOVE_DOWN	76831
+933	933	Fala a Verdade - Ao Vivo	64	1483228800000000000	Maiara & Maraisa, Jorge & Mateus	https://open.spotify.com/track/3QhJAGDdxt749dFveYVy4M	Brazil	top200	MOVE_UP	76521
+934	934	This Girl (Kungs Vs. Cookin' On 3 Burners)	65	1483228800000000000	Kungs	https://open.spotify.com/track/0tICYNayWWhH9GPeFrfjfD	Brazil	top200	SAME_POSITION	76192
+935	935	O Que Falta Em Você Sou Eu - Ao Vivo	66	1483228800000000000	Marília Mendonça	https://open.spotify.com/track/3XSefjiSHsD34F7clH84xa	Brazil	top200	MOVE_UP	71660
+936	936	Quase um Casal - Ao Vivo	67	1483228800000000000	Maiara & Maraisa	https://open.spotify.com/track/3BhctwMUY5Y9xmes194QTq	Brazil	top200	MOVE_UP	69319
+937	937	Bang	68	1483228800000000000	Anitta	https://open.spotify.com/track/1Cml3fnCNLZUC1EEtkcgVb	Brazil	top200	MOVE_UP	68574
+938	938	Parece Piada - Ao Vivo	69	1483228800000000000	Henrique & Juliano	https://open.spotify.com/track/3cS6YsU197mrdPTyR7nbp7	Brazil	top200	MOVE_UP	68574
+939	939	Work from Home (feat. Ty Dolla $ign)	70	1483228800000000000	Fifth Harmony	https://open.spotify.com/track/4tCtwWceOPWzenK2HAIJSb	Brazil	top200	MOVE_DOWN	68122
+940	940	I Feel It Coming	71	1483228800000000000	The Weeknd, Daft Punk	https://open.spotify.com/track/5GXAXm5YOmYT0kL5jHvYBt	Brazil	top200	MOVE_UP	64056
+941	941	Partiu	72	1483228800000000000	MC Kekel	https://open.spotify.com/track/1LTxGBL6yKtfmW3K8EvbSY	Brazil	top200	MOVE_UP	63962
+942	942	Amei Te Ver	73	1483228800000000000	Tiago Iorc	https://open.spotify.com/track/4owo0j5bw45IqiHxsTzcd6	Brazil	top200	MOVE_DOWN	63411
+943	943	"I Don’t Wanna Live Forever (Fifty Shades Darker) - From ""Fifty Shades Darker (Original Motion Picture Soundtrack)"""	74	1483228800000000000	ZAYN, Taylor Swift	https://open.spotify.com/track/3NdDpSvN911VPGivFlV5d0	Brazil	top200	MOVE_DOWN	62807
+944	944	Incerteza - Na Praia / Ao Vivo	75	1483228800000000000	Matheus & Kauan	https://open.spotify.com/track/1FTsXXwai3jVXhBTLd4e4L	Brazil	top200	MOVE_UP	60181
+945	945	Black Beatles	76	1483228800000000000	Rae Sremmurd, Gucci Mane	https://open.spotify.com/track/6fujklziTHa8uoM5OQSfIo	Brazil	top200	MOVE_DOWN	59541
+946	946	O Verão Está Chegando	77	1483228800000000000	Mc Davi	https://open.spotify.com/track/4jswhbcaGqFe8v5uSHlqyb	Brazil	top200	MOVE_DOWN	59363
+947	947	Cake By The Ocean	78	1483228800000000000	DNCE	https://open.spotify.com/track/2aFiaMXmWsM3Vj72F9ksBl	Brazil	top200	MOVE_DOWN	59059
+948	948	Solteiro de Novo - Ao Vivo	79	1483228800000000000	Wesley Safadão, Ronaldinho Gaúcho	https://open.spotify.com/track/0Or4rCFurYpUxYh0bbpxRY	Brazil	top200	MOVE_UP	58432
+949	949	Mercy	80	1483228800000000000	Shawn Mendes	https://open.spotify.com/track/4TZy1wLyHec06pwgFYDh1a	Brazil	top200	MOVE_DOWN	55275
+950	950	Essa mina é louca (Participação especial de Jhama)	81	1483228800000000000	Anitta	https://open.spotify.com/track/5Bn6W4bwH7Bw5nMvn8V4xF	Brazil	top200	MOVE_UP	55250
+951	951	Olha a Explosão	82	1483228800000000000	MC Kevinho	https://open.spotify.com/track/6m2LNopVJKsvBB9l7Z1rwn	Brazil	top200	MOVE_UP	53559
+952	952	Stressed Out	83	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn	Brazil	top200	MOVE_DOWN	52766
+953	953	We Don't Talk Anymore (feat. Selena Gomez)	84	1483228800000000000	Charlie Puth	https://open.spotify.com/track/68EMU2RD1ECNeOeJ5qAXCV	Brazil	top200	MOVE_DOWN	51795
+954	954	Fake Love	85	1483228800000000000	Drake	https://open.spotify.com/track/343YBumqHu19cGoGARUTsd	Brazil	top200	MOVE_DOWN	50986
+955	955	Heathens	86	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/6i0V12jOa3mr6uu4WYhUBr	Brazil	top200	SAME_POSITION	50975
+956	956	Nada Bom II	87	1483228800000000000	Costa Gold, Luccas Carlos, Don L	https://open.spotify.com/track/0Mh4id8WvrTFOB9RiVitrB	Brazil	top200	MOVE_DOWN	50967
+957	957	Hymn for the Weekend - Seeb Remix	88	1483228800000000000	Coldplay	https://open.spotify.com/track/1OAiWI2oPmglaOiv9fdioU	Brazil	top200	MOVE_DOWN	50349
+958	958	Tudo de Bom	89	1483228800000000000	Mc Livinho	https://open.spotify.com/track/5XRtwljsug3r3XOBy9Bndu	Brazil	top200	MOVE_UP	50166
+959	959	Bad Things (with Camila Cabello)	90	1483228800000000000	Machine Gun Kelly	https://open.spotify.com/track/1PSBzsahR2AKwLJgx8ehBj	Brazil	top200	MOVE_DOWN	50098
+960	960	Fantasma	91	1483228800000000000	Luan Santana, Marília Mendonça	https://open.spotify.com/track/5Nw3HvX6k8cB7NjEkqJkij	Brazil	top200	MOVE_DOWN	49152
+961	961	Love Yourself	92	1483228800000000000	Justin Bieber	https://open.spotify.com/track/3hB5DgAiMAQ4DzYbsMq1IT	Brazil	top200	MOVE_DOWN	48881
+962	962	Lean On (feat. MØ & DJ Snake)	93	1483228800000000000	Major Lazer	https://open.spotify.com/track/4WjH9Bzt3kx7z8kl0awxh4	Brazil	top200	MOVE_UP	48668
+963	963	That's My Girl	94	1483228800000000000	Fifth Harmony	https://open.spotify.com/track/2ACOWPLUe4A4KuQ5ioD2od	Brazil	top200	MOVE_DOWN	47466
+964	964	Sentimento Louco - Ao Vivo	95	1483228800000000000	Marília Mendonça	https://open.spotify.com/track/5YdC74tZejyq3vurDOLFYz	Brazil	top200	MOVE_UP	47433
+965	965	Coração Machucado - Ao Vivo	96	1483228800000000000	Wesley Safadão	https://open.spotify.com/track/0GhaUJVyWwAKDELlAAFWyo	Brazil	top200	MOVE_UP	47318
+966	966	Cheia de Marra	97	1483228800000000000	Mc Livinho	https://open.spotify.com/track/4gvePWCd0GfkC40QshflUy	Brazil	top200	MOVE_UP	47271
+967	967	Our Way	98	1483228800000000000	FTampa, Kamatos	https://open.spotify.com/track/7hA7pMp2Vr1OCC4sWYwaMG	Brazil	top200	SAME_POSITION	46684
+968	968	Regime Fechado - Ao Vivo	99	1483228800000000000	Simone & Simaria	https://open.spotify.com/track/6UZJOc2HBrTp9DYfir9N8n	Brazil	top200	MOVE_DOWN	46494
+969	969	Vou Dar Virote - Ao Vivo	100	1483228800000000000	Wesley Safadão	https://open.spotify.com/track/6bV82DzyaNLjig0tVywear	Brazil	top200	MOVE_UP	46345
+970	970	Camarote	101	1483228800000000000	Wesley Safadão	https://open.spotify.com/track/77VvA3wNFxm1P9amCKlVHQ	Brazil	top200	MOVE_UP	46169
+971	971	I Would Like	102	1483228800000000000	Zara Larsson	https://open.spotify.com/track/4Q4jmPHwu0wrJvqrld0FQ6	Brazil	top200	MOVE_DOWN	45030
+972	972	Send My Love (To Your New Lover)	103	1483228800000000000	Adele	https://open.spotify.com/track/4BHzQ9C00ceJxfG16AlNWb	Brazil	top200	MOVE_DOWN	44361
+973	973	Ela Domina o Ratatá Tum Tum - Ao Vivo	104	1483228800000000000	Wesley Safadão	https://open.spotify.com/track/5ITDkudn3l1YoZc2TP0vhN	Brazil	top200	MOVE_UP	43505
+974	974	Ride	105	1483228800000000000	Twenty One Pilots	https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW	Brazil	top200	MOVE_DOWN	43004
+975	975	Shed a Light	106	1483228800000000000	Robin Schulz, David Guetta, Cheat Codes	https://open.spotify.com/track/1cG0umU5TKStygKsPFZ9pY	Brazil	top200	MOVE_DOWN	42690
+976	976	Hotline Bling	107	1483228800000000000	Drake	https://open.spotify.com/track/2FBUoWkIuQXwayw2RNo5l6	Brazil	top200	MOVE_UP	42236
+977	977	Não Me Deixe Sozinho	108	1483228800000000000	Nego do Borel	https://open.spotify.com/track/0gNxi721t2RcPt5LdWGfpb	Brazil	top200	MOVE_UP	41635
+978	978	De Tanto Te Querer - Ao Vivo	109	1483228800000000000	Jorge & Mateus	https://open.spotify.com/track/3HrvG1d9OZpg6eV4A1dcSk	Brazil	top200	MOVE_UP	40837
+979	979	Meu Violão E O Nosso Cachorro - Ao Vivo	110	1483228800000000000	Simone & Simaria	https://open.spotify.com/track/68y9Wxhai4e17Ywvnz76vY	Brazil	top200	MOVE_UP	40633
+980	980	All We Know	111	1483228800000000000	The Chainsmokers, Phoebe Ryan	https://open.spotify.com/track/2rizacJSyD9S1IQUxUxnsK	Brazil	top200	MOVE_DOWN	40623
+981	981	Duvido Você Não Tomar Uma - Ao Vivo	112	1483228800000000000	Simone & Simaria	https://open.spotify.com/track/6S8yTw0KfidwuAq5Y6Bygj	Brazil	top200	MOVE_DOWN	40043
+982	982	Turutum	113	1483228800000000000	MC Kevinho	https://open.spotify.com/track/3pM81OKNrV6d2zJb76nQ6M	Brazil	top200	MOVE_UP	39837
+983	983	De Buenas	114	1483228800000000000	Lucas Lucco	https://open.spotify.com/track/4NpFX0f0GfJgy92c9ypVxk	Brazil	top200	MOVE_UP	39710
+984	984	Deixa a Gente Quieto - Ao Vivo	115	1483228800000000000	João Bosco & Vinicius, Henrique & Juliano	https://open.spotify.com/track/4PNi30UilK0CZi2z9wegMQ	Brazil	top200	MOVE_UP	39698
+985	985	Os Anjos Cantam	116	1483228800000000000	Jorge & Mateus	https://open.spotify.com/track/6ccKu0LwJzOhLAxBwP2PTk	Brazil	top200	MOVE_UP	39395
+986	986	By Your Side	117	1483228800000000000	Jonas Blue, RAYE	https://open.spotify.com/track/1D3ODoXHBLpdxolZRHWV1j	Brazil	top200	MOVE_UP	39387
+987	987	Você Foi Diferente	118	1483228800000000000	MC G15	https://open.spotify.com/track/716p41p4BQQuUMgOP8ucpF	Brazil	top200	MOVE_DOWN	39241
+988	988	Vou Desafiar Você	119	1483228800000000000	Mc Sapao	https://open.spotify.com/track/0P3k6Jipqv1UWX0a4GmUuj	Brazil	top200	MOVE_UP	39199
+989	989	Pé Direito	120	1483228800000000000	Mc Davi	https://open.spotify.com/track/6V3J5pbU5yBvB5zxPSyP5v	Brazil	top200	MOVE_DOWN	39081
+990	990	Sugar	121	1483228800000000000	Maroon 5	https://open.spotify.com/track/494OU6M7NOf4ICYb4zWCf5	Brazil	top200	MOVE_UP	38790
+991	991	Quando O Mel É Bom - Ao Vivo	122	1483228800000000000	Simone & Simaria	https://open.spotify.com/track/21j9YxYHSzrdcLBX3mb5UL	Brazil	top200	MOVE_UP	38002
+992	992	How Deep Is Your Love	123	1483228800000000000	Calvin Harris, Disciples	https://open.spotify.com/track/22mek4IiqubGD9ctzxc69s	Brazil	top200	MOVE_UP	37856
+993	993	Solteiro de Novo - Ao Vivo	124	1483228800000000000	Wesley Safadão, Ronaldinho Gaúcho	https://open.spotify.com/track/4xRSLYsW0Y4FCnkFqyuJdF	Brazil	top200	MOVE_UP	37593
+994	994	Made In Roça	125	1483228800000000000	Loubet	https://open.spotify.com/track/7clSIA4MRU6LJAoCWWEiuy	Brazil	top200	MOVE_UP	37473
+995	995	Tim Tim - Ao Vivo	126	1483228800000000000	Wesley Safadão	https://open.spotify.com/track/4bftZ7IayYg0I6qQNk4ecK	Brazil	top200	MOVE_UP	37363
+996	996	Folgado - Ao Vivo	127	1483228800000000000	Marília Mendonça	https://open.spotify.com/track/4DYmJ19DhmxUe26QhANDYv	Brazil	top200	MOVE_UP	37320
+997	997	Photograph	128	1483228800000000000	Ed Sheeran	https://open.spotify.com/track/6fxVffaTuwjgEk5h9QyRjy	Brazil	top200	MOVE_DOWN	37266
+998	998	Starving	129	1483228800000000000	Hailee Steinfeld, Grey, Zedd	https://open.spotify.com/track/1qOLh0tI7trd1zdDKxYZTe	Brazil	top200	MOVE_DOWN	37178
+999	999	Scars To Your Beautiful	130	1483228800000000000	Alessia Cara	https://open.spotify.com/track/0prNGof3XqfTvNDxHonvdK	Brazil	top200	MOVE_DOWN	37132
