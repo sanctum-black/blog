@@ -172,5 +172,3 @@ with open('outputs/11_dataset_method_1.pickle', 'rb') as file:
 
 # Close the BufferedReader object
 file.close()
-
-
