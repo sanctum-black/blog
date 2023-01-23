@@ -355,7 +355,7 @@ This makes reading `.parquet` files seamless with Pandas, whichever the partitio
 ### 5. Avro
 There is one method for reading a Avro file using Python:
 
-#### 4.2 Using `fastavro` `reader`
+#### 5.1 Using `fastavro` `reader`
 If we recall from the first part of this article series, we mentioned that in order to write a `.avro` file, we first needed to convert our data set into dictionaries consisting of key-value pairs (*one dictionary per row*). Then, we needed to save our dictionaries as a list.
 
 The same applies when attempting to read a `.avro` file:
