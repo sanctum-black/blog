@@ -7,7 +7,7 @@ We can also further classify formats as text files or binary files. A binary fil
 
 In this 3-article series, we will discuss six popular Big Data file formats, explain what they are for, go over writing & reading examples, and make some performance comparisons.
 
-We'll be using Python scripts which you can get from the [Blog Article Repo](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared).
+We'll be using Python scripts which can be found in the [Blog Article Repo](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared).
 
 ---
 

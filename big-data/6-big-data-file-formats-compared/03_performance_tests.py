@@ -22,57 +22,109 @@ Part of Blog Article: 6-big-data-file-formats-compared
 
 # -------------------------------
 # -------------------------------
-# Preparing the data set
+# Importing the required modules
 # -------------------------------
 # -------------------------------
 
 # Import all required modules beforehand
-import csv
-import numpy as np
+
+# File manipulation modules
 import pandas as pd
 from fastavro import reader, writer, parse_schema
 import pickle
+import openpyxl
+
+# Performance measurement modules
 import time
+
+# System utility modules
 import os
 import shutil
 from pathlib import Path
 
-# # Load csv file as pandas.DataFrame object
-# df = pd.read_csv('datasets/charts.csv')
-
-# # Get the head of the object
-# df_head = df.head()
-
-# # Get the shape of the object
-# df.shape
-
-# # Singe we have nan values, we will remove them
-# df = df.dropna()
-
-# # Check the current data types and see if casting is required
-# df.dtypes
-
-# # Cast to required data types
-# # Date is currently a string. We will cast it to Pandas DateTime in integer format
-# # since Avro does not support original DateTime
-# df['date'] = pd.to_datetime(df['date'])
-# df['date'] = df['date'].apply(lambda x: x.value)
-
-# # streams will be casted to integer type
-# df['streams'] = df['streams'].astype('int')
+# Plotting modules
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # -------------------------------
+# -------------------------------
+# Defining plot parameters
+# -------------------------------
+# -------------------------------
+
+# Before anything else, delete the Matplotlib
+# font cache directory if it exists, to ensure
+# custom font propper loading
+try:
+    shutil.rmtree(matplotlib.get_cachedir())
+except FileNotFoundError:
+    pass
+
+# Define main color as hex
+color_main = '#1a1a1a'
+
+# Define title & label padding
+text_padding = 18
+
+# Define font sizes
+title_font_size = 17
+label_font_size = 14
+
+# Define rc params
+plt.rcParams['figure.figsize'] = [14.0, 7.0]
+plt.rcParams['figure.dpi'] = 300
+plt.rcParams['grid.color'] = 'k'
+plt.rcParams['grid.linestyle'] = ':'
+plt.rcParams['grid.linewidth'] = 0.5
+plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['font.sans-serif'] = ['Lora']
+
+# -------------------------------
+# -------------------------------
+# Preparing the dataset
+# -------------------------------
+# -------------------------------
+
+# Load csv file as pandas.DataFrame object
+df = pd.read_csv('datasets/charts.csv')
+
+# Get the head of the object
+df_head = df.head()
+
+# Get the shape of the object
+df.shape
+
+# Singe we have nan values, we will remove them
+df = df.dropna()
+
+# Check the current data types and see if casting is required
+df.dtypes
+
+# Cast to required data types
+# Date is currently a string. We will cast it to Pandas DateTime in integer format
+# since Avro does not support original DateTime
+df['date'] = pd.to_datetime(df['date'])
+df['date'] = df['date'].apply(lambda x: x.value)
+
+# Streams will be casted to integer type
+df['streams'] = df['streams'].astype('int')
+
+# -------------------------------
+# -------------------------------
+# Performance tests
+# -------------------------------
+# -------------------------------
+
+# Define number of trials n
+n = 20
+
+# Define performance tests output path
+path = 'performance_tests/'
+
 # -------------------------------
 # Writing performance tests
 # -------------------------------
-# -------------------------------
-
-
-df = pd.read_csv('datasets/charts_head.csv')
-df['date'] = pd.to_datetime(df['date'])
-df['date'] = df['date'].apply(lambda x: x.value)
-df['streams'] = df['streams'].astype('int')
-
 
 # Declare a function for performing writing experiments
 def writingPerformance(n, path, df):
@@ -85,11 +137,11 @@ def writingPerformance(n, path, df):
         Path for result writing.
     
     df : pandas.DataFrame
-        DataFrame Objectn containing data set.
+        DataFrame Object containing data set.
 
     Returns
     -------
-    measured_vars : dict
+    measured_vars_w : dict
         Execution time for each file format, with n number of trials.
 
     '''
@@ -112,7 +164,9 @@ def writingPerformance(n, path, df):
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'CSV trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
@@ -127,10 +181,12 @@ def writingPerformance(n, path, df):
         
         # Append time to series
         wtime_csv = pd.concat([pd.Series([exec_time]), wtime_csv])
-        wtime_csv.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_w['01_CSV'] = wtime_csv
+    # Define series title
+    wtime_csv.name = 'Writing Time [s]'
+    
+    # Add measurements to dictionary
+    measured_vars_w['01_CSV'] = wtime_csv.reset_index(drop = True)
         
     # Remove all files from dir except one
     for trial in range(n - 1):
@@ -141,7 +197,9 @@ def writingPerformance(n, path, df):
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'TXT trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
@@ -156,10 +214,12 @@ def writingPerformance(n, path, df):
         
         # Append time to series
         wtime_txt = pd.concat([pd.Series([exec_time]), wtime_txt])
-        wtime_txt.reset_index(drop = True)
-        
-        # Add measurements to dictionary
-        measured_vars_w['02_TXT'] = wtime_txt
+    
+    # Define series title
+    wtime_txt.name = 'Writing Time [s]'
+    
+    # Add measurements to dictionary
+    measured_vars_w['02_TXT'] = wtime_txt.reset_index(drop = True)
         
     # Remove all files from dir except one
     for trial in range(n - 1):
@@ -170,7 +230,9 @@ def writingPerformance(n, path, df):
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Feather trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
@@ -185,10 +247,12 @@ def writingPerformance(n, path, df):
         
         # Append time to series
         wtime_feather = pd.concat([pd.Series([exec_time]), wtime_feather])
-        wtime_feather.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_w['03_Feather'] = wtime_feather
+    # Define series title
+    wtime_feather.name = 'Writing Time [s]'
+        
+    # Add measurements to dictionary
+    measured_vars_w['03_Feather'] = wtime_feather.reset_index(drop = True)
         
     # Remove all files from dir except one
     for trial in range(n - 1):
@@ -199,7 +263,9 @@ def writingPerformance(n, path, df):
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Parquet NP trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
@@ -214,10 +280,12 @@ def writingPerformance(n, path, df):
         
         # Append time to series
         wtime_parquet_NP = pd.concat([pd.Series([exec_time]), wtime_parquet_NP])
-        wtime_parquet_NP.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_w['04_Parquet_NP'] = wtime_parquet_NP
+    # Define series title
+    wtime_parquet_NP.name = 'Writing Time [s]'
+        
+    # Add measurements to dictionary
+    measured_vars_w['04_Parquet_NP'] = wtime_parquet_NP.reset_index(drop = True)
         
     # Remove all files from dir except one
     for trial in range(n - 1):
@@ -228,7 +296,9 @@ def writingPerformance(n, path, df):
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Parquet SP trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
@@ -243,10 +313,12 @@ def writingPerformance(n, path, df):
         
         # Append time to series
         wtime_parquet_SP = pd.concat([pd.Series([exec_time]), wtime_parquet_SP])
-        wtime_parquet_SP.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_w['05_Parquet_SP'] = wtime_parquet_SP
+    # Define series title
+    wtime_parquet_SP.name = 'Writing Time [s]'
+        
+    # Add measurements to dictionary
+    measured_vars_w['05_Parquet_SP'] = wtime_parquet_SP.reset_index(drop = True)
         
     # Remove all files from dir except one
     for trial in range(n - 1):
@@ -257,7 +329,9 @@ def writingPerformance(n, path, df):
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Parquet MP trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
@@ -272,10 +346,12 @@ def writingPerformance(n, path, df):
         
         # Append time to series
         wtime_parquet_MP = pd.concat([pd.Series([exec_time]), wtime_parquet_MP])
-        wtime_parquet_MP.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_w['06_Parquet_MP'] = wtime_parquet_MP
+    # Define series title
+    wtime_parquet_MP.name = 'Writing Time [s]'
+        
+    # Add measurements to dictionary
+    measured_vars_w['06_Parquet_MP'] = wtime_parquet_MP.reset_index(drop = True)
         
     # Remove all files from dir except one
     for trial in range(n - 1):
@@ -309,14 +385,15 @@ def writingPerformance(n, path, df):
     # Convert pd.DataFrame to records (list of dictionaries)
     records = df.to_dict('records')
     
-    # Write to Avro file
     for trial in range(n):
         
+        # Start trial
         print(f'Avro trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
+        # Write to Avro file
         with open(path + 'Avro' + '_' + str(trial) + '.avro', 'wb') as file:
             writer(file, parsed_schema, records)
 
@@ -330,10 +407,12 @@ def writingPerformance(n, path, df):
         
         # Append time to series
         wtime_avro = pd.concat([pd.Series([exec_time]), wtime_avro])
-        wtime_avro.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_w['07_Avro'] = wtime_avro
+    # Define series title
+    wtime_avro.name = 'Writing Time [s]'
+        
+    # Add measurements to dictionary
+    measured_vars_w['07_Avro'] = wtime_avro.reset_index(drop = True)
         
     # Remove all files from dir except one
     for trial in range(n - 1):
@@ -345,7 +424,9 @@ def writingPerformance(n, path, df):
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Pickle trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
@@ -360,10 +441,12 @@ def writingPerformance(n, path, df):
         
         # Append time to series
         wtime_pickle = pd.concat([pd.Series([exec_time]), wtime_pickle])
-        wtime_pickle.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_w['08_Pickle'] = wtime_pickle
+    # Define series title
+    wtime_pickle.name = 'Writing Time [s]'
+        
+    # Add measurements to dictionary
+    measured_vars_w['08_Pickle'] = wtime_pickle.reset_index(drop = True)
         
     # Remove all files from dir except one
     for trial in range(n - 1):
@@ -371,7 +454,11 @@ def writingPerformance(n, path, df):
 
     return measured_vars_w
 
-# Declare a function for performing writing experiments
+# -------------------------------
+# Reading performance tests
+# -------------------------------
+
+# Declare a function for performing reading experiments
 def readingPerformance(n, path, df):
     '''
     Parameters
@@ -386,7 +473,7 @@ def readingPerformance(n, path, df):
 
     Returns
     -------
-    measured_vars : dict
+    measured_vars_r : dict
         Execution time for each file format, with n number of trials.
 
     '''
@@ -409,12 +496,14 @@ def readingPerformance(n, path, df):
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'CSV trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        df.to_csv(path + 'CSV' + '_' + str(trial) + '.csv')
+        # Read from file
+        df = pd.read_csv(path + 'CSV' + '_' + str(n-1) + '.csv')
         
         # End timer
         end = time.time()
@@ -424,26 +513,29 @@ def readingPerformance(n, path, df):
         
         # Append time to series
         rtime_csv = pd.concat([pd.Series([exec_time]), rtime_csv])
-        rtime_csv.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_r['01_CSV'] = rtime_csv
+        # Delete file from memory
+        del df
         
-    # Remove all files from dir except one
-    for trial in range(n - 1):
-        os.remove(path + 'CSV' + '_' + str(trial) + '.csv')
+    # Define series title
+    rtime_csv.name = 'Reading Time [s]'
+        
+    # Add measurements to dictionary
+    measured_vars_r['01_CSV'] = rtime_csv.reset_index(drop = True)
     
     # -------------------------------
     # 2. TXT
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'TXT trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        df.to_csv(path + 'TXT' + '_' + str(trial) + '.txt', sep = '\t')
+        # Read from file
+        df = pd.read_csv(path + 'TXT' + '_' + str(n-1) + '.txt', sep = '\t')
         
         # End timer
         end = time.time()
@@ -453,26 +545,29 @@ def readingPerformance(n, path, df):
         
         # Append time to series
         rtime_txt = pd.concat([pd.Series([exec_time]), rtime_txt])
-        rtime_txt.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_r['02_TXT'] = rtime_txt
-        
-    # Remove all files from dir except one
-    for trial in range(n - 1):
-        os.remove(path + 'TXT' + '_' + str(trial) + '.txt')
+        # Delete file from memory
+        del df
+            
+    # Define series title
+    rtime_txt.name = 'Reading Time [s]'
+            
+    # Add measurements to dictionary
+    measured_vars_r['02_TXT'] = rtime_txt.reset_index(drop = True)
         
     # -------------------------------
     # 3. Feather
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Feather trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        df.to_feather(path + 'Feather' + '_' + str(trial) + '.feather')
+        # Read from file
+        df = pd.read_feather(path + 'Feather' + '_' + str(n-1) + '.feather')
         
         # End timer
         end = time.time()
@@ -482,26 +577,29 @@ def readingPerformance(n, path, df):
         
         # Append time to series
         rtime_feather = pd.concat([pd.Series([exec_time]), rtime_feather])
-        rtime_feather.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_r['03_Feather'] = rtime_feather
-        
-    # Remove all files from dir except one
-    for trial in range(n - 1):
-        os.remove(path + 'Feather' + '_' + str(trial) + '.feather')
+        # Delete file from memory
+        del df
+            
+    # Define series title
+    rtime_feather.name = 'Reading Time [s]'
+            
+    # Add measurements to dictionary
+    measured_vars_r['03_Feather'] = rtime_feather.reset_index(drop = True)
 
     # -------------------------------
     # 4. Parquet non-partitioned
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Parquet NP trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        df.to_parquet(path + 'Parquet_NP' + '_' + str(trial) + '.parquet')
+        # Read from file
+        df = pd.read_parquet(path + 'Parquet_NP' + '_' + str(n-1) + '.parquet')
         
         # End timer
         end = time.time()
@@ -511,26 +609,29 @@ def readingPerformance(n, path, df):
         
         # Append time to series
         rtime_parquet_NP = pd.concat([pd.Series([exec_time]), rtime_parquet_NP])
-        rtime_parquet_NP.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_r['04_Parquet_NP'] = rtime_parquet_NP
-        
-    # Remove all files from dir except one
-    for trial in range(n - 1):
-        os.remove(path + 'Parquet_NP' + '_' + str(trial) + '.parquet')
+        # Delete file from memory
+        del df
+            
+    # Define series title
+    rtime_parquet_NP.name = 'Reading Time [s]'
+            
+    # Add measurements to dictionary
+    measured_vars_r['04_Parquet_NP'] = rtime_parquet_NP.reset_index(drop = True)
 
     # -------------------------------
     # 5. Parquet single-partitioned
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Parquet SP trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        df.to_parquet(path + 'Parquet_SP' + '_' + str(trial) + '.parquet', partition_cols = ['region'])
+        # Read from file
+        df = pd.read_parquet(path + 'Parquet_SP' + '_' + str(n-1) + '.parquet')
         
         # End timer
         end = time.time()
@@ -540,26 +641,29 @@ def readingPerformance(n, path, df):
         
         # Append time to series
         rtime_parquet_SP = pd.concat([pd.Series([exec_time]), rtime_parquet_SP])
-        rtime_parquet_SP.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_r['05_Parquet_SP'] = rtime_parquet_SP
-        
-    # Remove all files from dir except one
-    for trial in range(n - 1):
-        shutil.rmtree(path + 'Parquet_SP' + '_' + str(trial) + '.parquet')
+        # Delete file from memory
+        del df
+            
+    # Define series title
+    rtime_parquet_SP.name = 'Reading Time [s]'
+            
+    # Add measurements to dictionary
+    measured_vars_r['05_Parquet_SP'] = rtime_parquet_SP.reset_index(drop = True)
 
     # -------------------------------
     # 6. Parquet multi-partitioned
     # -------------------------------
     for trial in range(n):
         
+        # Start trial
         print(f'Parquet MP trial {trial} of {n} started...')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        df.to_parquet(path + 'Parquet_MP' + '_' + str(trial) + '.parquet', partition_cols = ['region', 'trend'])
+        # Read from file
+        df = pd.read_parquet(path + 'Parquet_MP' + '_' + str(n-1) + '.parquet')
         
         # End timer
         end = time.time()
@@ -569,54 +673,75 @@ def readingPerformance(n, path, df):
         
         # Append time to series
         rtime_parquet_MP = pd.concat([pd.Series([exec_time]), rtime_parquet_MP])
-        rtime_parquet_MP.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_r['06_Parquet_MP'] = rtime_parquet_MP
-        
-    # Remove all files from dir except one
-    for trial in range(n - 1):
-        shutil.rmtree(path + 'Parquet_MP' + '_' + str(trial) + '.parquet')
+        # Delete file from memory
+        del df
+            
+    # Define series title
+    rtime_parquet_MP.name = 'Reading Time [s]'
+            
+    # Add measurements to dictionary
+    measured_vars_r['06_Parquet_MP'] = rtime_parquet_MP.reset_index(drop = True)
 
     # -------------------------------
     # 7. Avro
     # -------------------------------
-    # Define the schema
-    schema = {
-        'type': 'record',
-        'name': 'performance_comp',
-        'namespace': 'performance_comp',
-        'doc': 'This schema consists of 2 int types, 1 datetime type and 6 string types',
-        'fields': [
-            {'name': 'title', 'type': 'string'},
-            {'name': 'rank', 'type': 'int'},
-            {'name': 'date', 'type': 'long'},
-            {'name': 'artist', 'type': 'string'},
-            {'name': 'url', 'type': 'string'},
-            {'name': 'region', 'type': 'string'},
-            {'name': 'chart', 'type': 'string'},
-            {'name': 'trend', 'type': 'string'},
-            {'name': 'streams', 'type': 'int'}
-        ]
-    }
     
-    # Parse the schema
-    parsed_schema = parse_schema(schema)
-
-    # Convert pd.DataFrame to records (list of dictionaries)
-    records = df.to_dict('records')
-    
-    # Write to Avro file
     for trial in range(n):
         
+        # Start trial
         print(f'Avro trial {trial} of {n} started...')
+        
+        # Define list of dictionaries
+        lod = []
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        with open(path + 'Avro' + '_' + str(trial) + '.avro', 'wb') as file:
-            writer(file, parsed_schema, records)
+        # Read from Avro file
+        with open('outputs/10_dataset_method_1.avro', 'rb') as fo:
+            avro_reader = reader(fo)
+            
+            for record in avro_reader:
+                lod.append(record)
 
+        # Close the BufferedReader object
+        fo.close()
+
+        # End timer
+        end = time.time()
+        
+        # Calculate execution time
+        exec_time = end - start
+        
+        # Append time to series
+        rtime_avro = pd.concat([pd.Series([exec_time]), rtime_avro])
+        
+        # Delete file from memory
+        del lod
+            
+    # Define series title
+    rtime_avro.name = 'Reading Time [s]'
+            
+    # Add measurements to dictionary
+    measured_vars_r['07_Avro'] = rtime_avro.reset_index(drop = True)
+    
+    # -------------------------------
+    # 8. Pickle open file
+    # -------------------------------
+    for trial in range(n):
+        
+        # Start trial
+        print(f'Pickle trial {trial} of {n} started...')
+        
+        # Start timer
+        start = time.time()
+        
+        # Read from file
+        with open('outputs/11_dataset_method_1.pickle', 'rb') as file:
+            my_pickled_object = pickle.load(file)
+
+        # Close the BufferedReader object
         file.close()
         
         # End timer
@@ -626,48 +751,24 @@ def readingPerformance(n, path, df):
         exec_time = end - start
         
         # Append time to series
-        rtime_avro = pd.concat([pd.Series([exec_time]), rtime_avro])
-        rtime_avro.reset_index(drop = True)
-        
-        # Add measurements to dictionary
-        measured_vars_r['07_Avro'] = rtime_avro
-        
-    # Remove all files from dir except one
-    for trial in range(n - 1):
-        os.remove(path + 'Avro' + '_' + str(trial) + '.avro')
-    
-
-    # -------------------------------
-    # 8. Pickle open file
-    # -------------------------------
-    for trial in range(n):
-        
-        print(f'Pickle trial {trial} of {n} started...')
-        # Start timer
-        start = time.time()
-        
-        # Write to file
-        df.to_feather(path + 'Pickle' + '_' + str(trial) + '.pickle')
-        
-        # End timer
-        end = time.time()
-        
-        # Calculate execution time
-        exec_time = end - start
-        
-        # Append time to series
         rtime_pickle = pd.concat([pd.Series([exec_time]), rtime_pickle])
-        rtime_pickle.reset_index(drop = True)
         
-        # Add measurements to dictionary
-        measured_vars_r['08_Pickle'] = rtime_pickle
-        
-    # Remove all files from dir except one
-    for trial in range(n - 1):
-        os.remove(path + 'Pickle' + '_' + str(trial) + '.pickle')
+        # Delete file from memory
+        del my_pickled_object
+             
+    # Define series title
+    rtime_pickle.name = 'Reading Time [s]'
+           
+    # Add measurements to dictionary
+    measured_vars_r['08_Pickle'] = rtime_pickle.reset_index(drop = True)
 
     return measured_vars_r
 
+# -------------------------------
+# Analysis
+# -------------------------------
+
+# Declare a function for performing results analysis
 def analysis(n, path, df):
     '''
     Parameters
@@ -718,7 +819,7 @@ def analysis(n, path, df):
     # Define statistical results dict
     stat_dw = {}
     
-    # Statistical Description
+    # Statistical Description for Writing
     
     # Extract each set of values, describe them and save them in a new dict
     for i in tests:
@@ -735,7 +836,7 @@ def analysis(n, path, df):
     # Define statistical results dict
     stat_dr = {}
     
-    # Statistical Description
+    # Statistical Description for Reading
     
     # Extract each set of values, describe them and save them in a new dict
     for i in tests:
@@ -763,26 +864,134 @@ def analysis(n, path, df):
     
     path_Parquet_MP = Path(path + 'Parquet_MP_19.parquet')
     size_d['06_Parquet_MP'] = sum(f.stat().st_size for f in path_Parquet_MP.glob('**/*') if f.is_file()) / (1024)
-        
-
-        
     
     # Return a dictionary including the actual measured time values of all methods
     # Return a dictionary including the statistical description of all methods
     return measured_vars_w, measured_vars_r, stat_dw, stat_dr, size_d
 
-
-# Define performance tests output path
-path = 'performance_tests/'
-
-# Define n number of trials
-n = 20
+# -------------------------------
+# -------------------------------
+# Calling Analysis function
+# -------------------------------
+# -------------------------------
 
 # Call analysis function
 measured_vars_w, measured_vars_r, stat_dw, stat_dr, size_d = analysis(n, path, df)
 
-# I'm only missing reading time calculation and final charts
+# Print the type and shape of each object
+print(type(measured_vars_w))
+print(len(measured_vars_w))
+
+print(type(measured_vars_r))
+print(len(measured_vars_r))
+
+print(type(stat_dw))
+print(len(stat_dw))
+
+print(type(stat_dr))
+print(len(stat_dr))
+
+print(type(size_d))
+print(len(size_d))
+
+# -------------------------------
+# -------------------------------
+# Plotting the results
+# -------------------------------
+# -------------------------------
+
+# -------------------------------
+# File sizes
+# -------------------------------
+
+# Create figure
+plt.figure('File Sizes Bar Chart')
+
+# Plot the file sizes
+plt.bar(size_d.keys(), size_d.values(), color = color_main)
+
+# Enable grid
+plt.grid(True, zorder=0)
+
+# Set xlabel and ylabel
+plt.xlabel('File Format', fontsize=label_font_size, labelpad=text_padding)
+plt.ylabel('File Size  [MB]', fontsize=label_font_size, labelpad=text_padding)
+
+# Remove bottom and top separators
+sns.despine(bottom=True)
+
+# Add plot title
+plt.title('File/Folder Sizes in Megabytes', fontsize=title_font_size, pad=text_padding)
+
+# Optional: Save the figure as a png image
+plt.savefig('performance_results/' + 'file_sizes_bar_chart.png', format = 'png', dpi = 300, transparent = True)
+
+# Close the figure
+plt.close()
+
+# -------------------------------
+# Writing Times
+# -------------------------------
+plt.figure('Writing Times Histogram')
+plt.grid(True, zorder=0)
+plt.boxplot(measured_vars_w.values(),
+            labels = measured_vars_w.keys(),
+            showmeans=True)
+
+plt.xlabel("File Format", fontsize=label_font_size, labelpad=text_padding)
+plt.ylabel("Writing Time [s]", fontsize=label_font_size, labelpad=text_padding)
+sns.despine(bottom=True)
+plt.title('Writing Time in Seconds', fontsize=title_font_size, pad=text_padding)
+plt.savefig('performance_results/' + 'writing_time_scattered_boxplots.png', format = 'png', dpi = 300, transparent = True)
+plt.close()
+
+# -------------------------------
+# Reading Times
+# -------------------------------
+plt.figure('Reading Times Histogram')
+plt.grid(True, zorder=0)
+plt.boxplot(measured_vars_r.values(),
+            labels = measured_vars_r.keys(),
+            showmeans=True)
+
+plt.xlabel("File Format", fontsize=label_font_size, labelpad=text_padding)
+plt.ylabel("Reading Time [s]", fontsize=label_font_size, labelpad=text_padding)
+sns.despine(bottom=True)
+plt.title('Reading Time in Seconds', fontsize=title_font_size, pad=text_padding)
+plt.savefig('performance_results/' + 'reading_time_scattered_boxplots.png', format = 'png', dpi = 300, transparent = True)
+plt.close()
+
+# -------------------------------
+# -------------------------------
+# Exporting the results in tabular format
+# -------------------------------
+# -------------------------------
+
+# 
+def results_to_excel(df_dict, path):
+    """Write dictionary of dataframes to separate sheets, within 
+        1 file."""
+    writer = pd.ExcelWriter(path, engine='openpyxl')
+
+    for tab_name, dframe in df_dict.items():
+        dframe.to_excel(writer, sheet_name=tab_name)
+
+    writer.close()
+
+# Define file for writing results
+path_w = 'performance_results/' + 'measured_vars_w.xlsx'
+
+# Call function on writing results
+results_to_excel(measured_vars_w, path_w)
+
+# Define file for reading results
+path_r = 'performance_results/' + 'measured_vars_r.xlsx'
+
+# Call function on reading results
+results_to_excel(measured_vars_r, path_r)
 
 
 
-    
+
+        
+        

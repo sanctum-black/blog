@@ -3,7 +3,7 @@ In the first part of this 3-article series, we introduced the concepts of **col
 
 In this section, we will focus on **reading** the files we created.
 
-We'll be using Python scripts which you can get from the [Blog Article Repo](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared).
+We'll be using Python scripts which can be found in the [Blog Article Repo](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared).
 
 ---
 
