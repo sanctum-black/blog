@@ -28,6 +28,7 @@ This section will be lengthier than the previous ones and will involve more code
 		- Boxplot for writing times
 		- Boxplot for reading times
 	- Exporting the results in tabular format
+- Side-by-Side comparison
 - Use cases
 - Conclusions
 - References
@@ -1135,33 +1136,38 @@ plt.close()
 If we save the figure directly and then close it, the image will be saved in the path we specify and will not display on our IDE.
 
 ##### **Output**
+![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart.png "File Size Bar Chart")
 
 
-When analyzing data
+#### 1.2 Bar chart for file sizes
+A bar chart is a simple way to quickly visualize data. We can generate a bar chart using the `matplotlib.pyplot` module:
 
-We'll start
+##### **Code**
 
-- Performance results
-	- Plotting the results
-		- Bar chart for file sizes
-		- Boxplot for writing times
-		- Boxplot for reading times
+##### **Output**
+
+#### 1.3 Bar chart for file sizes
+A bar chart is a simple way to quickly visualize data. We can generate a bar chart using the `matplotlib.pyplot` module:
+
+##### **Code**
+
+##### **Output**
+
+### 2. Exporting the results in tabular format
+We can also write our statistical description results to an Excel file. This is useful whenever we want to share or store information that took a fair amount of time to generate (*imagine running the whole performance test just to get the results back*).
+
+An Excel file is also a very friendly tabular file format that everyone understands, and that anyone can use to make further analysis such as pivoting or calculating statistical measures (*mean, min, max, stdev, among others*).
+
+##### **Code**
 
 
-
+##### **Output**
 
 
 
 ---
 
-## Side-by-Side Comparison & Performance Tests
-
-
-**Code**
-
-```Python
-print("Hello")
-```
+## Side-by-Side comparison
 
 **Results**
 | Format | Size | Read Time | Read Method | Write Time | Write Method |
