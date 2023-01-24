@@ -924,7 +924,8 @@ sns.despine(bottom=True)
 plt.title('File/Folder Sizes in Megabytes', fontsize=title_font_size, pad=text_padding)
 
 # Optional: Save the figure as a png image
-plt.savefig('performance_results/' + 'file_sizes_bar_chart.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('performance_results/' + 'file_sizes_bar_chart_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('performance_results/' + 'file_sizes_bar_chart_bg.png', format = 'png', dpi = 300, transparent = False)
 
 # Close the figure
 plt.close()
@@ -932,33 +933,64 @@ plt.close()
 # -------------------------------
 # Writing Times
 # -------------------------------
+
+# Create figure
 plt.figure('Writing Times Histogram')
-plt.grid(True, zorder=0)
+
+# Plot the writing times
 plt.boxplot(measured_vars_w.values(),
             labels = measured_vars_w.keys(),
             showmeans=True)
 
+# Enable grid
+plt.grid(True, zorder=0)
+
+# Set xlabel and ylabel
 plt.xlabel("File Format", fontsize=label_font_size, labelpad=text_padding)
 plt.ylabel("Writing Time [s]", fontsize=label_font_size, labelpad=text_padding)
+
+# Remove bottom and top separators
 sns.despine(bottom=True)
+
+# Add plot title
 plt.title('Writing Time in Seconds', fontsize=title_font_size, pad=text_padding)
-plt.savefig('performance_results/' + 'writing_time_scattered_boxplots.png', format = 'png', dpi = 300, transparent = True)
+
+# Optional: Save the figure as a png image
+plt.savefig('performance_results/' + 'writing_time_scattered_boxplots_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('performance_results/' + 'writing_time_scattered_boxplots_bg.png', format = 'png', dpi = 300, transparent = False)
+
+# Close the figure
 plt.close()
 
 # -------------------------------
 # Reading Times
 # -------------------------------
+# Create figure
 plt.figure('Reading Times Histogram')
-plt.grid(True, zorder=0)
+
+# Plot the writing times
 plt.boxplot(measured_vars_r.values(),
             labels = measured_vars_r.keys(),
             showmeans=True)
 
+# Enable grid
+plt.grid(True, zorder=0)
+
+# Set xlabel and ylabel
 plt.xlabel("File Format", fontsize=label_font_size, labelpad=text_padding)
 plt.ylabel("Reading Time [s]", fontsize=label_font_size, labelpad=text_padding)
+
+# Remove bottom and top separators
 sns.despine(bottom=True)
+
+# Add plot title
 plt.title('Reading Time in Seconds', fontsize=title_font_size, pad=text_padding)
-plt.savefig('performance_results/' + 'reading_time_scattered_boxplots.png', format = 'png', dpi = 300, transparent = True)
+
+# Optional: Save the figure as a png image
+plt.savefig('performance_results/' + 'reading_time_scattered_boxplots_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('performance_results/' + 'reading_time_scattered_boxplots_bg.png', format = 'png', dpi = 300, transparent = False)
+
+# Close the figure
 plt.close()
 
 # -------------------------------
@@ -967,7 +999,7 @@ plt.close()
 # -------------------------------
 # -------------------------------
 
-# 
+# Define function to export results to Excel file
 def results_to_excel(df_dict, path):
     """Write dictionary of dataframes to separate sheets, within 
         1 file."""
@@ -990,8 +1022,4 @@ path_r = 'performance_results/' + 'measured_vars_r.xlsx'
 # Call function on reading results
 results_to_excel(measured_vars_r, path_r)
 
-
-
-
-        
         
