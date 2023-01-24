@@ -1137,6 +1137,7 @@ If we save the figure directly and then close it, the image will be saved in the
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart_bg.png "File Size Bar Chart")
+_Figure 1.1: Bar Chart denoting File/Folder size in MB for each file format_
 
 #### 1.2 Boxplot for writing times
 A boxplot is a visualization method widely used in Data Science & statistical analysis. Its purpose is to describe the distribution of experimental measurements including useful visual information about the set.
@@ -1178,6 +1179,7 @@ plt.close()
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/writing_time_scattered_boxplots_bg.png "Writing Time Box Plot")
+_Figure 1.2: Boxplot denoting the distribution of 20 trials of writing times for each file format_
 
 #### 1.3 Boxplot for reading times
 We can perform a similar treatment to our reading time results:
@@ -1215,6 +1217,7 @@ plt.close()
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/reading_time_scattered_boxplots_bg.png "Reading Time Box Plot")
+_Figure 1.3: Boxplot denoting the distribution of 20 trials of reading times for each file format_
 
 ### 2. Exporting the results in a tabular format
 We can also write our results to an Excel file. This is useful whenever we want to share or store information that took a fair amount of time to generate (*imagine running the whole performance test just to get the results back*).
@@ -1254,27 +1257,34 @@ results_to_excel(measured_vars_r, path_r)
 ## Side-by-side comparison
 
 ##### **Results**
-| Format | Size | Read Time | Read Method | Write Time | Write Method |
+| **Format** | **Size** | **Writing Time** | **Writing Method** | **Reading Time** | **Reading Method** |
 | --- | --- | --- | --- | --- | --- |
-| `.csv` | 20MB | 20kb | 20kb | 20kb | 20kb |
-| `.txt` | 20MB | 20kb | 20kb | 20kb | 20kb |
-| `.feather` | 20MB | 20kb | 20kb | 20kb | 20kb |
-| `.parquet_NP` | 20MB | 20kb | 20kb | 20kb | 20kb |
-| `.parquet_SP` | 20MB | 20kb | 20kb | 20kb | 20kb |
-| `.parquet_MP` | 20MB | 20kb | 20kb | 20kb | 20kb |
-| `.avro` | 20MB | 20kb | 20kb | 20kb | 20kb |
-| `.pickle` | 20MB | 20kb | 20kb | 20kb | 20kb |
+| `.csv` | 20MB | 20s | `to_csv()` | 20s | 20kb |
+| `.txt` | 20MB | 20s | `to_csv()` | 20s | 20kb |
+| `.feather` | 20MB | 20s | `to_feather()` | 20s | 20kb |
+| `.parquet` | 20MB | 20s | `to_parquet()` (`NP`) | 20s | 20kb |
+| `.parquet` | 20MB | 20s | `to_parquet()` (`SP`) | 20s | 20kb |
+| `.parquet` | 20MB | 20s | `to_parquet()` (`MP`) | 20s | 20kb |
+| `.avro` | 20MB | 20s | 20s | 20s | 20kb |
+| `.pickle` | 20MB | 20s | `pickle.dump()` | 20s | 20kb |
+
+
+_Figure 2: Chart containing File/Folder sizes, average writing times and average reading times from 20 measurements, including method used for each case_
 
 _Note: Keep in mind that this values vary across systems. CPU processing power, RAM capacity and other variables directly affect reading & writing times_.
+
+We can see that file sizes for...
+We can also see that the writing times for...
+Finally, we can see that the reading times for...
 
 ---
 
 ## Use Cases
+From the results obtained on the previous section, we can see that...
 
-
+Although the `.pickle` file format performs well, it is not recommended since it's platform specific. Also, malicious code can be injected easily...
 
 ---
-
 
 ## Conclusions
 In summary, not all tabular file formats are good for every application. Each of them were created with a purpose in mind, and are better or worse at some applications than the others.
