@@ -110,6 +110,10 @@ df['date'] = df['date'].apply(lambda x: x.value)
 # Streams will be casted to integer type
 df['streams'] = df['streams'].astype('int')
 
+# Finally, reset index since .feather does not support
+# serializing a non-default index
+df = df.reset_index(drop = True)
+
 # -------------------------------
 # -------------------------------
 # Performance tests
@@ -427,11 +431,18 @@ def writingPerformance(n, path, df):
         # Start trial
         print(f'Pickle trial {trial} of {n} started...')
         
+        # Convert pd.DataFrame to records (list of dictionaries)
+        records = df.to_dict('records')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        df.to_feather(path + 'Pickle' + '_' + str(trial) + '.pickle')
+        file = open(path + 'Pickle' + '_' + str(trial) + '.pickle', 'wb')
+
+        # Write open file to disk
+        pickle.dump(records, file)
+
+        file.close()
         
         # End timer
         end = time.time()
@@ -699,7 +710,7 @@ def readingPerformance(n, path, df):
         start = time.time()
         
         # Read from Avro file
-        with open('outputs/10_dataset_method_1.avro', 'rb') as fo:
+        with open(path + 'Avro' + '_' + str(n-1) + '.avro', 'rb') as fo:
             avro_reader = reader(fo)
             
             for record in avro_reader:
@@ -738,7 +749,7 @@ def readingPerformance(n, path, df):
         start = time.time()
         
         # Read from file
-        with open('outputs/11_dataset_method_1.pickle', 'rb') as file:
+        with open(path + 'Pickle' + '_' + str(n-1) + '.pickle', 'rb') as file:
             my_pickled_object = pickle.load(file)
 
         # Close the BufferedReader object
@@ -796,7 +807,7 @@ def analysis(n, path, df):
         Statistical description of measured reading times for all formats. 
         
     size_d : dict
-        Output size description of measured times for all formats.
+        Statistical description of measured file/folder sizes for all formats. 
     '''
     
     # Define all tests for including in statistical description
@@ -850,20 +861,17 @@ def analysis(n, path, df):
     # Define size results dict
     size_d = {}
     
-    # Calculate file sizes
-    size_d['01_CSV'] = os.path.getsize(path + 'CSV' + '_' + str(n-1) + '.csv') / (1024)
-    size_d['02_TXT'] = os.path.getsize(path + 'TXT' + '_' + str(n-1) + '.txt') / (1024)
-    size_d['03_Feather'] = os.path.getsize(path + 'Feather' + '_' + str(n-1) + '.feather') / (1024)
-    size_d['04_Parquet_NP'] = os.path.getsize(path + 'Parquet_NP' + '_' + str(n-1) + '.parquet') / (1024)
-    size_d['07_Avro'] = os.path.getsize(path + 'Avro' + '_' + str(n-1) + '.avro') / (1024)
-    size_d['08_Pickle'] = os.path.getsize(path + 'Pickle' + '_' + str(n-1) + '.pickle') / (1024)
-    
-    # Calculate dir sizes
+    # Calculate file & dir sizes
+    size_d['01_CSV'] = os.path.getsize(path + 'CSV' + '_' + str(n-1) + '.csv') / (1024**2)
+    size_d['02_TXT'] = os.path.getsize(path + 'TXT' + '_' + str(n-1) + '.txt') / (1024**2)
+    size_d['03_Feather'] = os.path.getsize(path + 'Feather' + '_' + str(n-1) + '.feather') / (1024**2)
+    size_d['04_Parquet_NP'] = os.path.getsize(path + 'Parquet_NP' + '_' + str(n-1) + '.parquet') / (1024**2)
     path_Parquet_SP = Path(path + 'Parquet_SP_19.parquet')
-    size_d['05_Parquet_SP'] = sum(f.stat().st_size for f in path_Parquet_SP.glob('**/*') if f.is_file()) / (1024)
-    
+    size_d['05_Parquet_SP'] = sum(f.stat().st_size for f in path_Parquet_SP.glob('**/*') if f.is_file()) / (1024**2)
     path_Parquet_MP = Path(path + 'Parquet_MP_19.parquet')
-    size_d['06_Parquet_MP'] = sum(f.stat().st_size for f in path_Parquet_MP.glob('**/*') if f.is_file()) / (1024)
+    size_d['06_Parquet_MP'] = sum(f.stat().st_size for f in path_Parquet_MP.glob('**/*') if f.is_file()) / (1024**2)
+    size_d['07_Avro'] = os.path.getsize(path + 'Avro' + '_' + str(n-1) + '.avro') / (1024**2)
+    size_d['08_Pickle'] = os.path.getsize(path + 'Pickle' + '_' + str(n-1) + '.pickle') / (1024**2)
     
     # Return a dictionary including the actual measured time values of all methods
     # Return a dictionary including the statistical description of all methods
@@ -915,7 +923,7 @@ plt.grid(True, zorder=0)
 
 # Set xlabel and ylabel
 plt.xlabel('File Format', fontsize=label_font_size, labelpad=text_padding)
-plt.ylabel('File Size  [MB]', fontsize=label_font_size, labelpad=text_padding)
+plt.ylabel('File Size [MB]', fontsize=label_font_size, labelpad=text_padding)
 
 # Remove bottom and top separators
 sns.despine(bottom=True)
@@ -1013,14 +1021,16 @@ def results_to_excel(dseries_dict, path):
 
 # Define file for writing results
 path_w = 'performance_results/' + 'measured_vars_w.xlsx'
+path_dw = 'performance_results/' + 'stat_dw.xlsx'
 
 # Call function on writing results
 results_to_excel(measured_vars_w, path_w)
+results_to_excel(stat_dw, path_dw)
 
 # Define file for reading results
 path_r = 'performance_results/' + 'measured_vars_r.xlsx'
+path_dr = 'performance_results/' + 'stat_dr.xlsx'
 
 # Call function on reading results
 results_to_excel(measured_vars_r, path_r)
-
-        
+results_to_excel(stat_dr, path_dr)

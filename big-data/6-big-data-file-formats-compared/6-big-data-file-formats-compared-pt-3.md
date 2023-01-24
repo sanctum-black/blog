@@ -1,11 +1,11 @@
 # 6 Big Data File Formats Compared, Pt. 3
-Over the last 2 articles of this series, we have discussed different Big Data file formats and their overall characteristics. We have also performed writing & reading examples using different Python modules & methods.
+Over the last two articles of this series, we have discussed different Big Data file formats and their overall characteristics. We have also performed writing & reading examples using different Python modules & methods.
 
-In this section, we will focus on making a side-by-side comparison of the performance of the formats reviewed. We will evaluate writing times, reading times and file sizes.
+In this section, we will focus on comparing the performance of the formats reviewed. We will evaluate writing times, reading times, and file sizes.
 
-We will then conclude this series by reviewing specific use-cases for each one of the formats, as well as discuss some recommendations.
+We will then conclude this series by reviewing specific use cases for each one of the formats, as well as discussing some recommendations.
 
-This section will be lengthier than the previous ones and will involve more code. We'll be using Python scripts which can be found in the [Blog Article Repo](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared).
+This section will be longer than the previous ones and involve more code. We'll be using Python scripts which can be found in the [Blog Article Repo](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared).
 
 ---
 
@@ -29,8 +29,12 @@ This section will be lengthier than the previous ones and will involve more code
 		- [Boxplot for reading times](#13-boxplot-for-reading-times)
 	- [Exporting the results in a tabular format](#2-exporting-the-results-in-a-tabular-format)
 - [Side-by-side comparison](#side-by-side-comparison)
+	- [Consolidated results](#1-consolidated-results)
+	- [Interpretation](#2-interpretation)
 - [Use cases](#use-cases)
 - [Conclusions](#conclusions)
+- [Appendix](#appendix)
+	- [Experimental Conditions](#1-experimental-conditions)
 - [References](#references)
 
 ---
@@ -98,7 +102,7 @@ plt.rcParams['font.sans-serif'] = ['Lora']
 ---
 
 ## Preparing the data set
-In order to reduce noise in our performance measurements, for this section we will employ a slightly larger file. We will be using the `Spotify Charts` data set (`2.48 GB`) published by `DHRUVIL DAVE`, which you can download from [Kaggle](https://www.kaggle.com/datasets/dhruvildave/spotify-charts).
+To reduce noise in our performance measurements, we will employ a slightly larger file for this section. We will be using the `Spotify Charts` data set (`2.48 GB`) published by `DHRUVIL DAVE`, which you can download from [Kaggle](https://www.kaggle.com/datasets/dhruvildave/spotify-charts).
 
 We can start by reading the data set as a `pandas.DataFrame` object:
 
@@ -108,7 +112,7 @@ We can start by reading the data set as a `pandas.DataFrame` object:
 df = pd.read_csv('datasets/charts.csv')
 ```
 
-This should take a couple of minutes, depending on the specifications of each machine.
+This process should take a couple of minutes, depending on the specifications of each machine.
 
 Upon concluding, we should end up with a `pandas.DataFrame` object `df` with the following shape:
 
@@ -143,9 +147,13 @@ df['date'] = df['date'].apply(lambda x: x.value)
 
 # Streams will be casted to integer type
 df['streams'] = df['streams'].astype('int')
+
+# Finally, reset index since .feather does not support
+# serializing a non-default index
+df = df.reset_index(drop = True)
 ```
 
-The reason we converted our `date` field to an `int` `datetime64` data type, is because the `fastavro` library does not currently support `str` `datetime64` objects.
+We converted our `date` field to an `int` `datetime64` data type because the `fastavro` library does not currently support `str` `datetime64` objects.
 
 Since we will be defining a schema for this file format, a conventional `datetime64` data type would raise a `TypeError`.
 
@@ -165,7 +173,7 @@ Now, we're ready to start designing our experiment.
 ---
 
 ## Experiment design
-For both writing & reading performance tests, we will be using a collection of measurements per file format. This is always good practice in experimental design, and will help us calculate a complete set of descriptive statistics.
+For both writing & reading performance tests, we will be using a collection of measurements per file format. This is always a good practice in experimental design and will help us calculate a complete set of descriptive statistics.
 
 Our experiment for the **writing process** will consist of the following steps:
 1. Define the variables to measure.
@@ -174,7 +182,7 @@ Our experiment for the **writing process** will consist of the following steps:
 5. Store measurements.
 7. Repeat for the other file formats.
 8. Consolidate results and perform a statistical description.
-9. Delete all written files except one to read in next experiment.
+9. Delete all written files except one to read in the next experiment.
 
 Our experiment for the **reading process** will consist of the following steps:
 1. Define the variables to measure.
@@ -207,24 +215,24 @@ We will start by defining our `writingPerformance()` function, which will accept
 - `n` : `int`
 	- Number of trials.
 - `path` : `str`
-	- Path for result writing.
+	- Path for writing results.
 - `df` : `pandas.DataFrame`
-	- DataFrame Object containing data set.
+	- DataFrame Object containing the data set.
 
 Upon calling, it will return the following:
 - `measured_vars_w` : `dict`
-	- Execution time for each file format, with `n` number of trials.
+	- Execution time for each file format with `n` number of trials.
 
 Once we have the expected inputs and outputs, the idea is to perform the following:
-1. Declare a `pandas.core.series.Series` for each of the file formats, where we will store writing times. This would result in 8 objects in total.
+1. Declare a `pandas.core.series.Series` for each file format, where we will store writing times. This will result in 8 objects in total.
 2. Declare an empty dictionary `measured_vars_w`, used to store key-value pairs of file format-Pandas series of measurements.
 3. Define a `for` loop to iterate over the number of trials `n`.
 4. Define a writing method for each file format.
 5. Set a `start` timer variable before writing execution using the `time.time()` method. This will be our initial time marker.
 6. Set an `end` timer variable after writing execution using the `time.time()` method. This will be our final time marker.
-7. Calculate the `exec_time` for each loop, by calculating the difference between `end` and `start` variables.
+7. Calculate the `exec_time` for each loop by calculating the difference between `end` and `start` variables.
 8. Append the `exec_time` to our corresponding `pandas.core.series.Series` object.
-9. Upon loop completion, assign a key-value pair to our `measured_vars_w` dictionary corresponding to the file format along with its measured execution times.
+9. Upon loop completion, assign a key-value pair to our `measured_vars_w` dictionary corresponding to the file format and measured execution times.
 10. Remove all generated files except one using the `os.remove` method.
 11. Repeat for all remaining file formats.
 
@@ -532,11 +540,18 @@ def writingPerformance(n, path, df):
         # Start trial
         print(f'Pickle trial {trial} of {n} started...')
         
+        # Convert pd.DataFrame to records (list of dictionaries)
+        records = df.to_dict('records')
+        
         # Start timer
         start = time.time()
         
-        # Write to file
-        df.to_feather(path + 'Pickle' + '_' + str(trial) + '.pickle')
+        file = open(path + 'Pickle' + '_' + str(trial) + '.pickle', 'wb')
+
+        # Write open file to disk
+        pickle.dump(records, file)
+
+        file.close()
         
         # End timer
         end = time.time()
@@ -566,7 +581,7 @@ Similar to the writing performance tests section, we will start by defining our 
 - `n` : `int`
 	- Number of trials.
 - `path` : `str`
-	- Path for result writing.
+	- Path for writing results.
 - `df` : `pandas.DataFrame`
 	- DataFrame Object containing data set.
 
@@ -575,16 +590,16 @@ Upon calling, it will return the following:
 	- Execution time for each file format, with `n` number of trials.
 
 Once we have the expected inputs and outputs, the idea is to perform the following:
-1. Declare a `pandas.core.series.Series` for each of the file formats, where we will store writing times. This would result in 8 objects in total.
+1. Declare a `pandas.core.series.Series` for each file format, where we will store writing times. This would result in 8 objects in total.
 2. Declare an empty dictionary `measured_vars_w`, used to store key-value pairs of file format-Pandas series of measurements.
 3. Define a `for` loop to iterate over the number of trials `n`.
 4. Define a reading method for each file format.
 5. Set a `start` timer variable before writing execution using the `time.time()` method. This will be our initial time marker.
 6. Set an `end` timer variable after writing execution using the `time.time()` method. This will be our final time marker.
-7. Calculate the `exec_time` for each loop, by calculating the difference between `end` and `start` variables.
+7. Calculate the `exec_time` for each loop by calculating the difference between `end` and `start` variables.
 8. Append the `exec_time` to our corresponding `pandas.core.series.Series` object.
 9. Delete the read object from memory.
-10. Upon loop completion, assign a key-value pair to our `measured_vars_w` dictionary corresponding to the file format along with its measured execution times.
+10. Upon loop completion, assign a key-value pair to our `measured_vars_w` dictionary corresponding to the file format and measured execution times.
 11. Repeat for all remaining file formats.
 
 We can translate our pseudocode into code:
@@ -831,7 +846,7 @@ def readingPerformance(n, path, df):
         start = time.time()
         
         # Read from Avro file
-        with open('outputs/10_dataset_method_1.avro', 'rb') as fo:
+        with open(path + 'Avro' + '_' + str(n-1) + '.avro', 'rb') as fo:
             avro_reader = reader(fo)
             
             for record in avro_reader:
@@ -870,7 +885,7 @@ def readingPerformance(n, path, df):
         start = time.time()
         
         # Read from file
-        with open('outputs/11_dataset_method_1.pickle', 'rb') as file:
+        with open(path + 'Pickle' + '_' + str(n-1) + '.pickle', 'rb') as file:
             my_pickled_object = pickle.load(file)
 
         # Close the BufferedReader object
@@ -897,23 +912,22 @@ def readingPerformance(n, path, df):
     return measured_vars_r
 ```
 
-
 ### 4. Analysis
 Once we have both the `writingPerformance()` and `readingPerformance()` functions declared, we can define an `analysis()` function which will accept the following parameters :
 
 - `n` : `int`
 	- Number of trials.
 - `path` : `str`
-	- Path for result writing.
+	- Path for writing results.
 - `df` : `pandas.DataFrame`
 	- DataFrame Object containing data set.
 
 Upon calling, it will return the following:
 - `measured_vars_w` : `dict`
-	- Writing time of each file format, with `n` number of trials.
+	- Writing time of each file format with `n` number of trials.
      
 - `measured_vars_r` : `dict`
-	- Reading time of each file format, with `n` number of trials.
+	- Reading time of each file format with `n` number of trials.
 	
 - `stat_dw` : `dict`
 	- Statistical description of measured writing times for all formats.
@@ -922,7 +936,7 @@ Upon calling, it will return the following:
 	- Statistical description of measured reading times for all formats. 
 	
 - `size_d` : `dict`
-	- Output size description of measured times for all formats.
+	- Statistical description of measured file/folder sizes for all formats. 
 
 Once we have the expected inputs and outputs, the idea is to perform the following:
 
@@ -930,22 +944,22 @@ Once we have the expected inputs and outputs, the idea is to perform the followi
 1. Define a list `tests` containing the names of each file format. We will use this object as iterable.
 2. Call the `writingPerformance()` function and assign it to a `measured_vars_w` object.
 3. Define an empty dictionary `stat_dw` for saving the statistical descriptions for the writing test.
-4. Iterate over the `tests` object, indexing the `measured_vars_w` dictionary on each loop, and calculating its statistical description.
-5. Assign a key-value pair on each loop, consisting of the file format name as key, and the statistical description object as value.
+4. Iterate over the `tests` object, indexing the `measured_vars_w` dictionary on each loop and calculating its statistical description.
+5. Assign a key-value pair on each loop, consisting of the file format name as the key and the statistical description object as the value.
 
 #### 4.2 **Reading Performance Analysis**
 1. Call the `readingPerformance()` function and assign it to a `measured_vars_r` object.
 2. Define an empty dictionary `stat_dr` for saving the statistical descriptions for the reading test.
-3. Iterate over the `tests` object, indexing the `measured_vars_r` dictionary on each loop, and calculating its statistical description.
-4. Assign a key-value pair on each loop, consisting of the file format name as key, and the statistical description object as value.
+3. Iterate over the `tests` object, indexing the `measured_vars_r` dictionary on each loop and calculating its statistical description.
+4. Assign a key-value pair on each loop, consisting of the file format name as the key and the statistical description object as the value.
 
 #### 4.3 **File Size Analysis**
 1. Declare an empty dictionary `size_d` for storing the file size values.
 2. For each file, calculate its size using the `os.path.getsize` method.
-3. For each folder (parquet partitions), calculate its size using the `f.stat().st_size` method recursively.
+3. For each folder (parquet partitions), recursively calculate its size using the `f.stat().st_size` method.
 4. Convert file sizes:
-	1. The `os.path.getsize` method returns the file size in bytes, so we will need to divide the result by `1024` in order to get `MB` units. 
-	2. The `f.stat().st_size` method returns the folder size in bytes, so we will need to divide the result by `1024` in order to get `MB` units.
+	1. The `os.path.getsize` method returns the file size in bytes, so we need to divide the result by $1,024^2$ to get our measurements in `MB` units. 
+	2. The `f.stat().st_size` method returns the folder size in bytes, so we need to divide the result by $1,024^2$ to get our measurements in `MB` units.
 
 We can translate our pseudocode into code:
 
@@ -978,7 +992,7 @@ def analysis(n, path, df):
         Statistical description of measured reading times for all formats. 
         
     size_d : dict
-        Output size description of measured times for all formats.
+        Statistical description of measured file/folder sizes for all formats.
     '''
     
     # Define all tests for including in statistical description
@@ -1032,25 +1046,24 @@ def analysis(n, path, df):
     # Define size results dict
     size_d = {}
     
-    # Calculate file sizes
-    size_d['01_CSV'] = os.path.getsize(path + 'CSV' + '_' + str(n-1) + '.csv') / (1024)
-    size_d['02_TXT'] = os.path.getsize(path + 'TXT' + '_' + str(n-1) + '.txt') / (1024)
-    size_d['03_Feather'] = os.path.getsize(path + 'Feather' + '_' + str(n-1) + '.feather') / (1024)
-    size_d['04_Parquet_NP'] = os.path.getsize(path + 'Parquet_NP' + '_' + str(n-1) + '.parquet') / (1024)
-    size_d['07_Avro'] = os.path.getsize(path + 'Avro' + '_' + str(n-1) + '.avro') / (1024)
-    size_d['08_Pickle'] = os.path.getsize(path + 'Pickle' + '_' + str(n-1) + '.pickle') / (1024)
-    
-    # Calculate dir sizes
+    # Calculate file & dir sizes
+    size_d['01_CSV'] = os.path.getsize(path + 'CSV' + '_' + str(n-1) + '.csv') / (1024**2)
+    size_d['02_TXT'] = os.path.getsize(path + 'TXT' + '_' + str(n-1) + '.txt') / (1024**2)
+    size_d['03_Feather'] = os.path.getsize(path + 'Feather' + '_' + str(n-1) + '.feather') / (1024**2)
+    size_d['04_Parquet_NP'] = os.path.getsize(path + 'Parquet_NP' + '_' + str(n-1) + '.parquet') / (1024**2)
     path_Parquet_SP = Path(path + 'Parquet_SP_19.parquet')
-    size_d['05_Parquet_SP'] = sum(f.stat().st_size for f in path_Parquet_SP.glob('**/*') if f.is_file()) / (1024)
-    
+    size_d['05_Parquet_SP'] = sum(f.stat().st_size for f in path_Parquet_SP.glob('**/*') if f.is_file()) / (1024**2)
     path_Parquet_MP = Path(path + 'Parquet_MP_19.parquet')
-    size_d['06_Parquet_MP'] = sum(f.stat().st_size for f in path_Parquet_MP.glob('**/*') if f.is_file()) / (1024)
+    size_d['06_Parquet_MP'] = sum(f.stat().st_size for f in path_Parquet_MP.glob('**/*') if f.is_file()) / (1024**2)
+    size_d['07_Avro'] = os.path.getsize(path + 'Avro' + '_' + str(n-1) + '.avro') / (1024**2)
+    size_d['08_Pickle'] = os.path.getsize(path + 'Pickle' + '_' + str(n-1) + '.pickle') / (1024**2)
     
     # Return a dictionary including the actual measured time values of all methods
     # Return a dictionary including the statistical description of all methods
     return measured_vars_w, measured_vars_r, stat_dw, stat_dr, size_d
 ```
+
+If we closely examine lines `1049` through`1059`, we see that we need to declare different methods for calculating file sizes & folder sizes.
 
 We can then call our `analysis()` function and assign the outputs to 5 different objects:
 
@@ -1090,20 +1103,20 @@ print(len(size_d))
 8
 ```
 
-The shapes of our objects match the output requirements, as we have 8 tested file formats.
+The shapes of our objects match the output requirements, as we have eight tested file formats.
 
 ---
 
 ## Performance results
-Now, we have everything we need to make sense of the data that we generated.
+We now have everything we need to make sense of the data we just generated.
 
-In this example, the quantity of data is not too extense, since we only have 8 file formats and 20 measurements per format. Regardless, it is always a good practice to visualize the results in a plot as a first step, especially when dealing with large datasets.
+In this example, the quantity of data is manageable since we only have eight file formats and 20 measurements per format. Regardless, it is always a good practice to visualize the results in a plot as a first step.
 
 ### 1. Plotting the results
 We'll proceed with some visualization techniques appropriate for the results we have.
 
 #### 1.1 Bar chart for file sizes
-A bar chart is a simple way to quickly visualize data. We can generate a bar chart using the `matplotlib.pyplot` module:
+A bar chart is a simple way to visualize data quickly. We can generate a bar chart using the `matplotlib.pyplot` module:
 
 ##### **Code**
 ```Python
@@ -1118,29 +1131,32 @@ plt.grid(True, zorder=0)
 
 # Set xlabel and ylabel
 plt.xlabel('File Format', fontsize=label_font_size, labelpad=text_padding)
-plt.ylabel('File Size  [MB]', fontsize=label_font_size, labelpad=text_padding)
+plt.ylabel('File Size [GB]', fontsize=label_font_size, labelpad=text_padding)
 
 # Remove bottom and top separators
 sns.despine(bottom=True)
 
 # Add plot title
-plt.title('File/Folder Sizes in Megabytes', fontsize=title_font_size, pad=text_padding)
+plt.title('File/Folder Sizes in Gigabytes', fontsize=title_font_size, pad=text_padding)
 
 # Optional: Save the figure as a png image
-plt.savefig('performance_results/' + 'file_sizes_bar_chart.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('performance_results/' + 'file_sizes_bar_chart_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('performance_results/' + 'file_sizes_bar_chart_bg.png', format = 'png', dpi = 300, transparent = False)
 
 # Close the figure
 plt.close()
 ```
 
-If we save the figure directly and then close it, the image will be saved in the path we specify and will not display on our IDE.
+If we save the figure directly and then close it, the image will be written in the path we specify and will not display on our IDE.
+
+If we examine line `1181`, we used an additional library called `seaborn` to include the additional parameter `sns.despine()`. This module is handy when dealing with statistical analysis visualizations. However, we will not use it in this particular section and will limit ourselves to using the `matplotlib.pyplot` module.
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart_bg.png "File Size Bar Chart")
-_Figure 1.1: Bar Chart denoting File/Folder size in MB for each file format_
+_Figure 1.1: Bar Chart denoting file/folder sizes in `MB` for each file format_
 
 #### 1.2 Boxplot for writing times
-A boxplot is a visualization method widely used in Data Science & statistical analysis. Its purpose is to describe the distribution of experimental measurements including useful visual information about the set.
+A boxplot is a visualization method widely used in Data Science & statistical analysis. Its purpose is to describe the distribution of experimental measurements, including useful visual information about the set.
 
 A detailed discussion of the boxplot components is out of the scope of this article. That will be covered in another blog post.
 
@@ -1220,11 +1236,11 @@ plt.close()
 _Figure 1.3: Boxplot denoting the distribution of 20 trials of reading times for each file format_
 
 ### 2. Exporting the results in a tabular format
-We can also write our results to an Excel file. This is useful whenever we want to share or store information that took a fair amount of time to generate (*imagine running the whole performance test just to get the results back*).
+We can also write our results in an Excel file. This is a valuable technique whenever we want to share or store information that took a fair amount of time to generate (*imagine explaining to our boss why we had to re-run a 2-hour performance test just to get the results back*).
 
-An Excel file is also a very friendly tabular file format that everyone understands, and that anyone can use to make further analysis such as pivoting or calculating statistical measures (*mean, min, max, stdev, among others*).
+An Excel file is also a very friendly tabular format that everyone understands. It can be used to make further analyses such as pivoting or calculating statistical measures (*$mean$, $min$, $max$, $stdev$, among others*).
 
-For this part, we will be writing two `.xlsx` files, one for writing results and one for reading results. Each file will have 8 tabs, each consisting of the file format, and the writing and reading times in seconds respectively: 
+For this part, we will be writing two `.xlsx` files, one for writing results and one for reading results. Each file will have eight tabs, each consisting of the file format and the writing and reading times in seconds, respectively: 
 
 ##### **Code**
 ```Python
@@ -1241,57 +1257,94 @@ def results_to_excel(dseries_dict, path):
 
 # Define file for writing results
 path_w = 'performance_results/' + 'measured_vars_w.xlsx'
+path_dw = 'performance_results/' + 'stat_dw.xlsx'
 
 # Call function on writing results
 results_to_excel(measured_vars_w, path_w)
+results_to_excel(stat_dw, path_dw)
 
 # Define file for reading results
 path_r = 'performance_results/' + 'measured_vars_r.xlsx'
+path_dr = 'performance_results/' + 'stat_dr.xlsx'
 
 # Call function on reading results
 results_to_excel(measured_vars_r, path_r)
+results_to_excel(stat_dr, path_dr)
 ```
 
 ---
 
 ## Side-by-side comparison
 
-##### **Results**
-| **Format** | **Size** | **Writing Time** | **Writing Method** | **Reading Time** | **Reading Method** |
+### 1. **Consolidated results**
+
+| **Format** | **Size [MB]** | **Avg. Writing Time** [s] | **Writing Method** | **Avg. Reading Time [s]** | **Reading Method** |
 | --- | --- | --- | --- | --- | --- |
-| `.csv` | 20MB | 20s | `to_csv()` | 20s | 20kb |
-| `.txt` | 20MB | 20s | `to_csv()` | 20s | 20kb |
-| `.feather` | 20MB | 20s | `to_feather()` | 20s | 20kb |
-| `.parquet` | 20MB | 20s | `to_parquet()` (`NP`) | 20s | 20kb |
-| `.parquet` | 20MB | 20s | `to_parquet()` (`SP`) | 20s | 20kb |
-| `.parquet` | 20MB | 20s | `to_parquet()` (`MP`) | 20s | 20kb |
-| `.avro` | 20MB | 20s | 20s | 20s | 20kb |
-| `.pickle` | 20MB | 20s | `pickle.dump()` | 20s | 20kb |
+| `.csv` | 2,954 | 67.4 | `df.to_csv()` | 37.1 | `pd.read_csv()` |
+| `.txt` | 2,941 | 60.4 | `df.to_csv()` | 39.6 | `pd.read_csv()` |
+| `.feather` | 1,216 | 6.6 | `df.to_feather()` | 4.7 | `pd.read_feather()` |
+| `.parquet` | 604 | 12.9 | `df.to_parquet()` (`NP`) | 5.5 | `pd.read_parquet()` |
+| `.parquet` | 919 | 11.0 | `df.to_parquet()` (`SP`) | 5.9 | `pd.read_parquet()` |
+| `.parquet` | 1,417 | 22.4 | `df.to_parquet()` (`MP`) | 13.6 | `pd.read_parquet()` |
+| `.avro` | 2,455 | 55.9 | `fastavro writer()` | 59.5 | `fastavro reader()` |
+| `.pickle` | 1,539 | 17.6 | `pickle.dump()` | 9.1 | `pickle.load()` |
 
+_Figure 2: Chart containing file/folder sizes rounded to integer values, average writing & reading times from 20 measurements rounded to one decimal, and writing/reading methods used for each case_
 
-_Figure 2: Chart containing File/Folder sizes, average writing times and average reading times from 20 measurements, including method used for each case_
+**_Note:** Keep in mind that these values vary across systems. CPU processing power, RAM capacity, and other variables directly affect reading & writing times. Please refer to the [Appendix](#appendix) section for the full list of machine specifications used in this experiment._
 
-_Note: Keep in mind that this values vary across systems. CPU processing power, RAM capacity and other variables directly affect reading & writing times_.
+# 2. **Interpretation**
 
-We can see that file sizes for...
-We can also see that the writing times for...
-Finally, we can see that the reading times for...
+We can see that the `.csv` & `.txt` file formats had the largest file sizes, while the non-partitioned `.parquet` had the smallest file size. `.parquet` folder sizes increased almost linearly as we increased the number of partitions, which makes sense if we remember that a partitioned file creates a directory hierarchy beneath the main directory.
+
+For writing times, we can see that most of our measures were more or less consistent except with the `.pickle` file format. This is denoted by the two outliers visible in *Figure 1.2* and can be due to processes starting in the background, thus reducing resources and introducing noise in the measurements. We can mitigate or at least reduce this phenomenon by tightening our experimental conditions.
+
+Writing `.feather` files consistently consumed the least amount of time, followed by the single partitioned `.parquet` file and non-partitioned `.parquet` file consecutively. We can also clearly see that the `.csv` and `.txt` file formats were the worst performing, followed by the `.avro` format.
+
+For reading times, the story is slightly different: Reading from the `.avro` file consumed the most amount of time (*25 seconds more than the second worst case*), along with the highest standard deviation value of all file formats ($stdev = 7$, *meaning 7 seconds of deviation from the mean*). This is due to the fact that the `fastavro` library provides an iterator reading object, meaning the script had to iterate over each row and append it to an object (*in our case, a list*). This additional step adds an extra layer of computational complexity, therefore increasing reading times.
+
+In contrast, the `.feather` file format took the least amount of time to read, closely followed by the non-partitioned & single-partitioned `.parquet` files.
 
 ---
 
 ## Use Cases
-From the results obtained on the previous section, we can see that...
+From the results obtained in the previous section, we can see that the `.feather` file format offers consistently fast writing & reading speeds when compared to the other file formats. Also, the file size is considerably smaller. However, as we previously mentioned, this format is not recommended for long-term storage due to its binary form instability.
 
-Although the `.pickle` file format performs well, it is not recommended since it's platform specific. Also, malicious code can be injected easily...
+A great alternative to handling big data would be the stabler `.parquet` file format: Both non-partitioned and single-partitioned forms presented low writing & reading speeds and relatively small file sizes compared to the other formats.
+
+Even though the non-partitioned approach was the overall highest performing, it is not always the best option: when dealing with large data sets that contain multiple aggregation levels, partitioning lets us divide the aggregation levels into subfolders, making the information accessible by blocks, meaning we would not require to read the entire file to extract a single column field group. This is especially important with big data since Python reads data and stores it in memory, so a single-partitioned 1TB `.parquet` file would be practically impossible to read (*parsing by blocks could do the trick, but then, this is what `.parquet` partitioning achieves more elegantly, right?*).
+
+Another high-performing case was the `.pickle` file format, but we did not mention it as a first or even second option for two extremely relevant reasons:
+- It's platform specific.
+- Malicious code can be easily injected, creating potential vulnerabilities in our environment.
+
+These two reasons alone make `.pickle` files more of a niche solution for interchanging Python objects and most definitely not apt for production environments.
+
+Lastly, the two worst performing file formats, `.csv` and `.txt`, which ironically are the most popular, present all of the advantages that we mentioned earlier, but have substantial limitations if we want to ensure a proper and secure data writing & loading environment; the single fact that these two file formats don't preserve data types is a good-enough reason to evaluate other alternatives.
 
 ---
 
 ## Conclusions
-In summary, not all tabular file formats are good for every application. Each of them were created with a purpose in mind, and are better or worse at some applications than the others.
+In summary, not all *"big data"* file formats are tailored for handling big data. This is counterintuitive, nonetheless true. Each was created with a specific purpose and is better or worse at some applications than others.
 
-Serialized formats for example, present several advantages over non-serialized formats, but the inverse also happens: serialized formats may lose stability across versions, and usually consume more processing resources when serializing/deserializing objects.
+Serialized formats, for example, present several advantages over non-serialized formats. Still, the inverse also happens: serialized formats may lose stability across versions and usually consume more processing resources when serializing/deserializing objects.
 
-Before implementing a format, specially in a production environment, it's important to make a detailed assessment of which formats are going to be used and how the encoding is to be handled. Also, when working with other collaborators,  setting a strict standard for data formatting & handling is of vital importance.
+Before implementing a format, especially in a production environment, it's essential to make a detailed assessment of which formats will be used and how the encoding will be handled. Also, when working with other collaborators, setting a strict standard for data formatting & handling is of vital importance and, more often than not, overlooked in favor of implementing the *"easier way"*.
+
+---
+
+## Appendix
+
+### 1. **Experimental conditions**
+
+Below you can find a list of the parameters that were used to obtain these results:
+- **Python Build:** Python 3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) MSC v.1934 64 bit (AMD64) on win32
+- **Operating System:** Windows 11 Home, Version 22H2
+- **Processor:** 12th Gen Intel Core i9-12900H, 2.50 GHz
+- **RAM:** 64 GB DDR5
 
 ## References
-https://www.geeksforgeeks.org/working-csv-files-python/
+- [Apache Spark, Parquet Files](https://spark.apache.org/docs/latest/sql-data-sources-parquet.html)
+- [Vertica, Using Partition Columns](https://www.vertica.com/docs/10.0.x/HTML/Content/Authoring/ExternalTables/UsingPartitions.htm)
+- [This Pointer, Deleting Directories Recursively](https://thispointer.com/python-how-to-delete-a-directory-recursively-using-shutil-rmtree/)
+- [XlsxWriter, Creating Excel files with Python and XlsxWriter](https://xlsxwriter.readthedocs.io/) 
