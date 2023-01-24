@@ -27,8 +27,8 @@ This section will be lengthier than the previous ones and will involve more code
 		- Bar chart for file sizes
 		- Boxplot for writing times
 		- Boxplot for reading times
-	- Exporting the results in tabular format
-- Side-by-Side comparison
+	- Exporting the results in a tabular format
+- Side-by-side comparison
 - Use cases
 - Conclusions
 - References
@@ -1136,54 +1136,142 @@ plt.close()
 If we save the figure directly and then close it, the image will be saved in the path we specify and will not display on our IDE.
 
 ##### **Output**
-![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart.png "File Size Bar Chart")
+![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart_bg.png "File Size Bar Chart")
 
+#### 1.2 Boxplot for writing times
+A boxplot is a visualization method widely used in Data Science & statistical analysis. Its purpose is to describe the distribution of experimental measurements including useful visual information about the set.
 
-#### 1.2 Bar chart for file sizes
-A bar chart is a simple way to quickly visualize data. We can generate a bar chart using the `matplotlib.pyplot` module:
+A detailed discussion of the boxplot components is out of the scope of this article. That will be covered in another blog post.
 
-##### **Code**
-
-##### **Output**
-
-#### 1.3 Bar chart for file sizes
-A bar chart is a simple way to quickly visualize data. We can generate a bar chart using the `matplotlib.pyplot` module:
+We can generate a boxplot using the `matplotlib.pyplot` module:
 
 ##### **Code**
+```Python
+# Create figure
+plt.figure('Writing Times Histogram')
+
+# Plot the writing times
+plt.boxplot(measured_vars_w.values(),
+            labels = measured_vars_w.keys(),
+            showmeans=True)
+
+# Enable grid
+plt.grid(True, zorder=0)
+
+# Set xlabel and ylabel
+plt.xlabel("File Format", fontsize=label_font_size, labelpad=text_padding)
+plt.ylabel("Writing Time [s]", fontsize=label_font_size, labelpad=text_padding)
+
+# Remove bottom and top separators
+sns.despine(bottom=True)
+
+# Add plot title
+plt.title('Writing Time in Seconds', fontsize=title_font_size, pad=text_padding)
+
+# Optional: Save the figure as a png image
+plt.savefig('performance_results/' + 'writing_time_scattered_boxplots_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('performance_results/' + 'writing_time_scattered_boxplots_bg.png', format = 'png', dpi = 300, transparent = False)
+
+# Close the figure
+plt.close()
+```
 
 ##### **Output**
+![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/writing_time_scattered_boxplots_bg.png "Writing Time Box Plot")
 
-### 2. Exporting the results in tabular format
-We can also write our statistical description results to an Excel file. This is useful whenever we want to share or store information that took a fair amount of time to generate (*imagine running the whole performance test just to get the results back*).
+#### 1.3 Boxplot for reading times
+We can perform a similar treatment to our reading time results:
+
+##### **Code**
+```Python
+# Create figure
+plt.figure('Reading Times Histogram')
+
+# Plot the writing times
+plt.boxplot(measured_vars_r.values(),
+            labels = measured_vars_r.keys(),
+            showmeans=True)
+
+# Enable grid
+plt.grid(True, zorder=0)
+
+# Set xlabel and ylabel
+plt.xlabel("File Format", fontsize=label_font_size, labelpad=text_padding)
+plt.ylabel("Reading Time [s]", fontsize=label_font_size, labelpad=text_padding)
+
+# Remove bottom and top separators
+sns.despine(bottom=True)
+
+# Add plot title
+plt.title('Reading Time in Seconds', fontsize=title_font_size, pad=text_padding)
+
+# Optional: Save the figure as a png image
+plt.savefig('performance_results/' + 'reading_time_scattered_boxplots_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('performance_results/' + 'reading_time_scattered_boxplots_bg.png', format = 'png', dpi = 300, transparent = False)
+
+# Close the figure
+plt.close()
+```
+
+##### **Output**
+![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/reading_time_scattered_boxplots_bg.png "Reading Time Box Plot")
+
+### 2. Exporting the results in a tabular format
+We can also write our results to an Excel file. This is useful whenever we want to share or store information that took a fair amount of time to generate (*imagine running the whole performance test just to get the results back*).
 
 An Excel file is also a very friendly tabular file format that everyone understands, and that anyone can use to make further analysis such as pivoting or calculating statistical measures (*mean, min, max, stdev, among others*).
 
+For this part, we will be writing two `.xlsx` files, one for writing results and one for reading results. Each file will have 8 tabs, each consisting of the file format, and the writing and reading times in seconds respectively: 
+
 ##### **Code**
+```Python
+# Define function to export results to Excel file
+def results_to_excel(dseries_dict, path):
+    """Write dictionary of dataframes to separate sheets, within 
+        1 file."""
+    writer = pd.ExcelWriter(path, engine='openpyxl')
 
+    for tab_name, dseries in dseries_dict.items():
+        dseries.to_excel(writer, sheet_name=tab_name)
 
-##### **Output**
+    writer.close()
 
+# Define file for writing results
+path_w = 'performance_results/' + 'measured_vars_w.xlsx'
 
+# Call function on writing results
+results_to_excel(measured_vars_w, path_w)
+
+# Define file for reading results
+path_r = 'performance_results/' + 'measured_vars_r.xlsx'
+
+# Call function on reading results
+results_to_excel(measured_vars_r, path_r)
+```
 
 ---
 
-## Side-by-Side comparison
+## Side-by-side comparison
 
-**Results**
+##### **Results**
 | Format | Size | Read Time | Read Method | Write Time | Write Method |
 | --- | --- | --- | --- | --- | --- |
-| `.csv` | 20kb | 20kb | 20kb | 20kb | 20kb |
-| `.txt` | 20kb | 20kb | 20kb | 20kb | 20kb |
-| `.feather` | 20kb | 20kb | 20kb | 20kb | 20kb |
-| `.parquet` | 20kb | 20kb | 20kb | 20kb | 20kb |
-| `.avro` | 20kb | 20kb | 20kb | 20kb | 20kb |
-| `.pickle` | 20kb | 20kb | 20kb | 20kb | 20kb |
+| `.csv` | 20MB | 20kb | 20kb | 20kb | 20kb |
+| `.txt` | 20MB | 20kb | 20kb | 20kb | 20kb |
+| `.feather` | 20MB | 20kb | 20kb | 20kb | 20kb |
+| `.parquet_NP` | 20MB | 20kb | 20kb | 20kb | 20kb |
+| `.parquet_SP` | 20MB | 20kb | 20kb | 20kb | 20kb |
+| `.parquet_MP` | 20MB | 20kb | 20kb | 20kb | 20kb |
+| `.avro` | 20MB | 20kb | 20kb | 20kb | 20kb |
+| `.pickle` | 20MB | 20kb | 20kb | 20kb | 20kb |
 
 _Note: Keep in mind that this values vary across systems. CPU processing power, RAM capacity and other variables directly affect reading & writing times_.
 
 ---
 
 ## Use Cases
+
+
 
 ---
 

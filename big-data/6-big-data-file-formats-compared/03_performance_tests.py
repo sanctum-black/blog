@@ -965,6 +965,7 @@ plt.close()
 # -------------------------------
 # Reading Times
 # -------------------------------
+
 # Create figure
 plt.figure('Reading Times Histogram')
 
@@ -1000,13 +1001,13 @@ plt.close()
 # -------------------------------
 
 # Define function to export results to Excel file
-def results_to_excel(df_dict, path):
+def results_to_excel(dseries_dict, path):
     """Write dictionary of dataframes to separate sheets, within 
         1 file."""
     writer = pd.ExcelWriter(path, engine='openpyxl')
 
-    for tab_name, dframe in df_dict.items():
-        dframe.to_excel(writer, sheet_name=tab_name)
+    for tab_name, dseries in dseries_dict.items():
+        dseries.to_excel(writer, sheet_name=tab_name)
 
     writer.close()
 
