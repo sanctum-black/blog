@@ -10,28 +10,28 @@ This section will be lengthier than the previous ones and will involve more code
 ---
 
 ## Table of Contents
-- Importing the required modules
-- Defining plot parameters
-- Preparing the data set
-- Experiment design
-- Performance tests
-	- Parameter definition
-	- Writing performance tests
-	- Reading performance tests
-	- Analysis
-		- Writing performance experiment statistical description
-		- Reading performance experiment statistical description
-		- File size analysis
-- Performance results
-	- Plotting the results
-		- Bar chart for file sizes
-		- Boxplot for writing times
-		- Boxplot for reading times
-	- Exporting the results in a tabular format
-- Side-by-side comparison
-- Use cases
-- Conclusions
-- References
+- [Importing the required modules](#importing-the-required-modules)
+- [Defining plot parameters](#defining-plot-parameters)
+- [Preparing the data set](#preparing-the-data-set)
+- [Experiment design](#experiment-design)
+- [Performance tests](#performance-tests)
+	- [Parameter definition](#1-parameter-definition)
+	- [Writing performance tests](#2-writing-performance-tests)
+	- [Reading performance tests](#3-reading-performance-tests)
+	- [Analysis](#4-analysis)
+		- [Writing performance analysis](#41-writing-performance-analysis)
+		- [Reading performance analysis](#42-reading-performance-analysis)
+		- [File size analysis](#43-file-size-analysis)
+- [Performance results](#performance-results)
+	- [Plotting the results](#1-plotting-the-results)
+		- [Bar chart for file sizes](#11-bar-chart-for-file-sizes)
+		- [Boxplot for writing times](#12-boxplot-for-writing-times)
+		- [Boxplot for reading times](#13-boxplot-for-reading-times)
+	- [Exporting the results in a tabular format](#2-exporting-the-results-in-a-tabular-format)
+- [Side-by-side comparison](#side-by-side-comparison)
+- [Use cases](#use-cases)
+- [Conclusions](#conclusions)
+- [References](#references)
 
 ---
 
@@ -926,20 +926,20 @@ Upon calling, it will return the following:
 
 Once we have the expected inputs and outputs, the idea is to perform the following:
 
-##### **Writing Analysis**
+#### 4.1 **Writing Performance Analysis**
 1. Define a list `tests` containing the names of each file format. We will use this object as iterable.
 2. Call the `writingPerformance()` function and assign it to a `measured_vars_w` object.
 3. Define an empty dictionary `stat_dw` for saving the statistical descriptions for the writing test.
 4. Iterate over the `tests` object, indexing the `measured_vars_w` dictionary on each loop, and calculating its statistical description.
 5. Assign a key-value pair on each loop, consisting of the file format name as key, and the statistical description object as value.
 
-##### **Reading Analysis**
+#### 4.2 **Reading Performance Analysis**
 1. Call the `readingPerformance()` function and assign it to a `measured_vars_r` object.
 2. Define an empty dictionary `stat_dr` for saving the statistical descriptions for the reading test.
 3. Iterate over the `tests` object, indexing the `measured_vars_r` dictionary on each loop, and calculating its statistical description.
 4. Assign a key-value pair on each loop, consisting of the file format name as key, and the statistical description object as value.
 
-##### **File Size Analysis**
+#### 4.3 **File Size Analysis**
 1. Declare an empty dictionary `size_d` for storing the file size values.
 2. For each file, calculate its size using the `os.path.getsize` method.
 3. For each folder (parquet partitions), calculate its size using the `f.stat().st_size` method recursively.
