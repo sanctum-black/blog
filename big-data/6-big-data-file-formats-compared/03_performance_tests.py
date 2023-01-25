@@ -160,7 +160,7 @@ def writingPerformance(n, path, df):
     wtime_avro = pd.Series([], dtype='float64')
     wtime_pickle = pd.Series([], dtype='float64')
 
-    # Declare a dictionary for storing all lists
+    # Declare a dictionary for storing all series
     measured_vars_w = {}
     
     # -------------------------------
@@ -499,7 +499,7 @@ def readingPerformance(n, path, df):
     rtime_avro = pd.Series([], dtype='float64')
     rtime_pickle = pd.Series([], dtype='float64')
 
-    # Declare a dictionary for storing all lists
+    # Declare a dictionary for storing all series
     measured_vars_r = {}
     
     # -------------------------------

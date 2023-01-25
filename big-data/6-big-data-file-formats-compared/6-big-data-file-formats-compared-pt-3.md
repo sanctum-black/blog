@@ -269,7 +269,7 @@ def writingPerformance(n, path, df):
     wtime_avro = pd.Series([], dtype='float64')
     wtime_pickle = pd.Series([], dtype='float64')
 
-    # Declare a dictionary for storing all lists
+    # Declare a dictionary for storing all series
     measured_vars_w = {}
     
     # -------------------------------
@@ -635,7 +635,7 @@ def readingPerformance(n, path, df):
     rtime_avro = pd.Series([], dtype='float64')
     rtime_pickle = pd.Series([], dtype='float64')
 
-    # Declare a dictionary for storing all lists
+    # Declare a dictionary for storing all series
     measured_vars_r = {}
     
     # -------------------------------
@@ -1153,7 +1153,7 @@ If we examine line `1181`, we used an additional library called `seaborn` to inc
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart_bg.png "File Size Bar Chart")
-_Figure 1.1: Bar Chart denoting file/folder sizes in `MB` for each file format_
+_**Figure 1.1:** Bar Chart denoting file/folder sizes in `MB` for each file format_
 
 #### 1.2 Boxplot for writing times
 A boxplot is a visualization method widely used in Data Science & statistical analysis. Its purpose is to describe the distribution of experimental measurements, including useful visual information about the set.
@@ -1195,7 +1195,7 @@ plt.close()
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/writing_time_scattered_boxplots_bg.png "Writing Time Box Plot")
-_Figure 1.2: Boxplot denoting the distribution of 20 trials of writing times for each file format_
+_**Figure 1.2:** Boxplot denoting the distribution of 20 trials of writing times for each file format_
 
 #### 1.3 Boxplot for reading times
 We can perform a similar treatment to our reading time results:
@@ -1233,14 +1233,14 @@ plt.close()
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/reading_time_scattered_boxplots_bg.png "Reading Time Box Plot")
-_Figure 1.3: Boxplot denoting the distribution of 20 trials of reading times for each file format_
+_**Figure 1.3:** Boxplot denoting the distribution of 20 trials of reading times for each file format_
 
 ### 2. Exporting the results in a tabular format
 We can also write our results in an Excel file. This is a valuable technique whenever we want to share or store information that took a fair amount of time to generate (*imagine explaining to our boss why we had to re-run a 2-hour performance test just to get the results back*).
 
 An Excel file is also a very friendly tabular format that everyone understands. It can be used to make further analyses such as pivoting or calculating statistical measures (*$mean$, $min$, $max$, $stdev$, among others*).
 
-For this part, we will be writing two `.xlsx` files, one for writing results and one for reading results. Each file will have eight tabs, each consisting of the file format and the writing and reading times in seconds, respectively: 
+For this part, we will be writing four `.xlsx` files, two for writing results and two for reading results. Each file will have eight tabs, each consisting of the file format and the writing and reading times in seconds, respectively:
 
 ##### **Code**
 ```Python
@@ -1276,9 +1276,9 @@ results_to_excel(stat_dr, path_dr)
 
 ## Side-by-side comparison
 
-### 1. **Consolidated results**
+### 1. Consolidated results
 
-| **Format** | **Size [MB]** | **Avg. Writing Time** [s] | **Writing Method** | **Avg. Reading Time [s]** | **Reading Method** |
+| **Format** | **Size [MB]** | **Avg. Writing Time [s]** | **Writing Method** | **Avg. Reading Time [s]** | **Reading Method** |
 | --- | --- | --- | --- | --- | --- |
 | `.csv` | 2,954 | 67.4 | `df.to_csv()` | 37.1 | `pd.read_csv()` |
 | `.txt` | 2,941 | 60.4 | `df.to_csv()` | 39.6 | `pd.read_csv()` |
@@ -1291,9 +1291,9 @@ results_to_excel(stat_dr, path_dr)
 
 _Figure 2: Chart containing file/folder sizes rounded to integer values, average writing & reading times from 20 measurements rounded to one decimal, and writing/reading methods used for each case_
 
-**_Note:** Keep in mind that these values vary across systems. CPU processing power, RAM capacity, and other variables directly affect reading & writing times. Please refer to the [Appendix](#appendix) section for the full list of machine specifications used in this experiment._
+_**Note:** Keep in mind that these values vary across systems. CPU processing power, RAM capacity, and other variables directly affect reading & writing times. Please refer to the [Appendix](#appendix) section for the full list of machine specifications used in this experiment._
 
-# 2. **Interpretation**
+# 2. Interpretation
 
 We can see that the `.csv` & `.txt` file formats had the largest file sizes, while the non-partitioned `.parquet` had the smallest file size. `.parquet` folder sizes increased almost linearly as we increased the number of partitions, which makes sense if we remember that a partitioned file creates a directory hierarchy beneath the main directory.
 
@@ -1307,7 +1307,7 @@ In contrast, the `.feather` file format took the least amount of time to read, c
 
 ---
 
-## Use Cases
+## Use cases
 From the results obtained in the previous section, we can see that the `.feather` file format offers consistently fast writing & reading speeds when compared to the other file formats. Also, the file size is considerably smaller. However, as we previously mentioned, this format is not recommended for long-term storage due to its binary form instability.
 
 A great alternative to handling big data would be the stabler `.parquet` file format: Both non-partitioned and single-partitioned forms presented low writing & reading speeds and relatively small file sizes compared to the other formats.
@@ -1335,7 +1335,7 @@ Before implementing a format, especially in a production environment, it's essen
 
 ## Appendix
 
-### 1. **Experimental conditions**
+### 1. Experimental conditions
 
 Below you can find a list of the parameters that were used to obtain these results:
 - **Python Build:** Python 3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) MSC v.1934 64 bit (AMD64) on win32
