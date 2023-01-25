@@ -127,7 +127,7 @@ df.shape
 (26173514, 9)
 ```
 
-Meaning 26,173,514 rows by 9 columns.
+Meaning _26,173,514_ rows by _9_ columns.
 
 Next, we will need to do some preprocessing before beginning with the tests:
 
@@ -913,7 +913,7 @@ def readingPerformance(n, path, df):
 ```
 
 ### 4. Analysis
-Once we have both the `writingPerformance()` and `readingPerformance()` functions declared, we can define an `analysis()` function which will accept the following parameters :
+Once we have both the `writingPerformance()` and `readingPerformance()` functions declared, we can define an `analysis()` function which will accept the following parameters:
 
 - `n` : `int`
 	- Number of trials.
@@ -940,20 +940,20 @@ Upon calling, it will return the following:
 
 Once we have the expected inputs and outputs, the idea is to perform the following:
 
-#### 4.1 **Writing Performance Analysis**
+#### 4.1 Writing performance analysis
 1. Define a list `tests` containing the names of each file format. We will use this object as iterable.
 2. Call the `writingPerformance()` function and assign it to a `measured_vars_w` object.
 3. Define an empty dictionary `stat_dw` for saving the statistical descriptions for the writing test.
 4. Iterate over the `tests` object, indexing the `measured_vars_w` dictionary on each loop and calculating its statistical description.
 5. Assign a key-value pair on each loop, consisting of the file format name as the key and the statistical description object as the value.
 
-#### 4.2 **Reading Performance Analysis**
+#### 4.2 Reading performance analysis
 1. Call the `readingPerformance()` function and assign it to a `measured_vars_r` object.
 2. Define an empty dictionary `stat_dr` for saving the statistical descriptions for the reading test.
 3. Iterate over the `tests` object, indexing the `measured_vars_r` dictionary on each loop and calculating its statistical description.
 4. Assign a key-value pair on each loop, consisting of the file format name as the key and the statistical description object as the value.
 
-#### 4.3 **File Size Analysis**
+#### 4.3 File size analysis
 1. Declare an empty dictionary `size_d` for storing the file size values.
 2. For each file, calculate its size using the `os.path.getsize` method.
 3. For each folder (parquet partitions), recursively calculate its size using the `f.stat().st_size` method.
@@ -1063,7 +1063,7 @@ def analysis(n, path, df):
     return measured_vars_w, measured_vars_r, stat_dw, stat_dr, size_d
 ```
 
-If we closely examine lines `1049` through`1059`, we see that we need to declare different methods for calculating file sizes & folder sizes.
+If we closely examine lines `1049` through `1059`, we see that we need to declare different methods for calculating file sizes & folder sizes.
 
 We can then call our `analysis()` function and assign the outputs to 5 different objects:
 
@@ -1165,7 +1165,7 @@ We can generate a boxplot using the `matplotlib.pyplot` module:
 ##### **Code**
 ```Python
 # Create figure
-plt.figure('Writing Times Histogram')
+plt.figure('Writing Times Boxplot')
 
 # Plot the writing times
 plt.boxplot(measured_vars_w.values(),
@@ -1203,7 +1203,7 @@ We can perform a similar treatment to our reading time results:
 ##### **Code**
 ```Python
 # Create figure
-plt.figure('Reading Times Histogram')
+plt.figure('Reading Times Boxplot')
 
 # Plot the writing times
 plt.boxplot(measured_vars_r.values(),

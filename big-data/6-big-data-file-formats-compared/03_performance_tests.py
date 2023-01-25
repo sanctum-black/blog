@@ -943,7 +943,7 @@ plt.close()
 # -------------------------------
 
 # Create figure
-plt.figure('Writing Times Histogram')
+plt.figure('Writing Times Boxplot')
 
 # Plot the writing times
 plt.boxplot(measured_vars_w.values(),
@@ -975,7 +975,7 @@ plt.close()
 # -------------------------------
 
 # Create figure
-plt.figure('Reading Times Histogram')
+plt.figure('Reading Times Boxplot')
 
 # Plot the writing times
 plt.boxplot(measured_vars_r.values(),
