@@ -1,8 +1,8 @@
-# .gitignore file for: blog/data-analysis/7-different-tabular-file-formats-compared
+# .gitignore file for: blog/big-data/6-big-data-file-formats-compared
 # Ignore .obsidian folder
 .obsidian/
 
-# Ignore all featured image
+# Ignore all featured images
 *.jpg
 
 # Ignore large data set

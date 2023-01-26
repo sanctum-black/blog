@@ -1,0 +1,9 @@
+# .gitignore file for: blog/computer-science/programming-best-practices-writing-better-code
+# Ignore .obsidian folder
+.obsidian/
+
+# Ignore all featured images
+*.jpg
+
+# Ignore desktop.ini
+desktop.ini
