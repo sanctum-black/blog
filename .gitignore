@@ -2,6 +2,10 @@
 # Ignore .obsidian folder on all category subfolders using ** wildcard
 **/.obsidian/
 
+# Ignore all byte-compiled / optimized / DLL files
+**/__pycache__/
+**/*.py[cod]
+
 # Ignore .obsidian folder on main folder
 .obsidian/
 
