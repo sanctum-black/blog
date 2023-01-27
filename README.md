@@ -12,7 +12,7 @@ Here you will find my collection of written articles and essays. Main topics are
 		2. [6 Big Data File Formats Compared, Pt. 2](https://github.com/pabloaguirrenck/blog/blob/master/big-data/6-big-data-file-formats-compared/6-big-data-file-formats-compared-pt-2.md)
 		3. [6 Big Data File Formats Compared, Pt. 3](https://github.com/pabloaguirrenck/blog/blob/master/big-data/6-big-data-file-formats-compared/6-big-data-file-formats-compared-pt-3.md)
 2. [Computer Science](https://github.com/pabloaguirrenck/blog/tree/master/computer-science)
-	1. [Programing Best Practices: Writing Better Code](https://github.com/pabloaguirrenck/blog/blob/master/computer-science/programming-best-practices-writing-better-code/programing-best-practices-writing-better-code.md)
+	1. [Programming Best Practices: Writing Better Code](https://github.com/pabloaguirrenck/blog/blob/master/computer-science/programming-best-practices-writing-better-code/programming-best-practices-writing-better-code.md)
 
 ## Website
 You can also directly consult the [Blog](https://pabloagn.com/blog/) page on my website.

@@ -1,4 +1,4 @@
-# Programing Best Practices: Writing Better Code
+# Programming Best Practices: Writing Better Code
 Writing code can be as simple as importing the required libraries, declaring our variables, functions, and classes as required, including some docstrings here and there, some additional comments, executing, and we're done. While we're at it, let's skip the function & class part and drop everything as is. Even better, let's also save some lines by stripping our file from all comments.
 
 The result? A piece of code with absolutely no indication of what it does or how it does it, with the impossibility of modularizing & scaling in any meaningful way. In short, a beautiful, useless creation made by us, just for us.
