@@ -4,7 +4,7 @@ Created on Wed Jan 25 19:31:58 2023
 
 @author: Pablo Aguirre
 
-GitHub: https://github.com/pabloaguirrenck
+GitHub: https://github.com/pabloagn
 Website: https://pabloagn.com
 Contact: https://pabloagn.com/contact
 

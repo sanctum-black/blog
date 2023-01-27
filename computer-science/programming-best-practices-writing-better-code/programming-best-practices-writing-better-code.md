@@ -7,7 +7,7 @@ In this section, we will review some simple methods that will immediately bring 
 
 We will use Python as an example, but most steps will apply to any programming language. 
 
-We'll be using Python scripts which can be found in the [Blog Article Repo](https://github.com/pabloaguirrenck/blog/tree/master/computer-science/programming-best-practices-writing-better-code).
+We'll be using Python scripts which can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tree/master/computer-science/programming-best-practices-writing-better-code).
 
 ---
 

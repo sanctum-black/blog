@@ -5,7 +5,7 @@ In this section, we will focus on comparing the performance of the formats revie
 
 We will then conclude this series by reviewing specific use cases for each one of the formats, as well as discussing some recommendations.
 
-This section will be longer than the previous ones and involve more code. We'll be using Python scripts which can be found in the [Blog Article Repo](https://github.com/pabloaguirrenck/blog/tree/master/big-data/6-big-data-file-formats-compared).
+This section will be longer than the previous ones and involve more code. We'll be using Python scripts which can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tree/master/big-data/6-big-data-file-formats-compared).
 
 ---
 
@@ -1152,7 +1152,7 @@ If we save the figure directly and then close it, the image will be written in t
 If we examine line `1181`, we used an additional library called `seaborn` to include the additional parameter `sns.despine()`. This module is handy when dealing with statistical analysis visualizations. However, we will not use it in this particular section and will limit ourselves to using the `matplotlib.pyplot` module.
 
 ##### **Output**
-![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart_bg.png "File Size Bar Chart")
+![alt text](https://raw.githubusercontent.com/pabloagn/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart_bg.png "File Size Bar Chart")
 _**Figure 1.1:** Bar Chart denoting file/folder sizes in `MB` for each file format_
 
 #### 1.2 Boxplot for writing times
@@ -1194,7 +1194,7 @@ plt.close()
 ```
 
 ##### **Output**
-![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/writing_time_scattered_boxplots_bg.png "Writing Time Box Plot")
+![alt text](https://raw.githubusercontent.com/pabloagn/blog/master/big-data/6-big-data-file-formats-compared/performance_results/writing_time_scattered_boxplots_bg.png "Writing Time Box Plot")
 _**Figure 1.2:** Boxplot denoting the distribution of 20 trials of writing times for each file format_
 
 #### 1.3 Boxplot for reading times
@@ -1232,7 +1232,7 @@ plt.close()
 ```
 
 ##### **Output**
-![alt text](https://raw.githubusercontent.com/pabloaguirrenck/blog/master/big-data/6-big-data-file-formats-compared/performance_results/reading_time_scattered_boxplots_bg.png "Reading Time Box Plot")
+![alt text](https://raw.githubusercontent.com/pabloagn/blog/master/big-data/6-big-data-file-formats-compared/performance_results/reading_time_scattered_boxplots_bg.png "Reading Time Box Plot")
 _**Figure 1.3:** Boxplot denoting the distribution of 20 trials of reading times for each file format_
 
 ### 2. Exporting the results in a tabular format
