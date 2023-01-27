@@ -12,38 +12,38 @@ We'll be using Python scripts which can be found in the [Blog Article Repo](htt
 ---
 
 ## Table of Contents
-- Legibility
-	- Authoring
-	- Comments
-		- Simple commenting
-		- Over-commenting
-		- Breaking comments in a new line
-		- Section definition
-	- Docstrings
-	- Indentation
-	- Line breaks, parenthesis, brackets & curly brackets
-		- Line breaks
-		- Parenthesis
-		- Brackets & curly brackets
-	- Appropriate variable naming
-	- Spacing
-- Modularization & scalability
-	- Modularization
-	- Scalability
-- Performance
-	- Proper module import
-	- Built-in libraries over external ones
-	- Proper data structures
-	- List comprehensions over `for` loops
-	- `for` loops vs. `while` loops
-	- Multiple variable assignment
-	- Using decorators
-- Testing & debugging
-	- Exception handling
-	- Print statements
-- Dependency handling
-- Conclusions
-- References
+- Legibility](#legibility)
+	- Authoring](#1-authoring)
+	- Comments](#2-comments)
+		- Simple commenting](#21-simple-commenting)
+		- Over-commenting](#22-over-commenting)
+		- Breaking comments in a new line](#23-breaking-comments-in-a-new-line)
+		- Section definition](#24-section-definition)
+	- Docstrings](#3-docstrings)
+	- Indentation](#4-indentation)
+	- Line breaks, parenthesis, brackets & curly brackets](#5-line-breaks-parenthesis-brackets--curly-brackets)
+		- Line breaks](#51-line-breaks)
+		- Parenthesis](#52-parenthesis)
+		- Brackets & curly brackets](#53-brackets--curly-brackets)
+	- Appropriate variable naming](#6-appropriate-variable-naming)
+	- Spacing](#7-spacing)
+- Modularization & scalability](#modularization--scalability)
+	- Modularization](#1-modularization)
+	- Scalability](#2-scalability)
+- Performance](#performance)
+	- Proper module import](#1-proper-module-import)
+	- Built-in libraries over external ones](#2-built-in-libraries-over-external-ones)
+	- Proper data structures](#3-proper-data-structures)
+	- List comprehensions over `for` loops](#4-list-comprehensions-over-for-loops)
+	- `for` loops vs. `while` loops](#5-for-loops-vs-while-loops)
+	- Multiple variable assignment](#6-multiple-variable-assignment)
+	- Using decorators](#7-using-decorators)
+- Testing & debugging](#testing--debugging)
+	- Exception handling](#1-exception-handling)
+	- Print statements](#2-print-statements)
+- Dependency handling](#dependency-handling)
+- Conclusions](#conclusions)
+- References](#references)
 
 ---
 
@@ -105,7 +105,7 @@ while i < 8:
     i += 1
 ```
 
-#### 2.3 Breaking comments in a newline
+#### 2.3 Breaking comments in a new line
 Comments are meant to be read as clearly, easily and fast as possible, but the truth is, sometimes they can get extensive.
 
 In some IDEs, this can cause the comment to overflow, looking unprofessional:
@@ -288,7 +288,7 @@ myvar = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + \
 ```
 
 #### 5.2 Parenthesis
-A better alternative to backslashes would be to enclose our variable arguments in parenthesis. This also allows us to continue writing on a newline:
+A better alternative to backslashes would be to enclose our variable arguments in parenthesis. This also allows us to continue writing on a new line:
 
 ##### **Code**
 ```Python
@@ -299,7 +299,7 @@ myvar = (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 +
 #### 5.3 Brackets & curly brackets
 As we saw before, we can enclose arguments in parenthesis to continue writing on a new line.
 
-We can also continue arguments on a newline if we're dealing with other objects such as lists, arrays or dictionaries.
+We can also continue arguments on a new line if we're dealing with other objects such as lists, arrays or dictionaries.
 
 This is extremely useful when for example, we have to specify a high-dimension array with multiple nested brackets.
 
@@ -712,7 +712,7 @@ Of course, if we have multiple variables to assign, the first approach would off
 
 ##### **Code**
 ```Python
-# Newline variable assignment
+# New line variable assignment
 myvar_1 = 1
 myvar_2 = 2
 myvar_3 = 3

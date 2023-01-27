@@ -59,7 +59,7 @@ while i < 8:
     print('Hello')
     i += 1
 	
-# Breaking comments in a newline
+# Breaking comments in a new line
 # -------------------------------
 
 # Declare a list variable that will serve to store dictionaries. This is crucial since we won't be able to retrieve the objects otherwise.
@@ -363,7 +363,7 @@ end = time.time()
 
 print('List comprehension execution time:', end-start, 'seconds')
 
-# Newline variable assignment
+# New line variable assignment
 myvar_1 = 1
 myvar_2 = 2
 myvar_3 = 3
