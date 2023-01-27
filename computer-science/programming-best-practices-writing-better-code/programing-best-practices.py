@@ -215,21 +215,23 @@ schema = {
 # Approproate variable naming
 # -------------------------------
 
-msw = (3, 1, 4.3, 6.5, 2)
-kEla = [4, 3, 5, 6, 7, 3]
-thePanty = [1, 2, 3, 4, 5]
-theOtherpanty = [4, 3, 6, 7, 8, 2]
+styaway = (3, 1, 4.3, 6.5, 2)
+Gobbledegook = [4, 3, 5, 6, 7, 3]
+theCollywobbles = [1, 2, 3, 4, 5]
+theothercollywobbles = [4, 3, 6, 7, 8, 2]
 mthBreather = [8, 7, 1, 4, 5, 6]
+KNickers = (1, 2, 3)
 xyz = 3.1416
 
 for w in range(len(mthBreather)):
-    theOtherpanty.append(w)
-    for d in thePanty:
+    theothercollywobbles.append(w)
+    for d in theCollywobbles:
         print(xyz)
-    copyofthePanty = thePanty.copy()
+    copyofthecollywobbles = theCollywobbles.copy()
     
 
 myTuple = (3, 1, 4.3, 6.5, 2)
+myTuple_2 = (1, 2, 3)
 myList = [4, 3, 5, 6, 7, 3]
 myList_2 = [1, 2, 3, 4, 5]
 myList_3 = [4, 3, 6, 7, 8, 2]
@@ -314,6 +316,82 @@ nums_6 = [-3, -2, -1, 0, 1, 2, 3]
 total_5 = sumVals(nums_6)
 
 # -------------------------------
+# Performance
+# -------------------------------
+
+import numpy as np
+
+myarr = np.array([1, 2, 3])
+
+from numpy import array as arr
+
+myarr = arr([1, 2, 3])
+
+# Conventional for loop
+mylist_1 = []
+for i in range(5):
+    mylist_1.append(i)
+
+# List comprehension
+mylist_2 = [i for i in range(5)]
+
+# Print resulting objects
+print(mylist_1)
+print(mylist_2)
+
+
+import time
+
+num_trials = 100000000
+
+# Conventional for loop
+start = time.time()
+mylist_1 = []
+
+for i in range(num_trials):
+    mylist_1.append(i)
+
+end = time.time()
+print('For loop execution time:', end-start, 'seconds')
+
+# List comprehension
+start = time.time()
+
+mylist_2 = [i for i in range(num_trials)]
+
+end = time.time()
+
+print('List comprehension execution time:', end-start, 'seconds')
+
+# Newline variable assignment
+myvar_1 = 1
+myvar_2 = 2
+myvar_3 = 3
+myvar_4 = 4
+myvar_5 = 5
+
+# Single line variable assignment
+myvar_1, myvar_2, myvar_3, myvar_4, myvar_5 = 1, 2, 3, 4, 5
+
+# Define a decorator function
+def decoratorFun(decoratedFun):
+    
+    def wrapperFun(*args, **kwargs):
+        print('Start decorator')
+        decoratedFun(*args, **kwargs)
+        print('End decorator')
+        
+    return wrapperFun
+
+@decoratorFun
+# Define a simple function
+def myFun(x, y):
+    print(x, y)
+    
+myFun(7, 77)
+
+
+# -------------------------------
 # Testing and debugging
 # -------------------------------
 
@@ -344,11 +422,55 @@ addAges('1', '1', '0')
 addAges('1', 2, 3)
 
 
+def inputNum(num):
+    '''
+    Parameters
+    ----------
+    num : int
+        Num, a real integer number.
+
+    Returns
+    -------
+    num_s : str
+        num as string type.
+    '''
+    if type(num) != int:
+        raise TypeError('Please input a real integer number')
+
+    else:
+        num_s = str(num)
+
+    return num_s
+
+inputNum('a')
 
 
-#--------------------------
+def inputNum(num):
+    '''
+    Parameters
+    ----------
+    num : int
+        Num, a real integer number.
 
+    Returns
+    -------
+    num_s : str
+        num as string type.
+    '''
+    if type(num) != int:
+        try:
+            num_i = int(num)
+            num_s = str(num_i)
+        except ValueError:
+            raise TypeError('Please input a real integer number')
 
+    else:
+        num_s = str(num)
+
+    return num_s
+
+inputNum('a')
+inputNum(3.56)
 
 
 
@@ -368,20 +490,21 @@ def addAges(age1, age2, age3):
     sumOfAges : int
         Sum of ages 1, 2 and 3.
     '''
-    if type()
+    if (type(age1) != int) | (type(age2) != int) | (type(age3) != int):
+        raise TypeError('Please input an integer number.')
     
-    if age1 < 0 or age1 < 0 or age1 < 0:
-        print('Please provide positive integers')
-    
-    
-    
-    return 
+    elif (age1 <= 0) | (age2 <= 0) | (age3 <= 0):
+        raise AttributeError('All numbers have to be positive and non-zero.')
 
+    elif (age1 < 10) | (age2 < 20) | (age3 < 30):
+        raise AttributeError('Age 1 must be between 1 and 10. '\
+                             'Age 2 must be between 11 and 20. '\
+                             'Age 3 must be between 21 and 30. ')
 
+    else:
+        sumOfAges = age1 + age2 + age3
+        
+    return sumOfAges
 
-
-
-
-
-
+addAges('-1', 1, 1)
 
