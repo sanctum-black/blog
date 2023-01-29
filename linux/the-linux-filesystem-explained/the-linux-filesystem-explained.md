@@ -19,37 +19,37 @@ We will not cover the installation process for each of the components mentioned.
 ---
 
 ## Table of Contents
-- Overview
-	- The Windows filesystem
-	- The macOS filesystem
-	- The Linux filesystem
-- Preparing our environment
-	- A word of caution
-	- Choosing a distribution, an emulator and a shell
-	- Installing two useful packages
-- `/`
-- `/bin`
-- `/boot`
-- `/dev`
-- `/etc`
-- `/home`
-- `/lib`, `/lib32` and `/lib64`
-- `/lost+found`
-- `/media`
-- `/mnt`
-- `/opt`
-- `/proc`
-- `/root`
-- `/run`
-- `/sbin`
-- `/snap`
-- `/srv`
-- `/sys`
-- `/tmp`
-- `/usr`
-- `/var`
-- Conclusions
-- References
+- Overview](#overview)
+	- The Windows filesystem](#1-the-windows-filesystem)
+	- The macOS filesystem](#2-the-macos-filesystem)
+	- The Linux filesystem](#3-the-linux-filesystem)
+- Preparing our environment](#preparing-our-environment)
+	- A word of caution](#1-a-word-of-caution)
+	- Choosing a distribution, an emulator and a shell]()
+	- Installing two useful packages]()
+- `/`]()
+- `/bin`]()
+- `/boot`]()
+- `/dev`]()
+- `/etc`]()
+- `/home`]()
+- `/lib`, `/lib32` and `/lib64`]()
+- `/lost+found`]()
+- `/media`]()
+- `/mnt`]()
+- `/opt`]()
+- `/proc`]()
+- `/root`]()
+- `/run`]()
+- `/sbin`]()
+- `/snap`]()
+- `/srv`]()
+- `/sys`]()
+- `/tmp`]()
+- `/usr`]()
+- `/var`]()
+- Conclusions]()
+- References]()
 
 ---
 
@@ -150,7 +150,7 @@ Now, we can begin exploring the Linux filesystem.
 
 ---
 
-## /
+## root (/)
 This is the root directory and is the uppermost directory in the Linux system containing all the files, device data and system information.
 
 If we're executing our terminal emulator as a user different than `root`, the shell will start in `/home/ourusername`. This is the home directory for our user. We can confirm where we are by executing the following command:
