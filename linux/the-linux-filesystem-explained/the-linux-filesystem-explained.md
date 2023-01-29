@@ -21,8 +21,8 @@ We will not cover the installation process for each of the components mentioned.
 ## Table of Contents
 - [Overview](#overview)
 	- [The Windows filesystem](#1-the-windows-filesystem)
-	- [The macOS filesystem](#2-the-macos-filesystem)
-	- [The Linux filesystem](#3-the-linux-filesystem)
+	- [The Linux filesystem](#2-the-linux-filesystem)
+	- [The macOS filesystem](#3-the-macos-filesystem)
 - [Preparing our environment](#preparing-our-environment)
 	- [A word of caution](#1-a-word-of-caution)
 	- [Choosing a distribution, an emulator and a shell](#2-choosing-a-distribution-an-emulator-and-a-shell)
