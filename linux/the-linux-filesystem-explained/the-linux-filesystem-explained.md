@@ -12,9 +12,12 @@ File systems perform multiple functions. They are responsible for the following:
 
 In this article, we will perform a general overview of the Linux directory tree starting from the root directory. We will then discuss the functions of each directory, their relation with the Linux Kernel and some important command line utilities for interacting with the filesystem. We will also perform some examples to help clarify if this is the first time we'll be interacting with a Linux system.
 
-We will be using [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (*Windows Subsystem for Linux*) with [Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview), although this article applies for every other installation method and distribution. We will use the [Windows terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=es-mx&gl=mx&rtc=1) and `bash` commands to illustrate examples.
+We will be using [WSL2](https://pabloagn.com/technologies/wsl2/) (*Windows Subsystem for Linux*) with [Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview), although this article applies for every other installation method and distribution. We will use the [Windows terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=es-mx&gl=mx&rtc=1) and `bash` commands to illustrate examples.
 
-We will not cover the installation process for each of the components mentioned. Links for that purpose are provided.
+We will not cover the installation process for each of the components mentioned. Links for that purpose can be found below:
+- [WSL2 installation](https://learn.microsoft.com/en-us/windows/wsl/install)
+- [Ubuntu installation on WSL2](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview)
+- [Windows terminal installation](https://learn.microsoft.com/en-us/windows/terminal/install)
 
 ---
 
