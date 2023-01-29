@@ -390,7 +390,7 @@ We can display the head of the `/etc` directory:
 ls | head -10
 ```
 
-##### **Code**
+##### **Output**
 ```
 PackageKit
 X11
@@ -614,7 +614,7 @@ cd WD
 sudo mount -t ntfs /dev/sdd2 .
 ```
 
-The dot at the end of the statement tells the system to create a directory in the current directory `/media`. We need to mount using `sudo` since `/media` is a `root` folder, and the `mount` command also requires superuser permissions.
+The dot at the end of the statement tells the system to mount our device in the current directory `/media/WD`. We need to mount using `sudo` since `/media` is a `root` folder, and the `mount` command also requires superuser permissions.
 
 We can confirm that our device was mounted correctly:
 
@@ -631,6 +631,11 @@ df -aTh
 We can also list the contents of our mounted partition:
 
 ##### **Code**
+```Bash
+ls -la
+```
+
+##### **Output**
 ```
 drwxrwxrwx 1 root root    0 Jan 25 13:47 '$RECYCLE.BIN'
 drwxrwxrwx 1 root root 4096 Jan 26 11:25  .
@@ -652,11 +657,15 @@ sudo umount WD
 
 If we want to remove this mount point, we can do so:
 
+##### **Code**
+
 ```Bash
 sudo rm -r WD
 ```
 
 We also have to unmount the device from PowerShell:
+
+##### **Code**
 
 ```PowerShell
 wsl --unmount \\.\PHYSICALDRIVE2
