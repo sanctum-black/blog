@@ -947,13 +947,13 @@ tree
 
 We can see we have 12 folders:
 - The `bin` folder contains all user executables.
-- The `games` folder contains...
-- The `include` folder includes...
+- The `games` folder contains installed user games.
+- The `include` folder includes the header files for C compilers such as `stdio.h` and `stdlib.h`.
 - The `lib`, `lib32` and `lib64` folders contain libraries required by the applications installed on `/usr/bin` or `/usr/sbin`
-- The `libexec` folder contains...
-- The `libx32` folder contains...
+- The `libexec` folder contains system daemons and system utilities executed by other programs.
+- The `libx32` folder contains software using the x86-64 instruction set but with 32-bit pointer size.
 - The `local` folder contains user applications installed by source code.
-- The `sbin` folder contains...
+- The `sbin` folder contains system binaries.
 - The `share` folder contains larger user applications.
 - The `src` folder contains source code applications, such as the Kernel source and headers.
 
