@@ -1,6 +1,8 @@
 # What are GitHub Gists and How to Use Them
 
-[![category badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fpabloagn%2F935f7948f6375ee610e8dd0bf6d0eb79%2Fraw%2F4aebbd64cc1af3d81fd3fa7793c263a2cc1f2ab4%2Fbadges.json)](https://github.com/pabloagn/blog/tree/master/version-control)
+[![tags badge](https://img.shields.io/static/v1?label=Made%20with&message=Markdown&color=f2f2f2&logo=markdown&labelColor=1a1a1a&style=flat)](https://www.markdownguide.org/)
+
+[![type badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fpabloagn%2F935f7948f6375ee610e8dd0bf6d0eb79%2Fraw%2F214c69e75fc19ce4f7523f6cddcbdf6835615b51%2Fpost-type-badge-blog.json)](https://github.com/pabloagn/blog/) [![category badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fpabloagn%2F935f7948f6375ee610e8dd0bf6d0eb79%2Fraw%2F214c69e75fc19ce4f7523f6cddcbdf6835615b51%2Fcategory-badge-version-control.json)](https://github.com/pabloagn/blog/tree/master/version-control) ![technologies](https://img.shields.io/static/v1?label=Technologies&message=GitHub,HTML,CSS&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)
 
 ---
 
