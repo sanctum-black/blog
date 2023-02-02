@@ -1,9 +1,6 @@
 # What are GitHub Gists and How to Use Them
 
-
-
-[![Stack Overflow Badge](https://img.shields.io/badge/Stack%20Overflow-F58025?logo=stackoverflow&logoColor=fff&style=flat)](https://stackoverflow.com/users/12299287/cryptocode)
-
+[![category badge][https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fpabloagn%2F935f7948f6375ee610e8dd0bf6d0eb79%2Fraw%2F4aebbd64cc1af3d81fd3fa7793c263a2cc1f2ab4%2Fbadges.json]](https://github.com/pabloagn/blog/tree/master/version-control)
 
 ---
 
