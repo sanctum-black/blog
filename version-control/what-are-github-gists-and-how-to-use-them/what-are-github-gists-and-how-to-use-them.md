@@ -82,7 +82,7 @@ VS Code has an extension for GitHub Gists management written in TypeScript. It a
 
 We can get started by going into VS Code, heading to extensions, and looking for Gist. We can then install the [Gist extension by Ken Howard](https://marketplace.visualstudio.com/items?itemName=kenhowardpdx.vscode-gist):
 
-<img src="https://pabloagn.com/wp-content/uploads/2023/02/B006A007_03.png" alt="Gist VS Code Extension"/>
+<div><img src="https://pabloagn.com/wp-content/uploads/2023/02/B006A007_03.png" alt="Gist VS Code Extension"/></div>
 *Figure 3. Gist VS Code extension*
 
 Upon installation, we will authenticate our profile with GitHub by creating a Gist profile, but first, we need to create a new GitHub Personal Access token:
