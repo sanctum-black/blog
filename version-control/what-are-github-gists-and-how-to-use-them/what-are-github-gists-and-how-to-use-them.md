@@ -6,31 +6,32 @@
 
 ---
 
-**GitHub Gists** is a tool developed by GitHub which provides a simple way to share code snippets with other people. Gist snippets work similar to a conventional GitHub repository, in that they can be forked and cloned; each gist is a repository. They can also be public or secret, and even be created without the need of a GitHub account.
+**GitHub Gists** is a tool developed by GitHub which provides a simple way to share code snippets with other people. Gist snippets work similarly to a conventional GitHub repository in that they can be forked and cloned; each gist is a repository. They can be public or secret and even created without a GitHub account.
 
-GitHub Gists has become a valuable tool among the developer community since it supports multiple features such as version control, commenting, snippet embedding in websites and quick setup without the need to create a repository.
+GitHub Gists has become a valuable tool among the developer community since it supports multiple features such as version control, commenting, snippet embedding in websites and quick setup without creating a repository.
 
-Also, it provides a more minimal approach to GitHub repositories, since it does not support issues, pull requests, projects or actions.
+Also, it provides a more minimal approach to GitHub repositories since it does not support issues, pull requests, projects or actions.
 
 In this article, we will discuss how to use Gists, their different features, main use cases, using the Gist VS Code extension and performing some hands-on examples.
 
-Code can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tree/master/version-control/what-are-github-gists-and-how-to-use-them). Gists can be found in my [GitHub Gists account](https://gist.github.com/pabloagn). 
+Code can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tree/master/version-control/what-are-github-gists-and-how-to-use-them). Gists can be found in the [GitHub Gists Repo](https://gist.github.com/pabloagn/29b071b8e1c6bd83d9aea39a537ec931).
 
 ---
 
 ## Table of Contents
-- Use cases
-- How to use GitHub Gists?
-	-  Creating a new gist
-	- Adding a remote repository
-- Managing gists in VS Code
-- Examples
-	- Creating a Gist for authoring using docstrings
-	- Creating a code snippet embed
-	- Creating a tabular data snippet embed
-- Formatting gists using CSS
-- Conclusions
-- References
+- [Use cases](#use-cases)
+- How to use GitHub Gists?](#)
+	-  Creating a new gist]()
+	- Adding a remote repository]()
+- Managing gists in VS Code]()
+- Examples]()
+	- Creating a Gist for authoring using docstrings]()
+	- Creating a code snippet embed]()
+	- Creating a tabular data snippet embed]()
+	- Creating a Markdown snippet embed]()
+- Formatting gists using CSS]()
+- Conclusions]()
+- References]()
 
 ---
 
@@ -48,31 +49,21 @@ There are multiple use cases for GitHub Gists. Because of its versatility and si
 ## How to use GitHub Gists?
 
 ### 1. Creating a new gist
-We can create a new gist by heading to the [GitHub Gists homepage](https://gist.github.com/).
+We can create a new gist by heading to the [GitHub Gists homepage](https://gist.github.com/):
 
-From there, we can then define a gist description. This is equivalent to the *repository description* field on GitHub:
+- We can then define a gist description. This is equivalent to the *repository description* field on GitHub.
+- We must also include a file name with its extension for Gists to be able to provide syntax highlighting and proper formatting.
+- Then, we can input the gist content.
+- From there, we can either choose to create a secret gist or a public gist. We can always change this later in the settings, as with conventional GitHub repositories.
+- We can have multiple files belonging to the same gist. We can add more files by using the *Add files* button.
 
-IMAGE
-
-We must also include a file name with its extension for Gists to be able to provide syntax highlighting and proper formatting:
-
-IMAGE
-
-The, we can input the gist content:
-
-IMAGE
-
-From there, we can either choose to create a secret gist or a public gist. We can always change this later in the settings, as with conventional GitHub repositories:
-
-IMAGE
-
-One important thing to note, is that we can have multiple files belonging to the same gist. We can add more files by using the *Add files* button:
-
-IMAGE
+![GitHub Gists 1](https://pabloagn.com/wp-content/uploads/2023/02/B006A007_01.png)
+*Figure 1. Creating a new gist from GitHub Gists homepage*
 
 We can view our created gists by clicking on *View your gists*:
 
-IMAGE
+![View Your Gists](https://pabloagn.com/wp-content/uploads/2023/02/B006A007_02-1.png)
+*Figure 2. View your gists*
 
 From there we can:
 - Display the gist as well as any comments.
@@ -89,13 +80,10 @@ From there we can:
 ## Managing GitHub Gists using VS Code
 VS Code has an extension for GitHub Gists management written in TypeScript. It adds several useful functionalities such as creating & managing gists, inserting text fragments from gists, and more.
 
-We can get started by going into VS Code, heading to extensions, and looking for Gist:
+We can get started by going into VS Code, heading to extensions, and looking for Gist. We can then install the [Gist extension by Ken Howard](https://marketplace.visualstudio.com/items?itemName=kenhowardpdx.vscode-gist):
 
-IMAGE
-
-We can then search for Gist, and install the [Gist extension by Ken Howard](https://marketplace.visualstudio.com/items?itemName=kenhowardpdx.vscode-gist):
-
-IMAGE
+![Gist VS Code Extension](https://pabloagn.com/wp-content/uploads/2023/02/B006A007_03.png)
+*Figure 3. Gist VS Code extension*
 
 Upon installation, we will authenticate our profile with GitHub by creating a Gist profile, but first, we need to create a new GitHub Personal Access token:
 - Head to [GitHub](https;//github.com).
@@ -111,9 +99,10 @@ Upon installation, we will authenticate our profile with GitHub by creating a Gi
 
 We will need to save this Token somewhere safe (*and clearly not in any Public Repository, otherwise, the token will deactivate automatically*), since we will not be able to see it again.
 
-We will then go back to VS Code, and select `Create Profile`. We will select a *Common* profile.
+We will then go back to VS Code, and select `Create Profile`. We will select a *Common* profile:
 
-IMAGE
+![Gist Create Profile](https://pabloagn.com/wp-content/uploads/2023/02/B006A007_04.png)
+*Figure 4. Create a new Gist profile in VS Code*
 
 We will then input the key we generated, press <kbd>enter</kbd>, create a *Profile Name*, and press <kbd>enter</kbd> again.
 
@@ -152,8 +141,7 @@ We can also change settings such as default Public or Secret gists and current p
 ---
 
 ## Examples
-We will be reviewing 4 examples. They can be consulted in the [`example-gists-1.py`](https://gist.github.com/pabloagn/29b071b8e1c6bd83d9aea39a537ec931) gist. Outputs for each case can be found in the [Appendix](#appendix) section.
-
+We will be reviewing four examples. They can be consulted in the [`example-gists-1.py`](https://gist.github.com/pabloagn/29b071b8e1c6bd83d9aea39a537ec931) gist. Outputs for each case can be found in the [Appendix](#appendix) section.
 
 ### 1. Creating a Gist for authoring using docstrings
 As mentioned earlier, we can create a new gist containing a specific docstring, and add it to any file. 
@@ -293,8 +281,9 @@ We will then insert some markdown code on our document:
 
 Markdown is a lightweight markup language used for creating formatted text. It was created in 2004 by John Gruber & Aaron Swartz and has been widely adopted by various document-creation software applications. Markdown accepts basic markup syntax; depending on the application used, it also supports extended syntax for more advanced formatting.
 
-### Markdown supports multiple elements such as:
+---
 
+### Markdown supports multiple elements such as:
 - Headers from H1 up to H6
 - Paragraph body
 - Unordered lists
@@ -312,7 +301,8 @@ Markdown is a lightweight markup language used for creating formatted text. It w
 ![alt text](https://raw.githubusercontent.com/pabloagn/digital-assets/master/markdown-cheatsheet-asset-1.jpg "Digital Asset Inline")
 
 ### Markdown is amazing
-We could keep on mentioning Markdown capabilities, but we would not end anytime soon. Instead, we can consult the [Markdown Documentation](https://github.com/pabloagn/documentation/blob/master/writing-and-formatting/markdown.md#markdown) which includes all of the beforementioned, plus more.
+We could keep on mentioning Markdown capabilities, but we would not end.
+Instead, we can consult the [Markdown Documentation](https://github.com/pabloagn/documentation/blob/master/writing-and-formatting/markdown.md#markdown) which includes all of the beforementioned, plus more.
 ```
 
 We will create a new gist by using the `GIST: Create New Gist` command with the following parameters:
@@ -401,17 +391,18 @@ This whole process requires a little bit of tinkering and making use of a browse
 - [adimancv/css_dark_mode_gist_embed_code.css](https://gist.github.com/adimancv/eb2f4b46d3c95e6b8fe4dd52375236b2)
 -  [just-jeb/embed-gist-dark-theme.css](https://gist.github.com/just-jeb/27d97d675c7d21ed441dd1458f72cb4a)
 
-This was just a sample of what can be done; a complete dark mode CSS implementation including code snippets, Markdown and `.csv` tables, can be found on my [`github-gists-theme-dark.css`](https://gist.github.com/pabloagn/a5819eed79f3af22fc51c0f444c6ef48) gist. The gist also includes HTML code for giving structure.
+This was just a sample of what can be done; a complete dark mode CSS implementation including code snippets, Markdown and `.csv` tables, can be found on the [`github-gists-formatting`](https://gist.github.com/pabloagn/a5819eed79f3af22fc51c0f444c6ef48) gist. The gist also includes HTML code for giving structure.
 
 Pens used in this section can be found [here](https://codepen.io/pabloagn/pen/GRBYMQE).
 
 ---
 
 ## Conclusions
-We have reviewed what GitHub Gists is, how to create different types of gists and how to  embed them to our website. As we can see, gists are extremely simple yet powerful, and can be used for a vast amount of applications. 
+We have reviewed what gists are, how to create different types of gists, how to embed them to our website and how to format them using using simple `HTML` & `CSS` code. As we can see, gists are extremely simple yet powerful, and can be used for a vast amount of applications. They are supported in virtually any content management software and provide a way to showcase code snippets, tables and other types of content without requiring any knowledge in web development.
 
 ---
 ## References
-
----
+- [GitHub Gists, Documentation](https://docs.github.com/en/rest/gists?apiVersion=2022-11-28)
+- [jnrbsn/better-gist-styles.css](https://gist.github.com/jnrbsn/578379/d443a558d060e40744e5d5d9a21c853942ff3ca7)
+- [wataru420/compressed.css](https://gist.github.com/wataru420/2048287)
 

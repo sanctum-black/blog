@@ -1,9 +1,10 @@
 # .gitignore file for: blog
-# Ignore .obsidian folder on all category subfolders using ** wildcard
-**/.obsidian/
 
 ## Ignore .vscode folder on all categories using ** wildcard
 **/.vscode/
+
+# Ignore screenshots folder on all category subfolders using ** wildcard
+**/screenshots/
 
 # Ignore all byte-compiled / optimized / DLL files
 **/__pycache__/
