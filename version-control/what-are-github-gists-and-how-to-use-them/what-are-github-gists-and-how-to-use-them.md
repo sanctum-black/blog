@@ -102,7 +102,8 @@ We will need to save this token somewhere safe (*and clearly not in any Public R
 
 We will then go back to VS Code and select `Create Profile`. We will select a *Common* profile:
 
-![Gist Create Profile](https://pabloagn.com/wp-content/uploads/2023/02/B006A007_04.png)
+<div><img src="https://pabloagn.com/wp-content/uploads/2023/02/B006A007_04.png" alt="Gist Create Profile"/></div>
+
 *Figure 4. Create a new Gist profile in VS Code*
 
 We will then input the key we generated, press <kbd>enter</kbd>, create a *Profile Name*, and press <kbd>enter</kbd> again.
@@ -151,7 +152,6 @@ We will start by creating a new file in VS Code and populate it with the followi
 
 ##### **Code**
 ```Python
-
 """
 Created on WEEKDAY MTH DAY HH:MM:SS YYYY
 @author: Our Name
@@ -159,7 +159,6 @@ GitHub: Our GitHub URL
 Website: Our Website URL
 Contact: Contact Information
 """
-
 ```
 
 We will create a new gist by going to the *command palette* and executing the `GIST: Add file` command.
