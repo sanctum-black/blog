@@ -387,7 +387,7 @@ Pens used in this section can be found [here](https://codepen.io/pabloagn/pen/GR
 ---
 
 ## Conclusions
-We have reviewed what gists are, how to create different types of gists, how to embed them into our website and how to format them using simple `HTML` & `CSS` code. As we can see, gists are extremely simple yet powerful and can be used for many applications. They are supported in virtually any content management software and provide a way to showcase code snippets, tables and other types of content without requiring any knowledge of web development.
+We have reviewed what gists are, how to create different types of gists, how to embed them into our website and how to format them using simple HTML & CSS code. As we can see, gists are extremely simple yet powerful and can be used for many applications. They are supported in virtually any content management software and provide a way to showcase code snippets, tables and other types of content without requiring any knowledge of web development.
 
 ---
 ## References
