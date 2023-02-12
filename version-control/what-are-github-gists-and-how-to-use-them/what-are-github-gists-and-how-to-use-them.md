@@ -295,7 +295,6 @@ Markdown is a lightweight markup language used for creating formatted text. It w
 ### Markdown is amazing
 We could keep on mentioning Markdown capabilities, but we would not end.
 Instead, we can consult the [Markdown Documentation](https://github.com/pabloagn/documentation/blob/master/writing-and-formatting/markdown.md#markdown), which includes all of the beforementioned, plus more.
-
 ```
 
 We will create a new gist by using the `GIST: Create New Gist` command with the following parameters:

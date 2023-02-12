@@ -10,11 +10,14 @@
 **/__pycache__/
 **/*.py[cod]
 
+# Ignore all virtual envs (termination venv)
+**/*_venv/
+
 # Ignore .obsidian folder on main folder
 .obsidian/
 
-# Ignore all featured images
-**/*.jpg
+# Ignore all featured images and plots
+**/**/featured_images/
 
 # Ignore desktop.ini
 desktop.ini
