@@ -1,4 +1,8 @@
-# The Types of Machine Learning Algorithms Explained
+<article class="first">
+  <div class="title">
+    <h1>The Types of Machine Learning Algorithms Explained</h1>
+  </div>
+</article>
 
 ---
 
@@ -19,16 +23,19 @@ We’ll be using Python scripts which can be found in the [Blog Article Repo](ht
 ---
 
 # Table of Contents
-- Machine Learning vs traditional programming]()
-- Machine Learning algorithm types]()
-	- Supervised Learning
-	- Semi-Supervised Learning
-	- Unsupervised Learning
-	- Active Learning
-	- Transfer Learning
-	- Reinforcement Learning
+- [Machine Learning vs traditional programming](#machine-learning-vs-traditional-programming)
+- [Machine Learning algorithm types](#machine-learning-algorithm-types)
+	- [Supervised Learning](#1-supervised-learning)
+		- [Regression](#11-regression)
+		- [Classification](#12-classification)
+	- [Semi-Supervised Learning](#2-semi-supervised-learning)
+	- [Unsupervised Learning](#3-unsupervised-learning)
+	- [Active Learning](#4-active-learning)
+	- [Transfer Learning](#5-transfer-learning)
+	- [Reinforcement Learning](#6-reinforcement-learning)
 - [Conclusions](#conclusions)
 - [References](#references)
+- [Copyright](#copyright)
 
 ---
 
@@ -137,7 +144,7 @@ Machine Learning algorithms can be classified by how they work and what type of 
 - Unsupervised Learning
 - Reinforcement Learning
 
-## Supervised Learning
+## 1. Supervised Learning
 Supervised Learning uses labeled datasets to train algorithms that to classify data or predict outcomes accurately. We can think of a labeled dataset as one with tags that identify what the data represents.
 
 If we look at our previous example, we used a DataFrame with 5 columns:
@@ -158,7 +165,7 @@ More specifically, in the Machine Learning context, a label is the specific vect
 
 For example, we could use our DataFrame `df` to train a model which predicts a person's Salary based on other attributes such as `Age` and `Job Position`. These attributes would be called features, and the target to predict, in this case `Salary`, would be our label. We could solve this problem either by regression or classification; these are the two main subclasses of Supervised Learning.
 
-### Regression
+### 1.1 Regression
 **Regression** is most commonly known since it's taught very early on math courses and has multiple applications; from market analysis to financial analysis to trend forecasting. It requires us to have continuous data points.
 
 The most common and simple type of regression is **Linear Regression** (*LR*), which consists of fitting a straight line to a set of value pairs ($x, y$) in order to predict unseen values of a dependent variable $y$ given an independent variable value $x$. This method uses the general equation of a straight line to fit data:
@@ -212,22 +219,22 @@ In the end, we're left with a combination of parameters $(\theta_{0}, \theta_{1}
 
 Of course, Linear Regression, as its name suggests, is used to predict data which presents linear correlation. There are other methods for predicting non-linear continuous data such as Polynomial Regression.
 
-### Classification
+### 1.2 Classification
 As its name suggests, this subcategory of Supervised Learning aims to classify 
 
-## Semi-Supervised Learning
+## 2. Semi-Supervised Learning
 
 
-## Unsupervised Learning
+## 3. Unsupervised Learning
 
 
-## Active Learning
+## 4. Active Learning
 
 
-## Transfer Learning
+## 5. Transfer Learning
 
 
-## Reinforcement Learning
+## 6. Reinforcement Learning
 
 ---
 
@@ -245,3 +252,4 @@ We have reviewed ...
 ---
 
 # Copyright
+Pablo Aguirre, Creative Commons Attribution 4.0 International, All Rights Reserved.
