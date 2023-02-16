@@ -19,5 +19,8 @@
 # Ignore all featured images and plots
 **/**/featured_images/
 
+# Ignore template files
+templates/
+
 # Ignore desktop.ini
 desktop.ini

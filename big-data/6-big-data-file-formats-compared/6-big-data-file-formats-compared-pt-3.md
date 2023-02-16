@@ -1,4 +1,10 @@
-# 6 Big Data File Formats Compared, Pt. 3
+<article class="first">
+  <div class="title">
+    <h1>6 Big Data File Formats Compared, Pt. 3</h1>
+  </div>
+</article>
+
+---
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
@@ -14,7 +20,7 @@ This section will be longer than the previous ones and involve more code. We'll 
 
 ---
 
-## Table of Contents
+# Table of Contents
 - [Importing the required modules](#importing-the-required-modules)
 - [Defining plot parameters](#defining-plot-parameters)
 - [Preparing the data set](#preparing-the-data-set)
@@ -41,10 +47,11 @@ This section will be longer than the previous ones and involve more code. We'll 
 - [Appendix](#appendix)
 	- [Experimental Conditions](#1-experimental-conditions)
 - [References](#references)
+- [Copyright](#copyright)
 
 ---
 
-## Importing the required modules
+# Importing the required modules
 For this section, we will be using the following Python libraries and modules:
 
 ##### **Code**
@@ -71,7 +78,7 @@ import seaborn as sns
 
 ---
 
-## Defining plot parameters
+# Defining plot parameters
 Since we'll be plotting our experimental results, we will need to define our plot parameters beforehand:
 
 ##### **Code**
@@ -106,7 +113,7 @@ plt.rcParams['font.sans-serif'] = ['Lora']
 
 ---
 
-## Preparing the data set
+# Preparing the data set
 To reduce noise in our performance measurements, we will employ a slightly larger file for this section. We will be using the `Spotify Charts` data set (`2.48 GB`) published by `DHRUVIL DAVE`, which you can download from [Kaggle](https://www.kaggle.com/datasets/dhruvildave/spotify-charts).
 
 We can start by reading the data set as a `pandas.DataFrame` object:
@@ -177,7 +184,7 @@ Now, we're ready to start designing our experiment.
 
 ---
 
-## Experiment design
+# Experiment design
 For both writing & reading performance tests, we will be using a collection of measurements per file format. This is always a good practice in experimental design and will help us calculate a complete set of descriptive statistics.
 
 Our experiment for the **writing process** will consist of the following steps:
@@ -200,9 +207,9 @@ Our experiment for the **reading process** will consist of the following steps:
 
 ---
 
-## Performance tests
+# Performance tests
 
-### 1. Parameter definition
+## 1. Parameter definition
 We will start by defining our experiment parameters:
 
 ##### **Code**
@@ -214,7 +221,7 @@ n = 20
 path = 'performance_tests/'
 ```
 
-### 2. Writing performance tests
+## 2. Writing performance tests
 We will start by defining our `writingPerformance()` function, which will accept the following parameters :
 
 - `n` : `int`
@@ -580,7 +587,7 @@ def writingPerformance(n, path, df):
     return measured_vars_w
 ```
 
-### 3. Reading performance tests
+## 3. Reading performance tests
 Similar to the writing performance tests section, we will start by defining our `readingPerformance()` function, which will accept the following parameters :
 
 - `n` : `int`
@@ -917,7 +924,7 @@ def readingPerformance(n, path, df):
     return measured_vars_r
 ```
 
-### 4. Analysis
+## 4. Analysis
 Once we have both the `writingPerformance()` and `readingPerformance()` functions declared, we can define an `analysis()` function which will accept the following parameters:
 
 - `n` : `int`
@@ -945,20 +952,20 @@ Upon calling, it will return the following:
 
 Once we have the expected inputs and outputs, the idea is to perform the following:
 
-#### 4.1 Writing performance analysis
+### 4.1 Writing performance analysis
 1. Define a list `tests` containing the names of each file format. We will use this object as iterable.
 2. Call the `writingPerformance()` function and assign it to a `measured_vars_w` object.
 3. Define an empty dictionary `stat_dw` for saving the statistical descriptions for the writing test.
 4. Iterate over the `tests` object, indexing the `measured_vars_w` dictionary on each loop and calculating its statistical description.
 5. Assign a key-value pair on each loop, consisting of the file format name as the key and the statistical description object as the value.
 
-#### 4.2 Reading performance analysis
+### 4.2 Reading performance analysis
 1. Call the `readingPerformance()` function and assign it to a `measured_vars_r` object.
 2. Define an empty dictionary `stat_dr` for saving the statistical descriptions for the reading test.
 3. Iterate over the `tests` object, indexing the `measured_vars_r` dictionary on each loop and calculating its statistical description.
 4. Assign a key-value pair on each loop, consisting of the file format name as the key and the statistical description object as the value.
 
-#### 4.3 File size analysis
+### 4.3 File size analysis
 1. Declare an empty dictionary `size_d` for storing the file size values.
 2. For each file, calculate its size using the `os.path.getsize` method.
 3. For each folder (parquet partitions), recursively calculate its size using the `f.stat().st_size` method.
@@ -1112,15 +1119,15 @@ The shapes of our objects match the output requirements, as we have eight tested
 
 ---
 
-## Performance results
+# Performance results
 We now have everything we need to make sense of the data we just generated.
 
 In this example, the quantity of data is manageable since we only have eight file formats and 20 measurements per format. Regardless, it is always a good practice to visualize the results in a plot as a first step.
 
-### 1. Plotting the results
+## 1. Plotting the results
 We'll proceed with some visualization techniques appropriate for the results we have.
 
-#### 1.1 Bar chart for file sizes
+### 1.1 Bar chart for file sizes
 A bar chart is a simple way to visualize data quickly. We can generate a bar chart using the `matplotlib.pyplot` module:
 
 ##### **Code**
@@ -1158,9 +1165,9 @@ If we examine line `1181`, we used an additional library called `seaborn` to inc
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloagn/blog/master/big-data/6-big-data-file-formats-compared/performance_results/file_sizes_bar_chart_bg.png "File Size Bar Chart")
-_**Figure 1.1:** Bar Chart denoting file/folder sizes in `MB` for each file format_
+###### _Figure 1.1: Bar Chart denoting file/folder sizes in `MB` for each file format_
 
-#### 1.2 Boxplot for writing times
+### 1.2 Boxplot for writing times
 A boxplot is a visualization method widely used in Data Science & statistical analysis. Its purpose is to describe the distribution of experimental measurements, including useful visual information about the set.
 
 A detailed discussion of the boxplot components is out of the scope of this article. That will be covered in another blog post.
@@ -1200,9 +1207,9 @@ plt.close()
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloagn/blog/master/big-data/6-big-data-file-formats-compared/performance_results/writing_time_scattered_boxplots_bg.png "Writing Time Box Plot")
-_**Figure 1.2:** Boxplot denoting the distribution of 20 trials of writing times for each file format_
+###### _Figure 1.2: Boxplot denoting the distribution of 20 trials of writing times for each file format_
 
-#### 1.3 Boxplot for reading times
+### 1.3 Boxplot for reading times
 We can perform a similar treatment to our reading time results:
 
 ##### **Code**
@@ -1238,9 +1245,9 @@ plt.close()
 
 ##### **Output**
 ![alt text](https://raw.githubusercontent.com/pabloagn/blog/master/big-data/6-big-data-file-formats-compared/performance_results/reading_time_scattered_boxplots_bg.png "Reading Time Box Plot")
-_**Figure 1.3:** Boxplot denoting the distribution of 20 trials of reading times for each file format_
+###### _Figure 1.3: Boxplot denoting the distribution of 20 trials of reading times for each file format_
 
-### 2. Exporting the results in a tabular format
+## 2. Exporting the results in a tabular format
 We can also write our results in an Excel file. This is a valuable technique whenever we want to share or store information that took a fair amount of time to generate (*imagine explaining to our boss why we had to re-run a 2-hour performance test just to get the results back*).
 
 An Excel file is also a very friendly tabular format that everyone understands. It can be used to make further analyses such as pivoting or calculating statistical measures (*$mean$, $min$, $max$, $stdev$, among others*).
@@ -1279,9 +1286,9 @@ results_to_excel(stat_dr, path_dr)
 
 ---
 
-## Side-by-side comparison
+# Side-by-side comparison
 
-### 1. Consolidated results
+## 1. Consolidated results
 
 | **Format** | **Size [MB]** | **Avg. Writing Time [s]** | **Writing Method** | **Avg. Reading Time [s]** | **Reading Method** |
 | --- | --- | --- | --- | --- | --- |
@@ -1294,11 +1301,11 @@ results_to_excel(stat_dr, path_dr)
 | `.avro` | 2,455 | 55.9 | `fastavro writer()` | 59.5 | `fastavro reader()` |
 | `.pickle` | 1,539 | 17.6 | `pickle.dump()` | 9.1 | `pickle.load()` |
 
-_Figure 2: Chart containing file/folder sizes rounded to integer values, average writing & reading times from 20 measurements rounded to one decimal, and writing/reading methods used for each case_
+###### _Figure 2: Chart containing file/folder sizes rounded to integer values, average writing & reading times from 20 measurements rounded to one decimal, and writing/reading methods used for each case_
 
 _**Note:** Keep in mind that these values vary across systems. CPU processing power, RAM capacity, and other variables directly affect reading & writing times. Please refer to the [Appendix](#appendix) section for the full list of machine specifications used in this experiment._
 
-# 2. Interpretation
+## 2. Interpretation
 
 We can see that the `.csv` & `.txt` file formats had the largest file sizes, while the non-partitioned `.parquet` had the smallest file size. `.parquet` folder sizes increased almost linearly as we increased the number of partitions, which makes sense if we remember that a partitioned file creates a directory hierarchy beneath the main directory.
 
@@ -1312,7 +1319,7 @@ In contrast, the `.feather` file format took the least amount of time to read, c
 
 ---
 
-## Use cases
+# Use cases
 From the results obtained in the previous section, we can see that the `.feather` file format offers consistently fast writing & reading speeds when compared to the other file formats. Also, the file size is considerably smaller. However, as we previously mentioned, this format is not recommended for long-term storage due to its binary form instability.
 
 A great alternative to handling big data would be the stabler `.parquet` file format: Both non-partitioned and single-partitioned forms presented low writing & reading speeds and relatively small file sizes compared to the other formats.
@@ -1329,7 +1336,7 @@ Lastly, the two worst performing file formats, `.csv` and `.txt`, which ironical
 
 ---
 
-## Conclusions
+# Conclusions
 In summary, not all *"big data"* file formats are tailored for handling big data. This is counterintuitive, nonetheless true. Each was created with a specific purpose and is better or worse at some applications than others.
 
 Serialized formats, for example, present several advantages over non-serialized formats. Still, the inverse also happens: serialized formats may lose stability across versions and usually consume more processing resources when serializing/deserializing objects.
@@ -1338,9 +1345,9 @@ Before implementing a format, especially in a production environment, it's essen
 
 ---
 
-## Appendix
+# Appendix
 
-### 1. Experimental conditions
+## 1. Experimental conditions
 
 Below you can find a list of the parameters that were used to obtain these results:
 - **Python Build:** Python 3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) MSC v.1934 64 bit (AMD64) on win32
@@ -1348,8 +1355,15 @@ Below you can find a list of the parameters that were used to obtain these resul
 - **Processor:** 12th Gen Intel Core i9-12900H, 2.50 GHz
 - **RAM:** 64 GB DDR5
 
-## References
+---
+
+# References
 - [Apache Spark, Parquet Files](https://spark.apache.org/docs/latest/sql-data-sources-parquet.html)
 - [Vertica, Using Partition Columns](https://www.vertica.com/docs/10.0.x/HTML/Content/Authoring/ExternalTables/UsingPartitions.htm)
 - [This Pointer, Deleting Directories Recursively](https://thispointer.com/python-how-to-delete-a-directory-recursively-using-shutil-rmtree/)
 - [XlsxWriter, Creating Excel files with Python and XlsxWriter](https://xlsxwriter.readthedocs.io/) 
+
+---
+
+# Copyright
+Pablo Aguirre, Creative Commons Attribution 4.0 International, All Rights Reserved.

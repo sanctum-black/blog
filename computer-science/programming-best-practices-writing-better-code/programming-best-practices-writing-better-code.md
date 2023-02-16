@@ -1,8 +1,14 @@
-# Programming Best Practices: Writing Better Code
+<article class="first">
+  <div class="title">
+    <h1>Programming Best Practices: Writing Better Code</h1>
+  </div>
+</article>
+
+---
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
-[![type](https://img.shields.io/static/v1?label=Type&message=blog&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/) [![category](https://img.shields.io/static/v1?label=Category&message=computer-data&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/computer-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/programming-best-practices-writing-better-code/)
+[![type](https://img.shields.io/static/v1?label=Type&message=blog&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/) [![category](https://img.shields.io/static/v1?label=Category&message=computer-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/computer-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/programming-best-practices-writing-better-code/)
 
 Writing code can be as simple as importing the required libraries, declaring our variables, functions, and classes as required, including some docstrings here and there, some additional comments, executing, and we're done. While we're at it, let's skip the function & class part and drop everything as is. Even better, let's also save some lines by stripping our file from all comments.
 
@@ -16,7 +22,7 @@ We'll be using Python scripts which can be found in the [Blog Article Repo](htt
 
 ---
 
-## Table of Contents
+# Table of Contents
 - [Legibility](#legibility)
 	- [Authoring](#1-authoring)
 	- [Comments](#2-comments)
@@ -49,17 +55,18 @@ We'll be using Python scripts which can be found in the [Blog Article Repo](htt
 - [Dependency handling](#dependency-handling)
 - [Conclusions](#conclusions)
 - [References](#references)
+- [Copyright](#copyright)
 
 ---
 
-## Legibility
+# Legibility
 If we were to choose one step to try and write better code, this would be the one. We can write code without any functions whatsoever or even deliver underperforming software. Still, if the people reading our code don't even know what it's for, what it's supposed to do, where to look, and what to change to optimize its performance, they're better off writing the code by themselves.
 
 Legibility is not just about filling our script with comments on every step we do (*maybe when we're trying to explicitly teach something, it might be a good idea*). Legibility is about making our code understandable to ourselves and anyone with little to no context of what we're trying to achieve.
 
 The good thing is, if we are to improve legibility, we have some simple and handy mechanisms additional to commenting that we can use.
 
-### 1. Authoring
+## 1. Authoring
 This is the first step we will cover and a crucial one when sharing our material. It provides the creator with a way to assume authorship of the creation. It also gives readers and consumers a way to contact the creator in case of any questions. We can get our hands on a beautifully written and extremely useful program, but who the heck does this code belong to? Was it written by ChatGPT?
 
 It is also relevant to include authoring and contact information as metadata in the code we write, especially in a working environment, so that people will know who to blame when things go wrong (*just kidding, sort of*). Jokes aside, this is true and happens more often than not. We want to provide a way for other collaborators to reach out if our code doesn't work as expected. After all, we're assuming responsibility when submitting code to other people.
@@ -81,8 +88,8 @@ We can complement this information by specifying additional fields, such as last
 
 The nice thing about authoring is that several IDEs have the option to customize & introduce these lines by default when creating a new blank document.
 
-### 2. Comments
-#### 2.1 Simple commenting
+## 2. Comments
+### 2.1 Simple commenting
 Commenting is always encouraged when working with code. It lets us re-read and understand the procedures we used some time ago and gives context to other people reading our material.
 
 We can comment on a single line by using the hash symbol `#`:
@@ -92,7 +99,7 @@ We can comment on a single line by using the hash symbol `#`:
 # This is a comment.
 ```
 
-#### 2.2 Over-commenting
+### 2.2 Over-commenting
 The caveat of commenting is that it is often abused to the point of replicating line by line what the code is doing. Again, this is fine if we're teaching someone, but to the experienced programmer, this will not be necessary and will, in turn, introduce too many reading breaks, which are not required. We can think of over-commenting as abusing punctuation; it breaks the flow and impedes clear reading.
 
 Fortunately, there are two simple rules to avoid over-commenting:
@@ -110,7 +117,7 @@ while i < 8:
     i += 1
 ```
 
-#### 2.3 Breaking comments in a new line
+### 2.3 Breaking comments in a new line
 Comments are meant to be read as clearly, easily and fast as possible, but the truth is, sometimes they can get extensive.
 
 In some IDEs, this can cause the comment to overflow, looking unprofessional:
@@ -141,7 +148,7 @@ This is crucial since we won't be able to retrieve the objects otherwise.
 mylist = []
 ```
 
-#### 2.4 Section definition
+### 2.4 Section definition
 When working with long scripts, we can also use the hash symbol `#` to define section separators and divide our code blocks by including some delimiter along with the comment.
 
 The format used is purely based on personal preference but should generally be a collection of uniform characters typically used to delimit:
@@ -185,7 +192,7 @@ The important thing to remember is not to overcrowd our code. Otherwise, it coul
 
 Also, setting a section spacing standard can help.
 
-### 3. Docstrings
+## 3. Docstrings
 We already used docstrings to insert simple comments, but the main reason they were created was to be used inside functions to explain what the object does and its expected inputs & outputs.
 
 This is especially relevant when writing extensive code. Also, it provides a way for others, or even ourselves, to use the function as a modular object and know exactly what to expect from a function call.
@@ -247,7 +254,7 @@ sumOfAges : int
 IndentationError: expected an indented block after function definition on line 1
 ```
 
-### 4. Indentation
+## 4. Indentation
 Indentation is used in all programming languages and has two primary purposes depending on the language used:
 - As a way to improve code readability
 - As part of the actual syntaxis
@@ -278,8 +285,8 @@ mylist2 = [1, 2, 3, 4,
            5, 6, 7, 8]
 ```
 
-### 5. Line breaks, parenthesis, brackets & curly brackets
-#### 5.1 Line breaks
+## 5. Line breaks, parenthesis, brackets & curly brackets
+### 5.1 Line breaks
 Line breaks are useful but rare, often reducing the code's legibility. They can also lead to syntax errors if used sparingly.
 
 We can use them for specific cases, *e.g. whenever we are presented with a variable containing multiple characters*.
@@ -292,7 +299,7 @@ myvar = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + \
         9 + 10 + 11 + 12
 ```
 
-#### 5.2 Parenthesis
+### 5.2 Parenthesis
 A better alternative to backslashes would be to enclose our variable arguments in parenthesis. This also allows us to continue writing on a new line:
 
 ##### **Code**
@@ -301,7 +308,7 @@ myvar = (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 +
          9 + 10 + 11 + 12)
 ```
 
-#### 5.3 Brackets & curly brackets
+### 5.3 Brackets & curly brackets
 As we saw before, we can enclose arguments in parenthesis to continue writing on a new line.
 
 We can also continue arguments on a new line if we're dealing with other objects such as lists, arrays or dictionaries.
@@ -361,7 +368,7 @@ schema = {
 }
 ```
 
-### 6. Appropriate variable naming
+## 6. Appropriate variable naming
 When we start writing lengthier programs, it's inevitable to start losing count of the variables we declare. Or maybe we have excellent memorization skills and don't really care what names we use, but then Juan from Engineering, the poor guy responsible for deploying our code, sends us an email begging to send a variable definition document because he cannot understand a thing:
 
 ##### **Code**
@@ -404,7 +411,7 @@ for constants in range(len(myList_4)):
     myList_2_copy = myList_2.copy()
 ```
 
-### 7. Spacing
+## 7. Spacing
 Lastly, spacing consistently and adequately will always improve our code. Spacing creates a sense of separation and independence and instantly provides a better reading experience.
 
 Python does not require us to insert spaces between characters, but if we leave our code without spacing, or even worse, with inconsistent spacing, it will be much harder to read:
@@ -443,8 +450,8 @@ def myFun(x, y, z):
 
 ---
 
-## Modularization & scalability
-### 1. Modularization
+# Modularization & scalability
+## 1. Modularization
 Code is meant to be modular. Sure, we can write a single script to bulk-rename *n* number of files. That script would only be used for that purpose and would not require any dependence or be required by any other program.
 
 But the reality is that most of the code that is written is meant to be used in conjunction with other code; it's intended to work as part of a bigger system. This is called modularization and is an extremely powerful concept in programming.
@@ -555,7 +562,7 @@ Sum of values is: 0
 
 This is just scratching the surface of what abstraction can do. A more detailed study of other objects is out of the scope of this article, but not to worry, we will get there eventually.
 
-### 2. Scalability
+## 2. Scalability
 A scalable code does not require frequent modifications to maintain performance when handling varying workloads. This can be achieved from several viewpoints and strongly depends on what the code is intended to perform.
 
 When handling large data sets, for example, it is important to think of the following:
@@ -572,14 +579,14 @@ This is just one example, but there are multiple measures that can be taken to s
 
 ---
 
-## Performance
+# Performance
 Although this area requires a little bit of experience and additional knowledge in algorithmic design & computational complexity, we can at least perform the basics to ensure our code does what it's supposed to in the least amount of time possible, consuming the least amount of resources. This is called **refactoring** and is crucial, especially when productionizing code.
 
 We want to be efficient with the execution times & memory management while performing the same operation.
 
 Of course, there are countless variables we can optimize, such as using a faster programming language for starters. Nonetheless, we can focus on the most basic mechanisms we can implement while still using Python as our trusty fellow.
 
-### 1. Proper module import
+## 1. Proper module import
 If we are using a single module from a vast library, why import the whole thing? We can refer to this principle as the *bring just what you need* approach.
 
 When we import a module, the Python interpreter has to look for it and then load it into the cache. Suppose we import the whole library without specifying the module we're using. In that case, all modules belonging to that library are saved on the cache and are ready to be employed upon a user request:
@@ -611,7 +618,7 @@ myarr = arr([1, 2, 3])
 
 Of course, there are some caveats to this, the main one being we can get confused about where the `arr` method came from. We can reduce this by using meaningful names as our method aliases.
 
-### 2. Built-in libraries over external ones
+## 2. Built-in libraries over external ones
 As stated before, when we import a module, the Python interpreter performs, in a general way, a search consisting of the following steps:
 1. Search in the `sys.modules` dictionary
 	1. If found, return it.
@@ -628,7 +635,7 @@ Also, built-in modules will probably be more common among fellow programmers, th
 
 Finally, built-in modules are written in `C`, whereas external modules can be written in slower languages such as Python.
 
-### 3. Proper data structures
+## 3. Proper data structures
 Some Python data structures are used more often than others due to their popularity and ease of manipulation. For example, tuples, lists and dictionaries are all prevalent data structures and can be found on virtually any Python code.
 
 The thing about clinging to a fixed data structure for everything is that sometimes that option may underperform in specific tasks when compared to other alternatives:
@@ -639,7 +646,7 @@ The thing about clinging to a fixed data structure for everything is that someti
 - Instead of using the traditional `dict` data structure, we can use the external `microdict` alternative based on hash tables.
 - Instead of using a `pandas.DataFrame`, we can use an `array` if we plan on performing linear algebra operations. This would also provide better performance.
 
-### 4. List comprehensions over `for` loops
+## 4. List comprehensions over `for` loops
 List comprehensions are syntactic constructs that allow us to create lists based on the values of another list. `for` loops can do the same but present higher execution times.
 
 One thing to bear in mind is that although list comprehensions are valuable, they can and will reduce readability for people not accustomed to their single-line structure. This is why it's bad practice to include more than two or three nested arguments in list comprehensions (*we must also remember that Python code is meant to be highly readable, and we don't want to take that away*):
@@ -699,7 +706,7 @@ For loop execution time: 4.528107166290283 seconds
 List comprehension execution time: 2.702324628829956 seconds
 ```
 
-### 5. `for` loops vs. `while` loops
+## 5. `for` loops vs. `while` loops
 Each loop method has its advantages and disadvantages. It's just a matter of evaluating which one suits our needs best.
 
 `while` loops, while incredibly powerful, can sometimes underperform their `for` loop counterpart (*and we say sometimes because there are times when a `while` loop is a better alternative*).
@@ -708,7 +715,7 @@ On the other hand, `for` loops, as opposed to `while` loops, don't have to verif
 
 They can also iterate through a series of values using the `range()` function, implemented in `C`, and thus much faster.
 
-### 6. Multiple variable assignment
+## 6. Multiple variable assignment
 When we're assigning multiple variables, we have two options:
 - Assign each of them using a separate new line.
 - Assign them all at once in a single line.
@@ -730,7 +737,7 @@ myvar_1, myvar_2, myvar_3, myvar_4, myvar_5 = 1, 2, 3, 4, 5
 
 Both methods produce the same result. The one-line approach simply saves us some space and can often improve readability.
 
-### 7. Using decorators
+## 7. Using decorators
 This is a more advanced topic and requires us to learn what a decorator is in the first place. A decorator is a function that takes another function as an argument, extends the behaviour of the latter without explicitly modifying it, and returns a new, decorated function.
 
 This sounds confusing, but we can simplify it by using an example:
@@ -797,8 +804,8 @@ Of course, this is as simple as it gets, but we can imagine using decorators inv
 
 ---
 
-## Testing & debugging
-### 1. Exception handling
+# Testing & debugging
+## 1. Exception handling
 If we go back to the [Docstrings](#2-docstrings) section and take a closer look at the function we defined, there is nothing in the code impeding the user from inputting a wrong parameter. Sure, we defined a docstring telling the user what to do, but we did nothing to ensure how the function would behave if the user gave an integer number out of the specification bounds as input or, even worse, the wrong type.
 
 In the best-case scenario, the user reads the docstring and understands what to do. In the worst-case scenario, the user doesn't even know what a data type is and inputs something like this:
@@ -995,7 +1002,7 @@ These are just some examples; we could improve it even further, but the point is
 
 The one thing we must remember about this section is that good code will not only have a significant portion dedicated to handling errors but will do it appropriately and elegantly.
 
-### 2. Print statements
+## 2. Print statements
 Print statements allow us to make fewer typing and logical mistakes by outputting useful messages about specific sections. We can use print statements to debug or output messages to the anxious user.
 
 Even though we sometimes feel like printing every step to ensure we're not losing it, we should moderate ourselves and not go too bananas; otherwise, we might turn an anxious user into an angry user.
@@ -1008,7 +1015,7 @@ The key to remember is to avoid abusing them and remove any debugging print stat
 
 ---
 
-## Dependency handling
+# Dependency handling
 Lastly, dependencies play a huge role in avoiding execution errors and ensuring maintainability. There are multiple mechanisms we can put into place to ensure that our code will run smoothly across environments:
 
 - Specify the dependencies required in a `readme` file, and pack it along with our code. Also, add it to the project repository if we're using version control.
@@ -1021,13 +1028,18 @@ Lastly, dependencies play a huge role in avoiding execution errors and ensuring 
 
 ---
 
-## Conclusions
+# Conclusions
 We've reviewed multiple yet simple mechanisms we can employ to make our code cleaner, more elegant, modular, usable, scalable and safer. These measures can not only help us become better programmers but better collaborators. It will make reading code a pleasure instead of an agonizing process and instantly boost our credibility.
 
 ---
 
-## References
+# References
 - [Python Documentation, Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)
 - [Python Documentation, Errors & Exceptions](https://docs.python.org/3/tutorial/errors.html)
 - [Towards Data Science, What happens when you import a Python module?](https://towardsdatascience.com/what-happens-when-you-import-a-python-module-ad6c0efd2640)
 - [Towards Data Science, 3 data structures for faster Python Lists](https://towardsdatascience.com/3-data-structures-for-faster-python-lists-f29a7e9c2f92)
+
+---
+
+# Copyright
+Pablo Aguirre, Creative Commons Attribution 4.0 International, All Rights Reserved.

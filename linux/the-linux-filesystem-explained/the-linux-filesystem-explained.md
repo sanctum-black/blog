@@ -1,4 +1,10 @@
-# The Linux Filesystem Explained
+<article class="first">
+  <div class="title">
+    <h1>The Linux Filesystem Explained</h1>
+  </div>
+</article>
+
+---
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
@@ -26,7 +32,7 @@ We will not cover the installation process for each of the components mentioned.
 
 ---
 
-## Table of Contents
+# Table of Contents
 - [Overview](#overview)
 	- [The Windows filesystem](#1-the-windows-filesystem)
 	- [The Linux filesystem](#2-the-linux-filesystem)
@@ -58,34 +64,34 @@ We will not cover the installation process for each of the components mentioned.
 - [`/var`](#var)
 - [Conclusions](#conclusions)
 - [References](#references)
+- [Copyright](#copyright)
 
 ---
 
-## Overview
+# Overview
 As stated earlier, a filesystem is a way for operating systems to interact with the data saved in hard drives. Each operating system family has its filesystem. Without going into much detail, we can  mention the three main operating systems used today:
 
-### 1. The Windows filesystem
+## 1. The Windows filesystem
 The current Windows filesystem dates back to MS-DOS *(Microsoft Disk Operating System)*, the command-line-based operating system initially used to run the Windows operating system. MS-DOS used letters to assign drives, which, back then, represented physical floppy disks. Some years later, internal hard drives were made available, and Microsoft designated the letter `C` for its internal hard drive. Currently, all Windows program files are installed on `C:\Program Files`.
 
-### 2. The Linux filesystem
+## 2. The Linux filesystem
 Linux is a UNIX-like operating system. The UNIX structure was fundamentally different from MS-DOS when created, and upon evolving, Linux adopted most of its conventions, including the filesystem. Linux, unlike Windows, has a hierarchical file structure; it contains a root directory and subdirectories. Also, Linux treats most of its components as files.
 
 Interestingly, not all Linux distributions manage their directory structure equally. For example, a given distribution may use `/media` for mounting external drives, while another may use `/run`. Still, detailed information regarding directory structures for a given distribution can be found on its respective documentation site. Ubuntu's filesystem structure can be found [here](https://help.ubuntu.com/community/LinuxFilesystemTreeOverview). 
 
-### 3. The macOS filesystem
+## 3. The macOS filesystem
 MacOS is more similar to Linux since it evolved from a similar UNIX-like operating system called BSD. It has the same hierarchical file structure, but the executables are not binary-compatible with Linux.
 
 ---
 
-## Preparing our environment
-### 1. A word of caution
+# Preparing our environment
+## 1. A word of caution
 
 **A word of caution before we begin:** Some of the directories we'll review, such as `/boot`, contain vital information for the Linux operating system to function correctly. We could easily break our system if we were to access them using `root` privileges and accidentally delete or modify their content.
 
 An excellent option for avoiding messing up when tinkering around is to use a Virtual Machine; if we were to break anything, we could quickly restore the entire system from a snapshot or even do a fresh reinstall.
 
-### 2. Choosing a distribution, an emulator and a shell
-
+## 2. Choosing a distribution, an emulator and a shell
 Given that we already have a Linux distribution installed, we can start by getting our hands on a terminal emulator and a shell. All distributions have at least one terminal emulator and one shell already installed. The most common shell is `bash`. As for terminal emulators, it depends on which family of distributions and which desktop manager we installed.
 
 In our case, we'll be using Ubuntu running on Windows WSL2. We'll use the windows Terminal as our terminal emulator and `zsh` as our shell. The WSL2 setup process is out of the scope of this article but will be covered in the future.
@@ -107,7 +113,7 @@ The output tells us we're currently using the `zsh` shell, which has a process I
 
 Ubuntu is a distribution based on Debian, so the filesystem will be similar for the two. Also, we'll be able to use either the `apt` or the `dpkg` package managers for installing terminal utilities.
 
-### 3. Installing two useful packages
+## 3. Installing two useful packages
 Many of the packages we'll be using already come preinstalled on Ubuntu. For the remaining ones, we can use the two package managers mentioned, depending on our preference:
 - `apt` : The native Ubuntu package manager.
 - `dpkg` : The native Debian package manager.
@@ -158,7 +164,7 @@ Now, we can begin exploring the Linux filesystem.
 
 ---
 
-## root (/)
+# root (/)
 This is the root directory and is the uppermost directory in the Linux system containing all the files, device data and system information.
 
 If we're executing our terminal emulator as a user different than `root`, the shell will start in `/home/ourusername`. This is the home directory for our user. We can confirm where we are by executing the following command:
@@ -290,7 +296,7 @@ As we go over the directory structure, we will notice that, as opposed to Window
 
 ---
 
-## /bin
+# /bin
 The `/bin` directory stands for **binary** and contains the most basic executables such as `ls`, `man` and `cat`. In modern distributions, it's usually linked to `/usr/bin`.
 
 We can list the contents of the `/bin` directory. The output will be large since our Linux system has multiple executables already installed. We can truncate our output to the ten first entries by piping our `ls` output into the `head` command:
@@ -330,7 +336,7 @@ ls
 
 ---
 
-## /boot
+# /boot
 The `/boot` directory contains everything necessary for the operating system to boot. Here, we can find the following:
 - The bootloader
 - The initial ram system `initramfs`
@@ -340,7 +346,7 @@ We need to be careful with this directory since deleting or modifying files coul
 
 ---
 
-## /dev
+# /dev
 The `/dev` directory stands for **devices** and contains file representations of all virtual and physical devices on our system. These include but are not exclusive to:
 - External hard drives (`/sda`)
 - Internal hard drives (`/sda`)
@@ -385,7 +391,7 @@ Most of these block files don't contain any information but can be written by pr
 
 ---
 
-## /etc
+# /etc
 The `/etc` directory stands for **etcetera** and contains all system-wide configuration files. It also contains startup scripts. Applications installed for all users will have system-wide settings in this directory.
 
 We can display the head of the `/etc` directory:
@@ -440,7 +446,7 @@ root    ALL=(ALL:ALL) ALL
 
 ---
 
-## /home
+# /home
 The `/home` directory contains a collection of the non-root user's folders. When a user is created, a directory with its username is also generated on `/home`. The username folder is created with the username as the `owner` and the username group as the `group`. This makes this folder accessible by the user without needing `root` permissions.
 
 We can list the contents of the `/home` directory:
@@ -505,7 +511,7 @@ One important thing to remember is that a typical user will not be able to see o
 
 ---
 
-## /lib, /lib32, /lib64
+# /lib, /lib32, /lib64
 The `/lib`, `/lib32` and `/lib64` stand for **libraries** and contain files that applications can use to perform various functions. They hold the shared libraries our system's executables will need. `/lib/systemd/system`, for example, hosts unit files used in Linux services, a crucial component in any Linux system.
 
 Typically, we will have two additional `/lib` directories apart from `/lib`:
@@ -531,12 +537,12 @@ lrwxrwxrwx 1 root root 10 Oct 25 16:34 libx32 -> usr/libx32
 
 ---
 
-## /lost+found
+# /lost+found
 The `/lost+found` directory contains pieces of broken files after a system crash. It also includes programs that were already unlinked (*i.e. their name had been erased*) but still opened by some process when the system halted. Most distributions contain a predefined space in `/lost+found` for the filesystem check utility `fsck`  to deposit unlinked files.
 
 ---
 
-## /media
+# /media
 The `/media` directory contains the files representing the mounted drives. If we were to attach an external hard drive to our operating system, `/media` would be one of the options where the system could mount it. Each distribution handles this differently, but it has become the standard for the system's automatic mounts.
 
 In short, it serves as a mount point for system-mounted devices, but we can also use it to mount devices manually.
@@ -685,19 +691,19 @@ This was too much work for mounting an external drive to our Linux system becaus
 
 ---
 
-## /mnt
+# /mnt
 The `/mnt` directory stands for **mount** and was the original mounting point for external devices. Nowadays, most distributions use `/media` instead, although `/mnt` is still a temporary mount point.
 
 WSL2 mounts devices on `/mnt` if Linux natively supports their filesystem.
 
 ---
 
-## /opt
+# /opt
 The `/opt` directory stands for **optional** and contains installed software from external sources. We can also use this directory to host the software we create.
 
 ---
 
-## /proc
+# /proc
 The `/proc` directory stands for **processes** and contains information about system processes. Every process executed will have a directory inside `/proc` and be assigned a unique `pid` (*process ID*). Continuing with the UNIX *"almost everything is treated as a file"* philosophy, processes are no exception.
 
 This directory is extremely helpful when developing software in a Linux environment. We can see which processes are firing and obtain detailed information about their nature.
@@ -783,7 +789,7 @@ cat cmdline
 
 ---
 
-## /root
+# /root
 The `/root` directory is the home directory for the `root` user. It contains `root` user configuration folders & files. 
 
 We cannot simply change directories into `/root` since we need `root` permissions. To be able to view the contents, we are going to change to the `root` shell by using the superuser command:
@@ -811,14 +817,14 @@ To exit the `root` shell, we type `exit` and return to the user shell.
 
 ---
 
-## /run
+# /run
 The `/run` directory is somewhat new and has different uses depending on each distribution. It is a `tempfs` filesystem meaning it runs in ram and is deleted upon system shutdown. This is why some distributions use it to mount devices such as external hard drives.
 
 It usually contains information regarding which users are currently logged in and active daemons running in our system, among others. 
 
 ---
 
-## /sbin
+# /sbin
 The `/sbin` directory stands for **system binaries** and, similar to the `/bin` directory, contains executables that the system administrator would use. `/sbin` is often a link to `/usr/sbin`.
 
 Differences between `/bin` and `/sbin` have a historical component as well as a functional one; historically, `/sbin` used to contain statically linked executables, thus having fewer library dependencies. Functionally, `/sbin` includes utilities typically only run by a sysadmin with `root` privileges and `/bin` contains everything else. On some systems, non-root users don't have `/sbin` in their path, so they must use the full path to run these tools.
@@ -827,19 +833,19 @@ We can find executables such as `adduser`, `addgroup`, `chgpasswd`, `chroot`, `f
 
 ---
 
-## /snap
+# /snap
 The `/snap` directory is specific to Linux distributions using the `systemd` init system since it contains all packages related to Snap, a software packaging and deployment system developed by Canonical. Snap packages are self-contained and run differently than conventional executables.
 
 ---
 
-## /srv
+# /srv
 The `/srv` directory stands for **service** and contains files related to web or FTP servers. If we were running a server on our Linux system, it would serve as an access point for external users. It can be isolated from the rest of the directories by hosting it in a different partition, making file sharing and accessing by external users safe.
 
 The `/srv` directory is usually empty and not commonly used for most distributions, although there are exceptions such as OpenSUSE, which uses it as the default for web servers.
 
 ---
 
-## /sys
+# /sys
 The `/sys` directory stands for **system** and serves as a direct way to interact with the kernel. It contains information about devices, drivers and kernel features running on our system. As with `/run`, it resides on RAM and is deleted when we shut down the system. Its content structure is very similar to the `/proc` directory, although the first one is better organized.
 
 We can compare the contents of both directories:
@@ -914,12 +920,12 @@ tree -L 1
 
 ---
 
-## /tmp
+# /tmp
 The `/tmp` directory stands for **temporary** and contains files temporarily stored by applications. It also resides on RAM and is deleted upon system shutdown.
 
 ---
 
-## /usr
+# /usr
 The `/usr` directory stands for **Unix System Resources** and contains all user binaries, libraries and documentation for the user applications, as opposed to the `/bin` directory used by the system and root user.
 
 As we discussed, directories such as `/usr/bin`, `/usr/lib` and `/usr/sbin` are linked to `/bin`, `/lib` and `/sbin`, respectively. This is done for compatibility purposes.
@@ -966,7 +972,7 @@ The `/usr` directory is used differently depending on our distribution. It is al
 
 ---
 
-## /var
+# /var
 The `/var` directory stands for **variable** and contains directories and files expected to grow in size. A good example would be the `/var/log` folder, which includes system and user logs. Also, some web servers, such as Apache place can place their files here.
 
 We can display the contents in the `/var` directory:
@@ -1062,7 +1068,7 @@ As we can see, this directory is extremely useful for any system administrator s
 
 ---
 
-## Conclusions
+# Conclusions
 We've reviewed the entire Linux filesystem and the functions each directory serves. At first, it might seem intimidating and confusing, but the reality is that the Linux filesystem is more optimal than other filesystems, such as Windows's.
 
 Getting familiarized with the Linux folder structure is vital if we are to learn more advanced subjects. When getting more involved in the Linux ecosystem, we'll inevitably spend a fair amount of time on these directories.
@@ -1071,8 +1077,13 @@ Lastly, this was just an overview, but if we'd like to get more intimate with th
 
 ---
 
-## References
+# References
 - [Ubuntu, Official Ubuntu Documentation](https://help.ubuntu.com/)
 - [Ubuntu, LinuxFilesystemTreeOverview](https://help.ubuntu.com/community/LinuxFilesystemTreeOverview)
 - [Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
 - [Microsoft, Mount a Linux disk in WSL2](https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk)
+
+---
+
+# Copyright
+Pablo Aguirre, Creative Commons Attribution 4.0 International, All Rights Reserved.

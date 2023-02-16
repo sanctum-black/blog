@@ -1,4 +1,10 @@
-# What are GitHub Gists and How to Use Them
+<article class="first">
+  <div class="title">
+    <h1>What are GitHub Gists and How to Use Them</h1>
+  </div>
+</article>
+
+---
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
@@ -18,7 +24,7 @@ Code can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tr
 
 ---
 
-## Table of Contents
+# Table of Contents
 - [Use cases](#use-cases)
 - [How to use GitHub Gists?](#how-to-use-github-gists)
 	-  [Creating a new gist](#1-creating-a-new-gist)
@@ -32,10 +38,11 @@ Code can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tr
 - [Conclusions](#conclusions)
 - [Appendix](https://pabloagn.com/blog/what-are-github-gists-and-how-to-use-them/#appendix)
 - [References](#references)
+- [Copyright](#copyright)
 
 ---
 
-## Use cases
+# Use cases
 There are multiple use cases for GitHub Gists. Because of its versatility and simplicity:
 - We can use them for quickly sharing code snippets with other people.
 - We can embed them in our website, which a conventional GitHub repository does not allow.
@@ -46,7 +53,7 @@ There are multiple use cases for GitHub Gists. Because of its versatility and si
 
 ---
 
-## How to use GitHub Gists?
+# How to use GitHub Gists?
 
 ### 1. Creating a new gist
 We can create a new gist by heading to the [GitHub Gists homepage](https://gist.github.com/):
@@ -58,12 +65,12 @@ We can create a new gist by heading to the [GitHub Gists homepage](https://gist.
 - We can have multiple files belonging to the same gist. We can add more files by using the *Add files* button.
 
 ![GitHub Gists 1](https://pabloagn.com/wp-content/uploads/2023/02/B006A007_01.png)
-*Figure 1. Creating a new gist from the GitHub Gists homepage*
+###### *Figure 1. Creating a new gist from the GitHub Gists homepage*
 
 We can view our created gists by clicking on *View your gists*:
 
 ![View Your Gists](https://pabloagn.com/wp-content/uploads/2023/02/B006A007_02-1.png)
-*Figure 2. View your gists*
+###### *Figure 2. View your gists*
 
 From there, we can:
 - Display the gist as well as any comments.
@@ -77,14 +84,14 @@ From there, we can:
 
 ---
 
-## Managing GitHub Gists using VS Code
+# Managing GitHub Gists using VS Code
 VS Code has an extension for GitHub Gists management written in TypeScript. It adds several valuable functionalities, such as creating & managing gists, inserting text fragments from gists, and more.
 
 We can get started by going into VS Code, heading to extensions, and looking for Gist. We can then install the [Gist extension by Ken Howard](https://marketplace.visualstudio.com/items?itemName=kenhowardpdx.vscode-gist):
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/B006A007_03.png" alt="Gist VS Code Extension"/></div>
 
-*Figure 3. Gist VS Code extension*
+###### *Figure 3. Gist VS Code extension*
 
 Upon installation, we will authenticate our profile with GitHub by creating a Gist profile, but first, we need to create a new GitHub Personal Access token:
 - Head to [GitHub](https://github.com).
@@ -104,7 +111,7 @@ We will then go back to VS Code and select `Create Profile`. We will select a *C
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/B006A007_04.png" alt="Gist Create Profile"/></div>
 
-*Figure 4. Create a new Gist profile in VS Code*
+###### *Figure 4. Create a new Gist profile in VS Code*
 
 We will then input the key we generated, press <kbd>enter</kbd>, create a *Profile Name*, and press <kbd>enter</kbd> again.
 
@@ -142,10 +149,10 @@ We can also change default Public or Secret gists and current profile settings.
 
 ---
 
-## Examples
+# Examples
 We will be reviewing four examples. They can be consulted in the [`example-gists-1.py`](https://gist.github.com/pabloagn/29b071b8e1c6bd83d9aea39a537ec931) gist. Outputs for each case can be found in the [Appendix](https://pabloagn.com/blog/what-are-github-gists-and-how-to-use-them/#appendix) section.
 
-### 1. Creating a Gist for authoring using docstrings
+## 1. Creating a Gist for authoring using docstrings
 As mentioned earlier, we can create a new gist containing a specific docstring and add it to any file. 
 
 We will start by creating a new file in VS Code and populate it with the following:
@@ -176,7 +183,7 @@ This can be further automated by assigning custom keymaps to the command used.
 
 For the output example, refer to the [Appendix](https://pabloagn.com/blog/what-are-github-gists-and-how-to-use-them/#appendix), `example-gists-1.py`.
 
-### 2. Creating a code snippet embed
+## 2. Creating a code snippet embed
 We can directly embed a script to our website using gists. The embed renders in a code window and is updated whenever we commit changes to our gist. We will start by creating a new blank file on VS Code and naming it `embed-script.py`.
 
 We will then import our newly created authoring docstring by going to the *command palette*, executing the `Insert Text From Gist File` command and selecting our `authoring-docstring.py` gist.
@@ -230,7 +237,7 @@ We can either click the `Open Gist on Browser` button, use the `GIST: Open Gist 
 
 For the output example, refer to the [Appendix](https://pabloagn.com/blog/what-are-github-gists-and-how-to-use-them/#appendix), `example-gists-2.py`.
 
-### 3. Creating a tabular data snippet embed
+## 3. Creating a tabular data snippet embed
 Gists let us include a `.csv` tabular file. When uploaded to GitHub Gists, the snippet renders into an actual table with exciting properties, as we will see in this example.
 
 We will start by creating a new blank file on VS Code and naming it `tabular-data.csv`. We will then populate our table with four columns and ten entries:
@@ -262,7 +269,7 @@ Unfortunately, the search functionality is apparently unavailable on embeds and 
 
 For the output example, refer to the [Appendix](https://pabloagn.com/blog/what-are-github-gists-and-how-to-use-them/#appendix), `example-gists-3.csv`.
 
-### 4. Creating a Markdown snippet embed
+## 4. Creating a Markdown snippet embed
 Gists support virtually any programming language, including markup languages such as [Markdown](https://pabloagn.com/technologies/markdown/).
 
 We will start by creating a new blank file on VS Code and naming it `markdown-document.md`. We will then insert some markdown code on our document:
@@ -307,7 +314,7 @@ We can then open our gist in a browser. When a gist containing Markdown formatti
 
 For the output example, refer to the [Appendix](https://pabloagn.com/blog/what-are-github-gists-and-how-to-use-them/#appendix), `example-gists-4.md`.
 
-## Formatting gists using CSS
+# Formatting gists using CSS
 A nice feature is that we can format our Markdown code or any other code snippet inside a gist embed by using CSS code.
 
 For this section, we will use CodePen, a web-based social development environment for front-end designers and developers.
@@ -385,12 +392,15 @@ Pens used in this section can be found [here](https://codepen.io/pabloagn/pen/GR
 
 ---
 
-## Conclusions
+# Conclusions
 We have reviewed what gists are, how to create different types of gists, how to embed them into our website and how to format them using simple HTML & CSS code. As we can see, gists are extremely simple yet powerful and can be used for many applications. They are supported in virtually any content management software and provide a way to showcase code snippets, tables and other types of content without requiring any knowledge of web development.
 
 ---
-## References
+# References
 - [GitHub Gists, Documentation](https://docs.github.com/en/rest/gists?apiVersion=2022-11-28)
 - [jnrbsn/better-gist-styles.css](https://gist.github.com/jnrbsn/578379/d443a558d060e40744e5d5d9a21c853942ff3ca7)
 - [wataru420/compressed.css](https://gist.github.com/wataru420/2048287)
 
+---
+# Copyright
+Pablo Aguirre, Creative Commons Attribution 4.0 International, All Rights Reserved.
