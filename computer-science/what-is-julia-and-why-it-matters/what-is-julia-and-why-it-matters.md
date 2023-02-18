@@ -57,8 +57,9 @@ I spent a couple of months testing this new programming language, and let me tel
 # Julia, in a nutshell
 The creators of Julia made a really good job at describing what this language would represent, its foundations, and what the main objectives were when creating it:
 
-> We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell. Something that is dirt simple to learn, yet keeps the most serious hackers happy. We want it interactive and we want it compiled. (Did we mention it should be as fast as C?)[^1]
-> *Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman*
+> We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell. Something that is dirt simple to learn, yet keeps the most serious hackers happy. We want it interactive and we want it compiled. (Did we mention it should be as fast as C?)
+
+— *Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman*[^1]
 
 They basically intended on gluing 6 of the most popular scientific languages to create one perfect language that will come here to stay, potentially replacing the most popular data science language right now: Python.
 
@@ -87,7 +88,8 @@ Apart from the fast-performing aspect, Julia is easy to write and read, and this
 As mentioned TEDx MIT Talk:
 
 > The common wisdom for programming languages has always been that we could have an "either" or an "or"; either we can have a programming language that's easy to program, but we'll pay the price (*somehow the programs will execute much more slowly, and we will lose out on performance*). The other possibility, a much more complicated endeavor, involves much higher programming expertise, and only then can we get better performance. Julia showed that it wasn't one or the other but that we could have our cake and eat it too.
-> *Dr. Alan Edelman*
+
+— *Dr. Alan Edelman*[^2]
 
 This quote is fantastic because it summarizes what Julia is all about in a single paragraph: it's fast-performing while at the same time being easy to write and read.
 
@@ -107,11 +109,11 @@ Apart from the readability advantages, Julia's language semantics allow a well-w
 ## 2. Fast-performing
 Sometimes we think of energy resources as given. Each morning we're woken up by a phone powered by electricity. We have breakfast and use all kinds of kitchen appliances powered mainly by electricity. We then take a shower whose water flow is powered by a hydraulic system, which in turn is powered by electricity. And then, we sit at our desks, turn on our computers powered by electricity, and start programming. Each program execution requires resources; the CPU processes billions of operations per second, and the computer fans spin to dissipate heat.
 
-We might think that our energy consumption is limited since we're running programs on a personal computer, but what if we scale that to a production environment where racks of servers are live 24/7, processing huge amounts of data each second? The largest data centres require more than 100 megawatts of power capacity, which is enough to power roughly 80,000 U.S. households. [^2]
+We might think that our energy consumption is limited since we're running programs on a personal computer, but what if we scale that to a production environment where racks of servers are live 24/7, processing huge amounts of data each second? The largest data centers require more than 100 megawatts of power capacity, which is enough to power roughly 80,000 U.S. households. [^3]
 
 Now, let us think of Machine Learning, a brilliant but computationally-expensive invention. Some algorithms' actual training processes often result in high wattage, primarily if we use Deep Learning models on GPU. Sometimes, training a large model could involve Terabytes or even Petabytes of information in the form of inputs.
 
-For example, OpenAI trained its [GPT-3](https://platform.openai.com/docs/models) model on 45 terabytes of data. To train the final version of [MegatronLM](https://github.com/NVIDIA/Megatron-LM), a language model similar to but smaller than GPT-3, Nvidia ran 512 V100 GPUs over nine days. A single V100 GPU can consume between 250 and 300 watts. If we assume 250 watts, then 512 V100 GPUS consumes 128,000 watts, or 128 kilowatts (kW). Running for nine days means the MegatronLM's training costs 27,648-kilowatt hours (kWh). According to the U.S. Energy Information Administration, the average household uses 10,649 kWh annually. Therefore, training the final version of MegatronLM used almost the amount of energy three homes use in a year.[^3]
+For example, OpenAI trained its [GPT-3](https://platform.openai.com/docs/models) model on 45 terabytes of data. To train the final version of [MegatronLM](https://github.com/NVIDIA/Megatron-LM), a language model similar to but smaller than GPT-3, Nvidia ran 512 V100 GPUs over nine days. A single V100 GPU can consume between 250 and 300 watts. If we assume 250 watts, then 512 V100 GPUS consumes 128,000 watts, or 128 kilowatts (kW). Running for nine days means the MegatronLM's training costs 27,648-kilowatt hours (kWh). According to the U.S. Energy Information Administration, the average household uses 10,649 kWh annually. Therefore, training the final version of MegatronLM used almost the amount of energy three homes use in a year.[^4]
 
 The concept of Environmentally-Responsible programming or Green Coding has recently gained attention because of the exponential growth in data generation and the evident increase in global temperature due to global warming. Particularly, there's one exciting branch called Sustainable Software Design, which aims to combat climate change by designing better algorithms in higher-performing and less computationally expensive languages using greener routines.
 
@@ -276,9 +278,10 @@ Hopefully, more people will get to know this fresh new approach at reimagining w
 - [Data Science Central, R vs. Python vs. Julia: How easy it is to write efficient code?](https://www.datasciencecentral.com/r-vs-python-vs-julia-how-easy-it-is-to-write-efficient-code/)
 - [Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, Why We Created Julia ](https://julialang.org/blog/2012/02/why-we-created-julia/)
 
-[^1]: Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, Why We Created Julia 
-[^2]: Energy Innovation, How Much Energy Do Data Centers Really Use?
-[^3]: Tech Target, Energy consumption of AI poses environmental problems
+[^1]: Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, Why We Created Julia
+[^2]: A programming language to heal the planet together: Julia
+[^3]: Energy Innovation, How Much Energy Do Data Centers Really Use?
+[^4]: Tech Target, Energy consumption of AI poses environmental problems
 
 
 ---
