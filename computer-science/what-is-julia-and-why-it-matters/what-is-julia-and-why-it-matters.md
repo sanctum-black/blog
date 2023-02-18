@@ -248,7 +248,7 @@ We can see that Julia is close to C independently on the implementation. The onl
 
 # Time to learn Julia
 Now that we have a general understanding of what Julia is, there are multiple free online resources to learn it and become proficient:
-- [**Julia From Scratch**](): A hands-on, step-by-step guide to getting started with Julia, including the Julia Language installation, installation and usage of a helpful [VS Code](https://pabloagn.com/technologies/vs-code/) Extension, installation of JuliaMono type font, using the Julia REPL, creating an environment, installing packages, basic data structures and data types, and basic operations.
+- [**Julia For Beginners**](https://pabloagn.com/blog/julia-for-beginners/): A hands-on, step-by-step guide to getting started with Julia, including the Julia Language installation, installation and usage of a helpful [VS Code](https://pabloagn.com/technologies/vs-code/) Extension, installation of JuliaMono type font, using the Julia REPL, creating an environment, installing packages, basic data structures and data types, and basic operations.
 - [**Julia Community**](https://julialang.org/community/): A fantastic index of resources ranging from YouTube Channels to Slack chats & Discord Servers to Julia's Forem.
 - [**Julia's Forem**](https://forem.julialang.org/): The best place to write, share, and discuss Julia content.
 - [**Julia Academy, Julia Programming for Nervous Beginners**](https://juliaacademy.com/p/julia-programming-for-nervous-beginners): A great resource to get familiarized with Julia from scratch, with no previous programming experience required.. 
