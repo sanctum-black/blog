@@ -234,7 +234,7 @@ The adoption rate could increase in the future since Julia is gradually receivin
 For a more detailed performance analysis including the C language as a benchmark, we can refer to this informative set of tests run by [Daniel Moura](https://medium.com/@daniel.c.moura) published on [Data Science Central](https://www.datasciencecentral.com/r-vs-python-vs-julia-how-easy-it-is-to-write-efficient-code/):
 
 ![Figure 01](https://raw.githubusercontent.com/pabloagn/blog/master/computer-science/what-is-julia-and-why-it-matters/comparisons/2249961_01.png)
-###### Figure 01: CPU time comparison of common routines between C, Julia, Python and R
+###### *Figure 01: CPU time comparison of common routines between C, Julia, Python and R*
 
 The following routines were tested:
 -   Built-in functions/operators (*in, findfirst*).
@@ -277,6 +277,7 @@ Hopefully, more people will get to know this fresh new approach to reimagining w
 - [Julia FAQ](https://docs.julialang.org/en/v1/manual/faq/)
 - [Data Science Central, R vs. Python vs. Julia: How easy it is to write efficient code?](https://www.datasciencecentral.com/r-vs-python-vs-julia-how-easy-it-is-to-write-efficient-code/)
 - [Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, Why We Created Julia ](https://julialang.org/blog/2012/02/why-we-created-julia/)
+- [Dr. Alan Eldman, A programming language to heal the planet together: Julia](https://www.youtube.com/watch?v=qGW0GT1rCvs)
 
 [^1]: Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, Why We Created Julia
 [^2]: A programming language to heal the planet together: Julia
