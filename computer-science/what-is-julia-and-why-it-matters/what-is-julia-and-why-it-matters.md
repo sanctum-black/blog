@@ -58,8 +58,7 @@ I spent a couple of months testing this new programming language, and let me tel
 The creators of Julia made a really good job at describing what this language would represent, its foundations, and what the main objectives were when creating it:
 
 > We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell. Something that is dirt simple to learn, yet keeps the most serious hackers happy. We want it interactive and we want it compiled. (Did we mention it should be as fast as C?)[^1]
-
-*Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman*
+> *Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman*
 
 They basically intended on gluing 6 of the most popular scientific languages to create one perfect language that will come here to stay, potentially replacing the most popular data science language right now: Python.
 
@@ -88,8 +87,7 @@ Apart from the fast-performing aspect, Julia is easy to write and read, and this
 As mentioned TEDx MIT Talk:
 
 > The common wisdom for programming languages has always been that we could have an "either" or an "or"; either we can have a programming language that's easy to program, but we'll pay the price (*somehow the programs will execute much more slowly, and we will lose out on performance*). The other possibility, a much more complicated endeavor, involves much higher programming expertise, and only then can we get better performance. Julia showed that it wasn't one or the other but that we could have our cake and eat it too.
-
-*Dr. Alan Edelman*
+> *Dr. Alan Edelman*
 
 This quote is fantastic because it summarizes what Julia is all about in a single paragraph: it's fast-performing while at the same time being easy to write and read.
 
