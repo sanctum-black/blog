@@ -55,6 +55,13 @@ I spent a couple of months testing this new programming language, and let me tel
 ---
 
 # Julia, in a nutshell
+The creators of Julia made a really good job at describing what this language would represent, its foundations, and what the main objectives were when creating it:
+
+> We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell. Something that is dirt simple to learn, yet keeps the most serious hackers happy. We want it interactive and we want it compiled. (Did we mention it should be as fast as C?)[^1]
+Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman
+
+They basically intended on gluing 6 of the most popular scientific languages to create one perfect language that will come here to stay, potentially replacing the most popular data science language right now: Python.
+
 If we visit the [official Julia website](https://julialang.org/), we can see some of its key properties:
 
 - Fast
@@ -100,11 +107,11 @@ Apart from the readability advantages, Julia's language semantics allow a well-w
 ## 2. Fast-performing
 Sometimes we think of energy resources as given. Each morning we're woken up by a phone powered by electricity. We have breakfast and use all kinds of kitchen appliances powered mainly by electricity. We then take a shower whose water flow is powered by a hydraulic system, which in turn is powered by electricity. And then, we sit at our desks, turn on our computers powered by electricity, and start programming. Each program execution requires resources; the CPU processes billions of operations per second, and the computer fans spin to dissipate heat.
 
-We might think that our energy consumption is limited since we're running programs on a personal computer, but what if we scale that to a production environment where racks of servers are live 24/7, processing huge amounts of data each second? The largest data centres require more than 100 megawatts of power capacity, which is enough to power roughly 80,000 U.S. households. [^1]
+We might think that our energy consumption is limited since we're running programs on a personal computer, but what if we scale that to a production environment where racks of servers are live 24/7, processing huge amounts of data each second? The largest data centres require more than 100 megawatts of power capacity, which is enough to power roughly 80,000 U.S. households. [^2]
 
 Now, let us think of Machine Learning, a brilliant but computationally-expensive invention. Some algorithms' actual training processes often result in high wattage, primarily if we use Deep Learning models on GPU. Sometimes, training a large model could involve Terabytes or even Petabytes of information in the form of inputs.
 
-For example, OpenAI trained its [GPT-3](https://platform.openai.com/docs/models) model on 45 terabytes of data. To train the final version of [MegatronLM](https://github.com/NVIDIA/Megatron-LM), a language model similar to but smaller than GPT-3, Nvidia ran 512 V100 GPUs over nine days. A single V100 GPU can consume between 250 and 300 watts. If we assume 250 watts, then 512 V100 GPUS consumes 128,000 watts, or 128 kilowatts (kW). Running for nine days means the MegatronLM's training costs 27,648-kilowatt hours (kWh). According to the U.S. Energy Information Administration, the average household uses 10,649 kWh annually. Therefore, training the final version of MegatronLM used almost the amount of energy three homes use in a year.[^2]
+For example, OpenAI trained its [GPT-3](https://platform.openai.com/docs/models) model on 45 terabytes of data. To train the final version of [MegatronLM](https://github.com/NVIDIA/Megatron-LM), a language model similar to but smaller than GPT-3, Nvidia ran 512 V100 GPUs over nine days. A single V100 GPU can consume between 250 and 300 watts. If we assume 250 watts, then 512 V100 GPUS consumes 128,000 watts, or 128 kilowatts (kW). Running for nine days means the MegatronLM's training costs 27,648-kilowatt hours (kWh). According to the U.S. Energy Information Administration, the average household uses 10,649 kWh annually. Therefore, training the final version of MegatronLM used almost the amount of energy three homes use in a year.[^3]
 
 The concept of Environmentally-Responsible programming or Green Coding has recently gained attention because of the exponential growth in data generation and the evident increase in global temperature due to global warming. Particularly, there's one exciting branch called Sustainable Software Design, which aims to combat climate change by designing better algorithms in higher-performing and less computationally expensive languages using greener routines.
 
@@ -208,7 +215,7 @@ All of these aspects make Julia extremely versatile and fun to work with.
 | Feature                              | Julia                                                               | Python                                                  | R                                                                 |
 | ------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------- |
 | Type                                 | Just-in-time (JIT) compiled                                         | Interpreted                                             | Functional and interpreted                                        |
-| Runtime Speed (for each search test) | 0.32 s                                                              | 40.75 s (with built-in lists)                           | 21.94 s                                                           |
+| Runtime Speed (*for each search test*) | 0.32 s                                                              | 40.75 s (with built-in lists)                           | 21.94 s                                                           |
 | Community                            | Smaller community than R.                                           | Vast community with 15.7 million+ developers as of 2022 | Smaller community than Python's with 2 million+ users as of 2023. |
 | Array Indexing                       | 1-indexed array start                                               | 0-indexed array start                                   | 1-indexed array start                                             |
 | Libraries                            | Over 7,400 libraries as of 2022.                                    | Over 137,000 libraries as of 2022.                      | Over 11,794 libraries as of 2022.                                 |
@@ -216,20 +223,29 @@ All of these aspects make Julia extremely versatile and fun to work with.
 | Multiple-dispatch support            | Native                                                              | With packages                                           | Only by using the S4 system                                       |
 | Downloaded                           | 35 million times as of Jan 1, 2022                                  | NA                                                      | NA                                                                |
 
-###### Figure 1. Comparison table between Julia, Python & R
+###### *Table 1. Comparison table between Julia, Python & R*
 
-We can also analyze this amazing performance test run by [Daniel Moura](https://medium.com/@daniel.c.moura) and published on [Towards data Science](https://towardsdatascience.com/r-vs-python-vs-julia-90456a2bcbab): 
+The main drawbacks with Julia right now, are Python's main strengths; its massive adoption rate, a huge active community, and the vast number of libraries currently available. The main cause is that Julia, released in 2012, is still a new language while Python, released in 1991, has been around for roughly triple the time.
 
+The adoption rate could increase in the future, since Julia is gradually receiving more attention; the more people using the language, the higher the adoption rate and consequently, the better the community support and package coverage.
 
+For a more detailed performance analysis including the C language as benchmark, we can refer to these informative set of tests run by [Daniel Moura](https://medium.com/@daniel.c.moura) published on [Data Science Central](https://www.datasciencecentral.com/r-vs-python-vs-julia-how-easy-it-is-to-write-efficient-code/): 
 
+![Figure 01](https://raw.githubusercontent.com/pabloagn/blog/master/computer-science/what-is-julia-and-why-it-matters/comparisons/2249961_01.png)
+###### Figure 01: CPU time comparison of common routines between C, Julia, Python and R
 
+The following routines were tested:
+-   Built-in functions/operators (*in, findfirst*).
+-   Vectorized (*vec*).
+-   Map-reduce (*mapr*).
+-   Loops (*for, foreach*).
 
-In terms of performance, Julia is close to C almost independently on the implementation;
+We can see that Julia is close to C almost independently on the implementation. The only routines lagging behind are vectorized operations, with Python presenting faster execution times when using NumPy. 
 
 ---
 
 # Time to learn Julia
-There are multiple free online resources to learn Julia:
+Now that we have a general understanding of what Julia is, there are multiple free online resources to learn it and become proficient:
 - [**Julia From Scratch**](): A hands-on, step-by-step guide to getting started with Julia, including the Julia Language installation, installation and usage of a helpful [VS Code](https://pabloagn.com/technologies/vs-code/) Extension, installation of JuliaMono type font, using the Julia REPL, creating an environment, installing packages, basic data structures and data types, and basic operations.
 - [**Julia Community**](https://julialang.org/community/): A fantastic index of resources ranging from YouTube Channels to Slack chats & Discord Servers to Julia's Forem.
 - [**Julia's Forem**](https://forem.julialang.org/): The best place to write, share, and discuss Julia content.
@@ -243,6 +259,10 @@ There are multiple free online resources to learn Julia:
 # Conclusions
 In this segment, we performed a general overview of the Julia programming language. We also mentioned some of its advantages over similar languages, such as Python and R, and introduced a small set of features that Julia natively supports. We also discussed some downsides when working with Julia and mentioned how these could change when it's more widely adopted in the future. Finally, we provided some helpful next steps for those interested in learning Julia programming.
 
+Today, Julia is seen as a young and more bleeding-edge, experimental language, that, even though has enjoyed much attention from academics and professionals in recent years, is still on an early stage and requires a broader adoption for it to become supported as an industry standard, just as Python is right now.
+
+Hopefully, more people will get to know this fresh new approach at reimagining what a programming language can be.
+
 ---
 
 # References
@@ -253,9 +273,13 @@ In this segment, we performed a general overview of the Julia programming langua
 - [CodeAcademy, How Sustainable Software Design Combats Climate Change — & How To Get Involved](https://www.codecademy.com/resources/blog/sustainable-software-design-principles-developers/)
 - [Julia, Parallel Computing](https://docs.julialang.org/en/v1/manual/parallel-computing/)
 - [Julia FAQ](https://docs.julialang.org/en/v1/manual/faq/)
+- [Data Science Central, R vs. Python vs. Julia: How easy it is to write efficient code?](https://www.datasciencecentral.com/r-vs-python-vs-julia-how-easy-it-is-to-write-efficient-code/)
+- [Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, Why We Created Julia ](https://julialang.org/blog/2012/02/why-we-created-julia/)
 
-[^1]: Energy Innovation, How Much Energy Do Data Centers Really Use?
-[^2]: Tech Target, Energy consumption of AI poses environmental problems
+[^1]: Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman, Why We Created Julia 
+[^2]: Energy Innovation, How Much Energy Do Data Centers Really Use?
+[^3]: Tech Target, Energy consumption of AI poses environmental problems
+
 
 ---
 
