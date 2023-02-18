@@ -55,13 +55,13 @@ I spent a couple of months testing this new programming language, and let me tel
 ---
 
 # Julia, in a nutshell
-The creators of Julia made a really good job at describing what this language would represent, its foundations, and what the main objectives were when creating it:
+The creators of Julia did a really good job at describing what this language would represent, its foundations, and what the main objectives were when creating it:
 
-> We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell. Something that is dirt simple to learn, yet keeps the most serious hackers happy. We want it interactive and we want it compiled. (Did we mention it should be as fast as C?)
+> We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, and as good at gluing programs together as the shell. Something that is dirt simple to learn yet keeps the most serious hackers happy. We want it interactive, and we want it compiled. (Did we mention it should be as fast as C?)
 
 — *Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman*[^1]
 
-They basically intended on gluing 6 of the most popular scientific languages to create one perfect language that will come here to stay, potentially replacing the most popular data science language right now: Python.
+They basically intended to glue 6 of the most popular scientific languages to create one perfect language that will come here to stay, potentially replacing the most popular data science language right now: Python.
 
 If we visit the [official Julia website](https://julialang.org/), we can see some of its key properties:
 
@@ -95,7 +95,7 @@ This quote is fantastic because it summarizes what Julia is all about in a singl
 
 Also, Julia supports a fascinating concept known as multiple dispatch. This feature refers to the fact that a function or method can be dynamically dispatched based on the runtime (*dynamic*) type or, in the more general case, some other attribute of more than one of its arguments. This is extremely useful and adds flexibility to our programs.
 
-We also mentioned that Julia is **dynamically-typed**. This means that most of its type checking is performed at runtime instead of compile-time. The nice thing about Julia is that this feature is optional since it can statically type the data types, meaning more robustness, runtime speed, and safer data handling.
+We also mentioned that Julia is **dynamically-typed**. This means most of its type checking is performed at runtime instead of compile-time. The nice thing about Julia is that this feature is optional since it can statically type the data types, meaning more robustness, runtime speed, and safer data handling.
 
 Having enumerated all these fabulous characteristics, why did Dr. Edelman refer to Julia as a "*Language to heal the planet*"? Well, let's unravel this step-by-step:
 
@@ -109,7 +109,7 @@ Apart from the readability advantages, Julia's language semantics allow a well-w
 ## 2. Fast-performing
 Sometimes we think of energy resources as given. Each morning we're woken up by a phone powered by electricity. We have breakfast and use all kinds of kitchen appliances powered mainly by electricity. We then take a shower whose water flow is powered by a hydraulic system, which in turn is powered by electricity. And then, we sit at our desks, turn on our computers powered by electricity, and start programming. Each program execution requires resources; the CPU processes billions of operations per second, and the computer fans spin to dissipate heat.
 
-We might think that our energy consumption is limited since we're running programs on a personal computer, but what if we scale that to a production environment where racks of servers are live 24/7, processing huge amounts of data each second? The largest data centers require more than 100 megawatts of power capacity, which is enough to power roughly 80,000 U.S. households. [^3]
+We might think that our energy consumption is limited since we're running programs on a personal computer, but what if we scale that to a production environment where racks of servers are live 24/7, processing huge amounts of data each second? The largest data centres require more than 100 megawatts of power capacity, which is enough to power roughly 80,000 U.S. households. [^3]
 
 Now, let us think of Machine Learning, a brilliant but computationally-expensive invention. Some algorithms' actual training processes often result in high wattage, primarily if we use Deep Learning models on GPU. Sometimes, training a large model could involve Terabytes or even Petabytes of information in the form of inputs.
 
@@ -227,11 +227,11 @@ All of these aspects make Julia extremely versatile and fun to work with.
 
 ###### *Table 1. Comparison table between Julia, Python & R*
 
-The main drawbacks with Julia right now, are Python's main strengths; its massive adoption rate, a huge active community, and the vast number of libraries currently available. The main cause is that Julia, released in 2012, is still a new language while Python, released in 1991, has been around for roughly triple the time.
+The main drawbacks with Julia right now are Python's main strengths; its massive adoption rate, a huge active community, and the vast number of libraries currently available. The leading cause is that Julia, released in 2012, is still a new language while Python, released in 1991, has been around for roughly triple the time.
 
-The adoption rate could increase in the future, since Julia is gradually receiving more attention; the more people using the language, the higher the adoption rate and consequently, the better the community support and package coverage.
+The adoption rate could increase in the future since Julia is gradually receiving more attention; the more people using the language, the higher the adoption rate and, consequently, the better the community support and package coverage.
 
-For a more detailed performance analysis including the C language as benchmark, we can refer to these informative set of tests run by [Daniel Moura](https://medium.com/@daniel.c.moura) published on [Data Science Central](https://www.datasciencecentral.com/r-vs-python-vs-julia-how-easy-it-is-to-write-efficient-code/): 
+For a more detailed performance analysis including the C language as a benchmark, we can refer to this informative set of tests run by [Daniel Moura](https://medium.com/@daniel.c.moura) published on [Data Science Central](https://www.datasciencecentral.com/r-vs-python-vs-julia-how-easy-it-is-to-write-efficient-code/):
 
 ![Figure 01](https://raw.githubusercontent.com/pabloagn/blog/master/computer-science/what-is-julia-and-why-it-matters/comparisons/2249961_01.png)
 ###### Figure 01: CPU time comparison of common routines between C, Julia, Python and R
@@ -242,7 +242,7 @@ The following routines were tested:
 -   Map-reduce (*mapr*).
 -   Loops (*for, foreach*).
 
-We can see that Julia is close to C almost independently on the implementation. The only routines lagging behind are vectorized operations, with Python presenting faster execution times when using NumPy. 
+We can see that Julia is close to C independently on the implementation. The only routines lagging are vectorized operations, with Python presenting faster execution times when using NumPy.
 
 ---
 
@@ -259,11 +259,11 @@ Now that we have a general understanding of what Julia is, there are multiple fr
 ---
 
 # Conclusions
-In this segment, we performed a general overview of the Julia programming language. We also mentioned some of its advantages over similar languages, such as Python and R, and introduced a small set of features that Julia natively supports. We also discussed some downsides when working with Julia and mentioned how these could change when it's more widely adopted in the future. Finally, we provided some helpful next steps for those interested in learning Julia programming.
+In this segment, we performed a general overview of the Julia programming language. We also mentioned some of its advantages over similar languages, such as Python and R, and introduced a small set of features that Julia natively supports. We also discussed some downsides when working with Julia and mentioned how these could change when it's more widely adopted. Finally, we provided some helpful next steps for those interested in learning Julia programming.
 
-Today, Julia is seen as a young and more bleeding-edge, experimental language, that, even though has enjoyed much attention from academics and professionals in recent years, is still on an early stage and requires a broader adoption for it to become supported as an industry standard, just as Python is right now.
+Today, Julia is seen as a young and more bleeding-edge, experimental language that, even though it has enjoyed much attention from academics and professionals in recent years, is still in an early stage and requires a broader adoption for it to become supported as an industry standard, just as Python is right now.
 
-Hopefully, more people will get to know this fresh new approach at reimagining what a programming language can be.
+Hopefully, more people will get to know this fresh new approach to reimagining what a programming language can be.
 
 ---
 
