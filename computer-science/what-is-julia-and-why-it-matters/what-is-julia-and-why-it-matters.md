@@ -21,8 +21,8 @@ We'll be using Julia scripts which can be found in the [Blog Article Repo](http
 # Table of Contents
 - [Prelude](#prelude)
 - [Julia, in a nutshell](#julia-in-a-nutshell)
-- [What makes Julia so special?](#why-is-julia-so-special)
-	- [Easy-to-read syntax](#1-easy-to-read-syntax)
+- [What makes Julia so special?](#what-makes-julia-so-special)
+	- [Easy-to-read syntax](#1-efficient-and-easy-to-read-syntax)
 	- [Fast-performing](#2-fast-performing)
 	- [Parallel computing support](#3-parallel-computing-support)
 - [To whom is Julia targeted?](#to-whom-is-julia-targeted)
