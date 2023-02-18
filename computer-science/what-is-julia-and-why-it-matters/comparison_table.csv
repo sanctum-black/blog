@@ -1,0 +1,15 @@
+﻿Feature,Julia,Python,R
+Type,Just-in-time (JIT) compiled,Interpreted,Functional and interpreted
+Runtime Speed (for each search test),0.32 s,40.75 s (with built-in lists),21.94 s
+Community,Smaller community than R.,Vast community with 15.7 million+ developers as of 2022,Smaller community than Python's with 2 million+ users as of 2023.
+Array Indexing,1-indexed array start,0-indexed array start,1-indexed array start
+Libraries,"Over 7,400 libraries as of 2022.","Over 137,000 libraries as of 2022.","Over 11,794 libraries as of 2022."
+Typing,"High-performance dynamically typed, with option to statically type.",Dynamically-typed,Strongly but dynamically typed
+Multiple-dispatch support,Native,With packages,Only by using the S4 system
+Downloaded,"35 million times as of Jan 1, 2022",NA,NA
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
