@@ -1,3 +1,3 @@
-pkgs = ["DataFrames", "Symbolics", "Plots", "CSV", "Pluto", "SparseArrays", "LinearAlgebra", "DifferentialEquations", "Distributions", "OhMyREPL", "BenchmarkTools", "IJulia"]
+pkgs = ["DataFrames", "Plots", "CSV", "Pluto", "PlutoUI", "IJulia", "TypeTree"]
 using Pkg
 Pkg.add(pkgs)
