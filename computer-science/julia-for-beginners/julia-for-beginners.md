@@ -10,62 +10,66 @@
 
 [![type](https://img.shields.io/static/v1?label=Type&message=blog&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/) [![category](https://img.shields.io/static/v1?label=Category&message=computer-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/computer-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Julia,%20VS%20Code,%20Pluto,%20JupyterLab,%20PowerShell%207&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/julia-for-beginners/)
 
-On our previous article, [What Is Julia, and Why It Matters?](https://pabloagn.com/blog/what-is-julia-and-why-it-matters/), we discussed why Julia is so relevant today, and made some comparisons between other similar languages such as Python and R. We also mentioned some of its main characteristics and features, and concluded with some next steps in order to get started programming on Julia. 
+In our previous article, [What Is Julia, and Why It Matters?](https://pabloagn.com/blog/what-is-julia-and-why-it-matters/), we discussed why Julia is so relevant today and made some comparisons between other similar languages, such as Python and R. We also mentioned some of its main characteristics and features, and concluded with some next steps to get started programming on Julia. 
 
-In this Blog Article, we'll install Julia along with an awesome [VS Code](https://pabloagn.com/technologies/vs-code/) extension that will make programming easier for us. We'll also take a look at two notebook environments:  [`Pluto.jl`](https://pabloagn.com/technologies/pluto/), a great Julia-specific notebook environment, and [JupyterLab](https://pabloagn.com/technologies/jupyter-lab/). We'll set up an environment, install some packages, and cover several practical examples, where we will perform a general overview of Julia's main functionalities. We will close this segment by giving some recommendations on how to use Julia as well as next steps for those interested in this exciting, bleeding-edge programming language.
+In this Blog Article, we'll install Julia and an awesome [VS Code](https://pabloagn.com/technologies/vs-code/) extension that will make programming easier for us. We'll also take a look at two notebook environments:  [`Pluto.jl`](https://pabloagn.com/technologies/pluto/), a great Julia-specific notebook environment, and [JupyterLab](https://pabloagn.com/technologies/jupyter-lab/). We'll set up an environment, install some packages, and cover several practical examples, where we will perform a general overview of Julia's main functionalities. We will close this segment by recommending how to use Julia and some helpful next steps for those interested in this exciting, bleeding-edge programming language.
 
-We'll be using Julia scripts and reactive notebooks which can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tree/master/computer-science/julia-for-beginners). Datasets can also be found in the [`datasets`](https://github.com/pabloagn/blog/tree/master/computer-science/julia-for-beginners/julia_project/datasets) repo folder.
+We'll be using Julia scripts and reactive notebooks, which can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tree/master/computer-science/julia-for-beginners). Datasets can also be found in the [`datasets`](https://github.com/pabloagn/blog/tree/master/computer-science/julia-for-beginners/julia_project/datasets) repo folder.
 
 ---
 
 # Table of Contents
-- What to expect
-- Installation
-	- Julia
-	- VS Code
-	- Julia VS Code extension
-- Configuring the JuliaMono Typeface
-- The Julia REPL
-- Creating a Working Environment from the REPL
-- Installing packages using pkg from the REPL
-- Getting familiar with the VS Code extension
-- Getting familiar with JupyterLab
-- Getting familiar with Pluto.jl
-	- Writing multiple lines on a single cell
-	- Inserting Markdown cells
-	- Using `PlutoUI`
-		- Creating reactive buttons
-- Basic syntax
-	- Comments
-	- Variables
-	- Print statements
-		- `print()`
-		- `println()`
-	- Data types
-		- Integer types
-		- Floating-point types
-		- Binary and octal types
-		- String and Character types
-			- String types
-			- Character types
-		- Boolean types
-	- Native data structures
-		- Tuples
-		- Ranges
-		- Arrays
-		- Pairs
-		- Dicts
-	- Mathematical operators
-	- Flow control
-		- Logical operators
-		- Conditionals
-		- For loop
-		- While loop
-	- Functions
-		- Defining a function
-		- Broadcasting
-		- Functions with a bang `!`
-- Next steps
+- [What to expect](#what-to-expect)
+- [Installation](#installation)
+	- [Julia](#1-julia)
+	- [VS Code](#2-vs-code)
+	- [Julia VS Code extension](#3-julia-vs-code-extension)
+- [Configuring the JuliaMono Typeface](#configuring-the-juliamono-typeface)
+- [The Julia REPL](#the-julia-repl)
+- [Creating a Working Environment from the REPL](#creating-a-working-environment-from-the-repl)
+- [Installing packages using pkg from the REPL](#installing-packages-using-pkg-from-the-repl)
+- [Getting familiar with the VS Code extension](#getting-familiar-with-the-vs-code-extension)
+	- [Using the Julia REPL inside VS Code](#1-using-the-julia-repl-inside-vs-code)
+	- [Workspace variables](#2-workspace-variables)
+- [Getting familiar with JupyterLab](#getting-familiar-with-jupyterlab)
+- [Getting familiar with Pluto.jl](#getting-familiar-with-plutojl)
+	- [Writing multiple lines on a single cell](#1-writing-multiple-lines-on-a-single-cell)
+	- [Inserting Markdown cells](#2-inserting-markdown-cells)
+	- [Using `PlutoUI`](#3-using-plutoui)
+		- [Creating reactive buttons](#31-creating-reactive-buttons)
+- [Basic syntax](#basic-syntax)
+	- [Comments](#1-comments)
+	- [Variables](#2-variables)
+	- [Print statements](#3-print-statements)
+		- [`print()`](#31-print)
+		- [`println()`](#32-println)
+	- [Data types](#4-data-types)
+		- [Integer types](#41-integer-types)
+		- [Floating-point types](#42-floating-point-types)
+		- [Binary and octal types](#43-binary-and-octal-types)
+		- [String and Character types](#44-string-and-character-types)
+			- [String types](#441-string-types)
+			- [Character types](#442-character-types)
+		- [Boolean types](#45-boolean-types)
+	- [Native data structures](#5-native-data-structures)
+		- [Tuples](#51-tuples)
+		- [Ranges](#52-ranges)
+		- [Arrays](#53-arrays)
+			- [Vectors](#531-vectors)
+			- [Matrices](#532-matrices)
+		- [Pairs](#54-pairs)
+		- [Dicts](#55-dicts)
+	- [Mathematical operators](#6-mathematical-operators)
+	- [Flow control](#7-flow-control)
+		- [Logical operators](#71-logical-operators)
+		- [Conditionals](#72-conditionals)
+		- [For loop](#73-for-loops)
+		- [While loop](#74-while-loops)
+	- [Functions](#8-functions)
+		- [Defining a function](#81-defining-a-function)
+		- [Broadcasting](#82-broadcasting)
+		- [Functions with a bang `!`](#83-functions-with-a-bang-)
+- [Next steps](#next-steps)
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -1431,14 +1435,14 @@ end
 [1, 2, 3, 4, 5, 6, 7]
 ```
 
-### 5.4 Arrays
+### 5.3 Arrays
 In Julia, there are no list objects as in Python. We instead have **arrays**. They are mutable, can be one-dimensional or multi-dimensional, and can hold multiple objects. 
 
 There are two main array subtypes in Julia:
 - Vectors
 - Matrices
 
-#### 5.4.1 Vectors
+#### 5.3.1 Vectors
 **Vectors** are one-dimensional objects that can be defined using brackets:
 
 ##### **Code**
@@ -1475,7 +1479,7 @@ Vector{Any} (alias for Array{Any, 1})
 
 When no supertype is given, the default supertype is `Any` – a predefined abstract type that all objects are instances of and all types are subtypes of. In type theory, `Any` is commonly called "top" because it is at the apex of the type graph.
 
-#### 5.4.Matrices
+#### 5.3.2 Matrices
 We can declare **matrices** via multiple ways.
 
 We can use a collection of vectors, nested inside brackets `[]` (*it's important to note that unlike Python, we're not using commas to separate each vector*):
@@ -1600,7 +1604,7 @@ end
 
 Arrays are the base for linear algebra not only in Julia, but also in many other languages such as Python (*by using `np.arrays`*). This is why there is a multitude of different methods we can use to manipulate these objects. We will not cover them in detail, but can be consulted in the [Julia's official documentation page](https://docs.julialang.org/en/v1/base/arrays/).
 
-### 5.5 Pairs
+### 5.4 Pairs
 **Pairs** hold two objects which typically belong to each other. They are similar to Python's dictionaries, but are limited to one single pair of objects. Pairs are specifically used in broadcasting operations, which we'll review further on.
 
 We can define a `Pair` by using the following notation:
@@ -1626,7 +1630,7 @@ My Number
 7
 ```
 
-### 5.6 Dicts
+### 5.5 Dicts
 Dicts are mappings from keys to values. By mapping, we mean that if you give a `Dict` some key, then the `Dict` can tell you which value belongs to that key. Dicts are mutable objects and accept multiple objects.
 
 We can define a `Dict` using the following syntax:
