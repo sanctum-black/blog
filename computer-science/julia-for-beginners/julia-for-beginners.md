@@ -361,7 +361,9 @@ If everything goes well, the plot should appear on a new window. It can also be 
 
 ##### **Output**
 
-![Image 02](https://pabloagn.com/wp-content/uploads/2023/02/plot_1.svg)
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/plot_1.svg">
+</p>
 
 ###### *Figure 2: A simple plot Created using the `Plots` package*
 
