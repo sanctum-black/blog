@@ -787,7 +787,9 @@ If we execute the code above for the first time, our variable will be instantiat
 
 We can now click on our defined button, and the cell will be referenced again, thereby running the code block we defined:
 
-![Image 11](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_11.png)
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/B009G013_11.png">
+</p>
 
 ###### *Figure 11: Toggling a button created using PlutoUI*
 
