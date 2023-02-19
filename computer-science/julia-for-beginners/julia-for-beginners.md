@@ -444,7 +444,9 @@ We can view our workspace variables by heading to the Julia menu in the left pan
 
 Julia VS Code extension has a built-in variable visualizer similar to Spyder. We can access any object by clicking the table icon at the right of the variable we wish to visualize:
 
-![Image 03](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_03.png)
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/B009G013_03.png">
+</p>
 
 ###### *Figure 3: Visualizing a variable in the VS Code object viewer*
 
@@ -458,7 +460,9 @@ To illustrate this, we'll create a very simple `.csv` file by heading to the *EX
 
 We'll then create a `.csv` file inside our `datasets` folder, and name it `test.csv`:
 
-![Image 05](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_05.png)
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/B009G013_05.png">
+</p>
 
 ###### *Figure 5: Creating a new CSV file in VS Code*
 
@@ -485,7 +489,9 @@ We can now head back to the Julia menu in the left panel, expand our *WORKSPACE*
 
 ##### **Output**
 
-![Image 06](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_06.png)
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/B009G013_06.png">
+</p>
 
 ###### *Figure 6: Table view in VS Code*
 
@@ -500,7 +506,9 @@ Upon execution, this method will automatically open our table in a new tab.
 
 This table view has some nice features we can take advantage of to visualize and explore a newly imported data set quickly. We can search, sort and filter by using the navigation buttons on each column header:
 
-![Image 07](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_07.png)
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/B009G013_07.png">
+</p>
 
 ###### *Figure 7: Search, sort & filter using the Table View in VS Code*
 
@@ -889,7 +897,9 @@ The character names are equivalent to [LaTeX](https://pabloagn.com/technologies/
 
 If we're unsure about a specific character's name, we can start typing the name that would make more sense and then hit <kbd>TAB</kbd>. Pluto will display the entire list of available characters, where we can select the one we're looking for:
 
-![Image 12](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_12.png)
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/B009G013_12.png">
+</p>
 
 ###### *Figure 12: "Heart" Unicode character suggestions presented by Pluto*
 
