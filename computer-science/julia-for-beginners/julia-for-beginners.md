@@ -77,53 +77,53 @@ We'll be using Julia scripts and reactive notebooks, which can be found in the 
 ---
 
 # What to expect
-This segment will heavily rely on VS Code since it's the IDE that is currently getting the most amount of support. Some time ago, [Juno](https://junolab.org/) was also well maintained, but efforts have now been transferred entirely to the VS Code extension. We will also use an extremely fun Julia-specific notebook environment called `Pluto.jl`, as well as the well-known JupyterLab. We will be using Microsoft Windows, but a similar installation process applies to other platforms such as macOS & Linux. The rest of the article can be easily translated for other platforms. Although Julia is a fairly new language and doesn't enjoy the vast IDE support that Python has (*yet*), we have limited options, but the options that do exist, are fantastic and well maintained.
+Although Julia is a relatively new language and doesn't enjoy the vast IDE support that Python has (*yet*), we have limited options, but the ones currently available are superb and well-maintained. This segment will heavily rely on VS Code since it's the IDE presently getting the most support. Some time ago, [Juno](https://junolab.org/) was also well maintained, but efforts have now been transferred entirely to the VS Code extension. We will also use an extremely fun Julia-specific notebook environment called `Pluto.jl`, as well as the well-known JupyterLab. We will be using Microsoft Windows, but a similar installation process applies to other platforms, such as macOS & Linux. The rest of the article can be easily translated for other platforms.
 
-Also, we'll assume there is at least some knowledge or background in some programming language since Julia, despite being simple, can get complex quickly; Python should do just fine, since they're very similar syntaxis-wise.
+Also, we'll assume there is at least some knowledge or background in some programming language since Julia, despite being syntactically simple, can get complex quickly; Python should do just fine since they're very similar syntaxis-wise.
 
-We will not explore all of Julia's functionalities in a rigorous way since there is too much to cover. Instead, we will go over a comprehensive set of hands-on examples in order to start programming in Julia from scratch.
+We will not rigorously explore all of Julia's functionalities since there is too much to cover. Instead, we will review a comprehensive set of hands-on examples to start programming in Julia from scratch.
 
 ---
 
 # Installation
-For this segment, we will need to install 4 main components:
+For this segment, we will need to install four main components:
 - The Julia programming language.
 - Visual Studio Code.
 - The Visual Studio Code Julia extension.
 - The JuliaMono typeface.
 
-We will also install some packages, but that will come later when we get to the `pkg` package manager.
+We will also install some packages, which will come later when we get to the `pkg` package manager.
 
 ## 1. Julia
-We will first install the latest stable release of the Julia programming language. For this, we can head to the official [Julia Lang website downloads page](https://julialang.org/downloads/). We will select the *Windows 64-bit (installer)*. Once we have it, we'll run the executable and follow the shown steps.
+We will first install the latest stable release of the Julia programming language. We can head to the official [Julia Lang website downloads page](https://julialang.org/downloads/). We will select the *Windows 64-bit (installer)*. Once we have it, we'll run the executable and follow the shown steps.
 
-It's important to add Julia to `PATH`, since this will ensure we can start the Julia REPL directly from our terminal without the need to specify the whole absolute path for the executable. This will be useful when creating our project environment and install some packages.
+Adding Julia to `PATH` is important since this will ensure we can start the Julia REPL directly from our terminal without specifying the whole absolute path for the executable. This will be useful when creating our project environment and installing some packages.
 
-If for some reason we missed this step, it's perfectly fine. We can simply follow the steps below:
+If we missed this step for some reason, that's perfectly fine. We can simply follow the steps below:
 1. Open Windows Run by using <kbd>Windows Key</kbd> + <kbd>R</kbd>.
 2. Type `rundll32 sysdm.cpl,EditEnvironmentVariables` and hit <kbd>Enter</kbd>.
 3. Head to user variables.
 4. Find the `Path` variable.
 5. Click *Edit*, and then click *New*. 
-6. Depending if the installation was performed using administrator permissions or not, we will need to find the Julia executable either in `C:\Program Files (x86)\Julia-1.8.3\bin`, or `C:\Users\ourusername\AppData\Local\Programs\Julia-1.8.5\bin`.
-7. Copy the corresponding absolute path and paste it directly in the new `Path` entry.
+6. Depending on whether the installation was performed using administrator or user-wide permissions, we will need to find the Julia executable either in `C:\Program Files (x86)\Julia-1.8.3\bin`, or `C:\Users\ourusername\AppData\Local\Programs\Julia-1.8.5\bin`.
+7. Copy the corresponding absolute path and paste it directly into the new `Path` entry.
 8. Click *OK* twice.
 9. make sure that Julia was added to `Path` by opening the Windows Terminal and typing `Julia`. If everything went smoothly, this command should open the Julia REPL. We can verify this by typing `VERSION` inside the REPL. This should return the version we installed.
 
 ## 2. VS Code
-If we don't yet have VS Code installed, we can get it from the [official downloads page](https://code.visualstudio.com/download). We need to select the Windows 8, 10, 11 executable and wait for it to download. When the installation is complete, we can verify by opening the Visual Studio Code application directly from the Windows start menu. A detailed configuration guide for VS Code is out of the scope of this article, but can be consulted in the [VS Code official documentation site](https://code.visualstudio.com/docs).
+If we don't yet have VS Code installed, we can get it from the [official downloads page](https://code.visualstudio.com/download). We need to select the Windows 8, 10, 11 executable and wait for it to download. When the installation is complete, we can verify by opening the Visual Studio Code application directly from the Windows start menu. A detailed configuration guide for VS Code is out of the scope of this article but can be consulted on the [VS Code official documentation site](https://code.visualstudio.com/docs).
 
 ## 3. Julia VS Code extension
 Once we have Julia and VS Code installed, we will proceed to install the Julia VS Code Extension:
-1. Open VS code and head to the Extensions menu located in the left panel. We can also open the Extensions menu by using the shortcut <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>, or by opening the command palette by typing <kbd>F1</kbd> and searching for *Extensions: Install Extensions*.
-2. We will then search for Julia, maintained by *julialang*, install it, and enable it. We can also get the extension by using [this link](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia).
+1. Open VS code and head to the Extensions menu in the left panel. We can also open the Extensions menu by using the shortcut <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> or by opening the command palette by typing <kbd>F1</kbd> and searching for *Extensions: Install Extensions*.
+2. We will search for Julia, maintained by *julialang*, install it, and enable it. We can also get the extension by using [this link](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia).
 
 Now that everything's in place, we're ready to start configuring our working environment.
 
 ---
 
 # Configuring the JuliaMono Typeface
-We mentioned the JuliaMono typeface in the last Julia article because it fits perfectly with Julia's scientific philosophy and syntactic style. We will install the font family and make some ligature adjustments so that we have exactly what we want.
+We mentioned the JuliaMono typeface in the last Julia article because it fits perfectly with Julia's scientific philosophy and syntactic style. We will install the font family and make ligature adjustments to have exactly what we want.
 
 To begin, we will head to the [official JuliaMono Typeface website](https://juliamono.netlify.app/). There, we will see all the documentation available for this package. Now that we know more about this awesome font family, we will need to follow the steps below:
 
@@ -131,18 +131,18 @@ To begin, we will head to the [official JuliaMono Typeface website](https://juli
 2. Look for the `juliamono-ttf.zip` file and download it.
 3. Extract the `.zip` file contents.
 4. Open the Fonts menu by using <kbd>Windows Key</kbd> + <kbd>R</kbd>, and typing fonts.
-5. Select and drag all the extracted `.ttf` files to the *Fonts* folder and wait for installation to conclude.
+5. Select and drag all the extracted `.ttf` files to the *Fonts* folder and wait for the installation to conclude.
 6. Once we have the fonts installed, we will head to VS Code, open the command palette with <kbd>R</kbd>, and look for *Preferences: Open Settings (UI)*.
 7. We will then search for the *Font Family* option, and locate the *Editor: Font Family* setting.
 8. We will change whichever font we had previously designated for `JuliaMono` (*no spaces in between*).
-9. We will then close the settings, and open the VS Code command palette again. We will now search for Preferences: Open User Preferences (JSON)
+9. We will then close the settings and open the VS Code command palette again. We will now search for Preferences: Open User Preferences (JSON)
 10. We will be presented with a JSON file which handles user-wide VS Code configuration parameters.
 
-Depending if we have already configured something beforehand, we will be presented with different settings. We will need to add an additional JSON entry called `editor.fontLigatures`. Font ligatures are glyphs that combine the shapes of certain sequences of characters into a new form that make for a more harmonious reading experience. A common example is the *fi* ligature, which combines a lowercase *f* and a lowercase *i* into a single glyph so that the shoulder of the *f* doesn’t clash with the dot of the *i*.
+Depending if we have already configured something beforehand, we will be presented with different settings. We will need to add an additional JSON entry called `editor.fontLigatures`. Font ligatures are glyphs that combine the shapes of specific sequences of characters into a new form that makes for a more harmonious reading experience. A typical example is the *fi* ligature, which combines a lowercase *f* and a lowercase *i* into a single glyph so that the shoulder of the *f* doesn’t clash with the dot of the *i*.
 
-The JuliaMono typeface has a selection of ligatures we can choose to enable or not, depending on out specific taste. For the full set of ligatures, we can head to [cormullion's blog](https://cormullion.github.io/pages/2020-07-26-JuliaMono/#contextual_and_stylistic_alternates_and_ligatures). There, we will be presented with all the options we can add, along with some examples.
+The JuliaMono typeface has a selection of ligatures we can choose to enable or not, depending on our specific taste. For the complete set of ligatures, we can head to [cormullion's blog](https://cormullion.github.io/pages/2020-07-26-JuliaMono/#contextual_and_stylistic_alternates_and_ligatures). There, we will be presented with all the options we can add, along with some examples.
 
-We will have to select the ligature codes we're interested in, and set them in our user configuration file we previously opened:
+We will have to select the ligature codes we're interested in and set them in the user configuration file we previously opened:
 
 ```JSON
 "editor.fontLigatures": "'zero', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss11', 'ss12', 'ss13', 'ss14', 'ss15', 'ss20'"
@@ -153,13 +153,13 @@ We can now save our JSON file and close it.
 ---
 
 # The Julia REPL
-The Julia REPL (*Read-Eval-Print-Loop*) is Julia's shell, which we'll be using extensively in order to configure our environment and download packages.
+The Julia REPL (*Read-Eval-Print-Loop*) is Julia's shell, which we'll use extensively to configure our environment and download packages.
 
 We can access the REPL using two methods:
 - By calling it from PowerShell
 - By using it from within VS Code (*we'll review this later on*)
 
-To open it from PowerShell, we can simply type Julia:
+To open it from PowerShell, we can type Julia:
 
 ##### **Code**
 ```PowerShell
@@ -185,7 +185,7 @@ We can exit the Julia REPL by typing `exit()`.
 ---
 
 # Creating a Working Environment from the REPL
-The first thing we'll do before we install our packages, is set up a working environment (*similar to a Python virtual environment*). For this, we will head to our working folder:
+The first thing we'll do before we install our packages is set up a working environment (*similar to a Python virtual environment*). For this, we will head to our working folder:
 
 ##### **Code**
 ```PowerShell
@@ -223,7 +223,7 @@ greet() = print("Hello World!")
 end # module julia_project
 ```
 
-We can then head back to VS Code, select *File*, *Open Folder*, and select our environment folder. We can make sure that we're using the correct environment by opening the VS Code command palette and selecting the *Julia: Change Current Environment* option. this will display all the Julia environments we have currently set up. We can just select the environment name we just created, and it will be set as default for this folder automatically (*if it has not already done so*).
+We can then head back to VS Code, select *File*, *Open Folder*, and choose our environment folder. We can ensure we're using the right environment by opening the VS Code command palette and selecting the *Julia: Change Current Environment* option. This will display all the Julia environments we have currently set up. We can select the environment name we just created, and it will automatically be set as default for this folder (*if it has not already done so*).
 
 We can make a simple test by opening our `julia_project.jl` file, deleting the existing contents, typing some code, and executing it:
 
@@ -237,14 +237,14 @@ println("This is our first Julia Project!!")
 This is our first Julia Project!!
 ```
 
-We can then proceed to install some packages.
+We can then proceed to install some useful packages.
 
 ---
 
 # Installing packages using pkg from the REPL
 Julia uses its own package manager called `pkg`. It's installed by default on all Julia releases.
 
-We may notice that once we're inside `pkg` and inside our project folder, we see that the environment is not active by looking at the left prompt. Before installing our packages, we must activate our environment, else the packages will get installed on the default version and not in the environment we want. For this, we will type the following inside `pkg`:
+We may notice that once we're inside `pkg` and inside our project folder, the environment is not active by default (_the left prompt will display our current environment_). Before installing our packages, we must activate our environment; otherwise, the packages will be installed in the global environment rather than in the one we just created. For this, we will type the following inside `pkg`:
 
 ##### **Code**
 ```Julia
@@ -255,18 +255,17 @@ activate .
 ```
 Activating new project at `C:\Users\username\Documents\computer-science\julia-for-beginners`
 ```
-
 We are now inside our environment and ready to start installing the packages we'll use throughout this segment.
 
 Installing packages in Julia is extremely simple. There are two main ways we can follow:
-- We can directly use the `pkg` package manager from the Julia REPL by typing the right bracket <kbd>]</kbd> symbol. we can then install a package:
+- We can directly use the `pkg` package manager from the Julia REPL by typing the right bracket <kbd>]</kbd> symbol. We can then install a package:
 
 ##### **Code**
 ```Julia
 add package_name
 ```
 
-- We can also call `pkg` from within a Julia script or the Julia REPL, without having to enter `pkg` :
+- We can also call `pkg` from within a Julia script or the Julia REPL without having to enter `pkg` :
 
 ##### **Code**
 ```Julia
@@ -274,7 +273,7 @@ using Pkg
 Pkg.add("Package Name")
 ```
 
-Note that for the first option we don't enclose our `package_name` in quotes, while with the second approach, we do need to enclose the package name in quotes.
+Note that for the first option, we don't enclose our `package_name` in quotes, while with the second approach, we do need to enclose the package name in quotes.
 
 Let us now install the `DataFrames` package directly from `pkg` inside the Julia REPL.
 
@@ -289,13 +288,13 @@ Precompiling project...
   9 dependencies successfully precompiled in 37 seconds. 18 already precompiled.
 ```
 
-Once we install our first package, a new file named `Manifest.toml` will be created. This file is important since it will contain all of the packages currently installed, along with their dependencies, UUIDs and versions.
+Once we install our first package, a new file named `Manifest.toml` will be created. This file is important since it will contain all the currently installed packages, their dependencies, UUIDs and versions.
 
-To install multiple packages at once, we can use a Julia script which calls `Pkg` and installs the required packages. For this, we'll create a new `packages.jl` file inside our environment. We will then include the following, and run it:
+To install multiple packages at once, we can use a Julia script which calls `Pkg` and installs the required packages. We'll create a new `packages.jl` file inside our environment. We will then include the following and run it:
 
 ##### **Code**
 ```Julia
-pkgs = ["DataFrames", "Plots", "CSV", "Pluto", "PlutoUI", "IJulia", ""]
+pkgs = ["DataFrames", "Plots", "CSV", "Pluto", "PlutoUI", "IJulia", "TypeTree"]
 
 using Pkg
 
@@ -309,17 +308,18 @@ The following packages will be installed:
 - `Pluto`
 - `PlutoUI`
 - `IJulia`
+- `TypeTree`
 
-This will take some time, since Julia first needs to download the packages if we still don't have them in our local machine and the precompile them. This is another way of using the `Pkg` library; calling it from inside a Julia script instead of installing from `pkg` using the REPL.
+This will take some time since Julia first needs to download the packages if we still don't have them in our local machine and then precompile them.
 
-In the end, we should get a similar output:
+In the end, we should get a similar output as the one below:
 
 ##### **Output**
 ```
 66 dependencies successfully precompiled in 235 seconds. 396 already precompiled.
 ```
 
-We can test that our required packages were installed by closing the `packages.jl` script, going back to our `julia_project.jl` file, and loading a couple of random package by using the `using` command. This imports our required packages and makes then available for our session:
+We can test that our required packages were installed by closing the `packages.jl` script, going back to our `julia_project.jl` file, and loading a couple of random packages by using the `using` command. This imports our required packages and makes them available for our session:
 
 ##### **Code**
 ```Julia
@@ -336,7 +336,7 @@ z = round.(y, digits=4)
 print(z)
 ```
 
-Alternatively, we can also import our packages using commas:
+Alternatively, we can also import our packages using commas `,`:
 
 ##### **Code**
 ```Julia
@@ -352,7 +352,7 @@ z = round.(y, digits=4)
 print(z)
 ```
 
-If everything went well, the plot should appear on a new window. It can also be accessed by heading to the Julia Extension menu in the left panel, and expanding the *PLOT NAVIGATOR* menu. we should have our first plot figure `plot_01` there. We can click on it and it will display.
+If everything goes well, the plot should appear on a new window. It can also be accessed by heading to the Julia Extension menu in the left panel and expanding the *PLOT NAVIGATOR* menu. We should have our first plot figure, `plot_01`. We can click on it, and it will display.
 
 ##### **Output**
 ```
@@ -365,7 +365,7 @@ PLOT_1
 
 ###### *Figure 2: A simple plot Created using the `Plots` package*
 
-To uninstall a package from our current environment, we can go to our environment's Julia REPL, and type the following:
+To uninstall a package from our current environment, we can go to our environment's Julia REPL and type the following:
 
 ##### **Code**
 ```Julia
@@ -392,7 +392,7 @@ Pkg.resolve()
 
 This command will rebuild our `Manifest.toml` file if a conflict is found.
 
-An extremely useful command when working with environments, is the `instantiate` command. What it does is instantiate all the necessary dependencies located on a given `Manifest.toml` file. On simpler terms, we can clone a Julia repository containing a `Manifest.toml` file; the `instantiate` command will install all dependencies required for the project found on `Manifest.toml`.
+When working with environments, the `instantiate` command is a handy tool. It will install all dependencies required for the project on `Manifest.toml`. In simpler terms, we can clone a Julia repository containing a `Manifest.toml` file and run this command; it will install all the packages required for the project.
 
 We can execute this command directly from our environment's Julia REPL:
 
@@ -424,13 +424,13 @@ The complete official documentation can be found [here](https://www.julia-vscode
 
 ## 1. Using the Julia REPL inside VS Code
 
-We can start by opening a Julia REPL that already has our active environment by opening the VS Code command palette and selecting *Julia: Start REPL*. We can also do this directly by using the <kbd>alt</kbd> + <kbd>j</kbd> + <kbd>o</kbd> (*julia open*) key combination.  We can confirm that we're using our current environment by entering into `pkg` using the right bracket <kbd>]</kbd>; our environment will display on the REPL prompt. This method knows which Julia environment to use by looking at the `Project.toml` & `Manifest.toml` files inside our current folder. If it finds none, it will default to the global Julia environment.
+We can open a Julia REPL that already has our active environment by opening the VS Code command palette and selecting *Julia: Start REPL*. We can also do this directly by using the <kbd>alt</kbd> + <kbd>j</kbd> + <kbd>o</kbd> (*Julia open*) key combination.  We can confirm that we're using our current environment by entering into `pkg` using the right bracket <kbd>]</kbd>; our environment will display on the REPL prompt. This method knows which Julia environment to use by looking at the `Project.toml` & `Manifest.toml` files inside our current folder. If it finds none, it will default to the global Julia environment.
 
-We can directly run a script in the current environment REPL by using the <kbd>ctrl</kbd> + <kbd>F5</kbd> key combination. To clear our REPL we simply use the <kbd>ctrl</kbd> + <kbd>l</kbd> key combination. We can also directly input commands into the environment REPL and they will run.
+We can directly run a script in the current environment REPL by using the <kbd>ctrl</kbd> + <kbd>F5</kbd> key combination. To clear our REPL, we use the <kbd>ctrl</kbd> + <kbd>l</kbd> key combination. We can also directly input commands into the environment REPL, and they will run.
 
-If we would like to run a single code selection, we can select the code we'd like to run, and use the <kbd>ctrl</kbd> + <kbd>shift</kbd> key combination. This is very useful since we don't have to run the entire script, as previously defined variables will not get deleted upon execution.
+If we would like to run a single code selection, we can select the code we'd like to run and use the <kbd>ctrl</kbd> + <kbd>shift</kbd> key combination. This is very useful since we don't have to run the entire script, as previously defined variables will not get deleted upon execution.
 
-We can also run a Julia script directly from our Windows terminal inside VS Code. The catch here is that we will need to specify an additional `--project` parameter in order for the correct environment REPL to execute our script. Otherwise, the script will be executed by the global Julia environment:
+We can also run a Julia script directly from our Windows terminal inside VS Code. The catch is that we will need to specify an additional `--project` parameter for the correct environment REPL to execute our script. Otherwise, the script will be executed by the global Julia environment:
 
 ##### **Code**
 ```PowerShell
@@ -438,8 +438,7 @@ julia --project .\julia_project.jl
 ```
 
 ## 2. Workspace variables
-
-We can view our workspace variables by heading to the Julia menu in the left panel, expanding the *WORKSPACE* tab, and expanding the *Julia REPL* tab. This tab will show us all the imported packages for the current session as well as all the defined variables.
+We can view our workspace variables by heading to the Julia menu in the left panel, expanding the *WORKSPACE* tab, and expanding the *Julia REPL* tab. This tab will show us all the imported packages for the current session and all the defined variables.
 
 Julia VS Code extension has a built-in variable visualizer similar to Spyder. We can access any object by clicking the table icon at the right of the variable we wish to visualize:
 
@@ -447,9 +446,9 @@ Screenshot_03
 
 ###### *Figure 3: Visualizing a variable in the VS Code object viewer*
 
-The beauty of this method, is that it works for variables as well as tables.
+The beauty of this method is that it works for variables and tables.
 
-To illustrate this, we'll create a very simple `.csv` file by heading to the *EXPLORER* tab on the left panel, and clicking on *New Folder...*, and naming it `datasets`:
+To illustrate this, we'll create a very simple `.csv` file by heading to the *EXPLORER* tab on the left panel, clicking on *New Folder...*, and naming it `datasets`:
 
 Screenshot_04
 
@@ -461,7 +460,7 @@ Screenshot_05
 
 ###### *Figure 5: Creating a new CSV file in VS Code*
 
-We will then open this file and populate it with the following:
+We will open this file and populate it with the following:
 
 ##### **Code**
 ```CSV
@@ -471,7 +470,7 @@ Mary, 25, Astronaut
 Paul, 27, Writer
 ```
 
-We will now read the CSV file into a DataFrame object. We already have the two required packages installed so we'll only need to import them to our current session:
+We will now read the CSV file into a DataFrame object. We already have the two required packages installed, so we'll only need to import them to our current session:
 
 ##### **Code**
 ```Julia
@@ -497,7 +496,7 @@ vscodedisplay(df_1)
 
 Upon execution, this method will automatically open our table in a new tab.
 
-This table view has some nice features which we can take advantage in order to quickly visualize and explore a newly imported data set. We can search, sort and filter by using the navigation buttons on each column header:
+This table view has some nice features we can take advantage of to visualize and explore a newly imported data set quickly. We can search, sort and filter by using the navigation buttons on each column header:
 
 Screenshot_07
 
@@ -506,7 +505,7 @@ Screenshot_07
 ---
 
 # Getting familiar with JupyterLab
-As we mentioned earlier, Julia supports two main notebook environments: JupyterLab & `Pluto.jl`. JupyterLab is very popular among Data Scientists & Data Analysts and supports a variety of languages.
+As mentioned earlier, Julia supports two primary notebook environments: JupyterLab & `Pluto.jl`. JupyterLab is very popular among Data Scientists & Data Analysts and supports various languages.
 
 If we recall the package installation segment above, we already added a package named `IJulia` to our environment. This package provides a Julia kernel for JupyterLab.
 
@@ -525,21 +524,21 @@ Screenshot_08
 
 ###### *Figure 8: JupyterLab session*
 
-We can create a new Julia notebook and rename it as `julia_project.ipynb`, and test that we created this session under our target working environment by importing a package we already installed:
+We can create a new Julia notebook, rename it as `julia_project.ipynb` and confirm that we started this session under our target working environment by importing a package we already installed:
 
 ##### **Code**
 ```Julia
 using CSV
 ```
 
-A detail guide on using JupyterLab is out of the scope of this article. Still, the [official documentation](https://jupyterlab.readthedocs.io/en/stable/) is extremely helpful for those looking to dive deeper into this awesome environment.
+A detailed guide on using JupyterLab is out of the scope of this article. Still, the [official documentation](https://jupyterlab.readthedocs.io/en/stable/) is extremely helpful for those looking to dive deeper into this awesome notebook environment.
 
-Once that we have our session and notebook ready, we can practically use it as we would use it with any other programming language.
+Once our session and notebook are ready, we can practically use them as we would with any other programming language.
 
 ---
 
 # Getting familiar with Pluto.jl
-The other notebook environment we will discuss in this article, is [`Pluto.jl`](https://plutojl.org/). It's Julia-specific, extremely fun to use, has a minimal interface, and shares a lot of similarities with JupyterLab.
+The other notebook environment we will discuss in this article is [`Pluto.jl`](https://plutojl.org/). It's Julia-specific, extremely fun to use, has a minimal interface, and shares many similarities with JupyterLab.
 
 `Pluto` can be installed using `pkg`. We can also complement our installation by getting the `PlutoUI` package; it will provide some additional `html"<input>"` functionalities.  Since we already did this, we can head to our environment's Julia REPL, and import the `Pluto` package:
 
@@ -555,7 +554,7 @@ We will then run the package:
 Pluto.run()
 ```
 
-Upon execution, a new Pluto session will be created and launched in our system's default browser:
+Upon execution, a new `Pluto` session will be created and launched in our system's default browser:
 
 ##### **Output**
 ```
@@ -582,9 +581,9 @@ As with JupyterLab, we will make sure we have installed `Pluto` in the correct e
 using PlutoUI
 ```
 
-After this command, we will need to restart our Pluto instance, since it will reload with additional UI features enabled.
+After this command, we will need to restart our Pluto instance since it will reload with additional UI features enabled.
 
-We can display the Shortcuts menu by using the <kbd>F1</kbd> shortcut. The relevant shortcuts we will use in this segment will be:
+We can display the Shortcuts menu using the <kbd>F1</kbd> shortcut. The relevant shortcuts we will use in this segment will be:
 - <kbd>Shift</kbd> + <kbd>Enter</kbd>: Run cell
 - <kbd>Ctrl</kbd> + <kbd>Enter</kbd>: Run cell and add cell below
 - <kbd>Del</kbd> or <kbd>Backspace</kbd>: Delete empty cell
@@ -632,7 +631,7 @@ end
 HelloWorld
 ```
 
-Or we can also include each new line in a different cell:
+Conversely we can include each new line in a different cell:
 
 ##### **Code**
 ```Julia
@@ -653,7 +652,7 @@ HelloWorld
 ```
 
 ## 2. Inserting Markdown cells
-As with JupyterLab, `Pluto` has the ability to add Markdown cells. To insert a Markdown cell, we can add a new cell and use the <kbd>ctrl</kbd> + <kbd>m</kbd> keyboard shortcut:
+As with JupyterLab, `Pluto` supports Markdown cells. To insert a Markdown cell, we can add a new cell and use the <kbd>ctrl</kbd> + <kbd>m</kbd> keyboard shortcut:
 
 ##### **Code**
 ```Julia
@@ -682,7 +681,7 @@ Screenshot_10
 ###### *Figure 10: Hiding Markdown code*
 
 ## 3. Using PlutoUI
-We mentioned that `PlutoUI` brings in interesting UI functionalities to a `Pluto` notebook. 
+We mentioned that `PlutoUI` brings interesting UI functionalities to a `Pluto` notebook. 
 
 We can display all of `PlutoUI` methods:
 
@@ -748,9 +747,9 @@ varinfo(PlutoUI)
 ###### *Table 1: Available PlutoUI methods*
 
 ### 3.1 Creating reactive buttons
-We see that we have a `Button` method available. We can create a new button object and then assign a macro to it, so that we can use it to interact with our notebook in multiple ways:
+We see that we have a `Button` method available. We can create a new button object and then assign a macro to it so that we can use it to interact with our notebook in multiple ways:
 
-Let us define a button, and bind it to a variable `my_var`:
+Let us define a button and bind it to a variable `my_var`:
 
 ##### **Code**
 ```Julia
@@ -768,14 +767,14 @@ data = let
 end
 ```
 
-If we execute the code above for the first time, our variable will be set:
+If we execute the code above for the first time, our variable will be instantiated:
 
 ##### **Output**
 ```
 🖤[0.7841, 0.4072]🖤
 ```
 
-We can now click our defined button, and the cell will be referenced again, thereby running the code block we defined:
+We can now click on our defined button, and the cell will be referenced again, thereby running the code block we defined:
 
 Screenshot_11
 
@@ -801,12 +800,12 @@ When we select William Shakespeare, he properly introduces himself:
 Hi, I'm William Shakespeare
 ```
 
-As we can imagine, there is a wide number of instances where these reactive objects could be useful. One such example would be flow control, where we could define breakpoints within a function. Another great application would be for debugging purposes, or we could also use buttons for displaying visuals dynamically. 
+As we can imagine, there are many instances where these reactive objects could be useful. One such example would be flow control, where we could define breakpoints within a function. Another great application would be for debugging purposes, or we could also use buttons for dynamically displaying visuals.
 
 ---
 
 # Basic syntax
-Now that we have some tools in our hands, we can start reviewing the basic Julia syntax. We will find that there are a lot of similarities with Python syntax, and that's because Python is extremely easy to write, thus the Julia philosophy inherited a wide range of syntactic elements from it.
+Now that we have some tools in our hands, we can start reviewing the basic Julia syntax. We will find many similarities with Python syntax; that's because Python is extremely easy to write, and Julia inherited a wide range of syntactic elements from it.
 
 For this section, we will create a new Pluto notebook and name it `basic_syntax.jl`.
 
@@ -830,7 +829,7 @@ my_var = 3.1416 # This is Pi
 ```
 
 ## 2. Variables
-We can define **variables** by simply using the equal `=` sign:
+We can define **variables** by using the equal `=` sign:
 
 ##### **Code**
 ```Julia
@@ -862,7 +861,7 @@ Hello World
 30
 ```
 
-We need to be careful when assigning variables; *e.g. if we define the `+` operator as a new variable, we will overwrite the actual `Base:.+` method, and will start getting all kinds of errors, additional to being extremely hard to debug*. We must keep reserved characters in mind, since Julia will not throw errors if we reassign them.
+We need to be careful when assigning variables; *e.g. if we define the `+` operator as a new variable, we will overwrite the actual `Base:.+` method and start getting all kinds of errors, additional to being extremely hard to debug*. We must remember reserved characters since Julia will not throw errors if we reassign them.
 
 If we messed up and assigned a reserved name to a variable, we can reset it to its Base method:
 
@@ -871,7 +870,7 @@ If we messed up and assigned a reserved name to a variable, we can reset it to i
 + = Base.:+
 ```
 
-If we recall, we can use Unicode characters as variable names in Julia. Of course, it's tedious to always refer to a Unicode character cheatsheet, copy and then paste the required character. With Julia, we can simply use the backslash `\` character followed by the character name we're looking for, and hit <kbd>TAB</kbd>. This will automatically insert the Unicode character:
+If we recall, we can use Unicode characters as variable names in Julia. Of course, it's tedious to always refer to a Unicode character cheat sheet and copy and paste the required character. With Julia, we can simply use the backslash `\` character followed by the character name we're looking for and hit <kbd>TAB</kbd>. This will automatically insert the Unicode character:
 
 ##### **Code**
 ```Julia
@@ -885,7 +884,7 @@ If we recall, we can use Unicode characters as variable names in Julia. Of cours
 
 The character names are equivalent to [LaTeX](https://pabloagn.com/technologies/latex/) names, so if we're already familiar with LaTeX syntax, we should feel right at home.
 
-If we're not sure about a specific character's name, we can start typing the name that would make more sense, and then hit <kbd>TAB</kbd>. Pluto will display the entire list of available characters, where we can simply select the one we're looking for:
+If we're unsure about a specific character's name, we can start typing the name that would make more sense and then hit <kbd>TAB</kbd>. Pluto will display the entire list of available characters, where we can select the one we're looking for:
 
 Screenshot_12
 
@@ -949,14 +948,14 @@ end
 0.5772
 ```
 
-There are more printing methods available, but we're not going to dive deeper since the two that we mentioned will suffice for almost any situation.
+There are more printing methods available, but we're not going to dive deeper since the two we mentioned will suffice for almost any situation.
 
 ## 4. Data types
-Julia’s type system is **dynamic** but gains some of the advantages of static type systems by making it possible to indicate that certain values are of specific types.
+Julia's type system is **dynamic** but gains some of the advantages of static type systems by making it possible to indicate that certain values are of specific types.
 
-Julia has a wide variety of types, which in turn can be classified into supertypes or subtypes, depending on the hierarchy level our data type is located in.
+Julia has a wide variety of types, which can be classified into supertypes or subtypes, depending on the hierarchy of our data type.
 
-We can view Julia's `Signed` types in an ASCII tree-like structure, by using the `TypeTree.jl` package:
+We can view Julia's `Signed` types in an ASCII tree-like structure by using the `TypeTree.jl` package:
 
 ##### **Code**
 ```Julia
@@ -1051,7 +1050,7 @@ Any
  ...
 ```
 
-We can see that there are multiple data types in Julia. We will only review the most used ones:
+There are multiple data types in Julia. We will only review the most used ones:
 
 ### 4.1 Integer types
 Julia has a total of 10 integer subtypes, where 5 of them are signed, and 5 are unsigned:
@@ -1072,7 +1071,7 @@ Julia has a total of 10 integer subtypes, where 5 of them are signed, and 5 are 
 
 ###### *Table 2: Integer types, Extracted from Julia's [Official Documentation](https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/)*
 
-We can define a variable and declare it as `Int32` type, by using double colon `::` after the variable definition: 
+We can define a variable and declare it as `Int32` type by using double colon `::` after the variable definition: 
 
 ##### **Code**
 ```Julia
@@ -1103,7 +1102,7 @@ d isa Int64
 true
 ```
 
-If we require, we can convert or promote an existing variable data type to a different type by using the `convert` method. In this example, we convert from `Int64` to its unsigned version:
+We can convert or promote an existing variable data type to a different type using the `convert` method if required. In this example, we convert from `Int64` to its unsigned version:
 
 ##### **Code**
 ```Julia
@@ -1116,7 +1115,7 @@ If we require, we can convert or promote an existing variable data type to a dif
 ```
 
 ### 4.2 Floating-point types
-Julia has 3 different floating-point types, depending on the maximum number bits they accept:
+Julia has three different floating-point types depending on the maximum number of accepted bits:
 
 | Type                                                                     | Precision                                                                      | Number of bits |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | -------------- |
@@ -1126,7 +1125,7 @@ Julia has 3 different floating-point types, depending on the maximum number bits
 
 ###### *Table 3: Floating-point types, Extracted from Julia's [Official Documentation](https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/)*
 
-We can define a new variable, and set its type to `Float64`, even if our initial declaration doesn't have decimals:
+We can define a new variable and set its type to `Float64`, even if our initial declaration doesn't have decimal precision:
 
 ##### **Code**
 ```Julia
@@ -1178,7 +1177,7 @@ String types are defined by enclosing the value in double quotes `""`:
 σ = "This is the greek letter sigma"
 ```
 
-Note that we mentioned double quotes `""` and not single quotes `''`. This is because unlike Python, single quotes are used to define **characters** and not strings. We'll discuss character objects in a moment.
+Note that we mentioned double quotes `""` and not single quotes `''`. This is because, unlike Python, single quotes are used to define **characters** and not strings. We'll discuss character objects in a moment.
 
 ##### **Code**
 ```Julia
@@ -1202,7 +1201,7 @@ As with Python, we can index a string and return a substring:
 "greek"
 ```
 
-We can also index a single element, but the returned object will be different:
+We can also index a single element, but the returned object will be of a different type:
 
 ##### **Code**
 ```Julia
@@ -1214,7 +1213,7 @@ We can also index a single element, but the returned object will be different:
 'T': ASCII/Unicode U+0054 (category Lu: Letter, uppercase)
 ```
 
-We can see that instead of returning a String type, this operation returned a character type.
+Instead of returning a String type, this operation returned a character type.
 
 ##### **Code**
 ```Julia
@@ -1227,7 +1226,7 @@ Char
 ```
 
 #### 4.4.2 Character types
-**Character objects** (*`Char`*) are 32-bit primitive data types. They have a special literal representation and appropriate arithmetic behaviour. They can also can be converted into numeric values that represent a Unicode code point.
+**Character objects** (*`Char`*) are 32-bit primitive data types. They have a special literal representation and appropriate arithmetic behaviour. They can also be converted into numeric values representing a Unicode code point.
 
 We can define a `Char` by using single quotes `''`:
 
@@ -1241,7 +1240,7 @@ my_char = 'π'
 my_char = 'π': Unicode U+03C0 (category Ll: Letter, lowercase)
 ```
 
-This is telling us the Unicode representation for $\pi$. If we perform a Google Search, we can see that in fact, `U+03C0` is the Unicode representation of $\pi$.
+This tells us the Unicode representation for $\pi$. If we perform a Google Search, we can see that, in fact, `U+03C0` is the Unicode representation of $\pi$.
 
 Unicode characters can also be represented numerically. We can convert a `Char` object to its `Int` representation:
 
@@ -1265,9 +1264,9 @@ Char
 Int64
 ```
 
-If we perform a [Google Search](https://www.techonthenet.com/unicode/chart.php), we can see that the numeric representation of the `?` Unicode character, is in fact 63, and our new data type is `Int64`.
+If we perform a [Google Search](https://www.techonthenet.com/unicode/chart.php), we can see that the numeric representation of the `?` Unicode character is, in fact, 63, and our new data type is `Int64`.
 
-We can convert our numerical representation to a `Char` type by performing the inverse operation:
+We can convert our numerical representation back to a `Char` type by performing the inverse operation:
 
 ##### **Code**
 ```Julia
@@ -1279,10 +1278,10 @@ Char(my_int_char)
 '?': ASCII/Unicode U+003F (category Po: Punctuation, other)
 ```
 
-There are multiple string & character methods we can use, such as unions, concatenations, interpolations, repetitions, conversions, and advanced [regex](https://en.wikipedia.org/wiki/Regular_expression) techniques. We will not explore all the possibilities; the complete documentation can be consulted [here](https://docs.julialang.org/en/v1/base/strings/).
+We can use multiple string & character methods such as unions, concatenations, interpolations, repetitions, conversions, and advanced [regex](https://en.wikipedia.org/wiki/Regular_expression) techniques. We will not explore all the possibilities; the complete documentation can be consulted [here](https://docs.julialang.org/en/v1/base/strings/).
 
 ### 4.5 Boolean types
-Boolean types can be defined by declaring them using lowercase letters:
+Boolean types can be defined by using lowercase letters:
 
 ##### **Code**
 ```Julia
@@ -1306,7 +1305,7 @@ Bool
 Bool
 ```
 
-In Julia, `Bool` is a subtype of `Integer`; `true` equals 1, while `false` equals zero. We can do numerical operations on `Bool` types without the need of any type conversion:
+In Julia, `Bool` is a subtype of `Integer`; `true` equals 1, while `false` equals 0. We can do numerical operations on `Bool` types without the need for any type conversion:
 
 ##### **Code**
 ```Julia
@@ -1322,7 +1321,7 @@ b - 1
 Julia has several native data structures. They are abstractions of data that represent some form of structured data. We will cover the most used ones. There are also multiple data structures not native to Julia, such as DataFrames and SparseArrays, but we won't be covering those here.
 
 ### 5.1 Tuples
-A **tuple** is a fixed-length container that can hold multiple different types. It is an **immutable object**, meaning that it cannot be modified after instantiation.
+A **tuple** is a fixed-length container that can hold multiple different types. It's an **immutable object**, meaning it cannot be modified after its instantiation.
 
 To construct a tuple, we can use parentheses `()` to delimit the beginning and end, along with commas `,` as delimiters between values:
 
@@ -1361,7 +1360,7 @@ MethodError: no method matching setindex!(::Tuple{Int64, String, Char, String, S
     top-level scope@Local: 1[inlined]
 ```
 
-We can iterate over the items of a tuple (*we'll cover for loops in more detail further on*):
+We can iterate over the items of a tuple (*we'll cover for loops in more detail soon enough*):
 
 ##### **Code**
 ```Julia
@@ -1379,7 +1378,7 @@ four
 🚀
 ```
 
-There's also a special type of tuple called Named Tuple. we will not be covering it here, but it can be consulted in the [official documentation](https://juliadatascience.io/data_structures).
+There's also a special type of tuple called `NamedTuple`. We will not cover it here, but it can be consulted in the [official documentation](https://juliadatascience.io/data_structures).
 
 ### 5.2 Ranges
 A **range** in Julia represents an interval between start and stop boundaries. We can define a range by using the `start:stop` syntax:
@@ -1394,7 +1393,7 @@ my_range = 1:7
 my_range = 1:7
 ```
 
-We can index a range and also iterate over its elements:
+We can index a range and iterate over its elements:
 
 ##### **Code**
 ```Julia
@@ -1420,7 +1419,7 @@ end
 7
 ```
 
-We can also build an array comprehension (*similar to Python's list comprehensions*), by using a range:
+We can also build an array comprehension (*similar to Python's list comprehensions*) by using a range in combination with a `for` loop, all enclosed in brackets `[]`:
 
 ##### **Code**
 ```Julia
@@ -1477,12 +1476,12 @@ end
 Vector{Any} (alias for Array{Any, 1})
 ```
 
-When no supertype is given, the default supertype is `Any` – a predefined abstract type that all objects are instances of and all types are subtypes of. In type theory, `Any` is commonly called "top" because it is at the apex of the type graph.
+When no supertype is given, the default one is `Any` – a predefined abstract type that all objects are instances of and all types are subtypes of. In type theory, `Any` is commonly called "_top_" because it is at the apex of the type graph.
 
 #### 5.3.2 Matrices
-We can declare **matrices** via multiple ways.
+We can declare **matrices** in multiple ways.
 
-We can use a collection of vectors, nested inside brackets `[]` (*it's important to note that unlike Python, we're not using commas to separate each vector*):
+We can use a collection of vectors nested inside brackets `[]` (*it's important to note that, unlike Python, we're not using commas to separate each vector*):
 
 ##### **Code**
 ```Julia
@@ -1553,7 +1552,7 @@ rand(5,5)
 
 This method will return a matrix of dimension $n \times n$, with `Float64` type values between 0 and 1. 
 
-If we would like to explore our matrix objects in more detail, we can do so by employing dimension methods:
+If we would like to explore our matrix objects in more detail, we can employ dimension methods:
 
 ##### **Code**
 ```Julia
@@ -1574,7 +1573,7 @@ end
 
 - The `length` method will return the total number of elements in our matrix.
 - The `ndims` method will return the number of dimensions.
-- The `size` method will return our matrix's size in row, column notation.
+- The `size` method will return our matrix's size in row-column notation.
 
 Finally, we can index our matrix similar to indexing other objects such as tuples or vectors:
 
@@ -1602,10 +1601,10 @@ end
 - `my_matrix_rand_2[2, 1]` will return the element located in the second row, first column.
 - `my_matrix_rand_2[end]` will return the last element in our matrix. The `begin` method can also be used to get the first element.
 
-Arrays are the base for linear algebra not only in Julia, but also in many other languages such as Python (*by using `np.arrays`*). This is why there is a multitude of different methods we can use to manipulate these objects. We will not cover them in detail, but can be consulted in the [Julia's official documentation page](https://docs.julialang.org/en/v1/base/arrays/).
+Arrays are the base for linear algebra in Julia and many other languages such as Python (*by using `np.arrays`*). This is why there is a multitude of different methods we can use to manipulate these objects. We will not cover them in detail but can be consulted on the [Julia's official documentation page](https://docs.julialang.org/en/v1/base/arrays/).
 
 ### 5.4 Pairs
-**Pairs** hold two objects which typically belong to each other. They are similar to Python's dictionaries, but are limited to one single pair of objects. Pairs are specifically used in broadcasting operations, which we'll review further on.
+**Pairs** hold two objects which typically belong to each other. They are similar to Python's dictionaries but are limited to one pair of objects. Pairs are specifically used in broadcasting operations, which we'll review later on.
 
 We can define a `Pair` by using the following notation:
 
@@ -1631,7 +1630,7 @@ My Number
 ```
 
 ### 5.5 Dicts
-Dicts are mappings from keys to values. By mapping, we mean that if you give a `Dict` some key, then the `Dict` can tell you which value belongs to that key. Dicts are mutable objects and accept multiple objects.
+Dicts are mappings from keys to values. By mapping, we mean that if you give a `Dict` some key, the `Dict` can tell us which value belongs to that key. Dicts are mutable and accept multiple objects.
 
 We can define a `Dict` using the following syntax:
 
@@ -1682,9 +1681,9 @@ end
 Dict("ONE" => 7, "THREE" => 3, "TWO" => 2)
 ```
 
-As we can see, this is an inplace operation and will mutate our `Dict` object.
+As we can see, this is an in-place operation that will mutate our `Dict` object.
 
-We can also iterate over key, value pairs by using a `for` loop:
+We can also iterate over key-value pairs by using a `for` loop:
 
 ##### **Code**
 ```Julia
@@ -1700,7 +1699,7 @@ end
 "TWO" => 2
 ```
 
-We can do the same, but this time, extracting key, value pairs separately:
+We can do the same, but this time, extracting key-value pairs separately:
 
 ##### **Code**
 ```Julia
@@ -1717,7 +1716,7 @@ TWO => 2
 ```
 
 ## 6. Mathematical operators
-**Mathematical operators** in Julia work very similarly to Python's. We can consult the complete set by heading the [official documentation page](https://docs.julialang.org/en/v1/manual/mathematical-operations/).
+**Mathematical operators** in Julia work very similarly to Python's. We can consult the complete set by heading to the [official documentation page](https://docs.julialang.org/en/v1/manual/mathematical-operations/).
 
 | Expression | Name           | Description                            |
 | ---------- | -------------- | -------------------------------------- |
@@ -1734,7 +1733,7 @@ TWO => 2
 
 ###### *Table 3: Mathematical operators in Julia, extracted from [Official Documentation](https://docs.julialang.org/en/v1/manual/mathematical-operations/)*
 
-We can perform any mathematical operation by using the following syntax:
+We can perform any mathematical operation using the following syntax:
 
 ##### **Code**
 ```Julia
@@ -1810,7 +1809,7 @@ A complete Julia conditional evaluation includes 4 parts:
 - `else`
 - `end`
 
-We can either stick with just the `if` `end` statement combination if we have only one condition to evaluate, or include the whole structure:
+We can either stick with just the `if` `end` statement combination if we have only one condition to evaluate or include the whole structure:
 
 ##### **Code**
 ```Julia
@@ -1840,7 +1839,7 @@ Even number
 ```
 
 ### 7.3 For loops
-We have already seen some examples of `for` loops; they are very similar to their Python counterpart, except that we don't require a colon `:` at the end of the statement, and we need to add and `end` statement at the end of our declaration:
+We have already seen some `for` loop examples; they are very similar to their Python counterpart, except that we don't require a colon `:` at the end of the statement, and we need to add an `end` statement at the end of our declaration:
 
 ##### **Code**
 ```Julia
@@ -1892,10 +1891,10 @@ end
 ```
 
 ## 8. Functions
-**Functions** in Julia, as in many other languages, are a key aspect. Functions are similarly implemented in Julia when compared to Python, but have many additional features such as **broadcasting** and native **multiple dispatch** support which expand their functionality in ways Python simply can't by default.
+**Functions** in Julia, as in many other languages, are essential. Functions are similarly implemented in Julia compared to Python. Still, they have many additional features, such as **broadcasting** and native **multiple dispatch** support, which expand their functionality in ways Python simply can't by default.
 
 ### 8.1 Defining a function
-We can define a simple function by using the following syntax:
+We can define a function by using the following syntax:
 
 ##### **Code**
 ```Julia
@@ -1933,14 +1932,14 @@ We can define our function in a more compact form:
 my_fun_2(x,y) = x + y
 ```
 
-Since, as we have mentioned, Julia has the ability to use Unicode characters, we could even write our own `sum` function:
+Since, as we have mentioned, Julia accepts Unicode characters as part of its syntax, we could even write our own `sum` function:
 
 ##### **Code**
 ```Julia
 ∑(x,y) = x + y
 ```
 
-We can call it just as we would with any other function:
+We can call it just as we would any other function:
 
 ##### **Code**
 ```Julia
@@ -1975,12 +1974,12 @@ println(my_fun_3(7, 7))
 (49, 14)
 ```
 
-We can of course declare nested functions, expanding the functionality of our parent function.
+We can of course declare nested functions, thus expanding the functionality of our parent function.
 
 ### 8.2 Broadcasting
-**Broadcasting** is an extremely powerful concept in Julia, specially when performing vector & matrix operations. It lets us broadcast operations over the elements of the input objects. Broadcasting can be achieved by using the dot `.` operator, and applies to any function or arithmetic operation available.
+**Broadcasting** is an extremely powerful concept in Julia, especially when performing vector & matrix operations. It lets us broadcast operations over the elements of the input objects. Broadcasting can be achieved using the dot `.` operator, which applies to any function or arithmetic operation.
 
-We can define a function `my_fun_b`, that will take a matrix as input, square each of its elements, and return the result. 
+We can define a function `my_fun_b` that will take a matrix as input, square each of its elements, and return the result. 
 
 We will first start by creating a matrix and an `Int` variable that will serve as inputs:
 
@@ -1998,7 +1997,7 @@ function my_fun_b(x)
 end
 ```
 
-If we call our function with `my_matrix_b` as argument without broadcasting, we will get the squared matrix ($M \times M$) as a result, and not the element-wise operation:
+If we call our function with `my_matrix_b` as its argument without broadcasting, we will get the squared matrix ($M \times M$) as a result, and not the element-wise operation:
 
 ##### **Code**
 ```Julia
@@ -2014,7 +2013,7 @@ display(my_fun_nb(my_matrix_b))
  0.809722  0.554337  0.859173  0.652899
 ```
 
-This is not what we're looking for. Instead, we can use the broadcasting operator when calling our function. The dot `.` operator will go just after our function call, and before the arguments:
+This is not what we're looking for. Instead, we can use the broadcasting operator when calling our function. The dot `.` operator will go just after our function call and before the opening parenthesis `(` for our arguments:
 
 ##### **Code**
 ```Julia
@@ -2030,7 +2029,7 @@ display(my_fun_nb.(my_matrix_b))
  0.0153391  0.158666     0.417942  0.133245
 ```
 
-We can see that we get the result we were looking for.
+We can see that we now get the result we were looking for.
 
 ### 8.3 Functions with a bang !
 The bang `!` symbol in Julia is used to differentiate mutating vs non-mutating operations. When we call a method along with `!`, it will mutate our input variable.
@@ -2054,7 +2053,7 @@ end
 
 As we can see, the way we called our function did not mutate the original structure of `my_vec_a`.
 
-If we want to mutate it, we can call `sort!()` instead of `sort()`:
+If we want to mutate it, we can use`sort!()` instead of `sort()`:
 
 ##### **Code**
 ```Julia
@@ -2074,35 +2073,40 @@ end
 ----
 
 # Next steps
-We covered a tiny sample of what Julia can do. This language has endless potential, and can be used by many different types of professionals and enthusiasts looking for a high-performance, bleeding-edge alternative to the current options.
+We covered a tiny sample of what Julia can do. This language has endless potential and can be used by many professionals and enthusiasts looking for a high-performance, bleeding-edge alternative to the current options.
 
-Now we know the basics of the Julia programming language, there are multiple paths we can choose to follow:
-- **Data Science & Machine Learning:** [Julia for Data Scientists]() would be a great next step for those interesting in using this language for big data processing & parallelization, Machine Learning algorithm design & deployment, statistical analysis, and more.
-- **Optimization:** [Julia for Optimization and Learning](https://juliateachingctu.github.io/Julia-for-Optimization-and-Learning/stable/) imparted by the [Czech Technical University](https://www.cvut.cz/en/) in Prague, provides great introductory material for those interested in Optimization & Machine Learning techniques. 
-- **Linear Algebra:** Julia really stands up when performing linear algebra-related operations. There is a huge collection of packages and documentation available. A great first step would be [Basic Linear Algebra in Julia](https://www.youtube.com/watch?v=IFkQ0aB6eHs), imparted by extremely well-versed [Dr. Jane Herriman](https://twitter.com/janeherriman).
-- **Integral & Differential Calculus:** No scientific language is complete without a robust set of calculus methods, and Julia of course, is no exception. There is a [great series of articles](https://jverzani.github.io/CalculusWithJuliaNotes.jl/) by [jverzani](https://github.com/jverzani) aiming to cover the basis of calculus using Julia, ranging from basic undergraduate concepts to more intermediate topics.
-- **Documentation:** Julia can also be used for documentation purposes. In particular, the [`Documenter.jl`](https://documenter.juliadocs.org/stable/) package offers nice tools to write in [Markdown](https://pabloagn.com/technologies/markdown/) using a simple and easy-to-understand interface.
+Now that we know the basics of the Julia programming language, there are multiple paths we can choose to follow:
+- **Data Science & Machine Learning:** [Julia for Data Scientists]() would be a great next step for those interested in using this language for big data processing & parallelization, Machine Learning algorithm design & deployment, statistical analysis, and more.
+- **Optimization:** [Julia for Optimization and Learning](https://juliateachingctu.github.io/Julia-for-Optimization-and-Learning/stable/) imparted by the [Czech Technical University](https://www.cvut.cz/en/) in Prague, provides excellent introductory material for those interested in Optimization & Machine Learning techniques. 
+- **Linear Algebra:** Julia stands up when performing linear algebra-related operations. There is a huge collection of packages and documentation available. A great first step would be [Basic Linear Algebra in Julia](https://www.youtube.com/watch?v=IFkQ0aB6eHs), imparted by the extremely well-versed [Dr. Jane Herriman](https://twitter.com/janeherriman).
+- **Integral & Differential Calculus:** No scientific language is complete without a robust set of calculus methods, and Julia, of course, is no exception. There is a [great series of articles](https://jverzani.github.io/CalculusWithJuliaNotes.jl/) by [jverzani](https://github.com/jverzani) aiming to cover the basics of calculus using Julia, ranging from simpler undergraduate concepts to more intermediate topics.
+- **Documentation:** Julia can also be used for documentation purposes. In particular, the [`Documenter.jl`](https://documenter.juliadocs.org/stable/) package offers excellent capabilities to write in [Markdown](https://pabloagn.com/technologies/markdown/) offering a simple and easy-to-understand interface.
 
 ---
 
 # Conclusions
-In this segment we installed the Julia programming language from scratch, along with Visual Studio as an IDE and the Visual Studio Julia extension as an extremely useful tool. We also reviewed two great notebook environment options: JupyterLab and `Pluto.jl`.
+In this segment, we installed the Julia programming language from scratch along with Visual Studio as an IDE and the Visual Studio Julia extension as a handy tool. We also reviewed two great notebook environment options: JupyterLab and `Pluto.jl`.
 
-Once we had our installations ready, we learned to use the Julia REPL from the Windows Terminal, as well as from within VS Code using the Julia extension. We also learned how to create project environments, install packages within our environment, and write our first Julia program.
+Once we had our installations ready, we learned to use the Julia REPL from the Windows Terminal and from within VS Code using the Julia extension. We also learned how to create project environments, install packages within our environment, manage them appropriately, and write our first Julia program.
 
-Finally, we introduced some of Julia's core concepts, accompanied with some hands-on examples using `Pluto.jl` and `PlutoUI`.
+Finally, we introduced some of Julia's core concepts, accompanied by hands-on examples using `Pluto.jl` and `PlutoUI`.
 
-Julia is a language that has been gaining consistent popularity throughout the last years. It was introduced as a fresh approach to scientific programming, and is sure to become a building block for aspiring Data Scientists in the near future. It has so many innovative features that it's hard to look the other way and continue to use the well-established Data Science languages we have been programming on for several years.
+Julia is a language that has been gaining consistent popularity throughout the last few years. It was introduced as a fresh approach to scientific programming and is sure to become a building block for aspiring Data Scientists in the near future. It has so many innovative features that it's hard to look the other way and continue using the well-established Data Science languages we have been using for several years.
 
-Julia presents us with the opportunity to stop and think if what we're doing and how we're doing it, is the most optimal way. It's an ambitious project that aims to change how we look at high-performance scientific computing.
+Julia allows us to stop and think if what we're doing and how we're doing it is the most optimal way. It's an ambitious project that aims to change how we look at high-performance scientific computing.
 
-One thing to consider is that Julia is fast-evolving; each iteration brings on new changes which might be small, but might also consist of a complete refactoring. This is critical because a library that worked yesterday with a given syntax, might not work the same today. Still, this is always part of the process of any programming language, and really, the most exciting one; seeing a group of passionate people build the foundations for the future.
+One thing to consider is that Julia is fast-evolving; each iteration brings on new changes, which might be small but can also consist of a complete refactoring of base functionality. This is critical because a library that worked yesterday with a given syntax might not work the same way today. Still, this is always part of the process of any programming language, and really, the most exciting one; witnessing a group of passionate people build the foundations for the future is always inspiring.
 
 ---
 
 # References
 - [Talk Julia, Setting Up VS Code for Julia](https://www.youtube.com/watch?v=KesuPOlBB_o)
 - [Julia Data Science, Data Structures](https://juliadatascience.io/data_structures)
+- [Julia Documentation, Data Types](https://docs.julialang.org/en/v1/manual/types/)
+- [Julia Documentation, Functions](https://docs.julialang.org/en/v1/manual/functions/)
+- [Geeks for Geeks, Broadcasting across arrays in Julia](https://www.geeksforgeeks.org/broadcasting-across-arrays-in-julia/)
+- [Julia Documentation, Arrays](https://docs.julialang.org/en/v1/base/arrays/)
+- [Pluto Documentation, Pluto.jl](https://docs.juliahub.com/Pluto/OJqMt/0.9.10/)
 
 ---
 
