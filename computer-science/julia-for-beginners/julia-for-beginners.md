@@ -194,7 +194,7 @@ cd computer-science/julia-for-beginners
 
 We will then access the Julia REPL and use the right bracket <kbd>]</kbd> to access Julia's `pkg` package manager. This will change the prompt and tell us which Julia version we're currently using:
 
-Screenshot_01
+![Image 01](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_01.png)
 
 ###### *Figure 1: Julia `pkg` prompt from the REPL*
 
@@ -361,7 +361,7 @@ If everything goes well, the plot should appear on a new window. It can also be 
 
 ##### **Output**
 
-PLOT_1
+![Image 02](https://pabloagn.com/wp-content/uploads/2023/02/plot_1.svg)
 
 ###### *Figure 2: A simple plot Created using the `Plots` package*
 
@@ -442,7 +442,7 @@ We can view our workspace variables by heading to the Julia menu in the left pan
 
 Julia VS Code extension has a built-in variable visualizer similar to Spyder. We can access any object by clicking the table icon at the right of the variable we wish to visualize:
 
-Screenshot_03
+![Image 03](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_03.png)
 
 ###### *Figure 3: Visualizing a variable in the VS Code object viewer*
 
@@ -450,13 +450,13 @@ The beauty of this method is that it works for variables and tables.
 
 To illustrate this, we'll create a very simple `.csv` file by heading to the *EXPLORER* tab on the left panel, clicking on *New Folder...*, and naming it `datasets`:
 
-Screenshot_04
+![Image 04](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_04.png)
 
 ###### *Figure 4: Creating a new Datasets folder in VS Code*
 
 We'll then create a `.csv` file inside our `datasets` folder, and name it `test.csv`:
 
-Screenshot_05
+![Image 05](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_05.png)
 
 ###### *Figure 5: Creating a new CSV file in VS Code*
 
@@ -483,7 +483,7 @@ We can now head back to the Julia menu in the left panel, expand our *WORKSPACE*
 
 ##### **Output**
 
-Screenshot_06
+![Image 06](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_06.png)
 
 ###### *Figure 6: Table view in VS Code*
 
@@ -498,7 +498,7 @@ Upon execution, this method will automatically open our table in a new tab.
 
 This table view has some nice features we can take advantage of to visualize and explore a newly imported data set quickly. We can search, sort and filter by using the navigation buttons on each column header:
 
-Screenshot_07
+![Image 07](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_07.png)
 
 ###### *Figure 7: Search, sort & filter using the Table View in VS Code*
 
@@ -520,7 +520,7 @@ jupyter-lab
 
 ##### **Output**
 
-Screenshot_08
+![Image 08](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_08.png)
 
 ###### *Figure 8: JupyterLab session*
 
@@ -568,7 +568,8 @@ Upon execution, a new `Pluto` session will be created and launched in our system
 ```
 
 ##### **Output**
-Screenshot_09
+
+![Image 09](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_09.png)
 
 ###### *Figure 9: Pluto session*
  
@@ -676,7 +677,7 @@ This is a LaTeX expression: $f(x)=x^2+x^3+x^4$
 
 We can hide the actual Markdown code and keep the output by using the eye icon at the left of any Markdown cell:
 
-Screenshot_10
+![Image 10](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_10.png)
 
 ###### *Figure 10: Hiding Markdown code*
 
@@ -776,7 +777,7 @@ If we execute the code above for the first time, our variable will be instantiat
 
 We can now click on our defined button, and the cell will be referenced again, thereby running the code block we defined:
 
-Screenshot_11
+![Image 11](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_11.png)
 
 ###### *Figure 11: Toggling a button created using PlutoUI*
 
@@ -886,7 +887,7 @@ The character names are equivalent to [LaTeX](https://pabloagn.com/technologies/
 
 If we're unsure about a specific character's name, we can start typing the name that would make more sense and then hit <kbd>TAB</kbd>. Pluto will display the entire list of available characters, where we can select the one we're looking for:
 
-Screenshot_12
+![Image 12](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_12.png)
 
 ###### *Figure 12: "Heart" Unicode character suggestions presented by Pluto*
 
