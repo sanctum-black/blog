@@ -454,7 +454,9 @@ The beauty of this method is that it works for variables and tables.
 
 To illustrate this, we'll create a very simple `.csv` file by heading to the *EXPLORER* tab on the left panel, clicking on *New Folder...*, and naming it `datasets`:
 
-![Image 04](https://pabloagn.com/wp-content/uploads/2023/02/B009G013_04.png)
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/B009G013_04.png">
+</p>
 
 ###### *Figure 4: Creating a new Datasets folder in VS Code*
 
