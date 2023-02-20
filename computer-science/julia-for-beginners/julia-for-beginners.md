@@ -144,6 +144,7 @@ The JuliaMono typeface has a selection of ligatures we can choose to enable or n
 
 We will have to select the ligature codes we're interested in and set them in the user configuration file we previously opened:
 
+##### **Code**
 ```JSON
 "editor.fontLigatures": "'zero', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss11', 'ss12', 'ss13', 'ss14', 'ss15', 'ss20'"
 ```
