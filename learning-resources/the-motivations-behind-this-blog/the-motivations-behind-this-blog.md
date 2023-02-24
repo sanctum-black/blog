@@ -28,31 +28,38 @@ I'll be using scripts which can be found in the [Blog Article Repo](https://git
 ---
 
 # Table of Contents
+- [Why learn to program?](#why-learn-to-program)
+	- [It's an exciting time to learn](#1-its-an-exciting-time-to-learn)
+	- [It creates a feedback loop](#2-it-creates-a-feedback-loop)
+	- [It provides a sense of independence](#3-it-provides-a-sense-of-independence)
+- [What does it take?](#what-does-it-take)
 - [A Journey Through Data Science: A space where currents converge](#a-journey-through-data-science-a-space-where-currents-converge)
 	- [On the scope](#1-on-the-scope)
+	- [On the Technologies](#2-on-the-technologies)
+		- [Python](#21-python)
+		- [Julia](#22-julia)
+		- [R](#23-r)
+		- [SQL](#24-sql)
+		- [Markdown](#25-markdown)
+		- [LaTeX](#26-latex)
+		- [Other languages & technologies](#27-other-languages--technologies)
 - [The Motivations: Winds are changing](#the-motivations-winds-are-changing)
-	- [On free education](#1-on-free-education)
-	- [On the lack of rigorous mathematical knowledge](#2-on-the-lack-of-rigorous-mathematical-knowledge)
-	- [On cutting edge technologies](#3-on-cutting-edge-technologies)
-	- [On quality vs quantity](#4-on-quality-vs-quantity)
-	- [On sustainable & green code](#5-on-sustainable--green-code)
-	- [On returning the favor](#6-on-returning-the-favor)
+	- [On the lack of rigorous mathematical knowledge](#1-on-the-lack-of-rigorous-mathematical-knowledge)
+	- [On free education](#2-on-free-education)
+	- [On cutting-edge technologies](#3-on-cutting-edge-technologies)
+	- [On sustainable & green code](#4-on-sustainable--green-code)
+	- [On returning the favour](#5-on-returning-the-favour)
 - [The Boat: Traversing through a sea of infinitude](#the-boat-traversing-through-a-sea-of-infinitude)
-	- [On minimal approaches](#1-on-minimal-approaches)
-	- [On publicity , sponsorships & referral fees](2-on-publicity--sponsorships--referral-fees)
-	- [On cookies & tracking](#3-on-cookies--tracking)
-	- [On open source code](#4-on-open-source-code)
-	- [On business-oriented approaches & solving real-world problems](#5-on-business-oriented-approaches--solving-real-world-problems)
 - [The Cabins: A place to unwind](#the-cabins-a-place-to-unwind)
 	- [On the structure](#1-on-the-structure)
 - [The Lighthouse: How to get involved?](#the-lighthouse-how-to-get-involved)
 	- [Contact me](#1-contact-me)
 	- [Forking & making pull requests](#2-forking--making-pull-requests)
 	- [Becoming a Patreon](#3-becoming-a-patreon)
-		- [How Patreon works?](#31-how-patron-works)
-			- [Enthusiast](#32-enthusiast)
-			- [Inquisitive Programmer](#33-inquisitive-programmer)
-			- [Mentee](#34-mentee)
+		- [How Patron works?](#31-how-patron-works)
+		- [Enthusiast](#32-enthusiast)
+		- [Inquisitive Programmer](#33-inquisitive-programmer)
+		- [Mentee](#34-mentee)
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -296,7 +303,7 @@ ORDER BY Lived DESC
 | Joris-Karl | Huysmans   | 1848  | 1907  | 59    |
 | Charles    | Dickens    | 1812  | 1870  | 58    |
 | Dante      | Alighieri  | 1265  | 1321  | 56    |
-##### *Table 1. Some fiction writers and their lifespan on this earth*
+###### *Table 1. Some fiction writers and their lifespan on this earth*
 
 Even though life in the 13th century was for sure though, Dante surpassed the average life expectancy of the time by almost double his age.[^3]
 
@@ -379,8 +386,11 @@ f(x)=\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}
 
 ##### **Output**
 
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/02/B011G015_01.png">
+</p>
 
-IMAGE_01
+###### Figure 1: The PDF of the normal distribution
 
 $$f(x)=\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}$$
 
