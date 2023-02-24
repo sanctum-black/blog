@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepackage{mathtools,amssymb}
+\usepackage{tikz}
+\usepackage{xcolor}
+\pgfplotsset{compat=1.7}
+\begin{document}
+\pgfmathdeclarefunction{gauss}{2}{\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{tikzpicture}
+
+\begin{axis}[no markers, domain=0:10, samples=100,
+axis lines*=left, xlabel=$x$, ylabel=$f(x)$,
+height=6cm, width=10cm,
+xticklabels={-4, -3, -2, -1, 0, 1, 2, 3, 4}, ytick=\empty,
+enlargelimits=false, clip=false, axis on top,
+grid = major]
+\addplot [fill=black!20, draw=none, domain=-3:3] {gauss(0,1)} \closedcycle;
+\addplot [fill=gray!20, draw=none, domain=-3:-2] {gauss(0,1)} \closedcycle;
+\addplot [fill=gray!20, draw=none, domain=2:3] {gauss(0,1)} \closedcycle;
+\addplot [fill=blue!20, draw=none, domain=-2:-1] {gauss(0,1)} \closedcycle;
+\addplot [fill=blue!20, draw=none, domain=1:2] {gauss(0,1)} \closedcycle;
+\end{axis}
+\end{tikzpicture}
+
+\begin{displaymath}
+f(x)=\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}
+\end{displaymath}
+
+\end{document}
