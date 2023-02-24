@@ -102,10 +102,10 @@ The blog is mainly about Data Science and Computer Science-related topics with a
 I'll mainly be covering the following languages:
 
 ### Python
-- What is it?
+- **What is it?**
 Python is a high-level, general-purpose, object-oriented programming language. It's currently the basis for Data Science and Machine Learning and the second most used language as of 2022, with 15.7 million developers.
 
-- Why learn it?
+- **Why learn it?**
 It's easy yet flexible, has an outstanding community, 200,000+ packages, and can be used for virtually anything.
 
 Python's syntax has been often referred to as pseudo-code-like, and that's because it really reads as such.
@@ -154,10 +154,10 @@ A JOURNEY THROUGH DATA SCIENCE
 ```
 
 ### Julia
-- What is it?
+- **What is it?**
 Julia is a high-level, dynamically and statically typed programming language, but most importantly, Julia is extremely fast; it's like Python on steroids.
 
-- Why learn it?
+- **Why learn it?**
 Well, let us refer to the creators themselves:
 
 > We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, and as good at gluing programs together as the shell. Something that is dirt simple to learn yet keeps the most serious hackers happy. We want it interactive, and we want it compiled. (Did we mention it should be as fast as C?)
@@ -212,10 +212,10 @@ A JOURNEY THROUGH DATA SCIENCE
 ```
 
 ### R
-- What is it?
+- **What is it?**
 R is a programming language for statistical analysis, graphics representation and reporting. It was created by statisticians to statisticians; it specializes in statistical modelling and computing and offers a wide variety of packages for doing so.
 
-- Why learn it?
+- **Why learn it?**
 Apart from statistical applications, R can be used to tackle a variety of tasks: from web applications to mathematical and scientific computing to econometrics to quantitative analysis.
 
 Let us define our decoder function yet again, now in R:
@@ -252,10 +252,10 @@ A JOURNEY THROUGH DATA SCIENCE
 
 ### SQL
 
-- What is it?
+- **What is it?**
 SQL is a domain-specific language used to manage data in relational databases. Although multiple SQL systems are available, we'll concentrate efforts on MySQL.
 
-- Why learn it?
+- **Why learn it?**
 SQL is key in almost any data-related job. It's the language used to extract & transform data from relational servers.
 
 Suppose you're already using SQL in your job for data extraction. In that case, you can rely more on it for data transformation processes since it's faster than other languages when querying and aggregating. And even if you're not currently using it, learning and experimenting with SQL can provide valuable insight into your company's data structure.
@@ -296,24 +296,23 @@ ORDER BY Lived DESC
 | Joris-Karl | Huysmans   | 1848  | 1907  | 59    |
 | Charles    | Dickens    | 1812  | 1870  | 58    |
 | Dante      | Alighieri  | 1265  | 1321  | 56    |
-##### Table 1. Some fiction writers and their lifespan on this earth
+##### *Table 1. Some fiction writers and their lifespan on this earth*
 
 Even though life in the 13th century was for sure though, Dante surpassed the average life expectancy of the time by almost double his age.[^3]
 
 ### Markdown
 
-- What is it?
+- **What is it?**
 [Markdown](https://github.com/pabloagn/documentation/blob/master/writing-and-formatting/markdown.md) is a simple yet powerful markup language supporting multiple syntax elements such as headers, ordered and unordered lists, images, tables, diagrams, LaTeX and even HTML & CSS code.
 
-- Why learn it?
+- **Why learn it?**
 It provides a distraction-free typing experience, enjoys compatibility with a multitude of platforms and applications, is extremely easy to learn, and is natively supported by GitHub & [GitHub Gists](https://pabloagn.com/blog/what-are-github-gists-and-how-to-use-them/). Also, dozens of fully-featured Markdown editors exist, such as Obsidian, Draft.js, Ulysses, and even VS Code.
 
-We can create a simple document containing an H1 header, a LaTeX expression, and an unordered list.
+We can create a simple document containing a LaTeX expression, and an unordered list.
 
 ##### **Code**
 ```
-# The Normal Distribution
-Also known as the Gaussian distribution, the Normal Distribution is the most widely known and used of all distributions and is used to approximate a variety of real-world phenomena. It's symmetric around the mean and has two parameters: $(\sigma,\mu)$
+The Normal Distribution, also known as the Gaussian distribution, is the most widely known and used of all distributions and is used to approximate a variety of real-world phenomena. It's symmetric around the mean and has two parameters: $(\sigma,\mu)$
 
 A given random variable $X$ is normally distributed with mean $\mu$ and standard variance $\sigma^{2}$:
 
@@ -325,8 +324,7 @@ Where:
 ```
 
 ##### **Output**
-# The Normal Distribution
-Also known as the Gaussian distribution, the Normal Distribution is the most widely known and used of all distributions and is used to approximate a variety of real-world phenomena. It's symmetric around the mean and has two parameters: $(\sigma,\mu)$
+The Normal Distribution, also known as the Gaussian distribution, is the most widely known and used of all distributions and is used to approximate a variety of real-world phenomena. It's symmetric around the mean and has two parameters: $(\sigma,\mu)$
 
 A given random variable $X$ is normally distributed with mean $\mu$ and standard variance $\sigma^{2}$:
 
@@ -336,13 +334,13 @@ Where:
 - $\mu$ is the mean or expected value.
 
 ### LaTeX
-- What is it?
+- **What is it?**
 LaTeX is not a language per se but a software system for document preparation using the TeX typesetting system. It's tailored explicitly to scientific writing, supports a variety of syntactic objects, and can be further expanded using a vast collection of available packages. Unlike Markdown, it has a learning curve associated.
 
-- Why learn it?
+- **Why learn it?**
 It makes mathematical equations beautiful to stare at. Also, it gives the user excellent control over the formatting of documents. We can define templates and classes that, once customized, we can reuse by simply importing them into our environment.
 
-We can write the normal distribution density function, along with a plot of the actual distribution.
+We can write the normal distribution density function, along with a plot of the actual distribution:
 
 ##### **Code**
 ```LaTeX
@@ -439,7 +437,7 @@ Also, ML is at its peak: it's disrupting how we use and write code. [GitHub Copi
 
 One of the motivations for this blog is to exhaustively look for cutting-edge languages, technologies, libraries and methods that offer the highest performance and the most advanced capabilities.
 
-## 5. On sustainable & green code
+## 4. On sustainable & green code
 As ML approaches take place in this new way of solving problems, energy consumption also skyrockets. Let us look at what the ChatGPT training algorithm involved:
 
 OpenAI trained its GPT-3 model on 45 terabytes of data. To train the final version of MegatronLM, a language model similar to but smaller than GPT-3, Nvidia ran 512 V100 GPUs over nine days.
@@ -450,7 +448,7 @@ The average household uses 10,649 kWh annually, according to the U.S. Energy Inf
 
 Sustainable code is an entirely new and exciting concept to me and will have its secure place in this space.
 
-## 6. On returning the favour
+## 5. On returning the favour
 I remember very well the first script I wrote some years back. I also remember that without the help of that vibrant university colleague of mine who introduced me to this rabbit hole, I would not have been able to do it. My preconception of Linux was that of an obscure technology used exclusively by Mr. Elliot Alderson to cause mayhem inside EvilCorp. Then, I realized most servers out there run on Linux systems, and yes, Kali Linux does actually exist.
 
 Help can arrive in the form of a colleague, a YouTube Channel, or a passive-aggressive Stack Overflow moderator. It really makes no difference; what really matters is that help is out there, one ChatGPT query away.
@@ -542,6 +540,7 @@ Happy coding, and until next time.
 # References
 - [University of Colorado Boulder, The Feynman Technique](https://www.colorado.edu/artssciences-advising/resource-library/life-skills/the-feynman-technique-in-academic-coaching)
 - [Wikipedia, List of Programming Languages](https://en.wikipedia.org/wiki/List_of_programming_languages)
+- [Julia, Why We Created Julia](https://julialang.org/blog/2012/02/why-we-created-julia/)
 - [AgeUp, A Brief History of Human Longevity](https://learn.age-up.com/blog/a-brief-history-of-human-longevity/)
 - [TechTarget, Energy consumption of AI poses environmental problems](https://www.techtarget.com/searchenterpriseai/feature/Energy-consumption-of-AI-poses-environmental-problems)
 
@@ -549,6 +548,7 @@ Happy coding, and until next time.
 [^2]: Wikipedia, List of Programming Languages
 [^3]: AgeUp, A Brief History of Human Longevity
 [^4]: TechTarget, Energy consumption of AI poses environmental problems
+[^5]: Julia, Why We Created Julia
 
 ---
 
