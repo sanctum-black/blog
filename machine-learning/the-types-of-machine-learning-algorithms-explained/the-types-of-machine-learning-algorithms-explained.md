@@ -30,6 +30,9 @@ We’ll be using Python scripts which can be found in the [Blog Article Repo](ht
 	- [Supervised Learning](#1-supervised-learning)
 		- [Regression](#11-regression)
 		- [Classification](#12-classification)
+			- Binary Classification]()
+			- Multi-class classification]()
+			- Managing unbalanced data]()
 	- [Semi-Supervised Learning](#2-semi-supervised-learning)
 		- Self-training]()
 		- Co-training]()
@@ -46,14 +49,19 @@ We’ll be using Python scripts which can be found in the [Blog Article Repo](ht
 			- Query-by-Committee]()
 		- Large margin-based strategies]()
 			- Margin Sampling]()
-			- Margin Sampling-closest Support Vectors]()
 		- Posterior probability-based strategies]()
 	- [Transfer Learning](#5-transfer-learning)
-		- Aa
-		- Aa
+		- Process overview]()
+			- Training the Source DNN]()
+			- Establishing a Base Model]()
+			- Freezing Layers]()
+			- Adding and Training New Layers]()
+			- Refining the Transferred Model]()
+		- Transfer Learning strategies]()
+			- Inductive Transfer Learning]()
+			- Transductive Transfer Learning]()
+			- Unsupervised Transfer Learning]()
 	- [Reinforcement Learning](#6-reinforcement-learning)
-		- Aa
-		- Aa
 - [Parametric and Non-Parametric models](#parametric-and-non-parametric-models)
 	- Parametric models]()
 	- Non-parametric models]()
@@ -168,7 +176,6 @@ As with any tool, it has its applications and limitations, and is based on rigor
 
 # Machine Learning algorithm types
 Machine Learning algorithms can be classified by how they work and what type of data they accept as input. There are 3 main types and some other subclassifications:
-
 - Supervised Learning
 - Unsupervised Learning
 - Reinforcement Learning
@@ -255,7 +262,6 @@ There are multiple classification applications, a very simple case being the cla
 
 #### 1.2.1 Binary classification
 A Spam detector takes as inputs a number of previously engineered features:
-
 - **Subject Features:**
 	- Number of capitalized words.
 	- Sum of all the character lengths of words.
@@ -271,7 +277,6 @@ A Spam detector takes as inputs a number of previously engineered features:
 	- Number of words containing only letters.
 
 It then classifies each entry as Spam or Not Spam, so our output would be **binary**:
-
 - **Spam:** 1
 - **Not Spam:** 0
 
@@ -287,7 +292,6 @@ Some of the most used binary classification algorithms are:
 A classification algorithm can work not just with binary outputs, but multiple ones. This is called a **multi-class** classification algorithm. Let us look at a simple example.
 
 We wish to input different animal descriptors and let our model decide which animal species is it:
-
 - **Physical Attributes:**
 	- Haired: `Bool`
 	- Feathered: `Bool`
@@ -313,7 +317,6 @@ We wish to input different animal descriptors and let our model decide which ani
 	- Blends in or camouflages with environment: `Bool`
 
 Our model will intend to classify each entry as a different species, so our output would be **multi-class**, dependent on the number of classes we have for our training set:
-
 - Platypus
 - Tiger
 - Alpaca
@@ -335,13 +338,9 @@ Some of the most used multi-class classification algorithms are:
 For a typical classification algorithm to work without special treatment, we need to have a balanced data set. This means that the ratio of classes must be roughly equal (*e.g. from first example, $\approx 50\%$ spam emails, $\approx 50\%$ non spam emails*).
 
 We might run into occasions where our data set is unbalanced and we cannot resample from the population. In this case, there are some methods we can use:
-
 - **Under-sampling:** Involves reducing the size of the abundant class to balance the dataset. This method is effective when there is sufficient data available. By keeping all samples in the rare class and randomly selecting an equal number of samples in the abundant class, a balanced new dataset can be obtained for further modeling.
-
 - **Over-sampling:** Can be used when the quantity of data is insufficient. This approach balances the dataset by increasing the size of rare samples.
-
 - **Clustering abundant groups:** Involves clustering the abundant class into groups instead of relying on random samples to cover the variety of training samples. For each group, only the medoid (*center of cluster*) is kept, and the model is then trained with the rare class and the medoids only.
-
 - **Selecting an appropriate model:** Can also help to handle unbalanced data. There are specific classification models, such as the **Extreme Gradient Boosting** (*XGBoost*) algorithm, that are particularly effective at handling imbalanced datasets.
 
 ## 2. Semi-Supervised Learning
@@ -352,20 +351,24 @@ A typical example where semi-supervised learning can be useful is in text docume
 Semi-supervised algorithms leverage pseudo-labeling to achieve this objective. The model is first trained using the small set of labeled data in a manner similar to supervised learning until it produces satisfactory results. The model is then used to predict the outputs of the unlabeled data, which generates pseudo labels that may not be entirely accurate. These pseudo labels are then associated with the labeled data, and the inputs in the unlabeled data are linked to the inputs in the labeled data. Finally, the model is retrained using this combined data to minimize errors and increase accuracy.
 
 We can look at a summary of the steps below:
-
-- **Collect both labeled and unlabeled data:** In semi-supervised learning, it's important to gather both labeled and unlabeled data. The labeled data has known categories, while the unlabeled data does not.
-- **Train the model with the labeled data:** The first step is to use traditional supervised learning techniques to train the model using the labeled data. This allows the model to learn the patterns in the labeled data.
-- **Generate pseudo-labels with the unlabeled data:** Once the model is trained with labeled data, it can be used to predict labels for the unlabeled data. These predicted labels are called pseudo-labels.
-- **Combine the labeled and pseudo-labeled data:** The labeled data and the pseudo-labeled data are combined by associating the predicted labels with the input data in the labeled data.
-- **Retrain the model using the combined data:** The combined data is used to retrain the model using traditional supervised learning techniques. This allows the model to learn from both the labeled and pseudo-labeled data, making it able to generalize to new data points.
-- **Evaluate the model's performance:** Finally, it's important to evaluate the model's performance. This can be done by using performance metrics such as accuracy or precision or by testing the model on validation data.
+1. **Collect both labeled and unlabeled data:** In semi-supervised learning, it's important to gather both labeled and unlabeled data. The labeled data has known categories, while the unlabeled data does not.
+2. **Train the model with the labeled data:** The first step is to use traditional supervised learning techniques to train the model using the labeled data. This allows the model to learn the patterns in the labeled data.
+3. **Generate pseudo-labels with the unlabeled data:** Once the model is trained with labeled data, it can be used to predict labels for the unlabeled data. These predicted labels are called pseudo-labels.
+4. **Combine the labeled and pseudo-labeled data:** The labeled data and the pseudo-labeled data are combined by associating the predicted labels with the input data in the labeled data.
+5. **Retrain the model using the combined data:** The combined data is used to retrain the model using traditional supervised learning techniques. This allows the model to learn from both the labeled and pseudo-labeled data, making it able to generalize to new data points.
+6. **Evaluate the model's performance:** Finally, it's important to evaluate the model's performance. This can be done by using performance metrics such as accuracy or precision or by testing the model on validation data.
 
 There are five main approaches we can use with semi-supervised learning:
+- Self-training
+- Co-training
+- Generative models
+- Graph-based methods
+- Deep Learning
 
 ### 2.1 Self-training
 To apply semi-supervised learning, any existing supervised classification or regression method can be modified. This involves training a model with a small amount of labeled data, using it to predict labels for the unlabeled data, and then adding the most confident predictions to the labeled dataset. Finally, the model is retrained using the updated labeled data.
 
-### 2.2 Co-training 
+### 2.2 Co-training
 In scenarios where there is a limited amount of labeled data, co-training can be utilized as an alternative approach to traditional classifier training. Unlike the typical training process, co-training involves training two separate classifiers, each based on different views of the data. These distinct views comprise sets of features that provide supplementary information about each instance and are considered independent, given the class. Moreover, each view is self-sufficient and can accurately predict the class of the sample data by using each feature set separately.
 
 ### 2.3 Generative models
@@ -390,8 +393,11 @@ Clustering is particularly helpful when working with large volumes of seemingly 
 
 One of the most popular algorithms for exclusive clustering is the K-means clustering algorithm, which was originally developed in the field of signal processing. K-means clustering partitions a dataset into $k$ clusters based on the nearest mean, also called a cluster centroid or center, which serves as a prototype for the cluster. The resulting clusters are referred to as Voronoi cells:
 
-![Figure 01](https://raw.githubusercontent.com/pabloagn/blog/master/machine-learning/the-types-of-machine-learning-algorithms-explained/images/B007G011_01.png)
-###### *Figure 1: Voronoi diagram illustrating how colony area is split into tessellated cells*[^1] 
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/03/B007G011_01.png">
+</p>
+
+###### [*Figure 1: Voronoi diagram illustrating how colony area is split into tessellated cells*](https://www.researchgate.net/publication/338842775_The_recent_advances_in_the_mathematical_modelling_of_human_pluripotent_stem_cells)
 
 In the figure above, we can see two different partition sets: The first one denotes a Voronoi diagram with 25 partitions, while the second one has 26 partitions, where one cell splits into two cells (*denoted with the red color*). Typically, each cluster will encapsulate a set of data points; the critical aspect to consider in this method, is to define the correct number of cells so as not to underfit or overfit the model (*i.e. we don't want a single cell for a single data point*)
 
@@ -403,8 +409,11 @@ In the figure above, we can see two different partition sets: The first one deno
 - **Complete (*or maximum*) linkage:** This method involves starting with each element in its own cluster and then sequentially combining clusters until all elements are in the same cluster. It's also referred to as "farthest neighbors clustering."
 - **Dendrogram:** The resulting clustering can be represented as a dendrogram, which displays the sequence of cluster fusion and the distance at which each fusion occurred.
 
-![Figure 2](https://raw.githubusercontent.com/pabloagn/blog/master/machine-learning/the-types-of-machine-learning-algorithms-explained/images/B007G011_02.png)
-###### *Figure 2: Dendrogram with data points on the x-axis and cluster distance on the y-axis*[^2]
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/03/B007G011_02.png">
+</p>
+
+###### [*Figure 2: Dendrogram with data points on the x-axis and cluster distance on the y-axis*](https://www.datanovia.com/en/courses/hierarchical-clustering-in-r-the-essentials/)
 
 - **Single (*or minimum*) linkage:** This method combines two clusters in each step based on the closest pair of elements that don't yet belong to the same cluster.
 
@@ -445,7 +454,6 @@ Crowdsourcing frameworks such as [Amazon Mechanical Turk](https://www.mturk.com/
 The basic idea behind Active Learning algorithms can be summarized as follows:
 
 Given a total sample of data $T$, the following steps are taken:
-
 1. A small subset $S$ of the data set $T$ is manually labelled.
 2. The model is trained on the labelled subset $S$.
 3. After training, the model is used to predict the class of the remaining data points.
@@ -467,16 +475,16 @@ There are three main approaches to committee-based strategies. We will only disc
 - [Adaptive Maximum Disagreement (*AMD*)](https://ieeexplore.ieee.org/abstract/document/6051478)
 
 #### 4.2.1 Query-by-Committee (*QBC*)
-This method was initially introduced by *Seung et al. in 1992*[^3]. The approach employs disagreement among a group of hypotheses to choose data points for labelling. Two practical implementations of this approach are Query by Bagging and Query by Boosting, which use Bagging and Boosting, respectively, to construct the committees.
+This method was initially introduced by *Seung et al. in 1992*[^1]. The approach employs disagreement among a group of hypotheses to choose data points for labelling. Two practical implementations of this approach are Query by Bagging and Query by Boosting, which use Bagging and Boosting, respectively, to construct the committees.
 
 The overall process can be summarized in the following steps:
-- Construct a committee $C$ of models $\theta_{i}$, where $i$ can be any real positive number greater than 1. A committee can also be referred to as an ensemble of models. To achieve this, we can use:
+1. Construct a committee $C$ of models $\theta_{i}$, where $i$ can be any real positive number greater than 1. A committee can also be referred to as an ensemble of models. To achieve this, we can use:
 	- Query by Bagging
 	- Query by Boosting
-- The sum of committee models must represent some area of the version space. 
-- All models above are being trained on $L$, where $L$ is our labeled set.
-- Whenever one query (*unlabeled data point*) comes in, our committee models will have competing hypothesis as to which label is the right one; each model will provide a vote.
-- We will then come up with a way to measure committee disagreements (*i.e. how similar or different two probability distributions are*). We can use:
+2. The sum of committee models must represent some area of the version space. 
+3. All models above are being trained on $L$, where $L$ is our labeled set.
+4. Whenever one query (*unlabeled data point*) comes in, our committee models will have competing hypothesis as to which label is the right one; each model will provide a vote.
+5. We will then come up with a way to measure committee disagreements (*i.e. how similar or different two probability distributions are*). We can use:
 	- Vote entropy
 	- Kullback–Leibler divergence (*KL divergence*)
 	- Jensen–Shannon divergence (*JS divergence*), or information radius (*IRad*)
@@ -529,13 +537,12 @@ Upon careful examination, we can notice that the JS divergence approach has a si
 ### 4.3 Large margin-based strategies
 A margin-based learning algorithm is an algorithm that chooses a hypothesis by minimizing a loss function $L:\mathbb{R}\rightarrow [0,\infty)$ while using the margin of distances contained in the subset $S_l$ of labeled or training examples.
 
-Here are the general steps involved in the process:
-
-- The algorithm is given a set of $m$ training examples, $S={(x_{i}, y_{i})}$, drawn from a specific distribution.
-- A version space $F$ is provided.
-- A margin function $\rho$ is defined, which represents the margin of an example concerning the hypothesis function.
-- A margin-based loss function $L$ such as the one mentioned above is provided.
-- The margin-based algorithm $A$ returns a hypothesis scoring function $\hat{f} \in{F}$ that minimizes the loss over the training examples to choose a hypothesis scoring function.
+Below are the general steps involved in the process:
+1. The algorithm is given a set of $m$ training examples, $S={(x_{i}, y_{i})}$, drawn from a specific distribution.
+2. A version space $F$ is provided.
+3. A margin function $\rho$ is defined, which represents the margin of an example concerning the hypothesis function.
+4. A margin-based loss function $L$ such as the one mentioned above is provided.
+5. The margin-based algorithm $A$ returns a hypothesis scoring function $\hat{f} \in{F}$ that minimizes the loss over the training examples to choose a hypothesis scoring function.
 
 $$\hat{f}=\text{argmin}_{f'\in{F}}\sum_{i=1}^{m}L(\rho(x, y, f))$$
 
@@ -582,13 +589,15 @@ Gaussian Processes (*GPs*) are probabilistic models as well. GPs relate to BNN i
 
 This relationship is interesting because it allows us to approximate a BNN to a Gaussian Process. This is relevant because Gaussian Processes are completely defined by their mean $\mu(t)$ and covariance $\text{cov}(t,t')$ functions, thus we can compute the networks mean and covariance for the unlabeled and labeled points.
 
-IMAGE_03
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/03/B007G011_03.svg" width="700">
+</p>
 
-###### [Figure x: distribution in function space corresponding to the distribution $p(\theta)$ in parameter space (Red Lines), and samples from this distribution (Black Dots).](https://en.wikipedia.org/wiki/Neural_network_Gaussian_process)
+###### [*Figure x: distribution in function space corresponding to the distribution Theta in parameter space (Red Lines), and samples from this distribution (Black Dots).*](https://en.wikipedia.org/wiki/Neural_network_Gaussian_process)
 
 Let us assume we have already trained a BNN on some labeled data and want to know which of the unlabeled points should be labeled to improve the model. We want to choose points for which the network has high uncertainty. When we add such points to the training data, the uncertainty will probably reduce and the predictions will become better overall.
 
-The estimated mean and covariance using the approach above, completely define the Gaussian Process approximation of the Neural Network. The process defines the so called _posterior variance_ for every point in the pool. This variance is precisely the measure of uncertainty needed for Active Learning: if a point in the pool has a high variance, the network has a high uncertainty about its prediction and the point should be selected.
+The estimated mean and covariance using the approach above, completely define the Gaussian Process approximation of the Neural Network. The process defines the so called **posterior variance** for every point in the pool. This variance is precisely the measure of uncertainty needed for Active Learning: if a point in the pool has a high variance, the network has a high uncertainty about its prediction and the point should be selected.
 
 After adding several high variance points from the unlabeled subset to the labeled subset, the network training is resumed and the quality of the model should improve. This switch between adding points and re-training the network is usually performed iteratively until we get the accuracy we're looking for.
 
@@ -599,7 +608,6 @@ After adding several high variance points from the unlabeled subset to the label
 Before we dive into specifics, let us generalize and consider a source Deep Neural Network we would like to train and transfer to another problem.
 
 In a general way, a TL approach consists on the following steps:
-
 -   Train the source DNN on a base dataset, or get a pre-trained model.
 -   Create a new base model replacing the last layer from the source model.
 -   Freeze layers.
@@ -608,11 +616,10 @@ In a general way, a TL approach consists on the following steps:
 
 Let us explain in detail each of the steps involved:
 
-#### 5.1.1 Train the Source DNN
+#### 5.1.1 Training the Source DNN
 This step is critical since the transfer success will heavily depend on the source model we select. We can either build a source model and train it ourselves or select a pre-trained model. The main thing to remember is we need to ensure that we have a strong correlation between the knowledge of the source model and the target domain for them to be compatible.
 
 For pre-trained models, specifically DNNs, we have some options:
-
 -   **Computer Vision**
     -   VGG-16
     -   VGG-19
@@ -739,7 +746,6 @@ RL algorithms present several advantages, including:
 As we have seen, machine learning models can be classified by the types of inputs they accept as well as their functioning. We can also look at ML algorithms in terms of how they map data points.
 
 ## 1. Parametric Models
-
 **Parametric models** are machine learning models that use a mathematical equation to relate inputs and outputs. For example, **Linear Regression** is a parametric model that uses a straight line equation to fit data points on a plane, while **Logistic Regression** uses the [sigmoid function](https://machinelearningmastery.com/a-gentle-introduction-to-sigmoid-function/) to classify data. These models are based on predetermined mathematical formulas to generate outputs.
 
 Other examples of parametric models include:
@@ -808,9 +814,11 @@ To better illustrate the concept, let us consider a classification example:
 
 Thus, the decision boundary for a Generative model is determined by the probability or likelihood that a specific data point belongs to a given distribution.
 
-Binary classification is one of the simpler generalizations, but Generative models can perform much more complex tasks, particularly in the painting generation and synthetic visual art section:
+Binary classification is one of the simpler generalizations, but Generative models can perform much more complex tasks, particularly in the painting and synthetic visual art generation:
 
-IMAGE_04
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/03/B007G011_04.jpg">
+</p>
 
 ###### [*Figure x: “Creation of Adam” by Genel Jumalon. The initial concepts for this painting (pictured below) were produced by the AI image generator app Midjourney. Afterwards, Jumalon illustrated the above based on those concepts.*](https://www.sciencefriday.com/segments/ai-art/)
 
@@ -904,9 +912,7 @@ We have reviewed ...
 - [Machine Learning Mastery, Transfer Learning](https://machinelearningmastery.com/transfer-learning-for-deep-learning/)
 - [V7 Labs, A Newbie-Friendly Guide to Transfer Learning](https://www.v7labs.com/blog/transfer-learning-guide)
 
-[^1]: Laura E. Wadkin, Sirio Orozco-Fuentes and Irina Neganova at Science Direct, The recent advances in the mathematical modelling of human pluripotent stem cells.
-[^2]: DataNovia, Hierarchical Clustering
-[^3]: Advances in Neural Information Processing Systems 5 (NIPS 1992)
+[^1]: Advances in Neural Information Processing Systems 5 (NIPS 1992)
 
 ---
 
