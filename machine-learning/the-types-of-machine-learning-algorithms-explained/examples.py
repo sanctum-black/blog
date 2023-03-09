@@ -17,7 +17,7 @@ import pandas as pd
 # Example 1: Hard-coded function
 
 # Declare entries
-p0 = ['Saha', 'Howard', 22, 'Secretary', 1300]
+p0 = ['Sarah', 'Howard', 22, 'Secretary', 1300]
 p1 = ['John', 'Moore', 32, 'Illustrator', 3000]
 p2 = ['Laszlo', 'Kreizler', 35, 'Alienist', 3500]
 p3 = ['Willem', 'Van Bergen', 31, 'Pampered Child', 50000]
