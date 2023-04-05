@@ -1,6 +1,6 @@
 # blog
 
-![alt text](https://raw.githubusercontent.com/pabloagn/digital-assets/master/blog-cover-image.jpg "Blog Cover Image")
+![alt text](https://pabloagn.com/wp-content/uploads/2023/04/blog-cover-image.jpg "Blog Cover Image")
 
 ## About
 Here you will find my collection of written articles and essays. Main topics are usually Statistics & Data Science-oriented, but I may occasionally shift toward other tech-related subjects.

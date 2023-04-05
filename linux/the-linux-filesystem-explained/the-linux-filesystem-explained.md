@@ -739,7 +739,7 @@ htop
 ```
 
 ##### **Output**
-![Figure 1. htop utility](https://raw.githubusercontent.com/pabloagn/digital-assets/master/blog/linux/the-linux-filesystem-explained/figure_1_htop_PID.png "Figure 1. htop utility")
+![Figure 1. htop utility](https://pabloagn.com/wp-content/uploads/2023/01/figure_1_htop_PID.png "Figure 1. htop utility")
 
 We can see that the system is currently running ten processes. Looking at the first column, we can identify each process by its respective PID.
 
