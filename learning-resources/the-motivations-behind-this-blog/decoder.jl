@@ -44,4 +44,3 @@ my_arr = [0 -1 [
 my_alphabet = collect('A':'Z')
 
 decodeString(my_arr, my_alphabet)
-
