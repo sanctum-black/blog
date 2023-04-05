@@ -1,0 +1,7 @@
+# .gitignore file for: blog
+
+## Ignore .vscode folder on all categories using ** wildcard
+**/.vscode/
+
+## Ignore target folder completely
+target/
