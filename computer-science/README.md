@@ -5,6 +5,7 @@
 ## Table of Contents
 - [julia-for-beginners](https://github.com/pabloagn/blog/tree/master/computer-science/julia-for-beginners)
 - [programming-best-practices-writing-better-code](https://github.com/pabloagn/blog/tree/master/computer-science/programming-best-practices-writing-better-code)
+- [rust-for-beginners](https://github.com/pabloagn/blog/tree/master/computer-science/rust-for-beginners)
 - [what-is-julia-and-why-it-matters](https://github.com/pabloagn/blog/tree/master/computer-science/what-is-julia-and-why-it-matters)
 
 ## Navigate
