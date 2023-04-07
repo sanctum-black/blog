@@ -20,78 +20,78 @@ We'll be using Rust scripts which can be found in the [Blog Article Repo](https
 
 # Table of Contents
 - [To Love or Not to Love](#to-love-or-not-to-love)
-	- Safe low-level control]()
-	- Concurrency & asynchronous processing]()
-	- Backward compatibility]()
-	- Debugging]()
-	- Community & development]()
+	- [Safe low-level control](#1-safe-low-level-control)
+	- [Concurrency & asynchronous processing](#2-concurrency--asynchronous-processing)
+	- [Backward compatibility](#3-backward-compatibility)
+	- [Debugging](#4-debugging)
+	- [Community & development](#5-community--development)
 - [What to expect](#what-to-expect)
 - [Installation](#installation)
-	- [Rust](#1-Rust)
+	- [Rust](#1-rust)
 	- [Microsoft C++ Build Tools](#2-microsoft-c-build-tools)
-	- [VS Code](#2-vs-code)
-	- [Rust VS Code extension](#3-julia-vs-code-extension)
-- Creating a project]()
-	- The project manifesto]()
-	- Including dependencies]()
-	- The main function]()
-	- Compiling the project]()
-- Commenting]()
-	- Line comment]()
-	- Block comment]()
-- Pointers, references, and ownership]()
-	- Pointers]()
-	- References]()
-	- Ownership]()
-- Variables]()
-	- Immutable variables]()
-	- Mutable variables]()
-	- Scope & blocks]()
-- Constants]()
-- Printing]()
-- Data types]()
-	- Primitive types]()
-		- Boolean]()
-			- Boolean logic]()
-		- Integer]()
-		- Float]()
-		- String]()
-		- Character]()
-		- Never]()
-	- Sequence types]()
-		- Tuple]()
-			- Immutable tuples]()
-			- Mutable tuples]()
-		- Array]()
-			- Immutable arrays]()
-			- Mutable arrays]()
-		- Slice]()
-		- Casting data types]()
-	- Other types]()
-		- Vector]()
-- Operators]()
-	- Alternative methods for common operators]()
-		- Power operator]()
-- Conditional control]()
-	- If, else if, else]()
-	- Match]()
-		- A simple case]()
-		- Using compare and ordering]()
-- Random]()
-- Loops & iterators]()
-	- Using loop]()
-	- Using while]()
-	- Using for and range]()
-	- Using for and iter]()
-	- Using for with enumerate]()
-	- Collecting an iterator]()
-- Functions]()
-	- Main function]()
-	- User-defined functions]()
-	- Functions with arguments]()
-	- Functions returning a value]()
-- Macros]()
-- User input]()
+	- [VS Code](#3-vs-code)
+	- [Rust VS Code extension](#4-rust-vs-code-extension)
+- [Creating a project](#creating-a-project)
+	- [The project manifesto](#1-the-project-manifesto)
+	- [Including dependencies](#2-including-dependencies)
+	- [The main function](#3-the-main-function)
+	- [Compiling the project](#4-compiling-the-project)
+- [Commenting](#commenting)
+	- [Line comment](#1-line-comment)
+	- [Block comment](#2-block-comment)
+- [Pointers, references, and ownership](#pointers-references-and-ownership)
+	- [Pointers](#1-pointers)
+	- [References](#2-references)
+	- [Ownership](#3-ownership)
+- [Variables](#variables)
+	- [Immutable variables](#1-immutable-variables)
+	- [Mutable variables](#2-mutable-variables)
+	- [Scope & blocks](#3-scope--blocks)
+- [Constants](#constants)
+- [Printing](#printing)
+- [Data types](#data-types)
+	- [Primitive types](#1-primitive-types)
+		- [Boolean](#11-boolean)
+			- [Boolean logic](#112-boolean-logic)
+		- [Integer](#12-integer)
+		- [Float](#13-float)
+		- [String](#14-string)
+		- [Character](#15-character)
+		- [Never](#16-never)
+	- [Sequence types](#2-sequence-types)
+		- [Tuple](#21-tuple)
+			- [Immutable tuples](#211-immutable-tuples)
+			- [Mutable tuples](#211-mutable-tuples)
+		- [Array](#22-array)
+			- [Immutable arrays](#221-immutable-arrays)
+			- [Mutable arrays](#221-mutable-arrays)
+		- [Slice](#23-slice)
+		- [Casting data types](#3-casting-data-types)
+	- [Other types](#other-types)
+		- [Vector](#1-vector)
+- [Operators](#operators)
+	- [Alternative methods for common operators](#1-alternative-methods-for-common-operators)
+		- [Power operator](#11-power-operator)
+- [Conditional control](#conditional-control)
+	- [If, else if, else](#1-if-else-if-else)
+	- [Match](#2-match)
+		- [A simple case](#21-a-simple-case)
+		- [Using compare and ordering](#22-using-compare-and-ordering)
+- [Random](#random)
+- [Loops & iterators](#loops--iterators)
+	- [Using loop](#1-using-loop)
+	- [Using while](#2-using-while)
+	- [Using for and range](#3-using-for-and-range)
+	- [Using for and iter](#4-using-for-and-iter)
+	- [Using for with enumerate](#5-using-for-with-enumerate)
+	- [Collecting an iterator](#6-collecting-an-iterator)
+- [Functions](#functions)
+	- [Main function](#51-main-function)
+	- [User-defined functions](#52-user-defined-functions)
+	- [Functions with arguments](#53-functions-with-arguments)
+	- [Functions returning a value](#54-functions-returning-a-value)
+- [Macros](#macros)
+- [User input](#user-input)
 - [Next steps](#next-steps)
 - [Conclusions](#conclusions)
 - [References](#references)
@@ -451,7 +451,7 @@ Let us represent a generic block of memory using an array-like structure:
 | 0x0001  | 00100001 |
 | 0x0002  | 10110100 |
 | 0x0003  | 11001010 |
-###### *Figure N: Representation of A Memory Block using An Array-Like Structure*
+###### *Table 1: Representation of A Memory Block using An Array-Like Structure*
 
 Where:
 - The **address** is the location inside the memory block.
@@ -467,7 +467,7 @@ If we convert our binary sequences to decimal numbers, we get the following:
 | 0x0001  | 33 |
 | 0x0002  | 180 |
 | 0x0003  | 202 |
-###### *Figure N: Binary Characters Converted to Decimal numbers*
+###### *Table 2: Binary Characters Converted to Decimal numbers*
 
 If we look closer, the addresses in our memory block are simply numbers represented in hexadecimal form; the `0x` character preceding all the address values denotes we're talking about a hexadecimal value, where the number following would be the actual hexadecimal value.
 
@@ -492,7 +492,7 @@ If we substitute the value corresponding to the memory address 0x0002 for anothe
 | 0x0002  | 0x0001 |
 | 0x0003  | 0x00CA |
 
-###### *Figure N: Memory Block Containing a Pointer at Address 0x0002, Referencing Address 0x0001, or Value 0x0021*
+###### *Table 3: Memory Block Containing a Pointer at Address 0x0002, Referencing Address 0x0001, or Value 0x0021*
 
 Now we have a pointer, but why is this relevant? Well, in Rust, we have three types of pointers:
 - References
@@ -872,7 +872,7 @@ Below is the complete list of signed integer data types:
 | `i32`  | \-(2<sup>31</sup>)  | 2<sup>31</sup>\-1  |
 | `i64`  | \-(2<sup>63</sup>)  | 2<sup>63</sup>\-1  |
 | `i128` | \-(2<sup>127</sup>) | 2<sup>127</sup>\-1 |
-###### [Table n: Signed integer types With their respective minimum and maximum values](https://doc.rust-lang.org/reference/types/numeric.html)
+###### *[Table 4: Signed integer types With their respective minimum and maximum values](https://doc.rust-lang.org/reference/types/numeric.html)*
 
 As well as their unsigned counterparts:
 
@@ -883,7 +883,7 @@ As well as their unsigned counterparts:
 | `u32`  | 0       | 2<sup>32</sup>\-1  |
 | `u64`  | 0       | 2<sup>64</sup>\-1  |
 | `u128` | 0       | 2<sup>128</sup>\-1 |
-###### [Table n: unsigned integer types With their respective minimum and maximum values](https://doc.rust-lang.org/reference/types/numeric.html)
+###### *[Table 5: unsigned integer types With their respective minimum and maximum values](https://doc.rust-lang.org/reference/types/numeric.html)*
 
 It's important to note that the default type for any Rust program will be `i32` (*i.e., if we define an integer numeric variable without explicitly stating its data type, the compiler will most probably suggest `i32` as its data type*).
 
@@ -1403,7 +1403,7 @@ Below are the most commonly used operators, although the full set can be consult
 | <code>&#124;=</code>     | <code>var &#124;= expr</code>                           | Bitwise OR and assignment                |
 | <code>&#124;&#124;</code>     | <code>expr &#124;&#124; expr</code>                          | Short-circuiting logical OR              |
 
-###### *Table N: Most Common Operators in Rust*
+###### *[Table 6: Most Common Operators in Rust](https://doc.rust-lang.org/book/appendix-02-operators.html)*
 
 For example, we can use arithmetic operators:
 
@@ -2035,7 +2035,29 @@ I would also heavily advise visiting three key places:
 - **[The Official Rust Repo](https://github.com/rust-lang/rust)**: Where Rust and issues live (*useful when trying to debug*).
 - **[creates.io](https://crates.io/):** Where Rust crates are hosted. Taking a tour around crates.io could shed additional light on Rust's capabilities.
 
-And last but not least, the best advice anyone will ever give: write code and stop reading.
+In terms of what could be learned next, I would recommend tackling the following topics, all of which can be consulted in the official documentation:
+- **Reinforcement of key concepts:**
+	- [Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+	- [Variable shadowing](https://doc.rust-lang.org/rust-by-example/variable_bindings/scope.html)
+	- [Heap vs. stack memory](https://doc.rust-lang.org/rust-by-example/std/box.html)
+	- [Concurrency](https://doc.rust-lang.org/book/ch16-00-concurrency.html)
+	- [Threads & multi-threading](https://doc.rust-lang.org/book/ch16-01-threads.html)
+	- [Traits](https://doc.rust-lang.org/rust-by-example/trait.html)
+- **Other key types:**
+	- [Box](https://doc.rust-lang.org/book/ch15-01-box.html)
+	- [Hash Maps](https://doc.rust-lang.org/rust-by-example/std/hash.html)
+	- [Structs](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html)
+	- [Other pointer types](https://doc.rust-lang.org/reference/types/pointer.html)
+- **Further modularization:**
+	- [Closures](https://doc.rust-lang.org/book/ch13-01-closures.html)
+	- [Modules](https://doc.rust-lang.org/rust-by-example/mod.html)
+- **User & file interaction:**
+	- [File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)
+	- [File manipulation](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html)
+	- [More elaborate handling if user inputs](https://doc.rust-lang.org/std/io/index.html)
+	- [Buffer](https://docs.rs/buffer/latest/buffer/)
+
+And last but not least, the best advice anyone will ever give: stop reading and write some code.
 
 ---
 
