@@ -77,6 +77,7 @@ fn main() {
     println!("Product: {}", myvar1 * myvar2);
     println!("Division: {}", myvar1 / myvar2);
 
+
     // Arithmetic operations with assignment
     myvar1 += 1;
     myvar2 /= 2;
