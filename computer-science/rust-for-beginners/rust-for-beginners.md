@@ -20,13 +20,78 @@ We'll be using Rust scripts which can be found in the [Blog Article Repo](https
 
 # Table of Contents
 - [To Love or Not to Love](#to-love-or-not-to-love)
+	- Safe low-level control]()
+	- Concurrency & asynchronous processing]()
+	- Backward compatibility]()
+	- Debugging]()
+	- Community & development]()
 - [What to expect](#what-to-expect)
 - [Installation](#installation)
 	- [Rust](#1-Rust)
-	- Microsoft C++ Build Tools]()
+	- [Microsoft C++ Build Tools](#2-microsoft-c-build-tools)
 	- [VS Code](#2-vs-code)
 	- [Rust VS Code extension](#3-julia-vs-code-extension)
-
+- Creating a project]()
+	- The project manifesto]()
+	- Including dependencies]()
+	- The main function]()
+	- Compiling the project]()
+- Commenting]()
+	- Line comment]()
+	- Block comment]()
+- Pointers, references and ownership]()
+	- Pointers]()
+	- References]()
+	- Ownership]()
+- Variables]()
+	- Immutable variables]()
+	- Mutable variables]()
+	- Scope & blocks]()
+- Constants]()
+- Printing]()
+- Data types]()
+	- Primitive types]()
+		- Boolean]()
+			- Boolean logic]()
+		- Integer]()
+		- Float]()
+		- String]()
+		- Character]()
+		- Never]()
+	- Sequence types]()
+		- Tuple]()
+			- Immutable tuples]()
+			- Mutable tuples]()
+		- Array]()
+			- Immutable arrays]()
+			- Mutable arrays]()
+		- Slice]()
+		- Casting data types]()
+	- Other types]()
+		- Vector]()
+- Operators]()
+	- Alternative methods for common operators]()
+		- Power operator]()
+- Conditional control]()
+	- If, else if, else]()
+	- Match]()
+		- A simple case]()
+		- Using compare and ordering]()
+- Random]()
+- Loops & iterators]()
+	- Using loop]()
+	- Using while]()
+	- Using for and range]()
+	- Using for and iter]()
+	- Using for with enumerate]()
+	- Collecting an iterator]()
+- Functions]()
+	- Main function]()
+	- User-defined functions]()
+	- Functions with arguments]()
+	- Functions returning a value]()
+- Macros]()
+- User input]()
 - [Next steps](#next-steps)
 - [Conclusions](#conclusions)
 - [References](#references)
@@ -89,7 +154,7 @@ This is no special thing, since other languages also have this possibility. What
 
 Remember [Polars](https://pabloagn.com/deep-dives/polars-a-lightning-fast-dataframe-library-for-python-and-rust/)? It's implemented in Rust. More specifically, Polars makes use of [`rayon`](https://pola-rs.github.io/polars/polars/export/rayon/index.html), a data-parallelism library that allows for easy parallelization of operations on collections, without requiring explicit thread management.
 
-## 5. Backward compatibility
+## 3. Backward compatibility
 Rust places a high emphasis on backwards compatibility, particularly between different versions of the language, libraries, and crates. This is handled by the implementation of two channels:
 - A stable release channel.
 - A nightly release channel
@@ -108,7 +173,7 @@ This provides several advantages:
 
 Which is specially important when dealing with a fairly new language which could fundamentally change on each iteration.
 
-## 6. Debugging
+## 4. Debugging
 Rust provides two main advantages when it comes to debugging:
 - It's not forgivable, at least in the secure Rust implementation; if there's something that should not be there, it will not let us compile our code.
 - The compiler error messages are verbose and informative.
@@ -116,7 +181,7 @@ Rust provides two main advantages when it comes to debugging:
 
 These two aspects make Rust's debugger actually useful and somewhat of a pleasure to work with. It guides us through the writing of our code, and tells us when something goes wrong and exactly where the error comes from even before we compile our program.
 
-## 7. Community & development
+## 5. Community & development
 Rust is still a fairly new programming language. Still, it has already gained an enthusiastic community of developers known as [Rustaceans](https://rustaceans.org/) (*yes, this is a thing*).
 
 As of the writing of this article, the official [GitHub Repo](https://github.com/rust-lang/rust) has over 4,000 contributors, while the number of [Crates](https://crates.io/) in stock is currently at 110,360 (*we'll go over crates further on*), and the number of Crates downloaded surpasses the 30bn mark.
@@ -1074,7 +1139,7 @@ Although tuples have multiple use cases, they also have limitations due to their
 ### 2.2 Array
 An array is strictly implemented; it has to be defined at compile time (*using literals*), be of a single data type, cannot change in size, and is immutable by default.
 
-#### 2.2.1 Immutable array
+#### 2.2.1 Immutable arrays
 An immutable array can be defined using squared brackets `[]`:
 
 ##### **Code**
@@ -1126,7 +1191,7 @@ fn main() {
 [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
 
-#### 2.2.1 Mutable array
+#### 2.2.1 Mutable arrays
 We can also define a mutable array by prepending the `mut` keyword to the variable name:
 
 ##### **Code**
@@ -1370,10 +1435,10 @@ Addition with assignment: 15
 Division with assignment: 8
 ```
 
-## 3. Alternative methods for common operators
+## 1. Alternative methods for common operators
 Some mathematical operations which would be directly defined in other languages as operators, are not available in Rust. Two common examples are the power and the modulus operator.
 
-### 3.1 Power operator
+### 1.1 Power operator
 We can elevate any number to the $n^{th}$ power by using the `.pow` method:
 
 ##### **Code**
@@ -1823,7 +1888,7 @@ fn main() {
 
 As we discussed, we do not have to explicitly call our `main` function since it gets executed directly. It makes sense then, to include all our other function calls inside the main function.
 
-### 5.2 User-defined function
+### 5.2 User-defined functions
 Apart from the `main` function, we can define our own using the following syntax:
 
 ##### **Code**
