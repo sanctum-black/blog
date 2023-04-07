@@ -64,7 +64,7 @@ We'll be using Rust scripts which can be found in the [Blog Article Repo](https
 			- [Mutable tuples](#211-mutable-tuples)
 		- [Array](#22-array)
 			- [Immutable arrays](#221-immutable-arrays)
-			- [Mutable arrays](#221-mutable-arrays)
+			- [Mutable arrays](#222-mutable-arrays)
 		- [Slice](#23-slice)
 		- [Casting data types](#3-casting-data-types)
 	- [Other types](#other-types)
@@ -86,10 +86,10 @@ We'll be using Rust scripts which can be found in the [Blog Article Repo](https
 	- [Using for with enumerate](#5-using-for-with-enumerate)
 	- [Collecting an iterator](#6-collecting-an-iterator)
 - [Functions](#functions)
-	- [Main function](#51-main-function)
-	- [User-defined functions](#52-user-defined-functions)
-	- [Functions with arguments](#53-functions-with-arguments)
-	- [Functions returning a value](#54-functions-returning-a-value)
+	- [Main function](#1-main-function)
+	- [User-defined functions](#2-user-defined-functions)
+	- [Functions with arguments](#3-functions-with-arguments)
+	- [Functions returning a value](#4-functions-returning-a-value)
 - [Macros](#macros)
 - [User input](#user-input)
 - [Next steps](#next-steps)
@@ -152,7 +152,7 @@ This is no special thing since other languages also have this possibility. What 
 - Due to its robust compiler, many potential concurrent processing problems are pointed out at compile time.
 - Rust's concurrency model is based on ownership and borrowing, which provides a safe and efficient way to manage shared data in concurrent programs. This prevents data races and other synchronization issues that may occur in other languages.
 
-Remember [Polars](https://pabloagn.com/deep-dives/polars-a-lightning-fast-dataframe-library-for-python-and-rust/)? It's implemented in Rust. Polars uses [rayon`](https://pola-rs.github.io/polars/polars/export/rayon/index.html), a data-parallelism library that allows for easy parallelization of operations on collections without requiring explicit thread management.
+Remember [Polars](https://pabloagn.com/deep-dives/polars-a-lightning-fast-dataframe-library-for-python-and-rust/)? It's implemented in Rust. Polars uses [rayon](https://pola-rs.github.io/polars/polars/export/rayon/index.html), a data-parallelism library that allows for easy parallelization of operations on collections without requiring explicit thread management.
 
 ## 3. Backward compatibility
 Rust highly emphasizes backward compatibility, particularly between different language versions, libraries, and crates. This is handled by the implementation of two channels:
@@ -750,7 +750,7 @@ fn main() {
 ```
 
 ##### **Output**
-```Rust
+```
 7
 ```
 
@@ -891,14 +891,18 @@ We can define an integer variable under the current scope:
 
 ##### **Code**
 ```Rust
-let mynum_i32:i32 = 2000;
+fn main() {
+	let mynum_i32:i32 = 2000;
+}
 ```
 
 We can also directly check the maximum number possible for a given data type using the following syntax:
 
 ##### **Code**
 ```Rust
-println!("Max size for u8 is: {}", u8::MAX);
+fn main() {
+	println!("Max size for u8 is: {}", u8::MAX);
+}
 ```
 
 ##### **Output**
@@ -910,7 +914,9 @@ If we try to define a variable with a data type where our value is out of its ra
 
 ##### **Code**
 ```Rust
-let mynumber:u8 = 256;
+fn main() {
+	let mynumber:u8 = 256;
+}
 ```
 
 ##### Output
@@ -977,7 +983,6 @@ fn main() {
     // Replace a string
     let mystring2: String = mystring1.replace("X", "W X");
     println!("{}", mystring2);
-
 
 }
 ```
@@ -1193,7 +1198,7 @@ fn main() {
 [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
 
-#### 2.2.1 Mutable arrays
+#### 2.2.2 Mutable arrays
 We can also define a mutable array by prepending the `mut` keyword to the variable name:
 
 ##### **Code**
@@ -1876,7 +1881,7 @@ Where:
 
 It's important to note that, unlike other languages, all code in Rust, except counted cases such as constants, must be written inside a function or a module. Similarly, functions must be called from within other functions or modules.
 
-### 5.1 Main function
+## 1. Main function
 In Rust, the `main` function is used to signal the start of program execution and control flow throughout the program. It does not accept any arguments and should be included (*although it's not required*) as the first function in our program. Until now, we've stuck to using the `main` function exclusively; it gets executed directly upon compilation and run of our application.
 
 A typical main function syntax is shown below:
@@ -1890,7 +1895,7 @@ fn main() {
 
 As we discussed, we do not have to explicitly call our `main` function since it gets executed directly. It makes sense, then, to include all our other function calls inside the main function.
 
-### 5.2 User-defined functions
+## 2. User-defined functions
 Apart from the `main` function, we can define our own using the following syntax:
 
 ##### **Code**
@@ -1915,7 +1920,7 @@ fn main() {
 100
 ```
 
-### 5.3 Functions with arguments
+## 3. Functions with arguments
 As usual, if we want to declare a function that accepts arguments, we must declare each argument's type in the function definition:
 
 ##### **Code**
@@ -1934,7 +1939,7 @@ fn main() {
 21, 22.3
 ```
 
-### 5.4 Functions returning a value
+## 4. Functions returning a value
 If we want to define a function that returns a value to the user, we can use two different methods:
 - Without explicitly including a `return` statement.
 - Explicitly including a `return` statement.
