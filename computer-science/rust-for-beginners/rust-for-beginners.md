@@ -2026,7 +2026,7 @@ There are also a number of unofficial free resources online:
 - **[Rust 101 Crash Course](https://www.youtube.com/watch?v=lzKeecy4OmQ)**: A great 6-hr marathon including a comprehensive overview of Rust's most relevant features as well as practice exercises.
 
 Additionally, there are some additional books to complement the learning process:
-- **[Programming Rust, 2nd Edition by O'Reilly](https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/)** is hands-down the best complementary book to consult.
+- **[Programming Rust, 2nd Edition by O'Reilly](https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/)**: Hands-down the best complementary book to consult.
 - **[Rust Programming Cookbook](https://www.packtpub.com/product/rust-programming-cookbook/9781789530667)**: Yet another fully packed book containing all the nits and grits of Rust. 
 - **[Rust in Action](https://www.manning.com/books/rust-in-action)**: A great resource whose cover resembles that of Charles Mulligan's Steakhouse.
 
