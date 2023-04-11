@@ -38,10 +38,12 @@ We'll be using Elixir scripts which can be found in the [Blog Article Repo](htt
 	- [Elixir VS Code extension](#3-elixir-vs-code-extension)
 - [Creating a project](#creating-a-project)
 	- [The main source file](#1-the-main-source-file)
-	- [Compiling & running](#2-compiling--running)
+	- [Managing dependencies](#2-managing-dependencies)
+		- [The mix.exs file](#21-the-mixexs-file)
+	- [Compiling & running](#3-compiling--running)
 - [Managing dependencies](#managing-dependencies)
 - [Commenting](#commenting)
-	- Single-line commenting]()
+	- [Single-line commenting](#1-single-line-comment)
 - [Variables](#variables)
 - [Printing](#printing)
 	- [IO.puts](#1-ioputs)
@@ -64,23 +66,23 @@ We'll be using Elixir scripts which can be found in the [Blog Article Repo](htt
 	- [Arithmetic operators](#2-arithmetic-operators)
 	- [Logical operators](#3-logical-operators)
 - [Control flow](#control-flow)
-	- Using if, else]()
-	- Using if, unless]()
-	- Using cond]()
-	- Using case]()
-- Pipes]()
-- Iterators]()
-	- Using Enum]()
-	- Using recursion]()
+	- [Using if, else](#1-using-if-else)
+	- [Using if, unless](#2-using-if-unless)
+	- [Using cond](#3-using-cond)
+	- [Using case](#4-using-case)
+- [Pipes](#pipes)
+- [Iterators](#iterators)
+	- [Using Enum](#1-using-enum)
+	- [Using recursion](#2-using-recursion)
 - [Functions](#functions)
-	- Named functions]()
-		- Without arguments]()
-		- With arguments]()
-		- With default arguments]()
-	- Anonymous functions]()
-		- A simple anonymous function]()
-		- Using shorthand notation]()
-		- Using a multi-clause function]()
+	- [Named functions](#1-named-functions)
+		- [Without arguments](#11-without-arguments)
+		- [With arguments](#12-with-arguments)
+		- [With default arguments](#13-with-default-arguments)
+	- [Anonymous functions](#2-anonymous-functions)
+		- [A simple anonymous function](#21-a-simple-anonymous-function)
+		- [Using shorthand notation](#22-using-shorthand-notation)
+		- [Using a multi-clause function](#23-using-a-multi-clause-function)
 - [Modules](#modules)
 - [Next Steps](#next-steps)
 - [Conclusions](#conclusions)
@@ -125,16 +127,25 @@ Elixir has lightweight processes, preemptive scheduling, and a garbage collectio
 ## 4. Inheritance from a titan
 Erlang is a language developed by Ericsson originally designed for telecoms switching. Its main emphasis is on building extremely robust and fault-tolerant distributed applications that can quickly adapt to changing requirements. Erlang has built-in support for concurrency, so huge numbers of requests can be serviced simultaneously and single software errors can be easily contained.
 
-Elixir is built based on Erlang, and it also runs on the same VM called BEAM. This makes a statement; Elixir will handle even the most demanding tasks.
+Elixir is built based on Erlang, and it also runs on the same VM called BEAM. This makes a statement; Elixir will handle even the most demanding tasks. Additionally, Elixir inherits Erlang's OTP, a set of libraries and design principles providing middle-ware to develop concurrent systems.
 
 ## 5. Syntax
-Elixir's syntax is based on Ruby. 
+Elixir's syntax is based on Ruby. It's extremely readable and expressive, while at the same having all the functional programming advantages. Elixir has useful syntactical elements such as the pipe operator `|>` used to chain functions, and pattern matching that allow us to destructure data structures and match them against specific patterns.
+
+Overall, Elixir's syntax is easy to learn, write, read, and debug.
 
 ## 6. Adoption
-- Discord (handle massive amounts of concurrent users).
-- Motorola (fault-tolerant communication systems).
-- Pinterest (scale-up real-time notification system).
-- Phoenix framework.
+Elixir is an emerging language, which means that its adoption is not up there with more popular languages. However, companies that do use Elixir, tackle very specific & complex problems with it:
+- **Discord:** A popular voice and text chat application for gamers using Elixir and Erlang to power their real-time communication infrastructure, infallibly handling massive amounts of concurrent users.
+- **Pinterest**: A social media platform that allows users to discover and save ideas for their projects and interests. They implemented Elixir to scale-up their real-time notification system.
+- **PepsiCo:** A multinational food and beverage corporation using Elixir for their entire supply chain management system.
+- **WhatsApp:** A popular messaging app using Elixir and Erlang for their real-time communication infrastructure.
+- **Motorola:** A multinational telecommunications company using Elixir for handling massive volumes of video data in their video security and analytics platform.
+- **Financial Times:** A British daily business newspaper using the Absinthe framework in Elixir, and Elixir’s meta-programming ability to create DSLs (*Domain Specific Languages*).
+- **Toyota Connected:** A mobility & transportation subsidiary of Toyota Motor Corporation, using Elixir in their Mobility Service Platform (*MSPF*) which connects their cars, allowing them to send real-time events.
+- **Phoenix framework:** A a web framework for the Elixir programming language that is designed to help developers build high-performance, scalable web applications.
+
+We can see that most of the applications are centered around high-traffic, concurrent, complex systems that require solid performance and fault-tolerance even in the most demanding production environments.
 
 ## 7. Community
 Even though Elixir is not as popular as other languages, it has an active community filled up with enthusiasts and experts constantly providing information on the latest and greatest.
@@ -146,8 +157,11 @@ Now that we're hopefully convinced that Elixir is a great language to learn and 
 ---
 
 # What to expect
+Elixir is not hard to learn, specially when coming from a functional programming context. However, if we're dealing with a more complex system, grasping and implementing concepts such as concurrency and parallelism, processes, macros, and some functional programming aspects, can be challenging.
 
-Another thing to mention is that we'll be focusing this segment on using Mix for project creation, compilation, and running purposes. Mix is a handy tool that manages a good portion of the boilerplate code required for kickstarting our first project, as well as the creation of the required files to compile it and run it in a breeze. There are other methods for compiling and running Elixir files such as `iex` or directly with `elixir`, but we won't be covering those here.
+In this segment, we'll focus on learning the fundamentals, while introducing some general concepts around functional programming.
+
+Another thing to mention is that we'll be be using Mix for project creation, compilation, and running purposes. This will save us some time, since most of the boilerplate components of a typical Elixir project will be handled for us.
 
 ---
 
@@ -205,7 +219,7 @@ Now that everything's in place, we're ready to start configuring our working env
 ---
 
 # Creating a project
-Elixir projects can be created using Mix. Mix is a build tool that provides tasks for creating, compiling, testing our application, managing its dependencies, and more.
+Elixir projects can be created using Mix. Mix is a handy tool that manages a good portion of the boilerplate code required for kickstarting our first project, as well as the creation of the required files to compile it and run it in a breeze. There are other methods for compiling and running Elixir files such as `iex` or directly with `elixir`, but we won't be covering those here. Mix also introduces handy tools for testing our application and managing its dependencies.
 
 To create a new project called `project_1`, we can open a new PowerShell session, and include the following:
 
@@ -243,7 +257,7 @@ This command will create a number of files and folders:
 	- `test/test_helper.exs`: The script invoked when testing our program; Elixir uses the ExUnit testing framework, which comes built-in with the language, to write and run program tests.
 	- `.formatter.exs`: A configuration file used by the Elixir code formatter. The code formatter is a tool that automatically formats Elixir code according to a set of predefined rules, making it easier to read and maintain. The `.formatter.exs` file allows us to customize the code formatter's behavior by specifying options such as line length, indentation, and syntax preferences.
 	- `.gitignore`: If we're including a GitHub repository along with our project, a `.gitignore` file serves as a way to let git know which files and folders to ignore in our commits. If we have an intended repository we can leave this file. Else, we can delete it. Mix populates the project's `.gitignore` file with some helpful entries that we are not supposed to include in a GitHub repository. 
-	- `mix.exs`: The project's configuration file. It is used to define the project's dependencies, version, and other metadata, as well as to configure various settings related to the build process, such as compilers and output directories.
+	- `mix.exs`: The project's configuration file. It's used to define the project's dependencies, version, and other metadata, as well as to configure various settings related to the build process, such as compilers and output directories.
 	- `README.md`: Yet another GitHub-related file. A `README.md` file is typically used in repositories to provide information about our project. As with `.gitignore`, Mix will populate this file with some useful information. If we're not working with a GitHub repo, we can delete this file.
 
 As we may have noted, Elixir source files have the `.ex` file extension. We can open the `lib/project1.ex` in VS Code and start writing some code.
@@ -305,7 +319,139 @@ One thing to note is that, although we're defining our first function as `main`,
 
 The idea is to define a `main` function for each module, responsible for calling all the other functions in our module.
 
-## 2. Compiling & running 
+## 2. Managing dependencies
+Dependencies in Elixir are external libraries or packages that are used in a project to provide additional functionality. Elixir uses the Hex package manager to manage dependencies.
+
+The complete set of packages currently available in Hex can be consulted [here](https://hex.pm/packages).
+
+As we have already discussed, we can include dependencies for our project in the `project_1/mix.exs` file.
+
+### 2.1 The mix.exs file
+If we open our `mix.exs` file, we can see that it contains the following:
+
+##### **Code**
+```Elixir
+defmodule Project1.MixProject do
+  use Mix.Project
+
+  def project do
+    [
+      app: :project_1,
+      version: "0.1.0",
+      elixir: "~> 1.14",
+      start_permanent: Mix.env() == :prod,
+      deps: deps()
+    ]
+  end
+
+  def application do
+    [
+      extra_applications: [:logger]
+    ]
+  end
+
+  defp deps do
+    [
+      # {:dep_from_hexpm, "~> 0.3.0"},
+      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+    ]
+  end
+end
+```
+
+The section we're interested is located in the `deps` section; we can include dependencies using Hex or by directly including a GitHub Repository URL.
+
+We can include a package from Hex using the following syntax:
+
+##### **Code**
+```Elixir
+defp deps do
+  [
+    {:jason, "~> 1.4.0"},
+  ]
+end
+```
+
+If we try to compile our project as is, we will not be able to do so yet; we also need to install Hex if we're including dependencies for the first time (*we'll review compilation in more detail later on. For now, we need to know that `mix run -e "Project1.main()` will compile and run the main function of our Project1 module").
+
+##### **Code**
+```PowerShell
+mix run -e "Project1.main()"
+```
+
+##### **Output**
+```
+Could not find Hex, which is needed to build dependency :jason
+Shall I install Hex? (if running non-interactively, use "mix local.hex --force") [Yn]
+```
+
+We will then select `Y`. Once we have Hex installed, we will execute the following command:
+
+##### Code
+```PowerShell
+mix deps.get
+```
+
+This command is used in to fetch and install dependencies for an Elixir project. It's typically used after modifying the project's `mix.exs` file to add or update dependencies.
+
+If everything went right, we should end with the following output:
+
+##### **Output**
+```
+Resolving Hex dependencies...
+Resolution completed in 0.018s
+New:
+  jason 1.4.0
+* Getting jason (Hex package)
+```
+
+We can see that a new directory for our newly installed package was created in `project_1/deps/jason`. This folder will contain a `lib` directory with all the modules; if the package was written in Elixir, modules will be defined as `modulename.ex` files. We will also typically get the following files:
+- A `README.md` file containing the package's documentation.
+- A `LICENSE` file containing the package's license and distribution agreements.
+- A `mix.exs` file containing the dependencies and configuration for the package.
+- A `CHANGELOG.md` containing a chronological set of enhancements, fixes and security improvements made over time.
+
+We can include a dependency in our project by using the `require` or `import` directives:
+
+##### **Code**
+```Elixir
+defmodule Project1 do
+  @moduledoc """
+  This is a module containing functions to explore the Elixir language.
+  """
+  # Import Jason package
+  import Jason
+
+  @doc """
+  Print hello world.
+  """
+  def main do
+    IO.puts("Hello World")
+  end
+end
+```
+
+If we then compile our project again, the `jason` package will be also compiled:
+
+##### **Code**
+```PowerShell
+mix run -e "Project1.main()"
+```
+
+##### **Output**
+```
+==> jason
+Compiling 10 files (.ex)
+Generated jason app
+==> project_1
+Hello World
+```
+
+Each package run and compilation is denoted by the thick arrow `==>`.
+
+This process is only executed once, since upon the first compilation, Erlang BEAM binaries will be built inside the `project_1/_build/dev/lib/jason/ebin` directory.
+
+## 3. Compiling & running 
 In order to run an Elixir project, we will need to compile it first. The good news is that if we're using Mix, we don't have to worry about that, since it's handled automatically when running.
 
 We can create a new PowerShell instance, head to our project's main directory, and include the following:
@@ -327,10 +473,6 @@ Hello World
 And voila, we've written, compiled and run our first Elixir project.
 
 Upon compiling and running, the compiler will create a new folder called `_build`. This folder will at first contain one subfolder called `dev`. This subfolder contains the development build artifacts. This includes compiled Elixir code, compiled Erlang code, and compiled NIFs (*Native Implemented Functions*) if our project uses them.
-
----
-
-# Managing dependencies
 
 ---
 
@@ -1883,21 +2025,68 @@ Printing from within Project1 Module
 ---
 
 # Next steps
-Aaa
+Elixir is all about learning to think in functional programming terms. If brings all the aspects that make functional programming great, while at the same time providing an easy and expressive syntax.
+
+This is why, the first step would be to learn the pillars of functional thinking:
+- **Focusing on functions:** In functional programming, functions are the building blocks of programs. We can think in terms of functions that take inputs and produce outputs. Functions should be pure, meaning that they don't have side effects and always produce the same output given the same input.
+- **Using immutable data structures:** In functional programming, data structures are usually immutable, meaning that they can't be changed once they are created. When we need to modify a data structure, we create a new version of the structure that reflects the change. This can take some getting used to, but it leads to more predictable and less error-prone code.
+- **Avoiding mutable state:** In functional programming, mutable state is usually avoided in favor of pure functions and immutable data structures. If we need to maintain state, we can use techniques like recursion or passing state as function arguments and return values.
+- **Using higher-order functions:** In functional programming, functions can take other functions as arguments and return functions as results. This allows us to write more generic and reusable code that can be customized with different functions.
+- **Using recursion:** This one is trickier and gets some time getting used to it; if we come from an OOP context, the more obvious approach is to simply declare a `for` loop, and nest other `loops` to provide the appropriate level of depth as per required. We didn't mention `for` loops in this segment for a reason; recursive approaches usually provide increased simplicity, generality, conciseness, and most important of all, efficiency.
+- **Understanding functional programming concepts:** Functional programming is not a religion; it's just a set of tools to make programs more computationally efficient. To truly think in functional programming terms, it's important to understand the underlying concepts and principles of functional programming, and why they matter in the first place.
+
+There are a lot of free resources for learning more advanced Elixir concepts. Below we will find a collection of books, Courses, YouTube Channels, and articles:
+
+*Disclaimer: None of the resources below are sponsored. All the material was selected by myself.*
+
+First-stops
+- **[The Elixir Language, Official Page](https://elixir-lang.org/)**: Contains a summary of what Elixir can do, along with multiple redirections to amazing learning resources.
+- **[The Elixir Learning page](https://elixir-lang.org/learning.html)**: An index of the official recommended learning resources.
+- **[Elixir GitHub Repository](https://github.com/elixir-lang/elixir)**: A great place where we can check latest releases, issues & bug reports, and also get to know the maintainers that make Elixir possible.
+
+Relevant bibliography:
+- **[Elixir in Action, Manning Publications](https://www.manning.com/books/elixir-in-action-second-edition)**: A tutorial book that teaches Elixir and Erlang from the ground up to advanced concepts. The most recommended book among senior Elixir programmers.
+- **[Designing Elixir Systems with OTP, The Pragmatic Bookshelf](https://pragprog.com/titles/jgotp/designing-elixir-systems-with-otp/)**: A great resource teaching how not just to write Elixir code, but actually think in Elixir. Aimed at teaching how to write highly scalable, self-healing, fault-tolerant software with layers.
+- **[Concurrent Data Processing in Elixir](https://pragprog.com/titles/sgdpelixir/concurrent-data-processing-in-elixir/)**: Oriented towards teaching how to write fast, resilient, concurrent applications using OTP, GenStage, Flow, and Broadway.
+
+Online Courses:
+- **[Elixir-School](https://elixirschool.com/en)**: An open and community driven effort inspired by Twitter’s Scala School, entirely for free. The site’s content consists of peer-reviewed lessons on various Elixir topics that range in difficulty. The lessons are currently available in over 10 languages to help make programming Elixir more accessible to non-English speakers.
+- **[Elixir/OTP Course, The Pragmatic Studio](https://pragmaticstudio.com/elixir)**: A hands-on step-by-step 6-hour video teaching how to build a concurrent, fault-tolerant application from scratch. Also, The Pragmatic Studio offers Purchasing Power Parity Pricing. How awesome is that?
+- **[Elixir Course, grox.io](https://grox.io/language/elixir/course)**: A full program containing an e-book, 8 videos, dozens of exercises, and two full test-first projects.
+- **[OTP Course, grox.io](https://grox.io/language/otp/course)**: A module focused at teaching OTP for first-time learners.
+
+YouTube Channels:
+- **[Coding Tech, Why Elixir Matters](https://www.youtube.com/watch?v=cWAHpvkh8Vs)**: A nice conference imparted by [Osa Gaius](https://github.com/osagaius), explaining theory, history & relevance behind functional programming, as well as the importance of Elixir today.
+- **[Elixir Tutorial, Derek Banas](https://www.youtube.com/watch?v=pBNOavRoNL0)**: A must first stop for beginners.
+- **[Elixir & Phoenix Playlist, Tensor Programming](https://www.youtube.com/watch?v=R8CeZazrDHo&list=PLJbE2Yu2zumAgKjSPyFtvYjP5LqgzafQq)**: A great series providing 5 segments on Elixir, and 9 segments on Phoenix, including multiple hands-on examples.
+
+Community:
+- **[The Elixir Forum](https://elixirforum.com/)**: The place where Elixir programmers support each others and share ideas.
+- **[Dev.to, Elixir](https://dev.to/t/elixir)**: A great forum belonging to [dev.to](https://dev.to/), exclusive for Elixir and OTP.
+- **[Erlang Solutions, Hub](https://www.erlang-solutions.com/hub/)**: A great hub hosting conferences, publishing reports, and exploring Elixir & Erlang success stories throughout the globe.
+
+Interactive notebook environments:
+- **[Fly.io](https://fly.io/)**: Specialized in providing interfaces for multiple frameworks and languages. Supports the Phoenix framework, where we can write Elixir applications.
+- **[Livebook.dev](https://livebook.dev/)**: Supports Elixir programming through Mix.
 
 ---
 
 # Conclusions
-We discusses a lot in this segment: We first talked about Elixir's context and main advantages. We then installed the language along with a VS Code extension, and created our first project using Mix. We then talked about syntax, data types, variables, operators, methods, conditional constructs, iterators using `Enum` and recursion.
+In this segment we introduced Elixir's context and main advantages. We then installed the language along with a VS Code extension, created our first project using Mix, included a dependency using Mix & Hex, and compiled it to bytecode that can be run on the Erlang Virtual Machine (*VM*). We then talked about syntax, data types, variables, operators, methods, conditional constructs, iterators using `Enum` and recursion, different types of functions, and modules.
 
-Elixir is a ... all about thinking in functional programming terms.
+We concluded by providing next steps for those interested in learning more about this robust and fault-tolerant functional language.
 
 ---
 
 # References
 - [Elixir: The Documentary](https://www.youtube.com/watch?v=lxYFOM3UJzo)
-- https://www.youtube.com/watch?v=antnsMgA4Ro
-- https://www.youtube.com/watch?v=pBNOavRoNL0
+- [Erlang Solutions, Which companies are using Elixir, and why?](https://www.erlang-solutions.com/blog/which-companies-are-using-elixir-and-why-mytopdogstatus/)
+- [How To Install Elixir, Derek Banas](https://www.youtube.com/watch?v=antnsMgA4Ro)
+- [Elixir Tutorial, Derek Banas](https://www.youtube.com/watch?v=pBNOavRoNL0)
+- 
+
+
+
 
 ---
 
