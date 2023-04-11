@@ -383,7 +383,7 @@ defp deps do
 end
 ```
 
-If we try to compile our project as is, we will not be able to do so yet; we also need to install Hex if we include dependencies for the first time (*we'll review compilation in more detail later on. For now, we need to know that `mix run -e "Project1.main()` will compile and run the main function of our Project1 module").
+If we try to compile our project as is, we will not be able to do so yet; we also need to install Hex if we include dependencies for the first time (*we'll review compilation in more detail later on. For now, we need to know that `mix run -e "Project1.main()` will compile and run the main function of our Project1 module*).
 
 ##### **Code**
 ```PowerShell
@@ -927,6 +927,9 @@ Atoms are useful when we're trying to represent constant values that are used th
 - **Defining configuration values:** Atoms can also be used to define configuration values in a system, such as `:debug` or `:log_level`. This allows us to easily configure a system's behavior without changing code.
 - **Naming functions or modules:** Atoms can also be used to name functions or modules in Elixir, providing a more descriptive and readable way to refer to these constructs in code.
 
+We can define an `atom` as follows:
+
+##### **Code**
 ```Elixir
 def main do
   # Declare atom without space
