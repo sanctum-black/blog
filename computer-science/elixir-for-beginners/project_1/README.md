@@ -1,6 +1,6 @@
 # Project1
 
-**TODO: Add description**
+A test project for exploring the Elixir programming language.
 
 ## Installation
 
