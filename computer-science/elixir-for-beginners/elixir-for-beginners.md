@@ -67,7 +67,7 @@ We'll be using Elixir scripts which can be found in the [Blog Article Repo](htt
 	- [Logical operators](#3-logical-operators)
 - [Control flow](#control-flow)
 	- [Using if, else](#1-using-if-else)
-	- [Using if, unless](#2-using-if-unless)
+	- [Using unless, else](#2-using-unless-else)
 	- [Using cond](#3-using-cond)
 	- [Using case](#4-using-case)
 - [Pipes](#pipes)
@@ -92,76 +92,87 @@ We'll be using Elixir scripts which can be found in the [Blog Article Repo](htt
 ---
 
 # Why learn Elixir?
-In an ocean of programming languages, what does this language bring to the table? Well, lets start this by noting that Elixir consistently ranks as one of the most loved programming languages.
+What does this language bring to the table in an ocean of programming languages? Well, let us start by noting that not only does Elixir consistently rank as one of the most loved programming languages in the yearly [Stack Overflow Developer Survey](https://survey.stackoverflow.co/2022/#overview) (*getting second place, just below Rust, in last year's survey*), but [Phoenix](https://www.phoenixframework.org/), a web framework written in Elixir, ranked as the most loved framework in the same survey last year, effectively obliterating every JavaScript framework by more than ten percentual points.
+
+But why are developers so happy with Elixir?
 
 ## 1. Distributed systems and concurrency
-We might have noticed that distributed software is becoming normalized as new languages implement new ways to deal with concurrency in a safe manner. This is important because some years ago, a single CPU might have been enough, but today, that's most definitely not the case, even with efficient multi-threading.
+Distributed software is becoming normalized as new languages implement new ways to deal with concurrency in a safe manner. This is important because some years ago, a single CPU might have been enough, but today, that's most definitely not the case, even with efficient multi-threading and low-level management.
 
 In [Elixir: The Documentary](https://www.youtube.com/watch?v=lxYFOM3UJzo), creator José Valim explains that traditional languages are sometimes bottlenecked in terms of performance and scalability because they were not designed to deploy distributed programs.
 
 Elixir tries to solve this problem by allowing the building of scalable, fault-tolerant, and distributed applications. It achieves this through its support for concurrency and parallelism, fault-tolerance mechanisms, and distributed computing capabilities.
 
-In this same mini documentary, Stefan Kellner, CEO of Qixxit, mentions a critical aspect of Elixir; a system involving thousands of active connections at the same time can be deployed using Elixir, and it will result in an extremely resilient implementation.
+In this same mini-documentary, Stefan Kellner, CEO of Qixxit, mentions a critical aspect of Elixir; a system involving thousands of active simultaneous connections can be deployed using Elixir and will result in a highly resilient implementation.
 
-This is important since systems will only get more complex and have more moving parts as we expand; we will need battle horses that are able to process multiple connections, in a fast manner, and without errors.
+This is important since systems will only get more complex and have more moving parts as we expand; we will need battle horses that can process multiple connections quickly and infallibly.
 
 ## 2. Functional programming
 When talking about programming paradigms, we have four relevant options:
 - **Imperative:** Describes the sequence of steps a program must take to accomplish a task.
-- **Procedural:** Organizes code into procedures (also known as functions or subroutines) that can be called to perform specific tasks.
-- **Object-oriented:** Models programs as a collection of objects that interact with each other. Objects are instances of classes, which encapsulate data (*attributes*) and behaviors (*methods*).
-- **Functional:** Computation is based on the evaluation of mathematical functions and the avoidance of mutable state and side effects. Functional programming promotes immutability, recursion, and higher-order functions.
+- **Procedural:** Organizes code into procedures (_also known as functions or subroutines_) that can be called to perform specific tasks.
+- **Object-oriented:** Models programs as a collection of objects that interact with each other. Objects are instances of classes that encapsulate data (*attributes*) and behaviors (*methods*).
+- **Functional:** Computation is based on the evaluation of mathematical functions and the avoidance of mutable states and side effects. Functional programming promotes immutability, recursion, and higher-order functions.
 - **Multi-paradigm:** A combination of two or more paradigms.
 
-If we learned programming using Python, chances are, we have only been exposed to Object-Oriented programming. OOP requires a specific way of thinking about writing code, and that sticks with us the more we write in a language using OOP.
+If we learned to program using Python, chances are, we have only been exposed to Object-Oriented programming; OOP requires a specific way of thinking about writing code, which sticks with us the more we write in a language using OOP.
 
-Elixir on the other hand, is a functional language, meaning it uses functional programming. This paradigm is entirely different from OOP to the very bones, thus it requires a different way of thinking when solving problems.
+Conversely, Elixir is a functional language, meaning it uses functional programming. This paradigm is entirely different from OOP to the very bones; thus, it requires a different way of thinking when solving problems.
 
-Shifting from OOP to functional programming is not easy, but there are a number of advantages:
-- Many high-performing concurrent languages such as Scala, Haskell and Erlang use functional programming. If we already have knowledge about the paradigm, learning a new language of the same nature is much easier.
-- It provides a different way to think about approaching and solving problems, because, in the end, programming is just that: solving problems.
+Shifting from OOP to functional programming is not easy, but there are several advantages:
+- Many high-performing concurrent languages like Scala, Haskell, and Erlang use functional programming. Learning a new language of the same nature is much easier if we are already familiar with the paradigm.
+- It provides a different way to think about approaching and solving problems because, in the end, programming is just that: solving problems.
 
 ## 3. Scalability and performance
-Elixir has lightweight processes, preemptive scheduling, and a garbage collection mechanism that can handle millions of processes with low latency. It was designed to handle large interconnected systems from the ground up, and scale them in a virtually limitless manner.
+Elixir has lightweight processes, preemptive scheduling, and a garbage collection mechanism that can handle millions of processes with low latency. It was designed to handle large interconnected systems from the ground up and scale them virtually limitlessly.
 
 ## 4. Inheritance from a titan
-Erlang is a language developed by Ericsson originally designed for telecoms switching. Its main emphasis is on building extremely robust and fault-tolerant distributed applications that can quickly adapt to changing requirements. Erlang has built-in support for concurrency, so huge numbers of requests can be serviced simultaneously and single software errors can be easily contained.
+Erlang is a language developed by Ericsson, originally designed for telecom switching. Its main emphasis is on building extremely robust and fault-tolerant distributed applications that can quickly adapt to changing requirements. Erlang has built-in concurrency support so that massive requests can be serviced simultaneously, and single software errors can be easily contained.
 
-Elixir is built based on Erlang, and it also runs on the same VM called BEAM. This makes a statement; Elixir will handle even the most demanding tasks. Additionally, Elixir inherits Erlang's OTP, a set of libraries and design principles providing middle-ware to develop concurrent systems.
+Elixir is built based on Erlang and runs on the same VM called BEAM. This makes a statement; Elixir will handle even the most demanding tasks. Additionally, Elixir inherits Erlang's OTP by default, a set of libraries and design principles providing middle-ware to develop concurrent systems.
 
 ## 5. Syntax
-Elixir's syntax is based on Ruby. It's extremely readable and expressive, while at the same having all the functional programming advantages. Elixir has useful syntactical elements such as the pipe operator `|>` used to chain functions, and pattern matching that allow us to destructure data structures and match them against specific patterns.
+Elixir's syntax is based on Ruby. It's highly readable and expressive while having all the functional programming advantages. Elixir has practical syntactical elements such as the pipe operator `|>` used to chain functions, as well as pattern matching that allows us to destructure data structures and match them against specific patterns.
 
 Overall, Elixir's syntax is easy to learn, write, read, and debug.
 
 ## 6. Adoption
-Elixir is an emerging language, which means that its adoption is not up there with more popular languages. However, companies that do use Elixir, tackle very specific & complex problems with it:
+Elixir is an emerging language, meaning its adoption is not up there with more popular languages. However, companies that do use Elixir tackle very specific & complex problems with it:
 - **Discord:** A popular voice and text chat application for gamers using Elixir and Erlang to power their real-time communication infrastructure, infallibly handling massive amounts of concurrent users.
-- **Pinterest**: A social media platform that allows users to discover and save ideas for their projects and interests. They implemented Elixir to scale-up their real-time notification system.
+- **Pinterest**: A social media platform that allows users to discover and save ideas for their projects and interests. They implemented Elixir to scale up their real-time notification system.
 - **PepsiCo:** A multinational food and beverage corporation using Elixir for their entire supply chain management system.
 - **WhatsApp:** A popular messaging app using Elixir and Erlang for their real-time communication infrastructure.
 - **Motorola:** A multinational telecommunications company using Elixir for handling massive volumes of video data in their video security and analytics platform.
-- **Financial Times:** A British daily business newspaper using the Absinthe framework in Elixir, and Elixir’s meta-programming ability to create DSLs (*Domain Specific Languages*).
-- **Toyota Connected:** A mobility & transportation subsidiary of Toyota Motor Corporation, using Elixir in their Mobility Service Platform (*MSPF*) which connects their cars, allowing them to send real-time events.
-- **Phoenix framework:** A a web framework for the Elixir programming language that is designed to help developers build high-performance, scalable web applications.
+- **Financial Times:** A British daily business newspaper using the Absinthe framework in Elixir and Elixir’s meta-programming ability to create DSLs (*Domain Specific Languages*).
+- **Toyota Connected:** A mobility & transportation subsidiary of Toyota Motor Corporation, using Elixir in their Mobility Service Platform (*MSPF*), which connects their cars, allowing them to send real-time events.
+- **Phoenix framework:** A web framework for the Elixir programming language designed to help developers build high-performance, scalable web applications.
 
-We can see that most of the applications are centered around high-traffic, concurrent, complex systems that require solid performance and fault-tolerance even in the most demanding production environments.
+Most applications are centered around high-traffic, concurrent, complex systems that require solid performance and fault tolerance even in the most demanding production environments.
 
 ## 7. Community
-Even though Elixir is not as popular as other languages, it has an active community filled up with enthusiasts and experts constantly providing information on the latest and greatest.
+Even though Elixir is not as popular as other languages, it has an active community filled with enthusiasts and experts constantly providing information on the latest and greatest.
 
-Also, it's open source. Adding that to the fact that the language is still niche, we can focus on learning Elixir and even making requests to submit new ideas.
+Also, it's open source. Adding to the fact that the language is still niche, we can focus on learning Elixir and even submitting new packages to Hex or making pull requests to submit new source code.
 
 Now that we're hopefully convinced that Elixir is a great language to learn and has huge potential, we can start by making some preparations.
+
+## 8. Package repository
+Elixir uses Hex as its package manager. All Hex packages are available on the [official Hex packages page](https://hex.pm/packages). As of the writing of this article, there are 16k+ packages available, with over 9bn total downloads.
+
+There are packages tailored for everything: from JSON parsing to SSL verification to mime-type handling to documentation generation, and of course, packages tailored for concurrent systems design such as [GenServer](https://hexdocs.pm/elixir/1.12/GenServer.html), [Task](https://hexdocs.pm/elixir/1.12/Task.html), [Flow](https://hex.pm/packages/flow), and [Broadway](https://hex.pm/packages/broadway).
+
+Another great thing about Hex is that it supports [private packages](https://hex.pm/docs/private) for organizations via a modest paid subscription. We can publish private packages to Hex.pm that only our organization members can access and download. With our organization, we get a repository namespace on Hex.pm so that our private packages will not conflict with packages in the global public repository.
+
+Overall, Elixir's Hex is fully-featured and supported by thousands of developers across the globe.
 
 ---
 
 # What to expect
-Elixir is not hard to learn, specially when coming from a functional programming context. However, if we're dealing with a more complex system, grasping and implementing concepts such as concurrency and parallelism, processes, macros, and some functional programming aspects, can be challenging.
+Elixir is relatively easy to learn, especially when coming from a functional programming context. However, if we're dealing with a more complex system, grasping and implementing concepts such as concurrency and parallelism, processes, macros, and some functional programming aspects, can be challenging.
 
-In this segment, we'll focus on learning the fundamentals, while introducing some general concepts around functional programming.
+In this segment, we'll focus on learning the fundamentals while introducing some general concepts around functional programming.
 
-Another thing to mention is that we'll be be using Mix for project creation, compilation, and running purposes. This will save us some time, since most of the boilerplate components of a typical Elixir project will be handled for us.
+Another thing to mention is that we'll be using Mix for project creation, compilation, and running purposes. This will save us some time since most of the boilerplate components of a typical Elixir project will be handled for us.
 
 ---
 
@@ -172,21 +183,21 @@ For this segment, we will need to install four main components:
 - Visual Studio Code.
 - Elixir VS Code extension.
 
-We will also install some packages, which will come later when we get to the...
+We will also install some packages, which will come later when we get to the dependencies section.
 
-The installation and setup will be focus towards the Windows operating system. Still, a similar process can be used for macOS or Unix-like platforms.
+The installation and setup will be focused on the Windows operating system. Still, a similar process can be used for macOS or Unix-like platforms.
 
 ## 1. Elixir
 We will first install the latest stable release of the Elixir programming language. We can head to the official [Elixir website downloads page for Windows](https://elixir-lang.org/install.html#windows). We will click on [Download the installer](https://github.com/elixir-lang/elixir-windows-setup/releases/download/v2.4/elixir-websetup.exe). Once we have it, we'll run the executable and follow the steps below:
 
 - If we have Microsoft Defender enabled, it will probably tell us that the installation is not secure. We will omit this warning and initialize the installer.
 - We will select the latest release (*they're sorted from newest to oldest*), which at the time of this article, should be `1.14.2`.
-- We will then select the version for the type of CPU architecture we have (*32-bit or 64-bit*). If we're working on a recent computer model, we will most probably have to install the 64-bit version. If unsure, we can always check our system architecture.
+- We will then select the version for the type of CPU architecture we have (*32-bit or 64-bit*). If we're working on a recent computer model, we may have to install the 64-bit version. If unsure, we can always check our system architecture.
 - The Elixir installer will automatically install the Erlang language, so we don't have to worry about that. Once we're prompted with the Erlang installation, we will select:
 	- `Erlang`
 	- `Associations`
 	- `Erlang Documentation`
-- Once the installation concludes, we will be asked if we want to add Erlang, Elixir and `escripts` to  `PATH`. We will select yes to all (*this is important because if we don't select this, our system will not be able to find the required executables for each language*).
+- Once the installation concludes, we will be asked if we want to add Erlang, Elixir, and `escripts` to `PATH`. We will select yes to all (*this is important because if we don't select this, our system will be unable to find the required executables for each language*).
 
 We can verify our Elixir installation by opening a new PowerShell prompt and typing the following:
 
@@ -195,7 +206,7 @@ We can verify our Elixir installation by opening a new PowerShell prompt and typ
 elixir --version
 ```
 
-If all went well, we should get something like this, depending on the version we installed:
+If all goes well, we should get something like this, depending on the version we installed:
 
 ##### **Output**
 ```
@@ -210,18 +221,18 @@ If we don't yet have VS Code installed, we can get it from the [official downloa
 ## 3. Elixir VS Code extension
 Once we have Erlang, Elixir, and VS Code installed, we will proceed to install the Elixir VS Code Extension:
 1. Open VS code and head to the Extensions menu in the left panel. We can also open the Extensions menu by using the shortcut <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> or by opening the command palette by typing <kbd>F1</kbd> and searching for *Extensions: Install Extensions*.
-2. We will search for `ElixirLS: Elixir support and debugger`, maintained by *ElixirLS*, install it, and enable it. We can also get the extension by using [this link](https://marketplace.visualstudio.com/items?itemName=JakeBecker.elixir-ls).
+2. We will search for `ElixirLS: Elixir support and debugger`, maintained by *ElixirLS*, install it, and enable it. We can also get the extension using [this link](https://marketplace.visualstudio.com/items?itemName=JakeBecker.elixir-ls).
 
-We mentioned that Elixir is a compiled language, so it'll be best if we have a shell prompt also available.
+We mentioned that Elixir is a compiled language, so it'll be best to have a shell prompt at hand.
 
 Now that everything's in place, we're ready to start configuring our working environment.
 
 ---
 
 # Creating a project
-Elixir projects can be created using Mix. Mix is a handy tool that manages a good portion of the boilerplate code required for kickstarting our first project, as well as the creation of the required files to compile it and run it in a breeze. There are other methods for compiling and running Elixir files such as `iex` or directly with `elixir`, but we won't be covering those here. Mix also introduces handy tools for testing our application and managing its dependencies.
+Elixir projects can be created using Mix. Mix is a handy tool that manages a good portion of the boilerplate code required for kickstarting our first project and creating the required files to compile it and run it in a breeze. Mix also introduces handy tools for testing our application and managing its dependencies. There are other methods for compiling and running Elixir files, such as `iex` or directly with `elixir`, but we won't be covering those here.
 
-To create a new project called `project_1`, we can open a new PowerShell session, and include the following:
+To create a new project called `project_1`, we can open a new PowerShell session and include the following:
 
 ##### **Code**
 ```PowerShell
@@ -233,7 +244,7 @@ mix new project_1
 * creating README.md
 * creating .formatter.exs
 * creating .gitignore
-* creating mix.exs
+* creating Mix.exs
 * creating lib
 * creating lib/project1.ex
 * creating test
@@ -249,20 +260,20 @@ You can use "mix" to compile it, test it, and more:
 Run "mix help" for more commands.
 ```
 
-This command will create a number of files and folders:
+This command will create several files and folders:
 - `project_1`: The main folder for our project.
-	- `.elixir_ls`: A folder containing configuration and cache files used by ElixirLS to provide advanced code editing features, such as autocompletion, code navigation, and code formatting. This folder is created by the Elixir extension we're using, in this case, ElixirLS for VS Code.
+	- `.elixir_ls`: A folder containing configuration and cache files used by ElixirLS to provide advanced code-editing features, such as autocompletion, code navigation, and code formatting. This folder is created by the Elixir extension we're using, in this case, ElixirLS for VS Code.
 	- `lib/project1.ex`: Our project's main source file.
 	- `test/project1_test.exs`: Contains an example test and serves as a starting point for writing our own tests for our application.
 	- `test/test_helper.exs`: The script invoked when testing our program; Elixir uses the ExUnit testing framework, which comes built-in with the language, to write and run program tests.
 	- `.formatter.exs`: A configuration file used by the Elixir code formatter. The code formatter is a tool that automatically formats Elixir code according to a set of predefined rules, making it easier to read and maintain. The `.formatter.exs` file allows us to customize the code formatter's behavior by specifying options such as line length, indentation, and syntax preferences.
-	- `.gitignore`: If we're including a GitHub repository along with our project, a `.gitignore` file serves as a way to let git know which files and folders to ignore in our commits. If we have an intended repository we can leave this file. Else, we can delete it. Mix populates the project's `.gitignore` file with some helpful entries that we are not supposed to include in a GitHub repository. 
-	- `mix.exs`: The project's configuration file. It's used to define the project's dependencies, version, and other metadata, as well as to configure various settings related to the build process, such as compilers and output directories.
-	- `README.md`: Yet another GitHub-related file. A `README.md` file is typically used in repositories to provide information about our project. As with `.gitignore`, Mix will populate this file with some useful information. If we're not working with a GitHub repo, we can delete this file.
+	- `.gitignore`: If we're including a GitHub repository along with our project, a `.gitignore` file serves as a way to let git know which files and folders to ignore in our commits. If we have an intended repository, we can leave this file. Else, we can delete it. Mix populates the project's `.gitignore` file with some helpful entries we are not supposed to include in a GitHub repository.
+	- `Mix.exs`: The project's configuration file. It's used to define the project's dependencies, version, and other metadata and to configure various settings related to the build process, such as compilers and output directories.
+	- `README.md`: Yet another GitHub-related file. A `README.md` file is typically used in repositories to provide information about our project. As with `.gitignore`, Mix will populate this file with useful information. We can delete this file if we're not working with a GitHub repo.
 
 As we may have noted, Elixir source files have the `.ex` file extension. We can open the `lib/project1.ex` in VS Code and start writing some code.
 
-before we get started writing Elixir code, we must take into account that indentation is not part of Elixir's syntax, i.e., we don't need correct indentation for an Elixir project to compile. That said, when we have cases such as this, proper indentation is always a good idea since it improves readability. 
+Before we start writing Elixir code, we must consider that indentation is not part of Elixir's syntax, i.e., we don't need correct indentation for an Elixir project to compile. That said, proper indentation is always a good idea when we have cases such as this since it improves readability considerably.
 
 ## 1. The main source file
 Upon creating our Mix project, our main file, `lib/project1.ex`, was also created and populated. It should look something like such:
@@ -289,11 +300,11 @@ defmodule Project1 do
 end
 ```
 
-The first line denotes a module declaration. This is achieved by using `defmodule projectname do end`, and is the main module of our project, 
+The first line denotes a module declaration. This is achieved by using `defmodule projectname do end`, the main module of our project.
 
 Below the module declaration, docstrings using triple double quotes `"""` are included:
 - The `@moduledoc` attribute is used to add documentation to the module.
-- The `@doc` attribute is used before a function to provide documentation for it.
+- The `@doc` attribute is used before a function to provide documentation.
 
 Finally, we have a function declaration. By default, the name of our function is `hello`, although we probably want to change that to something more transcendental. We will also take some time to write simple module and function docstrings:
 
@@ -320,7 +331,7 @@ One thing to note is that, although we're defining our first function as `main`,
 The idea is to define a `main` function for each module, responsible for calling all the other functions in our module.
 
 ## 2. Managing dependencies
-Dependencies in Elixir are external libraries or packages that are used in a project to provide additional functionality. Elixir uses the Hex package manager to manage dependencies.
+Dependencies in Elixir are external libraries or packages used in a project to provide additional functionality. Elixir uses the Hex package manager to manage dependencies.
 
 The complete set of packages currently available in Hex can be consulted [here](https://hex.pm/packages).
 
@@ -359,7 +370,7 @@ defmodule Project1.MixProject do
 end
 ```
 
-The section we're interested is located in the `deps` section; we can include dependencies using Hex or by directly including a GitHub Repository URL.
+We're interested in the `deps` section; we can enclose dependencies using Hex or by directly including a GitHub Repository URL.
 
 We can include a package from Hex using the following syntax:
 
@@ -372,7 +383,7 @@ defp deps do
 end
 ```
 
-If we try to compile our project as is, we will not be able to do so yet; we also need to install Hex if we're including dependencies for the first time (*we'll review compilation in more detail later on. For now, we need to know that `mix run -e "Project1.main()` will compile and run the main function of our Project1 module").
+If we try to compile our project as is, we will not be able to do so yet; we also need to install Hex if we include dependencies for the first time (*we'll review compilation in more detail later on. For now, we need to know that `mix run -e "Project1.main()` will compile and run the main function of our Project1 module").
 
 ##### **Code**
 ```PowerShell
@@ -392,9 +403,9 @@ We will then select `Y`. Once we have Hex installed, we will execute the followi
 mix deps.get
 ```
 
-This command is used in to fetch and install dependencies for an Elixir project. It's typically used after modifying the project's `mix.exs` file to add or update dependencies.
+This command is used to fetch and install dependencies for an Elixir project. It's typically used after modifying the project's `Mix.exs` file to add or update dependencies.
 
-If everything went right, we should end with the following output:
+If everything goes right, we should end with the following output:
 
 ##### **Output**
 ```
@@ -405,7 +416,7 @@ New:
 * Getting jason (Hex package)
 ```
 
-We can see that a new directory for our newly installed package was created in `project_1/deps/jason`. This folder will contain a `lib` directory with all the modules; if the package was written in Elixir, modules will be defined as `modulename.ex` files. We will also typically get the following files:
+We can see that a new directory for our newly installed package was created in `project_1/deps/jason`. This folder will contain a `lib` directory with all the modules; if the package were written in Elixir, modules would be defined as `modulename.ex` files. We will also typically get the following files:
 - A `README.md` file containing the package's documentation.
 - A `LICENSE` file containing the package's license and distribution agreements.
 - A `mix.exs` file containing the dependencies and configuration for the package.
@@ -431,7 +442,7 @@ defmodule Project1 do
 end
 ```
 
-If we then compile our project again, the `jason` package will be also compiled:
+If we then compile our project again, the `jason` package will also be compiled:
 
 ##### **Code**
 ```PowerShell
@@ -449,10 +460,10 @@ Hello World
 
 Each package run and compilation is denoted by the thick arrow `==>`.
 
-This process is only executed once, since upon the first compilation, Erlang BEAM binaries will be built inside the `project_1/_build/dev/lib/jason/ebin` directory.
+This process is only executed once since, upon the first compilation, Erlang BEAM binaries will be built inside the `project_1/_build/dev/lib/jason/ebin` directory.
 
 ## 3. Compiling & running 
-In order to run an Elixir project, we will need to compile it first. The good news is that if we're using Mix, we don't have to worry about that, since it's handled automatically when running.
+In order to run an Elixir project, we will need to compile it first. The good news is that if we're using Mix, we don't have to worry about that since it's automatically handled when running.
 
 We can create a new PowerShell instance, head to our project's main directory, and include the following:
 
@@ -470,7 +481,7 @@ Generated project_1 app
 Hello World
 ```
 
-And voila, we've written, compiled and run our first Elixir project.
+And voila, we've written, compiled, and run our first Elixir project.
 
 Upon compiling and running, the compiler will create a new folder called `_build`. This folder will at first contain one subfolder called `dev`. This subfolder contains the development build artifacts. This includes compiled Elixir code, compiled Erlang code, and compiled NIFs (*Native Implemented Functions*) if our project uses them.
 
@@ -479,8 +490,8 @@ Upon compiling and running, the compiler will create a new folder called `_build
 # Commenting
 Elixir provides three main ways to add comments and docstrings to a project:
 - Single-line comments: Can be introduced using the hash `#` symbol.
-- Module documentation: Can be introduced using `@moduledoc`. We'll discuss it further when we get to modules.
-- Function documentation: Can be introduced using `@doc`. We'll discuss it further when we get to functions.
+- Module documentation: Can be introduced using `@moduledoc`. We'll discuss it further when we get to the modules section.
+- Function documentation: Can be introduced using `@doc`. We'll discuss it further when we get to the functions section.
 
 ## 1. Single-line comment
 We can introduce a single-line comment using the following syntax:
@@ -514,9 +525,9 @@ def main do
 end
 ```
 
-It's important to remember that declared variables must be used eventually, else, the compiler will let us build our application but return a warning upon compilation. If we're not using a variable we declared, we can prefix with an underscore `_` to denote a placeholder variable.
+It's important to remember that declared variables must be used eventually; else, the compiler will let us build our application but return a warning upon compilation. If we're not using a variable we declared, we can prefix it with an underscore `_` to denote a placeholder variable.
 
-Also, in Elixir we don't need to define a variable's data type since it's dynamically-typed.
+Also, we don't need to define a variable's data type in Elixir since it's dynamically typed.
 
 All variables in Elixir are immutable, meaning once a variable is defined in memory, it cannot change its state. This does not mean we cannot rebind a variable; we can throw away a variable reference to a given type and rebind it to a new reference.
 
@@ -542,11 +553,11 @@ New variable with same label: 6
 Let us explain in detail:
 - We first declare a variable `myvar1` and assign it an integer value `3`.
 - At compile time, the actual value is saved in memory at a given address, while the variable name or label is set as a reference (*points to*) to this address. The binding is created in the current process's environment or scope.
-- When we perform an operation that appears to "*modify*" the value, Elixir does not change the original value in memory. Instead, it creates a new value that is the result of the operation and stores it in a different memory location. The original value remains unchanged.
-- If we bind a variable to a new value, the variable now points to the memory address of the new value. The old value is still present in memory but may become eligible for garbage collection if no other variables are referencing it.
-- Since Elixir runs on the Erlang Virtual Machine, it takes advantage of Erlang's lightweight concurrency and preemptive scheduling. Each process has its own isolated memory space, and variables are only accessible within the process they are defined in. This means that data sharing between processes must be done via message-passing, which further reinforces the concept of immutability.
+- When we perform an operation that appears to "*modify*" the value, Elixir does not change the original value in memory. Instead, it creates a new value resulting from the operation and stores it in a different memory location. The original value remains unchanged.
+- If we bind a variable to a new value, the variable now points to the memory address of the new value. The old value is still in memory but may become eligible for garbage collection if no other variables reference it.
+- Since Elixir runs on the Erlang Virtual Machine, it takes advantage of Erlang's lightweight concurrency and preemptive scheduling. Each process has its own isolated memory space, and variables are only accessible within the process they are defined in. This means that data sharing between processes must be done via message-passing, further reinforcing immutability.
 
-Unfortunately, there is no direct way to prove immutability, as Elixir is a high-level programming language and usually, these languages do not have readily available methods in order to interact with hardware, in this case, getting memory addresses and comparing the address of an original value to the address of a new value with the same variable name (*which in theory should be different*).
+Unfortunately, there is no direct way to prove immutability, as Elixir is a high-level programming language. Usually, these languages do not have readily available methods to interact with hardware, in this case, getting memory addresses and comparing the address of an original value to the address of a new value with the same variable name (*which in theory should be different*).
 
 ---
 
@@ -557,7 +568,7 @@ There are three main methods we can use to print to `stdout`:
 - `IO.inspect`: Takes a value as its argument and outputs the internal representation of that value (*an Elixir expression*) to `stdout`.
 
 ## 1. IO.puts
-Elixir's syntax is similar to Ruby's; one of the similarities is that we don't require the use use parenthesis `()` in statements. This would provide us with two different ways to print to `stdout`:
+Elixir's syntax is similar to Ruby's; one of the similarities is that we don't require using parenthesis `()` in statements. This would provide us with two different ways to print to `stdout`:
 
 ##### **Code**
 ```Elixir
@@ -582,7 +593,7 @@ end
 Note that we cannot print multiple variables inside one print statement by simply using a comma `,`, but we need to use either string interpolation or string concatenation.
 
 ### 1.1 Using string interpolation
-We can also use string interpolation to print a string along with a variable. For this, we enclose our variable in curly brackets prepended by a hash sign `#{}` inside our print statement:
+We can also use string interpolation to print a string and a variable. For this, we enclose our variable in curly brackets prepended by a hash sign `#{}` inside our print statement:
 
 ##### **Code**
 ```Elixir
@@ -617,7 +628,9 @@ Numbers: 13, 14
 ```
 
 ### 1.2. Using string concatenation
-We can also print multiple values using one statement with string interpolation. String interpolation requires us to have the same types (`string`) for all values to print to `stdout`. If we have different data types, we must cast them when printing them:
+We can also print multiple values using one statement with string interpolation. String interpolation requires us to have the same types, `string`, for all values to print to `stdout`. 
+
+If we have different data types, we must cast them when printing them:
 
 ##### **Code**
 ```Elixir
@@ -652,7 +665,7 @@ Numbers: 13, 14
 ```
 
 ## 2. IO.write
-This method has very similar properties as `IO.puts`, in that it expects a string as `input`, and also accepts string interpolations as part of its syntaxis:
+This method has properties similar to`IO.puts`, in that it expects a string as `input` and also accepts string interpolations as part of its syntaxis:
 
 ##### **Code**
 ```Elixir
@@ -693,10 +706,10 @@ Under the light of the moon
 Without the heat of the sun
 ```
 
-We will only cover IO.write as a printing to `stdout` method here, but will eventually also cover file writing when we get to the file I/O section, where using new lines will be useful.
+In this segment, we will only cover IO.write as a printing to `stdout` method.
 
 ## 3. IO.inspect
-This method is suited specifically when we're trying to visualize the internal representation of a given value, exactly as it was originally written.
+This method is suited specifically when we're trying to visualize the internal representation of a given value exactly as it was originally written.
 
 One great example would be if we have a `list` that we would like to print to `stdout` while maintaining its structure:
 
@@ -721,7 +734,7 @@ Puts: ☺☻♥♦♣
 
 As we can see from the second output, calling `IO.puts` on our list will result in gibberish. This is because the `IO.puts` function expects a `string` as an argument, not a `list`. When we pass a list to `IO.puts`, Elixir will try to convert the list to a string, but the result may not be what we expect.
 
-Another important thing to note, is that we used the `label` option for `IO.inspect`. In this method, we cannot use string interpolation `#{}`, thus we cannot append additional strings like we did with `IO.puts`. To achieve this, we need to use the `label` property, which will behave exactly the same as with `IO.puts`.
+Another important thing to note is that we used the `label` option for `IO.inspect`. In this method, we cannot use string interpolation `#{}`; thus, we cannot append additional strings as we did with `IO.puts`. We need to use the `label` property to achieve this, which will behave the same as with `IO.puts`.
 
 It may happen that when using `IO.inspect`, the printed internal representation does not match the actual definition (*types might get interpreted differently, e.g., printing chars instead of integers inside a list*). If we do not get what we were looking for, we can explicitly define the type we're defining inside our sequence:
 
@@ -738,7 +751,7 @@ end
 Inspect explicitly defining types inside sequence: [1, 2, 3, 4]
 ```
 
-If we still want to use `IO.puts` to print a sequence type such as a `list`, we can include an alternative method `inspect` inside the string interpolation statement:
+If we still want to use `IO.puts` to print a sequence type such as a `list`, we can include an alternative method, `inspect`, inside the string interpolation statement:
 
 ##### **Code**
 ```Elixir
@@ -759,7 +772,7 @@ Puts with inspect method: [1, 2, 3, 4, 5]
 # Data types
 Elixir has multiple data types we can make use of. As we venture into sequence data types, it's worth pointing out that Elixir uses 0-based indexing, whereas Erlang uses 1-based indexing. This will be important as we move on to sequence data types.
 
-We have 8 main native data types:
+We have eight main native data types:
 - Integers
 - Floats
 - Strings
@@ -770,7 +783,7 @@ We have 8 main native data types:
 - Maps
 
 ## 1. Integers
-Integers do not have limit on their size. They can be defined by simply assigning the value to a variable.
+Integers do not have a limit on their size. They can be defined by simply assigning the value to a variable.
 
 We can perform all of the expected arithmetic operations on integer values:
 
@@ -910,9 +923,9 @@ Atoms might seem an unusual type; only some languages provide equivalents:
 
 Atoms are useful when we're trying to represent constant values that are used throughout a system, e.g.:
 - **Naming keys in maps:** Atoms can be used to name keys in maps, providing a more descriptive and readable way to access data in a map. For example, we might use the atom `:name` to represent the name key in a user record.
-- **Representing states or statuses:** Atoms can be used to represent states or statuses in a system, such as `:running` or `:stopped`. This can make it easier to reason about the behavior of a system, and to write code that responds to specific states or events.
-- **Defining configuration values:** Atoms can be used to define configuration values in a system, such as `:debug` or `:log_level`. This allows us to easily configure the behavior of a system without having to change code.
-- **Naming functions or modules:** Atoms can be used to name functions or modules in Elixir, providing a more descriptive and readable way to refer to these constructs in code.
+- **Representing states or statuses:** Atoms can represent states or statuses in a system, such as `:running` or `:stopped`. This can make it easier to reason about a system's behavior and write code that responds to specific states or events.
+- **Defining configuration values:** Atoms can also be used to define configuration values in a system, such as `:debug` or `:log_level`. This allows us to easily configure a system's behavior without changing code.
+- **Naming functions or modules:** Atoms can also be used to name functions or modules in Elixir, providing a more descriptive and readable way to refer to these constructs in code.
 
 ```Elixir
 def main do
@@ -936,7 +949,7 @@ Hello, Mexico City
 true, true
 ```
 
-Let us look at an example where we're trying to represent the states of a traffic light:
+Let us look at an example where we're trying to represent algebraic operations in a user-defined function, `arithmeticCalculator`:
 
 ##### **Code**
 ```Elixir
@@ -964,14 +977,14 @@ end
 The result of add 7 and 14 is 21
 ```
 
-In this example, we use atoms to represent different arithmetic operations in a simple calculator. The `arithmeticCalculator` function takes the desired operation and two numbers as arguments, and returns the result of the operation. If an invalid operation is provided, it returns an error tuple with the `"Invalid operation"` message.
+In this example, we use atoms to represent different arithmetic operations in a simple calculator. The `arithmeticCalculator` function takes the desired operation and two numbers as arguments and returns the result of the operation. If an invalid operation is provided, it returns an error tuple with the `"Invalid operation"` message.
 
 ## 5. Lists
-A `list` is an ordered collection of elements represented using square brackets `[]` with commas `,` as value separators. Lists are immutable, meaning that their contents cannot be changed once created. Elixir provides many functions and operators for working with lists, and they are often used to represent sequences of data and in functional programming patterns.
+Elixir provides many functions and operators for working with lists, often used to represent data sequences and functional programming patterns. A `list` is an ordered collection of elements represented using square brackets `[]` with commas `,` as value separators. Lists are immutable, meaning their contents cannot be changed once created.
 
-Lists can contain elements of any type, including other lists and nested data structures. However, each individual list can only contain elements of a single type at a time. This is because Elixir lists are implemented as singly linked lists, where each element points to the next element in the list.
+Lists can contain elements of any type, including other lists and nested data structures. However, each individual list can only contain elements of a single type at a time. This is because Elixir lists are implemented as singly linked lists, where each element points to the next element.
 
-We can define a `list` using the following syntax
+We can define a `list` using the following syntax:
 
 ##### **Code**
 ```Elixir
@@ -1066,12 +1079,12 @@ end
 Key - value pairs in list: [home: :earth, closest: :mercury, farthest: :neptune]
 ```
 
-If we want to, we can also include different data types as values.
+We can also include different data types as values if we want to.
 
-We can also iterate over lists using multiple methods, which we'll discuss in more detail when we get to iterators.
+Additionally, we can also iterate over lists using multiple methods, which we'll discuss in more detail when we get to iterators.
 
 ## 6. Tuples
-Tuples in Elixir are ordered collections of values which can contain one or more different data types. They are not meant to hold multiple values, neither iterate over them. This is because when we access an element in a tuple by index, Elixir needs to traverse the entire tuple to find the element, which can be slow and inefficient for large tuples. In contrast, arrays and lists allow us to access elements by index in constant time, making them much faster for iterative operations.
+Tuples in Elixir are ordered collections of values that can contain one or more different data types. They are not meant to hold multiple values or iterate over them; when we access an element in a tuple by index, Elixir needs to traverse the entire tuple to find the element, which can be slow and inefficient for large tuples. In contrast, arrays and lists allow us to access elements by index in constant time, making them much faster for iterative operations.
 
 Unlike other languages, we use curly brackets `{}` to define a tuple in Elixir:
 
@@ -1137,9 +1150,9 @@ Multiple variable assignment: 13, 21, 3
 ```
 
 ## 7. Ranges
-A `range` is a data type that represents an interval of values. A range can also be used as an input to various iterators, such as `Enum.each/2`, `Enum.map/2`, `Enum.filter/2`, and `Enum.reduce/3`, which we'll review in more depth as we discuss iterators.
+A `range` is a data type representing an interval of values. A range can also be used as an input to various iterators, such as `Enum.each/2`, `Enum.map/2`, `Enum.filter/2`, and `Enum.reduce/3`, which we'll review in more depth as we discuss iterators.
 
-Ranges represent a sequence of zero, one or many, ascending or descending integers with a common difference called step. They are always inclusive and they may have a custom step defined.
+Ranges represent a sequence of zero, one, or many ascending or descending integers with a common difference called a step. They are always inclusive, and may have a custom step defined.
 
 A simple range can be defined as follows:
 
@@ -1187,11 +1200,11 @@ true
 ```
 
 ## 8. Maps
-A `map` are a data structure that allows us to associate keys with values. Maps are created using the `%{}` syntax, where each `key`-`value` pair is separated by a comma.
+A `map` is a data structure that allows us to associate keys with values. Maps are created using the `%{}` syntax, where a comma separates each `key`-`value` pair.
 
-Maps in Elixir are similar to dictionaries in Python in that both data structures allow us to associate keys with values, and they are both unordered collections of key-value pairs. However, there are also some key differences:
-- **Syntax:** Maps in Elixir are created using the `%{}` syntax, while dictionaries in Python are created using the `{}` syntax. Also, `key` - `value` assignments in Elixir are done using the `=>` operator, while in Python this is achieved using the colon `:` operator.
-- **Mutability:** Maps in Elixir are immutable, which means that once a map is created, it cannot be modified. In contrast, dictionaries in Python are mutable, which means that we can add, remove, and modify items in a dictionary after it has been created.
+Maps in Elixir are similar to dictionaries in Python in that both data structures allow us to associate keys with values. They are both unordered collections of key-value pairs. However, there are also some key differences:
+- **Syntax:** Maps in Elixir are created using the `%{}` syntax, while dictionaries in Python are created using the `{}` syntax. Also, `key` - `value` assignments in Elixir are done using the `=>` operator, while in Python, this is achieved using the colon `:` operator.
+- **Mutability:** Maps in Elixir are immutable, which means that once a map is created, it cannot be modified. In contrast, dictionaries in Python are mutable, meaning we can add, remove, and modify items in a dictionary after it has been created.
 - **Key types:** In Elixir, keys in a `map` can be any term, including atoms, strings, and integers. In Python, keys in a dictionary can be any hashable object, such as strings, integers, and tuples.
 - **Error handling:** Accessing a key that does not exist in a map in Elixir will raise a `KeyError` exception in Python. In Elixir, we can use the `Map.get/3` function to safely access a key and return a default value if the key does not exist.
 
@@ -1235,7 +1248,7 @@ end
 A map of atoms: %{Charles: "Dickens", Jane: "Austen", Marcel: "Proust", Oscar: "Wilde"}
 ```
 
-Maps have multiple methods we can use to interact with its keys, values and structure:
+Maps have multiple methods we can use to interact with its keys, values, and structure:
 
 ##### **Code**
 ```Elixir
@@ -1268,7 +1281,7 @@ Index by key using dot . (Charles): "Dickens"
 ```
 
 ## 9. Checking types
-There's no direct way to get the type of a variable in Elixir/Erlang. We usually want to know the type of a variable in order to act accordingly. We can check if a variable is of a given type by using the `is_type` method, where `type` must be substituted with the appropriate type name:
+There's no direct way to get a variable type in Elixir/Erlang. However, we sometimes want to know the type of a variable to act accordingly. We can check if a variable is of a given type by using the `is_type` method, where `type` must be substituted with the appropriate type name:
 
 ##### **Code**
 ```Elixir
@@ -1370,8 +1383,7 @@ Elixir brings in the usual algebraic operators we would expect from any language
 
 ###### *Table 2: Basic arithmetic operators*
 
-
-Additionally, Elixir also has special methods for special data types such as `lists`:
+Additionally, Elixir also has special methods for data types such as `lists`:
 
 | Operator | Description                |
 | -------- | -------------------------- |
@@ -1381,7 +1393,7 @@ Additionally, Elixir also has special methods for special data types such as `li
 ###### *Table 3: Arithmetic Operators for Lists*
 
 ## 3. Logical operators
-As we mentioned, we have boolean types to work with. Logical operators evaluate two conditions, and output a boolean value depending on the comparison.
+As we mentioned, Elixir provides a boolean type, `bool`. Logical operators evaluate two conditions and output a boolean value depending on the comparison.
 
 There are three main logical operators we can use:
 
@@ -1451,7 +1463,7 @@ Not False: true
 # Control flow
 As in other languages, control flow in Elixir can be achieved using conditional constructs. Elixir provides three main ways to do so:
 - `if, else` construct: The most common method for evaluating one condition.
-- `if, unless`: The most common method for evaluating one condition with fallback to evaluating an alternative condition if the first condition is false.
+- `if, unless`: The most common method for evaluating one condition with a fallback to evaluating an alternative condition if the first condition is `false`.
 - `case` construct:  The most common method for evaluating multiple conditions (*cases*) based on pattern matching.
 - `cond` construct: The most common method for evaluating multiple conditions until one is true based on boolean expressions.
 
@@ -1483,8 +1495,8 @@ end
 14 is the square root of 196.
 ```
 
-## 2. Using if, unless
-Conversely, we can use `unless` to execute a block of code if a boolean expression is false. As with `if else`, this construct works specifically for testing one main condition.
+## 2. Using unless, else
+Conversely, we can use `unless` to execute a code block if a boolean expression is false, as with `if else`, this construct specifically tests one main condition.
 
 We can define an `unless else` test as follows:
 
@@ -1509,12 +1521,12 @@ end
 Either 14 is not square root of 197 or 197 is an odd number.
 ```
 
-Here, we used the intersection of two conditions to evaluate to one final boolean value. Both conditions had to evaluate to `true`, else, it evaluates to `false`.
+Here, we used the intersection of two conditions to evaluate to one final boolean value. Both conditions had to evaluate to `true`; else, it evaluates to `false`.
 
 ## 3. Using cond
-`cond` is used to evaluate a series of boolean expressions in order, and execute the code block corresponding to the first expression that is true. Each expression in a `cond` statement must evaluate to either `true` or `false`, and can include any valid Elixir expression.
+`cond` evaluates a series of boolean expressions in order and executes the code block corresponding to the first `true` expression. Each expression in a `cond` statement must evaluate to either `true` or `false` and can include any valid Elixir expression.
 
-A `cond` construct is the equivalent to `else if` clauses in many imperative languages such as Python.
+A `cond` construct is equivalent to `else if` clauses in many imperative languages like Python.
 
 We can continue with our previous example and define a `cond` test as follows:
 
@@ -1549,24 +1561,24 @@ end
 Case 3: 14 is the square root of 196 and 196 is an even number.
 ```
 
-What we're doing here, is defining 4 cases where:
+What we're doing here is defining 4 cases where:
 - We declare the left side of the case as our condition.
 - We insert a right arrow `->` to denote the output if a given condition is met.
 - We declare the right side of the case as our output.
 
 Additionally:
 - All cases are exclusive.
-- The set of cases cover all the possible options by making use of `and` and `not` (*they are exhaustive*) (*we could also change equality signs for inequality signs, and play a little bit with our statements, but the point is made*).
+- The set of cases covers all the possible options by making use of `and` and `not` (*they are exhaustive*) (*we could also change equality signs for inequality signs and play a little bit with our statements, but the point is made*).
 - We set a default statement that will always evaluate to `true`. This statement should always be at the end of our set of cases (*order matters*).
 
-Below some important things to remember when using `cond`:
+Below are some important things to remember when using `cond`:
 - As mentioned above, the first condition to evaluate to `true` will be returned, so we need to specify the order of our conditions wisely, or else make sure we build them appropriately using the corresponding logical constructs (*`and`, `or`, `not`*). If we're working with multiple upper and lower limits (*`>=`, `<=`*), we need to define those wisely and in the correct order too.
 - Although we have a default statement that will always evaluate to true, we need to make sure we're being exhaustive with our conditions. This is always good practice and will make our life easier when debugging.
 
 ## 4. Using case
-Cases behave like `C` switches, [Rust](https://pabloagn.com/blog/rust-for-beginners/) `match` statements and Bash `case` statements. `case` is used to match a value or expression against a set of patterns, and execute a block of code for the first pattern that matches.
+Cases behave like `C` switches, [Rust](https://pabloagn.com/blog/rust-for-beginners/) `match` statements, and Bash `case` statements. `case` is used to match a value or expression against a set of patterns and execute a block of code for the first pattern that matches.
 
-Each pattern in a `case` expression can include guards (*additional conditions that must be true for the pattern to match*), and can also include variables that are bound to parts of the matched value.
+Each pattern in a `case` expression can include guards (*additional conditions that must be true for the pattern to match*) and variables bound to parts of the matched value.
 
 We can define a `case` test as follows:
 
@@ -1591,16 +1603,16 @@ end
 Number is 14
 ```
 
-Whenever we're specifying cases, it's always good practice to specify a default case, in case no other is matched. We do this by using the underscore `_` symbol. 
+Whenever we're specifying cases, it's always good practice to specify a default case in the event that no other is matched. We do this by using the underscore `_` symbol. 
 
-Of course, this is a very simple case, but we might want to implement a collection of cases when, for example, we're expecting a user input, or a process known return value; there are countless applications for using `case`.
+Of course, this is a very simple case, but we might want to implement a collection of cases when, for example, we're expecting a user input or a known return value from a given process; there are countless applications for using `case`.
 
 ---
 
 # Pipes
-For those already familiar with piping in `bash` or `zsh`, pipes are a convenient syntax for chaining together functions in a way that makes the code more readable and easier to understand. Pipes allow us to pass the output of one function as the input to another function, without the need for nested function calls or temporary variables. This results in a more efficient use of resources and generally more performant code.
+For those already familiar with piping in `bash` or `zsh`, pipes are convenient syntactical constructs for chaining together functions in a way that makes the code more readable and easier to understand. Pipes allow us to pass the output of one function as the input to another function without the need for nested function calls or temporary variables. This results in a more efficient use of resources and generally more performant code.
 
-Although `bash` is mostly defined as a procedural language, pipes are common in functional languages; they go well with the functional programming philosophy where we write chains of functions.
+Although `bash` is mostly defined as a procedural language, pipes are common in functional languages; they go well with the functional programming philosophy.
 
 We can pipe in Elixir by using the `|>` operator:
 
@@ -1632,19 +1644,19 @@ Transformed String: Pipes are awesome
 ---
 
 # Iterators
-In Elixir we can iterate over structures using multiple methods, although following functional programming best practices, there are two main approaches we can use:
+In Elixir, we can iterate over structures using multiple methods, although following functional programming best practices, there are three main approaches we can use:
 - Enumeration of collections
 - Recursion
 - Higher-order functions
 
-Elixir also has constructs like `for` and `while` loops, which can be used for more complex looping scenarios. However, functional programming paradigms in Elixir emphasize recursion, enumeration of collections, and higher-order functions over loops, as they provide a more expressive and composable way to work with data.
+Elixir also has constructs like `for` and `while` loops, which can be used for more complex looping scenarios. However, functional programming paradigms emphasize recursion, enumeration of collections, and higher-order functions over loops, as they provide a more expressive and composable way to work with data.
 
 Let us look at some examples:
 
 ## 1. Using Enum
 `Enum` is a module that provides a set of functions for working with enumerable collections, which are collections that can be iterated over.
 
-The `Enum` module includes functions for common operations on collections, such as filtering, mapping, reducing, and sorting. The functions in the `Enum` module are designed to work with any collection that implements the Enumerable protocol, including lists, tuples, maps, ranges, and streams.
+The `Enum` module includes functions for common operations on collections, such as filtering, mapping, reducing, and sorting. The `Enum` module functions are designed to work with any collection that implements the Enumerable protocol, including lists, tuples, maps, ranges, and streams.
 
 We can use `Enum` with a `list` as follows:
 
@@ -1670,16 +1682,16 @@ end
 ```
 
 ## 2. Using recursion
-We might recall that Elixir is a functional language. Functional languages encourage the use of recursion as a fundamental technique for solving problems.
+As we mentioned earlier, functional languages encourage the use of recursion as a fundamental technique for solving problems.
 
-Recursion is the process of solving a problem by breaking it down into smaller sub-problems of the same type, and then solving each sub-problem recursively. The recursion stops when a base case is reached, which is a sub-problem that can be solved directly without further recursion.
+Recursion is the process of solving a problem by breaking it down into smaller sub-problems of the same type and then solving each sub-problem recursively. The recursion stops when a base case is reached; a sub-problem that can be solved directly without further recursion.
 
 There are several reasons why functional languages heavily use recursion:
-- Functional languages have a strong focus on immutability and avoiding side effects, which makes recursion a natural choice for iterating over data structures instead of using loops with mutable variables.
-- Recursion is a declarative way to express algorithms and is often more concise and easier to understand than imperative code that uses loops and mutable variables.
-- Recursion can be optimized by compilers and interpreters to make it as efficient as iterative solutions, and sometimes even more so. This is because recursion allows for tail call optimization, which eliminates the overhead of maintaining a call stack.
+- Functional languages strongly focus on immutability and avoiding side effects, making recursion a natural choice for iterating over data structures instead of using loops with mutable variables.
+- Recursion is a declarative way of expressing algorithms and is often more concise and easier to understand than imperative code using loops and mutable variables.
+- Recursion can be optimized by compilers and interpreters to make it as efficient as iterative solutions, and sometimes even more so. This is because recursion allows for [tail call optimization](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization), eliminating the overhead of maintaining a call stack.
 
-Recursion can sometimes be tricky, and requires a different way of thinking about the problem we're trying to solve.
+Recursion can sometimes be tricky and requires a different way of thinking about the problem we're trying to solve.
 
 Let us try to exemplify using a diagram:
 
@@ -1691,7 +1703,7 @@ Let us try to exemplify using a diagram:
 
 - **We start by defining a base case:** The simplest version of the problem that can be solved without recursion. This serves as the stopping condition for the recursive calls.
 - **We then define the recursive case:** The more complex version of the problem that can be broken down into smaller sub-problems. In the recursive case, the function calls itself with a smaller input until the base case is reached.
-- **We iteratively reduce our problem to the base case:** When the base case is reached, the function returns a result, which is propagated up the call stack to the original function call.
+- **We iteratively reduce our problem to the base case:** When the base case is reached, the function returns a result, propagating up the call stack to the original function call.
 
 One particular application of recursion is iteration. We can iterate over a list by using the following syntax:
 
@@ -1728,24 +1740,24 @@ strings
 ```
 
 Let us explain in more detail what's happening:
-- We define a function that accepts a non-empty `list`, and gets its `head` and `tail`.
-- We define a base case list that accepts an empty `list`, using the same function name as above.
+- We define a function that accepts a non-empty `list` and gets its `head` and `tail`.
+- We define a base case list that accepts an empty `list` using the same function name as above.
 - We define a `list` of strings `mylist`
-- We call `myfun` with `mylist` as argument.
+- We call `myfun` with `mylist` as the argument.
 - If the list is not empty, the `head` and `tail` are separated.
 - The `head` is printed to `stdout`, and the `tail` is fed as our new argument.
-- If and when our `tail` is empty, we cannot call the first `myfun` anymore, since it's expecting a non-empty list, so the second definition of `myfun` is called, which returns `nil` (*empty value*).
+- If and when our `tail` is empty, we cannot call the first `myfun` anymore since it's expecting a non-empty list, so the second definition of `myfun` is called, which returns `nil` (*empty value*).
 
-In this example we printed our words to `stdout`, but in a more complex implementation, we can do all sorts of things with the `head` that is being outputted.
+In this example, we printed our words to `stdout`, but in a more complex implementation, we can do all sorts of things with the `head` that's being outputted.
 
 ---
 
 # Functions
-In Elixir, a function is a self-contained unit of code that performs a specific task. Functions are defined using the `def` keyword, followed by the function name, any arguments that the function takes, and the body of the function enclosed in `do` `end` statements, which contains the code that is executed when the function is called.
+In Elixir, a function is a self-contained unit of code that performs a specific task. Functions are defined using the `def` keyword, followed by the function name, any arguments that the function takes, and the body of the function enclosed in `do` and `end` statements, which contain the code to be executed when the function is called.
 
-Function names are typically defined in snake_case (*all lowercase letters with words separated by underscores*). However, if we want to use a different syntax, we can do so but we must not capitalize the first letter of the name, since this is reserved for module definitions.
+Function names are typically defined in snake_case notation (*all lowercase letters with words separated by underscores*). However, if we want to use a different syntax, we can do so, but we must not capitalize the first letter of the name since this is reserved for module definitions.
 
-Additionally, we can define a function documentation (*equivalent to a docstring in Python*) using the `@doc` keyword before our function definition:
+Additionally, we can define a function documentation string (*equivalent to a docstring in Python*) using the `@doc` keyword before our function definition:
 
 ##### **Code**
 ```Elixir
@@ -1810,10 +1822,10 @@ Value for z is: 14
 
 In both cases, the last statement will be returned:
 - In the first case, to `stdout`.
-- In the second case, to a variable we can use to assign.
+- In the second case, to a variable.
 
 ### 1.2 With arguments
-We can also define a named function that accepts arguments. If they are not included at the function call, we will get an error:
+We can also define a named function that accepts arguments. If they are not included in the function call, we will get an error:
 
 ##### **Code**
 ```Elixir
@@ -1835,7 +1847,7 @@ Value for z is: 14
 ```
 
 ### 1.3 With default arguments
-If we want to define default values for our arguments, we can do it, so that the following will occur:
+If we want to define default values for our arguments, we can do it so that the following will occur:
 - **No arguments provided:** The two arguments are taken from defaults.
 - **One argument provided:** The one(s) not provided is/are taken from defaults.
 - **All arguments provided:** None is taken from defaults.
@@ -1910,7 +1922,7 @@ end
 7 to the power of 2: 49
 ```
 
-As we can see, calling is the same for both methods, but the function definition is done differently.
+As we can see, the calling is the same for both methods, but the function definition is done differently.
 
 ### 2.3 Using a multi-clause function
 If we're not sure about the number of parameters we will receive when calling our function, we can define a set of cases that will help us act according to the number of parameters we get:
@@ -1951,16 +1963,16 @@ Let us explain in detail:
 	- **Case 1:** Two parameters, `x` and `y`, are used: Exponentiate.
 	- **Case 2:** Three parameters, `x`, `y`, and `z` are used: Product.
 	- **Case 3:** No parameter is used: `nil` (*similar to `null` in other languages; a value that represents the absence of a value*)
-- We then call our function testing all 3 cases, by enclosing our parameters in curly brackets `{}` inside the function call.
+- We then call our function testing all 3 cases by enclosing our parameters in curly brackets `{}` inside the function call.
 
 ---
 
 # Modules
-Modules are used to organize and group related functions and data. Modules provide a namespace for the functions and data they contain, preventing naming conflicts with other parts of our code. They also help in structuring our applications and make them easier to maintain, understand, and test.
+Modules are used to organize and group related functions and data. Modules provide a namespace for the functions and data they contain, preventing naming conflicts with other parts of our code. They also help structure our applications and make them easier to maintain, understand, and test.
 
-Modules in Elixir, as in many other languages, are typically defined using CamelCase (*the first letter of each word is capitalized*). This recommendation can or cannot be followed. However, we do need to at least capitalize our module name.
+As in many other languages, Modules in Elixir are typically defined using CamelCase (*the first letter of each word is capitalized*). This recommendation can or cannot be followed. However, we do need to at least capitalize our module name.
 
-Additionally, we can define a module documentation (*equivalent to a docstring in Python*)
+Additionally, we can define a module documentation string (*equivalent to a docstring in Python*)
 
 We can define a module with its `moduledoc` using the following syntax:
 
@@ -1979,7 +1991,7 @@ end
 
 Here, we have defined a module named `Project1` with a function inside of it called `myfun`.
 
-We have seen that, upon compilation using `mix`, we can define the module and function to compile:
+We have seen that upon compilation using `mix`, we can define the module and function to compile:
 
 ##### **Code**
 ```PowerShell
@@ -1991,7 +2003,7 @@ mix run -e "Project1.main()"
 Hello World
 ```
 
-However, we can also define another module with another `main` function calling a function defined in our `Project1` module, and compile it so that our module is now `Module1` instead of `Project1`, but calls methods defined inside `Project1`:
+However, we can also define another module with another `main` function calling a function defined in our `Project1` module and compile it so that our module is now `Module1` instead of `Project1` but calls methods defined inside `Project1`:
 
 ##### **Code**
 ```Elixir
@@ -2025,15 +2037,15 @@ Printing from within Project1 Module
 ---
 
 # Next steps
-Elixir is all about learning to think in functional programming terms. If brings all the aspects that make functional programming great, while at the same time providing an easy and expressive syntax.
+Elixir is all about learning to think in functional programming terms. It brings all the aspects that make functional programming great while at the same time providing an easy and expressive syntax.
 
-This is why, the first step would be to learn the pillars of functional thinking:
-- **Focusing on functions:** In functional programming, functions are the building blocks of programs. We can think in terms of functions that take inputs and produce outputs. Functions should be pure, meaning that they don't have side effects and always produce the same output given the same input.
-- **Using immutable data structures:** In functional programming, data structures are usually immutable, meaning that they can't be changed once they are created. When we need to modify a data structure, we create a new version of the structure that reflects the change. This can take some getting used to, but it leads to more predictable and less error-prone code.
-- **Avoiding mutable state:** In functional programming, mutable state is usually avoided in favor of pure functions and immutable data structures. If we need to maintain state, we can use techniques like recursion or passing state as function arguments and return values.
+It then makes sense to learn the pillars of functional thinking as the first step:
+- **Focusing on functions:** In functional programming, functions are the building blocks of programs. We can think in terms of functions that take inputs and produce outputs. Functions should be pure, meaning they don't have side effects and always produce the same output given the same input.
+- **Using immutable data structures:** In functional programming, data structures are usually immutable, meaning they can't be changed once created. When we need to modify a data structure, we create a new version of the structure that reflects the change. This can take some time to get used to, but it leads to more predictable and less error-prone code.
+- **Avoiding mutable state:** In functional programming, a mutable state is usually avoided in favor of pure functions and immutable data structures. If we need to maintain a state, we can use techniques like recursion or passing state as function arguments and return values.
 - **Using higher-order functions:** In functional programming, functions can take other functions as arguments and return functions as results. This allows us to write more generic and reusable code that can be customized with different functions.
-- **Using recursion:** This one is trickier and gets some time getting used to it; if we come from an OOP context, the more obvious approach is to simply declare a `for` loop, and nest other `loops` to provide the appropriate level of depth as per required. We didn't mention `for` loops in this segment for a reason; recursive approaches usually provide increased simplicity, generality, conciseness, and most important of all, efficiency.
-- **Understanding functional programming concepts:** Functional programming is not a religion; it's just a set of tools to make programs more computationally efficient. To truly think in functional programming terms, it's important to understand the underlying concepts and principles of functional programming, and why they matter in the first place.
+- **Using recursion:** This one is trickier and takes some time to get used to; if we come from an OOP context, the more obvious approach is to simply declare a `for` loop and nest other `loops` to provide the appropriate level of depth as per required. We didn't mention `for` loops in this segment for a reason; recursive approaches usually provide increased simplicity, generality, conciseness, and, most important of all, efficiency.
+- **Understanding functional programming concepts:** Functional programming is not a religion but a set of tools to make programs more computationally efficient. To truly think in functional programming terms, it's important to understand the underlying concepts and principles of functional programming and why they matter in the first place.
 
 There are a lot of free resources for learning more advanced Elixir concepts. Below we will find a collection of books, Courses, YouTube Channels, and articles:
 
@@ -2042,7 +2054,8 @@ There are a lot of free resources for learning more advanced Elixir concepts. Be
 First-stops
 - **[The Elixir Language, Official Page](https://elixir-lang.org/)**: Contains a summary of what Elixir can do, along with multiple redirections to amazing learning resources.
 - **[The Elixir Learning page](https://elixir-lang.org/learning.html)**: An index of the official recommended learning resources.
-- **[Elixir GitHub Repository](https://github.com/elixir-lang/elixir)**: A great place where we can check latest releases, issues & bug reports, and also get to know the maintainers that make Elixir possible.
+- **[Elixir GitHub Repository](https://github.com/elixir-lang/elixir)**: A great place where we can check the latest releases, issues & bug reports and also get to know the maintainers that make Elixir possible.
+- **[Elixir Hex](https://hex.pm/)**: Hex is the package manager for Erlang ecosystems containing 16k+ packages at the time of writing of this article. We can visualize them by Most Downloaded, New Packages, and Recently Updated.
 
 Relevant bibliography:
 - **[Elixir in Action, Manning Publications](https://www.manning.com/books/elixir-in-action-second-edition)**: A tutorial book that teaches Elixir and Erlang from the ground up to advanced concepts. The most recommended book among senior Elixir programmers.
@@ -2050,18 +2063,18 @@ Relevant bibliography:
 - **[Concurrent Data Processing in Elixir](https://pragprog.com/titles/sgdpelixir/concurrent-data-processing-in-elixir/)**: Oriented towards teaching how to write fast, resilient, concurrent applications using OTP, GenStage, Flow, and Broadway.
 
 Online Courses:
-- **[Elixir-School](https://elixirschool.com/en)**: An open and community driven effort inspired by Twitter’s Scala School, entirely for free. The site’s content consists of peer-reviewed lessons on various Elixir topics that range in difficulty. The lessons are currently available in over 10 languages to help make programming Elixir more accessible to non-English speakers.
-- **[Elixir/OTP Course, The Pragmatic Studio](https://pragmaticstudio.com/elixir)**: A hands-on step-by-step 6-hour video teaching how to build a concurrent, fault-tolerant application from scratch. Also, The Pragmatic Studio offers Purchasing Power Parity Pricing. How awesome is that?
-- **[Elixir Course, grox.io](https://grox.io/language/elixir/course)**: A full program containing an e-book, 8 videos, dozens of exercises, and two full test-first projects.
+- **[Elixir-School](https://elixirschool.com/en)**: An open and community-driven effort inspired by Twitter’s Scala School, entirely for free. The site’s content consists of peer-reviewed lessons on various Elixir topics that range in difficulty. The lessons are currently available in over ten languages to help make programming Elixir more accessible to non-English speakers.
+- **[Elixir/OTP Course, The Pragmatic Studio](https://pragmaticstudio.com/elixir)**: A hands-on, step-by-step 6-hour video teaching how to build a concurrent, fault-tolerant application from scratch. Also, The Pragmatic Studio offers Purchasing Power Parity Pricing. How awesome is that?
+- **[Elixir Course, grox.io](https://grox.io/language/elixir/course)**: A full program containing an e-book, eight videos, dozens of exercises, and two full test-first projects.
 - **[OTP Course, grox.io](https://grox.io/language/otp/course)**: A module focused at teaching OTP for first-time learners.
 
 YouTube Channels:
 - **[Coding Tech, Why Elixir Matters](https://www.youtube.com/watch?v=cWAHpvkh8Vs)**: A nice conference imparted by [Osa Gaius](https://github.com/osagaius), explaining theory, history & relevance behind functional programming, as well as the importance of Elixir today.
 - **[Elixir Tutorial, Derek Banas](https://www.youtube.com/watch?v=pBNOavRoNL0)**: A must first stop for beginners.
-- **[Elixir & Phoenix Playlist, Tensor Programming](https://www.youtube.com/watch?v=R8CeZazrDHo&list=PLJbE2Yu2zumAgKjSPyFtvYjP5LqgzafQq)**: A great series providing 5 segments on Elixir, and 9 segments on Phoenix, including multiple hands-on examples.
+- **[Elixir & Phoenix Playlist, Tensor Programming](https://www.youtube.com/watch?v=R8CeZazrDHo&list=PLJbE2Yu2zumAgKjSPyFtvYjP5LqgzafQq)**: A great series providing five segments on Elixir, and nine segments on Phoenix, including multiple hands-on examples.
 
 Community:
-- **[The Elixir Forum](https://elixirforum.com/)**: The place where Elixir programmers support each others and share ideas.
+- **[The Elixir Forum](https://elixirforum.com/)**: The place where Elixir programmers support each other and share ideas.
 - **[Dev.to, Elixir](https://dev.to/t/elixir)**: A great forum belonging to [dev.to](https://dev.to/), exclusive for Elixir and OTP.
 - **[Erlang Solutions, Hub](https://www.erlang-solutions.com/hub/)**: A great hub hosting conferences, publishing reports, and exploring Elixir & Erlang success stories throughout the globe.
 
@@ -2072,21 +2085,25 @@ Interactive notebook environments:
 ---
 
 # Conclusions
-In this segment we introduced Elixir's context and main advantages. We then installed the language along with a VS Code extension, created our first project using Mix, included a dependency using Mix & Hex, and compiled it to bytecode that can be run on the Erlang Virtual Machine (*VM*). We then talked about syntax, data types, variables, operators, methods, conditional constructs, iterators using `Enum` and recursion, different types of functions, and modules.
+In this segment, we introduced Elixir's context and main advantages. We then installed the language along with a VS Code extension, created our first project using Mix, included a dependency using Mix & Hex, and compiled it to bytecode that can be run on the Erlang Virtual Machine (*VM*). We then talked about syntax, data types, variables, operators, methods, conditional constructs, iterators using `Enum` and recursion, different function types, and modules.
 
-We concluded by providing next steps for those interested in learning more about this robust and fault-tolerant functional language.
+We concluded by providing some next steps for those interested in learning more about this robust, fault-tolerant functional language.
 
 ---
 
 # References
 - [Elixir: The Documentary](https://www.youtube.com/watch?v=lxYFOM3UJzo)
+- [Stack Overflow, Developer Survey 2022](https://survey.stackoverflow.co/2022/)
 - [Erlang Solutions, Which companies are using Elixir, and why?](https://www.erlang-solutions.com/blog/which-companies-are-using-elixir-and-why-mytopdogstatus/)
 - [How To Install Elixir, Derek Banas](https://www.youtube.com/watch?v=antnsMgA4Ro)
 - [Elixir Tutorial, Derek Banas](https://www.youtube.com/watch?v=pBNOavRoNL0)
-- 
-
-
-
+- [Elixir Documentation](https://elixir-lang.org/docs.html)
+- [Elixir Documentation, Mix](https://hexdocs.pm/mix/Mix.html)
+- [Elixir Documentation, Standard Library](https://hexdocs.pm/elixir/Kernel.html)
+- [MIT, Concurrency](https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/)
+- [Computing University of Colorado Boulder, Parallel Programming](https://curc.readthedocs.io/en/latest/programming/parallel-programming-fundamentals.html)
+- [Elixir Documentation, Atom](https://hexdocs.pm/elixir/Atom.html)
+- [Elixir Documentation, Enum](https://hexdocs.pm/elixir/Enum.html)
 
 ---
 
