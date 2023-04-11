@@ -2,6 +2,8 @@ defmodule Project1 do
   @moduledoc """
   This is a module containing functions to explore the Elixir language.
   """
+  # Import an external dependency
+  import Jason
 
   @doc """
   Print hello world.
