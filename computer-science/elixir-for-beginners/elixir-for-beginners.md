@@ -14,7 +14,7 @@ Elixir is a compiled, dynamically-typed, general-purpose, functional programming
 
 Elixir is especially good for building highly concurrent and fault-tolerant applications; concurrent applications are programs designed to execute multiple tasks or activities simultaneously, often in a parallel or overlapping fashion.
 
-In this Blog Article, we'll review some historical context around Elixir, its main advantages, and some of the most popular use cases. We will then proceed to install the language along with a useful VS Code extension and discuss how to create projects using Mix. We'll write our first Elixir module while discussing syntax, data types, variable definitions,  operators, some of the most relevant methods for interacting with different types of variables, flow control statements using conditional constructs and cases, function definitions, additional module definitions, and finally, compiling and running our project using Mix.
+In this Blog Article, we'll review some historical context around Elixir, its main advantages, and some of the most popular use cases. We will then proceed to install the language along with a useful VS Code extension and discuss how to create projects using Mix. We'll write our first Elixir module while discussing syntax, data types, variable definitions,  operators, some of the most relevant methods for interacting with different types of variables, flow control statements using conditional constructs and cases, iterators & recursion, function definitions, additional module definitions, and finally, compiling and running our project using Mix.
 
 Finally, we'll include some next steps for those interested in becoming more well-versed in this superb language.
 
@@ -23,13 +23,66 @@ We'll be using Elixir scripts which can be found in the [Blog Article Repo](htt
 ---
 
 # Table of Contents
-- Why learn Elixir?
-	- Distributed systems and concurrency
-	- Functional programming
-- What to expect
-- Installation
-- 
-- Next Steps
+- [Why learn Elixir?](#why-learn-elixir)
+	- [Distributed systems and concurrency](#1-distributed-systems-and-concurrency)
+	- [Functional programming](#2-functional-programming)
+	- [Scalability and performance](#3-scalability-and-performance)
+	- [Inheritance from a titan](#4-inheritance-from-a-titan)
+	- [Syntax](#5-syntax)
+	- [Adoption](#6-adoption)
+	- [Community](#7-community)
+- [What to expect](#what-to-expect)
+- [Installation](#installation)
+	- [Elixir](#1-elixir)
+	- [VS Code](#2-vs-code)
+	- [Elixir VS Code extension](#3-elixir-vs-code-extension)
+- [Creating a project](#creating-a-project)
+	- [The main source file](#1-the-main-source-file)
+	- [Compiling & running](#2-compiling--running)
+- [Managing dependencies](#managing-dependencies)
+- [Commenting](#commenting)
+	- Single-line commenting]()
+- [Variables](#variables)
+- [Printing](#printing)
+	- [IO.puts](#1-ioputs)
+		- [Using string interpolation](#11-using-string-interpolation)
+		- [Using string concatenation](#12-using-string-concatenation)
+	- [IO.write](#2-iowrite)
+	- [IO.inspect](#3-ioinspect)
+- [Data types](#data-types)
+	- [Integers](#1-integers)
+	- [Floats](#2-floats)
+	- [Strings](#3-strings)
+	- [Atoms](#4-atoms)
+	- [Lists](#5-lists)
+	- [Tuples](#6-tuples)
+	- [Ranges](#7-ranges)
+	- [Maps](#8-maps)
+	- [Checking types](#9-checking-types)
+- [Operators](#operators)
+	- [Comparison operators](#1-comparison-operators)
+	- [Arithmetic operators](#2-arithmetic-operators)
+	- [Logical operators](#3-logical-operators)
+- [Control flow](#control-flow)
+	- Using if, else]()
+	- Using if, unless]()
+	- Using cond]()
+	- Using case]()
+- Pipes]()
+- Iterators]()
+	- Using Enum]()
+	- Using recursion]()
+- [Functions](#functions)
+	- Named functions]()
+		- Without arguments]()
+		- With arguments]()
+		- With default arguments]()
+	- Anonymous functions]()
+		- A simple anonymous function]()
+		- Using shorthand notation]()
+		- Using a multi-clause function]()
+- [Modules](#modules)
+- [Next Steps](#next-steps)
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -74,16 +127,16 @@ Erlang is a language developed by Ericsson originally designed for telecoms swit
 
 Elixir is built based on Erlang, and it also runs on the same VM called BEAM. This makes a statement; Elixir will handle even the most demanding tasks.
 
-## 4. Syntax
+## 5. Syntax
 Elixir's syntax is based on Ruby. 
 
-## 5. Adoption
+## 6. Adoption
 - Discord (handle massive amounts of concurrent users).
 - Motorola (fault-tolerant communication systems).
 - Pinterest (scale-up real-time notification system).
 - Phoenix framework.
 
-## 6. Community
+## 7. Community
 Even though Elixir is not as popular as other languages, it has an active community filled up with enthusiasts and experts constantly providing information on the latest and greatest.
 
 Also, it's open source. Adding that to the fact that the language is still niche, we can focus on learning Elixir and even making requests to submit new ideas.
@@ -277,7 +330,25 @@ Upon compiling and running, the compiler will create a new folder called `_build
 
 ---
 
+# Managing dependencies
+
+---
+
 # Commenting
+Elixir provides three main ways to add comments and docstrings to a project:
+- Single-line comments: Can be introduced using the hash `#` symbol.
+- Module documentation: Can be introduced using `@moduledoc`. We'll discuss it further when we get to modules.
+- Function documentation: Can be introduced using `@doc`. We'll discuss it further when we get to functions.
+
+## 1. Single-line comment
+We can introduce a single-line comment using the following syntax:
+
+##### **Code**
+```Elixir
+def main do
+  # This is a single-line comment
+end
+```
 
 ---
 
@@ -546,13 +617,15 @@ Puts with inspect method: [1, 2, 3, 4, 5]
 # Data types
 Elixir has multiple data types we can make use of. As we venture into sequence data types, it's worth pointing out that Elixir uses 0-based indexing, whereas Erlang uses 1-based indexing. This will be important as we move on to sequence data types.
 
-
-
-
-
-https://www.youtube.com/watch?v=pBNOavRoNL0&t=300
-
-
+We have 8 main native data types:
+- Integers
+- Floats
+- Strings
+- Atoms
+- Lists
+- Tuples
+- Ranges
+- Maps
 
 ## 1. Integers
 Integers do not have limit on their size. They can be defined by simply assigning the value to a variable.
@@ -1105,7 +1178,7 @@ Elixir provides all the comparison operators we would expect from any language, 
 | `>=`      | Value is greater than or equal to    |
 | `<=`       | Value is less than or equal to       |
 
-###### *Table n: Basic Comparison operators*
+###### *Table 1: Basic Comparison operators*
 
 We can make some comparisons:
 
@@ -1153,7 +1226,7 @@ Elixir brings in the usual algebraic operators we would expect from any language
 | `rem`      | Reminder                            |
 | `**`     | Exponentiation                      |
 
-###### *Table n: Basic arithmetic operators*
+###### *Table 2: Basic arithmetic operators*
 
 
 Additionally, Elixir also has special methods for special data types such as `lists`:
@@ -1163,7 +1236,7 @@ Additionally, Elixir also has special methods for special data types such as `li
 | `++`    | Concatenate two lists |
 | `--`     | Subtract items from lists  |
 
-###### *Table n: Arithmetic Operators for Lists*
+###### *Table 3: Arithmetic Operators for Lists*
 
 ## 3. Logical operators
 As we mentioned, we have boolean types to work with. Logical operators evaluate two conditions, and output a boolean value depending on the comparison.
@@ -1176,7 +1249,7 @@ There are three main logical operators we can use:
 | `or`     | Condition A or B are true  |
 | `not`    | Invert the boolean value   |
 
-###### *Table n: Logical operators*
+###### *Table 4: Logical operators*
 
 We can make logical comparisons by using the following syntax:
 
@@ -1416,67 +1489,112 @@ Transformed String: Pipes are awesome
 
 ---
 
-# Modules
-Modules are used to organize and group related functions and data. Modules provide a namespace for the functions and data they contain, preventing naming conflicts with other parts of our code. They also help in structuring our applications and make them easier to maintain, understand, and test.
+# Iterators
+In Elixir we can iterate over structures using multiple methods, although following functional programming best practices, there are two main approaches we can use:
+- Enumeration of collections
+- Recursion
+- Higher-order functions
 
-Modules in Elixir, as in many other languages, are typically defined using CamelCase (*the first letter of each word is capitalized*). This recommendation can or cannot be followed. However, we do need to at least capitalize our module name.
+Elixir also has constructs like `for` and `while` loops, which can be used for more complex looping scenarios. However, functional programming paradigms in Elixir emphasize recursion, enumeration of collections, and higher-order functions over loops, as they provide a more expressive and composable way to work with data.
 
-We can define a module using the following syntax:
+Let us look at some examples:
+
+## 1. Using Enum
+`Enum` is a module that provides a set of functions for working with enumerable collections, which are collections that can be iterated over.
+
+The `Enum` module includes functions for common operations on collections, such as filtering, mapping, reducing, and sorting. The functions in the `Enum` module are designed to work with any collection that implements the Enumerable protocol, including lists, tuples, maps, ranges, and streams.
+
+We can use `Enum` with a `list` as follows:
 
 ##### **Code**
 ```Elixir
-defmodule Project1 do
-  # Define function inside module
-  def main do
-    IO.puts("Hello World")
+def main do
+  # Define list of integer values
+  mylist = [10, 20, 30, 40]
+
+  # Enumerate items using Enum
+  Enum.each mylist, fn item ->
+    IO.puts(item)
   end
 end
-```
-
-Here, we have defined a module named `Project1` with a function inside of it called `myfun`.
-
-We have seen that, upon compilation using `mix`, we can define the module and function to compile:
-
-##### **Code**
-```PowerShell
-mix run -e "Project1.main()"
 ```
 
 ##### **Output**
 ```
-Hello World
+10
+20
+30
+40
 ```
 
-However, we can also define another module with another `main` function calling a function defined in our `Project1` module, and compile it so that our module is now `Module1` instead of `Project1`, but calls methods defined inside `Project1`:
+## 2. Using recursion
+We might recall that Elixir is a functional language. Functional languages encourage the use of recursion as a fundamental technique for solving problems.
+
+Recursion is the process of solving a problem by breaking it down into smaller sub-problems of the same type, and then solving each sub-problem recursively. The recursion stops when a base case is reached, which is a sub-problem that can be solved directly without further recursion.
+
+There are several reasons why functional languages heavily use recursion:
+- Functional languages have a strong focus on immutability and avoiding side effects, which makes recursion a natural choice for iterating over data structures instead of using loops with mutable variables.
+- Recursion is a declarative way to express algorithms and is often more concise and easier to understand than imperative code that uses loops and mutable variables.
+- Recursion can be optimized by compilers and interpreters to make it as efficient as iterative solutions, and sometimes even more so. This is because recursion allows for tail call optimization, which eliminates the overhead of maintaining a call stack.
+
+Recursion can sometimes be tricky, and requires a different way of thinking about the problem we're trying to solve.
+
+Let us try to exemplify using a diagram:
+
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/04/B014A024_01_bg.svg">
+</p>
+
+###### *Figure 1: A Generic Recursive Process*
+
+- **We start by defining a base case:** The simplest version of the problem that can be solved without recursion. This serves as the stopping condition for the recursive calls.
+- **We then define the recursive case:** The more complex version of the problem that can be broken down into smaller sub-problems. In the recursive case, the function calls itself with a smaller input until the base case is reached.
+- **We iteratively reduce our problem to the base case:** When the base case is reached, the function returns a result, which is propagated up the call stack to the original function call.
+
+One particular application of recursion is iteration. We can iterate over a list by using the following syntax:
 
 ##### **Code**
 ```Elixir
-# Define Project1 Module
-defmodule Project1 do
-  def myfun do
-    IO.puts("Printing from within Project1 Module")
-  end
+def main do
+  # Define a list of words
+  mylist = ["This", "is", "a", "list", "of", "strings"]
+
+  # Call recursive function
+  myfun(mylist)
 end
 
-# Define Module2 module inside same script
-defmodule Module2 do
-  def main do
-    Project1.myfun()
-  end
+# Recursive function
+def myfun([head|tail]) do
+  IO.puts("#{head}")
+
+  # Calls itself with tail as reduced case
+  myfun(tail)
 end
-```
 
-We now compile our new module:
-
-##### **Code**
-```PowerShell
-mix run -e "Module2.main()"
+# Base case (empty list)
+def myfun([]), do: nil
 ```
 
 ##### **Output**
 ```
-Printing from within Project1 Module
+This
+is
+a
+list
+of
+strings
 ```
+
+Let us explain in more detail what's happening:
+- We define a function that accepts a non-empty `list`, and gets its `head` and `tail`.
+- We define a base case list that accepts an empty `list`, using the same function name as above.
+- We define a `list` of strings `mylist`
+- We call `myfun` with `mylist` as argument.
+- If the list is not empty, the `head` and `tail` are separated.
+- The `head` is printed to `stdout`, and the `tail` is fed as our new argument.
+- If and when our `tail` is empty, we cannot call the first `myfun` anymore, since it's expecting a non-empty list, so the second definition of `myfun` is called, which returns `nil` (*empty value*).
+
+In this example we printed our words to `stdout`, but in a more complex implementation, we can do all sorts of things with the `head` that is being outputted.
 
 ---
 
@@ -1484,6 +1602,18 @@ Printing from within Project1 Module
 In Elixir, a function is a self-contained unit of code that performs a specific task. Functions are defined using the `def` keyword, followed by the function name, any arguments that the function takes, and the body of the function enclosed in `do` `end` statements, which contains the code that is executed when the function is called.
 
 Function names are typically defined in snake_case (*all lowercase letters with words separated by underscores*). However, if we want to use a different syntax, we can do so but we must not capitalize the first letter of the name, since this is reserved for module definitions.
+
+Additionally, we can define a function documentation (*equivalent to a docstring in Python*) using the `@doc` keyword before our function definition:
+
+##### **Code**
+```Elixir
+@doc """
+Print hello world.
+"""
+def main do
+  IO.puts("Hello World")
+end
+```
 
 In Elixir, we have two main types of functions we can work with:
 - Named functions
@@ -1683,117 +1813,84 @@ Let us explain in detail:
 
 ---
 
-# Iterators
-In Elixir we can iterate over structures using multiple methods, although following functional programming best practices, there are two main approaches we can use:
-- Enumeration of collections
-- Recursion
-- Higher-order functions
+# Modules
+Modules are used to organize and group related functions and data. Modules provide a namespace for the functions and data they contain, preventing naming conflicts with other parts of our code. They also help in structuring our applications and make them easier to maintain, understand, and test.
 
-Elixir also has constructs like `for` and `while` loops, which can be used for more complex looping scenarios. However, functional programming paradigms in Elixir emphasize recursion, enumeration of collections, and higher-order functions over loops, as they provide a more expressive and composable way to work with data.
+Modules in Elixir, as in many other languages, are typically defined using CamelCase (*the first letter of each word is capitalized*). This recommendation can or cannot be followed. However, we do need to at least capitalize our module name.
 
-Let us look at some examples:
+Additionally, we can define a module documentation (*equivalent to a docstring in Python*)
 
-## 1. Using Enum
-`Enum` is a module that provides a set of functions for working with enumerable collections, which are collections that can be iterated over.
-
-The `Enum` module includes functions for common operations on collections, such as filtering, mapping, reducing, and sorting. The functions in the `Enum` module are designed to work with any collection that implements the Enumerable protocol, including lists, tuples, maps, ranges, and streams.
-
-We can use `Enum` with a `list` as follows:
+We can define a module with its `moduledoc` using the following syntax:
 
 ##### **Code**
 ```Elixir
-def main do
-  # Define list of integer values
-  mylist = [10, 20, 30, 40]
-
-  # Enumerate items using Enum
-  Enum.each mylist, fn item ->
-    IO.puts(item)
+defmodule Project1 do
+  @moduledoc """
+  This is a module containing functions to explore the Elixir language.
+  """
+  # Define function inside module
+  def main do
+    IO.puts("Hello World")
   end
 end
 ```
 
+Here, we have defined a module named `Project1` with a function inside of it called `myfun`.
+
+We have seen that, upon compilation using `mix`, we can define the module and function to compile:
+
+##### **Code**
+```PowerShell
+mix run -e "Project1.main()"
+```
+
 ##### **Output**
 ```
-10
-20
-30
-40
+Hello World
 ```
 
-## 2. Using recursion
-We might recall that Elixir is a functional language. Functional languages encourage the use of recursion as a fundamental technique for solving problems.
-
-Recursion is the process of solving a problem by breaking it down into smaller sub-problems of the same type, and then solving each sub-problem recursively. The recursion stops when a base case is reached, which is a sub-problem that can be solved directly without further recursion.
-
-There are several reasons why functional languages heavily use recursion:
-- Functional languages have a strong focus on immutability and avoiding side effects, which makes recursion a natural choice for iterating over data structures instead of using loops with mutable variables.
-- Recursion is a declarative way to express algorithms and is often more concise and easier to understand than imperative code that uses loops and mutable variables.
-- Recursion can be optimized by compilers and interpreters to make it as efficient as iterative solutions, and sometimes even more so. This is because recursion allows for tail call optimization, which eliminates the overhead of maintaining a call stack.
-
-Recursion can sometimes be tricky, and requires a different way of thinking about the problem we're trying to solve.
-
-Let us try to exemplify using a diagram:
-
-<p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/04/B014A024_01_bg.svg">
-</p>
-
-###### *Figure 1: A Generic Recursive Process*
-
-- **We start by defining a base case:** The simplest version of the problem that can be solved without recursion. This serves as the stopping condition for the recursive calls.
-- **We then define the recursive case:** The more complex version of the problem that can be broken down into smaller sub-problems. In the recursive case, the function calls itself with a smaller input until the base case is reached.
-- **We iteratively reduce our problem to the base case:** When the base case is reached, the function returns a result, which is propagated up the call stack to the original function call.
-
-One particular application of recursion is iteration. We can iterate over a list by using the following syntax:
+However, we can also define another module with another `main` function calling a function defined in our `Project1` module, and compile it so that our module is now `Module1` instead of `Project1`, but calls methods defined inside `Project1`:
 
 ##### **Code**
 ```Elixir
-def main do
-  # Define a list of words
-  mylist = ["This", "is", "a", "list", "of", "strings"]
-
-  # Call recursive function
-  myfun(mylist)
+# Define Project1 Module
+defmodule Project1 do
+  def myfun do
+    IO.puts("Printing from within Project1 Module")
+  end
 end
 
-# Recursive function
-def myfun([head|tail]) do
-  IO.puts("#{head}")
-
-  # Calls itself with tail as reduced case
-  myfun(tail)
+# Define Module2 module inside same script
+defmodule Module2 do
+  def main do
+    Project1.myfun()
+  end
 end
+```
 
-# Base case (empty list)
-def myfun([]), do: nil
+We now compile our new module:
+
+##### **Code**
+```PowerShell
+mix run -e "Module2.main()"
 ```
 
 ##### **Output**
 ```
-This
-is
-a
-list
-of
-strings
+Printing from within Project1 Module
 ```
 
-Let us explain in more detail what's happening:
-- We define a function that accepts a non-empty `list`, and gets its `head` and `tail`.
-- We define a base case list that accepts an empty `list`, using the same function name as above.
-- We define a `list` of strings `mylist`
-- We call `myfun` with `mylist` as argument.
-- If the list is not empty, the `head` and `tail` are separated.
-- The `head` is printed to `stdout`, and the `tail` is fed as our new argument.
-- If and when our `tail` is empty, we cannot call the first `myfun` anymore, since it's expecting a non-empty list, so the second definition of `myfun` is called, which returns `nil` (*empty value*).
+---
 
-In this example we printed our words to `stdout`, but in a more complex implementation, we can do all sorts of things with the `head` that is being outputted.
+# Next steps
+Aaa
 
 ---
 
 # Conclusions
-We've reviewed multiple yet simple mechanisms we can employ to make our code cleaner, more elegant, modular, usable, scalable and safer. These measures can not only help us become better programmers but better collaborators. It will make reading code a pleasure instead of an agonizing process and instantly boost our credibility.
+We discusses a lot in this segment: We first talked about Elixir's context and main advantages. We then installed the language along with a VS Code extension, and created our first project using Mix. We then talked about syntax, data types, variables, operators, methods, conditional constructs, iterators using `Enum` and recursion.
+
+Elixir is a ... all about thinking in functional programming terms.
 
 ---
 
