@@ -203,7 +203,24 @@ defmodule Project1 do
     # Data Types - Atoms
     # --------------------
 
+    # Declare atom without space
+    myatom1 = :Hello
 
+    # Declare atom with space
+    myatom2 = :"Mexico City"
+
+    # Print atoms
+    IO.puts("#{myatom1}, #{myatom2}")
+
+    # Check types
+    IO.puts("#{is_atom(myatom1)}, #{is_atom(myatom1)}")
+
+    # Atoms example: Simple calculator
+    operation = :add
+    num1 = 7
+    num2 = 14
+    result = arithmeticCalculator(operation, num1, num2)
+    IO.puts("The result of #{operation} #{num1} and #{num2} is #{result}")
 
     # --------------------
     # Data Types - Lists
@@ -290,7 +307,6 @@ defmodule Project1 do
     {x, y, z} = {13, 21, 3}
     IO.puts("Multiple variable assignment: #{x}, #{y}, #{z}")
 
-
     # --------------------
     # Data Types - Maps
     # --------------------
@@ -328,14 +344,30 @@ defmodule Project1 do
     # Index by key using dot . (Cannot use this method if we have upper-case keys)
     IO.puts("Index by key using dot . (Charles): #{inspect mymap2.charles}")
 
-
-
+    # --------------------
+    # Data Types - Ranges
+    # --------------------
 
     # Declare a range
-    myrange = 1..100
+    myrange = 1..20
 
+    # Perform operations on a range
 
+    # Enumerate the elements in the range
+    enumerated_elements = Enum.to_list(myrange)
+    IO.inspect(enumerated_elements)
 
+    # Check if a value is within the range
+    is_in_range = Enum.member?(myrange, 5)
+    IO.inspect(is_in_range)
+
+    # Sum the elements in the range
+    sum_of_elements = Enum.sum(myrange)
+    IO.inspect(sum_of_elements)
+
+    # Get the range length
+    range_length = Enum.count(myrange)
+    IO.inspect(range_length)
 
 
     # --------------------
@@ -441,6 +473,24 @@ defmodule Project1 do
     end
 
     # --------------------
+    # Pipes
+    # --------------------
+
+    # Define a string
+    mystring = "awesome are pipes"
+    IO.puts("Original String: #{mystring}")
+
+    # Transform a string using pipes
+    mystring2 =
+      mystring
+      |> String.split()
+      |> Enum.reverse()
+      |> Enum.join(" ")
+      |> String.capitalize()
+
+    IO.puts("Transformed String: #{mystring2}")
+
+    # --------------------
     # Functions - Anonymous Functions
     # --------------------
 
@@ -534,6 +584,20 @@ defmodule Project1 do
 
   end
 
+    # --------------------
+    # Atoms: Arithmetic Calculator
+    # --------------------
+
+  def arithmeticCalculator(operation, num1, num2) do
+    case operation do
+      :add -> num1 + num2
+      :subtract -> num1 - num2
+      :multiply -> num1 * num2
+      :divide -> num1 / num2
+    _ -> {:error, "Invalid operation"}
+    end
+  end
+
   # Function with return to stdout and no arguments
   def mynamedfun1 do
     x = 7
@@ -569,5 +633,15 @@ defmodule Project1 do
   # Base case (empty list)
   def myfun([]), do: nil
 
+  # Define function inside module
+  def myfun do
+    IO.puts("Printing from within Project1 Module")
+  end
 
+end
+
+defmodule Module2 do
+  def main do
+    Project1.myfun()
+  end
 end

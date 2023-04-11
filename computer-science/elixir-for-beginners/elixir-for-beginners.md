@@ -10,11 +10,13 @@
 
 [![type](https://img.shields.io/static/v1?label=Type&message=blog&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/) [![category](https://img.shields.io/static/v1?label=Category&message=computer-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/computer-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Elixir,%20VS%20Code,%20PowerShell%207&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/elixir-for-beginners/)
 
-Elixir is a compiled, dynamically-typed, general purpose, functional programming language developed by Brazilian software developer José Valim, first released in 2012. It runs on top of the BEAM virtual machine, which is also used to implement the Erlang programming language, thus Elixir inherits many of Erlang's abstractions and methods.
+Elixir is a compiled, dynamically-typed, general-purpose, functional programming language developed by Brazilian software developer José Valim, first released in 2012. It runs on top of the BEAM virtual machine, which is also used to implement the [Erlang](https://pabloagn.com/technologies/erlang/) programming language. Thus Elixir inherits many of Erlang's abstractions and methods.
 
+Elixir is especially good for building highly concurrent and fault-tolerant applications; concurrent applications are programs designed to execute multiple tasks or activities simultaneously, often in a parallel or overlapping fashion.
 
+In this Blog Article, we'll review some historical context around Elixir, its main advantages, and some of the most popular use cases. We will then proceed to install the language along with a useful VS Code extension and discuss how to create projects using Mix. We'll write our first Elixir module while discussing syntax, data types, variable definitions,  operators, some of the most relevant methods for interacting with different types of variables, flow control statements using conditional constructs and cases, function definitions, additional module definitions, and finally, compiling and running our project using Mix.
 
-In this Blog Article, we'll
+Finally, we'll include some next steps for those interested in becoming more well-versed in this superb language.
 
 We'll be using Elixir scripts which can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tree/master/computer-science/elixir-for-beginners).
 
@@ -22,6 +24,8 @@ We'll be using Elixir scripts which can be found in the [Blog Article Repo](htt
 
 # Table of Contents
 - Why learn Elixir?
+	- Distributed systems and concurrency
+	- Functional programming
 - What to expect
 - Installation
 - 
@@ -721,8 +725,31 @@ Let us look at an example where we're trying to represent the states of a traffi
 
 ##### **Code**
 ```Elixir
+def main do
+  operation = :add
+  num1 = 7
+  num2 = 14
+  result = arithmeticCalculator(operation, num1, num2)
+  IO.puts("The result of #{operation} #{num1} and #{num2} is #{result}")
+end
 
+def arithmeticCalculator(operation, num1, num2) do
+  case operation do
+    :add -> num1 + num2
+    :subtract -> num1 - num2
+    :multiply -> num1 * num2
+    :divide -> num1 / num2
+  _ -> {:error, "Invalid operation"}
+  end
+end
 ```
+
+##### **Output**
+```
+The result of add 7 and 14 is 21
+```
+
+In this example, we use atoms to represent different arithmetic operations in a simple calculator. The `arithmeticCalculator` function takes the desired operation and two numbers as arguments, and returns the result of the operation. If an invalid operation is provided, it returns an error tuple with the `"Invalid operation"` message.
 
 ## 5. Lists
 A `list` is an ordered collection of elements represented using square brackets `[]` with commas `,` as value separators. Lists are immutable, meaning that their contents cannot be changed once created. Elixir provides many functions and operators for working with lists, and they are often used to represent sequences of data and in functional programming patterns.
@@ -908,6 +935,42 @@ def main do
 end
 ```
 
+We can perform multiple operations on a `range` using `Enum`:
+
+##### **Code**
+```Elixir
+def main do
+  # Declare a range
+  myrange = 1..20
+
+  # Perform operations on a range
+
+  # Enumerate the elements in the range
+  enumerated_elements = Enum.to_list(myrange)
+  IO.inspect(enumerated_elements)
+
+  # Check if a value is within the range
+  is_in_range = Enum.member?(myrange, 5)
+  IO.inspect(is_in_range)
+
+  # Sum the elements in the range
+  sum_of_elements = Enum.sum(myrange)
+  IO.inspect(sum_of_elements)
+
+  # Get the range length
+  range_length = Enum.count(myrange)
+  IO.inspect(range_length)
+end
+```
+
+##### **Output**
+```
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+true
+210
+20
+```
+
 ## 8. Maps
 A `map` are a data structure that allows us to associate keys with values. Maps are created using the `%{}` syntax, where each `key`-`value` pair is separated by a comma.
 
@@ -1026,8 +1089,7 @@ Is true a boolean?: true
 ---
 
 # Operators
-
-
+Elixir provides comparison, arithmetic, and logical operators for any type.
 
 ## 1. Comparison operators
 Elixir provides all the comparison operators we would expect from any language, plus some additional operators referring to data type comparisons:
@@ -1096,7 +1158,12 @@ Elixir brings in the usual algebraic operators we would expect from any language
 
 Additionally, Elixir also has special methods for special data types such as `lists`:
 
-INCLUDE ++, --
+| Operator | Description                |
+| -------- | -------------------------- |
+| `++`    | Concatenate two lists |
+| `--`     | Subtract items from lists  |
+
+###### *Table n: Arithmetic Operators for Lists*
 
 ## 3. Logical operators
 As we mentioned, we have boolean types to work with. Logical operators evaluate two conditions, and output a boolean value depending on the comparison.
@@ -1322,17 +1389,102 @@ Although `bash` is mostly defined as a procedural language, pipes are common in 
 
 We can pipe in Elixir by using the `|>` operator:
 
+##### **Code**
+```Elixir
+def main do
+  # Define a string
+  mystring = "awesome are pipes"
+  IO.puts("Original String: #{mystring}")
 
+  # Transform a string using pipes
+  mystring2 =
+    mystring
+    |> String.split()
+    |> Enum.reverse()
+    |> Enum.join(" ")
+    |> String.capitalize()
 
-https://elixirschool.com/en/lessons/basics/pipe_operator
+  IO.puts("Transformed String: #{mystring2}")
+end
+```
+
+##### **Output**
+```
+Original String: awesome are pipes
+Transformed String: Pipes are awesome
+```
 
 ---
 
 # Modules
+Modules are used to organize and group related functions and data. Modules provide a namespace for the functions and data they contain, preventing naming conflicts with other parts of our code. They also help in structuring our applications and make them easier to maintain, understand, and test.
+
+Modules in Elixir, as in many other languages, are typically defined using CamelCase (*the first letter of each word is capitalized*). This recommendation can or cannot be followed. However, we do need to at least capitalize our module name.
+
+We can define a module using the following syntax:
+
+##### **Code**
+```Elixir
+defmodule Project1 do
+  # Define function inside module
+  def main do
+    IO.puts("Hello World")
+  end
+end
+```
+
+Here, we have defined a module named `Project1` with a function inside of it called `myfun`.
+
+We have seen that, upon compilation using `mix`, we can define the module and function to compile:
+
+##### **Code**
+```PowerShell
+mix run -e "Project1.main()"
+```
+
+##### **Output**
+```
+Hello World
+```
+
+However, we can also define another module with another `main` function calling a function defined in our `Project1` module, and compile it so that our module is now `Module1` instead of `Project1`, but calls methods defined inside `Project1`:
+
+##### **Code**
+```Elixir
+# Define Project1 Module
+defmodule Project1 do
+  def myfun do
+    IO.puts("Printing from within Project1 Module")
+  end
+end
+
+# Define Module2 module inside same script
+defmodule Module2 do
+  def main do
+    Project1.myfun()
+  end
+end
+```
+
+We now compile our new module:
+
+##### **Code**
+```PowerShell
+mix run -e "Module2.main()"
+```
+
+##### **Output**
+```
+Printing from within Project1 Module
+```
 
 ---
 
 # Functions
+In Elixir, a function is a self-contained unit of code that performs a specific task. Functions are defined using the `def` keyword, followed by the function name, any arguments that the function takes, and the body of the function enclosed in `do` `end` statements, which contains the code that is executed when the function is called.
+
+Function names are typically defined in snake_case (*all lowercase letters with words separated by underscores*). However, if we want to use a different syntax, we can do so but we must not capitalize the first letter of the name, since this is reserved for module definitions.
+
 In Elixir, we have two main types of functions we can work with:
 - Named functions
 - Anonymous functions
@@ -1637,10 +1789,6 @@ Let us explain in more detail what's happening:
 - If and when our `tail` is empty, we cannot call the first `myfun` anymore, since it's expecting a non-empty list, so the second definition of `myfun` is called, which returns `nil` (*empty value*).
 
 In this example we printed our words to `stdout`, but in a more complex implementation, we can do all sorts of things with the `head` that is being outputted.
-
----
-
-I left here: https://www.youtube.com/watch?v=pBNOavRoNL0&t=2796s
 
 ---
 
