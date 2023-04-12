@@ -2054,7 +2054,7 @@ There are a lot of free resources for learning more advanced Elixir concepts. Be
 
 *Disclaimer: None of the resources below are sponsored. All the material was selected by myself.*
 
-First-stops
+First-stops:
 - **[The Elixir Language, Official Page](https://elixir-lang.org/)**: Contains a summary of what Elixir can do, along with multiple redirections to amazing learning resources.
 - **[The Elixir Learning page](https://elixir-lang.org/learning.html)**: An index of the official recommended learning resources.
 - **[Elixir GitHub Repository](https://github.com/elixir-lang/elixir)**: A great place where we can check the latest releases, issues & bug reports and also get to know the maintainers that make Elixir possible.
