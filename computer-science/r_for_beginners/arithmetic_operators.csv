@@ -1,0 +1,8 @@
+Operator, Description
+`+`, Addition
+`-`, Subtraction
+`*`, Product
+`/`, Division
+`%%`, Reminder (*Modulus*)
+`^`, Power
+`sum(a, b)`, Sum of a and b

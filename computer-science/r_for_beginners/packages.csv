@@ -1,0 +1,23 @@
+Package, Description
+`dplyr`, Manipulating DataFrames.
+`ggplot2`, Creating beautiful visuals.
+`data.table`, A faster alternative to `data.frame`.
+`tidyr`, For tidying data.
+`stringr`, For working with strings.
+`lubridate`, For working with date information.
+`httr`, For working with website data.
+`ggvis`, Interactive visualizations.
+`rio`, Importing & exporting data.
+`rmarkdown`, Interactive markdown notebooks.
+`pacman`, Package manager.
+`IRkernel`, Jupyter Notebook kernel for R.
+`readr`, For reading files more easily.
+`jsonlite`, For working with `.json` files.
+`tseries`, For time series analysis.
+`RColorBrewer`, For creating color palettes for `ggplot2`.
+`ggmap`, For data visualization using maps.
+`sqldf`, For using SQL syntax in DataFrames.
+`caret`, For classification and regression training.
+`GGally`, Extends `ggplot2` by adding several functions to reduce the complexity of combining geometric objects with transformed data.
+`ggthemes`, Provides additional `ggplot2` themes and scales.
+`plotly`, Create interactive web graphics from 'ggplot2' graphs and/or a custom interface

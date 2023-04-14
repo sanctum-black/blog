@@ -1,0 +1,6 @@
+# .gitignore file for: blog
+
+# Ignore R-specific files
+.Rproj.user/
+.RData
+.Rhistory

@@ -24,3 +24,4 @@ templates/
 
 # Ignore desktop.ini
 desktop.ini
+.Rproj.user
