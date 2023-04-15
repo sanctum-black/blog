@@ -189,7 +189,6 @@ The installation and setup will be focused on the Windows operating system. Stil
 
 ## 1. Elixir
 We will first install the latest stable release of the Elixir programming language. We can head to the official [Elixir website downloads page for Windows](https://elixir-lang.org/install.html#windows). We will click on [Download the installer](https://github.com/elixir-lang/elixir-windows-setup/releases/download/v2.4/elixir-websetup.exe). Once we have it, we'll run the executable and follow the steps below:
-
 - If we have Microsoft Defender enabled, it will probably tell us that the installation is not secure. We will omit this warning and initialize the installer.
 - We will select the latest release (*they're sorted from newest to oldest*), which at the time of this article, should be `1.14.2`.
 - We will then select the version for the type of CPU architecture we have (*32-bit or 64-bit*). If we're working on a recent computer model, we may have to install the 64-bit version. If unsure, we can always check our system architecture.

@@ -19,9 +19,21 @@ We'll be using R scripts which can be found in the [Blog Article Repo](https://
 ---
 
 # Table of Contents
-- [Probability distributions](#legibility)
-	- [Authoring](#1-authoring)
-	- [Comments](#2-comments)
+- Probability
+- Random variables, sample space, & events
+	- Random variables
+		- Discrete random variables
+		- Continuous random variables
+	- Sample space
+	- Probabilistic events
+- Probability distributions
+- Probability distributions
+	- Probability functions
+		- PMF
+		- PDF
+		- CDF
+	- Types of distributions
+	- Bernoulli distribution
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -162,22 +174,17 @@ In this segment, we'll exclusively focus on the most relevant:
 - Normal (*Gaussian*) distribution
 - Exponential distribution
 
-## Bernoulli distribution
+## 3. Discrete distributions
+### 3.1 Bernoulli distribution
+### 3.2 Binomial distribution
+### 3.3 Poisson distribution
+### 3.4 Geometric distribution
 
+## 4. Continuous distributions
+### 4.1 Uniform distribution
+### 4.2 Normal (*Gaussian*) distribution
+### 4.3 Exponential distribution
 
-## Binomial distribution
-
-
-## Poisson distribution
-
-
-## Uniform distribution
-
-
-## Normal distribution
-
-
-## Exponential distribution
 
 
 

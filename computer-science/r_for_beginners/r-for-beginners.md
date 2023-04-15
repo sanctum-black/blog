@@ -112,33 +112,45 @@ We'll be using R scripts which can be found in the [Blog Article Repo](https://
 ---
 
 # Why R?
-Why learn R, when we have Python?
+Why learn R, when we have Python? As we'll see later on, it's not a question about which language to use, but how to use both for what they're best. Python and R have been the gold standard for Data Science-related tasks for some time now. However, there's no denying that Python excels at tasks that R simply does not, and vice versa.
+
+We can then talk about the main advantages R brings to the table, and how to leverage them in conjunction with Python.
 
 ## 1. Statistical computing
-R was specifically designed for statistical computing and analysis, so it has a comprehensive set of built-in libraries for data manipulation, modeling, and visualization.
+R was specifically designed for statistical computing and analysis, so it has a comprehensive set of built-in libraries for data manipulation, modeling, and visualization. There are many reasons why R is better at statistical computing than Python
 
-## 2. Data visualization
-R has a powerful and flexible graphics system, which makes it easy to create high-quality visualizations of data. While Python has libraries such as Matplotlib and Seaborn, R's ggplot2 is widely considered to be the best data visualization library.
+### 1.1 Built-in statistical functions and packages
+This might be the main reason why R excels at statistical computing; it was created as a statistical language, from statisticians, to statisticians. This means that R has considerably more built-in methods for statistical computing.
 
-## 3. Syntax
-R has a syntax that is specifically designed for statistical computing, which makes it easier to write and read statistical code. The syntax is also highly consistent, which makes it easier to learn and remember.
+### 1.2 Data visualization
+Statistical analysis is inherently intertwined with data visualization. This is because visualizations let us identify patterns and trends faster, communicate insights in a more concise way, identify outliers quickly, and many other applications. Since R is a statistical language, it's naturally packed with visualization packages that make working with plots in R a breeze, while also being beautiful.
 
-## 4. Functional programming
-- Syntax
-- Vectorized operations
-- 
+### 1.3 Community support
+When we're dealing with any science, it's helpful to have constant interaction with a community specialized in the domain we're studying. Statistics is no different; there is a vast community specialized in the field, more than willing to help if we get stuck in the way. Additionally, this help not only comes in the form of the actual writing of code, but also in the theoretical aspect of statistics. 
 
-## 5. Package management
-R has a built-in package management system (CRAN), which makes it easy to find and install packages for a wide range of statistical and machine learning tasks.
+## 2. Specialized applications
+Another thing to bear in mind is that, while Python is considered a general-purpose language, R is not (*at least not entirely*); R is generally used for more specialized analytic and research applications. That is not to say we cannot deploy a production application using R, but its core functionalities are oriented towards specialized analysis (*even so that CRAN offers a per-scientific-domain package classification*).
 
-## 6. Community
-R has a large and active community of users, which means that there are many resources available for learning and troubleshooting.
+## 3. Data visualization
+WE already mentioned that R has a powerful and flexible graphics system. This allows us to easily create beautiful, high-quality visualizations of data. While Python has libraries such as `Matplotlib` and `Seaborn`, R's `ggplot2` is widely considered to be the gold standard data visualization library.
 
+## 4. Syntax
+R has a syntax that is specifically designed for statistical computing, which makes it easier to write and read statistical code. The syntax is also highly consistent, which makes it easier to learn and remember. For example, it would be easier to translate a statistical research paper directly to R, than to Python.
 
-## 7. Academia
+## 5. Functional programming
+Functional programming in the context of R has many advantages:
+- **Easier to reason about code:** R's functional programming features, such as higher-order functions and closures, allow for the creation of modular and composable code that is easier to reason about. This can lead to more reliable and maintainable code, as well as easier debugging and testing.
+- **Improved performance:** We are able to write more efficient and optimized code, as well as easier parallelization and distributed computing. For example, functions such as `lapply` and `sapply` can apply a function to a list or vector in a parallelized and optimized way.
+- **Flexibility and expressiveness:** We can write more flexible and expressive code that can be tailored to specific use cases. For example, functional programming in R allows for more powerful data manipulation capabilities, as well as the creation of custom functions that can be reused across different projects.
+- **Data pipelining:** We are able to create data pipelines, which are sequences of functions that operate on a dataset to produce a desired output. This can make data manipulation and analysis more streamlined and efficient.
 
+More generally, functional programming introduces a new way of thinking about problem-solving using code; concepts such as recursion and piping are extremely valuable, and can often result in better performing code.
 
+## 6. Package management
+R has a built-in package repository (*CRAN*), which makes it easy to find and install packages for a wide range of statistical and machine learning tasks. In addition, there are various package management tools such as `pacman` and `packrat`, which make our life easier when managing our project's dependencies.
 
+## 7. Community
+R has a large and active community of users, which means that there are many resources available for learning and troubleshooting. Additionally, the community is specialized in statistical computing, so we also get a collection of domain experts that can and will help if we get stuck reasoning about our code.
 
 ---
 
@@ -148,6 +160,32 @@ If we're coming from a Python context, several of R's syntactic elements are ver
 Additionally, R is specialized in statistical computing; this means that many of its functions will be tailored for this purpose, and some of its main methods and concepts will be more statistically oriented.
 
 This segment is meant to serve as an introduction to the R language; we will not be diving deep into all of its methods; however, we will be diving reasonably deep into some of R's core concepts around data wrangling, statistical computing, plotting.
+
+---
+
+# Installation
+For this segment, we'll be using the R language along with RStudio, an IDE tailored for working with R.
+
+We will also install some packages, which will come later when we get to the dependencies section.
+
+The installation and setup will be focused on the Windows operating system. Still, a similar process can be used for macOS or Unix-like platforms.
+
+## 1. R
+We will first install the latest stable release of the R programming language. We can head to the official [CRAN R Download Page for Windows](https://cran.r-project.org/bin/windows/base/). We will click on *Download R for Windows*. Once we have it, we'll run the executable and follow the steps below:
+- A
+- A
+- A
+- A
+
+
+## 2. RStudio
+RStudio is an IDE developed by Posit (*previously RStudio*). We could use VS Code, Spyder, or even PyCharm. However, RStudio brings in a wide variety of useful features to the table, as we'll see further on.
+
+To download RStudio, we will head to the [Official Posit RStudio Desktop Download Page](https://posit.co/download/rstudio-desktop/). We'll click on *Download RStudio Desktop for windows*, and wait for the executable to download. We'll then follow the steps below:
+- A
+- A
+- A
+- A
 
 ---
 
