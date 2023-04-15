@@ -4,7 +4,9 @@
 
 # Installing packages
 # install.packages("pacman")
+install.packages("tidyverse")
 # install.packages("IRkernel")
+# IRkernel::installspec()
 
 # ------------------
 # LOAD THIRD-PARTY PACKAGES
@@ -212,7 +214,9 @@ print(mymatrix)
 # ---------------------------
 
 # Create a DataFrame
-mydata <- data.frame(x = 1:5, y = c("A", "B", "C", "D", "E"))
+mydata <- data.frame(x = 1:5, y = c("1", "2", "3", "4", "5"))
+class(mydata)
+print(mydata)
 
 # Read data
 df <- read.csv("datasets/gdp_countries.csv")
@@ -226,10 +230,8 @@ ncol(df)
 colnames(df)
 names(df)
 
-# Access columns
+# Access head of Country column
 head(df$Country)
-
-
 
 # Extract Country and GDP_per_capita using square brackets []
 df_subset1 <- df[, c("Country", "GDP_per_capita")]

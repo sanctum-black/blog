@@ -14,31 +14,96 @@ R is an open-source, dynamically-typed, multi-paradigm programming language main
 
 Many times, R gets compared with Python, particularly in the Data Science, ML & Scientific programing context; both offer great capabilities, but when talking about statistical computing, R is just better.  
 
-In this Blog Article, we'll
+In this Blog Article, we'll start by discussing R's main features, and talk about what makes R a great option for statistical & scientific computing. We'll then install R along with RStudio, and discuss different ways we can use to manage packages and dependencies in our R environment. We'll go over R's main syntactic elements, variable declaration, data types & data structures, logical and arithmetic operators, some of the most relevant mathematical functions, vectorized operations, flow control using mainly conditional constructs, reading & writing files using different formats, and plotting using different types of plots. We'll close this segment by providing next steps for those interested in learning more about R, depending on the targeted application.
 
 We'll be using R scripts which can be found in the [Blog Article Repo](https://github.com/pabloagn/blog/tree/master/computer-science/r-for-beginners).
 
 ---
 
 # Table of Contents
-- Why R?
-	- Statistical computing
-	- Data visualization
-	- Syntax
-	- Functional programming
-	- Package management
-	- Community
-	- Academia
-- What to expect
-- Creating a new project
-- Package management
-	- Loading/unloading base packages
-	- Managing third-party packages
-		- Using the built-in installer
-		- Using pacman
-	- Useful packages
-- Help
-- 
+- Why R?]()
+	- Statistical computing]()
+	- Data visualization]()
+	- Syntax]()
+	- Functional programming]()
+	- Package management]()
+	- Community]()
+	- Academia]()
+- What to expect]()
+- Creating a new project]()
+- Package management]()
+	- Loading/unloading base packages]()
+	- Managing third-party packages]()
+		- Using the built-in installer]()
+		- Using pacman]()
+	- Useful packages]()
+- Help]()
+- Variables]()
+- Printing & viewing]()
+	- Using print()]()
+	- Using paste() & paste0()]()
+	- Using print() & paste()]()
+	- Using cat()]()
+	- Using message()]()
+	- Using View()]()
+- Data types]()
+	- Logical]()
+	- Numeric]()
+	- Integer]()
+	- Complex]()
+	- Character]()
+	- Raw]()
+	- Checking a variable's type]()
+		- Using typeof()]()
+		- Using class()]()
+- Data structures]()
+	- Vectors]()
+		- Vectors as ranges or sequences]()
+	- Matrices]()
+	- DataFrames]()
+		- Getting dimensions]()
+		- Getting column names]()
+		- Accessing columns]()
+		- Extracting columns]()
+	- Lists]()
+	- Factors]()
+	- Arrays]()
+	- data.table]()
+- Operators]()
+	- Arithmetic operators]()
+	- Comparison operators]()
+	- Logical operators]()
+- Mathematical functions]()
+- Flow control]()
+	- Using if]()
+	- Using if-else]()
+	- Using for loop]()
+	- Using nested loops]()
+	- Using while loop]()
+	- Using repeat-break]()
+	- Using return]()
+	- Using next]()
+- Functions]()
+	- Named functions]()
+		- Without arguments]()
+		- With arguments]()
+		- With default arguments]()
+	- Anonymus functions]()
+- Vectorized operations]()
+- Reading files]()
+	- Reading CSV files]()
+	- Reading TXT files]()
+	- Reading parquet files]()
+	- Reading JSON files]()
+- Writing files]()
+	- Writing to CSV]()
+	- Writing to TXT]()
+	- Writing to parquet]()
+	- Writing to JSON]()
+- Plotting]()
+	- Using the base package]()
+	- Plotting bar charts]()
+- JupyterLab]()
 - [Next steps]()
 - [Conclusions](#conclusions)
 - [References](#references)
@@ -59,6 +124,9 @@ R has a powerful and flexible graphics system, which makes it easy to create hig
 R has a syntax that is specifically designed for statistical computing, which makes it easier to write and read statistical code. The syntax is also highly consistent, which makes it easier to learn and remember.
 
 ## 4. Functional programming
+- Syntax
+- Vectorized operations
+- 
 
 ## 5. Package management
 R has a built-in package management system (CRAN), which makes it easy to find and install packages for a wide range of statistical and machine learning tasks.
@@ -181,30 +249,31 @@ At the time of this writing, there are 18k+ packages in CRAN; this means we have
 
 Below are some of the most popular packages currently available in CRAN:
 
-|Package       |Description                                                                                                                  |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------|
-|`dplyr`       | Manipulating DataFrames.                                                                                                    |
-|`ggplot2`     | Creating beautiful visuals.                                                                                                 |
-|`data.table`  | A faster alternative to `data.frame`.                                                                                       |
-|`tidyr`       | For tidying data.                                                                                                           |
-|`stringr`     | For working with strings.                                                                                                   |
-|`lubridate`   | For working with date information.                                                                                          |
-|`httr`        | For working with website data.                                                                                              |
-|`ggvis`       | Interactive visualizations.                                                                                                 |
-|`rio`         | Importing & exporting data.                                                                                                 |
-|`rmarkdown`   | Interactive markdown notebooks.                                                                                             |
-|`pacman`      | Package manager.                                                                                                            |
-|`IRkernel`    | Jupyter Notebook kernel for R.                                                                                              |
-|`readr`       | For reading files more easily.                                                                                              |
-|`jsonlite`    | For working with `.json` files.                                                                                             |
-|`tseries`     | For time series analysis.                                                                                                   |
-|`RColorBrewer`| For creating color palettes for `ggplot2`.                                                                                  |
-|`ggmap`       | For data visualization using maps.                                                                                          |
-|`sqldf`       | For using SQL syntax in DataFrames.                                                                                         |
-|`caret`       | For classification and regression training.                                                                                 |
-|`GGally`      | Extends `ggplot2` by adding several functions to reduce the complexity of combining geometric objects with transformed data.|
-|`ggthemes`    | Provides additional `ggplot2` themes and scales.                                                                            |
-|`plotly`      | Create interactive web graphics from 'ggplot2' graphs and/or a custom interface                                             |
+| Package        | Description                                                                                                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `tidyverse`        | A collection of multiple Data Science packages.                                                                                                     |
+| `dplyr`        | Manipulating DataFrames.                                                                                                     |
+| `ggplot2`      | Creating beautiful visuals.                                                                                                  |
+| `data.table`   | A faster alternative to `data.frame`.                                                                                        |
+| `tidyr`        | For tidying data.                                                                                                            |
+| `stringr`      | For working with strings.                                                                                                    |
+| `lubridate`    | For working with date information.                                                                                           |
+| `httr`         | For working with website data.                                                                                               |
+| `ggvis`        | Interactive visualizations.                                                                                                  |
+| `rio`          | Importing & exporting data.                                                                                                  |
+| `rmarkdown`    | Interactive markdown notebooks.                                                                                              |
+| `pacman`       | Package manager.                                                                                                             |
+| `IRkernel`     | Jupyter Notebook kernel for R.                                                                                               |
+| `readr`        | For reading files more easily.                                                                                               |
+| `jsonlite`     | For working with `.json` files.                                                                                              |
+| `tseries`      | For time series analysis.                                                                                                    |
+| `RColorBrewer` | For creating color palettes for `ggplot2`.                                                                                   |
+| `ggmap`        | For data visualization using maps.                                                                                           |
+| `sqldf`        | For using SQL syntax in DataFrames.                                                                                          |
+| `caret`        | For classification and regression training.                                                                                  |
+| `GGally`       | Extends `ggplot2` by adding several functions to reduce the complexity of combining geometric objects with transformed data. |
+| `ggthemes`     | Provides additional `ggplot2` themes and scales.                                                                             |
+| `plotly`       | Create interactive web graphics from 'ggplot2' graphs and/or a custom interface                                              |
 
 ###### *Table N: Most Useful General-Purpose Packages in CRAN* 
 
@@ -219,6 +288,7 @@ Asking for help in R is as simple as using the question mark `?` following the l
 ```
 
 ##### **Output**
+
 B016A033_help.png
 
 ---
@@ -272,12 +342,11 @@ In most cases, `<-` and `=` can be used interchangeably for variable assignment,
 # Printing & viewing
 There are multiple ways we can use to print & view objects in R:
 - `print()`
-- `print0()`
-- `message()`
+- `paste()` & `paste0()`
+- `print()` & `paste()`
 - `cat()`
-- `paste()`
-- `cat()` & `paste()`
-- `view()`
+- `message()`
+- `View()`
 
 ## 1. Using print()
 The `print()` function is a generic function in R that can be used to print various types of objects to the console. When we call `print()` on an object, it prints the object to the console in a format that is appropriate for that object.
@@ -333,6 +402,7 @@ paste0("My variable is", myvar)
 ```
 
 ## 3. Using print() & paste()
+
 
 ##### **Code**
 ```R
@@ -440,8 +510,26 @@ There are two main ways we can use to determine a variable's type in R:
 ---
 
 # Data structures
+There are 7 main data structures in R:
+- **Vectors**: A basic data structure that can hold a sequence of values of the same data type.
+- **Matrices**: A two-dimensional array that can hold a collection of values of the same data type.
+- **Arrays**: A multi-dimensional data structure that can hold a collection of values of the same data type.
+- **Lists**: A data structure that can hold a collection of values of different types.
+- **DataFrames**: A two-dimensional table-like data structure in R that can hold a collection of values of different types.
+- **Factors**: A data structure that is used to represent categorical variables.
+- **Tables**: A special type of data structure in R that is used to represent tabular data.
 
-## 1. Vectors
+Additionally, there are third-party packages that provide more data structures built on top of the base structures: 
+- **Data tables:** The `data.table` package provides a faster alternative to the `data.frame` class.
+- **Tidy data:** A standard way of mapping the meaning of a dataset to its structure when using the `tidyr` package.
+- **Time series data:** The `xts` and `zoo` packages provide tools for working with time series data in R.
+- **Spatial data:** The `sp` and `sf` packages provide tools for working with spatial data in R.
+
+For the third-party libraries, we'll only be reviewing the `data.tables` class.
+
+## 1. Base structures
+
+### 1.1 Vectors
 **Vectors** are the simplest and most basic data structure in R. They can hold data of a single data type (*e.g., numeric, character, logical*), and can be of any length.
 
 We can explicitly create vectors:
@@ -477,7 +565,7 @@ myvec1[2]
 
 We must keep in mind that R uses 1-based indexing, meaning the first index of any object is set to 1.
 
-### 1.1 Vectors as ranges or sequences
+### 1.1.1 Vectors as ranges or sequences
 There is no built-in `range` type in R. However, we can represent a `range`  by defining a vector of integers.
 
 ##### **Code**
@@ -495,20 +583,44 @@ This declaration will be inclusive, meaning both 1 and 10 will be included in ou
 
 As we will see later on, these types of declarations are useful when we would like to perform iterations.
 
-## 2. Matrices
+### 1.2 Matrices
 **Matrices** are two-dimensional arrays that contain data of the same data type. They are created by combining vectors, and can be manipulated using matrix algebra.
 
+### 1.3 Arrays
+**Arrays** are similar to matrices, but can have more than two dimensions.
 
-## 3. DataFrames
+### 1.4 Lists
+**Lists** are a collection of objects of different data types, and can contain other data structures such as vectors, matrices, and data frames. They are highly flexible and can be used to store complex data structures.
+
+### 1.5. DataFrames
 **DataFrames** are similar to matrices, but they can contain columns of different data types. They are commonly used to store and manipulate data in R, and are similar to DataFrames in Python.
 
 DataFrames are widely used in R, since they provide an object we can use to perform transformations to our data. This is why we'll spend a little bit more time exploring DataFrames.
 
-We can declare a DataFrame:
+We can build a DataFrame of two columns by using 2 vectors, each one for specifying a column:
 
+##### **Code**
+```R
+mydata <- data.frame(x = 1:5, y = c("1", "2", "3", "4", "5"))
+class(mydata)
+print(mydata)
+```
 
+##### **Output**
+```
+[1] "data.frame"
 
-### 3.n Getting dimensions
+  x y
+1 1 1
+2 2 2
+3 3 3
+4 4 4
+5 5 5
+```
+
+We can see that upon calling `print()`, the index and the contents get outputted to `stdout`.
+
+#### 1.5.1 Getting dimensions
 - `dim()`: Returns the shape of a DataFrame. The output will be a vector.
 - `nrow()`: Returns the number of rows. The output will be an integer.
 - `ncol()`: Returns the number of columns. The output will be an integer.
@@ -531,7 +643,7 @@ ncol(df)
 [1] 8
 ```
 
-### 3.n Getting column names
+#### 1.5.2 Getting column names
 There are two main methods for getting the column names of a DataFrame:
 - `colnames()`: Specific method for extracting the column names.
 - `names()`: Can also be used to get or set the names of other R objects, such as vectors or lists.
@@ -554,15 +666,24 @@ names(df)
 
 As we can see, both methods return the same output.
 
-### 3.n Accessing columns
-We can access the column of a DataFrame by using the following syntax:
+#### 1.5.3 Accessing columns
+We can access the column of a DataFrame by using the dollar sign `$` after our DataFrame, and before the target column name:
 
 ##### **Code**
 ```R
+# Read data
+df <- read.csv("datasets/gdp_countries.csv")
 
+# Access head of Country column
+head(df$Country)
 ```
 
-### 3.n Extracting columns
+##### **Output**
+```
+[1] "United States"  "China"          "Japan"          "Germany"        "India"          "United Kingdom"
+```
+
+#### 1.5.4 Extracting columns
 We can access and extract the columns of a given DataFrame using two main methods:
 - Using square brackets `[]`.
 - Using `subset()` method.
@@ -595,20 +716,17 @@ dim(df_subset2)
 
 As we can see, we get the same output.
 
-### 3.n 
-
-## 4. Lists
-**Lists** are a collection of objects of different data types, and can contain other data structures such as vectors, matrices, and data frames. They are highly flexible and can be used to store complex data structures.
+#### 1.5.5 Aa
 
 
-## 5. Factors
+### 1.6 Factors
 **Factors** are used to represent categorical data in R, and are created from vectors. They can be ordered or unordered, and are commonly used in statistical modeling.
 
+### 1.7 Tables
 
-## 6. Arrays
-**Arrays** are similar to matrices, but can have more than two dimensions.
+## 2. External libraries
 
-## 7. data.table
+### 2.1 data.table
 The last structure we'll review will be the `data.table`. This class is not included in the base packages of R. It is an external package that needs to be installed separately.
 
 The reason why we included this class, is because, even though it's built top of R's `data.frame` class, `data.table` offers many improvements such as fast grouping and aggregation, fast join operations, memory efficiency, and extended syntax. In short, it's designed for efficiently working with large datasets and provides faster and more memory-efficient operations than traditional data frames.
@@ -747,11 +865,145 @@ myvar3 <- 21
 
 ---
 
+# Flow control
+In R, flow control can be achieved by using conditional constructs. The main constructs are:
+- `if`
+- `if`-`else`
+
+We also have loop constructs, but are not encouraged when writing functional code:
+- `for`
+- `while`
+- `repeat`-`break`
+
+Additionally, we also have constructs for ending or returning values in a given execution flow:
+- `return`
+- `next`
+- `break`
+
+## 1. Conditional constructs
+
+### 1.1 Using if
+
+
+### 1.2 Using if-else
+
+## 2. Loop constructs
+
+### 2.1 Using for loop
+We will not be investing too much time in `for` and `while` loops, since as we mentioned, they are discouraged in functional programming, in favor of using vectorized operations or recursion. However, it's still important to know that they exist, and that they can be used.
+
+A `for` loop is 
+
+### 2.2 Using nested loops
+
+### 2.3 Using while loop
+
+### 2.4 Using repeat-break
+
+## 3. Returning constructs
+
+### 3.1 Using return
+
+
+### 3.2 Using next
+
+
+
+---
+
+# Functions
+Functions in R can be named or anonymous. They can also be defined without parameters, with parameters, or with default parameters.
+
+## 1. Named functions
+
+## 2. Antonymous functions
+
+## 3. Functions without parameters
+
+## 4. Functions with parameters
+
+## 5. Functions with default parameters
+
+---
+
+# Vectorized operations
+We mentioned that vectorization is a key feature of functional programming languages, but, what is vectorization?
+
+Vectorized operations are methods that allow us to perform operations on entire vectors of data at once, rather than looping over each element individually. This can result in significant performance improvements and more concise and readable code.
+
+There are multiple methods for vectorized operations in R. In fact, we already used some of them when performing arithmetic, comparison and logical operations between vectors.
+
+## 1. Vectorized arithmetic operations
+If we're working with vectors in R, arithmetic operations are vectorized operations. We can perform operations between vectors:
+
+##### **Code**
+```R
+x <- c(1, 2, 3)
+y <- c(4, 5, 6)
+
+# Vector addition
+x + y
+
+# Vector multiplication
+x * y
+
+# Vector exponentiation
+x ^ 2
+```
+
+##### **Output**
+```
+
+```
+
+## 2. Vectorized comparison operations
+
+
+## 3. Vectorized logical operations
+
+
+## 4. Vectorized mathematical functions
+
+
+## 5. Vectorized transformation functions
+
+
+### 5.1 The apply() family
+The `apply()` family of functions is used to apply a function to a matrix or array, and to return a vector or array of results. These functions are built-in, and can be accessed without the need of library importing:
+- `apply()`
+- `lapply()`
+- `sapply()`
+- `tapply()`
+
+#### 5.1.1 apply()
+
+
+#### 5.1.2 lapply()
+
+
+#### 5.1.3 sapply()
+
+
+#### 5.1.4 tapply()
+
+
+### 5.2 The dplyr package
+The `dplyr` package is a third-party package that provides a wide range of functions and tools for data manipulation and transformation, many of them vectorized.
+
+
+
+### 5.3 The tidyr package
+The `tidyr` package is a third-party package that provides a wide range of functions and tools for data tidying, cleaning and preprocessing, many of them vectorized.
+
+---
+
 # Reading files
-https://www.kaggle.com/datasets/ppb00x/country-gdp
+R is a statistical analysis language, meaning we'll probably be spending some time reading datasets in multiple file formats, from multiple sources; R provides a wide range of methods for reading datasets. Additionally, there are third-party languages for reading more specialized file formats such as `.parquet` & `.avro` datasets. 
+
+For this section, we'll be using the [country-gdp dataset](https://www.kaggle.com/datasets/ppb00x/country-gdp) provided by [spear>](https://www.kaggle.com/ppb00x), available on [Kaggle](https://www.kaggle.com/).
 
 ## 1. Reading CSV files
-We can read a csv tile using the `read.csv()` built-in method:
+R provides a great built-in method for reading `.csv` files into DataFrame objects. We can read a csv tile using the `read.csv()` built-in method:
 
 ##### **Code**
 ```R
@@ -788,9 +1040,9 @@ class(df)
 We can see we get two different answers; the reason is that in R, a DataFrame is not a basic type; it's implemented as a special kind of `list`, where each element of the `list` corresponds to a column in the data frame.
 
 ## 2. Reading TXT files
+Similarly, we can read a `.txt` file using 
 
-
-## 3. Reading parquet files
+## 3. Reading Parquet files
 
 
 ## 4. Reading JSON files
@@ -830,11 +1082,11 @@ writeLines(message, "output.txt")
 ```
 
 
-
-## 3. Writing to parquet
+## 3. Writing to Parquet
 
 
 ## 4. Writing to JSON
+
 
 
 ---
@@ -849,8 +1101,79 @@ The `plot` base package in R adapts to the data types we're using; it generates 
 
 ---
 
+# JupyterLab
+This segment would not be complete without at least mentioning `JupyterLab`; an interactive development environment (*IDE*) for working with Jupyter notebooks, code, and data.
+
+If we come from a Python context, we're probably we'll aware of this environment; the great thing is that it also supports R, among other languages.
+
+`IRkernel` is a kernel for Jupyter notebooks that enables the use of the R programming language. It's available as a CRAN package, which we can download using the following syntax:
+
+##### **Code**
+```R
+install.packages("IRkernel")
+```
+
+Upon installation, we need to register the kernel with Jupyter notebooks by running the following command:
+
+##### **Code**
+```R
+IRkernel::installspec()
+```
+
+And voila, we have an R JupyterLab kernel. From there, we can create a new R Jupyter Notebook in our current directory by using the following syntax:
+
+##### Code
+```PowerShell
+New-Item -ItemType File -Path ".\MyNotebook.ipynb"
+```
+
+We then have two options:
+- **Using VS Code:** Open the newly-created notebook in VS Code, and select the appropriate R Kernel.
+- **Using a web browser:** We can head to the terminal and execute `jupyter notebook`. This will launch a new Jupyter Lab server, which we can access using a web browser.
+
+---
+
+# Next steps
+We're reviewed a lot of information. However, this segment is meant to serve as an introduction to the R language. There are a vast amount of resources to further deepen our understanding, either for depending our understanding on a specific domain, or just learning R as an additional data processing & analysis tool:
+
+*Disclaimer: None of the resources below are sponsored. All the material was selected by myself.*
+
+First stops:
+- **[The R Project](https://www.r-project.org/)**: Contains material for everything R-related, including a list of contributors, bug reporting, conferences, mailing lists, contributions, R Blogs, R Foundation, manuals, certifications, bibliographical resources, and all kinds of useful information.
+- **[CRAN](https://cran.r-project.org/)**: We already mentioned how The Comprehensive R Archive Network can be useful for downloading packages. However, CRAN also contains a wide variety of documentation sheets and FAQs for all kinds of packages. Additionally, visiting CRAN and seeing the latest and greatest is always a great way to get a glimpse of where R is heading.
+- **[R Topic, GitHub](https://github.com/topics/r)**: A great way to get in touch with the latest developments in the R community.
+- **[R Source, GitHub](https://github.com/wch/r-source)**: The official GitHub repository for the R language source code. Great if we'd like to report an issue, see the latest releases and developments, and more.
+- **[Posit](https://posit.co/products/open-source/rstudio/)**: remember we mentioned RStudio as being an amazing IDE for R? Well, the company behind it is Posit. In their official RStudio page, we'll be able to find all kinds of information regarding the IDE, as well as enterprise-level solutions for professional workflows.
+- **[TidyVerse](https://www.tidyverse.org/)**: An opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+Forums:
+- **[#rstats, Twitter](https://twitter.com/search?q=%23rstats)**: A responsive, welcoming, and inclusive community of R users to interact with on Twitter
+- **[R weekly](https://rweekly.org/)**: An incredible weekly recap of all R-related content.
+- **[R Conferences](https://jumpingrivers.github.io/meetingsR/events.html)**: An index of community-led conferences around the globe.
+- **[useR!](https://user2022.r-project.org/)**: The biggest annual R conference.
+
+Bibliographical resources:
+- **[R in Action, Manning Publications](https://www.manning.com/books/r-in-action-third-edition)**: A practical textbook focusing on data analysis and graphics with R and [Tidyverse](https://www.tidyverse.org/).
+- [R for Data Science, O'Reilly](https://www.oreilly.com/library/view/r-for-data/9781491910382/)
+- [Art of R Programming, No Starch Press](https://nostarch.com/artofr.htm)
+- [R Graphics Cookbook, O'Reilly](https://www.oreilly.com/library/view/r-graphics-cookbook/9781491978597/)
+- [R Cookbook, O'Reilly](https://www.oreilly.com/library/view/r-cookbook-2nd/9781492040675/)
+- [Machine Learning with R, Packt](https://www.amazon.com/Machine-Learning-techniques-predictive-modeling/dp/1788295862)
+
+Paid resources:
+- **[HarvardX, Data Science Professional Certificate](https://www.edx.org/professional-certificate/harvardx-data-science)**: An extensive 9-course program focused on teaching probability theory & statistics, data analysis, data science, and ML in R.
+- **[R Programming, Johns Hopkins University](https://www.coursera.org/learn/r-programming)**: A great intermediate-level course targeting data analysis.
+
+---
+
 # Conclusions
-Aaa
+In this segment we discussed what the R language is, and how to install it along with RStudio, a great IDE offering a wide variety of functionalities. We then discussed some of R's main features such as relevant syntactic elements, variable declarations, data types & data structures, logical and arithmetic operators, mathematical functions, vectorized operations, flow control, reading & writing files, and plotting. We closed this segment by providing domain-specific next steps.
+
+In a Python-centric world, we can sometimes opt for ease-of-use over performance. We tend to stick to what we know better, but the reality is that Python is just not great at some applications. Statistical modeling, scientific computing, plotting, and domain-specific research are sometimes better in R.
+
+Additionally, Python and R are not meant to be used separately; in fact, RStudio provides support for creating and editing Python scripts, executing Python code, and interacting with Python packages and libraries. Also, the `reticulate` R package provides an interface to Python, allowing us to execute Python code from R and to pass data between both languages. Conversely, the `rpy2` package in Python provides the same inverse functionality.
+
+As we can see, this is not an OR question, but an AND question, particularly if we're working on statistical, ML, domain-specific or scientific projects.
 
 ---
 
