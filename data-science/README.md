@@ -18,7 +18,11 @@
         <a href="https://github.com/pabloagn/portfolio-projects">
     <img src="https://img.shields.io/badge/Portfolio-f2f2f2?style=for-the-badge"/></a>&nbsp&nbsp
         <a href="https://github.com/pabloagn/documentation">
-    <img src="https://img.shields.io/badge/Documentation-f2f2f2?style=for-the-badge"/>
+    <img src="https://img.shields.io/badge/Documentation-f2f2f2?style=for-the-badge"/></a>&nbsp&nbsp
+    <a href="https://github.com/pabloagn/amulets">
+    <img src="https://img.shields.io/badge/Amulets-f2f2f2?style=for-the-badge"/></a>&nbsp&nbsp
+	<a href="https://github.com/pabloagn/series">
+    <img src="https://img.shields.io/badge/Series-f2f2f2?style=for-the-badge"/>
     </a>
 </div>
 
