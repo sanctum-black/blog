@@ -71,11 +71,11 @@ Programming paradigms represent diverse strategies for approaching problem-solvi
 - **Promoting adaptability**: Familiarity with existing paradigms makes it easier to shift to new ones.
 - **Encouraging intellectual growth**: Delving into programming paradigms can challenge our thinking and broaden our problem-solving capabilities.
 - **Customizing our programming style**: Grasping different paradigms allows us to design tailored solutions that align with our coding style. While we may loathe object-oriented programming, we might adore functional programming, which could motivate us to start coding in the first place.
-- Promoting an appreciation for diversity**: Learning diverse paradigms cultivates respect for the varied approaches taken by other programmers.
-- Fueling creativity**: Experimenting with multiple paradigms can inspire creativity and foster innovative ways of problem-solving.
-- Promoting adaptability**: Proficiency in multiple paradigms equips us with the versatility to adapt to evolving project requirements or technologies.
+- **Promoting an appreciation for diversity**: Learning diverse paradigms cultivates respect for the varied approaches taken by other programmers.
+- **Fueling creativity**: Experimenting with multiple paradigms can inspire creativity and foster innovative ways of problem-solving.
+- **Promoting adaptability**: Proficiency in multiple paradigms equips us with the versatility to adapt to evolving project requirements or technologies.
 - **Enhancing communication skills**: Understanding diverse paradigms boosts our capacity to convey complex ideas to colleagues and stakeholders, including non-technical audiences.
-- Developing intuition**: Exploring different paradigms can help us hone our intuition for identifying the most appropriate approach to a particular problem based on what has worked before, what has not, and why.
+- **Developing intuition**: Exploring different paradigms can help us hone our intuition for identifying the most appropriate approach to a particular problem based on what has worked before, what has not, and why.
 
 ---
 
