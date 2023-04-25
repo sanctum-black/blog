@@ -64,10 +64,10 @@ Aa
 ## 1. Creating a Scala worksheet
 Scala Worksheets use the `.sc` extension, and unlike a typical `.scala` file, they're not compiled, and instead are run by the interpreter on real time.
 
-Worksheet files must be located in the following directory:
+Worksheet files can be located in the following directory:
 
 ```
-projectname/src/example/example.worksheet.sc
+projectname/src/main/example.worksheet.sc
 ```
 
 The name structure must be the following:

@@ -1,0 +1,10 @@
+# .gitignore file for: 10-advanced-programming-techniques
+
+## Ignore unnecessary files and directories
+**/.bloop
+**/.metals
+**/target
+**/project
+
+# Ignore desktop.ini
+desktop.ini
