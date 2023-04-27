@@ -1,8 +1,16 @@
+// Cats
 import cats._
 import cats.implicits._
 import cats.instances.list._
 import cats.instances.vector._
+
+// Tail Recursion
 import scala.annotation.tailrec
+
+// Asynchronous CPS
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.{Promise, Await, Future}
+import scala.concurrent.duration._
 
 // ----------------------
 // Tail recursion
@@ -104,83 +112,6 @@ ExpCalc(8, 4)
 ExpCalc(14328, 5)
 
 // ----------------------
-
-// 5. Reversed List
-
-
-// ----------------------
-// Higher Order Functions
-// ----------------------
-
-
-
-
-// ----------------------
-// Currying
-// ----------------------
-
-
-// ----------------------
-// Monads
-// ----------------------
-
-// 1. An undefined operation
-
-// Unsafe division one
-def unsafeDivOne(UnsafeDivTwo: (Double, Double)  => Double, a: Double, b: Double, d: Double): Double = {
-    UnsafeDivTwo(a, b) / d
-}
-
-// Unsafe division two
-def UnsafeDivTwo(a: Double, b: Double): Double = {
-    a / b
-}
-
-// Call 1
-unsafeDivOne(UnsafeDivTwo, 12, 2, 3)
-
-// Call 2
-unsafeDivOne(UnsafeDivTwo, 12, 0, 3)
-
-
-// Safe division one
-def safeDivOne(SafeDivTwo: (Double, Double) => Option[Double], a: Double, b: Double, d: Double): Option[Double] = {
-    if (b != 0 & d != 0) {
-        safeDivTwo(a, b).flatMap(result => safeDivTwo(result, d))
-    }
-    else None
-}
-
-// Safe division two
-def safeDivTwo(a: Double, b: Double): Option[Double] = {
-    if (b != 0) Some(a / b)
-    else None
-}
-
-safeDivOne(safeDivTwo, 12, 0, 3)
-
-// ----------------------
-// Pattern Matching
-// ----------------------
-
-// 1. Handle a division by zero
-def checkDivide(result: Option[Double]) = {
-    result match {
-    case Some(value) => println(s"Division result: $value")
-    case None        => println("Division by zero is not allowed")
-    }
-}
-
-// Checking
-checkDivide(safeDivOne(safeDivTwo, 12, 2, 3))
-checkDivide(safeDivOne(safeDivTwo, 12, 0, 3))
-
-// ----------------------
-
-// 2. 
-
-
-// ----------------------
 // Higher-Order Functions
 // ----------------------
 
@@ -271,6 +202,310 @@ val applySumSquare = sumInts(squareInt) _
 
 // Complete partial call
 applySumSquare(2, 3)
+
+// ----------------------
+// Monads
+// ----------------------
+
+// 1. An undefined operation
+
+// Unsafe division one
+def unsafeDivOne(UnsafeDivTwo: (Double, Double)  => Double, a: Double, b: Double, d: Double): Double = {
+    UnsafeDivTwo(a, b) / d
+}
+
+// Unsafe division two
+def UnsafeDivTwo(a: Double, b: Double): Double = {
+    a / b
+}
+
+// Call 1
+unsafeDivOne(UnsafeDivTwo, 12, 2, 3)
+
+// Call 2
+unsafeDivOne(UnsafeDivTwo, 12, 0, 3)
+
+
+// Safe division one
+def safeDivOne(SafeDivTwo: (Double, Double) => Option[Double], a: Double, b: Double, d: Double): Option[Double] = {
+    if (b != 0 & d != 0) {
+        safeDivTwo(a, b).flatMap(result => safeDivTwo(result, d))
+    }
+    else None
+}
+
+// Safe division two
+def safeDivTwo(a: Double, b: Double): Option[Double] = {
+    if (b != 0) Some(a / b)
+    else None
+}
+
+safeDivOne(safeDivTwo, 12, 0, 3)
+
+// ----------------------
+// Pattern Matching
+// ----------------------
+
+// 1. Handle a division by zero
+def checkDivide(result: Option[Double]) = {
+    result match {
+    case Some(value) => println(s"Division result: $value")
+    case None        => println("Division by zero is not allowed")
+    }
+}
+
+// Checking
+checkDivide(safeDivOne(safeDivTwo, 12, 2, 3))
+checkDivide(safeDivOne(safeDivTwo, 12, 0, 3))
+
+// ----------------------
+
+// 2. Animal classification
+
+// Define an animal checker
+def checkAnimal(animal: String): String = {
+    animal match {
+        case ("Elephant" | "Whale" | "Dog") => "Mamal"
+        case ("Parrot" | "Eagle" | "Penguin") => "Bird"
+        case ("Lizard" | "Tortoise" | "Snake") => "Reptile"
+        case _ => "Animal is not in DB, sorry."
+    }
+}
+
+// Define an animal
+val my_animal = "Snake"
+
+// Call function
+checkAnimal(my_animal)
+
+// ----------------------
+
+// 3. Type checking
+
+// Implement using pattern matching
+def checkType1(x: Any): String = x match {
+  case _: Int => "Int"
+  case _: String => "String"
+  case _: Boolean => "Boolean"
+  case _ => "Unknown"
+}
+
+// Implement using a if-else constructs
+def checkType2(x: Any): String = {
+  if (x.isInstanceOf[Int]) "Int"
+  else if (x.isInstanceOf[String]) "String"
+  else if (x.isInstanceOf[Boolean]) "Boolean"
+  else "Unknown"
+}
+
+// Call functions
+checkType1(1)
+checkType2(1)
+
+checkType1("A String")
+checkType2("A String")
+
+// ----------------------
+// Extractors
+// ----------------------
+
+// 1. Extractors with a custom class
+
+// Define our custom class
+class PositiveInt(val value: Int)
+
+// Define an object
+object PositiveInt {
+  def unapply(value: Int): Option[PositiveInt] =
+    if (value > 0) Some(new PositiveInt(value)) else None
+}
+
+// Define a checker that includes an extractor
+def checkNum(x: Int) = x match {
+  case PositiveInt(positiveInt) => println(s"The number ${positiveInt.value} is positive.")
+  case _ => println(s"The number ${x} is not positive.")
+}
+
+checkNum(7)
+checkNum(-10)
+
+// ----------------------
+// Lazy evaluation
+// ----------------------
+
+// 1. Defining a simple lazy variable
+
+// Define an eager list and a lazy list
+val my_list:List[Int] = List(1, 2, 3, 4, 5)
+lazy val my_lazy_list:List[Int] = List(1, 2, 3, 4, 5)
+
+// ----------------------
+// Implicits
+// ----------------------
+
+// Define a function with implicit parameter x
+def findInt(implicit x: Int) = x
+
+// Define an implicit value
+implicit val my_int: Int = 10
+// implicit val my_int_2: Int = 7
+implicit val my_string: String = "A String"
+
+// Call function without argument
+findInt
+
+// ----------------------
+// Type classes
+// ----------------------
+
+// 1. Value formatter
+
+// Define a type class
+trait Formatter[T] {
+  def format(value: T): String
+}
+
+// Define a Formatter object, including two
+// implicit objects: String and Int
+object Formatter {
+  implicit object IntFormatter extends Formatter[Int] {
+    def format(value: Int): String = s"The integer value is $value"
+  }
+
+  implicit object StringFormatter extends Formatter[String] {
+    def format(value: String): String = s"The string value is $value"
+  }
+}
+
+// Define the formatter method
+def printFormatted[T](value: T)(implicit f: Formatter[T]): Unit = {
+    println(f.format(value))
+}
+
+// Format an int and a string
+printFormatted(777)(Formatter.IntFormatter)
+printFormatted("a string")(Formatter.StringFormatter)
+
+// ----------------------
+// Continuation-Passing Style (CPS)
+// ----------------------
+
+// Definition: Example
+
+// Conventional Style
+
+// Define an addition function
+def addInts(x: Int, y: Int): Int = {
+    x + y
+}
+
+// Define a multiplication function
+def multiplyInts(d: Int, z: Int): Int = {
+    d * z
+}
+
+// Declare test variables
+val x1 = 7
+val y1 = 14
+val z1 = 21
+
+// Call both functions
+println(s"($x1 + $y1) * $z1 = ${multiplyInts(addInts(x1, y1), z1)}")
+
+
+// CPS Style
+
+// Define an addition function
+def addIntsCPS(x: Int, y: Int, k: Int => Unit): Unit = {
+    k(x + y)
+}
+
+// Define a multiplication function
+def multiplyIntsCPS(d: Int, z: Int, k: Int => Unit): Unit = {
+    k(d * z)
+}
+
+// Declare test variables
+val x2 = 7
+val y2 = 14
+val z2 = 21
+
+addIntsCPS(x2, y2, sum => {
+  multiplyIntsCPS(sum, z2, product => {
+    println(s"($x2 + $y2) * $z2 = $product")
+  })
+})
+
+// 1. Sum and product of list of integers
+def sumListCPS(list: List[Int], k: Int => Unit): Unit = k(list.sum)
+
+def productListCPS(list: List[Int], k: Int => Unit): Unit = k(list.product)
+
+val numbers = List(7, 14, 21, 28, 35)
+
+sumListCPS(numbers, sum => {
+  println(s"Sum: $sum")
+
+  productListCPS(numbers, product => {
+    println(s"Product: $product")
+  })
+})
+
+// ----------------------
+// Futures and Promises
+// ----------------------
+
+// 1. One asynchronous calculation
+
+// Define Promise
+def sumAsync(a: Int, b: Int): Future[Int] = {
+  val promise = Promise[Int]()
+
+  // Start an asynchronous task to calculate the sum of the integers
+  val task = new Runnable {
+    override def run(): Unit = {
+      val result = a + b
+
+      // Fulfill the promise with the result of the calculation
+      promise.success(result)
+    }
+  }
+
+  // Start the task on a separate thread
+  new Thread(task).start()
+
+  promise.future
+}
+
+// Assign sumAsync to variable
+val future = sumAsync(1, 2)
+
+// Call using Await API
+val result = Await.result(future, 10.seconds)
+println(s"Sum: $result")
+
+// ----------------------
+
+// 2. Two asynchronous calculations
+
+// Define operation 1
+def addAsync(a: Int, b: Int): Future[Int] = Future {
+  a + b
+}
+
+// Define operation 2
+def multiplyAsync(a: Int, b: Int): Future[Int] = Future {
+  a * b
+}
+
+// Define task
+val resultFuture = for {
+  sum <- addAsync(7, 5)
+  product <- multiplyAsync(7, 5)
+} yield (sum, product)
+
+// Call task
+val result_2 = Await.result(resultFuture, 10.seconds)
 
 // ----------------------
 // Higher-Kinded Types
