@@ -24,15 +24,77 @@ We'll be using Scala scripts which can be found in the [Blog Article Repo](http
 - [What to expect](#what-to-expect)
 - Preparing our environment
 - Tail recursion
+	- Definition
+	- Advantages
+	- Examples
+		- Sum of a list
+		- Factorial calculation
+		- Fibonacci sequence
+		- Exponentiation
+	- Recommendations & best practices
+	- Use cases
 - Higher-order functions
+	- Definition
+	- Advantages
+	- Examples
+		- Single verification of a list
+		- Variation of a summation
+	- Recommendations & best practices
+	- Use cases
 - Currying
+	- Definition
+	- Advantages
+	- Examples
+		- A curried addition function
+		- A curried call using two functions
+	- Recommendations & best practices
+	- Use cases
 - Monads
-- Lazy evaluation
+	- Definition
+	- Advantages
+	- Examples
+		- An undefined operation
+	- Recommendations & best practices
+	- Use cases
 - Pattern matching and extractors
+	- Definition
+	- Advantages
+	- Examples
+		- Handling an undefined operation
+	- Recommendations & best practices
+	- Use cases
+- Lazy evaluation
+	- Definition
+	- Advantages
+	- Examples
+		- 
+	- Recommendations & best practices
+	- Use cases
 - Implicits and type classes
+	- Definition
+	- Advantages
+	- Examples
+		- 
+	- Recommendations & best practices
+	- Use cases
 - Continuation-passing style (CPS)
+	- Definition
+	- Advantages
+	- Examples
+	- Recommendations & best practices
+	- Use cases
 - Macros and metaprogramming
+	- Definition
+	- Advantages
+	- Examples
+	- Recommendations & best practices
+	- Use cases
 - Higher-kinded types
+	- Definition
+	- Advantages
+	- Examples
+	- Recommendations & best practices
+	- Use cases
 - Next steps
 - [Conclusions](#conclusions)
 - [References](#references)
@@ -564,7 +626,7 @@ This technique has many flavors, and can be performed using named as well as ano
 ---
 
 # Currying
-**Currying** is a technique that was introduced in the 1930s by the mathematician and logician [Haskell Curry](), as part of his work in combinatory logic. The concept of currying was further developed in the 1950s and 1960s by other mathematicians and computer scientists, such as [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church) and [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)). It was then popularized in functional programming languages such as Lisp and ML.
+**Currying** is a technique that was introduced in the 1930s by the mathematician and logician [Haskell Brooks Curry](), as part of his work in combinatory logic. The concept of currying was further developed in the 1950s and 1960s by other mathematicians and computer scientists, such as [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church) and [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)). It was then popularized in functional programming languages such as Lisp and ML.
 
 ## 1. Definition
 Currying is a concept closely related with higher-order functions, because it builds on them. Currying consists of breaking down a function that takes multiple arguments into a series of functions that take one argument each. The functions can then be called sequentially using parenthesis.
@@ -612,6 +674,7 @@ We use the `_` placeholder to indicate that we want to partially apply a functio
 
 The type of `first_call` is actually a function we can apply to a given value. If we hover over `first_call` below the `Complete call` line, it will actually tell us the following:
 
+##### **Output**
 ```
 def apply(v1: Int): Int
 Apply the body of this function to the argument.
@@ -620,7 +683,7 @@ Apply the body of this function to the argument.
 
 This is interesting, because we can apply `first_call` to any other value, and even a function. 
 
-### 3.1 A curried call using two functions
+### 3.2 A curried call using two functions
 Let us define a curried function that computes the sum of two values, $x$ and $y$, and then squares this result.
 
 This one is a little bit trickier, since we need to first define a function that accepts the following:
@@ -663,6 +726,8 @@ sumInts(squareInt)(2, 3)
 This syntax is also slightly unconventional. Let us explain it:
 - We first call our `sumInts` function with the first group of parameters *(i.e., the `squareInt` function)*.
 - We then call our new composed function with the numbers we wish to operate on.
+
+If we recall anonymous functions, each function inside our call, is an anonymous function, meaning it has no name.
 
 We get the following output in return:
 
@@ -868,7 +933,7 @@ Pattern matching is a powerful technique, where we can.
 ## 3. Examples
 If we recall from our last technique, we were using the `Option` monad to implement two safe division functions that can deal with undefined values *(i.e., division by zero)*.
 
-In this section, we'll add some more functionalities to this implementation.
+In our first example, we'll add some more functionalities to this implementation.
 
 ### 3.1 Handling an undefined operation
 We can extend our `safeDivision` functionality by using pattern matching:
@@ -897,12 +962,135 @@ checkDivide(safeDivOne(safeDivTwo, 12, 0, 3))
 // Division by zero is not allowed
 ```
 
-## 4. Recommendations & best practices
+### 3.2 Matching an animal species
+Let us create a simple application that takes an input string representing an animal's name and, using pattern matching, determines the animal's classification within a basic hierarchy. The hierarchy consists of 3 levels: Mammal, Bird, and Reptile. We need to match the input animal to the correct classification and return the correct class as a `String`.
 
+##### **Code**
+```Scala
+// Define an animal checker
+def checkAnimal(animal: String): String = {
+    animal match {
+        case ("Elephant" | "Whale" | "Dog") => "Mamal"
+        case ("Parrot" | "Eagle" | "Penguin") => "Bird"
+        case ("Lizard" | "Tortoise" | "Snake") => "Reptile"
+        case _ => "Animal is not in DB, sorry."
+    }
+}
+
+// Define an animal
+val my_animal = "Snake"
+
+// Call function
+checkAnimal(my_animal)
+```
+
+##### **Output**
+```
+res1: String = "Reptile"
+```
+
+### 3.3 Matching a data type
+Let us define a function that checks for 4 basic base data types in Scala. The function accepts a value `x`, and returns the corresponding type as `String`.
+
+For this example, we'll actually define two versions of the same function: one using pattern matching, and the other using if-else if-else constructs.
+
+##### **Code**
+```Scala
+// Implement using pattern matching
+def checkType1(x: Any): String = x match {
+  case _: Int => "Int"
+  case _: String => "String"
+  case _: Boolean => "Boolean"
+  case _ => "Unknown"
+}
+
+// Implement using a if-else constructs
+def checkType2(x: Any): String = {
+  if (x.isInstanceOf[Int]) "Int"
+  else if (x.isInstanceOf[String]) "String"
+  else if (x.isInstanceOf[Boolean]) "Boolean"
+  else "Unknown"
+}
+
+// Call functions
+checkType1(1)
+checkType2(1)
+
+checkType1("A String")
+checkType2("A String")
+```
+
+While both implementations return the same value, the first function is much more concise and readable since we're using a placeholder `_`, while the second one requires additional methods in order to do the same.
+
+##### **Output**
+```
+res1: String = "Int"
+res2: String = "Int"
+
+res3: String = "String"
+res4: String = "String"
+```
+
+### 3.4 Extractors with a custom class
+Let us define a custom class called `PositiveInt`, which can represent a positive integer object. We want to be able to check if an integer is positive by using the `PositiveInt` constructor and pattern matching.
+
+##### **Code**
+```Scala
+// Define our custom class
+class PositiveInt(val value: Int)
+
+// Define an object
+object PositiveInt {
+  def unapply(value: Int): Option[PositiveInt] =
+    if (value > 0) Some(new PositiveInt(value)) else None
+}
+
+// Define a checker that includes an extractor
+def checkNum(x: Int) = x match {
+  case PositiveInt(positiveInt) => println(s"The number ${positiveInt.value} is positive.")
+  case _ => println(s"The number ${x} is not positive.")
+}
+
+checkNum(7)
+checkNum(-10)
+```
+
+##### Output
+```
+// The number 7 is positive.
+// The number -10 is not positive.
+```
+
+Let us explain our algorithm more in detail:
+1. We declare a class `PositiveInt`, which accepts an integer value.
+2. We declare a companion object `PositiveInt`, which will contain (*encapsulate*) the extractor method using `unapply`. What this will do is destructure an object belonging to the `PositiveInt` class, and extract its value. If our object is not a positive integer, it will return `None`, and the pattern-matching implementation will catch it.
+3. We define a pattern matching implementation that calls the `PositiveInt` class with a variable `positiveInt`, that will hold the deconstructed `PositiveInt` value if its positive.
+
+## 4. Recommendations & best practices
+1. **Avoiding missing cases:** We must cover all possible cases in our pattern matching expressions. Scala's compiler checks for exhaustiveness, and by adding a wildcard pattern (`case _ =>`) as a catch-all, we can handle any unexpected cases.
+2. **Eliminating type checks and type casts:** We can use pattern matching to destructure and match on types instead of relying on `isInstanceOf` and `asInstanceOf`. This approach leads to cleaner and safer code.
+3. **Embracing sealed traits and case classes:** We should prefer sealed traits and case classes when working with algebraic data types. Sealed traits enable the compiler to perform exhaustiveness checks, while case classes provide built-in support for pattern matching, immutability, and useful methods like `copy` and `equals`.
+4. **Implementing extractor objects and unapply methods:** We can create custom data structures or classes with extractor objects and `unapply` (or `unapplySeq` for sequences) methods to facilitate pattern matching. This allows us to destructure and extract values from our custom data structures just like with case classes. 
+5. **Prioritizing simplicity and maintainability:** We should organize our pattern matching expressions for readability and avoid overly complex patterns that can be difficult to understand.
 
 ## 5. Use cases
+At this point, it would be valid if we ask ourselves: well, why use `match` if we already have an `if-else if-else` construct?
 
+Well, we saw a very simple example, but logical tests can increase in size and include complex patterns that we must match. In this case, a pattern-matching approach simply provides better readability. Also, logical tests can include complex data structures such as multidimensional arrays; pattern matching is optimized to handle those. 
 
+Additionally, as we already saw, pattern matching supports a simplified syntactic construct for type checking; this is extremely useful if we're working with custom types, or even the base ones.
+
+So, some rules would include the following:
+- If we have a simple logical test we'd like to perform, we use an `if-else` construct.
+- If we have a more complex set of logical rules, we use pattern matching.
+- If we wish to perform type checking, we use pattern matching.
+
+What about extractors? As we might suspect, most applications involve some type of value extraction from a given class to check something, or operate with something else:
+1. **Parsing strings:** We can extract specific components from formatted strings, such as email addresses, URLs, or date formats.
+2. **Destructuring custom data structures:** We can also simplify access to nested values or elements in complex data types.
+3. **Type-based pattern matching:** We can match and extract values based on their types, eliminating the need for explicit type checking and casting.
+4. **Matching expressions with additional conditions:** As we saw in our last example, we can apply custom logic or constraints during pattern matching, making match expressions more expressive.
+5. **Simplifying complex pattern matching:** We can create more readable and maintainable pattern matching expressions by encapsulating custom matching logic in extractors.
 
 ---
 
@@ -912,18 +1100,52 @@ The concept of **lazy evaluation** has been around for a long time and has been 
 It was also highly influenced by Daniel Friedman and David Wise in their paper *"[Cons should not evaluate its arguments](https://help.luddy.indiana.edu/techreports/TRNNN.cgi?trnum=TR44)"*.
 
 ## 1. Definition
-
+Lazy evaluation is an extremely important concept, specifically (*but not exclusively*) in the context of big data processing pipelines. Lazy evaluation or call-by-need is an evaluation strategy where an expression isn’t evaluated until its first use (*i.e, to postpone the evaluation till its demanded*).
 
 ## 2. Advantages
 
 
 ## 3. Examples
+If we've been following this article from the start, we might have noticed that all the functions we implemented are eagerly evaluated every time they're called. This means the function is executed and its result is computed each time we invoke it.
 
+We can however, declare a lazy function or value by using the `lazy` keyword:
+
+### 3.1 Defining a simple lazy value
+Let us declare two simple variables: An eager variable and a lazy one:
+
+##### **Code**
+```Scala
+// Define an eager list and a lazy list
+val my_list:List[Int] = List(1, 2, 3, 4, 5)
+lazy val my_lazy_list:List[Int] = List(1, 2, 3, 4, 5)
+```
+
+If we hover over the variable name, we will see that the eager variable already returns its value, while the second does not:
+
+##### **Output**
+```
+my_list: List[Int] = List(1, 2, 3, 4, 5)
+lazy private val my_lazy_list: List[Int]
+```
+
+While we can define lazy values, the same does not apply for functions; functions are eagerly evaluated by default and can't be made lazy like `val`s can using the `lazy` keyword.
+
+However, we can achieve lazy evaluation of function results by returning a `lazy val` or by using [memoization](https://medium.com/musings-on-functional-programming/scala-optimizing-expensive-functions-with-memoization-c05b781ae826) techniques to cache the function results.
 
 ## 4. Recommendations & best practices
-
+1. **Using `lazy` only when necessary:** While `lazy` values can be useful for reducing computational overhead, they can also introduce additional complexity and potential for bugs. We should use `lazy` only when we have a good reason to defer evaluation and keep in mind that laziness may introduce unexpected behavior, such as initialization order issues.
+2. **Avoiding side effects:** We should avoid using `lazy` values that have side effects, as their evaluation is not guaranteed to happen exactly once. Side effects can also introduce unexpected behavior, such as race conditions and thread-safety issues.    
+3. **Memoizing expensive computations:** We should use memoization techniques to cache the results of expensive computations in `lazy` values. This can improve performance by avoiding recomputing the same result multiple times.
+4. **Keeping the scope small:** We should limit the scope of `lazy` values to where they're needed, as they may introduce additional memory overhead. We should avoid defining `lazy` values at the top-level or in long-lived objects, as their memory may be retained for longer than necessary. 
+5. **Being mindful of serialization:** We should keep in mind that `lazy` values may not serialize properly and may need to be manually re-initialized after deserialization. If we need to serialize objects that contain `lazy` values, we should ensure that they are properly initialized before serialization.
 
 ## 5. Use cases
+As we might suspect, lazy evaluation is useful when we want to optimize the performance and memory usage of a given application. Again, this is specially important when working with big data. However, that's far from being the only potential application:
+1. **Initialization-on-demand:** We can use `lazy` values to defer initialization until they are needed. This can help reduce overhead and improve performance.
+2. **Memoization:** We can also use `lazy` values to cache expensive computations and avoid recomputing the same result multiple times.    
+3. **Thread-safe lazy initialization:** We can use `lazy` values to implement thread-safe initialization of objects or resources.
+4. **Lazy loading:** We can use `lazy` values to lazily load resources such as configuration files, data sets, or images. 
+5. **Circular dependencies:** We might want to use `lazy` values to break circular dependencies between objects or classes. This can help avoid initialization order issues and improve modularity.
 
 
 ---
@@ -932,19 +1154,193 @@ It was also highly influenced by Daniel Friedman and David Wise in their paper *
 **Implicits** and **type classes** are two different but closely-related concepts widely used in functional programming languages, particularly in Scala. While the development of these concepts was a collaborative effort among many programmers and researchers, the contributions of [Martin Odersky](https://en.wikipedia.org/wiki/Martin_Odersky), the creator of Scala, were particularly significant.
 
 ## 1. Definition
+**Implicits** are a way of implicitly passing values, objects, or functions as arguments to a method or function call
 
+The implicit system in Scala allows the compiler to adjust code using a well-defined lookup mechanism. We can leave out information that the compiler will attempt to infer at compile time. The Scala compiler can infer one of two situations:
+- When a method call or constructor with a missing parameter.
+- When we have missing conversion from one type to another type. This also applies to method calls on an object that would require a conversion.
+
+In both of these situations, the compiler follows a set of rules to resolve missing data and allow the code to compile. When we leave out parameters, it’s incredibly useful and is done in advanced Scala libraries. The compiler converting types to ensure that an expression compiles can be more dangerous.
+
+**Type classes**, on the other hand, are a way of defining a set of operations or behaviors that can be applied to a type or class, without modifying the type or class itself. In simpler terms, type classes enable us to make a function more ad-hoc polymorphic without touching its code.
+
+If we've already used type classes in Python (*by employing the `@` annotation*), then we are already familiar with this concept.
+
+In Scala, things are similar.
 
 ## 2. Advantages
+Regarding implicits, there are many advantages if used properly:
+1. **Extension methods:** We can define extension methods for existing classes or types, without modifying the original source code.
+2. **Type-safe DSLs:** We can use implicits to create type-safe DSLs that are both expressive and easy to use.
+3. **Implicit conversions:** We can define implicit conversions to automatically convert between types, making our code more concise and readable.
+4. **Type inference:** We can use implicits to help the compiler infer types, reducing the amount of boilerplate code we need to write.
+5. **Flexible API design:** We can use implicits to create flexible APIs that can be easily customized and extended by users, without modifying the underlying source code.
 
+Regarding **type classes**, the main advantages go around designing polymorphic functions that can inherit a full set of traits from another class. This of course, provides a valuable tool for promoting code modularization and reusability. 
 
 ## 3. Examples
+Working with implicits requires a a lot of practice, and specially, expertise in type definition and type behavior, since they're one of the features that, if misused, can drastically reduce the quality of our code by introducing bugs and increasing build and execution times. However, there are plenty of use cases we can explore.
 
+Type classes also require a fair amount of practice; if we're not careful, we can end up with a code that's virtually unintelligible and impossible to decipher. Also, we can introduce unwanted side-effects, a characteristic that functional programming tries to avoid at all costs.
+
+Let us define a very simple example.
+
+### 3.1 Finding an integer
+Let us declare a function that accepts an integer value, and returns the same value. We'll define its parameter as implicit, and study its behavior.
+
+##### **Code**
+```Scala
+// Define a function with implicit parameter x
+def findInt(implicit x: Int) = x
+
+// Call function without argument
+findInt
+```
+
+As expected, we get an error:
+
+##### **Output**
+```
+could not find implicit value for parameter x: Int
+```
+
+This is because we have not yet declared an implicit value that falls under the scope of the implicit parameter lookup. Let us do that:
+
+##### **Code**
+```Scala
+// Define a function with implicit parameter x
+def findInt(implicit x: Int) = x
+
+// Define an implicit value
+implicit val my_int: Int = 10
+
+// Call function without argument
+findInt
+```
+
+##### **Output**
+```
+res1: Int = 10
+```
+
+Surprise surprise, the function gets magically evaluated. What happened was close to magic, but not quite magic; we defined a value `my_int` under the implicit scope. The set of rules for implicit values in the Scala compiler then looked for this value, and found one that matched the required type `Int`.
+
+What if we declare another implicit `Int`?
+
+##### **Code**
+```Scala
+// Define a function with implicit parameter x
+def findInt(implicit x: Int) = x
+
+// Define two implicit values
+implicit val my_int: Int = 10
+implicit val my_int_2: Int = 7
+
+// Call function without argument
+findInt
+```
+
+##### **Output**
+```
+ambiguous implicit values:  
+both value my_int_2 in class MdocApp of type => Int  
+and value my_int in class MdocApp of type => Int  
+match expected type Int
+```
+
+We will get an ambiguous implicit value error: since both values belong to the same scope, the compiler does not know which value to evaluate the function with.
+
+But what if in turn, we declare a value of a different type?
+
+##### **Code**
+```Scala
+// Define a function with implicit parameter x
+def findInt(implicit x: Int) = x
+
+// Define an implicit value
+implicit val my_int: Int = 10
+implicit val my_string: String = "A String"
+
+// Call function without argument
+findInt
+```
+
+##### **Output**
+```
+res1: Int = 10
+```
+
+This works perfectly, because our second implicit value, `my_string`, is not of the required type, and the Scala compiler knows that.
+
+### 3.2 Value formatter
+Let us define a type class that can format different types when printing them to `stdout`. We want to be able to use two types: `String` and `Int`.
+
+##### **Code**
+```Scala
+trait Formatter[T] {
+  def format(value: T): String
+}
+
+// Define a Formatter object, including two
+// implicit objects: String and Int
+object Formatter {
+  implicit object IntFormatter extends Formatter[Int] {
+    def format(value: Int): String = s"The integer value is $value"
+  }
+
+  implicit object StringFormatter extends Formatter[String] {
+    def format(value: String): String = s"The string value is $value"
+  }
+}
+
+// Define the formatter method
+def printFormatted[T](value: T)(implicit f: Formatter[T]): Unit = {
+	println(f.format(value))
+}
+
+// Format an int and a string
+printFormatted(777)(Formatter.IntFormatter)
+printFormatted("a string")(Formatter.StringFormatter)
+```
+
+Let us explain more in detail what we just declared:
+1. We define a type class using `trait`. Traits are like templates for classes in Scala. They define a set of methods and fields that can be mixed in to a class to provide additional functionality, without requiring the class to inherit from a specific superclass.
+2. We define an object `Formatter`, that will encapsulate two implicit objects: `IntFormatter` and `StringFormatter`, one for each type.
+3. We declare a method for each case:
+	1. We mark both formatter objects as `implicit`, which means that they can be used to provide a default `Formatter` instance for `String` and `Int` values.
+	2. We extend the functionality of `Formatter` with these two methods.
+4. We then simply create a function that will print the formatted type.
+
+##### **Output**
+```
+// The integer value is 777
+// The string value is a string
+```
+
+We can look at it this way:
+- **What do the two printing statement results have in common?**
+- They accept a value and print it as string. This is what the `trait` does.
+- **What is the main difference between `IntFormatter` and `StringFormatter`?**
+- They format the string differently before printing it to `stdout`.
+
+We can thus say that the `IntFormatter` and `StringFormatter` have effectively extended the functionality of `Formatter`, which provides a base template of the printing method for both types.
+
+It would be of huge surprise to us that Scala has this incredible feature. The thing is that Scala combines the best of both worlds: Functional & OOP programming.
 
 ## 4. Recommendations & best practices
-
+As with any powerful abstraction technique, there are some best practices we can use in order to avoid [Fauda](https://www.thesun.co.uk/tvandshowbiz/11354802/what-does-fauda-mean/).
+1. **Making sure class type names are clear and concise:** We should choose names that accurately describe the purpose of the class and follow standard Scala naming conventions.
+2. **Being able to define class type parameters in a way that makes the class more generic and reusable:** We can use type parameters to define generic behaviors and interfaces that can be used by different types.
+3. **Encapsulating class state and behavior to maintain abstraction and modularity:** We can use private and protected modifiers to restrict access to internal class details and expose a public API for interaction with the class.
+4. **Using case classes for immutable data structures:** Case classes are designed to provide a convenient and efficient way to define immutable data structures, and have built-in support for pattern matching and equality testing.
+5. **Making sure class types are composable and interoperable:** We can use traits and mixins to define reusable behaviors that can be mixed in to different class types, and adhere to standard Scala conventions for interoperability with other libraries and frameworks.
 
 ## 5. Use cases
-
+1. **Implementing data models for complex applications:** Class types are a natural way to represent complex data structures and relationships between entities in an application.
+2. **Defining reusable behavior for different classes:** We can use traits and mixins to define reusable behaviors that can be shared among different class types, promoting code reuse and modularity.
+3. **Creating custom collections and data structures:** We can use class types to define custom collections and data structures that meet the specific needs of our application, such as efficient lookup or specialized iteration behavior.
+4. **Implementing stateful and event-driven applications:** Class types can be used to model stateful entities and represent events and actions that change the state of the application.
+5. **Interacting with external systems and libraries:** We can use class types to define data structures and interfaces for interacting with external systems and libraries, promoting interoperability and encapsulation of external dependencies.
 
 ---
 
@@ -954,29 +1350,300 @@ The concept of **CPS** can be traced back to the work of several computer scient
 However, the specific term "*continuation-passing style*" and its use in programming languages can be attributed to the American computer scientist [Daniel P. Friedman](https://en.wikipedia.org/wiki/Daniel_P._Friedman) and his colleagues. In the early 1970s,
 
 ## 1. Definition
+This one is tricky to define without any previous context of what continuation is. Because of this, we'll first define a few concepts that will be useful.
+
+### 1.1 Continuation
+A **continuation** is a primitive construct to abstract control flow. It represents a point in time of a given execution flow. A continuation usually consists of two states:
+- The program state at a given point in time.
+- The remaining code to run.
+
+So, in simpler terms, if we're executing a program and we define a breaking point in a given line, we save a picture of the program at that particular point in time.
+
+The remaining code to be run is also saved as part of the snapshot.
+
+### 1.2 Continuation-passing style (CPS)
+CPS is simply a way to implement continuations in a program. More formally, CPS is a way of writing programs that has proven useful as an intermediate form in compiling functional languages. By using CPS, things like order of evaluation and temporary variables are made explicit. We must remember that CPS is simply a programming style that can be adopted by mixing it with other styles; using one CPS implementation does not mean we require our entire code to work that way.
+
+Thinking in terms of functional programming, we know that the main way to abstract a computation is by using functions and their variations. It would then make sense to define a CPS as a function that abstracts continuation.
+
+If we don't yet know where we're going, that's OK. This concept is confusing. However, what we ultimately want, is to control the control flow.
+
+Let us think of a more concrete example, where we would like to define two functions: The first one will add two integer values, and the second one will calculate the product of the result with another integer value we designate.
+
+We'll start with the conventional style:
+
+##### **Code**
+```Scala
+// Define an addition function
+def addInts(x: Int, y: Int): Int = {
+    x + y
+}
+
+// Define a multiplication function
+def multiplyInts(d: Int, z: Int): Int = {
+    d * z
+}
+
+// Declare test variables
+val x1 = 7
+val y1 = 14
+val z1 = 21
+
+// Call both functions
+println(s"($x1 + $y1) * $z1 = ${multiplyInts(addInts(x1, y1), z1)}")
+```
+
+##### **Output**
+```
+// (7 + 14) * 21 = 441
+```
+
+Simple, right?
+
+Now, let us define an equivalent implementation using CPS style:
+
+##### **Code**
+```Scala
+// Define an addition function
+def addIntsCPS(x: Int, y: Int, k: Int => Unit): Unit = {
+    k(x + y)
+}
+
+// Define a multiplication function
+def multiplyIntsCPS(d: Int, z: Int, k: Int => Unit): Unit = {
+    k(d * z)
+}
+
+// Declare test variables
+val x2 = 7
+val y2 = 14
+val z2 = 21
+
+addIntsCPS(x2, y2, sum => {
+  multiplyIntsCPS(sum, z2, product => {
+    println(s"($x2 + $y2) * $z2 = $product")
+  })
+})
+```
+
+Let us explain step by step:
+- We define an addition function `addIntsCPS`, which now takes one additional argument `k`. This additional argument is our continuation function.
+- The `addIntsCPS` also accepts two integers, but does not return the value to the execution process. Instead, it returns it to another function (*i.e., the continuation function*).
+- The exact same happens with `multiplyIntsCPS`.
+- We then define values to use in our call.
+- We call `addIntsCPS` with our `Int` arguments, but also include a call to the anonymous continuation function using `sum` as argument (*`k` accepts an `Int`, and returns a `Unit`*)
+- The continuation function receives the `sum`, and then calls `multiplyCPS` with the `sum`, `z`, and another continuation function that takes the product as its argument.
+- Inside the `multiplyCPS` function, `sum * z` is calculated, and the result is passed to the next continuation function.
+- The last continuation function receives `product` and sends the result to `println`.
+
+As expected, we get the same result:
+
+##### **Output**
+```
+// (7 + 14) * 21 = 441
+```
+
+If we noticed, this mechanism provided us a way to control the flow of the process, but it also provided a funny syntax. This type of syntax is well known in a wide variety of languages, and is sometimes referred to as [callback hell](http://callbackhell.com/) in the context of JavaScript, but really applies to any language dealing with functions.
+
+In short, CPS has many advantages, but its abuse can lead to poor syntax.
 
 ## 2. Advantages
+If we are to implement such a concept, it must have some great advantages, right? Yes, CPS has plenty of use cases we can explore. We can mention some of them:
+1. **Improving control flow:** CPS makes the control flow of our program explicit, making it easier to understand and manage, especially in asynchronous scenarios.
+2. **Chaining operations:** CPS allows us to chain multiple operations by passing the continuation functions as arguments, improving code readability.
+3. **Tail-call optimization:** CPS can enable tail-call optimization in languages that support it, which can help avoid stack overflow errors in deep recursion.
+4. **Non-blocking code:** CPS is well-suited for non-blocking and asynchronous programming, as it avoids blocking calls and promotes efficient resource usage.
+5. **Enhancing modularity:** By using continuation functions, CPS promotes modular code design, making it easier to extend, maintain, and debug our code.
 
 ## 3. Examples
+Let us go over one additional example to further clarify the CPS style:
+
+### 3.1 Algebraic calculations on lists of integers
+Let us imagine a scenario where we have a list of integers and we want to calculate the sum and product of all elements in the list, but we want to use CPS to break the problem into smaller parts.
+
+Let us start by defining what we'll need to achieve this:
+- A `sumListCPS` function that will perform a sum operation on a list of integers, and will return the result to a continuation function `k`.
+- A `productListCPS` function that will perform a product operation on a list of integers, and will return the result to a continuation function `k`.
+- A list of `Int` values.
+- A call to the CPS functions we defined previously.
+
+##### **Code**
+```Scala
+def sumListCPS(list: List[Int], k: Int => Unit): Unit = k(list.sum)
+
+def productListCPS(list: List[Int], k: Int => Unit): Unit = k(list.product)
+
+val numbers = List(7, 14, 21, 28, 35)
+
+sumListCPS(numbers, sum => {
+  println(s"Sum: $sum")
+
+  productListCPS(numbers, product => {
+    println(s"Product: $product")
+  })
+})
+```
+
+##### **Output**
+```
+// Sum: 105
+// Product: 2016840
+```
 
 ## 4. Recommendations & best practices
+As with many of the concepts we're reviewed in this segment, CPS is a technique that if used right, can bring a lot of advantages. On the contrary, if misused or abused, it can reduce our quality code and introduce unnecessary bugs. Below are some recommendations when dealing with CPS in functional programming:
+1. **Using function composition:** We can compose CPS functions using higher-order functions to create reusable and modular code, improving readability and maintainability.
+2. **Using tail-recursive CPS functions:** We should aim to write tail-recursive CPS functions when dealing with recursion, as it enables tail-call optimization and prevents stack overflow errors in languages that support it.
+3. **Using meaningful continuation names:** We must choose descriptive names for continuation functions to improve code readability and make it easier to understand the purpose and flow of each continuation.
+4. **Using type annotations:** We can improve code clarity and maintainability by adding type annotations to CPS functions and their continuation arguments, making it easier to understand the expected input and output types.
+5. **Using CPS selectively:** We must evaluate whether using CPS is the best solution for a given problem, as CPS might not be the optimal choice for simple, non-asynchronous scenarios. In such cases, using conventional programming styles might be more suitable and result in more readable code.
 
 ## 5. Use cases
+CPS, and continuation in particular, are vast subjects with many variations we can implement. However, we can mention some real-world use cases:
+1. **For asynchronous programming:** We can manage complex asynchronous operations by chaining multiple callbacks, avoiding callback hell, and improving code readability.
+2. **In compilers and interpreters:** We can leverage CPS for implementing language features like exception handling, garbage collection, and concurrency in compilers and interpreters.
+3. **For state machines:** We can model state machines with CPS by representing different states as continuation functions, providing a clear and modular way to handle state transitions.
+4. **For cooperative multitasking:** We can apply CPS to implement cooperative multitasking, where tasks voluntarily yield control by calling their respective continuation functions, improving resource usage and scheduling.
+5. **For backtracking algorithms:** We can use CPS to implement backtracking algorithms, enabling efficient exploration of potential solutions and making it easier to revert to previous states when a solution is not found.
 
 ---
 
-# Macros and metaprogramming
-The specific use of **macros** as a **metaprogramming** technique is attributed to the computer scientist and programmer [Donald E. Knuth](https://en.wikipedia.org/wiki/Donald_Knuth).
+# Futures and Promises
+**Futures** and **promises** are concepts that have been used in computer science and programming languages for many years. They are particularly popular in functional programming languages, where they are used for asynchronous and concurrent programming.
+
+The concept of **futures** was first introduced in the 1970s by [Barbara Liskov](https://en.wikipedia.org/wiki/Barbara_Liskov) and [Alan Snyder](https://en.wikipedia.org/wiki/Allan_Snyder), who proposed a mechanism for specifying and manipulating computations that had not yet completed. In their paper, they described a programming construct called a "future" that represented the result of a computation that would be available at some point in the future.
+
+**Promises** were introduced later as a way to represent the other side of the future relationship: the computation that produces the result. A promise is an object that represents a value that may not be available yet, but will be available at some point in the future. When the value becomes available, the promise is "fulfilled" with the value.
 
 ## 1. Definition
+
+### 1.1 Futures
+**Futures** provide a way to reason about performing many operations in parallel– in an efficient and non-blocking way. A [`Future`](https://www.scala-lang.org/api/current/scala/concurrent/Future.html) is a placeholder object for a value that may not yet exist. Generally, the value of the Future is supplied concurrently and can subsequently be used.
+
+For this definition to make sense, we also have to define concurrency and asynchronous processes.
+
+### 1.2 Concurrency
+**Concurrency** means multiple computations are happening at the same time. In a concurrent system, multiple threads of execution can run independently of each other, potentially allowing for increased throughput, responsiveness, and efficiency.
+
+Concurrency is often used in systems that need to handle a large number of requests or perform many tasks simultaneously. For example, a web server might use concurrency to handle multiple requests from clients at the same time, or a database might use concurrency to allow multiple queries to be executed concurrently.
+
+### 1.3 Asynchronous processes
+Asynchronous processes are processes or operations that do not block or wait for the completion of other processes before proceeding. In an asynchronous process, a request is made and the process continues to execute while waiting for a response, rather than blocking and waiting for the response before continuing.
+
+Asynchronous processes are closely related to concurrency, as they enable concurrent execution of multiple tasks without blocking or waiting for completion. By allowing multiple tasks to execute concurrently, asynchronous processes can improve the performance and responsiveness of computer systems, as they can avoid the overhead and delays associated with blocking I/O and waiting for completion of operations.
 
 ## 2. Advantages
 
 ## 3. Examples
+Let us implement a function that calculates the sum of two integers asynchronously, and returns a future that completes when the calculation is done.
+
+### 3.1 One asynchronous calculation
+Let us define a function that calculates the sum of two integers asynchronously, and returns a future that completes when the calculation is done.
+
+The future will be waiting for the computation value, and realize to a value when the computation concludes.
+
+Let us break our approach step-by-step:
+1. We define a `Promise` associated with a `Future`. This promise will expect an integer value.
+2. We the define an asynchronous task.
+3. We complete the promise with the result of the calculation.
+4. We start the task on a separate thread.
+5. We finally call our asynchronous process using the `Await` API.
+6. The `sumAsync` process call will tell us if our process terminated successfully.
+
+##### **Code**
+```Scala
+import scala.concurrent.{Promise, Await, Future}
+import scala.concurrent.duration._
+
+// Define Promise
+def sumAsync(a: Int, b: Int): Future[Int] = {
+  val promise = Promise[Int]()
+
+  // Start an asynchronous task to calculate the sum of the integers
+  val task = new Runnable {
+    override def run(): Unit = {
+      val result = a + b
+
+      // Fulfill the promise with the result of the calculation
+      promise.success(result)
+    }
+  }
+
+  // Start the task on a separate thread
+  new Thread(task).start()
+
+  promise.future
+}
+
+// Assign sumAsync to variable
+val future = sumAsync(1, 2)
+
+// Call using Await API
+val result = Await.result(future, 10.seconds)
+println(s"Sum: $result")
+```
+
+##### **Output**
+```
+// future: Future[Int] = Future(Success(3))
+// result: Int = 3
+// Sum: 3
+```
+
+This implementation considered one single calculation, but we can do the same for two calculations.
+
+### 3.2 Two asynchronous calculations
+Let us implement an addition and a multiplication asynchronously, and returns a future that completes with the result of both operations:
+
+The process will be similar to our previous example. The only difference, is that we'll now use a `for` comprehension that combines the futures returned by the `addAsync` and `multiplyAsync` functions.
+
+##### **Code**
+```Scala
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
+
+// Define operation 1
+def addAsync(a: Int, b: Int): Future[Int] = Future {
+  a + b
+}
+
+// Define operation 2
+def multiplyAsync(a: Int, b: Int): Future[Int] = Future {
+  a * b
+}
+
+// Define task
+val resultFuture = for {
+  sum <- addAsync(7, 5)
+  product <- multiplyAsync(7, 5)
+} yield (sum, product)
+
+// Call task
+val result_2 = Await.result(resultFuture, 10.seconds)
+```
+
+##### **Output**
+```
+// resultFuture: Future[(Int, Int)] = Future(Success((12,35)))
+// result_2: (Int, Int) = (12, 35)
+```
 
 ## 4. Recommendations & best practices
+Futures and Promises are quite an elaborate concept that requires sufficient domain knowledge in asynchronous processing and concurrency, since a badly implemented process can crash the entire program, or worst, introduce vulnerabilities in our code.
+
+Below are some best practices when working with these techniques:
+1. **Improving parallelism for performance:** We can also use the `Future.sequence` method to execute a collection of futures in parallel. The `Future.sequence` method will execute all the futures in the collection in parallel, and return a future that completes when all the futures have completed. This can improve performance by allowing multiple tasks to execute concurrently.
+2. **Avoiding blocking:** When working with futures, it is important to avoid blocking as much as possible. Blocking can cause performance issues, and defeats the purpose of using futures in the first place. Instead of blocking, use non-blocking operations and combinators like `map`, `flatMap`, `filter`, and `onComplete` to compose and transform futures.
+3. **Handling errors:** Futures can fail, so it is important to handle errors properly. Use the `recover` and `recoverWith` methods to handle errors and return a default value or another future in case of failure. Use the `fallbackTo` method to try an alternative future in case of failure.
+4.  **Using `ExecutionContext`:** When working with futures, it is important to use an `ExecutionContext` to execute the futures. Use the `ExecutionContext.Implicits.global` execution context for simple cases, or provide a custom execution context for more complex cases.
+5. **Using Promise for more control:** Promises provide a more low-level control over the completion of futures. Use promises when you need to create a future that is not immediately available, or when you need to complete a future manually.
 
 ## 5. Use cases
+1. **Using futures for network calls:** When making network calls, it is important to use futures to ensure that the calls do not block the main thread. By using futures, network calls can be made asynchronously, and the result can be returned when it becomes available. 
+2. **Using promises for caching:** Promises can be used for caching values that are expensive to compute. By creating a promise and computing the value asynchronously, subsequent calls can be satisfied immediately by returning the cached value without the need to recompute it.
+3. **Using futures for parallelism:** Futures can be used to execute tasks in parallel, allowing multiple tasks to execute concurrently. This can be useful for applications that require high-performance processing of large data sets.
+4. **Using promises for inter-thread communication:** Promises can be used for communication between threads, allowing one thread to signal another when a value becomes available. This can be useful for implementing thread-safe data structures and synchronization primitives.
+5. **Using futures for user interface updates:** Futures can be used to perform background processing and update the user interface when the processing is complete. By using futures to perform background processing, the user interface remains responsive and can provide feedback to the user during the processing.
 
 ---
 
