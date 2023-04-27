@@ -22,80 +22,93 @@ We'll be using Scala scripts which can be found in the [Blog Article Repo](http
 
 # Table of Contents
 - [What to expect](#what-to-expect)
-- Preparing our environment
-- Tail recursion
-	- Definition
-	- Advantages
-	- Examples
-		- Sum of a list
-		- Factorial calculation
-		- Fibonacci sequence
-		- Exponentiation
-	- Recommendations & best practices
-	- Use cases
-- Higher-order functions
-	- Definition
-	- Advantages
-	- Examples
-		- Single verification of a list
-		- Variation of a summation
-	- Recommendations & best practices
-	- Use cases
-- Currying
-	- Definition
-	- Advantages
-	- Examples
-		- A curried addition function
-		- A curried call using two functions
-	- Recommendations & best practices
-	- Use cases
-- Monads
-	- Definition
-	- Advantages
-	- Examples
-		- An undefined operation
-	- Recommendations & best practices
-	- Use cases
-- Pattern matching and extractors
-	- Definition
-	- Advantages
-	- Examples
-		- Handling an undefined operation
-	- Recommendations & best practices
-	- Use cases
-- Lazy evaluation
-	- Definition
-	- Advantages
-	- Examples
-		- 
-	- Recommendations & best practices
-	- Use cases
-- Implicits and type classes
-	- Definition
-	- Advantages
-	- Examples
-		- 
-	- Recommendations & best practices
-	- Use cases
-- Continuation-passing style (CPS)
-	- Definition
-	- Advantages
-	- Examples
-	- Recommendations & best practices
-	- Use cases
-- Macros and metaprogramming
-	- Definition
-	- Advantages
-	- Examples
-	- Recommendations & best practices
-	- Use cases
-- Higher-kinded types
-	- Definition
-	- Advantages
-	- Examples
-	- Recommendations & best practices
-	- Use cases
-- Next steps
+- Preparing our environment]()
+- Tail recursion]()
+	- Definition]()
+	- Advantages]()
+	- Examples]()
+		- Sum of a list]()
+		- Factorial calculation]()
+		- Fibonacci sequence]()
+		- Exponentiation]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Higher-order functions]()
+	- Definition]()
+	- Advantages]()
+	- Examples]()
+		- Single verification of a list]()
+		- Variation of a summation]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Currying]()
+	- Definition]()
+	- Advantages]()
+	- Examples]()
+		- A curried addition function]()
+		- A curried call using two functions]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Monads]()
+	- Definition]()
+	- Advantages]()
+	- Examples]()
+		- An undefined operation]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Pattern matching and extractors]()
+	- Definition]()
+	- Advantages]()
+	- Examples]()
+		- Handling an undefined operation]()
+		- Matching an animal species]()
+		- Matching a data type]()
+		- Extractors with a custom class]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Lazy evaluation]()
+	- Definition]()
+	- Advantages]()
+	- Examples]()
+		- Defining a simple lazy value]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Implicits and type classes]()
+	- Definition]()
+	- Advantages]()
+	- Examples]()
+		- Finding an integer]()
+		- Value formatter]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Continuation-passing style (CPS)]()
+	- Definition]()
+		- Continuation]()
+		- Continuation-passing style (CPS)]()
+	- Advantages]()
+	- Examples]()
+		- Algebraic calculations on lists of integers]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Futures and Promises]()
+	- Definition]()
+		- Futures]()
+		- Concurrency]()
+		- Asynchronous processes]()
+	- Advantages]()
+	- Examples]()
+		- One asynchronous calculation]()
+		- Two asynchronous calculations]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Higher-kinded types]()
+	- Definition]()
+	- Advantages]()
+	- Examples]()
+		- Implementing a higher-kinded type for a List]()
+	- Recommendations & best practices]()
+	- Use cases]()
+- Next steps]()
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -146,27 +159,27 @@ Now that we have everything ready, we'll move to the first technique: Tail recur
 
 ---
 
-# Tail recursion
+# 1. Tail recursion
 The idea of **tail recursion** has been around for a long time, but its specific use in functional programming is often credited to the computer scientist Daniel P. Friedman and his colleagues.
 
 In the late 1970s and early 1980s, Friedman and his colleagues developed a series of programming languages based on Scheme, a dialect of Lisp. These languages included a number of advanced features for functional programming, including tail recursion optimization.
 
-## 1. Definition
+## 1.1 Definition
 Tail recursion is a recursive technique where the recursive call is the last operation performed in the function.
 
 This means that the function's stack frame can be reused for the next recursive call, rather than creating a new stack frame for each recursive call; in simpler terms, the function's stack size remains constant and does not grow with each recursive call, even if the function recurses deeply.
 
-## 2. Advantages
+## 1.2 Advantages
 Overall, a recursive approach is more elegant and often times used to simplify complex problems. It also supports the idea of immutability (*variables do not change value at any time*), and is generally optimal for helping facilitate modular design by breaking a complex problem into smaller sub-problems.
 
 More specifically, tail recursion implements a safer way to perform recursion; it avoids the potential of stack overflow errors by keeping the stack as constant. This means that we can solve big problems without exceeding maximum recursion depths and/or getting memory errors. 
 
-## 3. Examples
+## 1.3 Examples
 Let us design 4 tail-recursive implementations, starting with the simpler ones. In every case, we will include a special annotation, `@tailrec`. This annotation ensures that the compiler optimizes our recursive implementation as a tail recursion problem.
 
 It also explicitly tells the reader that our implementation is a tail-recursive one, and should be treated as such *(its important to note that the Scala compiler will most probably treat our function as tail-recursive even if we omit the annotation. The annotation just makes it explicit and ensures that the function is optimized for this end)*.
 
-### 3.1 Sum of a list
+### 1.3.1 Sum of a list
 Let us implement a tail-recursive function that calculates the sum of all elements in a given list of integers. The function should take a list as input and return the total sum of its elements.
 
 What we'll do here, is the following:
@@ -239,7 +252,7 @@ We can see that although extremely useful, tail recursion has limitations. This 
 - Using lazy evaluation.
 - Use primitive types.
 
-### 3.2 Factorial calculation
+### 1.3.2 Factorial calculation
 Let us implement a tail-recursive function that calculates the factorial of a given non-negative integer $n$. The factorial of $n$ (*denoted as $n!$*) is the product of all positive integers less than or equal to $n$. For example, $5! = 5 × 4 × 3 × 2 × 1 = 120$.
 
 The main problem with a factorial calculation, is that it grows fast. In fact, a factorial will eventually grow faster than $2^{n}$ and $e^{n}$ (*but not $n^n$*), so we have to find another numeric type that will allow us to store big integers; if we select the conventional `Int` type, the type will overflow and result in negative values, or in our case, 0.
@@ -316,7 +329,7 @@ factorialCalc(100)
 
 We can see that the last output doesn't even fit in a single line. If we had not used `BigInt`, we would've gotten a type overflow.
 
-### 3.3 Fibonacci sequence
+### 1.3.3 Fibonacci sequence
 Let us implement a tail-recursive function that returns the $n^{th}$ number in the Fibonacci sequence. The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones, starting from $0$ and $1$. For example, the sequence goes: $0, 1, 1, 2, 3, 5, 8, 13$, and so on.
 
 Similar to our previous examples, we will proceed as follows:
@@ -357,7 +370,7 @@ Let us exemplify this calculation using a table:
 | 1     | 13 (`next` + `current`) | 8 (`next`)  |
 | 0     | 21 (`next` + `current`) | 13 (`next`) |
 
-###### Table N: Tail-Recursive Fibonacci Sequence For Index = 7
+###### *Table 2: Tail-Recursive Fibonacci Sequence For Index = 7*
 
 A step-by-step explanation:
 1. At first, we initialize our index with 7, our `next` value with 1, and our `current` value with 0.
@@ -400,7 +413,7 @@ FibCalc(1000)
 // res9: BigInt = 43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875
 ```
 
-### 3.4 Exponentiation
+### 1.3.4 Exponentiation
 Let us implement a tail-recursive function that calculates the result of a given number (*base*) raised to the power of another number (*exponent*). The function should take two integer inputs, base and exponent, and return the result as a single integer.
 
 We'll take a similar approach to our previous implementations:
@@ -454,7 +467,7 @@ ExpCalc(14328, 5)
 // res4: BigInt = 603848322560489914368
 ```
 
-## 4. Recommendations & best practices
+## 1.4 Recommendations & best practices
 As we saw from our previous examples, there are some common patterns when using recursion:
 - We properly define our edge or boundary case(s). This case will be our stopper, and must be thought of carefully. Else, the implementation might enter an infinite loop and/or result in a memory error.
 - We recursively call our function using some kind of modified parameter.
@@ -471,7 +484,7 @@ Of course, as we also saw, tail recursion is not infallible. Below are some reco
 - **Considering alternatives:** While tail recursion is an effective technique for certain problems, it may not always be the best approach. We must consider alternative algorithms or data structures that might offer better performance or simplicity in some cases.
 - **Understanding language/compiler limitations:** Some programming languages or compilers may not support tail-call optimization. Be aware of the limitations of the language or compiler we're are using, and consider alternative approaches if tail-call optimization is not supported or guaranteed.
 
-## 5. Use cases
+## 1.5 Use cases
 Apart from the mathematical applications we already reviewed, this technique can be used in a variety of real-life situations:
 - **Tree traversal:** In data structures like trees or graphs, tail recursion can be used to traverse the structure in depth-first or breadth-first order efficiently. This can be particularly useful in scenarios like searching, sorting, or parsing XML/JSON files.
 - **Parsing and tokenization:** Tail recursion can be utilized in compiler design, particularly in parsing and tokenization processes. When converting a source code file into tokens or parsing an expression, tail recursion can optimize memory usage and improve performance.
@@ -483,10 +496,10 @@ Additionally, tail-recursion lets us think of problem solving in a different way
 
 ---
 
-# Higher-order functions
+# 2. Higher-order functions
 **Higher-order functions** are often attributed to the mathematician and computer scientist [Alonzo Church](), who developed the lambda calculus in the 1930s. 
 
-## 1. Definition
+## 2.1 Definition
 Higher-order functions are one of the pinnacles of functional programming. They are very simple, yet extremely elegant and, well, functional. A higher-order function is one that accepts and/or returns a function instead of a value. In other words, a higher-order function is one that operates on functions.
 
 This concept is easy to implement in Scala, since all functions are first-class citizens of the value type (*first-class values*), meaning they can be treated as values and be passed as arguments to other functions, returned as values from functions, and assigned to variables.
@@ -513,17 +526,17 @@ myfun(f, 1)
 2. We then define a function f that accepts an `Int` value, and returns a `Boolean` value.
 3. Lastly, we call our higher-order function with `f` as argument.
 
-## 2. Advantages
+## 2.2 Advantages
 Higher-order functions are basically an extra layer of abstraction done in a functional style. They are extremely useful when working with repetitive tasks, and can be used in conjunction with tail-recursive methods, providing an elegant and minimalist way to handle complex operations.
 
 They are also extremely useful when flexibility and conciseness are required. Additionally, higher-order functions can help separate concerns by allowing us to separate the logic of a function from its implementation details.
 
 As with any level of abstraction, this concept is tricky to grasp as first. Let us try to perform some simple examples in order to further clarify.
 
-## 3. Examples
+## 2.3 Examples
 We'll review two examples of higher-order function implementations: The first one will be a simple case, while the second one will be more elaborate.
 
-### 3.1 Single verification of a list
+### 2.3.1 Single verification of a list
 Let us implement a function that accepts a list of integers and a predicate function (`Int => Boolean`). The function should return the number of occurrences that satisfy the given predicate. The predicate function evaluates to `true` if the number is even.
 
 We can follow the steps below:
@@ -562,7 +575,7 @@ checkList(checkerEven, List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 // : Int = 5
 ```
 
-### 3.2 Variation of a summation
+### 2.3.2 Variation of a summation
 Let us define a function that accepts two integers, $a$, $b$, as upper and lower bounds, an integer $x$ for performing addition and product operations, and two functions as arguments. The function calculates a variation of the summation operation, where the first argument function will perform the addition operation for each term of the summation between $a$ and $b$, while the second one will calculate the product of the result of the previous operation with the parameter $x$.
 
 Similar to the previous example, we can follow the steps bellow:
@@ -608,7 +621,7 @@ sumNumbers(applyProduct, applyAddition, 2, 3, 2)
 // : Int = 18
 ```
 
-## 4. Recommendations & best practices
+## 2.4 Recommendations & best practices
 This technique has many flavors, and can be performed using named as well as anonymous functions. As we can see, it can become confusing if we don't do things in a clear way. This is why there are some best practices we can follow:
 1. **Using clear naming**: It's best that we always use descriptive names for higher-order functions and their arguments to improve code readability and maintainability.
 2.  **Using type annotations**: We can also specify types for function arguments and return values to ensure type safety and make the code more understandable.
@@ -616,7 +629,7 @@ This technique has many flavors, and can be performed using named as well as ano
 4.  **Leveraging immutability**: As is tradition with functional programming, using immutable data structures and avoiding side effects in higher-order functions can reduce the risk of bugs and improve code predictability.
 5.  **Using standard library functions**: We can also take advantage of built-in higher-order functions like `map`, `filter`, and `reduce` instead of implementing custom iterations. This leads to cleaner, more idiomatic code.
 
-## 5. Use cases
+## 2.5 Use cases
 1.  **Data transformation**: To transform data in a collection, we can take advantage of higher-order functions like `map` that apply a specific function to each element.
 2.  **Filtering data**: When it comes to refining data, we can use higher-order functions such as `filter` to selectively include or exclude elements based on a given condition.
 3.  **Data aggregation**: Combining elements in a collection into a single result becomes easier when we employ higher-order functions like `reduce` or `fold` for custom aggregations like sums or products.
@@ -625,13 +638,13 @@ This technique has many flavors, and can be performed using named as well as ano
 
 ---
 
-# Currying
+# 3. Currying
 **Currying** is a technique that was introduced in the 1930s by the mathematician and logician [Haskell Brooks Curry](), as part of his work in combinatory logic. The concept of currying was further developed in the 1950s and 1960s by other mathematicians and computer scientists, such as [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church) and [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)). It was then popularized in functional programming languages such as Lisp and ML.
 
-## 1. Definition
+## 3.1 Definition
 Currying is a concept closely related with higher-order functions, because it builds on them. Currying consists of breaking down a function that takes multiple arguments into a series of functions that take one argument each. The functions can then be called sequentially using parenthesis.
 
-## 2. Advantages
+## 3.2 Advantages
 There are multiple advantages when working with currying techniques:
 1.  **Modularity:** The functions can be broken down into smaller, more manageable parts. This can make code easier to read, write, and maintain.
 2.  **Flexibility:** Currying provides flexibility by allowing functions to be partially applied or composed with other functions. This enables developers to create new functions from existing ones in a modular and flexible way.
@@ -639,10 +652,10 @@ There are multiple advantages when working with currying techniques:
 4.  **Type safety:** Currying provides type safety by ensuring that functions only accept arguments of the correct type. This reduces the likelihood of runtime errors and makes code more robust.
 5.  **Partial evaluation:** We can perform partial evaluation by allowing functions to be evaluated with some of their arguments, while others are left to be supplied later. This can improve performance by reducing the need for repeated computations.
 
-## 3. Examples
+## 3.3 Examples
 We'll perform two examples, the first one including a curried function, and the second one including a curried call to two functions.
 
-### 3.1 A curried addition function
+### 3.3.1 A curried addition function
 Let us implement a curried function called `add` that takes two integer arguments, `x` and `y`, and returns their sum. The function should be defined using multiple parameter lists, where the first parameter list takes one integer argument `x`, and the second parameter list takes one integer argument `y`. The function should be flexible and modular, allowing it to be partially applied or composed with other functions.
 
 The steps to follow are straightforward:
@@ -683,7 +696,7 @@ Apply the body of this function to the argument.
 
 This is interesting, because we can apply `first_call` to any other value, and even a function. 
 
-### 3.2 A curried call using two functions
+### 3.3.2 A curried call using two functions
 Let us define a curried function that computes the sum of two values, $x$ and $y$, and then squares this result.
 
 This one is a little bit trickier, since we need to first define a function that accepts the following:
@@ -753,14 +766,14 @@ applySumSquare(2, 3)
 // : Int = 25
 ```
 
-## 4. Recommendations & best practices
+## 3.4 Recommendations & best practices
 1.  **Identifying suitable use cases**: We must consider using currying when partial application, function specialization, or improved type inference would benefit our code. 
 2.  **Ordering parameters thoughtfully**: We can arrange parameters so that the ones most likely to be reused or pre-filled are in the initial parameter groups, making it easier to create partially applied functions.
 3.  **Avoiding overusing currying**: We must be cautious not to overuse currying, as it can make the code harder to read and understand when used inappropriately.
 4.  **Combining with other functional techniques**: We can enhance our code by combining currying with other functional programming techniques, such as function composition and higher-order functions.
 5.  **Keeping function signatures clear**: When using currying, we must ensure that the function signatures remain clear and understandable, by providing appropriate type annotations and using descriptive parameter names.
 
-## 5. Use cases
+## 3.5 Use cases
 1.  **Reusable validators**: We can use currying to create reusable validation functions for user inputs in web applications, by partially applying common validation rules while leaving the input value to be applied later.
 2.  **Customized event handlers**: In event-driven programming, we can use currying to create customized event handlers that have some pre-filled arguments, such as the event type or specific settings, allowing for flexibility and code reuse.
 3.  **Configurable logging**: We can leverage currying to build configurable logging functions where the log level, message format, or output destination can be partially applied, making it easy to create specialized loggers with minimal code changes.
@@ -769,12 +782,12 @@ applySumSquare(2, 3)
 
 ---
 
-# Monads
+# 4. Monads
 **Monads** are a concept in functional programming originally developed in the 1960s in category theory, a branch of mathematics that studies abstract structures and relationships between them.
 
 The concept in the context of functional programming was rediscovered by the computer scientist [Eugenio Moggi](), who published a paper in 1989 called "*[Computational Lambda Calculus and Monads](https://www.cs.cmu.edu/~crary/819-f09/Moggi89.pdf)*". Monads were first introduced in Haskell in the early 1990s, and still comprise a core part of the language.
 
-## 1. Definition
+## 4.1 Definition
 A monad, is the English translation for *"monada"* in Spanish, which interestingly enough, means cute little thing (*that is, if we eat the accent since my keyboard has US layout and [Keychron](https://www.keychron.com/) is to blame*) (*And no, its not a referral link, I really love my keyboard, which I'm sure cannot be said for my family hearing the thick thock at 6 am*).
 
 Jokes aside, a monad is a design pattern used to encapsulate and manipulate computations that produce values of a specific type, abstracting away the details of the computation. 
@@ -783,7 +796,7 @@ In simpler terms, a monad can be thought of as a "*container*" or a "*wrapper*" 
 
 Monads exist in various languages *(mainly in functional ones)*, such as Haskell, Scala, F#, Swift, JavaScript, Kotlin, [Rust](https://pabloagn.com/blog/rust-for-beginners/), and even Python. While some languages have built-in support for monads, many others can utilize monadic concepts through third-party libraries or by implementing monad patterns manually.
 
-## 2. Advantages
+## 4.2 Advantages
 Monads were introduced to computational theory as a way to handle side-effects; if we have a chain of operations represented by functions, that will eventually result in a return value, monads make sure that, if a given step produces an unintended value (*such as `null` or `nil` values*), there will be an appropriate handling for that, thus avoiding an error return.
 
 More specific, in functional programming we usually want to define our chains of operations using functions. If we would like to execute a given chain of functions without errors, we could define an intermediate function that handles the types behind the scenes *(sort of a checker)*, so that when we call our chained functions and the first function returns an "*unexpected*" value, we can handle that within our chain. More importantly, we're abstracting this concept into a function that can be reused in as many intermediate steps as we would like. This could potentially save us a lot of time of exception writing.
@@ -799,10 +812,10 @@ So why go all about this fuzz, when we can simply build an exception handling wi
 
 Monads are confusing if explained with simple words. This is why we'll spend appropriate time exploring one of them with a simple example.
 
-## 3. Examples
+## 4.3 Examples
 Let us explore one case, where we have a chain of two functions, and would like to ensure proper and smooth execution between them:
 
-### 3.1 An undefined operation
+### 4.3.1 An undefined operation
 We would like to pack two expressions into two separate functions, and perform them consecutively: 
 - Value A divided y Value B equals Value C
 - Value C divided by Value D equals E
@@ -910,32 +923,32 @@ Of course, there's no point in making all this effort if the user gets a `None` 
 This is where our next technique, pattern matching, comes into play.
 
 
-## 4. Recommendations & best practices
+## 4.4 Recommendations & best practices
 
 
-## 5. Use cases
+## 4.5 Use cases
 
 
 ---
 
-# Pattern matching and extractors
+# 5. Pattern matching and extractors
 The concept of **pattern matching** has been used in various forms in different programming languages and systems, but its specific use in functional programming is often attributed to the computer scientist [David Turner](https://en.wikipedia.org/wiki/David_Turner_(computer_scientist)).
 
 Turner also invented the functional programming language [Miranda](https://en.wikipedia.org/wiki/Miranda_(programming_language)), which was one of the first languages to incorporate pattern matching as a core feature. It was introduced in the 1980s and used a syntax for pattern matching that has since become a common feature in many functional programming languages, including [Haskell](), [F#](), and [Scala]().
 
 The concept of **extractors** is also often attributed to David Turner, who introduced them as a feature of the same language.
 
-## 1. Definition
+## 5.1 Definition
 Pattern matching is a powerful technique, where we can.
 
-## 2. Advantages
+## 5.2 Advantages
 
-## 3. Examples
+## 5.3 Examples
 If we recall from our last technique, we were using the `Option` monad to implement two safe division functions that can deal with undefined values *(i.e., division by zero)*.
 
 In our first example, we'll add some more functionalities to this implementation.
 
-### 3.1 Handling an undefined operation
+### 5.3.1 Handling an undefined operation
 We can extend our `safeDivision` functionality by using pattern matching:
 
 ##### **Code**
@@ -962,7 +975,7 @@ checkDivide(safeDivOne(safeDivTwo, 12, 0, 3))
 // Division by zero is not allowed
 ```
 
-### 3.2 Matching an animal species
+### 5.3.2 Matching an animal species
 Let us create a simple application that takes an input string representing an animal's name and, using pattern matching, determines the animal's classification within a basic hierarchy. The hierarchy consists of 3 levels: Mammal, Bird, and Reptile. We need to match the input animal to the correct classification and return the correct class as a `String`.
 
 ##### **Code**
@@ -989,7 +1002,7 @@ checkAnimal(my_animal)
 res1: String = "Reptile"
 ```
 
-### 3.3 Matching a data type
+### 5.3.3 Matching a data type
 Let us define a function that checks for 4 basic base data types in Scala. The function accepts a value `x`, and returns the corresponding type as `String`.
 
 For this example, we'll actually define two versions of the same function: one using pattern matching, and the other using if-else if-else constructs.
@@ -1031,7 +1044,7 @@ res3: String = "String"
 res4: String = "String"
 ```
 
-### 3.4 Extractors with a custom class
+### 5.3.4 Extractors with a custom class
 Let us define a custom class called `PositiveInt`, which can represent a positive integer object. We want to be able to check if an integer is positive by using the `PositiveInt` constructor and pattern matching.
 
 ##### **Code**
@@ -1066,14 +1079,14 @@ Let us explain our algorithm more in detail:
 2. We declare a companion object `PositiveInt`, which will contain (*encapsulate*) the extractor method using `unapply`. What this will do is destructure an object belonging to the `PositiveInt` class, and extract its value. If our object is not a positive integer, it will return `None`, and the pattern-matching implementation will catch it.
 3. We define a pattern matching implementation that calls the `PositiveInt` class with a variable `positiveInt`, that will hold the deconstructed `PositiveInt` value if its positive.
 
-## 4. Recommendations & best practices
+## 5.4 Recommendations & best practices
 1. **Avoiding missing cases:** We must cover all possible cases in our pattern matching expressions. Scala's compiler checks for exhaustiveness, and by adding a wildcard pattern (`case _ =>`) as a catch-all, we can handle any unexpected cases.
 2. **Eliminating type checks and type casts:** We can use pattern matching to destructure and match on types instead of relying on `isInstanceOf` and `asInstanceOf`. This approach leads to cleaner and safer code.
 3. **Embracing sealed traits and case classes:** We should prefer sealed traits and case classes when working with algebraic data types. Sealed traits enable the compiler to perform exhaustiveness checks, while case classes provide built-in support for pattern matching, immutability, and useful methods like `copy` and `equals`.
 4. **Implementing extractor objects and unapply methods:** We can create custom data structures or classes with extractor objects and `unapply` (or `unapplySeq` for sequences) methods to facilitate pattern matching. This allows us to destructure and extract values from our custom data structures just like with case classes. 
 5. **Prioritizing simplicity and maintainability:** We should organize our pattern matching expressions for readability and avoid overly complex patterns that can be difficult to understand.
 
-## 5. Use cases
+## 5.5 Use cases
 At this point, it would be valid if we ask ourselves: well, why use `match` if we already have an `if-else if-else` construct?
 
 Well, we saw a very simple example, but logical tests can increase in size and include complex patterns that we must match. In this case, a pattern-matching approach simply provides better readability. Also, logical tests can include complex data structures such as multidimensional arrays; pattern matching is optimized to handle those. 
@@ -1094,23 +1107,23 @@ What about extractors? As we might suspect, most applications involve some type 
 
 ---
 
-# Lazy evaluation
+# 6. Lazy evaluation
 The concept of **lazy evaluation** has been around for a long time and has been used in various forms in different programming languages and systems. However, the term "*lazy evaluation*" was coined in the 1970s by the computer scientist [Peter J. Landin](https://en.wikipedia.org/wiki/Peter_Landin) in his paper *"[The Next 700 Programming Languages](https://www.cs.cmu.edu/~crary/819-f09/Landin66.pdf)"*.
 
 It was also highly influenced by Daniel Friedman and David Wise in their paper *"[Cons should not evaluate its arguments](https://help.luddy.indiana.edu/techreports/TRNNN.cgi?trnum=TR44)"*.
 
-## 1. Definition
+## 6.1 Definition
 Lazy evaluation is an extremely important concept, specifically (*but not exclusively*) in the context of big data processing pipelines. Lazy evaluation or call-by-need is an evaluation strategy where an expression isn’t evaluated until its first use (*i.e, to postpone the evaluation till its demanded*).
 
-## 2. Advantages
+## 6.2 Advantages
 
 
-## 3. Examples
+## 6.3 Examples
 If we've been following this article from the start, we might have noticed that all the functions we implemented are eagerly evaluated every time they're called. This means the function is executed and its result is computed each time we invoke it.
 
 We can however, declare a lazy function or value by using the `lazy` keyword:
 
-### 3.1 Defining a simple lazy value
+### 6.3.1 Defining a simple lazy value
 Let us declare two simple variables: An eager variable and a lazy one:
 
 ##### **Code**
@@ -1128,18 +1141,18 @@ my_list: List[Int] = List(1, 2, 3, 4, 5)
 lazy private val my_lazy_list: List[Int]
 ```
 
-While we can define lazy values, the same does not apply for functions; functions are eagerly evaluated by default and can't be made lazy like `val`s can using the `lazy` keyword.
+While we can define lazy values, the same does not apply for functions; functions are eagerly evaluated by default and can't be made lazy like `vals` can using the `lazy` keyword.
 
 However, we can achieve lazy evaluation of function results by returning a `lazy val` or by using [memoization](https://medium.com/musings-on-functional-programming/scala-optimizing-expensive-functions-with-memoization-c05b781ae826) techniques to cache the function results.
 
-## 4. Recommendations & best practices
+## 6.4 Recommendations & best practices
 1. **Using `lazy` only when necessary:** While `lazy` values can be useful for reducing computational overhead, they can also introduce additional complexity and potential for bugs. We should use `lazy` only when we have a good reason to defer evaluation and keep in mind that laziness may introduce unexpected behavior, such as initialization order issues.
 2. **Avoiding side effects:** We should avoid using `lazy` values that have side effects, as their evaluation is not guaranteed to happen exactly once. Side effects can also introduce unexpected behavior, such as race conditions and thread-safety issues.    
 3. **Memoizing expensive computations:** We should use memoization techniques to cache the results of expensive computations in `lazy` values. This can improve performance by avoiding recomputing the same result multiple times.
 4. **Keeping the scope small:** We should limit the scope of `lazy` values to where they're needed, as they may introduce additional memory overhead. We should avoid defining `lazy` values at the top-level or in long-lived objects, as their memory may be retained for longer than necessary. 
 5. **Being mindful of serialization:** We should keep in mind that `lazy` values may not serialize properly and may need to be manually re-initialized after deserialization. If we need to serialize objects that contain `lazy` values, we should ensure that they are properly initialized before serialization.
 
-## 5. Use cases
+## 6.5 Use cases
 As we might suspect, lazy evaluation is useful when we want to optimize the performance and memory usage of a given application. Again, this is specially important when working with big data. However, that's far from being the only potential application:
 1. **Initialization-on-demand:** We can use `lazy` values to defer initialization until they are needed. This can help reduce overhead and improve performance.
 2. **Memoization:** We can also use `lazy` values to cache expensive computations and avoid recomputing the same result multiple times.    
@@ -1147,13 +1160,12 @@ As we might suspect, lazy evaluation is useful when we want to optimize the perf
 4. **Lazy loading:** We can use `lazy` values to lazily load resources such as configuration files, data sets, or images. 
 5. **Circular dependencies:** We might want to use `lazy` values to break circular dependencies between objects or classes. This can help avoid initialization order issues and improve modularity.
 
-
 ---
 
-# Implicits and type classes
+# 7. Implicits and type classes
 **Implicits** and **type classes** are two different but closely-related concepts widely used in functional programming languages, particularly in Scala. While the development of these concepts was a collaborative effort among many programmers and researchers, the contributions of [Martin Odersky](https://en.wikipedia.org/wiki/Martin_Odersky), the creator of Scala, were particularly significant.
 
-## 1. Definition
+## 7.1 Definition
 **Implicits** are a way of implicitly passing values, objects, or functions as arguments to a method or function call
 
 The implicit system in Scala allows the compiler to adjust code using a well-defined lookup mechanism. We can leave out information that the compiler will attempt to infer at compile time. The Scala compiler can infer one of two situations:
@@ -1168,7 +1180,7 @@ If we've already used type classes in Python (*by employing the `@` annotation*)
 
 In Scala, things are similar.
 
-## 2. Advantages
+## 7.2 Advantages
 Regarding implicits, there are many advantages if used properly:
 1. **Extension methods:** We can define extension methods for existing classes or types, without modifying the original source code.
 2. **Type-safe DSLs:** We can use implicits to create type-safe DSLs that are both expressive and easy to use.
@@ -1178,14 +1190,14 @@ Regarding implicits, there are many advantages if used properly:
 
 Regarding **type classes**, the main advantages go around designing polymorphic functions that can inherit a full set of traits from another class. This of course, provides a valuable tool for promoting code modularization and reusability. 
 
-## 3. Examples
+## 7.3 Examples
 Working with implicits requires a a lot of practice, and specially, expertise in type definition and type behavior, since they're one of the features that, if misused, can drastically reduce the quality of our code by introducing bugs and increasing build and execution times. However, there are plenty of use cases we can explore.
 
 Type classes also require a fair amount of practice; if we're not careful, we can end up with a code that's virtually unintelligible and impossible to decipher. Also, we can introduce unwanted side-effects, a characteristic that functional programming tries to avoid at all costs.
 
 Let us define a very simple example.
 
-### 3.1 Finding an integer
+### 7.3.1 Finding an integer
 Let us declare a function that accepts an integer value, and returns the same value. We'll define its parameter as implicit, and study its behavior.
 
 ##### **Code**
@@ -1272,7 +1284,7 @@ res1: Int = 10
 
 This works perfectly, because our second implicit value, `my_string`, is not of the required type, and the Scala compiler knows that.
 
-### 3.2 Value formatter
+### 7.3.2 Value formatter
 Let us define a type class that can format different types when printing them to `stdout`. We want to be able to use two types: `String` and `Int`.
 
 ##### **Code**
@@ -1327,7 +1339,7 @@ We can thus say that the `IntFormatter` and `StringFormatter` have effectively e
 
 It would be of huge surprise to us that Scala has this incredible feature. The thing is that Scala combines the best of both worlds: Functional & OOP programming.
 
-## 4. Recommendations & best practices
+## 7.4 Recommendations & best practices
 As with any powerful abstraction technique, there are some best practices we can use in order to avoid [Fauda](https://www.thesun.co.uk/tvandshowbiz/11354802/what-does-fauda-mean/).
 1. **Making sure class type names are clear and concise:** We should choose names that accurately describe the purpose of the class and follow standard Scala naming conventions.
 2. **Being able to define class type parameters in a way that makes the class more generic and reusable:** We can use type parameters to define generic behaviors and interfaces that can be used by different types.
@@ -1335,7 +1347,7 @@ As with any powerful abstraction technique, there are some best practices we can
 4. **Using case classes for immutable data structures:** Case classes are designed to provide a convenient and efficient way to define immutable data structures, and have built-in support for pattern matching and equality testing.
 5. **Making sure class types are composable and interoperable:** We can use traits and mixins to define reusable behaviors that can be mixed in to different class types, and adhere to standard Scala conventions for interoperability with other libraries and frameworks.
 
-## 5. Use cases
+## 7.5 Use cases
 1. **Implementing data models for complex applications:** Class types are a natural way to represent complex data structures and relationships between entities in an application.
 2. **Defining reusable behavior for different classes:** We can use traits and mixins to define reusable behaviors that can be shared among different class types, promoting code reuse and modularity.
 3. **Creating custom collections and data structures:** We can use class types to define custom collections and data structures that meet the specific needs of our application, such as efficient lookup or specialized iteration behavior.
@@ -1344,15 +1356,15 @@ As with any powerful abstraction technique, there are some best practices we can
 
 ---
 
-# Continuation-passing style (CPS)
+# 8. Continuation-passing style (CPS)
 The concept of **CPS** can be traced back to the work of several computer scientists, including [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)), [Peter Landin](https://en.wikipedia.org/wiki/Peter_Landin), and [Christopher Strachey](https://en.wikipedia.org/wiki/Christopher_Strachey).
 
 However, the specific term "*continuation-passing style*" and its use in programming languages can be attributed to the American computer scientist [Daniel P. Friedman](https://en.wikipedia.org/wiki/Daniel_P._Friedman) and his colleagues. In the early 1970s,
 
-## 1. Definition
+## 8.1 Definition
 This one is tricky to define without any previous context of what continuation is. Because of this, we'll first define a few concepts that will be useful.
 
-### 1.1 Continuation
+### 8.1.1 Continuation
 A **continuation** is a primitive construct to abstract control flow. It represents a point in time of a given execution flow. A continuation usually consists of two states:
 - The program state at a given point in time.
 - The remaining code to run.
@@ -1361,7 +1373,7 @@ So, in simpler terms, if we're executing a program and we define a breaking poin
 
 The remaining code to be run is also saved as part of the snapshot.
 
-### 1.2 Continuation-passing style (CPS)
+### 8.1.2 Continuation-passing style (CPS)
 CPS is simply a way to implement continuations in a program. More formally, CPS is a way of writing programs that has proven useful as an intermediate form in compiling functional languages. By using CPS, things like order of evaluation and temporary variables are made explicit. We must remember that CPS is simply a programming style that can be adopted by mixing it with other styles; using one CPS implementation does not mean we require our entire code to work that way.
 
 Thinking in terms of functional programming, we know that the main way to abstract a computation is by using functions and their variations. It would then make sense to define a CPS as a function that abstracts continuation.
@@ -1447,7 +1459,7 @@ If we noticed, this mechanism provided us a way to control the flow of the proce
 
 In short, CPS has many advantages, but its abuse can lead to poor syntax.
 
-## 2. Advantages
+## 8.2 Advantages
 If we are to implement such a concept, it must have some great advantages, right? Yes, CPS has plenty of use cases we can explore. We can mention some of them:
 1. **Improving control flow:** CPS makes the control flow of our program explicit, making it easier to understand and manage, especially in asynchronous scenarios.
 2. **Chaining operations:** CPS allows us to chain multiple operations by passing the continuation functions as arguments, improving code readability.
@@ -1455,10 +1467,10 @@ If we are to implement such a concept, it must have some great advantages, right
 4. **Non-blocking code:** CPS is well-suited for non-blocking and asynchronous programming, as it avoids blocking calls and promotes efficient resource usage.
 5. **Enhancing modularity:** By using continuation functions, CPS promotes modular code design, making it easier to extend, maintain, and debug our code.
 
-## 3. Examples
+## 8.3 Examples
 Let us go over one additional example to further clarify the CPS style:
 
-### 3.1 Algebraic calculations on lists of integers
+### 8.3.1 Algebraic calculations on lists of integers
 Let us imagine a scenario where we have a list of integers and we want to calculate the sum and product of all elements in the list, but we want to use CPS to break the problem into smaller parts.
 
 Let us start by defining what we'll need to achieve this:
@@ -1490,7 +1502,7 @@ sumListCPS(numbers, sum => {
 // Product: 2016840
 ```
 
-## 4. Recommendations & best practices
+## 8.4 Recommendations & best practices
 As with many of the concepts we're reviewed in this segment, CPS is a technique that if used right, can bring a lot of advantages. On the contrary, if misused or abused, it can reduce our quality code and introduce unnecessary bugs. Below are some recommendations when dealing with CPS in functional programming:
 1. **Using function composition:** We can compose CPS functions using higher-order functions to create reusable and modular code, improving readability and maintainability.
 2. **Using tail-recursive CPS functions:** We should aim to write tail-recursive CPS functions when dealing with recursion, as it enables tail-call optimization and prevents stack overflow errors in languages that support it.
@@ -1498,7 +1510,7 @@ As with many of the concepts we're reviewed in this segment, CPS is a technique 
 4. **Using type annotations:** We can improve code clarity and maintainability by adding type annotations to CPS functions and their continuation arguments, making it easier to understand the expected input and output types.
 5. **Using CPS selectively:** We must evaluate whether using CPS is the best solution for a given problem, as CPS might not be the optimal choice for simple, non-asynchronous scenarios. In such cases, using conventional programming styles might be more suitable and result in more readable code.
 
-## 5. Use cases
+## 8.5 Use cases
 CPS, and continuation in particular, are vast subjects with many variations we can implement. However, we can mention some real-world use cases:
 1. **For asynchronous programming:** We can manage complex asynchronous operations by chaining multiple callbacks, avoiding callback hell, and improving code readability.
 2. **In compilers and interpreters:** We can leverage CPS for implementing language features like exception handling, garbage collection, and concurrency in compilers and interpreters.
@@ -1508,36 +1520,37 @@ CPS, and continuation in particular, are vast subjects with many variations we c
 
 ---
 
-# Futures and Promises
+# 9. Futures and Promises
 **Futures** and **promises** are concepts that have been used in computer science and programming languages for many years. They are particularly popular in functional programming languages, where they are used for asynchronous and concurrent programming.
 
 The concept of **futures** was first introduced in the 1970s by [Barbara Liskov](https://en.wikipedia.org/wiki/Barbara_Liskov) and [Alan Snyder](https://en.wikipedia.org/wiki/Allan_Snyder), who proposed a mechanism for specifying and manipulating computations that had not yet completed. In their paper, they described a programming construct called a "future" that represented the result of a computation that would be available at some point in the future.
 
 **Promises** were introduced later as a way to represent the other side of the future relationship: the computation that produces the result. A promise is an object that represents a value that may not be available yet, but will be available at some point in the future. When the value becomes available, the promise is "fulfilled" with the value.
 
-## 1. Definition
+## 9.1 Definition
+As with CPS, it's worth defining a series of terms in order to better understand Futures & Promises.
 
-### 1.1 Futures
+### 9.1.1 Futures
 **Futures** provide a way to reason about performing many operations in parallel– in an efficient and non-blocking way. A [`Future`](https://www.scala-lang.org/api/current/scala/concurrent/Future.html) is a placeholder object for a value that may not yet exist. Generally, the value of the Future is supplied concurrently and can subsequently be used.
 
 For this definition to make sense, we also have to define concurrency and asynchronous processes.
 
-### 1.2 Concurrency
+### 9.1.2 Concurrency
 **Concurrency** means multiple computations are happening at the same time. In a concurrent system, multiple threads of execution can run independently of each other, potentially allowing for increased throughput, responsiveness, and efficiency.
 
 Concurrency is often used in systems that need to handle a large number of requests or perform many tasks simultaneously. For example, a web server might use concurrency to handle multiple requests from clients at the same time, or a database might use concurrency to allow multiple queries to be executed concurrently.
 
-### 1.3 Asynchronous processes
+### 9.1.3 Asynchronous processes
 Asynchronous processes are processes or operations that do not block or wait for the completion of other processes before proceeding. In an asynchronous process, a request is made and the process continues to execute while waiting for a response, rather than blocking and waiting for the response before continuing.
 
 Asynchronous processes are closely related to concurrency, as they enable concurrent execution of multiple tasks without blocking or waiting for completion. By allowing multiple tasks to execute concurrently, asynchronous processes can improve the performance and responsiveness of computer systems, as they can avoid the overhead and delays associated with blocking I/O and waiting for completion of operations.
 
-## 2. Advantages
+## 9.2 Advantages
 
-## 3. Examples
+## 9.3 Examples
 Let us implement a function that calculates the sum of two integers asynchronously, and returns a future that completes when the calculation is done.
 
-### 3.1 One asynchronous calculation
+### 9.3.1 One asynchronous calculation
 Let us define a function that calculates the sum of two integers asynchronously, and returns a future that completes when the calculation is done.
 
 The future will be waiting for the computation value, and realize to a value when the computation concludes.
@@ -1592,7 +1605,7 @@ println(s"Sum: $result")
 
 This implementation considered one single calculation, but we can do the same for two calculations.
 
-### 3.2 Two asynchronous calculations
+### 9.3.2 Two asynchronous calculations
 Let us implement an addition and a multiplication asynchronously, and returns a future that completes with the result of both operations:
 
 The process will be similar to our previous example. The only difference, is that we'll now use a `for` comprehension that combines the futures returned by the `addAsync` and `multiplyAsync` functions.
@@ -1628,7 +1641,7 @@ val result_2 = Await.result(resultFuture, 10.seconds)
 // result_2: (Int, Int) = (12, 35)
 ```
 
-## 4. Recommendations & best practices
+## 9.4 Recommendations & best practices
 Futures and Promises are quite an elaborate concept that requires sufficient domain knowledge in asynchronous processing and concurrency, since a badly implemented process can crash the entire program, or worst, introduce vulnerabilities in our code.
 
 Below are some best practices when working with these techniques:
@@ -1638,7 +1651,7 @@ Below are some best practices when working with these techniques:
 4.  **Using `ExecutionContext`:** When working with futures, it is important to use an `ExecutionContext` to execute the futures. Use the `ExecutionContext.Implicits.global` execution context for simple cases, or provide a custom execution context for more complex cases.
 5. **Using Promise for more control:** Promises provide a more low-level control over the completion of futures. Use promises when you need to create a future that is not immediately available, or when you need to complete a future manually.
 
-## 5. Use cases
+## 9.5 Use cases
 1. **Using futures for network calls:** When making network calls, it is important to use futures to ensure that the calls do not block the main thread. By using futures, network calls can be made asynchronously, and the result can be returned when it becomes available. 
 2. **Using promises for caching:** Promises can be used for caching values that are expensive to compute. By creating a promise and computing the value asynchronously, subsequent calls can be satisfied immediately by returning the cached value without the need to recompute it.
 3. **Using futures for parallelism:** Futures can be used to execute tasks in parallel, allowing multiple tasks to execute concurrently. This can be useful for applications that require high-performance processing of large data sets.
@@ -1647,17 +1660,17 @@ Below are some best practices when working with these techniques:
 
 ---
 
-# Higher-kinded types
+# 10. Higher-kinded types
 We close this segment with a very interesting and special group of types called **higher-kinded types**. Their use as a feature of functional programming is often attributed to the computer scientist and programming language designer [Philip Wadler](https://en.wikipedia.org/wiki/Philip_Wadler), and were formally introduced in computational theory in the [ML](https://www.cs.nmsu.edu/~rth/cs/cs471/sml.html) language during the late 1970s.
 
-## 1. Definition
+## 10.1 Definition
 Higher-kinded types, also known as type constructors or type-level functions, are a type-level abstraction that allow type constructors (such as lists or trees) to be parameterized by other type constructors.
 
 In simpler terms, higher-kinded types are a way of defining types that can work with other types. Let us imagine a tool that can drill a hole in any kind of material, such as wood, metal, or plastic. This tool would be analogous to a higher-kinded type, since it can work with different types of materials.
 
 In programming, higher-kinded types are used to create types that can work with other types, like lists, maps, and other data structures. This allows these types to be more generic and reusable, and makes it easier to write code that works with different types of data.
 
-## 2. Advantages
+## 10.2 Advantages
 As with many elegant forms of abstraction, the advantages for this technique are vast: 
 1. **Library Design and Implementation:** Most of the use cases of higher-kinded types are found in library design and implementation. It provides the client more control over the exposed interfaces, while reducing code duplication. [Scalaz](https://github.com/scalaz/scalaz), one of the most popular Scala projects, uses higher-kinded types to extend the core Scala library for functional programming.
 2. **Reusability:** Higher-kinded types allow for the creation of more generic and reusable abstractions, making it easier to write code that works with different types of data.
@@ -1669,10 +1682,10 @@ As with many elegant forms of abstraction, the advantages for this technique are
 
 Let us work on some examples to further clarify.
 
-## 3. Examples
+## 10.3 Examples
 Since higher-kinded types are somewhat of a difficult topic without some prerequisites, we'll stick with an extremely simple case of a higher-kinded type for a specific container type, in our case, a `List` or an `Option`.
 
-### 3.1 Implementing a higher-kinded type for a List
+### 10.3.1 Implementing a higher-kinded type for a List
 Before any code, we'll explain step-by-step what we will do:
 1. **Define the higher-kinded type called Box:** Define a trait or abstract class with a type parameter that itself takes a type parameter. This is our higher-kinded type.
 2. **Define how the Box trait should work with Lists:** It defines how the methods in the `Box` trait should behave when working with a `List`. In our case, the `ListBox` class will provide an implementation of the `first` method for a `List`.
@@ -1821,10 +1834,10 @@ So, where did our drill and materials analogy go in all of this nonsense? Simple
 
 The interesting thing is that this is just one level of abstraction. We could think that we can keep doing abstractions over traits, and we would be correct. This is precisely the power of higher-kinded types. Additionally, the Cats library provides a wide variety of tools we can use. 
 
-## 4. Recommendations & best practices
+## 10.4 Recommendations & best practices
 
 
-## 5. Use cases
+## 10.5 Use cases
 
 
 ---
