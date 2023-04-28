@@ -8,7 +8,7 @@
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
-[![type](https://img.shields.io/static/v1?label=Type&message=blog&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/) [![category](https://img.shields.io/static/v1?label=Category&message=computer-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/computer-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/programming-best-practices-writing-better-code/)
+[![type](https://img.shields.io/static/v1?label=Type&message=blog&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/) [![category](https://img.shields.io/static/v1?label=Category&message=computer-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/computer-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Scala&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/programming-best-practices-writing-better-code/)
 
 We could spend our entire developer's life using just the basic concepts of any programming language we choose to learn, and there's nothing wrong with that; in many cases, very powerful concepts have already been abstracted for us, providing a great out-of-the-box experience, particularly with languages such as Python, R, and JavaScript. However, a programmer's horizon would be limited if we didn't have advanced techniques to play with because, in the end, programming is about solving problems, and the more creative, the better. These techniques are not only there to make us more efficient in writing code but also in thinking out of the box by using more sophisticated tools.
 
@@ -118,7 +118,7 @@ We'll be using Scala scripts which can be found in the [Blog Article Repo](http
 # What to expect
 There are simple techniques such as code refactoring, modularization, and anonymous functions to instantly improve our code. However, this segment will introduce advanced programming concepts. Consequently, it'll be best to have some previous knowledge of functional programming and, ideally, Scala, Haskell, or a similar language.
 
-We will not include any installation process for Scala or Python since this is out of the scope of this segment (*a full Scala 3 installation along with sbt and a preferred IDE is assumed*). We will also not discuss basic principles such as syntax and compiling since this is also out of the scope of this segment. Instead, we'll introduce ten techniques and explain why they're useful, go over each one in detail, provide a set of examples in Scala & Python, depending on the implementation, and provide some recommendations for using each technique, as well as use cases and best practices.
+We will not include any installation processes since this is out of the scope of this segment (*a full Scala 3 installation along with sbt and a preferred IDE is assumed*). We will also not discuss basic principles such as syntax and compiling since this is also out of the scope of this segment. Instead, we'll introduce ten techniques and explain why they're useful, go over each one in detail, provide a set of examples in Scala, depending on the implementation, and provide some recommendations for using each technique, as well as use cases and best practices.
 
 ---
 
@@ -141,7 +141,7 @@ sbt new sbt/scala-seed.g8
 
 We'll name our project whenever sbt requests the project name.
 
-We'll then open our preferred IDE, import the newly-generated build, and create a new worksheet inside `/projectname/src/main/scala`
+We'll then open our preferred IDE, import the newly-generated build, and create a new worksheet inside `/projectname/src/main/scala`.
 
 ##### **Code**
 ```PowerShell
@@ -661,7 +661,7 @@ The steps to follow are straightforward:
 
 ##### **Code**
 ```Scala
-/ Define a curried function
+// Define a curried function
 def sumNums(x: Int)(y: Int) = {
     x + y
 }
@@ -763,7 +763,7 @@ applySumSquare(2, 3)
 ```
 
 To maximize the benefits of currying in our code, we can consider the following best practices:
-1. **Identifying suitable use cases:** Currying can be useful for partial application, function specialization, or enhancing type inference. Identify where these benefits can be applied in your code.
+1. **Identifying suitable use cases:** Currying can be useful for partial application, function specialization, or enhancing type inference. Identify where these benefits can be applied in our code.
 2. **Thoughtfully ordering parameters:** To create partially applied functions more easily, we can arrange parameters in a way that prioritizes those most likely to be reused or pre-filled in the initial groups.
 3. **Avoiding overuse:** While currying can be helpful, excessive use can make code harder to read and understand. We must use it thoughtfully and in moderation.
 4. **Combining with other functional techniques:** Combining currying with other functional programming techniques, such as function composition and higher-order functions, can further enhance our code's functionality.
@@ -1412,7 +1412,7 @@ As with any powerful abstraction technique, there are some best practices we can
 # 8. Continuation-passing style (CPS)
 The concept of **CPS** can be traced back to the work of several computer scientists, including [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)), [Peter Landin](https://en.wikipedia.org/wiki/Peter_Landin), and [Christopher Strachey](https://en.wikipedia.org/wiki/Christopher_Strachey).
 
-However, the specific term "*continuation-passing style*" and its use in programming languages can be attributed to the American computer scientist [Daniel P. Friedman](https://en.wikipedia.org/wiki/Daniel_P._Friedman) and his colleagues. In the early 1970s,
+However, the specific term "*continuation-passing style*" and its use in programming languages can be attributed to the American computer scientist [Daniel P. Friedman](https://en.wikipedia.org/wiki/Daniel_P._Friedman) and his colleagues.
 
 ## 8.1 Definition
 This one is tricky to define without any previous context of what continuation is. Because of this, we'll first define a few concepts that will be useful.
@@ -1739,7 +1739,7 @@ As with many elegant forms of abstraction, the advantages of this technique are 
 6. **Type safety:** Finally, higher-kinded types can help prevent type errors and make it easier to reason about code by ensuring that types are used correctly and consistently throughout a program.
 7. **Polymorphic Containers:** Higher-kinded types are useful when we want to create a container that can hold any type of item; we don’t need a different type for each specific content type.
 
-Let us work on some examples to further clarify.
+Let us work on an example to further clarify.
 
 ## 10.3 Examples
 Since higher-kinded types are somewhat of a difficult topic without some prerequisites, we'll stick with an extremely simple case of a higher-kinded type for a specific container type, in our case, a `List` or an `Option`.
