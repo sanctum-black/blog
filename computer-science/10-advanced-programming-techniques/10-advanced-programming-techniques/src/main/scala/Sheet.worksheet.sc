@@ -246,6 +246,29 @@ safeDivOne(safeDivTwo, 12, 0, 3)
 // Pattern Matching
 // ----------------------
 
+// Basic syntax
+
+// Define a pattern-matching construct
+def patternMatch(x: Int): Unit = {
+  x match {
+    case 14 => println("The number is 14")
+    case 15 => println("The number is 15")
+    case _ => println("The number is not 15 nor 16")
+  }
+}
+
+// Define simple integer variables
+val simple_int_1: Int = 14
+val simple_int_2: Int = 15
+val simple_int_3: Int = 16
+
+// Call function
+patternMatch(simple_int_1)
+patternMatch(simple_int_2)
+patternMatch(simple_int_3)
+
+// ----------------------
+
 // 1. Handle a division by zero
 def checkDivide(result: Option[Double]) = {
     result match {
