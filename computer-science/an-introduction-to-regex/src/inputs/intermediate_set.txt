@@ -1,0 +1,100 @@
+John Doe, johndoe@email.com, (123) 456-7890, 123 Main St.
+Jane Smith, jane.smith@email.com, (234) 567-8901, 456 Elm St.
+Robert Johnson, robert.johnson@email.com, (345) 678-9012, 789 Oak Ave.
+Sarah Lee, sarah_lee@email.com, (456) 789-0123, 234 Pine St.
+Michael Brown, michael.brown@email.com, (567) 890-1234, 567 Maple Dr.
+Lisa Davis, lisa.davis@email.com, (678) 901-2345, 890 Cedar Rd.
+David Rodriguez, david.rodriguez@email.com, (789) 012-3456, 1234 Willow Way
+Emily Kim, emily.kim@email.com, (890) 123-4567, 5678 Birch Blvd.
+James Johnson, james_johnson@email.com, (901) 234-5678, 9012 Pine St.
+Olivia Lee, olivia_lee@email.com, (012) 345-6789, 2345 Oak Ave.
+Mark Wilson, markwilson@email.com, (123) 456-7890, 456 Elm St.
+Elizabeth Davis, elizabeth_davis@email.com, (234) 567-8901, 789 Oak Ave.
+William Kim, william.kim@email.com, (345) 678-9012, 234 Pine St.
+Samantha Smith, samantha.smith@email.com, (456) 789-0123, 567 Maple Dr.
+Christopher Brown, christopher.brown@email.com, (567) 890-1234, 890 Cedar Rd.
+Ashley Johnson, ashley.johnson@email.com, (678) 901-2345, 1234 Willow Way
+Andrew Lee, andrew.lee@email.com, (789) 012-3456, 5678 Birch Blvd.
+Sarah Davis, sarah_davis@email.com, (890) 123-4567, 9012 Pine St.
+Robert Kim, robert_kim@email.com, (012) 345-6789, 2345 Oak Ave.
+Emily Smith, emily.smith@email.com, (123) 456-7890, 456 Elm St.
+Michael Davis, michael.davis@email.com, (234) 567-8901, 789 Oak Ave.
+Lisa Kim, lisa.kim@email.com, (345) 678-9012, 234 Pine St.
+David Smith, david.smith@email.com, (456) 789-0123, 567 Maple Dr.
+Sarah Brown, sarah.brown@email.com, (567) 890-1234, 890 Cedar Rd.
+James Davis, james.davis@email.com, (678) 901-2345, 1234 Willow Way
+Olivia Johnson, olivia.johnson@email.com, (789) 012-3456, 5678 Birch Blvd.
+William Lee, william.lee@email.com, (890) 123-4567, 9012 Pine St.
+Samantha Rodriguez, samantha.rodriguez@email.com, (012) 345-6789, 2345 Oak Ave.
+Christopher Wilson, christopher.wilson@email.com, (123) 456-7890, 456 Elm St.
+Ashley Brown, ashley.brown@email.com, (234) 567-8901, 789 Oak Ave.
+Andrew Kim, andrew.kim@email.com, (345) 678-9012, 234 Pine St.
+Sarah Johnson, sarah.johnson@email.com, (456) 789-0123, 567 Maple Dr.
+Robert Davis, robert.davis@email.com, (567) 890-1234, 890 Cedar Rd.
+Emily Rodriguez, emily.rodriguez@email.com, (678) 901-2345, 1234 Willow Way
+Michael Lee, michael.lee@email.com, (789) 012-3456, 5678 Birch Blvd.
+Lisa Smith, lisa.smith@email.com, (890) 123-4567, 9012 Pine St.
+David Brown, david.brown@email.com, (012) 345-6789, 2345 Oak Ave.
+Sarah Kim, sarah_kim@email.com, (123) 456-7890, 456 Elm St.
+James Rodriguez, james.rodriguez@email.com, (234) 567-8901, 789 Oak Ave.
+Olivia Davis, olivia.davis@email.com, (345) 678-9012, 234 Pine St.
+William Johnson, william.johnson@email.com, (456) 789-0123, 567 Maple Dr.
+Samantha Lee, samantha.lee@email.com, (567) 890-1234, 890 Cedar Rd.
+Christopher Kim, christopher_kim@email.com, (678) 901-2345, 1234 Willow Way
+Ashley Rodriguez, ashley.rodriguez@email.com, (789) 012-3456, 5678 Birch Blvd.
+Andrew Davis, andrew.davis@email.com, (890) 123-4567, 9012 Pine St.
+Sarah Smith, sarah.smith@email.com, (012) 345-6789, 2345 Oak Ave.
+Robert Johnson, robert.johnson@email.com, (123) 456-7890, 456 Elm St.
+Emily Lee, emily.lee@email.com, (234) 567-8901, 789 Oak Ave.
+Michael Kim, michael.kim@email.com, (345) 678-9012, 234 Pine St.
+Lisa Johnson, lisa.johnson@email.com, (456) 789-0123, 567 Maple Dr.
+David Davis, david.davis@email.com, (567) 890-1234, 890 Cedar Rd.
+Sarah Rodriguez, sarah.rodriguez@email.com, (678) 901-2345, 1234 Willow Way
+James Kim, james.kim@email.com, (789) 012-3456, 5678 Birch Blvd.
+Olivia Smith, olivia.smith@email.com, (890) 123-4567, 9012 Pine St.
+William Brown, william.brown@email.com, (012) 345-6789, 2345 Oak Ave.
+Samantha Johnson, samantha.johnson@email.com, (123) 456-7890, 456 Elm St.
+Christopher Davis, christopher.davis@email.com, (234) 567-8901, 789 Oak Ave.
+Ashley Kim, ashley.kim@email.com, (345) 678-9012, 234 Pine St.
+Andrew Smith, andrew.smith@email.com, (456) 789-0123, 567 Maple Dr.
+Sarah Brown, sarah.brown@email.com, (567) 890-1234, 890 Cedar Rd.
+Robert Johnson Jr., robert.johnson.jr@email.com, (678) 901-2345, 1234 Willow Way
+Emily Rodriguez, emily.rodriguez@email.com, (789) 012-3456, 5678 Birch Blvd.
+Michael Davis, michael.davis@email.com, (890) 123-4567, 9012 Pine St.
+Lisa Johnson, lisa.johnson@email.com, (012) 345-6789, 2345 Oak Ave.
+David Kim, david.kim@email.com, (123) 456-7890, 456 Elm St.
+Sarah Rodriguez, sarah.rodriguez@email.com, (234) 567-8901, 789 Oak Ave.
+Robert Lee, robert.lee@email.com, (345) 678-9012, 234 Pine St.
+Emily Davis, emily.davis@email.com, (456) 789-0123, 567 Maple Dr.
+Michael Johnson, michael.johnson@email.com, (567) 890-1234, 890 Cedar Rd.
+Lisa Brown, lisa.brown@email.com, (678) 901-2345, 1234 Willow Way
+David Rodriguez, david.rodriguez@email.com, (789) 012-3456, 5678 Birch Blvd.
+Sarah Lee, sarah.lee@email.com, (890) 123-4567, 9012 Pine St.
+Robert Davis Jr., robert.davis.jr@email.com, (012) 345-6789, 2345 Oak Ave.
+Emily Kim, emily.kim@email.com, (123) 456-7890, 456 Elm St.
+Michael Rodriguez, michael.rodriguez@email.com, (234) 567-8901, 789 Oak Ave.
+Lisa Johnson Jr., lisa.johnson.jr@email.com, (345) 678-9012, 234 Pine St.
+David Brown Jr., david.brown.jr@email.com, (456) 789-0123, 567 Maple Dr.
+Sarah Kim, sarah.kim@email.com, (567) 890-1234, 890 Cedar Rd.
+Robert Smith, robert.smith@email.com, (678) 901-2345, 1234 Willow Way
+Emily Johnson, emily.johnson@email.com, (789) 012-3456, 5678 Birch Blvd.
+Michael Davis Jr., michael.davis.jr@email.com, (890) 123-4567, 9012 Pine St.
+Lisa Kim Jr., lisa.kim.jr@email.com, (012) 345-6789, 2345 Oak Ave.
+David Rodriguez Jr., david.rodriguez.jr@email.com, (123) 456-7890, 456 Elm St.
+Tom Jones, tjones@gmail.com, (555) 123-4567, 123 Main St.
+Samantha Brown, sbrown@outlook.com, (555) 234-5678, 456 Elm St.
+Kevin Kim, kevin_kim@yahoo.com, (555) 345-6789,
+Lisa Davis, lisa.davis@aol.com, (555) 456-7890, 789 Oak Ave.
+John Smith, johnsmith@hotmail.com, (555) 567-8901, 234 Pine St.
+Emily Rodriguez, emily.rodriguez@gmail.com, (555) 678-9012,
+Sarah Johnson, sjohnson@yahoo.com, (555) 789-0123, 567 Maple Dr.
+Michael Davis, mdavis@hotmail.com, (555) 890-1234, 890 Cedar Rd.
+Robert Lee, rlee@aol.com, (555) 901-2345, 1234 Willow Way
+James Kim, jkim@outlook.com, (555) 012-3456,
+Olivia Johnson, ojohnson@gmail.com, (555) 234-5678, 5678 Birch Blvd.
+Christopher Brown, cbrown@yahoo.com, (555) 345-6789, 9012 Pine St.
+Ashley Davis, adavis@hotmail.com, (555) 456-7890, 2345 Oak Ave.
+Andrew Smith, asmith@gmail.com, (555) 567-8901, 456 Elm St.
+Sarah Kim, skim@yahoo.com, (555) 678-9012,
+Michael Johnson, mjohnson@aol.com, (555) 789-0123, 789 Oak Ave.
+J. Smith, john.smith@gmail.com, (555) 123-4567, 123 Main St.

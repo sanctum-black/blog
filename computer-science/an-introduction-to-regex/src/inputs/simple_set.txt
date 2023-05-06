@@ -1,0 +1,100 @@
+1234 Main St.
+johndoe@email.com
+Sarah Smith
+Brown Bear
+555-123-4567
+tiger
+9876 Elm St.
+jimmyfallon@gmail.com
+Rachel Johnson
+White Rhino
+555-987-6543
+dolphin
+4567 Oak Ave.
+janedoe@hotmail.com
+Michael Brown
+Red Panda
+555-555-1212
+giraffe
+7890 Maple Dr.
+sallyjones@yahoo.com
+Andrew Lee
+Bald Eagle
+555-432-1234
+elephant
+5678 Pine St.
+robertsmith@gmail.com
+Emily Kim
+Bengal Tiger
+555-777-8888
+lion
+9012 Birch Blvd.
+maryjones@hotmail.com
+David Rodriguez
+African Elephant
+555-369-2580
+leopard
+3456 Cedar Rd.
+brianadams@gmail.com
+Christopher Johnson
+Bengal Cat
+555-246-1357
+snake
+6789 Willow Way
+jasonlee@yahoo.com
+Jessica Lee
+Gray Wolf
+555-101-0101
+kangaroo
+2345 Oak St.
+catherinedavis@hotmail.com
+Matthew Miller
+Grizzly Bear
+555-888-9999
+panda
+5432 Elm Ave.
+davidjones@gmail.com
+Lauren Kim
+Snow Leopard
+555-444-7777
+rhinoceros
+8765 Pine Rd.
+emilybrown@yahoo.com
+James Johnson
+Chimpanzee
+555-123-7890
+zebra
+7890 Birch Blvd.
+ashleydavis@hotmail.com
+Eric Lee
+Arctic Fox
+555-369-8520
+crocodile
+4321 Willow Way
+stephenwhite@yahoo.com
+Olivia Lee
+African Lion
+555-987-6543
+hippopotamus
+5678 Oak Ave.
+katiejohnson@gmail.com
+Steven Brown
+Red Fox
+555-777-1212
+koala
+6543 Maple Dr.
+kellythomas@hotmail.com
+Joseph Kim
+Mountain Lion
+555-555-2468
+goat
+3210 Cedar Rd.
+samueljohnson@yahoo.com
+Grace Rodriguez
+Bengal Fox
+555-432-1010
+ostrich
+9876 Pine St.
+mitchellsmith@gmail.com
+Ashley Davis
+Blue Whale

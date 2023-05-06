@@ -11,6 +11,7 @@
 **/*.py[cod]
 
 # Ignore all virtual envs (termination venv)
+**/*_env/
 **/*_venv/
 
 # Ignore .obsidian folder on main folder

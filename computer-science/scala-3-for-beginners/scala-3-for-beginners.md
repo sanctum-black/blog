@@ -52,10 +52,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - Head to project directory.
 
 ```PowerShell
-sbt new sbt/scala-seed.g8
+sbt new scala/scala3.g8
 ```
 
-This will create a new project based on the Scala 3 seed template.
+This will create a new project based on the Scala 3 seed template. It's important to use `scala3`. Otherwise, a project using Scala 2 will be created.
 
 If we're prompted with username and password, we need to generate a new GitHub PAT, and add it to our SBT credentials file:
 
