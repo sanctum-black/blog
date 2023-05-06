@@ -93,7 +93,6 @@ K. Johnson%%% kjohnson@gmail.com%% 9012 Pine St.%%% 192.268.1.16
 L. Smith%%% lsmith@yahoo.com%%% (123) 456-7890%%% 2345 Oak Ave.%%% 10.0.0.31
 D. Rodriguez%%% drodriguez@aol.com%%% (234) 567-8901%%% 456 Elm St.%%% 172.16.1.16
 E. Kim%%% ekim@hotmeil.com%%% (345) 678-9012%%% 789 Oak Ave.%%% 192.268.0.16
-M. Davis%%% mdavis@gmail.com%% 123 Main St.%%% 10.0.0.32
 J. Johnson%%% jjohnson@yahoo.com%%% (456) 789-0123%%% 456 Elm St.%%% 172.16.0.17
 A. Smith%%% asmith@hotmeil.com%%% (567) 890-1234%%% 789 Oak Ave.%%% 192.268.1.17
 S. Brown%%% sbrown@yahoo.com%%% (678) 901-2345%%% 567 Maple Dr.%%% 10.0.0.33

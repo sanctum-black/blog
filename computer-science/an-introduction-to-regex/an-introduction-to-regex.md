@@ -517,7 +517,7 @@ Let us break it down:
 ---
 
 # RegEx in Python
-Up until now we've only seen regular expressions in a debugger, but RegEx is too powerful to just play around with it, and not do actual work in a programming language.
+Up until now we've only seen regular expressions in a debugger, but RegEx is too powerful to just play around with it and not do actual work in a programming language.
 
 Python supports RegEx via two main libraries:
 - The `re` built-in library.
@@ -527,19 +527,13 @@ The first one provides a more limited set of functions for working with regular 
 
 The second one has a more powerful set of functions for working with regular expressions. It can do everything that the `re` module can do, but it also provides additional features such as the ability to perform advanced searches using multiple regular expressions at the same time, and the ability to match overlapping patterns.
 
-In this segment we'll work with both. We'll start by installing the `regex` library it if we don't have it already. The `re` library is already included with our Python installation:
+In this segment we'll work with the first one. However, documentation for `regex` can be found [here](https://pypi.org/project/regex/).
 
-##### **Code**
-```PowerShell
-pip install regex
-```
-
-We'll now open our favorite IDE, and import the modules:
+We'll start by opening our favorite IDE, and import the required library:
 
 ##### **Code**
 ```Python
 import re
-import regex
 ```
 
 ## 1. Using re
@@ -841,16 +835,58 @@ Phone Number: (901) 234-5678
 ```
 
 
-
-## 2. Using regex
-
 ---
 
 # Unit testing
+Unit testing is a software development process in which the smallest testable parts of an application, called units, are individually scrutinized for proper operation. The level of rigorousness is chosen by the developer, but ideally it must contain all the possible edge cases in order to prevent bugs with untested samples.
+
+As we might have noticed, regular expressions are prone to truly awful bugs. This is because of two reasons:
+- We're generating gigantic expressions in a single line, where we can easily miss a single character, potentially rendering our whole expression useless.
+- We don't always know all the edge cases: A client can provide us with a dataset that contains all kinds of crazy patterns and errors that we did not originally account for.
+
+This is why it's always recommended to perform thorough testing and debugging using an external tool, such as RegEx101.
+
+This tool has a built-in unit tester, where we can design our own tests and perfect our expressions to our own liking.
+
+## 1. Testing a simple expression
+For this, we'll head to [RegEx101](https://regex101.com/), and select the **Unit Tests** section, from where we'll be able to design our own unit tests.
+
+A unit test should typically consist of a single string that represents an edge case we would like to test.
+
+For example, a nice & simple set of 4 edge cases in an IPv4 validation implementation, would be the following:
+
+B019A036_regex_vis_12.png
+
+We can then run our IPv4 RegEx segment:
+
+##### **Code**
+```RegEx
+(?P<ip_address>(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]))$
+```
+
+And it will pass all tests:
+
+B019A036_regex_vis_13.png
+
+What's even more amazing, is that if we encounter a bug in our test, we can actually debug it right from inside the Unit Tester. We can do this by selecting the bug icon, and a RegEx Debugger will appear:
+
+B019A036_regex_vis_14.png
+
+B019A036_regex_vis_15.png
+
+From here, we can play all the matching steps as if it were a song, where each step will be shown with its number, corresponding RegEx fragment, and resulting match in our test string:
+
+B019A036_regex_vis_16.png
+
+Unit testing in itself is an art, since it requires vast knowledge of the algorithm we're implementing and its limitations in order to create meaningful tests.
+
+The great thing is that this practice applies to any programming language. For example, Java & Scala both possess a very strong unit testing infrastructure, specifically designed to build tests that could potentially catch bugs and save us many hours and empty wallets.
 
 ---
 
 # Worked-out examples
+
+
 
 ---
 
@@ -883,47 +919,213 @@ Michael Davis Jr.%%% michael.davis.jr@yahooo.com%%% (234) 567-8901%%% 789 Oak Av
 L. Kim Jr.%%% lkimjr@hotmeil.com%%% (345) 678-9012%% 10.0.0.7
 ```
 
-The dataset link can be consulted [here]().
+The dataset link can be consulted [here](https://github.com/pabloagn/blog/blob/master/computer-science/an-introduction-to-regex/src/inputs/advanced_set.txt).
 
-Let's get started, shall we?
+Before we begin, there are a few details we must consider:
+- The syntax may change between platforms. For example, the visualizer we're using, [regex-vis](https://regex-vis.com), does not support named captured groups declared as `(?P<first_name>[A-Za-z]+)`; we must remove the `P` character. In contrast, [RegEx101](https://regex101.com) supports both versions, while Python's `re` requires the `P` character before the group name.
+- It's always a good idea to write our regular expressions in an online debugger first, where we can see our changes live. This makes writing RegEx much easier, since we're seeing the effects of any change at the time of writing the actual expression.
+
+So, with everything in place, let's get started, shall we?
 
 ## 1. Making sense of the data
 From our dataset's head, we can notice some details:
-- The attributes appear to be separated by multiple percentage signs `%` (*no idea why*), or other weird characters.
+- The attributes appear to be separated by multiple percentage signs `%` (*no idea why*), or other weird characters such as `$` or `}`.
 - The percentage signs are not always consistent (*some have double, and some have triple characters*).
 - Some IP addresses appear to be invalid.
+	- A valid IPv4 Address has 4 integer number groups, each one with a minimum of `0` and a maximum of `255`, both inclusive.
+	- Groups are separated by literal dots `.`, and the last group does not terminate in a dot.
 - Some email domains appear to be invalid.
+	- A valid email address must have any set of alphanumerical characters, followed by an at `@` sign separator, and a domain comprised of a valid commercial domain name and a valid `.com` top-level domain name. Here, we're assuming that all users have commercial email addresses.
 - Some first names are denoted by an acronym (*`L. Kim`*).
-- Some customers have middle name, which we do not want.
-- All email addresses appear to end in `.com`, and have commercial domains, meaning we have a limited set of options that we can use to validate.
 - All phone numbers have exactly the same structure:
-	- `(aaa) ddd-dddd`: `a` is the area code, and `d` is a digit between `0` and `9`.
+	- `(aaa) ddd-dddd`: `a` is the area code, and `d` is an integer digit between `0` and `9`.
 
 So, in summary, this database is a mess. However, RegEx is so powerful, that we'll be able to perform all the tasks and return a pristine version to our client.
 
 ## 2. First names
-This one is fairly simple. We need to 
+This one is fairly simple. We need to create a named captured group at the start of the line, where we match:
+- Any lower or upper-case letter, from `aA` to `zZ`.
+- We must also ensure that edge cases, such as a name acronym, are covered.
+	- A name acronym consists of the first letter followed by a literal dot `.`.
+- In any case, the first name will be followed by a literal space ` `.
+
+##### **Code**
+```RegEx
+^(?P<first_name>[A-Za-z]+)(?:\.? )
+```
+
+The first group we already discussed. However, the second one includes the optional literal dot `.` followed by a literal space ` `. This is because:
+- Some names might be written as acronyms, where a single character is followed by a literal dot.
+- We don't want our `first_name` group to contain spaces, but they are required, so we separate that into another group and don't make them optional.
+
+In the end, we should end up with something like such:
+
+B019A036_regex_vis_04.png
 
 ## 3. Last names
+This one is much simpler, since we're assuming that we do not have middle names. Naturally, the set of alphabetical characters following the first name, should be the last name. However, we need to take the shortened versions as well. These cases would appear as: `James B.`, where `B.` is the shortened version of James's last name. This can be handled by an optional literal dot at the end.
 
+##### **Code**
+```RegEx
+(?P<last_name>[A-Za-z]+\.?)
+```
 
-## 4. Validated phone numbers
+Below we can see our expression's diagram:
 
+B019A036_regex_vis_05.png
 
-## 5. Validated email addresses
+## 4. Optional suffix
+There are some instances where names have `Jr.` suffixes. This field should be optional, since it only occurs on a subset of our entire dataset. Also, we want to make sure that we include both possible versions: `Jr.` and `Sr.`, so we'll include an alternation between the two:
 
+##### **Code**
+```RegEx
+(?P<suffix> Jr\.|Sr\.)?
+```
 
-## 6. Validated IPv4 addresses
+The diagram should look like such:
 
-## 7. Matching the database
+B019A036_regex_vis_06.png
+
+## 5. Separators
+We get to the point where we encounter these weird separators we mentioned earlier. We can have the following options, or a combination of the three:
+- `%`
+- `}`
+- `$`
+
+Because of this, we need to consider a set where any of the three could appear. We'll also define this group as non-capturing since we're not interested in reporting it out to our client, and we'll make it optional as well since we might not have separators at all.
+
+Since we have variation in terms of the repetition of these characters, we will define a minimum of 1 appearance, and a maximum of infinite appearances:
+
+##### **Code**
+```RegEx
+(?:[\%\$\{\}]{1,} )?
+```
+
+## 6. Validated email address
+A typical email address has 5 main components:
+- A **unique username** within the domain. Can contain special characters (`_, -, .`) and/or alphanumerical characters.
+- An `@` separator character.
+- A domain name (*assumed to be commercial*).
+- A literal dot `.` separator.
+- A top-level domain name (*assumed to be `.com` in all instances*).
+
+Since we have multiple components, we'll create three named captured groups (*username, domain name, and top-level domain name*), enclosed by a named captured supergroup. This makes sense if our client would like to perform analyses on a more granular level, plus it keeps things organized:
+
+##### **Code**
+```RegEx
+(?P<email_address>(?P<email_name>[\w\-\.\_]+)\@(?P<email_domain>hotmail|gmail|aol|outlook|yahoo|protonmail)(?:\.com))?(?:[\%\$\{\}]{1,} )?
+```
+
+Let us break down our expression in more detail:
+- Create a named captured supergroup called `email_address`.
+- Create a named captured group called `email_name`. This group will match any name, middle name, or surname included in the first segment of the email address.
+- Create a named captured group called `email_domain`. This group will match:
+	- Any valid commercial domain included in the alternation list.
+	- A valid top-level domain name, in this case, `.com` exclusively, but we can extend it the same way we did with the domain name.
+- Close our expression with the weird separator set (*same as last example*).
+
+Our diagram should look like such:
+
+B019A036_regex_vis_08.png
+
+## 7. Validated phone numbers
+As mentioned earlier, a valid phone number must contain the following:
+- An area code `(ddd)`.
+- Followed by three integer digits `ddd`.
+- Followed by a hyphen `-`.
+- Followed and terminated by four integer digits `dddd`.
+
+To ensure that these conditions are met, we can express our pattern as such:
+
+##### **Code**
+```RegEx
+(?P<phone>\(\d{3}\) \d{3}\-\d{4})?(?:[\%\$\{\}]{1,} )
+```
+
+Which would result in the following diagram:
+
+B019A036_regex_vis_09.png
+
+## 8. Home addresses
+Next comes the victim's home address. Although this was not a required field, we can also separate it into a group in case it's required in a future iteration.
+
+A valid address should have the following characteristics:
+- Start with a set of integer digits.
+- Be followed by a street name, which can be composed of the name of the street (*e.g., `Elm`, `Oak`, etc.*), and the type of the street (*e.g., `St.`, `Rd.`, etc.*).
+
+The type of the street will not necessarily have the abbreviated form, so we need to account for cases where we do not have that final literal dot.
+
+Also, we'll need to account for our final weird character separator:
+
+##### **Code**
+```RegEx
+(?P<address>\d+ (?:\w+ ?){1,}\.?)(?:[\%\$\{\}]{1,} )?
+```
+
+The diagram should look something like such:
+
+B019A036_regex_vis_10.png
+
+## 9. Validated IPv4 addresses
+Now, for the final piece, the IPv4 addresses, we need to do a little more magic, since these are trickier.
+
+An IPv4 address is typically written in decimal digits, formatted as four 8-bit fields separated by periods. Each 8-bit field represents a byte of the IPv4 address. This form of representing the bytes of an IPv4 address is often referred to as the [dotted-decimal format](https://en.wikipedia.org/wiki/Dot-decimal_notation).
+
+Let us start by providing some examples of how a valid IPv4 address could look like:
+
+```
+0.0.0.0
+192.168.0.1
+10.0.0.1
+172.16.0.1
+255.255.255.255
+8.8.8.8
+127.0.0.1
+169.254.0.0
+224.0.0.1
+198.51.100.1
+```
+
+So, in summary, an IPv4 address must comply with the following:
+- 4 digits separated by a literal dot `.`.
+- A maximum value of 255 for each case.
+- Zeros can occur before any digit.
+
+We must keep in mind that some addresses are reserved (*e.g., `0.0.0.0`, `127.0.0.1`*) and cannot be assigned to a conventional network. However, we will assume that any IP address following the conventions above is valid.
+
+When working with IP Addresses, we have one main problem; we need to account for different possibilities of number combinations:
+- A single number: Between 0 and 9.
+- Two numbers: Each between 0 and 9
+- Three numbers $n \leq 199$ : The first number between 0 and 1. The rest between 0 and 9.
+- Three numbers $200 \leq n \leq 249$ : The first number $==2$. The second between 0 and 4. The third between 0 and 9.
+- Three numbers $250 \leq n \leq 255$: The first number $==2$. The second $==2$. The third between 0 and 5.
+
+We also need to include a literal dot at the end of the first three groups. We will repeat the pattern above 3 times, and make one last group without the literal dot that does not repeat.
+
+Since we're at the end of our expression, we also need to define the position assertion at the end of the line using a dollar sign `$`.
+
+Now that we have all our possible combinations, we can express a valid pattern using alternations and sets:
+
+##### **Code**
+```RegEx
+(?P<ip_address>(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]))$
+```
+
+The diagram should look like such:
+
+B019A036_regex_vis_11.png
+
+## 11. Matching the database
 After all the previous steps, we should end up with something like such:
 
 ##### **Code**
 ```RegEx
-^(?P<first_name>\w+)(?:\.? )(?P<last_name>\w+)(?P<suffix> Jr\.|Sr\.)?(\.?)(?:[\%\$\{\}]{1,3} )?(?P<email_Address>(?P<email_name>\w+)(?P<email_second_name>\.\w+)?(?P<email_third_name>\.\w+)?\@(?P<email_domain>hotmail|gmail|aol|outlook|yahoo|protonmail)(?:\.com))?(?:[\%\$\{\}]{1,3} )?(?P<phone>\(\d{3}\) \d{3}\-\d{4})?(?:[\%\$\{\}]{1,3} )(?P<address>\d+ (?:\w+ ?){1,}\.?)(?:[\%\$\{\}]{1,3} )?(?P<ip_addr>(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]))$
+^(?P<first_name>[A-Za-z]+)(?:\.? )(?P<last_name>[A-Za-z]+\.?)(?P<suffix> Jr\.|Sr\.)?(?:[\%\$\{\}]{1,} )?(?P<email_address>(?P<email_name>[\w\-\.\_]+)\@(?P<email_domain>hotmail|gmail|aol|outlook|yahoo|protonmail)(?:\.com))?(?:[\%\$\{\}]{1,} )?(?P<phone>\(\d{3}\) \d{3}\-\d{4})?(?:[\%\$\{\}]{1,} )(?P<address>\d+ (?:\w+ ?){1,}\.?)(?:[\%\$\{\}]{1,} )?(?P<ip_address>(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]))$
 ```
 
-We can now translate our pattern to our Python script, and perform the matches using our input dataset:
+Which translates to the diagram in [this link](https://regex-vis.com/?r=%5E%28%3F%3Cfirst_name%3E%5BA-Za-z%5D%2B%29%28%3F%3A%5C.%3F+%29%28%3F%3Clast_name%3E%5BA-Za-z%5D%2B%5C.%3F%29%28%3F%3Csuffix%3E+Jr%5C.%7CSr%5C.%29%3F%28%3F%3A%5B%5C%25%5C%24%5C%7B%5C%7D%5D%7B1%2C%7D+%29%3F%28%3F%3Cemail_address%3E%28%3F%3Cemail_name%3E%5B%5Cw%5C-%5C.%5C_%5D%2B%29%5C%40%28%3F%3Cemail_domain%3Ehotmail%7Cgmail%7Caol%7Coutlook%7Cyahoo%7Cprotonmail%29%28%3F%3A%5C.com%29%29%3F%28%3F%3A%5B%5C%25%5C%24%5C%7B%5C%7D%5D%7B1%2C%7D+%29%3F%28%3F%3Cphone%3E%5C%28%5Cd%7B3%7D%5C%29+%5Cd%7B3%7D%5C-%5Cd%7B4%7D%29%3F%28%3F%3A%5B%5C%25%5C%24%5C%7B%5C%7D%5D%7B1%2C%7D+%29%28%3F%3Caddress%3E%5Cd%2B+%28%3F%3A%5Cw%2B+%3F%29%7B1%2C%7D%5C.%3F%29%28%3F%3A%5B%5C%25%5C%24%5C%7B%5C%7D%5D%7B1%2C%7D+%29%3F%28%3F%3Cip_address%3E%28%28%5B01%5D%3F%5B0-9%5D%3F%5B0-9%5D%7C2%5B0-4%5D%5B0-9%5D%7C25%5B0-5%5D%29%5C.%29%7B3%7D%28%5B01%5D%3F%5B0-9%5D%3F%5B0-9%5D%7C2%5B0-4%5D%5B0-9%5D%7C25%5B0-5%5D%29%29%24&e=0)
+
+This is a mess, so we can refactor it to a multi-line structure in Python. We can also include our file-reading handle, a `finditer` method, and lastly, and a loop that will print all the required captured groups:
 
 ##### **Code**
 ```Python
@@ -938,12 +1140,12 @@ import re
 
 # Define a multi-line RegEx expression
 pattern = re.compile(
-    r"^(?P<first_name>\w+)(?:\.? )(?P<last_name>\w+)"
-    r"(?P<suffix> Jr\.|Sr\.)?(\.?)(?:[\%\$\{\}]{1,3} )?"
-    r"(?P<email_address>(?P<email_name>\w+)(?P<email_second_name>\.\w+)?"
-    r"(?P<email_third_name>\.\w+)?\@(?P<email_domain>hotmail|gmail|aol|outlook|yahoo|protonmail)(?:\.com))?"
-    r"(?:[\%\$\{\}]{1,3} )?(?P<phone>\(\d{3}\) \d{3}\-\d{4})?(?:[\%\$\{\}]{1,3} )"
-    r"(?P<address>\d+ (?:\w+ ?){1,}\.?)(?:[\%\$\{\}]{1,3} )?"
+    r"^(?P<first_name>[A-Za-z]+)(?:\.? )(?P<last_name>[A-Za-z]+\.?)"
+    r"(?P<suffix> Jr\.|Sr\.)?(?:[\%\$\{\}]{1,} )?"
+    r"(?P<email_address>(?P<email_name>[\w\-\.\_]+)\@"
+    r"(?P<email_domain>hotmail|gmail|aol|outlook|yahoo|protonmail)(?:\.com))?(?:[\%\$\{\}]{1,} )?"
+    r"(?P<phone>\(\d{3}\) \d{3}\-\d{4})?(?:[\%\$\{\}]{1,} )"
+    r"(?P<address>\d+ (?:\w+ ?){1,}\.?)(?:[\%\$\{\}]{1,} )?"
     r"(?P<ip_address>(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]))$",
     re.M
 )
@@ -955,193 +1157,268 @@ with open(rdir, 'r') as file:
     database = file.read()
     matches = pattern.finditer(database)
 
+# Print required captured groups
 for match in matches:
     print(f'NAME: {match.group("first_name")}, {match.group("last_name")}')
     print(f'EMAIL ADDRESS: {match.group("email_address")}')
+    print(f'PHONE NO.: {match.group("phone")}')
     print(f'IP ADDRESS: {match.group("ip_address")}')
     print('')
 ```
+
+And voila, we've provided our client with a clean, validated user base:
 
 ##### **Output**
 ```
 NAME: Jane, Smith
 EMAIL ADDRESS: jane.smith@yahoo.com
+PHONE NO.: (234) 567-8901
 IP ADDRESS: 10.0.0.1
 
 NAME: Robert, Johnson
 EMAIL ADDRESS: robert.johnson.jr@gmail.com
+PHONE NO.: None
 IP ADDRESS: 172.16.0.1
 
 NAME: Michael, Brown
 EMAIL ADDRESS: mbrown@aol.com
+PHONE NO.: (567) 890-1234
 IP ADDRESS: 10.0.0.2
 
 NAME: Lisa, Davis
 EMAIL ADDRESS: lisa.davis@outlook.com
+PHONE NO.: (678) 901-2345
 IP ADDRESS: 172.16.1.1
 
 NAME: Emily, Kim
 EMAIL ADDRESS: emily.kim@yahoo.com
+PHONE NO.: None
 IP ADDRESS: 10.0.0.3
 
 NAME: Mark, Wilson
 EMAIL ADDRESS: markwilson@gmail.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 172.16.1.2
 
 NAME: Samantha, Smith
 EMAIL ADDRESS: samantha.smith@yahoo.com
+PHONE NO.: (456) 789-0123
 IP ADDRESS: 172.16.0.3
+
+NAME: Robert, Kim
+EMAIL ADDRESS: robert_kim@yahoo.com
+PHONE NO.: None
+IP ADDRESS: 10.0.0.6
 
 NAME: Emily, Smith
 EMAIL ADDRESS: emilysmith@gmail.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 172.16.0.4
 
 NAME: David, Smith
 EMAIL ADDRESS: david.smith@yahoo.com
+PHONE NO.: (456) 789-0123
 IP ADDRESS: 172.16.1.4
 
 NAME: James, Davis
 EMAIL ADDRESS: jdavis@hotmail.com
+PHONE NO.: (678) 901-2345
 IP ADDRESS: 10.0.0.8
 
 NAME: Olivia, Johnson
 EMAIL ADDRESS: ojohnson@yahoo.com
+PHONE NO.: (789) 012-3456
 IP ADDRESS: 172.16.0.5
 
 NAME: Christopher, Kim
 EMAIL ADDRESS: christopher.kim@yahoo.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 172.16.1.5
 
 NAME: John, Smith
 EMAIL ADDRESS: john.smith@gmail.com
+PHONE NO.: (345) 678-9012
 IP ADDRESS: 10.0.0.10
+
+NAME: Jane, Doe
+EMAIL ADDRESS: janedoe@yahoo.com
+PHONE NO.: (456) 789-0123
+IP ADDRESS: 172.16.0.6
 
 NAME: M, Brown
 EMAIL ADDRESS: mbrown@gmail.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 172.16.0.7
 
 NAME: E, Johnson
 EMAIL ADDRESS: ejohnson@yahoo.com
+PHONE NO.: (345) 678-9012
 IP ADDRESS: 172.16.1.7
 
 NAME: R, Davis
 EMAIL ADDRESS: rdavis@gmail.com
+PHONE NO.: (567) 890-1234
 IP ADDRESS: 10.0.0.14
 
 NAME: E, Smith
 EMAIL ADDRESS: esmith@yahoo.com
+PHONE NO.: None
 IP ADDRESS: 172.16.0.8
 
 NAME: J, Kim
 EMAIL ADDRESS: jkim@gmail.com
+PHONE NO.: (012) 345-6789
 IP ADDRESS: 10.0.0.15
 
 NAME: J, Brown
 EMAIL ADDRESS: jbrown@aol.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 172.16.1.8
 
 NAME: L, Lee
 EMAIL ADDRESS: llee@yahoo.com
+PHONE NO.: (345) 678-9012
 IP ADDRESS: 172.16.0.9
 
 NAME: J, Kim
 EMAIL ADDRESS: jkim@yahoo.com
+PHONE NO.: None
 IP ADDRESS: 172.16.1.9
 
 NAME: R, Smith
 EMAIL ADDRESS: rsmith@yahoo.com
+PHONE NO.: None
 IP ADDRESS: 172.16.0.10
 
 NAME: S, Lee
 EMAIL ADDRESS: slee@gmail.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 10.0.0.19
+
+NAME: K, Johnson
+EMAIL ADDRESS: kjohnson@yahoo.com
+PHONE NO.: (234) 567-8901
+IP ADDRESS: 172.16.1.10
 
 NAME: R, Rodriguez
 EMAIL ADDRESS: rrodriguez@yahoo.com
+PHONE NO.: (456) 789-0123
 IP ADDRESS: 10.0.0.20
 
 NAME: D, Kim
 EMAIL ADDRESS: dkim@gmail.com
+PHONE NO.: None
 IP ADDRESS: 172.16.0.11
 
 NAME: K, Davis
 EMAIL ADDRESS: kdavis@yahoo.com
+PHONE NO.: (789) 012-3456
 IP ADDRESS: 172.16.1.11
 
 NAME: D, Johnson
 EMAIL ADDRESS: djohnson@yahoo.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 172.16.0.12
 
 NAME: K, Lee
 EMAIL ADDRESS: klee@yahoo.com
+PHONE NO.: None
 IP ADDRESS: 172.16.1.12
 
 NAME: S, Kim
 EMAIL ADDRESS: skim@yahoo.com
+PHONE NO.: (567) 890-1234
 IP ADDRESS: 10.0.0.24
 
 NAME: J, Johnson
 EMAIL ADDRESS: jjohnson@gmail.com
+PHONE NO.: (678) 901-2345
 IP ADDRESS: 172.16.0.13
 
 NAME: M, Rodriguez
 EMAIL ADDRESS: mrodriguez@yahoo.com
+PHONE NO.: None
 IP ADDRESS: 10.0.0.25
 
 NAME: L, Kim
 EMAIL ADDRESS: lk@yahoo.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 172.16.1.13
 
 NAME: J, Lee
 EMAIL ADDRESS: jlee@aol.com
+PHONE NO.: (345) 678-9012
 IP ADDRESS: 172.16.0.14
 
 NAME: E, Rodriguez
 EMAIL ADDRESS: erodriguez@yahoo.com
+PHONE NO.: (567) 890-1234
 IP ADDRESS: 10.0.0.27
 
 NAME: L, Davis
 EMAIL ADDRESS: ldavis@aol.com
+PHONE NO.: (012) 345-6789
 IP ADDRESS: 10.0.0.28
 
 NAME: S, Johnson
 EMAIL ADDRESS: sjohnson@yahoo.com
+PHONE NO.: (123) 456-7890
 IP ADDRESS: 172.16.0.15
 
 NAME: K, Johnson
 EMAIL ADDRESS: kjohnson@yahoo.com
+PHONE NO.: None
 IP ADDRESS: 172.16.1.15
 
 NAME: S, Lee
 EMAIL ADDRESS: slee@yahoo.com
+PHONE NO.: (678) 901-2345
 IP ADDRESS: 172.16.0.16
-
-NAME: L, Smith
-EMAIL ADDRESS: lsmith@yahoo.com
-IP ADDRESS: 10.0.0.31
-
-NAME: D, Rodriguez
-EMAIL ADDRESS: drodriguez@aol.com
-IP ADDRESS: 172.16.1.16
-
-NAME: M, Davis
-EMAIL ADDRESS: mdavis@gmail.com
-IP ADDRESS: 10.0.0.32
 
 NAME: J, Johnson
 EMAIL ADDRESS: jjohnson@yahoo.com
+PHONE NO.: (456) 789-0123
 IP ADDRESS: 172.16.0.17
 
 NAME: S, Brown
 EMAIL ADDRESS: sbrown@yahoo.com
+PHONE NO.: (678) 901-2345
 IP ADDRESS: 10.0.0.33
 ```
 
 ---
 
 # Next steps
+RegEx mastery can be summarized in one single expression: `(practice){100,}`. Regular expressions are not hard once we have the foundations and know how to combine them; it's a very simple yet extremely powerful tool that lets us search anything, anywhere, all at once.
 
+Below are some resources we can consult if we wish to further explore RegEx matching:
 
+Disclaimer: None of the resources below contain referral links. The entire selection is of my own choosing.
+
+- **RegEx debuggers & visualization tools:**
+	- [RegEx101](https://regex101.com): For the tenth time in this segment, this resource is invaluable for anyone looking to write serious RegEx. It comes with multiple features such as a real-time editor supporting multiple RegEx flavors, the option to save expressions and create a library, the option to perform matches & substitutions on the fly, a debugger, and even a code generator (*yes, a code generator*) to translate our expressions to any supported language we desire.
+	- [RegExR](https://regexr.com/): A very nice alternative to the one above. It provides similar features, and also supports unit testing.
+	- [Debuggex](https://www.debuggex.com/): A nice debugger/railroad visualizer with the ability to scroll through the matching steps (*very similar to RegEx101, but more limiting in terms of language support*) 
+	- [Regulex](https://jex.im/regulex/): A very similar alternative to the one above, but sticks to JavaScript expressions.
+	- [Regex-Vis](https://regex-vis.com/): My hands-on favorite option producing beautiful railroad diagrams (*and the one used throughout this entire segment*).
+
+- **RegEx practicing:**
+	- [RegEx101](https://regex101.com): For the eleventh time in this segment, RegEx101 comes with a built-in RegEx quiz, including a total of 28 tests to put our RegEx expertise to the limits.
+	- [Regex Cross­word](https://regexcrossword.com/): A super fun set of crossword puzzles based on RegEx patterns. A little cryptic at first, but highly addictive to all nerds out there.
+	- [RegexLearn](https://regexlearn.com/learn): A nice platform containing quizzes organized into two modules: RegEx 101 for beginners, and RegEx for SEO for more advanced users.
+	- [RegExOne](https://regexone.com/): An interactive set of exercises explaining base concepts and then putting them to test.
+	- [HackerRank, RegEx Domain](https://www.hackerrank.com/domains/regex): A nice set of tests, from easy to hard, solved and unsolved, with the possibility to filter by subtopic such as repetitions, grouping and capturing, assertions, backreferences, and more.
+
+- **Forums & community:**
+	- [regex Subreddit](https://www.reddit.com/r/regex/): A vibrant community of RegEx enthusiasts posting questions and solutions to all kinds of eccentric expressions.
+
+- **Other learning resources:**
+	- [Regular Expressions in Python, Patrick Loeber, YouTube](https://www.youtube.com/watch?v=AEE9ecgLgdQ&): An amazing free 1-hour comprehensive course for getting started with RegEx in Python.
+	- [Taming Regular Expressions, Paul Ogier, Udemy](https://www.udemy.com/course/taming-regex-a-complete-guide-to-regular-expressions/): A great beginner-friendly course including POSIX RegEx + virtually all other flavors.
+	- [Regular Expressions for Beginners and Beyond, Bonnie Schulkin, Udemy](https://www.udemy.com/course/regular-expressions-for-beginners-and-beyond-with-exercises/): Another beginner-friendly comprehensive, hands-on course.
+	- [Mastering Regular Expressions in JavaScript, Steven Hancock, Udemy](https://www.udemy.com/course/mastering-regular-expressions-in-javascript/): A great JavaScript-flavored alternative.
+	- [Python Regular Expressions Complete Masterclass, Mihai Catalin Teodosiu & EpicPython Academy, Udemy](https://www.udemy.com/course/python-regex/): An excellent Python-flavored alternative.
+	- [Regular Expressions for Beginners - Universal, Edwin Diaz & Coding Faculty Solutions, Udemy](https://www.udemy.com/course/regular-expressions-for-beginners-universal/): A good alternative presenting mainly POSIX syntax.
 
 ---
 
