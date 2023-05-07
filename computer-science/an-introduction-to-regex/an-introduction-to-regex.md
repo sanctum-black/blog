@@ -25,6 +25,7 @@ We'll be using Python scripts & RegEx expressions which can be found in the [Bl
 ---
 
 # Table of Contents
+- 
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -159,6 +160,11 @@ These are actually two extremely simplified versions of an SQL injection that ca
 # Why is it hard?
 RegEx has certain fame associated with it; people often times see RegEx as a bunch of characters without any sense whatsoever, and that's because RegEx is not written as a conventional programming language (*there's no explicit instruction given using conventional programming language-style syntaxis*); instead, it uses a set of basic characters, metacharacters and modifiers to build complex search patterns that, at first glance, look unintelligible.
 
+There's one fairly famous quote among programmers:
+
+>Some people, when confronted with a problem, think "I know, I'll use regular expressions." Now they have two problems.
+>[Jamie Zawainski](https://en.wikipedia.org/wiki/Jamie_Zawinski)
+
 This expression, for example, validates IPv4 addresses:
 
 ##### **Code**
@@ -199,8 +205,11 @@ Additionally, more flavors for emerging languages have been recently created:
 
 # Preparing our environment
 For this segment, we'll be using two main tools:
-1. **[RegEx101](https://regex101.com/):** A powerful regular expression tester with syntax highlighting, explanation, cheat sheet for PHP/PCRE, Python, GO, JavaScript, Java, C#/.NET, Rust.
-2. Python RegEx in VS Code: 
+1. **[RegEx101](https://regex101.com/):** A powerful regular expression tester with syntax highlighting, explanation, cheat sheet for PHP/PCRE, Python, GO, JavaScript, Java, C#/.NET, Rust. We'll use RegEx101 to initially write, test & debug all our expressions, and then translate them to Python code.
+2. **[Regex-Vis](https://regex-vis.com/):** A visualizer displaying regular expressions in railroad diagrams. We'll use this tool to visualize all our expressions & their step-by-step execution.
+3. **Python RegEx in VS Code:** There's no required RegEx extension for VS Code. Since we'll be composing our expressions in a web application, we can simply compose and debug there, and paste in VS Code. However, there are some optional useful extensions we can include:
+	- **[Regex Previewer](https://marketplace.visualstudio.com/items?itemName=chrmarti.regex):** A live RegEx previewer currently supporting JavaScript, TypeScript, PHP and Haxe.
+	- **[Regex snippets](https://marketplace.visualstudio.com/items?itemName=Monish.regexsnippets):** A collection of useful RegEx snippets abstracted in simpler expressions. 
 
 ---
 
@@ -307,11 +316,10 @@ This **+** is a plus sign
 
 We can look at metacharacters as operators in any other programming language; they perform a given operation on the character before it.
 
-
 # Main metacharacters
 The main metacharacters are used as base to compose more complex metacharacters. Let us review each one in more detail.
 
-## 1. The dot metacharacter *(.)*
+## 1. The dot metacharacter (.)
 The dot metacharacter matches any single character, without caring what the character is. The only exceptions are line break characters (_by default, but we can add a flag and it will now match even line breaks_).
 
 The dot metacharacter will also match other metacharacters:
@@ -326,48 +334,454 @@ Th**is** is a sentence with a special character **?is**
 So what we're doing here, is matching any character before `is`, and `is` itself.
 
 
+## 2. The caret metacharacter (^)
+The caret `^` matches the start of a line or a particular string. If we're trying to match a sentence that starts at the beginning of the line, we use this character. This character is also referred to as an **anchor**, because it anchors the match to the start of the line.
+
+For example, we can define a pattern that matches `sentence d`, where `d` is any integer digit:
+
+##### **Code**
+```RegEx
+sentence \d
+
+This is **sentence 1**
+This is **sentence 2**
+```
+
+This expression will match both words, since we're not specifying they should be at the beginning of the line.
+
+In contrast, if we explicitly define a start-of-line anchor, the expression will not match:
+
+##### **Code**
+```RegEx
+^sentence \d
+
+This is sentence 1
+This is sentence 2
+```
+
+This metacharacter is basically telling RegEx to match an expression only if it's at the start of the line.
+
+So, if we try to match the words at the start of each sentence, it matches correctly:
+
+##### **Code**
+```RegEx
+^This
+
+**This** is sentence 1
+**This** is sentence 2
+```
+
+## 3. The dollar sign metacharacter ($)
+The dollar metacharacter works exactly the same as the caret, but it denotes an end-of-line anchor instead:
+
+##### **Code**
+```RegEx
+sentence \d$
+
+This is **sentence 1**
+This is **sentence 2**
+```
+
+And consequently, it will not match a character if it's not at the end:
+
+##### **Code**
+```RegEx
+This$
+
+This is sentence 1
+This is sentence 2
+```
+
+We can also enclose full groups and add these anchors, but we'll get to groups later on.
 
 ## 5. Quantifiers & repetitions *(+, *)*
 We mentioned that RegEx works on a per-character basis. This means that if we want to match a repetition of characters, we need to use an operator that lets us do that.
 
 The asterisk `*` is used to attempt to match the preceding token zero or more times. The plus `+` is used to attempt to match the preceding token once or more times. A token in the RegEx context is a single character or metacharacter we're trying to match.
 
-## 4. Character sets
+We can use the asterisk to match a digit `n` number of times, including 0 times:
 
+##### **Code**
+```RegEx
+3\.\d*
 
-## 5. Ranges
+**3.**
+```
 
+This will match the number even though we do not have decimal places. This is because the asterisk includes zero number of repetitions.
 
-## 6. Negations
+The plus `+` character is very similar, but it only matches if there is one or more appearance of the preceding character:
 
+This would match:
 
-## 7. Alternations
+##### **Code**
+```RegEx
+3\.\d+
 
+**3.14159**
+```
+
+While this would not:
+
+##### **Code**
+```RegEx
+3\.\d+
+
+3.
+```
+
+We can also declare quantifiers as lazy or greedy, and possessive or not possessive. We'll get to those later on.
+
+## 4. Character sets ([abc...n])
+A character set in RegEx is a "box" of optional characters. By box, we refer to a single character that can take multiple forms.
+
+Each "box" can represent a set of combinations that are possible in a given string. For example, the set `[A-Z]` would enclose every capital letter from A to Z, while the set `[.-]` would enclose all dot or hyphen characters.
+
+These would both match:
+
+##### **Code**
+```RegEx
+[Ww]
+
+www
+WWW
+```
+
+But the match would be on a per-character basis, meaning we would get 6 total matches (*one for each character*). If we include a repetition at the end of our set, the number of matches change:
+
+##### **Code**
+```RegEx
+[Ww]+
+
+www
+WWW
+```
+
+This expression would match 2 times.
+
+Something to remember is that most metacharacters act like literals inside a set, meaning if we would like to search for literal dots, we could do so without escaping it:
+
+##### **Code**
+```RegEx
+[.]+
+
+www**..**
+WWW**..**
+```
+
+However, this can sometimes be thought of as bad practice, since we get accustomed to not escaping inside sets, but when we try to match the same metacharacters outside sets, we might forget the escaping. This is especially dangerous when using the dot metacharacter, since it will match anything, and not a specific literal dot.
+
+Sets can also expand alphanumeric character ranges (lower and upper-case):
+
+##### **Code**
+```RegEx
+[A-Fa-f1-4]+
+
+**ABCDEF**G**abcdef**g**1234**5
+```
+
+## 5. Ranges ({a, b})
+Ranges are similar to repetitions, but they provide a fixed number of repetition times:
+
+##### **Code**
+```RegEx
+Amule{1,2}t
+
+**Amuleet**
+Amuleeet
+```
+
+We can set the following:
+- Minimum number of repetitions.
+- Maximum number of repetitions (*can be left open*)
+
+So if we're looking for words with at least 2 `e` characters in `Amulet`, we could do something like such:
+
+##### **Code**
+```RegEx
+Amule{2,}t
+
+Amulet
+**Amuleet**
+**Amuleeet**
+```
+
+## 6. Negations (^, !)
+A negation is exactly what it sounds like; it's a way for us to tell RegEx that we do not want a given character. There are two main ways to do negations:
+- Using the caret `^` metacharacter inside a set.
+- Using the exclamation mark `!` in lookarounds (*will look at them later*).
+
+We can use the caret metacharacter to return every entry except the ones starting with 1 or `\n` (*newline*)
+
+##### **Code**
+```RegEx
+^[^1\n]+
+
+**2345**
+**2367**
+1234
+```
+
+We can also return all characters except a to d:
+
+##### **Code**
+```RegEx
+[^a-d]+
+
+abcd**efghijklmno**
+```
+
+## 7. Alternations (|)
+Alternations are simply an OR logical statement, where we can test for multiple possible conditions, and the expression will match if at least one is true:
+
+##### **Code**
+```RegEx
+(Mr\. \w+) \(He\)|(Mrs\. \w+) \(She\)
+
+**Mr. Sureth (He)**
+**Mrs. Damien (She)**
+Mr. Lopez (She)
+```
+
+Both entries will match, since we're specifying an alternation (*more than one possible valid pattern*).
 
 ---
 
 # Advanced components
 
-## 1. Anchors & boundaries
+## 1. Boundaries
+We already saw two examples of anchors. However, we can also use boundaries to delimit sets of characters.
 
+In contrast to an **anchor**, a **boundary** refers to a position or a marker that separates words, characters, or other elements in a string. Boundaries are used to define limits or edges for pattern matching. They help to ensure that a pattern match occurs only at specific points in the input string, such as at the beginning or end of a word or line.
 
-## 2. Quantifiers & repetitions
+Below are the available boundaries in RegEx:
+- **`\b`**: Word boundary, matches positions between a word character (letters, digits, underscores) and a non-word character.
+- **`\B`**: Non-word boundary, matches positions where `\b` does not match, i.e., within a sequence of word characters or non-word characters.
+- **`\A`**: Start of the input, matches the position at the very beginning of the entire input string.
+- **`\Z`**: End of the input, matches the position at the very end of the entire input string, before the final newline (if any).
+- **`\z`**: End of the input, matches the position at the very end of the entire input string, after the final newline (if any).
+- **`\G`**: Start of the match, matches the position where the previous match ended, or the start of the input for the first match. Useful for consecutive matches.
 
+A word boundary can be used, for example, when we want to make sure that we're delimiting words inside a sentence, and only if this is true, a match will be returned:
 
-## 3. Greedy & lazy operation modes
+##### **Code**
+```RegEx
+\b[A-Za-z]+\b
 
+**This** **is** **a** 2sentence.
+**This** **is** another4sentence.
+```
 
-## 4. Capturing & non-capturing groups
+In this case, we're only matching the separate words that do not contain any character other than upper-case or lower-case alphabetical characters.
 
+The two word delimiters `\b` create a boundary around our expression, so that a set of characters only matches if it's surrounded by literal spaces ` `. 
 
-## 5. Named groups
+## 2. Greedy & lazy quantifiers
+We have already talked about quantifiers for use in repetitions. By default, quantifiers are greedy. Let us explain what greedy is by using a common example.
 
+We want to extract the `html` tags and only the tags in an HTML webpage. An `html` tag can be defined as follows:
 
-## 6. Backreferences
+##### **Code**
+```HTML
+<html>Text here</html>
+```
 
+Where two tags are enclosing our body of text.
 
-## 7. Lookarounds
-Lookarounds are special metacharacters that allow us to specify patterns that must match (*or must not match*) before or after the main pattern you are trying to match.
+We know that `html` tags are enclosed in less than `<` and bigger than `>` characters, so we can do the following:
+
+##### **Code**
+```RegEx
+<.+>
+```
+
+In theory this should match the tag delimiters and everything in between. The problem is that we have two matching delimiters, that enclose the entire sentence `<>`, so our previous expression would match the entire line:
+
+##### **Code**
+```RegEx
+<.+>
+
+**<html>Page title</html>**
+```
+
+This is because by nature, quantifiers are greedy, meaning they return as many characters as possible, without stopping at the first delimiter.
+
+Lazy quantifiers solve this problem: They stop at the first delimiter appearance. We can declare a lazy plus `+` quantifier by using `+?`:
+
+##### **Code**
+```RegEx
+<.+?>
+
+<html>Page title</html>
+```
+
+With this new syntax, the matching will stop at the first delimiter occurrence, and return both matches as we required.
+
+## 3. Capturing & non-capturing groups
+A group is a part of a RegEx pattern enclosed in parentheses `()` metacharacter. Groups let us separate or abstract matching patterns into a whole unit, making them extremely useful when we have extense patterns, would like to keep things more organized, or would like to define groups as variables for later reuse.
+
+There are two main types of groups:
+- Capturing
+	- Named
+	- Unnamed
+- Non-capturing
+
+### 3.1 Unnamed capturing groups
+A capturing group is one that is captured as an actual group, meaning we can access it later in our expression syntax with a reference.
+
+Capturing groups can be named or unnamed. The main difference, is that in the first one we assign a custom tag to our group, while in the latter, the RegEx engine assigns a number based on the group order.
+
+A capturing group is unnamed by default, and can be referenced by an index number that goes from 1 to the total number of unnamed groups on our namespace:
+
+##### **Code**
+```RegEx
+(Hello) (World)
+
+**Hello World**
+```
+
+Where:
+- `Hello` will belong to capturing group 1.
+- `World` will belong to capturing group 2.
+- The literal space in between will not belong to any group, since it's not enclosed in parenthesis `()`.
+
+If we want to reference our first capturing group further down the pattern, we can do so:
+
+##### **Code**
+```RegEx
+^(Hello) (World) \g{1}
+
+**Hello World Hello**
+```
+
+In this example, we're referencing our first capturing group by using the metacharacter `\g{n}`, where `n` is the group number.
+
+We can also reference groups by expressing them in negative number notation:
+
+##### **Code**
+```RegEx
+^(Hello) (World) \g{-1}
+
+**Hello World World**
+```
+
+In this example, we match the same text as most recently matched by the 2nd capturing group, denoting it as `-1`.
+
+If we had 3 capturing groups, the group `-1` would actually be the third group, and `-2` would be the second:
+
+##### **Code**
+```RegEx
+^(Hello) (Hello) (World) \g{-2}
+
+**Hello Hello World Hello**
+```
+
+Note: Group syntax heavily depends on the RegEx flavor we're using. It's recommended to always check the documentation for the RegEx type we're using.
+
+### 3.2 Named capturing groups
+Named capturing groups are very similar to an unnamed version; the only difference is that the first includes a tag we can custom define.
+
+Let us illustrate with an example where we match an email address, and separate its parts into named capturing groups:
+
+##### **Code**
+```RegEx
+^(?<email_address>(?<first_name>\w+)\.(?<last_name>\w+)\@(?<domain_name>\w+)(?<top_level_domain_name>\.\w+))$
+
+**john.jelly@gmail.com**
+```
+
+What we're doing here is separating our pattern into 4 main subgroups, enclosed by one global group:
+- `email_address`
+	- `first_name`
+	- `last_name`
+	- `domain_name`
+	- `top_level_domain_name`
+
+So in the end, we get:
+- One email address group that we can reference as variable.
+- One first name group that we can use to validate that person's first name.
+- One last name that we can use to validate for the same purpose.
+- One domain name.
+- One top-level domain name.
+
+If we split each group, we should get the following:
+- `john.jelly@gmail.com`
+	- `john`
+	- `jelly`
+	- `gmail`
+	- `.com`
+
+As we'll see further on, named capturing groups are extremely useful in many programming languages since we can reference this groups and extract them as if they were variables throughout our code. 
+
+For example, if we want to switch the order in which first and last name appear in the email address, we can create a new string by substituting:
+
+##### **Code**
+```RegEx
+${last_name}\.${first_name}\@${domain_name}${top_level_domain_name}
+```
+
+##### **Output**
+```
+jelly.john@gmail.com
+```
+
+### 3.3 Non-capturing groups
+A non-capturing group is one that is not abstracted as an actual group in our namespace, meaning we're not using an index or name to define it; it simply is a matching pattern enclosed in parenthesis without the possibility to reference it afterwards.
+
+Non-capturing groups are useful when we don't wish to saturate our namespace with unnecessary patterns; it may be that we don't intend to use a given group in the future. 
+
+They can be defined by using a `?:` inside the parenthesis and before our pattern:
+
+##### **Code**
+```RegEx
+^(\w+)(?:\, )(\w+)$
+
+**Hello, there**
+```
+
+The non-capturing group will be `, `.
+
+## 4. Backreferences & backtracking
+We already saw an example of **backreferencing** in capturing groups, when we referenced a previous group in a section appearing after our first match. This is closely related with another concept called **backtracking**.
+
+The RegEx engine has the capacity to **backtrack**, meaning it retries a match starting from an earlier position in the input string when the current match attempt fails.
+
+This is useful, but there are also cases where we might want to avoid it. We must remember that RegEx, as with any other searching tool, is an engine that executes a pattern-searching process behind the scenes. Each backtracking means that the engine must go over already-visited patterns again; this can lower performance and result in higher searching times.
+
+Fortunately for us, there is one metacharacter that avoids backtracking when working with quantifiers: possessive quantifiers.
+
+A possessive quantifier is a type of quantifier that tells the RegEx engine to match as much of the input string as possible without allowing backtracking. It is denoted by an extra plus sign `+` at the end of the quantifier, such as `a++` or `.*+`.
+
+For example, the pattern `a++b` would match one or more `a` characters followed by a `b` character, without allowing backtracking to retry the `a` match if the subsequent `b` match fails.
+
+Let us think of another example where we want to match a string that starts with any number of `a` characters, followed by the letter `b`, and ends with any number of `c` characters. For example, the string `aaabcccccc`.
+
+Using a normal greedy quantifier, we can write the following regular expression:
+
+##### **Code**
+```RegEx
+a+b.*c
+
+**aaabc**
+```
+
+Here, the `+` matches one or more `a` characters, and the `.*` matches any character (*except newlines*) zero or more times, followed by the `c` character. However, the `.*` is greedy, meaning it will match as many characters as possible, including the `a` characters that were already matched by the `+`. This is why in the case where the input string is `"aaabc"`, the regex engine will find a match; it backtracks and "*refinds*" the `c` character already found by `.*`
+
+To avoid this problem and make the quantifier possessive, we can add an extra plus sign `+` after the `.*`:
+
+##### **Code**
+```RegEx
+a++b.*+c
+
+aaabc
+```
+
+Which will not match the pattern, because it cannot backtrack, so the actual `c` is not found as literal `c`, but as any character using the dot metacharacter.
+
+A main use case for using possessive quantifiers in regular expressions is when matching long, complex, or repetitive strings that may cause excessive backtracking. For example, when matching a string with multiple repeating patterns, such as a large HTML document with nested tags, possessive quantifiers can help avoid the potentially infinite backtracking that can occur with certain patterns and input data.
+
+## 5. Lookarounds
+**Lookarounds** are special metacharacters that allow us to specify patterns that must match (*or must not match*) before or after the main pattern we are trying to match.
 
 There are 4 main lookaround implementations in RegEx:
 - Positives
@@ -408,7 +822,7 @@ Mrs. Danna Pereia
 
 Also, we'll use the `gm` flags for all lookaround examples, so we need to make sure we include that in our expressions.
 
-### 7.1 Positive lookbehind
+### 5.1 Positive lookbehind
 A positive lookbehind is telling RegEx to match `b` if `a` exists; it's looking behind `b`, and returning `b` if the pattern behind (`a`) matches.
 
 The basic syntax is as follows:
@@ -432,7 +846,7 @@ Mr. **Oleg** Smith
 Mrs. Danna Pereia
 ```
 
-### 7.2 Positive lookahead
+### 5.2 Positive lookahead
 A positive lookbehind is telling RegEx to match `a` if `b` exists; it's looking ahead `a`, and returning `a` if the pattern ahead (`b`) matches.
 
 The basic syntax is as follows:
@@ -456,7 +870,7 @@ Mr. **Oleg** Smith
 Mrs. Danna Pereia
 ```
 
-### 7.3 Negative lookbehind
+### 5.3 Negative lookbehind
 A positive lookbehind is telling RegEx to match `b` if `a` does not exist; it's looking behind `b`, and returning `b` if the pattern behind (`a`) does not match.
 
 The basic syntax is as follows:
@@ -485,7 +899,7 @@ This one is slightly more elaborate, so let us break it down:
 2. Define a word boundary. This tells RegEx that we only want to match `\w+` if it's a word boundary (*meaning the complete surname*)
 3. Match any alphanumeric using `\w` repeated until the end of the line using `$`.
 
-### 7.4 Negative lookahead
+### 5.4 Negative lookahead
 A positive lookbehind is telling RegEx to match `a` if `b` does not exist; it's looking ahead `a`, and returning `a` if the pattern ahead (`b`) does not match.
 
 The basic syntax is as follows:
@@ -1393,7 +1807,7 @@ RegEx mastery can be summarized in one single expression: `(practice){100,}`. Re
 
 Below are some resources we can consult if we wish to further explore RegEx matching:
 
-Disclaimer: None of the resources below contain referral links. The entire selection is of my own choosing.
+**Disclaimer:** None of the resources below contain referral links. The entire selection is of my own choosing.
 
 - **RegEx debuggers & visualization tools:**
 	- [RegEx101](https://regex101.com): For the tenth time in this segment, this resource is invaluable for anyone looking to write serious RegEx. It comes with multiple features such as a real-time editor supporting multiple RegEx flavors, the option to save expressions and create a library, the option to perform matches & substitutions on the fly, a debugger, and even a code generator (*yes, a code generator*) to translate our expressions to any supported language we desire.
@@ -1406,11 +1820,17 @@ Disclaimer: None of the resources below contain referral links. The entire selec
 	- [RegEx101](https://regex101.com): For the eleventh time in this segment, RegEx101 comes with a built-in RegEx quiz, including a total of 28 tests to put our RegEx expertise to the limits.
 	- [Regex Cross­word](https://regexcrossword.com/): A super fun set of crossword puzzles based on RegEx patterns. A little cryptic at first, but highly addictive to all nerds out there.
 	- [RegexLearn](https://regexlearn.com/learn): A nice platform containing quizzes organized into two modules: RegEx 101 for beginners, and RegEx for SEO for more advanced users.
-	- [RegExOne](https://regexone.com/): An interactive set of exercises explaining base concepts and then putting them to test.
+	- [RegExOne](https://regexone.com/): An interactive set of 20+ exercises explaining base concepts and then putting them to test.
 	- [HackerRank, RegEx Domain](https://www.hackerrank.com/domains/regex): A nice set of tests, from easy to hard, solved and unsolved, with the possibility to filter by subtopic such as repetitions, grouping and capturing, assertions, backreferences, and more.
+	- [Regex Golf](https://alf.nu/RegexGolf?world=regex&level=r00): A nice practice platform that scores based on the number of characters used in each expression (*the less the better*) containing multiple levels. From easy to hard. Also, Teukon & Holiday versions are included.
 
 - **Forums & community:**
 	- [regex Subreddit](https://www.reddit.com/r/regex/): A vibrant community of RegEx enthusiasts posting questions and solutions to all kinds of eccentric expressions.
+
+- **Other RegEx utils:**
+	- [CommonRegex, madisonmay](https://github.com/madisonmay/CommonRegex): A collection of common regular expressions bundled with an easy to use interface.
+	- [awesome-regex, aloisdg](A curated collection of awesome Regex libraries, tools, frameworks and software): A curated collection of awesome Regex libraries, tools, frameworks and software.
+	- [Useful Regex Patterns, Luke Haas](https://projects.lukehaas.me/regexhub/): A collection of useful patterns for common use cases, including an interactive tester.
 
 - **Other learning resources:**
 	- [Regular Expressions in Python, Patrick Loeber, YouTube](https://www.youtube.com/watch?v=AEE9ecgLgdQ&): An amazing free 1-hour comprehensive course for getting started with RegEx in Python.
@@ -1423,12 +1843,19 @@ Disclaimer: None of the resources below contain referral links. The entire selec
 ---
 
 # Conclusions
-We've reviewed 
+We've reviewed everything that needs to be learned from regular expressions; the building blocks we can use to create any possible pattern. This is the beauty with RegEx; from simple, we can build extremely complex expressions to match virtually any body of text out there. 
+
+RegEx is a powerful tool that can help us perform multiple actions: from validating email addresses to cleaning entire databases, regular expressions live in many programming languages and should be known if we're cleaning datasets, parsing segments of texts, mining data, or even as a mental challenge.
+
+Additionally, RegEx is a natural part of the Linux family; if we're venturing into the system administration world, regular expressions live as a vital part of multiple legendary &  extremely powerful bash commands such as `grep`, `sed`, `awk`, `find`, `expr`, `basename`, `sort`, and many more.
 
 ---
 
 # References
-- 
+- [RegexOne](https://regexone.com/)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [Python Documentation, re — Regular expression operations](https://docs.python.org/3/library/re.html)
+- [Google for Education, Python Regular Expressions](https://developers.google.com/edu/python/regular-expressions)
 
 ---
 
