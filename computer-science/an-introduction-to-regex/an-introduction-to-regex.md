@@ -25,62 +25,63 @@ We'll be using Python scripts & RegEx expressions which can be found in the [Bl
 ---
 
 # Table of Contents
-- What is RegEx?
-	- An introduction
-- Historical context
-- Why is it useful?
-	- Searching & replacing complex patterns
-	- Validating user inputs
-- Why is it hard?
-- RegEx Flavors
-- Preparing our environment
-- Basic syntax & rules
-	- Modes / flags
-	- Literal characters
-	- Metacharacters list
-- Main metacharacters
-	- The dot metacharacter (.)
-	- The caret metacharacter (^)
-	- The dollar sign metacharacter ($)
-	- Quantifiers & repetitions (+, \*)
-	- Character sets (\[abc...n])
-	- Ranges ({a, b})
-	- Negations (^, !)
-	- Alternations (|)
-- Advanced components
-	- Boundaries
-	- Greedy & lazy quantifiers
-	- Capturing & non-capturing groups
-		- Unnamed capturing groups
-		- Named capturing groups
-		- Non-capturing groups
-	- Backreferences & backtracking
-	- Lookarounds
-		- Positive lookbehind
-		- Positive lookahead
-		- Negative lookbehind
-		- Negative lookahead
-- Unit testing
-	- Testing a simple expression
-- RegEx in Python
-	- Using re
-		- Using finditer
-		- Using findall
-		- Using match
-		- Using search
-		- Operating on re.Match objects
-- Mini-project: Cleaning a client's database
-	- Making sense of the data
-	- First names
-	- Last names
-	- Optional suffix
-	- Separators
-	- Validated email address
-	- Validated phone numbers
-	- Home addresses
-	- Validated IPv4 addresses
-	- Matching the database
-- Next steps
+- [What is RegEx?](#what-is-regex)
+	- [An introduction](#1-an-introduction)
+	- [Visualizing RegEx](#2-visualizing-regex)
+- [Historical context](#historical-context)
+- [Why is it useful?](#why-is-it-useful)
+	- [Searching & replacing complex patterns](#1-searching--replacing-complex-patterns)
+	- [Validating user inputs](#2-validating-user-inputs)
+- [Why is it hard?](#why-is-it-hard)
+- [RegEx Flavors](#regex-flavors)
+- [Preparing our environment](#preparing-our-environment)
+- [Basic syntax & rules](#basic-syntax--rules)
+	- [Modes / flags](#1-modes--flags)
+	- [Literal characters](#2-literal-characters)
+	- [Metacharacters list](#3-metacharacters-list)
+- [Main metacharacters](#main-metacharacters)
+	- [The dot metacharacter (.)](#1-the-dot-metacharacter-)
+	- [The caret metacharacter (^)](#2-the-caret-metacharacter-)
+	- [The dollar sign metacharacter ($)](#3-the-dollar-sign-metacharacter-)
+	- [Quantifiers & repetitions (+, \*)](#5-quantifiers--repetitions--)
+	- [Character sets (\[abc...n\])](#4-character-sets-abcn)
+	- [Ranges ({a, b})](#5-ranges-a-b)
+	- [Negations (^, !)](#6-negations--)
+	- [Alternations (|)](#7-alternations-)
+- [Advanced components](#advanced-components)
+	- [Boundaries](#1-boundaries)
+	- [Greedy & lazy quantifiers](#2-greedy--lazy-quantifiers)
+	- [Capturing & non-capturing groups](#3-capturing--non-capturing-groups)
+		- [Unnamed capturing groups](#31-unnamed-capturing-groups)
+		- [Named capturing groups](#32-named-capturing-groups)
+		- [Non-capturing groups](#33-non-capturing-groups)
+	- [Backreferences & backtracking](#4-backreferences--backtracking)
+	- [Lookarounds](#5-lookarounds)
+		- [Positive lookbehind](#51-positive-lookbehind)
+		- [Positive lookahead](#52-positive-lookahead)
+		- [Negative lookbehind](#53-negative-lookbehind)
+		- [Negative lookahead](#54-negative-lookahead)
+- [Unit testing](#unit-testing)
+	- [Testing a simple expression](#1-testing-a-simple-expression)
+- [RegEx in Python](#regex-in-python)
+	- [Using re](#1-using-re)
+		- [Using finditer](#11-using-finditer)
+		- [Using findall](#12-using-findall)
+		- [Using match](#13-using-match)
+		- [Using search](#14-using-search)
+		- [Operating on re.Match objects](#15-operating-on-rematch-objects)
+- [Mini-project: Cleaning a client's database](#mini-project-cleaning-a-clients-database)
+	- [Making sense of the data](#1-making-sense-of-the-data)
+	- [First names](#2-first-names)
+	- [Last names](#3-last-names)
+	- [Optional suffix](#4-optional-suffix)
+	- [Separators](#5-separators)
+	- [Validated email address](#6-validated-email-address)
+	- [Validated phone numbers](#7-validated-phone-numbers)
+	- [Home addresses](#8-home-addresses)
+	- [Validated IPv4 addresses](#9-validated-ipv4-addresses)
+	- [Matching the database](#10-matching-the-database)
+- [Next steps](#next-steps)
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -136,7 +137,11 @@ We can write a simple RegEx expression that searches for email domains:
 
 A railroad diagram would look like such:
 
-B019A036_regex_vis_01
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_01.jpg">
+</p>
+
+###### Figure 1: Conventional RegEx Railroad Diagram
 
 We can see that there's a train-like diagram, where each RegEx step is explained in detail, including:
 - Which literal character is being searched for.
@@ -857,7 +862,11 @@ We can illustrate this a little bit better with a railroad diagram:
 (?<=before)target(?=after)
 ```
 
-B019A036_regex_vis_02
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_02.jpg">
+</p>
+
+###### *Figure 2: Aaaaa* 
 
 As we can see, there is a `before` (*Preceded by*), and an `after` (*Followed by*). This diagram refers specifically to the positive variants, but we can do a similar diagram for the negative versions by using the negation metacharacter:
 
@@ -866,7 +875,11 @@ As we can see, there is a `before` (*Preceded by*), and an `after` (*Followed by
 (?<!before)target(?!after)
 ```
 
-B019A036_regex_vis_03
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_03.jpg">
+</p>
+
+###### *Figure 3: Aaa*
 
 Let us define a simple example that will serve to understand better:
 
@@ -1003,7 +1016,11 @@ A unit test should typically consist of a single string that represents an edge 
 
 For example, a nice & simple set of 4 edge cases in an IPv4 validation implementation, would be the following:
 
-B019A036_regex_vis_12.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_12.jpg">
+</p>
+
+###### *Figure 4: Aaa*
 
 We can then run our IPv4 RegEx segment:
 
@@ -1014,17 +1031,33 @@ We can then run our IPv4 RegEx segment:
 
 And it will pass all tests:
 
-B019A036_regex_vis_13.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_13.jpg">
+</p>
+
+###### *Figure 5: Aaa*
 
 What's even more amazing, is that if we encounter a bug in our test, we can actually debug it right from inside the Unit Tester. We can do this by selecting the bug icon, and a RegEx Debugger will appear:
 
-B019A036_regex_vis_14.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_14.jpg">
+</p>
 
-B019A036_regex_vis_15.png
+###### *Figure 6: Aaa*
+
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_15.jpg">
+</p>
+
+###### *Figure 7: Aaa*
 
 From here, we can play all the matching steps as if it were a song, where each step will be shown with its number, corresponding RegEx fragment, and resulting match in our test string:
 
-B019A036_regex_vis_16.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_16.jpg">
+</p>
+
+###### *Figure 8: Aaa*
 
 Unit testing in itself is an art, since it requires vast knowledge of the algorithm we're implementing and its limitations in order to create meaningful tests.
 
@@ -1422,7 +1455,11 @@ The first group we already discussed. However, the second one includes the optio
 
 In the end, we should end up with something like such:
 
-B019A036_regex_vis_04.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_04.jpg">
+</p>
+
+###### *Figure 9: Aaa*
 
 ## 3. Last names
 This one is much simpler, since we're assuming that we do not have middle names. Naturally, the set of alphabetical characters following the first name, should be the last name. However, we need to take the shortened versions as well. These cases would appear as: `James B.`, where `B.` is the shortened version of James's last name. This can be handled by an optional literal dot at the end.
@@ -1434,7 +1471,11 @@ This one is much simpler, since we're assuming that we do not have middle names.
 
 Below we can see our expression's diagram:
 
-B019A036_regex_vis_05.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_05.jpg">
+</p>
+
+###### *Figure 10: Aaa*
 
 ## 4. Optional suffix
 There are some instances where names have `Jr.` suffixes. This field should be optional, since it only occurs on a subset of our entire dataset. Also, we want to make sure that we include both possible versions: `Jr.` and `Sr.`, so we'll include an alternation between the two:
@@ -1446,7 +1487,11 @@ There are some instances where names have `Jr.` suffixes. This field should be o
 
 The diagram should look like such:
 
-B019A036_regex_vis_06.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_06.jpg">
+</p>
+
+###### *Figure 11: Aaa*
 
 ## 5. Separators
 We get to the point where we encounter these weird separators we mentioned earlier. We can have the following options, or a combination of the three:
@@ -1488,7 +1533,11 @@ Let us break down our expression in more detail:
 
 Our diagram should look like such:
 
-B019A036_regex_vis_08.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_08.jpg">
+</p>
+
+###### *Figure 12: Aaa*
 
 ## 7. Validated phone numbers
 As mentioned earlier, a valid phone number must contain the following:
@@ -1506,7 +1555,11 @@ To ensure that these conditions are met, we can express our pattern as such:
 
 Which would result in the following diagram:
 
-B019A036_regex_vis_09.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_09.jpg">
+</p>
+
+###### *Figure 13: Aaa*
 
 ## 8. Home addresses
 Next comes the victim's home address. Although this was not a required field, we can also separate it into a group in case it's required in a future iteration.
@@ -1526,7 +1579,11 @@ Also, we'll need to account for our final weird character separator:
 
 The diagram should look something like such:
 
-B019A036_regex_vis_10.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_10.jpg">
+</p>
+
+###### *Figure 14: Aaa*
 
 ## 9. Validated IPv4 addresses
 Now, for the final piece, the IPv4 addresses, we need to do a little more magic, since these are trickier.
@@ -1575,7 +1632,11 @@ Now that we have all our possible combinations, we can express a valid pattern u
 
 The diagram should look like such:
 
-B019A036_regex_vis_11.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_11.jpg">
+</p>
+
+###### *Figure 15: Aaa*
 
 ## 10. Matching the database
 After all the previous steps, we should end up with something like such:
