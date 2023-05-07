@@ -25,7 +25,62 @@ We'll be using Python scripts & RegEx expressions which can be found in the [Bl
 ---
 
 # Table of Contents
-- 
+- What is RegEx?
+	- An introduction
+- Historical context
+- Why is it useful?
+	- Searching & replacing complex patterns
+	- Validating user inputs
+- Why is it hard?
+- RegEx Flavors
+- Preparing our environment
+- Basic syntax & rules
+	- Modes / flags
+	- Literal characters
+	- Metacharacters list
+- Main metacharacters
+	- The dot metacharacter (.)
+	- The caret metacharacter (^)
+	- The dollar sign metacharacter ($)
+	- Quantifiers & repetitions (+, \*)
+	- Character sets (\[abc...n])
+	- Ranges ({a, b})
+	- Negations (^, !)
+	- Alternations (|)
+- Advanced components
+	- Boundaries
+	- Greedy & lazy quantifiers
+	- Capturing & non-capturing groups
+		- Unnamed capturing groups
+		- Named capturing groups
+		- Non-capturing groups
+	- Backreferences & backtracking
+	- Lookarounds
+		- Positive lookbehind
+		- Positive lookahead
+		- Negative lookbehind
+		- Negative lookahead
+- Unit testing
+	- Testing a simple expression
+- RegEx in Python
+	- Using re
+		- Using finditer
+		- Using findall
+		- Using match
+		- Using search
+		- Operating on re.Match objects
+- Mini-project: Cleaning a client's database
+	- Making sense of the data
+	- First names
+	- Last names
+	- Optional suffix
+	- Separators
+	- Validated email address
+	- Validated phone numbers
+	- Home addresses
+	- Validated IPv4 addresses
+	- Matching the database
+- Next steps
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -394,7 +449,7 @@ This is sentence 2
 
 We can also enclose full groups and add these anchors, but we'll get to groups later on.
 
-## 5. Quantifiers & repetitions *(+, *)*
+## 5. Quantifiers & repetitions (+, \*)
 We mentioned that RegEx works on a per-character basis. This means that if we want to match a repetition of characters, we need to use an operator that lets us do that.
 
 The asterisk `*` is used to attempt to match the preceding token zero or more times. The plus `+` is used to attempt to match the preceding token once or more times. A token in the RegEx context is a single character or metacharacter we're trying to match.
@@ -930,6 +985,53 @@ Let us break it down:
 
 ---
 
+# Unit testing
+Unit testing is a software development process in which the smallest testable parts of an application, called units, are individually scrutinized for proper operation. The level of rigorousness is chosen by the developer, but ideally it must contain all the possible edge cases in order to prevent bugs with untested samples.
+
+As we might have noticed, regular expressions are prone to truly awful bugs. This is because of two reasons:
+- We're generating gigantic expressions in a single line, where we can easily miss a single character, potentially rendering our whole expression useless.
+- We don't always know all the edge cases: A client can provide us with a dataset that contains all kinds of crazy patterns and errors that we did not originally account for.
+
+This is why it's always recommended to perform thorough testing and debugging using an external tool, such as RegEx101.
+
+This tool has a built-in unit tester, where we can design our own tests and perfect our expressions to our own liking.
+
+## 1. Testing a simple expression
+For this, we'll head to [RegEx101](https://regex101.com/), and select the **Unit Tests** section, from where we'll be able to design our own unit tests.
+
+A unit test should typically consist of a single string that represents an edge case we would like to test.
+
+For example, a nice & simple set of 4 edge cases in an IPv4 validation implementation, would be the following:
+
+B019A036_regex_vis_12.png
+
+We can then run our IPv4 RegEx segment:
+
+##### **Code**
+```RegEx
+(?P<ip_address>(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]))$
+```
+
+And it will pass all tests:
+
+B019A036_regex_vis_13.png
+
+What's even more amazing, is that if we encounter a bug in our test, we can actually debug it right from inside the Unit Tester. We can do this by selecting the bug icon, and a RegEx Debugger will appear:
+
+B019A036_regex_vis_14.png
+
+B019A036_regex_vis_15.png
+
+From here, we can play all the matching steps as if it were a song, where each step will be shown with its number, corresponding RegEx fragment, and resulting match in our test string:
+
+B019A036_regex_vis_16.png
+
+Unit testing in itself is an art, since it requires vast knowledge of the algorithm we're implementing and its limitations in order to create meaningful tests.
+
+The great thing is that this practice applies to any programming language. For example, Java & Scala both possess a very strong unit testing infrastructure, specifically designed to build tests that could potentially catch bugs and save us many hours and empty wallets.
+
+---
+
 # RegEx in Python
 Up until now we've only seen regular expressions in a debugger, but RegEx is too powerful to just play around with it and not do actual work in a programming language.
 
@@ -1248,60 +1350,6 @@ Phone Number Length: 14
 Phone Number: (901) 234-5678
 ```
 
-
----
-
-# Unit testing
-Unit testing is a software development process in which the smallest testable parts of an application, called units, are individually scrutinized for proper operation. The level of rigorousness is chosen by the developer, but ideally it must contain all the possible edge cases in order to prevent bugs with untested samples.
-
-As we might have noticed, regular expressions are prone to truly awful bugs. This is because of two reasons:
-- We're generating gigantic expressions in a single line, where we can easily miss a single character, potentially rendering our whole expression useless.
-- We don't always know all the edge cases: A client can provide us with a dataset that contains all kinds of crazy patterns and errors that we did not originally account for.
-
-This is why it's always recommended to perform thorough testing and debugging using an external tool, such as RegEx101.
-
-This tool has a built-in unit tester, where we can design our own tests and perfect our expressions to our own liking.
-
-## 1. Testing a simple expression
-For this, we'll head to [RegEx101](https://regex101.com/), and select the **Unit Tests** section, from where we'll be able to design our own unit tests.
-
-A unit test should typically consist of a single string that represents an edge case we would like to test.
-
-For example, a nice & simple set of 4 edge cases in an IPv4 validation implementation, would be the following:
-
-B019A036_regex_vis_12.png
-
-We can then run our IPv4 RegEx segment:
-
-##### **Code**
-```RegEx
-(?P<ip_address>(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){3}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]))$
-```
-
-And it will pass all tests:
-
-B019A036_regex_vis_13.png
-
-What's even more amazing, is that if we encounter a bug in our test, we can actually debug it right from inside the Unit Tester. We can do this by selecting the bug icon, and a RegEx Debugger will appear:
-
-B019A036_regex_vis_14.png
-
-B019A036_regex_vis_15.png
-
-From here, we can play all the matching steps as if it were a song, where each step will be shown with its number, corresponding RegEx fragment, and resulting match in our test string:
-
-B019A036_regex_vis_16.png
-
-Unit testing in itself is an art, since it requires vast knowledge of the algorithm we're implementing and its limitations in order to create meaningful tests.
-
-The great thing is that this practice applies to any programming language. For example, Java & Scala both possess a very strong unit testing infrastructure, specifically designed to build tests that could potentially catch bugs and save us many hours and empty wallets.
-
----
-
-# Worked-out examples
-
-
-
 ---
 
 # Mini-project: Cleaning a client's database
@@ -1529,7 +1577,7 @@ The diagram should look like such:
 
 B019A036_regex_vis_11.png
 
-## 11. Matching the database
+## 10. Matching the database
 After all the previous steps, we should end up with something like such:
 
 ##### **Code**
