@@ -356,22 +356,20 @@ There are 11 main metacharacters that are special in RegEx. Each metacharacter (
 
 We also have other special metacharacters:
 - Digits, words, and whitespaces:
-1. `\d` - Matches any digit character.
-2. `\D` - Matches any character that is not a digit character.
-3. `\w` - Matches any word character (_alphanumeric & underscore_). Only matches low-ascii characters (_no accented or non-roman characters_).
-4. `\W` - Matches any character that is not a word character (_alphanumeric & underscore_).
-5. `\s` - Matches any whitespace character (_spaces, tabs, line breaks_).
-6. `\S` - Matches any character that is not a whitespace character.
+	1. `\d` - Matches any digit character.
+	2. `\D` - Matches any character that is not a digit character.
+	3. `\w` - Matches any word character (_alphanumeric & underscore_). Only matches low-ascii characters (_no accented or non-roman characters_).
+	4. `\W` - Matches any character that is not a word character (_alphanumeric & underscore_).
+	5. `\s` - Matches any whitespace character (_spaces, tabs, line breaks_).
+	6. `\S` - Matches any character that is not a whitespace character.
 
 - Non-printable characters
-8. `\t` - Matches a TAB character.
-9. `\n` - Line Feed: Matches a newline character
-10. `\r` - The carriage return character moves the cursor to the beginning of the line without advancing to the next line.
-11. `\f` - Form feed is a page-breaking ASCII control character. It forces the printer to eject the current page and to continue printing at the top of another page.
+	1. `\t` - Matches a TAB character.
+	2. `\n` - Line Feed: Matches a newline character
+	3. `\r` - The carriage return character moves the cursor to the beginning of the line without advancing to the next line.
+	4. `\f` - Form feed is a page-breaking ASCII control character. It forces the printer to eject the current page and to continue printing at the top of another page.
 
-If we want to search for any of these literally, we must translate the metacharacter into a literal character (_escape it_). We do this using the backslash `\`.
-
-Escaping metacharacters:
+If we want to search for any of these literally, we must translate the metacharacter into a literal character (_escape it_). We do this using the backslash `\`:
 
 ##### **Code**
 ```RegEx
@@ -577,7 +575,7 @@ A negation is precisely what it sounds like; it's a way to tell RegEx that we do
 - Using the caret `^` metacharacter inside a set.
 - Using the exclamation mark `!` in lookarounds (*will look at them later*).
 
-We can use the caret metacharacter to return every entry except the ones starting with 1 or `\n` (*newline*)
+We can use the caret metacharacter to return every entry except the ones starting with 1 or `\n` (*newline*):
 
 ##### **Code**
 ```RegEx
@@ -592,7 +590,7 @@ We must not get confused with the two caret metacharacters:
 - The first one asserts the position at the beginning of the line.
 - The second one negates the characters succeeding it.
 
-We can also return all characters except a to d:
+We can also return all characters except `a` to `d`:
 
 ##### **Code**
 ```RegEx
@@ -839,7 +837,7 @@ a+b.*c
 **aaabc**
 ```
 
-Here, the `+` matches one or more `a` characters, and the `.*` matches any character (*except newlines*) zero or more times, followed by the `c` character. However, the `.*` is greedy, meaning it will match as many characters as possible, including the `a' characters already matched by the `+`. This is why in the case where the input string is `aaabc`, the RegEx engine will find a match; it backtracks and "*refinds*" the `c` character already found by `.*`
+Here, the `+` matches one or more `a` characters, and the `.*` matches any character (*except newlines*) zero or more times, followed by the `c` character. However, the `.*` is greedy, meaning it will match as many characters as possible, including the 'a' characters already matched by the `+`. This is why in the case where the input string is `aaabc`, the RegEx engine will find a match; it backtracks and "*refinds*" the `c` character already found by `.*`
 
 To avoid this problem and make the quantifier possessive, we can add an extra plus sign `+` after the `.*`:
 
@@ -878,6 +876,8 @@ We can illustrate this a little bit better with a railroad diagram:
 (?<=before)target(?=after)
 ```
 
+Where the railroad diagram would look like such:
+
 <p align="center">
   <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_02.jpg">
 </p>
@@ -890,6 +890,8 @@ As we can see, there is a `before` (*Preceded by*) and an `after` (*Followed by*
 ```RegEx
 (?<!before)target(?!after)
 ```
+
+Where the railroad diagram would look like such:
 
 <p align="center">
   <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_03.jpg">
@@ -1488,7 +1490,7 @@ This one is much simpler since we assume we do not have middle names. Naturally,
 Below we can see our expression's diagram:
 
 <p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_05.jpg">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/05/B019A036_regex_vis_05_MOD.jpg">
 </p>
 
 ###### *Figure 10: Railroad Diagram For Last Name Matching*
@@ -1534,7 +1536,7 @@ The railroad diagram should look like such:
 
 ## 6. Validated email address
 A typical email address has five main components:
-- A **unique username** within the domain. It can contain special characters (`_, -, .`) and/or alphanumerical characters.
+- A unique username within the domain. It can contain special characters (`_, -, .`) and/or alphanumerical characters.
 - An `@` separator character.
 - A domain name (*assumed to be commercial*).
 - A literal dot `.` separator.
@@ -1638,7 +1640,7 @@ We must remember that some addresses are reserved (*e.g., `0.0.0.0`, `127.0.0.1`
 
 When working with IP Addresses, we have one main problem; we need to account for different possibilities of number combinations:
 - A single number: Between 0 and 9.
-- Two numbers: Each between 0 and 9
+- Two numbers: Each between 0 and 9.
 - Three numbers $n \leq 199$ : The first number is between 0 and 1. The rest is between 0 and 9.
 - Three numbers $200 \leq n \leq 249$ : The first number $==2$. The second is between 0 and 4. The third is between 0 and 9.
 - Three numbers $250 \leq n \leq 255$: The first number $==2$. The second $==2$. The third is between 0 and 5.
