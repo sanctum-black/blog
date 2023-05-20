@@ -21,86 +21,99 @@ We'll be using Scala 3 scripts which can be found in the [Blog Article Repo](ht
 ---
 
 # Table of Contents
-- What is Scala?
-	- A brief historical overview
-	- The foundations
-- Why Scala?
-	- Functional Programming
-	- Object-Oriented Programming
-	- Strong static typing
-- What to expect
-- Preparing our environment
-	- Installing Scala 3 & sbt using Coursier
-	- Installing VS Code
-	- Installing Metals for VS Code
-- Creating a new project
-- Basic syntax
-	- Commenting
-	- Variables
-		- Lazy
-		- Eager
-	- Printing & strings
-	- Optional braces
-	- Optional semicolons
-	- Indentation
-	- Functions
-	- Blocks
-- Basic data types
-	- Type hierarchy structure
-	- Numeric types
-	- Textual types
-	- Boolean type
-	- Unit type
-	- Nothing type
-- Control structures
-	- Conditionals
-	- Pattern matching
-	- Loops
-		- while loops
-		- for loops
-		- for comprehensions
-	- Exception handling
-	- Collections and higher-order functions
-		- Higher-order functions
-		- map
-		- filter
-		- reduce
-- Type system
-	- Intersection and union types
-	- Opaque type aliases
-	- Type lambdas
-	- Type covariance & variance
-- Metaprogramming
-	- Macros
-	- Inline methods
-	- Quotes & splices
-- Object-Oriented Programming
-	- Classes
-		- Non-abstract classes
-		- Abstract classes
-		- Constructors and initialization
-	- Objects
-	- Traits
-	- Inheritance & polymorphism
-		- The Liskov Substitution Principle
-- Simplified implicits
-	- New given/using syntax
-	- Extension methods
-	- Type class derivation
-	- Context functions
-- Enums and ADTs
-	- Enumerations
-		- Basic enums
-		- Parameterized enums
-	- Algebraic Data Types (ADTs)
-		- Sealed traits and case classes
-		- Match types
-- Packaging
-	- Understanding packages and package hierarchy
-	- Declaring packages
-	- Importing & using packages
-- Unit testing
-- Next steps
+- What is Scala?]()
+	- A brief historical overview]()
+	- The foundations]()
+- Why Scala?]()
+	- Scala(bility)]()
+	- Parallelism]()
+	- Security]()
+	- Adoption]()
+	- Functional programming]()
+- What to expect]()
+	- The Scala way of thinking]()
+		- Embracing immutability]()
+		- Using pattern matching and deconstruction]()
+		- Adjusting to a type-driven development]()
+		- Favoring composition over inheritance]()
+		- Using powerful abstractions]()
+		- Taking advantage of concurrency and parallelism]()
+		- Unit testing]()
+	- Versioning and IDEs]()
+- Preparing our environment]()
+	- Installing Scala 3 & sbt using Coursier]()
+	- Installing VS Code]()
+	- Installing Metals for VS Code]()
+- The Scala REPL]()
+- Creating a new project]()
+	- Creating a project]()
+	- The directory structure]()
+	- Basic build configuration]()
+	- Working with Scala worksheets]()
+	- Working with Scala source files]()
+		- Programs]()
+			- Using a Main object with Java-like syntax]()
+			- Using a Main object extending App]()
+			- Using the @main annotation]()
+	- Opening our project in VS Code]()
+	- Compiling and running a Scala project]()
+	- Working with the SBT shell]()
+- Basic syntax]()
+	- Commenting]()
+		- Single-line commenting]()
+		- Multi-line commenting]()
+	- Immutable variables]()
+		- Lazy evaluation]()
+		- Eager evaluation]()
+	- Mutable variables]()
+	- Printing & strings]()
+	- Optional braces & semicolons]()
+	- Indentation]()
+	- Functions]()
+		- Functions without arguments]()
+		- Functions with arguments]()
+		- Anonymous functions]()
+	- Blocks]()
+	- Type declaration]()
+- Basic data types]()
+	- An introduction to type-driven development]()
+	- Scala's type system overview]()
+	- Numeric types (AnyVal)]()
+		- Byte]()
+		- Short]()
+		- Int]()
+		- Long]()
+		- Float]()
+		- Double]()
+	- Non-numeric types (AnyVal)]()
+		- Char]()
+		- Boolean type]()
+			- Logical operators in boolean variables]()
+		- Unit type]()
+		- Nothing type]()
+		- String type]()
+- Control structures]()
+	- Conditionals]()
+	- Pattern matching]()
+	- Loops]()
+		- while loops]()
+		- for loops]()
+		- for comprehensions]()
+	- Exception handling]()
+- Collections]()
+	- List]()
+	- Array]()
+	- Set]()
+	- Map]()
+	- Tuple]()
+	- Option]()
+	- Vector]()
+- Higher-order functions]()
+	- map]()
+	- filter]()
+	- reduce]()
+- Recursion]()
+- Next steps]()
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -1376,7 +1389,6 @@ The only constraint is that this function will need to throw an exception, since
 
 
 
-
 ---
 
 # Control structures
@@ -1759,10 +1771,12 @@ There are other methods we can use to catch exceptions:
 
 However, we'll not review those in this segment.
 
-## 5. Collections
+---
+
+# Collections
 **Collections** in Scala are simply containers of things. They can be sequenced, linear sets of items like `List`, `Tuple`, `Option`, `Map`, `Set`, etc.
 
-### 5.1 List
+## 1. List
 A `List` is an ordered collection of elements. It's a linear sequence which can contain duplicate elements. Elements in a list can be accessed using an index.
 
 ##### **Code**
@@ -1785,7 +1799,7 @@ As we might have noticed, we had to declare the float list using at least one of
 
 Another interesting detail is that we use the `Matchable` type to be able to declare a list of mixed types. In general, it's not a good practice to create lists with mixed types in Scala (or in most other statically-typed languages), because it reduces the type safety that Scala's static typing provides. However, it's possible to do, and the code executes without errors.
 
-### 5.2 Array
+## 2. Array
 An `Array` is a mutable, indexed collection of elements. Arrays are fixed-size, their length is unchangeable. Unlike Lists, we can change the value of elements in an array after it's been created.
 
 One thing to note about arrays, is that by default, they get printed using the `toString` representation, which is not very meaningful (*it shows the type and hashcode of the array, like `[I@77e8d3b1`*).
@@ -1820,7 +1834,7 @@ myArray.foreach(println)
 // 5
 ```
 
-### 5.3 Set
+## 3. Set
 A `Set` is a collection of distinct elements. Elements in a set are not ordered. Scala provides both mutable and immutable `Set`.
 
 ##### **Code**
@@ -1838,7 +1852,7 @@ But wait a second, why is the `Set` printed in different order than how it was o
 
 In a `HashSet`, elements are organized based on their hash codes for quick look-up, which may not reflect the order in which they were added.
 
-### 5.4 Map
+## 4. Map
 A `Map` is a collection of key-value pairs. The keys in a map are unique. If we've worked with dictionaries in Python, this structure is what mostly resembles them:
 
 ##### **Code**
@@ -1864,7 +1878,7 @@ res58: Int = 2
 
 Keys can be of multiple types (*`Int`, `String`*), the only constraint is that they must be the same type, and be unique values.
 
-### 5.5 Tuple
+## 5. Tuple
 A `Tuple` is an ordered group of elements. They are immutable data structures, and are useful when we want to return multiple values from a function. Unlike Lists and Arrays, Tuples are designed to hold elements of different types.
 
 We can declare tuples using three different ways:
@@ -1885,7 +1899,7 @@ val myTupleMulti_2 = (1, "2", 3, "4", "5", '6', 7)
 - In the second line, we declare a `Tuple` containing multiple data types, but explicitly declaring the types of each value.
 - In the last line, we declare a `Tuple` containing multiple data types, but without  explicitly declaring the types.
 
-### 5.6 Option
+## 6. Option
 An `Option` is a more advanced collection, and represents a value which may or may not exist. An `Option` can be either `Some` value or `None`.
 
 Let us imagine we have a `Map` structure mapping names with ages, and would like to retrieve a value given a key. In this case, a key might not exist in the `Map` declaration, so we can use an `Option` to ensure we don't get errors when trying to index an non-existing key:
@@ -1935,7 +1949,7 @@ checkAge(unknownAge)
 // Sorry! Person does not exist.
 ```
 
-### 5.7 Vector
+## 7. Vector
 A `Vector` is a general-purpose, immutable data structure. It provides random access and updates in effectively constant time, as well as very fast append and prepend.
 
 Vectors support elements of the same type:
@@ -1945,7 +1959,9 @@ Vectors support elements of the same type:
 val myVector: Vector[Int] = Vector(1, 2, 3, 4, 5, 6, 7, 8, 9)
 ```
 
-## 6. Higher-order functions
+---
+
+# Higher-order functions
 **Higher-order functions** are more of an advanced topic, but they're worth mentioning, since they're a key aspect of Scala & functional programming in general.
 
 Higher-order functions are functions that:
@@ -2001,16 +2017,18 @@ res61: Int = 30
 
 This is confusing at first, but when getting used to, is extremely powerful: We can compose functions in terms of other functions, while explicitly declaring the expected types in every step. This is not only excellent for abstraction, but is also safe and pure.
 
-### 6.1 map
+## 1. map
 
 
-### 6.2 filter
-
-### 6.3 reduce
+## 2. filter
 
 
+## 3. reduce
 
-## 7. Recursion
+
+---
+
+# Recursion
 We already had a taste of what recursion is in previous examples. Recursion is one of the most used features in functional programming, because it leverages immutability to produce the same results that we would get from normal `for`-loop constructs.
 
 As with many concepts in Scala, this one takes some time to get used to, but if used wisely, can simplify our code by thousands of lines, while keeping our immutability condition intact.
@@ -2110,6 +2128,7 @@ Furthermore, below are some resources for those interested in learning more abou
 	- Higher-kinded types
 - **[DevInsideYou](https://www.youtube.com/@DevInsideYou)**: The single-handedly best YouTube channel covering excellent tips, tricks, and full-blown tutorials of simple to complex topics.
 - **[Rock the JVM](https://www.youtube.com/@rockthejvm):** Another excellent YouTube channel covering a wide variety of topics, while providing comprehensive, step-by-step tutorials.
+- **[Baeldung/Scala](https://www.baeldung.com/scala/):** An excellent free online resource providing detailed information about the Java ecosystem, including a vast section dedicated to Scala.
 
 **Paid resources:**
 - **[Scala & Functional Programming Essentials, Rock the JVM on Udemy](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/):** A very nice introductory-level course focusing on the essentials of Scala, provided by Rock the JVM founder [Daniel Ciocîrlan](https://www.udemy.com/user/daniel-ciocirlan/) .
@@ -2142,10 +2161,13 @@ We've reviewed a lot of information: From
 ---
 
 # References
-- [Python Documentation, Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)
-- [Python Documentation, Errors & Exceptions](https://docs.python.org/3/tutorial/errors.html)
-- [Towards Data Science, What happens when you import a Python module?](https://towardsdatascience.com/what-happens-when-you-import-a-python-module-ad6c0efd2640)
-- [Towards Data Science, 3 data structures for faster Python Lists](https://towardsdatascience.com/3-data-structures-for-faster-python-lists-f29a7e9c2f92)
+- [Scala Documentation, Scala](https://docs.scala-lang.org/)
+- [Mutable & Immutable Collections, Scala](https://docs.scala-lang.org/overviews/collections/overview.html)
+- [Tail Recursion in Scala, Baeldung](https://www.baeldung.com/scala/tail-recursion)
+- [For Comprehensions, Scala](https://docs.scala-lang.org/tour/for-comprehensions.html)
+- [Scala Conditional Expressions, Baeldung](https://www.baeldung.com/scala/conditional-expressions)
+- [Pattern Matching, Scala](https://docs.scala-lang.org/tour/pattern-matching.html)
+- [Types and the Type System, Scala](https://docs.scala-lang.org/scala3/book/types-introduction.html)
 
 ---
 
