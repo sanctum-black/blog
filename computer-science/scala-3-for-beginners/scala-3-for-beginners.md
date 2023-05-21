@@ -165,6 +165,22 @@ Beyond this, Scala's expressiveness and type inference allows us to write concis
 ## 4. Adoption
 Scala isn't just a language that's good on paper. It's got credibility among top-tier companies all around the world. Multinational tech companies like Twitter, LinkedIn, and Netflix have all integrated Scala into their tech stacks, and for good reasons.
 
+Below is a list of just some companies that currently use Scala in some part of their process:
+
+- **Twitter**: They use Scala to handle their immense scale. It is used in their core API services due to its functional nature and powerful concurrency libraries.
+- **LinkedIn**: LinkedIn uses Scala for high-performance applications. The Play Framework, which is written in Scala, is used heavily for building web services.
+- **Netflix**: Netflix uses Scala in their recommendation and personalization algorithms, given Scala's powerful data processing libraries and capabilities.
+- **Airbnb**: Airbnb uses Scala for data analysis and processing. Its Apache Spark integration, also written in Scala, is particularly valuable for processing large datasets.
+- **Guardian**: The Guardian newspaper uses Scala for their content management system, allowing them to efficiently manage and distribute a vast amount of content.
+- **SoundCloud**: SoundCloud uses Scala for processing its enormous amount of data and to handle its back-end services.
+- **Sony**: Sony uses Scala in their Playstation Network backend services for its robustness and reliability.
+- **Foursquare**: Foursquare uses Scala to handle its location-based services and data.
+- **Zalando**: The European fashion platform uses Scala for many of their backend services and for data processing.
+- **UBS**: The global bank uses Scala for creating high-performance systems in their financial services.
+- **Apache Spark Project**: The Apache Spark project uses Scala for its powerful data processing and distributed computing capabilities.
+- **Coursera**: The online learning platform uses Scala for backend services, providing scalability and efficiency in serving millions of learners.
+
+
 ## 5. Functional programming
 Finally, Scala shines when it comes to functional programming. With its sophisticated blend of functional and OOP paradigms, Scala provides an excellent platform to delve into functional programming. It allows us to take a gentle step into the functional domain, letting us embrace it to the extent we're comfortable with, without forcing us into a complete paradigm shift overnight.
 
@@ -209,7 +225,7 @@ Although we can also use Scala 2 for some of the examples covered in this segmen
 Although environment setup in Scala is not as straightforward as in other languages, we have some great tools to aid us in the process: we will make sure to have the following components ready before starting to write code:
 - The **Scala 3** language.
 - A Scala 3 build tool, in this case, **sbt**.
-- An IDE supporting Scala 3 syntax (*in this case, **VS Code***).
+- An IDE supporting Scala 3 syntax (_in this case, **VS Code**_).
 - An IDE productivity tool, in this case, **Metals**.
 
 ## 1. Installing Scala 3 & sbt using Coursier
@@ -892,8 +908,12 @@ myUnindentedVar: Int = 1
 ## 7. Functions
 Functions are a core part of Scala's architecture; they let us abstract methods in multiple ways. Functions possess a wide variety of properties and can be often declared using combinations of [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) components.
 
-A function in Scala is defined using the keyword `def`
+A function in Scala is defined using the keyword `def`.
 
+There are 3 main types of functions:
+- Named functions without arguments
+- Named functions with arguments
+- Anonymous functions
 
 ### 7.1 Functions without arguments
 As we've already seen, functions in Scala can be declared without any argument:
@@ -2017,9 +2037,9 @@ This is confusing at first, but it's extremely powerful when getting used to it:
 
 The nice thing about higher-order functions is that Scala already implements some extremely useful ones:
 - `map`: We use it to iterate over a collection and then apply a function to each collection element.
-- `flatMap`: 
-- `filter`:
-- `reduce`:
+- `flatMap`: We can use it to apply a function that returns a sequence for each element, and flatten the result into a single sequence.
+- `filter`: We can use it to exclude elements that don't satisfy a certain condition (*predicate*).
+- `reduce`: We can use it to combine all elements of a sequence using a binary function.
 
 ## 1. map
 Remember we declared a function that went over all elements of a list recursively and applied some operation, such as squaring each element? Well, `map` does exactly that, only we can implement it in a single line of code:
