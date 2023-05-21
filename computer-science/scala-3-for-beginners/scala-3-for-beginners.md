@@ -792,7 +792,7 @@ println(myString)
 print(myString)
 ```
 
-Since we're working inside a workbook, we'll not be able to see the difference between the two, but when compiling, the first one adds the new line, while the second one does not. This means that if we insert two `println()` statements in consecutive order, they will be printed in new lines, while two `print()` statements will print the content in the same line:
+Since we're working inside a workbook, we'll be unable to see the difference between the two, but when compiling, the first adds the new line, while the second does not. This means that if we insert two `println()` statements in consecutive order, they will be printed in new lines, while two `print()` statements will print the content in the same line:
 
 ##### **Output**
 ```
@@ -802,7 +802,7 @@ Howdy hey
 Howdy heyHowdy hey
 ```
 
-Printing variables to stdout is many times accompanied by a combination of strings and variables. Scala provides a handy mechanism called string interpolation, which allows us to mix both types, similar to what f-strings in Python would do:
+Printing variables to `stdout` is often accompanied by a combination of strings and variables. Scala provides a handy mechanism called string interpolation, which allows us to mix both types, similar to what f-strings in Python would do:
 
 ##### **Code**
 ```Scala
@@ -823,7 +823,7 @@ Scala 3 has brought a really useful improvement to the table: The capacity to de
 - Curly braces
 - Semicolons
 
-This is a relevant improvement, since it makes the code clearer and easier to read; we rely on the indentation to provide structure to our declarations. However, this is optional, thus we can or cannot omit both components, and the result will be exactly the same:
+This is a relevant improvement since it makes the code clearer and easier to read; we rely on the indentation to provide structure to our declarations. However, this is optional; thus we can or cannot omit both components, and the result will be the same:
 
 ##### **Code**
 ```Scala
@@ -837,10 +837,10 @@ def myFun2 =
     7 * 7
 ```
 
-We'll see function declaration in a second, but the relevant thing here is to illustrate that both options are plausible; it simply depends on personal preference.
+We'll see function declarations in a second, but the relevant thing here is to illustrate that both options are plausible; it simply depends on personal preference.
 
 ## 6. Indentation
-Same as its predecessor Scala 2, Scala 3 does not rely on indentation as part of its syntax. However, since curly brackets are not optional in Scala 3, indentation provides a visual guideline on variable & function declarations (*blocks in general*).
+Like its predecessor Scala 2, Scala 3 does not rely on indentation as part of its syntax. However, since curly brackets are not optional in Scala 3, indentation provides a visual guideline on variable & function declarations (*blocks in general*).
 
 Because of this, we can declare a function without indenting:
 
@@ -864,7 +864,7 @@ As expected, both will produce the same result:
 // 7
 ```
 
-This also applies to other definitions, when when we're using curly brackets `{}` to denote blocks:
+This also applies to other definitions when when we're using curly brackets `{}` to denote blocks:
 
 ##### **Code**
 ```Scala
@@ -890,7 +890,7 @@ myUnindentedVar: Int = 1
 ```
 
 ## 7. Functions
-Functions are a core part of Scala's architecture; they let us abstract methods in multiple ways. Functions possess a wide variety of properties, and can be often declared using combinations of [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) components.
+Functions are a core part of Scala's architecture; they let us abstract methods in multiple ways. Functions possess a wide variety of properties and can be often declared using combinations of [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) components.
 
 A function in Scala is defined using the keyword `def`
 
@@ -904,7 +904,7 @@ As we've already seen, functions in Scala can be declared without any argument:
 def simpleFun = 7 * 7
 ```
 
-This function simply evaluates the multiplication operation, and returns its value.
+This function simply evaluates the multiplication operation and returns its value.
 
 ### 7.2 Functions with arguments
 The more common use-case of functions in Scala is by including arguments that can be evaluated:
@@ -917,7 +917,7 @@ def moreElaborateFun(x: Int, y: Int) = x * y
 
 However, in this case, we do need to include types for our arguments. Else, the compiler will return an error (*we'll see type definition in a second*).
 
-Functions can be declared using one-line expressions, or can also be continued in the next lines:
+Functions can be declared using one-line expressions or can also be continued in the next lines:
 
 ##### **Code**
 ```Scala
@@ -942,7 +942,7 @@ res0: Int = 108
 ```
 
 ### 7.3 Anonymous functions
-It might be of no surprise that Scala supports and encourages the use of anonymous functions, also called literal functions, if they're required or could make our code simpler.
+It might be of no surprise that Scala supports and encourages anonymous functions, also called literal functions, if they're required or could simplify our code.
 
 Anonymous functions can be declared using the following syntax:
 
@@ -951,9 +951,9 @@ Anonymous functions can be declared using the following syntax:
 val myNewInt = (a: Int, b: Int) => a * b
 ```
 
-Here, we're declaring a new variable `myNewInt`, that will hold the resulting evaluation of our anonymous function, `(a: Int, b: Int) => a * b`.
+Here, we're declaring a new variable, `myNewInt`, that will hold the resulting evaluation of our anonymous function, `(a: Int, b: Int) => a * b`.
 
-The difference with a named function, is that in the latter, we declare a function explicitly and separate of our variable assignment, and we then evaluate and assign.
+The difference with a named function is that in the latter, we declare a function explicitly and separately from our variable assignment, then evaluate and assign.
 
 In the case of an anonymous function, we do both evaluations in one single step. So when we call our variable with the two parameters, `a` and `b`, we evaluate the anonymous function and assign it:
 
@@ -970,9 +970,9 @@ println(myNewInt(5, 7))
 Of course, here we're doing a fairly simple product operation, but anonymous functions can be extremely handy when we want to apply more complex operations to variables.
 
 ## 8. Blocks
-Blocks in Scala are a scope-delimitation mechanism to group multiple expressions or statements together. They are declared using curly brackets `{}`, and serve several purposes, including scoping and variable visibility; when we're defining variables, there is a dedicated namespace provided by the scala compiler.
+Blocks in Scala are a scope-delimitation mechanism to group multiple expressions or statements together. They are declared using curly brackets `{}` and serve several purposes, including scoping and variable visibility; when we're defining variables, the Scala compiler provides a dedicated namespace.
 
-If we recall, variables in Scala are immutable, meaning we need to get creative with naming conventions if we're working with extensive programs. What blocks allow us to do, is to create a restricted namespace, where we can use variable names that were used outside the block, without any problem:
+If we recall, variables in Scala are immutable, meaning we need to get creative with naming conventions if we're working with extensive programs. What blocks allow us to do, is to create a restricted namespace, where we can use variable names that were used outside the block without any problem:
 
 ##### **Code**
 ```Scala
@@ -990,9 +990,9 @@ inside_2
 Not found: inside_2
 ```
 
-This error is thrown since the variable is not in the global scope, where it's being referenced.
+This error is thrown since the variable is not in the global scope where it's being referenced.
 
-Blocks are not common as standalone elements, but are usually employed in variable or function definitions:
+Blocks are not common as standalone elements but are usually employed in variable or function definitions:
 
 ##### **Code**
 ```Scala
@@ -1004,12 +1004,12 @@ val my_extense_var = {
 }
 ```
 
-Here, we're declaring an immutable variable using a block that contains a set of expressions, including two additional variables `a`, `b`, and a the eventual return of the last variable `b`.
+Here, we're declaring an immutable variable using a block that contains a set of expressions, including two additional variables, `a`, `b`, and the eventual return of the last variable, `b`.
 
-This might seem weird, but it's part of Scala's magic; we can define variables inside variables. What's cooler is that we don't even need to declare a `return` statement. In fact, Scala encourages not to use return statements, since by default, the last evaluated expression inside any block or function is returned.
+This might seem weird, but it's part of Scala's magic; we can define variables inside variables. What's cooler is that we don't even need to declare a `return` statement. In fact, Scala encourages not to use return statements since, by default, the last evaluated expression inside any block or function is returned.
 
 ## 9. Type declaration
-Up until now, we have not included much data type declaration. But wait, didn't we say that Scala was a strong statically typed language? Yes indeed, but the compiler is smart enough to infer the data types on compile time on some cases (*there are exceptions, for example, with lists or other more elaborate structures, where we have to explicitly declare the types of the variables inside our list*).
+Up until now, we have not included much data type declaration. But wait, didn't we say that Scala was a strong statically typed language? Yes, indeed, but the compiler is smart enough to infer the data types on compile time in some cases (*there are exceptions, for example, with lists or other more elaborate structures, where we have to explicitly declare the types of the variables inside our list*).
 
 However, we're talking about a strong statically typed language here, so it's best practice to try to always explicitly declare the data types. This is because, unlike other languages like Python, Scala is strict in terms of which operations can be performed with which data types, and it might be easier if we have a clear sense of what data types we have before performing any operation on our variables.
 
@@ -1030,26 +1030,26 @@ def myfun_2(x: Int, y: Int): Int = x * y
 ---
 
 # Basic data types
-Scala encourages type-driven development, simply because it possesses a rich type system that lets us perform multiple manipulations, and even create our own very complex type hierarchies, similar to what we would do with classes & objects in an OOP approach (*Scala actually combines these two approaches seamlessly*).
+Scala encourages type-driven development simply because it possesses a rich type system that lets us perform multiple manipulations and even create our own very complex type hierarchies, similar to what we would do with classes & objects in an OOP approach (*Scala combines these two approaches seamlessly*).
 
 ## 1. An introduction to type-driven development
 Having discussed data type declarations, it's helpful to consider the data types available in Scala. This is because Scala programming can and should utilize types and type hierarchies extensively, a practice often referred to as [**type-driven development** (*TDD*)](https://thoughtbot.com/blog/nuanced-tdd). Scala's robust type system, while not strictly adhering to the [Hindley–Milner (HM)](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system) system found in some purely functional languages, allows for powerful type inference.
 
-The concept of type-drive development is sometimes hard to grasp, since we might be accustomed to other types of styles, such as OOP. Let us try to explain this using two examples:
-1. **Object-Oriented Programming (OOP)**: We're building a toy car using LEGO blocks. The blocks (*objects*) have specific shapes and sizes, and each block has its own role in the whole structure. The car's wheels are designed to roll, the doors can open and close, and so on. In essence, each object carries both data (*the specifics of the block*) and behavior (*what the block does in context*).
-2. **Type-Driven Development (TDD)**: We're putting together a jigsaw puzzle. Each piece (*type*) has a specific shape and it's pre-defined where and how it fits into the overall picture. Before adding a piece, we know exactly what shape we're looking for due to the constraints provided by the pieces we've already placed.
+The concept of type-drive development is sometimes hard to grasp since we might be accustomed to other styles, such as OOP. Let us try to explain this using two examples:
+1. **Object-Oriented Programming (OOP)**: We're building a toy car using LEGO blocks. The car's wheels are designed to roll, the doors can open and close, and so on. The blocks (*objects*) have specific shapes and sizes, and each has its own role in the structure. In essence, each object carries both data (*the specifics of the block*) and behavior (*what the block does in context*).
+2. **Type-Driven Development (TDD)**: We're putting together a jigsaw puzzle. Each piece (*type*) has a specific shape, pre-defined where and how it fits into the overall picture. Before adding a piece, we know exactly what shape we're looking for due to the constraints provided by the pieces we've already placed.
 
-If this was still confusing, we might want to start cooking a pizza in order to better illustrate:
-1. **Object-Oriented Programming (OOP)**: We're cooking freestyle. We have ingredients (*objects*) and we know what we can do with them (methods). We decide on the fly what to do next, depending on how the dish is coming along. We might add onions, then decide to season with some peperoncino, or maybe add some garlic.
-2. **Type-Driven Development (TDD)** We're now following a recipe. We have a list of ingredients (*types*) and specific steps (*functions*) outlined. We follow the recipe step by step. The recipe tells us when to chop the onions, when to add them, and when to season with peperoncino.
+If this was still confusing, we might want to start cooking a pizza to better illustrate:
+1. **Object-Oriented Programming (OOP)**: We're cooking freestyle. We have ingredients (*objects*) and know what to do with them (methods). We decide on the fly what to do next, depending on how the dish is coming along. We might add onions, then decide to season with some peperoncino or maybe add some garlic.
+2. **Type-Driven Development (TDD)** We're now following a recipe. We have a list of ingredients (*types*) and specific steps (*functions*) outlined. We follow the recipe step by step. The recipe tells us when to chop the onions when to add them, and when to season with peperoncino.
 
 In short, both cooking styles can result in a delicious pizza, but they use different approaches; with OOP, we have flexibility but might make mistakes or changes along the way. With TDD, we have a solid plan that ensures the dish turns out as expected, provided we follow the recipe correctly.
 
-However, this doesn't mean that TDD is rigid (*in the context of limited or not flexible*). On the contrary: The approach is flexible, but under our own terms, which reduces the potential errors that might arise with the preparation of a pizza; it ensures that the pizza will turn out to be a pizza, and not a suspicious blob of dubious precedence.
+However, this doesn't mean that TDD is rigid (*in the context of limited or not flexible*). On the contrary: The approach is flexible but under our own terms, which reduces the potential errors that might arise with the preparation of a pizza; it ensures that the pizza will turn out to be a pizza and not a suspicious blob of dubious precedence.
 
-Of course, since we usually define the general rules in the first place, TDD requires technical knowledge of what can and cannot be done with certain types provided by the language, in this case, Scala. This knowledge is called type-system knowledge, and is specially relevant in languages with rich type-systems like Scala.
+Of course, since we usually define the general rules in the first place, TDD requires technical knowledge of what can and cannot be done with certain types provided by the language, in this case, Scala. This knowledge is called type-system knowledge and is especially relevant in languages with rich type systems like Scala.
 
-Now that we have more clarity of what TDD is, we can describe Scala's type system.
+Now that we have more clarity about TDD, we can describe Scala's type system.
 
 ## 2. Scala's type system overview
 Scala follows a hierarchical type system that contains its own defined types, as well as some inherited types from Java:
@@ -1072,10 +1072,10 @@ So, in short:
 - `AnyVal`: Represents value types. They are lightweight, non-nullable, and usually have better performance characteristics.
 - `AnyRef`: Represents reference types, meaning all types that are subclasses of `java.lang.Object` in Java. They are typically more complex, can be `null`, and include all user-defined and most built-in types.
 
-Let us start from the more basic types, and build from there.
+Let us start from the more basic types and build from there.
 
 ## 3. Numeric types (AnyVal)
-Scala provides 6 main numeric types, starting from `Byte`, up to `Double`. From bottom to top:
+Scala provides six main numeric types, from `Byte` to `Double`. From bottom to top:
 - `Byte`
 - `Short`
 - `Int`
@@ -1126,7 +1126,7 @@ myByte_2: Byte = 120
 ```
 
 ### 3.2 Short
-A `Short` a 16-bit signed integer data type. It has a value range from -32768 to 32767. We can declare a `Short` variable using the following syntax:
+A `Short` is a 16-bit signed integer data type. It has a value range from -32768 to 32767. We can declare a `Short` variable using the following syntax:
 
 ##### **Code**
 ```Scala
@@ -1155,7 +1155,7 @@ myIntExp: Int = 1
 myIntInf: Int = 1
 ```
 
-It's true that Int is the default integer value type in Scala, but is not necessarily the most adequate when dealing with large numbers. If we want to define a number larger than what `Int` lets us do, we must use the `Long` type. This is true for all previous cases: We need to have clarity on what we're expecting from our variable since integer arithmetic can overflow and underflow without warning if the result of an operation exceeds the maximum or minimum value.
+It's true that `Int` is the default integer value type in Scala, but it's not necessarily the most adequate when dealing with large numbers. If we want to define a number larger than what `Int` lets us do, we must use the `Long` type. This is true for all previous cases: We need to have clarity on what we're expecting from our variable since integer arithmetic can overflow and underflow without warning if the result of an operation exceeds the maximum or minimum value.
 
 ### 3.4 Long
 The `Long` type is a 64-bit signed integer data type. It has a value range from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807. The `Long` type is used when the value to be stored exceeds the range provided by `Int`.
@@ -1167,7 +1167,7 @@ A Long value can be declared the same as with previous examples, but with the di
 val myLong: Long = 9223372036854775807L
 ```
 
-We append this `L` suffix because by default, Scala treats integer literals as `Int`. The type annotation `: Long` tells Scala that the variable is of type `Long`, but it doesn't change the way Scala interprets the literal number.
+We append this `L` suffix because, by default, Scala treats integer literals as `Int`. The type annotation `: Long` tells Scala that the variable is of type `Long`, but it doesn't change how Scala interprets the literal number.
 
 Consequently, this would result in an error:
 
@@ -1182,7 +1182,7 @@ integer number too large
 ```
 
 ### 3.5 Float
-The `Float` type is a 32-bit floating point number. This means it can represent decimal numbers, but with a limit to the amount of precision. It's sometimes referred to as a single-precision floating-point number in the IEEE 754 standard, and has a precision of about 7 decimal digits.
+The `Float` type is a 32-bit floating point number. This means it can represent decimal numbers but with a limit to the amount of precision. It's sometimes referred to as a single-precision floating-point number in the IEEE 754 standard and has a precision of about seven decimal digits.
 
 We can declare a `Float` variable as follows:
 
@@ -1191,7 +1191,7 @@ We can declare a `Float` variable as follows:
 val myFloat: Float = 3.141592653589793238462643383279502884197
 ```
 
-We can see that even though we're including the complete decimal precision for $\pi$, we only get up to 7 decimal numbers in return:
+We can see that even though we include the complete decimal precision for $\pi$, we only get up to 7 decimal numbers in return:
 
 ##### **Output**
 ```
@@ -1244,7 +1244,7 @@ Non-numeric types under `AnyVal` in Scala include the following subclassificatio
 In the case of `AnyVal`, the only textual type is Char, while the boolean type is the well-known `True` / `False` type.
 
 ### 4.1 Char
-A `Char` is a 16-bit unsigned Unicode character type. It can represent any character in the Unicode character set, which includes ASCII and other characters from various languages around the world. The range of `Char` is from `U+0000` to `U+FFFF`.
+A `Char` is a 16-bit unsigned Unicode character type. It can represent any character in the Unicode character set, including ASCII and other characters from various languages worldwide. A 'Char' ranges from `U+0000` to `U+FFFF`.
 
 Because a `Char` represents integer Unicode code point values, we can treat them as such, meaning we can perform arithmetic & relational comparison operations:
 
@@ -1282,7 +1282,7 @@ myChar_3 * 1
 // res14: Int = 49
 ```
 
-In memory, a `Char` is represented as a 16-bit unsigned integer. This means it can take on a value between 0 and 65535. These numbers correspond to the Unicode values of the characters the `Char` can represent.
+A `Char` is represented as a 16-bit unsigned integer in memory. This means it can take on a value between 0 and 65535. These numbers correspond to the Unicode values of the characters the `Char` can represent.
 
 If we would like to convert a char to its unsigned integer type, we can do so:
 
@@ -1302,7 +1302,7 @@ The Boolean type in Scala, as in any other language, can take one of two possibl
 - `true`
 - `false`
 
-Keep in mind that in Scala, boolean values are declared with lowercase (*in other languages, this might change*):
+Keep in mind that in Scala, boolean values are declared in lowercase (*in other languages, this might change*):
 
 ##### **Code**
 ```Scala
@@ -1310,7 +1310,7 @@ val myBoolTrue: Boolean = true
 val myBoolFalse: Boolean = false
 ```
 
-#### 4.2.1 Logical operators in boolean variables
+#### 4.2.1 Logical operators in Boolean variables
 We can use logical operators on boolean types:
 
 ##### **Code**
@@ -1350,7 +1350,7 @@ Which will result in the following:
 ### 4.3 Unit type
 The `Unit` type is used when there is no meaningful value to return. It's similar to the `void` keyword in other languages like Java or C++.
 
-For example, if we have a function that evaluates a certain expression and prints it out to stdout, without returning the actual value as result of the evaluation, we can use the `Unit` return type as follows:
+For example, suppose we have a function that evaluates a certain expression and prints it out to `stdout` without returning the actual value as a result of the evaluation. In that case, we can use the `Unit` return type as follows:
 
 ##### **Code**
 ```Scala
@@ -1367,7 +1367,7 @@ myFun(1, 2)
 ```
 
 ## 5. Nothing type
-`Nothing` is a subtype of every other type (*including `Null`*). It represents "*no value at all*". There are no values of type `Nothing`. It's used in Scala to signal abnormal termination. This is used frequently in methods that have an abnormal exit, like throwing an exception.
+`Nothing` is a subtype of every other type (*including `Null`*). It represents "*no value at all*". There are no values of type `Nothing`. It's used in Scala to signal abnormal termination. This is frequently used in methods with an abnormal exit, like throwing an exception.
 
 We can define a function that throws an exception:
 
@@ -1385,7 +1385,7 @@ myErrorFun(1)
 java.lang.IllegalArgumentException: {s} is not of the correct type.
 ```
 
-The only constraint is that this function will need to throw an exception, since the type `Nothing` cannot be defined as a return type of other types (*e.g., `Int`, `Double`, etc.*). In other words, we have to make sure that the return type of our function is an exception, or something returning `Nothing`. There are other ways to manage the return of two potential types, for example, if the exception is not met and we return an `Int` instead, but we'll look at that later on.
+The only constraint is that this function will need to throw an exception since the type `Nothing` cannot be defined as a return type of other types (*e.g., `Int`, `Double`, etc.*). In other words, we have to ensure that our function's return type is an exception or something returning `Nothing`. There are other ways to manage the return of two potential types; for example, if the exception is not met and we return an `Int` instead. We'll look at that later.
 
 ---
 
@@ -1394,12 +1394,12 @@ Control structures are used to control the flow of execution of our program. Sca
 - Using the `if-else` construct.
 - Using pattern matching.
 
-The first option is more simple & straightforward but limited, while the second one is slightly more elaborate, but much more powerful in terms of reach & capabilities.
+The first option is more simple & straightforward but limited, while the second one is slightly more elaborate but much more powerful regarding reach & capabilities.
 
 Let us look at both.
 
 ## 1. Conditionals
-Conditionals in Scala are mostly used to evaluate simple single statements. They consist of a simple `if-else` structure, and can be nested if we need more conditions, although this is discouraged in favor of pattern matching.
+Conditionals in Scala are mostly used to evaluate simple single statements. They consist of a simple `if-else` structure and can be nested if we need more conditions, although this is discouraged in favor of pattern matching.
 
 Conditional statements can be written using two different ways:
 
@@ -1475,12 +1475,12 @@ res30: Int = 2
 res31: Int = 1
 ```
 
-Here, we only have one one nested statement, so it's fairly easy to read, but whenever we start adding more conditions, our code will get messier; the `if-else` construct was not designed for multiple tests. This is where pattern matching comes into play.
+Here, we only have one nested statement, so it's fairly easy to read, but whenever we add more conditions, our code will get messier; the `if-else` construct was not designed for multiple tests. This is where pattern matching comes into play.
 
 ## 2. Pattern matching
-Pattern matching might be one of the most powerful features in Scala; it lets us destructure and examine complex data types in a clear and concise way, providing a mechanism to conditionally execute code based on the structure or values of the data. It also enables seamless matching on sequence types, with capabilities to inspect sequence length and element position.
+Pattern matching might be one of the most powerful features in Scala; it lets us destructure and examine complex data types clearly and concisely, providing a mechanism to execute code conditionally based on the structure or values of the data. It also enables seamless matching of sequence types, with capabilities to inspect sequence length and element position.
 
-These are just two more sophisticated use-cases, but we can also match for simpler statements. We'll start with a base definition using a code block:
+These are just two more sophisticated use cases, but we can also match using simpler statements. We'll start with a base definition using a code block:
 
 ##### **Code**
 ```Scala
@@ -1503,11 +1503,11 @@ res33: String = 10 is neither 1 nor 2
 Where:
 - `_` is a wildcard that matches any other value.
 
-But this is a useless example, right? Who would want to check if a value is 1 or 2 using a pattern matching implementation? Too much hustle, which can be simplified using a conditional construct.
+But this is a useless example, right? Who would want to check if a value is 1 or 2 using a pattern-matching implementation? Too much hustle, which can be simplified using a conditional construct.
 
 That is correct. However, pattern matching is clearly not restricted to comparing integer numbers as we just did. In fact, this construct is much more powerful.
 
-Since pattern matching can be used to deconstruct types, we can use it to check if a given class is a subclass of another class, by trying to feed an animal, only if it's a dog:
+Since pattern matching can be used to deconstruct types, we can use it to check if a given class is a subclass of another class by trying to feed an animal, only if it's a dog:
 
 ##### **Code**
 ```Scala
@@ -1573,34 +1573,34 @@ res39: String = I don't know who or what you are, kindly leave my house or I'll 
 ```
 
 Let us explain what's happening in more detail:
-- We first declare an `Animal` abstract class (we'll discuss them later in more detail), with some unimplemented methods.
+- We first declare an `Animal` abstract class (we'll discuss them later in more detail) with some unimplemented methods.
 - We then declare three subclasses: `Human`, `Doggo`, and `WeirdGuy`
-- Next, we implement their methods, and create new instances for each subclass.
-- Finally, we declare a feeding function which accepts an `Animal` instance, and prints something to `stdout`, depending on the type of the subclass we're including. Since abstract classes cannot be instantiated, our only options are:
-	- To try to feed a `Doggo`
-	- To try to feed a `Human`
-	- To try to feed a `WeirdGuy`
+- Next, we implement their methods and create new instances for each subclass.
+- Finally, we declare a feeding function that accepts an `Animal` instance and prints something to `stdout`, depending on the type of the subclass we're including. Since abstract classes cannot be instantiated, our only options are:
+	- To try to feed a `Doggo`.
+	- To try to feed a `Human`.
+	- To try to feed a `WeirdGuy`.
 
-Since we as humans can usually eat our own food, at least when we're grown ups, and it would not be the best idea to let a weird guy inside our house, we can assume that a doggo will be the only candidate to being fed.
+Since we as humans can usually eat our own food, at least when we're grown-ups, and it would not be the best idea to let a weird guy inside our house, we can assume that a doggo will be the only candidate to be fed.
 
-We check if the `Animal` is one of the two, and decide to feed or not. Lastly, we leave any other options at the end, with some not-so-friendly message included.
+We check if the `Animal` is one of the two and decide whether to feed it or not. Lastly, we leave any other options at the end, including a not-so-friendly message.
 
 This is just a simple pattern-matching example, but a wide variety of operations can be done using the `match-case` construct.
 
 ## 3. Loops
 Loops in functional languages are sometimes not implemented in the traditional sense, at least not exactly. One of the characteristics of the functional style is that it discourages the use of `for` loops. This is because:
-- Loops can and usually will involve some kind mutation of some variable(s). This, in turn, can result in impure implementations with side effects associated. 
-- Scala provides more powerful and concise ways to loop over things, without having to explicitly write a `for` loop, or even worst, a set of nested loops that quickly becomes unreadable, confusing, and bug-prone.
+- Loops can and usually will involve a mutation of some variable(s). This, in turn, can result in impure implementations with side effects associated. 
+- Scala provides more powerful and concise ways to loop over things without explicitly writing a `for` loop, or even worse, a set of nested loops that quickly becomes unreadable, confusing, and bug-prone.
 - Functional programming is more declarative than imperative, focusing on the "*what*" rather than the "*how*". Using higher-order functions or recursion instead of `for` loops is more in line with this style, as it focuses on the result of the operation rather than the specific steps needed to achieve it.
 
-In short, using loops in Scala is like building a house with the wrong, expensive tools; we're better off using Python, since in that case, it's "*cheaper*" to learn, if that makes sense. 
+In short, using loops in Scala is like building a house with the wrong, expensive tools; we're better off using Python since, in that case, it's "*cheaper*" to learn, if that makes sense.
 
-We'll briefly mention loops to illustrate why they're discouraged, and what functional approaches we can use instead.
+We'll briefly mention loops to illustrate why they're discouraged and what functional approaches we can use instead.
 
 ### 3.1 while loops
-A `while` loop loops through a block of code as long as a specified condition is true. This specified condition usually involves some kind of variable mutation, since otherwise, the condition is never met, and the loop goes forever and ever.
+A `while` loop loops through a block of code as long as a specified condition is true. This specified condition usually involves some kind of variable mutation since, otherwise, the condition is never met, and the loop goes forever and ever.
 
-We can define a simply `while` loop that checks for even numbers when dividing an initial number by 2:
+We can define a simple `while` loop that checks for even numbers when dividing an initial number by 2:
 
 ##### **Code**
 ```Scala
@@ -1636,12 +1636,12 @@ checkEven(100)
 // 50 is still even
 ```
 
-In this last approach, we don't care for the intermediate even numbers, we just care for the last even number when divided by 2.
+In this last approach, we don't care for the even intermediate numbers; we just care for the last even number when divided by 2.
 
-At first, the recursive approach might seem more confusing, but we're actually saving ourselves a potential future headache: We don't mutate any variable, thus we don't need to track its development over time.
+At first, the recursive approach might seem more confusing, but we're saving ourselves a potential future headache: We don't mutate any variable; thus we don't need to track its development over time.
 
 ### 3.2 for loops
-In contrast to `while` loops, `for` loops loop over its body for a defined number of times. These are helpful when we have a known range of values we want to cover. A typical for loop can be declared using the following syntax:
+In contrast to `while` loops, `for` loops loop over their body a defined number of times. These are helpful when we have a known range of values to cover. A typical `for` loop can be declared using the following syntax:
 
 ##### **Code**
 ```Scala
@@ -1682,9 +1682,9 @@ printInteger(1)
 ```
 
 ### 3.3 for comprehensions
-In contrast to the previous two approaches, for comprehensions are syntactic constructs to build a new collection by applying some operations to each element of an existing collection.
+In contrast to the previous two approaches, `for` comprehensions are syntactic constructs to build a new collection by applying some operations to each element of an existing collection.
 
-We might already know comprehensions from other languages such as Python:
+We might already know comprehensions from other languages, such as Python:
 
 ##### **Code**
 ```Python
@@ -1741,7 +1741,7 @@ numbers_even: List[Int] = List(2, 4, 6, 8)
 ## 4. Exception handling
 Exception handling in Scala is similar to that in Java and other languages, with `try`, `catch`, and `finally` blocks used to handle exceptions.
 
-We can declare a simply exception handling implementation by using the following syntax:
+We can declare a simple exception-handling implementation by using the following syntax:
 
 ##### **Code**
 ```Scala
@@ -1775,7 +1775,7 @@ However, we'll not review those in this segment.
 **Collections** in Scala are simply containers of things. They can be sequenced, linear sets of items like `List`, `Tuple`, `Option`, `Map`, `Set`, etc.
 
 ## 1. List
-A `List` is an ordered collection of elements. It's a linear sequence which can contain duplicate elements. Elements in a list can be accessed using an index.
+A `List` is an ordered collection of elements. It's a linear sequence that can contain duplicate elements. Elements in a list can be accessed using an index.
 
 ##### **Code**
 ```Scala
@@ -1793,14 +1793,14 @@ myFloatList: List[Float] = List(0.5, 0.25, 0.125)
 myMixedList: List[Matchable] = List(1, 2, 3.0)
 ```
 
-As we might have noticed, we had to declare the float list using at least one of the operands in each division was a `Float` or `Double`. This is because Scala handles integer division discarding the remainder and keeping only the integer part of the result. In other words, if we'd like to perform a float division, we need to provide at least one float (*numerator or denominator*).
+As we might have noticed, we had to declare the float list using at least one of the operands in each division: a `Float` or `Double`. This is because Scala handles integer division by discarding the remainder and keeping only the integer part of the result. In other words, if we'd like to perform a float division, we must provide at least one float (*numerator or denominator*).
 
-Another interesting detail is that we use the `Matchable` type to be able to declare a list of mixed types. In general, it's not a good practice to create lists with mixed types in Scala (or in most other statically-typed languages), because it reduces the type safety that Scala's static typing provides. However, it's possible to do, and the code executes without errors.
+Another interesting detail is that we use the `Matchable` type to be able to declare a list of mixed types. In general, it's not a good practice to create lists with mixed types in Scala (or in most other statically-typed languages) because it reduces the type safety that Scala's static typing provides. However, it's possible to do, and the code executes without errors.
 
 ## 2. Array
-An `Array` is a mutable, indexed collection of elements. Arrays are fixed-size, their length is unchangeable. Unlike Lists, we can change the value of elements in an array after it's been created.
+An `Array` is a mutable, indexed collection of elements. Arrays are fixed-size, and their length is unchangeable. Unlike Lists, we can change the value of elements in an array after it's been created.
 
-One thing to note about arrays, is that by default, they get printed using the `toString` representation, which is not very meaningful (*it shows the type and hashcode of the array, like `[I@77e8d3b1`*).
+One thing to note about arrays is that by default, they get printed using the `toString` representation, which is not very meaningful (*it shows the type and hashcode of the array, like `[I@77e8d3b1`*).
 
 To print the contents of the array in a more readable way, we can use two different methods:
 - `mkString`
@@ -1846,12 +1846,12 @@ println(mySet)
 // HashSet(5, 1, 2, 3, 4)
 ```
 
-But wait a second, why is the `Set` printed in different order than how it was originally declared? What happens is that, as mentioned, the `Set` collection in Scala does not maintain the order of elements. This is because `Set` is implemented as a `HashSet` by default, which is a data structure designed to optimize lookup times (*checking if an element is contained in the set*) rather than preserving insertion order.
+But wait a second...why is the `Set` printed in a different order than how it was originally declared? What happens is that, as mentioned, the `Set` collection in Scala does not maintain the order of elements. This is because `Set` is implemented as a `HashSet` by default, a data structure designed to optimize lookup times (*checking if an element is contained in the set*) rather than preserving insertion order.
 
-In a `HashSet`, elements are organized based on their hash codes for quick look-up, which may not reflect the order in which they were added.
+In a `HashSet`, elements are organized based on their hash codes for quick lookup, which may not reflect the order in which they were added.
 
 ## 4. Map
-A `Map` is a collection of key-value pairs. The keys in a map are unique. If we've worked with dictionaries in Python, this structure is what mostly resembles them:
+A `Map` is a collection of key-value pairs. The keys in a map are unique. If we've worked with dictionaries in Python, this structure is what most resembles them:
 
 ##### **Code**
 ```Scala
@@ -1874,10 +1874,10 @@ res57: String = one
 res58: Int = 2
 ```
 
-Keys can be of multiple types (*`Int`, `String`*), the only constraint is that they must be the same type, and be unique values.
+Keys can be of multiple types (*`Int`, `String`*); the only constraint is that they must be the same type and be unique values.
 
 ## 5. Tuple
-A `Tuple` is an ordered group of elements. They are immutable data structures, and are useful when we want to return multiple values from a function. Unlike Lists and Arrays, Tuples are designed to hold elements of different types.
+A `Tuple` is an ordered group of elements. Unlike Lists and Arrays, Tuples are designed to hold elements of different types. They are immutable data structures useful when we want to return multiple values from a function.
 
 We can declare tuples using three different ways:
 
@@ -1894,13 +1894,13 @@ val myTupleMulti_2 = (1, "2", 3, "4", "5", '6', 7)
 ```
 
 - In the first line, we declare a `Tuple` containing one data type (*`Int`*), but without explicitly declaring the types.
-- In the second line, we declare a `Tuple` containing multiple data types, but explicitly declaring the types of each value.
-- In the last line, we declare a `Tuple` containing multiple data types, but without  explicitly declaring the types.
+- In the second line, we declare a `Tuple` containing multiple data types but explicitly declaring the types of each value.
+- In the last line, we declare a `Tuple` containing multiple data types, but without explicitly declaring the types.
 
 ## 6. Option
-An `Option` is a more advanced collection, and represents a value which may or may not exist. An `Option` can be either `Some` value or `None`.
+An `Option` is a more advanced collection representing a value that may or may not exist. An `Option` can be either `Some` value or `None`.
 
-Let us imagine we have a `Map` structure mapping names with ages, and would like to retrieve a value given a key. In this case, a key might not exist in the `Map` declaration, so we can use an `Option` to ensure we don't get errors when trying to index an non-existing key:
+Let us imagine we have a `Map` structure mapping names with ages and would like to retrieve a value given a key. In this case, a key might not exist in the `Map` declaration, so we can use an `Option` to ensure we don't get errors when trying to index a non-existing key:
 
 ##### **Code**
 ```Scala
@@ -1923,11 +1923,11 @@ unknownAge: Option[Int] = None
 ```
 
 What's happening here is:
-- We first declare a `Map` with some unique keys and values.
+- We first declare a `Map` with unique keys and values.
 - We then declare a function called `getAge`, with the evaluation result as `Option` (*it might or might not exist, it might or might not be an `Int`*).
 - Next, we index using some existing and non-existing keys.
-- In the first two cases, we get `Some` as the output type, which means that it exists.
-- In the last case, we get `None`, which means that no key was found, thus the corresponding `Age` integer value does not exist.
+- In the first two cases, we get `Some` as the output type, meaning it exists.
+- In the last case, we get `None`, which means that no key was found; thus the corresponding `Age` integer value does not exist.
 
 This is extremely useful because now, we can use pattern matching to make more sense of the data we're getting:
 
@@ -1948,7 +1948,7 @@ checkAge(unknownAge)
 ```
 
 ## 7. Vector
-A `Vector` is a general-purpose, immutable data structure. It provides random access and updates in effectively constant time, as well as very fast append and prepend.
+A `Vector` is a general-purpose, immutable data structure. It provides random access and updates in constant time, providing very fast append and prepend mechanisms.
 
 Vectors support elements of the same type:
 
@@ -1960,7 +1960,7 @@ val myVector: Vector[Int] = Vector(1, 2, 3, 4, 5, 6, 7, 8, 9)
 ---
 
 # Higher-order functions
-**Higher-order functions** are more of an advanced topic, but they're worth mentioning, since they're a key aspect of Scala & functional programming in general.
+**Higher-order functions** are more of an advanced topic, but they're worth mentioning since they're a key aspect of Scala & functional programming in general.
 
 Higher-order functions are functions that:
 - Accept functions as parameters
@@ -1968,13 +1968,13 @@ Higher-order functions are functions that:
 
 This is somewhat confusing, so let us explain it with a simple example:
 
-Suppose we want to implement a method that sums all the items in a given list, while performing some intermediate operation beforehand. This is called a variation of the summation operation, and is very common in mathematics.
+Suppose we want to implement a method that sums all the items in a given list while performing some intermediate operation beforehand. This is called a variation of the summation operation and is very common in mathematics.
 
 For the product variation, the mathematical expression would look something like such:
 
 $$\sum_{i=1}^{n}i^2$$
 
-Normally, we would use one single function definition to approach this. However, one key aspect in functional programming, is modularizing our functions, meaning one function ideally performs one single operation, and no more.
+Normally, we would use one single function definition to approach this. However, one key aspect in functional programming is modularizing our functions, meaning one function ideally performs one single operation, and no more.
 
 Thus, we can create two separate definitions that will complement each other:
 
@@ -1999,30 +1999,30 @@ sumList(myTargetList, intSquared)
 
 Let us break this step by step:
 - We first declare a simple target `List` containing integer values.
-- We then define a `sumList` function, which accepts:
+- We then define a `sumList` function, which accepts the following:
 	- A list of integers `l`.
-	- A function `f`, which accepts an `Int`, and returns an `Int`.
-- We then define another nested function. This one is declared because we need to keep track of the summation in some way, hence we include a head (*`h`*) and a tail (*`t`*) parameters, along with the function `f`.
+	- A function `f`, which accepts an `Int` and returns an `Int`.
+- We then define another nested function. This one is declared because we need to keep track of the summation somehow; hence we include a head (*`h`*) and a tail (*`t`*) parameters, along with the function `f`.
 - Next, we check if the tail `t` is empty (*empty list*). If it is, we return the result of the function `f` applied to the head `h` (*in this case, the last element of the list*)
-- Else, if list is not empty, we apply the function `f` to `h`, and add that to a recursive call of `sumNumbers`, changing the head and tail values.
+- Else, if the list is not empty, we apply the function `f` to `h` and add that to a recursive call of `sumNumbers`, changing the head and tail values.
 - Next, we make sure to call the `sumNumbers` function as initialization.
-- Finally, we declare an `intSquared` function, which accepts an `Int`, and returns the squared value as `Int`. We call our function, and get what we expected.
+- Finally, we declare an `intSquared` function, which accepts an `Int` and returns the squared value as `Int`. We call our function and get what we expect.
 
 ##### **Output**
 ```
 res61: Int = 30
 ```
 
-This is confusing at first, but when getting used to, is extremely powerful: We can compose functions in terms of other functions, while explicitly declaring the expected types in every step. This is not only excellent for abstraction, but is also safe and pure.
+This is confusing at first, but it's extremely powerful when getting used to it: We can compose functions in terms of other functions while explicitly declaring the expected types in every step. This is not only excellent for abstraction but is also safe and pure.
 
-The nice thing about higher-order functions, is that Scala already implements some extremely useful ones:
-- `map`: We use it to iterate over a collection, and then apply a function to each element of the collection.
+The nice thing about higher-order functions is that Scala already implements some extremely useful ones:
+- `map`: We use it to iterate over a collection and then apply a function to each collection element.
 - `flatMap`: 
 - `filter`:
 - `reduce`:
 
 ## 1. map
-Remember we declared a function that went over all elements of a list recursively, and applied some operation, such as squaring each element? Well, map does exactly that, only we can implement it in a single line of code:
+Remember we declared a function that went over all elements of a list recursively and applied some operation, such as squaring each element? Well, `map` does exactly that, only we can implement it in a single line of code:
 
 ##### **Code**
 ```Scala
@@ -2040,7 +2040,7 @@ myList.map(squaredInts)
 myList.map((x: Int) => x * x)
 ```
 
-In both cases, the result will be the exact same, the only difference is that, in the latter, we'll do our entire declaration in a single line of code by leveraging anonymous functions:
+In both cases, the result will be the same, the only difference is that, in the latter, we'll write our entire declaration in a single line of code by leveraging anonymous functions:
 
 ##### **Output**
 ```
@@ -2048,7 +2048,7 @@ res62: List[Int] = List(1, 4, 9, 16, 25)
 res63: List[Int] = List(1, 4, 9, 16, 25)
 ```
 
-If we want to multiply our elements by some scalar instead of squaring them, we can even simplify this more, by using a placeholder instead of the full anonymous function specification:
+Suppose we want to multiply our elements by some scalar instead of squaring them. In that case, we can even simplify this even more by using a placeholder instead of the full anonymous function specification:
 
 ##### **Code**
 ```Scala
@@ -2063,9 +2063,9 @@ Here, we are doubling each element:
 res64: List[Int] = List(2, 4, 6, 8, 10)
 ```
 
-These are, of course, extremely simple operations, but we can imagine that we could construct very complex functions, and apply them to a list of values other than integers (*even nested lists, or other collections*).
+These are, of course, extremely simple operations. Still, we can imagine that we could construct very complex functions and apply them to a list of values other than integers (*even nested lists or other collections*).
 
-For example, we can define a list of lists, where we want to calculate the average of each list and return it as an `Int` value:
+For example, we can define a list of lists where we want to calculate the average of each list and return it as an `Int` value:
 
 ##### **Code**
 ```Scala
@@ -2103,8 +2103,8 @@ listOfLists.flatten.map(x => x + 1).map(x => x * 2)
 ```
 
 So, what are we doing here?
-- We first flatten our list of lists, meaning we transform a list of lists into a list with all the nested lists elements included.
-- We then apply a simple operation, where we shift each element by 1.
+- We first flatten our list of lists, meaning we transform a list of lists into a list with all the nested list elements included.
+- We then apply a simple operation, shifting each element by 1.
 - We finally apply a third function that multiplies each shifted element by 2.
 
 ## 2. flatMap
@@ -2112,7 +2112,7 @@ We already saw what `map` & `flatmap` do separately. The `flatMap` method combin
 - Applies a given function to each nested element inside the outer collection.
 - Flattens the operated collection.
 
-Let us define an example, where we again have a list of lists, and would like to come up with a single list of integers, where each integer inside the nested lists is multiplied y some constant:
+Let us define an example where we again have a list of lists and would like to come up with a single list of integers, where each integer inside the nested lists is multiplied y some constant:
 
 ##### **Code**
 ```Scala
@@ -2149,7 +2149,7 @@ res68: List[Float] = List(3.0, 8.0, 13.0)
 ```
 
 ## 3. filter
-The `filter` method does exactly that: It filters based on a given predicate (condition) that we specify to the method as parameter. The only condition, is that the predicate must be an expression that evaluates to a `Boolean` value.
+The `filter` method does exactly that: It filters based on a given predicate (condition) that we specify to the method as a parameter. The only condition is that the predicate must be an expression that evaluates to a `Boolean` value.
 
 For example, if we want to filter only even numbers, we can do so using the following syntax:
 
@@ -2167,7 +2167,7 @@ val myFilteredList: List[Int] = myRawList.filter(x => x % 2 == 0)
 myFilteredList: List[Int] = List(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98)
 ```
 
-We can use any predicate, and even include it as a more complex function, as we've been doing with the other methods. The bottom line is, we only need an expression that checks if each of the values inside the collection are `true` or `false`; then, the true values are filtered out and returned as a new collection.
+We can use any predicate and even include it as a more complex function, as we've done with the other methods. The bottom line is we only need an expression that checks if each of the values inside the collection is `true` or `false`; then, the true values are filtered out and returned as a new collection.
 
 ## 4. reduce
 The `reduce` method belongs to a broader collection of methods:
@@ -2181,9 +2181,9 @@ The `reduce` method belongs to a broader collection of methods:
 	- left
 	- right
 
-These methods are used to "*compress*" a collection by applying a given operation called `op`. This "compression" simply means that we're squeezing our collection to left or right, depending on the implementation, while applying an operation, which can be an addition, product, division, etc.
+These methods are used to "*compress*" a collection by applying an operation called `op`. This "compression" simply means that we're squeezing our collection left or right, depending on the implementation, while applying an operation, which can be an addition, product, division, etc.
 
-The left or right direction tells the method on which direction we're squeezing our collection. For example, if we want to create a word from a set of string characters, we can do so by applying a `reduceLeft` method:
+The left or right direction tells how we're squeezing our collection. For example, if we want to create a word from a set of string characters, we can do so by applying a `reduceLeft` method:
 
 ##### **Code**
 ```Scala
@@ -2237,28 +2237,28 @@ myAlphabetList.reduceLeft((x,y) => y+x).toList
 res71: List[Char] = List(d, c, b, a)
 ```
 
-This one is extremely interesting since we're taking two values for each pass, and pasting `y` & `x` in the inverse order from their original sequence.
+This one is extremely interesting since we're taking two values for each pass and pasting `y` & `x` in the inverse order from their original sequence.
 
-This is very useful since we're effectively saving ourselves the classic but painful loop implementation that takes `i` & `i + 1`, and operates on those values; one single line of code can perform what we otherwise would have done in multiple lines.
+This is very useful since we're effectively saving ourselves the classic but painful loop implementation that takes `i` & `i + 1` and operates on those values; one single line of code can perform what we otherwise would have done in multiple lines.
 
 This is the beauty of higher-order functions & declarative-style programming, and as we can imagine, they're extremely powerful and heavily encouraged in functional languages; the creators invested time & brains in these implementations, which we can simply use without asking questions; they just work.
 
 ---
 
 # Recursion
-We already had a taste of what recursion is in previous examples. In fact, many of the implemented methods we used in higher-order functions, are recursive in nature. Recursion is one of the most used features in functional programming, because it leverages immutability to produce the same results that we would get from normal `for`-loop constructs.
+We already had a taste of what recursion is in previous examples. In fact, many of the implemented methods we used in higher-order functions are recursive in nature. Recursion is one of the most used features in functional programming because it leverages immutability to produce the same results that we would get from normal `for`-loop constructs.
 
-As with many concepts in Scala, this one takes some time to get used to, but if used wisely, it can simplify our code by potentially thousands of lines, while keeping our immutability condition intact.
+As with many concepts in Scala, this one takes some time to get used to, but if used wisely, it can simplify our code by potentially thousands of lines while keeping our immutability condition intact.
 
-Recursion is straightforward: Define a function, and call it itself from within, while changing each call throughout. Recursive implementations have three main components:
+Recursion is straightforward: Define a function, and call it from within while changing each call throughout. Recursive implementations have three main components:
 1. **Base Case(s):** The simplest instance of the problem that can be solved directly. This is the condition under which the recursion stops. A recursive function must have at least one base case, but it could have multiple. The base case helps prevent the function from calling itself indefinitely.
 2. **Recursive Case(s):** The part of the function that solves the problem by calling the function itself on a smaller or simpler instance of the problem.
-3. **Progress:** Each recursive call should move closer to a base case to ensure that the recursion eventually stops. This typically involves manipulating the input of the function in such a way that it gets closer to the base case with each recursive call.
+3. **Progress:** Each recursive call should move closer to a base case to ensure the recursion eventually stops. This typically involves manipulating the input of the function so that it gets closer to the base case with each recursive call.
 
-Let us explain this with an example, where we have two integer numbers, `a` and `b`, and would like to sum everything in between. We can define our components previously:
+Let us explain this with an example: we have two integer numbers, `a` and `b`, and would like to sum everything in between. We can define our components previously:
 - **Base case:** `a` is greater than `b` (*recursive call terminates*)
 - **Recursive case:** `a` is less than `b`.
-- **Progress:** `a` keeps incrementing while the base case is not met. 
+- **Progress:** `a` keeps incrementing while the base case is unmet. 
 
 ##### **Code**
 ```Scala
@@ -2276,14 +2276,14 @@ mySumFun(1, 10)
 res62: Int = 55
 ```
 
-This type of recursive implementation (*at least the `accumulatorFun` implementation*) is called a tail-recursive implementation, because it includes the recursive step as the last step, and nothing more. These types of implementations can be optimized by the compiler, and result in higher execution speeds and less stack memory used, since we're not storing any intermediate values (*i.e., the last call, `accumulatorFun(a + 1, b, acc + a)`, is just that, and nothing more, so it gets evaluated without the need to store and "recall" previous values*)
+This type of recursive implementation (*at least the `accumulatorFun` implementation*) is called a tail-recursive implementation because it includes the recursive step as the last step and nothing more. The compiler can optimize these types of implementations and result in lower execution speeds and less stack memory used since we're not storing any intermediate values (*i.e., the last call, `accumulatorFun(a + 1, b, acc + a)`, is just that, and nothing more, so it gets evaluated without the need to store and "recall" previous values*)
 
-Recursion is in itself a vast topic, and can get very confusing when we're dealing with more complex cases. However, in this segment we'll stick with the generalities.
+Recursion is a vast topic and can get very confusing when dealing with more complex cases. However, in this segment, we'll stick with the generalities.
 
 ---
 
 # Next steps
-Scala is feature-packed and has thousands of built-in more advanced functionalities. We did not discuss the OOP aspect of Scala, since it would require at least another full segment. However, there are plenty of resources for those interested in exploring Scala in more detail.
+Scala is feature-packed and has thousands of built-in, more advanced functionalities. We did not discuss the OOP aspect of Scala since it would require at least another full segment. However, plenty of resources exist for those interested in exploring Scala in more detail.
 
 **Suggested next topics to cover:**
 - Object-Oriented Programming
@@ -2313,10 +2313,10 @@ Scala is feature-packed and has thousands of built-in more advanced functionalit
 
 Furthermore, below are some resources for those interested in learning more about this awesome language:
 
-***Disclaimer:*** *None of the materials below contain referral links or any other sponsored content. Everything included is of my own choosing.*
+***Disclaimer:*** *None of the materials below contain referral links or other sponsored content. Everything included is of my own selection.*
 
 **First stops:**
-- **[Scala Docs, Scala](https://docs.scala-lang.org/):** The recommended first stop, including everything required to start using Scala. This documentation page includes:
+- **[Scala Docs, Scala](https://docs.scala-lang.org/):** The recommended first stop, including everything required to start using Scala. This documentation page includes the following:
 	- Getting Started
 	- Tour of Scala
 	- Scala Toolkit
@@ -2344,11 +2344,11 @@ Furthermore, below are some resources for those interested in learning more abou
 	- Futures and Promises
 	- Higher-kinded types
 - **[DevInsideYou](https://www.youtube.com/@DevInsideYou)**: The single-handedly best YouTube channel covering excellent tips, tricks, and full-blown tutorials of simple to complex topics.
-- **[Rock the JVM](https://www.youtube.com/@rockthejvm):** Another excellent YouTube channel covering a wide variety of topics, while providing comprehensive, step-by-step tutorials.
+- **[Rock the JVM](https://www.youtube.com/@rockthejvm):** Another excellent YouTube channel covering various topics while providing comprehensive, step-by-step tutorials.
 - **[Baeldung/Scala](https://www.baeldung.com/scala/):** An excellent free online resource providing detailed information about the Java ecosystem, including a vast section dedicated to Scala.
 
 **Paid resources:**
-- **[Scala & Functional Programming Essentials, Rock the JVM on Udemy](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/):** A very nice introductory-level course focusing on the essentials of Scala, provided by Rock the JVM founder [Daniel Ciocîrlan](https://www.udemy.com/user/daniel-ciocirlan/) .
+- **[Scala & Functional Programming Essentials, Rock the JVM on Udemy](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/):** A very nice introductory-level course focusing on the essentials of Scala, provided by Rock the JVM founder [Daniel Ciocîrlan](https://www.udemy.com/user/daniel-ciocirlan/).
 - **[Functional Programming in Scala Specialization, Coursera + EPFL](https://www.coursera.org/specializations/scala):** An excellent intermediate-level, four-course specialization designed by [EPFL](https://www.epfl.ch/en/) and taught by Scala founder [Martin Odersky](https://en.wikipedia.org/wiki/Martin_Odersky), focusing on:
 	- Functional programming
 	- Functional design
@@ -2357,27 +2357,27 @@ Furthermore, below are some resources for those interested in learning more abou
 
 **General bibliographical resources:**
 - **[Programming in Scala, Fifth Edition, Artima](https://www.artima.com/shop/programming_in_scala_5ed):** The best book to learn Scala, particularly for Java developers, having Martin Odersky as co-author of the book.
-- **[Functional Programming in Scala, Manning](https://www.manning.com/books/functional-programming-in-scala):** Almost every programming language has at least one "*infamous*" book that strongly focuses on computational and even mathematical theory. This red book is the case for Scala; it provides a comprehensive theoretical review of advanced functional programming concepts, mixing in heavy mathematical background such as set theory, lambda calculus, type theory, and more. It even goes as far as discussing approaches for writing entire applications using purely functional code.
-- **[Structure and Interpretation of Computer Programs, Harold Abelson & Gerald Jay Sussman, MIT Press](https://web.mit.edu/6.001/6.037/sicp.pdf):** This one offers a deep dive into the principles of functional programming, while accompanying plenty of examples & exercises using a combination of math, diagrams, & code.
+- **[Functional Programming in Scala, Manning](https://www.manning.com/books/functional-programming-in-scala):** Almost every programming language has at least one "*infamous*" book that strongly focuses on computational and even mathematical theory. This red book is the case for Scala; it provides a comprehensive theoretical review of advanced functional programming concepts, mixing in heavy mathematical backgrounds such as set theory, lambda calculus, type theory, and more. It even goes as far as discussing approaches for writing entire applications using purely functional code.
+- **[Structure and Interpretation of Computer Programs, Harold Abelson & Gerald Jay Sussman, MIT Press](https://web.mit.edu/6.001/6.037/sicp.pdf):** This one offers a deep dive into the principles of functional programming while accompanying plenty of examples & exercises using a combination of math, diagrams, & code.
 
 **Mathematical bibliographical resources:**
 - **[Naive Set Theory, Paul R. Halmos, Springer](https://link.springer.com/book/10.1007/978-1-4757-1645-0):** Now that we're discussing set theory, it's relevant to at least have general knowledge of what this branch of mathematics studies, simply because functional programming inherits a lot of concepts from this discipline.
-- **[An Introduction to Functional Programming Through Lambda Calculus, Greg Michaelson](https://www.macs.hw.ac.uk/~greg/books/gjm.lambook88.pdf)**: as we discussed, functional programming is based on lambda calculus. Having a general understanding of what this branch of mathematics is all about could facilitate the understanding of functional programming better.
+- **[An Introduction to Functional Programming Through Lambda Calculus, Greg Michaelson](https://www.macs.hw.ac.uk/~greg/books/gjm.lambook88.pdf)**: as we discussed, functional programming is based on lambda calculus. Having a general understanding of what this branch of mathematics is all about could better facilitate understanding of functional programming.
 - **[Types and Programming Languages, Benjamin C. Pierce, MIT Press](https://mitpress.mit.edu/9780262303828/types-and-programming-languages/):** Since Scala combines and encourages the use of functional programming along with type-driven development, it's useful to at least have a general notion of how type systems are designed.
 
 **Contributing to the Scala development:**
-- **[Contributions, Scala](https://docs.scala-lang.org/contribute/):** For those already versed in the language, and wishing to take the next step, this is a great page containing multiple resources for contributing to the Scala language development.
+- **[Contributions, Scala](https://docs.scala-lang.org/contribute/):** For those already versed in the language and wishing to take the next step, this is a great page containing multiple resources for contributing to the Scala language development.
 - **[The Scala Programming Language, GitHub](https://github.com/scala):** The official GitHub Scala page, including 50+ repositories at the time of the writing of this article.
-- **[lampepfl/dotty](https://github.com/lampepfl/dotty):** When Scala 3 was still under development and Scala 2 was the active version, all the new features (*now Scala 3*) were included in an implementation called dotty. The official EPFL page can also be consulted [here](https://dotty.epfl.ch/).
+- **[lampepfl/dotty](https://github.com/lampepfl/dotty):** When Scala 3 was still under development, and Scala 2 was the active version, all the new features (*now Scala 3*) were included in an implementation called dotty. The official EPFL page can also be consulted [here](https://dotty.epfl.ch/).
 
 ---
 
 # Conclusions
-Well, there we have it. We journeyed through Scala from its very beginnings, to why it’s a worthwhile language to learn. We got our workspace ready, and started tinkering with Scala REPL and projects.
+Well, there we have it. We journeyed through Scala from its beginnings to why it's a worthwhile language for anyone interested in high performant & elegantly-written applications. We got our workspace ready and started tinkering with Scala REPL and projects.
 
-Next, we discussed Scala syntax, tangled with the most relevant data types, and navigated through some of the most relevant control structures available, including the powerful pattern matching. We discussed a set of the most relevant collections, walked through higher-order functions, and dipped our toes into the pool of recursion.
+Next, we discussed Scala syntax, tangled with the most relevant data types, and navigated through some of the most relevant control structures available, including the powerful pattern-matching construct. We discussed a set of the most pertinent collections, walked through higher-order functions, and dipped our toes into the pool of recursion.
 
-As we wrap this up, we're now positioned on the brink of the vast landscape of Scala, one of the most powerful languages available today. We've covered a lot of ground, but there's always more to learn. And especially if we're coming from a different paradigm, Scala provides an excellent way to do things different, smarter, and most of all, safer.
+As we wrap this up, we're now positioned on the brink of the vast landscape of Scala, one of the most powerful languages available today. We've covered a lot of ground, but there's always more to learn. And especially if we're coming from a different paradigm, Scala provides an excellent way to do things differently, smarter, and most of all, safer.
 
 ---
 
