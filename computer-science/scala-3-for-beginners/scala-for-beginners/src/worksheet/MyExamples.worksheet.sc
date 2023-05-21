@@ -497,6 +497,102 @@ def intSquared(x: Int): Int =
 sumList(myTargetList, intSquared)
 
 // ----------------------
+// Higher-order methods - Map
+// ----------------------
+
+// Declare a simple list of integer values
+val myList: List[Int] = List(1, 2, 3, 4, 5)
+
+// Declare a squared method
+def squaredInts(x: Int): Int = 
+    x*x
+
+// Use Map on list
+myList.map(squaredInts)
+
+// Perform the same operation using an anonymous function
+myList.map((x: Int) => x * x)
+
+// Double numbers using placeholder
+myList.map(_ * 2)
+
+// Define a list of lists
+val listOfLists: List[List[Float]] = List(
+                                     List(1, 2, 3, 4, 5),
+                                     List(6, 7, 8, 9, 10),
+                                     List(11, 12, 13, 14, 15)
+                                     )
+
+// Declare single list average function
+def averageOfLists(x: List[Float]): Float = 
+    val listLen = x.length
+    def calculateAverage(h: Float, t: List[Float], cum: Float): Float = 
+        if (t.isEmpty) (cum + h)/listLen
+        else calculateAverage(t.head, t.tail, h + cum)
+    calculateAverage(x.head, x.tail, 0)
+
+// Apply average function to list of lists using map
+listOfLists.map(averageOfLists)
+
+// Chaining map functions
+listOfLists.flatten.map(x => x + 1).map(x => x * 2)
+
+// ----------------------
+// Higher-order methods - flatMap
+// ----------------------
+
+// Define a collection of words
+val myWordCollection: List[String] = List("Hello", "there", "my", "dear")
+
+// Map & flatten
+myWordCollection.flatMap(x => x.toList)
+
+// Define a list of lists
+val listOfLists_2: List[List[Float]] = List(
+                                       List(1, 2, 3, 4, 5),
+                                       List(6, 7, 8, 9, 10),
+                                       List(11, 12, 13, 14, 15)
+                                       )
+
+// Calculate averages for each nested list
+listOfLists_2.flatMap(x => List(x.sum / x.length))
+
+// ----------------------
+// Higher-order methods - filter
+// ----------------------
+
+// Define a new list
+val myRawList: List[Int] = List.range(1, 100)
+
+// Filter even numbers
+val myFilteredList: List[Int] = myRawList.filter(x => x % 2 == 0)
+
+// ----------------------
+// Higher-order methods - reduce
+// ----------------------
+
+// Define a new list
+val myAlphabetList: List[String] = List("a", "b", "c", "d")
+
+// Reduce left
+myAlphabetList.reduceLeft(_ + _)
+
+// Declare a list of lists
+val listOfLists_3: List[List[Float]] = List(
+                                       List(1, 2, 3, 4, 5),
+                                       List(6, 7, 8, 9, 10),
+                                       List(11, 12, 13, 14, 15)
+                                       )
+
+// Calculate averages by reducing
+listOfLists_3.map(x => x.reduceLeft(_ + _) / x.length)
+
+// Invert a list
+myAlphabetList.reduceLeft((x,y) => y+x).toList
+
+
+
+// ----------------------
 // Recursion
 // ----------------------
 
@@ -507,4 +603,3 @@ def mySumFun(a: Int, b: Int): Int =
     accumulatorFun(a, b, 0)
 
 mySumFun(1, 10)
-
