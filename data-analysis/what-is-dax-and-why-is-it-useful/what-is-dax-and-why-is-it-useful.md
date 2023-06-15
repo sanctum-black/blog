@@ -272,7 +272,7 @@ To produce information & visuals around the following information:
 ## 1. Preparing the data
 We'll need to do some preprocessing before we include our datasets in our Power BI data model. This is a very common practice when using Power BI, since BI is not fit for preprocessing; it shines when we already have somewhat of a clean, structured and aggregated data, preferably consisting of one table per dimension (*for those unfamiliar with data modeling, the most popular way to model data from a relational standpoint is called [star schema](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)*). However, we can still do some cleaning in [Power Query M](https://learn.microsoft.com/en-us/powerquery-m/), although that's not the focus for this segment, so we'll not mention it in detail.
 
-For the data preprocessing step we'll use a simple Jupyter Notebook with Python. The complete notebook can be found [here](). For those only interested in the DAX part f this segment, the preprocessed datasets can be found here]().
+For the data preprocessing step we'll use a simple Jupyter Notebook with Python. The complete notebook can be found [here](). For those only interested in the DAX part f this segment, the preprocessed datasets can be found [here](https://github.com/ajourneythroughdatascience/blog/tree/master/data-analysis/what-is-dax-and-why-is-it-useful/src/outputs).
 
 We'll start by importing some modules and setting up some parameters for Pandas:
 
@@ -495,9 +495,12 @@ Once we're happy with our model, we simply select "*Close & Apply*".
 If we head to "*Model view*", we should have something like such:
 
 
-6109006_01.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_01.png">
+</p>
 
-###### Figure 1: Model view for Worldwide Demographics & Happiness Index Analysis 
+
+###### *Figure 1: Model view for Worldwide Demographics & Happiness Index Analysis*
 
 
 We can proceed to save our Power BI file.
@@ -554,17 +557,23 @@ As we've mentioned earlier, measures change depending on the filters we use. Thi
 
 Let us test this by creating two visuals and including a slicer including the `Year` field:
 
-6109006_02.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_02.png">
+</p>
 
-###### Figure 2: 
+
+###### *Figure 2: Aaaa*
 
 Since we have selected the year 2022 in our slicer, the calculated measure will reflect this and set the current year as 2022. This is achieved by using the `MAX` function.
 
 If we select another year, the results will change accordingly, and the maximum year will now be the selected year:
 
-6109006_03.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_03.png">
+</p>
 
-###### Figure 3: 
+
+###### *Figure 3: Aaaa*
 
 ### 3.2 Net Migration vs. Happiness Score
 The Net Migration rate is defined as the number of immigrants minus the number of emigrants over a period, divided by the person-years lived by the population of the receiving country over that period. It is expressed as net number of migrants per 1,000 population.
@@ -575,13 +584,23 @@ We would like to see if a low Happiness Score is correlated with the Net Migrati
 
 To do this, we can use a scatterplot:
 
-6109006_04.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_04.png">
+</p>
+
+
+###### *Figure 4: Aaa*
 
 This already looks somewhat promising, but we'd like to explore this further, maybe on a higher aggregation level. If we recall from our original data, we have a `Region` field which we can leverage in order to calculate averages by world regions. We can then vertically stack two bar charts containing:
 - Happiness Index
 - Net Migration Ratio
 
-6109006_05.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_05.png">
+</p>
+
+
+###### *Figure 5: Aaa*
 
 We're also coloring each bar by using a gradient that, in both cases, sets the lower values to red colors, and the higher values to blue colors. 
 
@@ -636,7 +655,12 @@ CALCULATE(
 
 So we now have a table visual as such:
 
-6109006_06.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_06.png">
+</p>
+
+
+###### *Figure 6: Aaa*
 
 Which includes:
 1. List of countries.
@@ -670,12 +694,21 @@ RANKX(ALL(countries[Country]), [LifeExpectancyPercDiffFromWorld], , ASC, Dense)
 
 And generate a new table that contains both ranks, along with the Population Growth Rate index:
 
-6109006_07.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_07.png">
+</p>
+
+
+###### *Figure 7: Aaa*
 
 ---
 
 # References
-- 
+- [Data Analysis Expressions (DAX) Reference, Microsoft](https://learn.microsoft.com/en-us/dax/)
+- [The DAX language, DAX Guide](https://dax.guide/)
+- [Power BI documentation, Microsoft](https://learn.microsoft.com/en-us/power-bi/)
+- [World Happiness Report up to 2022, Mathurin Aché](https://www.kaggle.com/datasets/mathurinache/world-happiness-report)
+- [World Population Prospects 2022, United Nations](https://population.un.org/wpp/Download/Standard/CSV/)
 
 ---
 
