@@ -542,7 +542,7 @@ Once we're happy with our model, we simply select "*Close & Apply*".
 If we head to "*Model view*", we should have something like such:
 
 <p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_01.png">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/B026A046_01.png">
 </p>
 
 
@@ -603,7 +603,7 @@ As mentioned earlier, measures change depending on the filters we use. This mean
 Let us test this by creating two visuals and including a slicer including the `Year` field:
 
 <p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_02.png">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/B026A046_02.png">
 </p>
 
 
@@ -614,7 +614,7 @@ Since we selected 2022 in our slicer, the calculated measure will reflect this a
 If we select another year, the results will change accordingly, and the maximum year will now be the selected year:
 
 <p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_03.png">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/B026A046_03.png">
 </p>
 
 
@@ -630,7 +630,7 @@ We would like to see if a low Happiness Score is correlated with the Net Migrati
 To do this, we can use a scatterplot:
 
 <p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_04.png">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/B026A046_04.png">
 </p>
 
 
@@ -641,7 +641,7 @@ This already looks somewhat promising, but we'd like to explore this further, ma
 - Net Migration Ratio
 
 <p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_05.png">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/B026A046_05.png">
 </p>
 
 
@@ -701,7 +701,7 @@ CALCULATE(
 So we now have a table visual as such:
 
 <p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_06.png">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/B026A046_06.png">
 </p>
 
 
@@ -740,7 +740,7 @@ RANKX(ALL(countries[Country]), [LifeExpectancyPercDiffFromWorld], , ASC, Dense)
 And generate a new table that contains both ranks, along with the Population Growth Rate index:
 
 <p align="center">
-  <img src="https://pabloagn.com/wp-content/uploads/2023/06/6109006_07.png">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/06/B026A046_07.png">
 </p>
 
 
