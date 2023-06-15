@@ -12,7 +12,7 @@
 
 Data Analysis Expressions (*DAX*) is a domain-specific language created by Microsoft and used in various Microsoft products, particularly in PowerBI. DAX was designed specifically for handling data models through a functional-style approach and can be used to calculate tables, columns & measures.
 
-In this Blog Article, we'll discuss what DAX is, why it was created, its main syntactic elements, what can be achieved with it, and its limitations regarding data processing. We'll also discuss why some people consider it difficult and why others consider it "unsafe" and mention best practices that will hopefully avoid shooting ourselves in the foot while dashboarding with PowerBI.
+In this Blog Article, we'll discuss what DAX is, why it was created, its main syntactic elements, what can be achieved with it, and its limitations regarding data processing. We'll also discuss why some people consider it difficult and why others consider it "unsafe" and mention best practices that will hopefully avoid shooting ourselves in the foot while dashboarding with Power BI.
 
 We'll be using DAX expressions & Python scripts, which can be found in the [Blog Article Repo](https://github.com/ajourneythroughdatascience/blog/tree/master/data-analysis/what-is-dax-and-why-is-it-useful).
 
