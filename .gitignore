@@ -26,3 +26,6 @@ templates/
 # Ignore desktop.ini
 desktop.ini
 .Rproj.user
+
+# Ignore .pbix files
+**/*.pbix

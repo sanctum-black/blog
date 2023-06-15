@@ -1,0 +1,683 @@
+<article class="first">
+  <div class="title">
+    <h1>What Is DAX, and Why Is It Useful?</h1>
+  </div>
+</article>
+
+---
+
+[![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
+
+[![type](https://img.shields.io/static/v1?label=Type&message=blog&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/) [![category](https://img.shields.io/static/v1?label=Category&message=data-analysis&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/data-analysis/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Power%20BI,%20DAX,%20Python&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/what-is-dax-and-why-is-it-useful/)
+
+Data Analysis Expressions (*DAX*) is a domain-specific language created by Microsoft, and used in various Microsoft products, particularly in PowerBI. DAX was created specifically for the handling of data models through a functional-style approach, and can be used to calculate tables, columns & measures.
+
+In this Blog Article, we'll discuss what DAX is, why was it created, its main syntactic elements, what can be achieved with it, and its limitations regarding data processing. We'll also discuss why do some people consider it difficult, why do others consider it "unsafe", and mention best practices that will hopefully avoid shooting ourselves in the foot while dashboarding with PowerBI.
+
+We'll be using DAX expressions & Python scripts which can be found in the [Blog Article Repo](https://github.com/ajourneythroughdatascience/blog/tree/master/data-analysis/what-is-dax-and-why-is-it-useful).
+
+---
+
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [What is DAX?](#what-is-dax)
+- [References](#references)
+- [Copyright](#copyright)
+
+---
+
+# A Brief Context
+When talking about languages for data analysis, 2 main ones pop out immediately:
+- Python
+- SQL
+
+These are the two most common languages any data analyst could work with; a reasonably robust portfolio can be built just by using these two. However, there's an additional language which is sometimes not considered part of a Data Analyst's tech-stack, and that's because DAX is a domain-specific language that is only used in some of Microsoft's products, more specifically, in the data visualization department.
+
+If we've ever worked with Microsoft Excel more in-depth, we might know that there is a functionality called Power Pivot, which lets us create and manage data models for analysis and calculations by importing and combining data from various sources, creating relationships between tables, and using DAX formulas to perform calculations and create custom measures.
+
+However, DAX's main use is in a data visualization tool called [Power BI](https://powerbi.microsoft.com/en-au/). Both of these tools share the same internal engine, called Tabular.
+
+In this segment, we'll focus on discussing DAX in the Power BI context.
+
+---
+
+# What is DAX?
+Data Analysis Expressions (*DAX*) is a domain-specific, formula expression language developed by Microsoft aimed at handling data models for some of its services:
+- Microsoft PowerPivot
+- Microsoft Power BI
+- SQL Server Analysis
+
+It was developed as part of [Project Gemini](https://www.tableau.com/blog/microsoft-project-gemini-compelling-to-tableau-software), and launched in 2009 with the first version of the PowerPivot for Excel 2010 Add-in. Since then, it has become a staple in Data Analysis & Business Intelligence, particularly in the context of Power BI desktop.
+
+DAX includes some of the functions that are used in Excel formulas with additional functions that are designed to work with relational data and perform dynamic aggregation. It is, in part, an evolution of the [Multidimensional Expression (MDX)](https://en.wikipedia.org/wiki/MultiDimensional_eXpressions) language developed by Microsoft for Analysis Services multidimensional models combined with Excel formula functions.
+
+In short, DAX is:
+- A formula-based language used for tabular data dynamic manipulation.
+- Particularly but not exclusively used in Power BI Desktop for manipulating tabular data.
+- A domain-specific language widely used among the Data Analysis & Business Intelligence community.
+
+---
+
+# Why is it hard?
+At a first glance, DAX is simple; its syntax is straightforward, and there are a limited number of expressions we can use. However, people find learning & writing DAX a fair challenge. This is because, even though DAX is simple, it's not easy:
+- It's a strictly functional language, meaning there's always one function that will get evaluated on each measure.
+- Related to the point above, the order of evaluation is not linear (imperative), meaning that the execution flow will not be from A to B to C; it will instead depend on the expressions we use, and how we use them.
+- Even though the syntax is simple, the functions can get really complex very easy; this is because we often need to nest expressions inside other expressions in order to get what we're looking for.
+- There are many ways to achieve the same result; we can play with different combinations of expressions that will yield better or worst execution performance, depending on how we're writing them.
+- The evaluation of formulas (*when calculating measures*) is dynamic, meaning it changes when we apply filters in our visuals (*more on this later*)
+- The evaluation context is sometimes hard to decipher if we're not careful with how we build our formulas.
+- The errors are often hard to debug; because of the points above, we may have a bug in our code, related for example, to the evaluation context. This means that, at a first glance, our code might be working correctly, but once we apply a filter, or put our calculation under a specific context, the results are incorrect.
+- We also need to worry about the data modeling aspect of our structure; it's not enough to write good DAX code. We also need to be careful about how we model our data behind the scenes. If we're not careful and design an underperforming data model, our formulas will result in added execution times, which will sometimes even lead to memory errors. Additionally, if we design our data model poorly, we might end up with incorrect calculations because of this.
+
+---
+
+# Main features
+DAX is a feature-rich language that offers a vast amount of analysis capabilities; it also provides flexibility when working with more complex information, and can be combined seamlessly with Power BI visualizations.
+
+DAX has 6 main features:
+- It enables dynamic manipulation.
+- It provides flexibility to create measures, columns & tables.
+- It enables defining relationships between data tables.
+- It provides aggregation and filtering functions for data manipulation.
+- It allows variable definition inside expressions.
+- It allows referencing other expressions inside other formulas. 
+
+## 1. Dynamic manipulation
+When we talk about dynamic manipulation, we're referring to the ability to dynamically calculate based on selections. For example, we may define a simple expression that calculates the average of all ages in a given column, and then apply a filter to select only females; the expression will update automatically.
+
+In DAX we have four main ways to execute calculations:
+- Measures in the visual directly
+- Calculated measures
+- Calculated columns
+- Calculated tables
+
+Dynamic manipulation in DAX is achieved via the first two mechanisms:
+- Measures in visuals.
+- Calculated measures.
+
+This is because a measure is evaluated in the context of the cell evaluated in a report or in a DAX query, whereas a calculated column is computed at the row level within the table it belongs to. When talking about calculated measures, the context of the cell depends on user selections in the report or on the shape of the DAX query, while the context of a calculated column will always belong to the table containing the calculated column.
+
+## 2. Measures, columns & tables
+We already mentioned the four ways we can calculate things in Power BI using DAX. Each method of calculation has its own advantages and disadvantages:
+- Measures in visuals:
+	- If we have a table containing Person Name, Age, and Gender, we can grab any of these and include them in a visual directly, by performing some type of aggregation, or by simply displaying them without previous calculations.
+	
+- Calculated measures:
+	- Are evaluated on the fly.
+	- Inherit the context of the user selection.
+	- Can take more time to process if calculation is complex, or involves large amounts of data.
+
+- Calculated columns:
+	- They are pre-evaluated (*once they are defined*).
+	- Since they do not change context on user selection, they are not recalculated upon filtering.
+	- Can take more memory if data model is large enough.
+
+- Calculated tables:
+	- They are also pre-evaluated.
+	- They do not change context on user selection/
+	- Can take significantly more memory, depending on the aggregation we're performing on the data model.
+
+## 3. Relationship definitions
+In Power BI, similar to other RDMS's, we often work with multiple tables. When working in our data model, we can define relations between tables just as we would do while using an SQL system, for example.
+
+With DAX, we can leverage these relations either directly by simply calculating using the related fields, or by explicitly specifying a related field using the `RELATED` set of expressions.
+
+## 4. Aggregation & filtering
+DAX has a powerful set of aggregation & filtering expressions:
+
+Below are some examples of aggregation expressions:
+- **Sum:** Calculates the sum of a numeric column.
+	- Example: `SUM([Sales])`
+- **Average:** Calculates the average of a numeric column.
+	- Example: `AVERAGE([Price])`
+- **Minimum:** Retrieves the minimum value from a column.
+	- Example: `MIN([Quantity])`
+- **Maximum:** Retrieves the maximum value from a column.
+	- Example: `MAX([Revenue])`
+- **Count:** Counts the number of non-blank values in a column.
+	- Example: `COUNT([ProductID])`
+- **Count Distinct:** Counts the number of unique values in a column.
+	- Example: `DISTINCTCOUNT([CustomerID])`
+- **Median:** Calculates the median value of a numeric column.
+	- Example: `MEDIAN([Age])`
+- **Mode:** Retrieves the mode (most frequently occurring value) from a column.
+	- Example: `MODE([Color])`
+- **Standard Deviation:** Calculates the standard deviation of a numeric column.
+	- Example: `STDEV.P([Quantity])`
+- **Variance:** Calculates the variance of a numeric column.
+	- Example: `VAR.P([Revenue])`
+
+Below are some examples of filtering expressions:
+- **Basic Filtering:**
+    - Example: `[Product] = "Apples"`
+- **Multiple Conditions:**
+    - Example: `[Category] = "Fruits" && [Price] > 10`
+- **Text Filtering:**
+    - Example: `CONTAINS([ProductName], "Apple")`
+- **Date Filtering:**
+    - Example: `[OrderDate] >= DATE(2022, 1, 1)`
+- **Top N Filtering:**
+    - Example: `TOPN(5, [Sales], [Category])`
+- **Range Filtering:**
+    - Example: `[Quantity] BETWEEN 10 AND 50`
+- **IN Operator:**
+    - Example: `[Region] IN ("North", "South")`
+- **NOT Operator:**
+    - Example: `NOT [Status] = "Completed"`
+- **IsBlank Function:**
+    - Example: `ISBLANK([CustomerName])`
+- **OR Operator:**
+    - Example: `[Category] = "Fruits" || [Category] = "Vegetables"`
+
+These are just some examples, but DAX offers a wide variety of expressions we can use.
+
+## 5. Variable definitions
+DAX lets us define variables inside our functions. This is helpful when we have several intermediate calculations, and would like to keep our code clean and organized.
+
+A variable can be defined using the following syntax:
+
+##### **Code**
+```DAX
+BirthContributionPerRegion = 
+VAR BirthsCountry =
+CALCULATE(
+    SUM(demographics[Births])
+    )
+
+VAR BirthsRegion = 
+CALCULATE(
+    SUM(demographics[Births]),ALL(countries[Country])
+)
+
+RETURN
+CALCULATE(
+    DIVIDE(BirthsCountry, BirthsRegion)
+)
+```
+
+A variable inside a measure must always be accompanied by a return statement. For example, in our calculation, we're defining two variables using the `VAR` keyword, and returning the division of the result of the two, using the `RETURN` keyword.
+
+This syntax is cleaner than if we were to define the entire calculation in one statement. More importantly, variables provide greater readability improvements when we're working with extense functions.
+
+## 6. Referencing other expressions
+DAX also allows us to reference other expressions from inside a function. This is extremely useful when we have multiple intermediate expressions that we're actually using in other visuals, and would like to build new expressions from those.
+
+A reference to another measure can be accomplished using the following syntax:
+
+##### **Code**
+```DAX
+BirthsPerCountry = 
+CALCULATE(
+    SUM(demographics[Births])
+)
+```
+
+##### **Code**
+```DAX
+BirthsPerRegion = 
+CALCULATE(
+    SUM(demographics[Births]),ALL(countries[Country])
+)
+```
+
+##### **Code**
+```DAX
+BirthContributionPerRegion = 
+CALCULATE(
+    DIVIDE([BirthsPerCountry], [BirthsPerRegion])
+)
+```
+
+This way, we're first defining two calculated measures, and we're then defining a new expression that uses the first two as basis, eliminating the need to repeat the code of our first expressions in the second one; we can of course reutilize the first expressions in any other calculation we require.
+
+---
+
+# Main components
+DAX is composed of 8 main key parts:
+1. **Expression:** DAX expressions define calculations and logic. Expressions are the building blocks of formulas.
+2. **Formula:** Formulas are a combination of expressions and operators to perform more complex calculations.
+3. **Evaluation:** Formulas dynamically calculate results within the context of a data model.
+4. **Result:** DAX formulas evaluate and return results that can be used in visualizations, or in other formulas.
+5. **Functions:** DAX provides built-in functions for various calculations.
+6. **Context:** The context determines the subset of data being considered.
+7. **Iteration:** DAX supports iterative calculations with functions like `SUMX` and `CALCULATE`.
+8. **Data Model:** DAX works with tabular data models that organize data into tables with relationships.
+
+Typically, we would approach the creation of DAX formulas using the following steps:
+1. We start with a data model, where we have one or more tables with one or more columns each.
+2. We then think if we require a dynamic context, or a fixed one.
+3. Depending on the decision above, we either create calculated measures, columns, or tables. We start building formulas containing expressions.
+	1. Depending on what we're trying to calculate, we can choose to use aggregation expressions, iterators, filters, conditional statements, and many more.
+4. We then take the formula and include it somewhere in our dashboard. This is usually achieved via the use of predefined or custom visuals; however, we can also let the formulas as intermediate steps for other calculations.
+
+Now that we have a more clear workflow for generating DAX calculations, we can put it into practice by following along a very simple practical exercise.
+
+---
+
+# A practical example
+For this practical example, we'll use two datasets which can be found in the links below:
+- [World Happiness Report up to 2022, Mathurin Aché, Kaggle](https://www.kaggle.com/datasets/mathurinache/world-happiness-report)
+- [Demographic Indicators, United Nations Department of Economic and Social Affairs, UN Data](https://population.un.org/wpp/Download/Standard/CSV/)
+
+Our objective is to build a simple Power BI dashboard that uses the following contexts:
+- Country
+- Year
+
+To produce information & visuals around the following information:
+- Life expectancy
+- Net migration
+- Population growth rate
+- Happiness score
+
+## 1. Preparing the data
+We'll need to do some preprocessing before we include our datasets in our Power BI data model. This is a very common practice when using Power BI, since BI is not fit for preprocessing; it shines when we already have somewhat of a clean, structured and aggregated data, preferably consisting of one table per dimension (*for those unfamiliar with data modeling, the most popular way to model data from a relational standpoint is called [star schema](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)*). However, we can still do some cleaning in [Power Query M](https://learn.microsoft.com/en-us/powerquery-m/), although that's not the focus for this segment, so we'll not mention it in detail.
+
+For the data preprocessing step we'll use a simple Jupyter Notebook with Python. The complete notebook can be found [here](). For those only interested in the DAX part f this segment, the preprocessed datasets can be found here]().
+
+We'll start by importing some modules and setting up some parameters for Pandas:
+
+##### **Code**
+```Python
+import pandas as pd
+pd.set_option('display.max_columns', None) 
+import os
+```
+
+We'll then define our directory parameters:
+
+##### **Code**
+```Python
+# Define directories
+rDir = "data"
+wDir = "outputs"
+happinessData = os.path.join(rDir, "world-happiness-index")
+demographicsData = os.path.join(rDir, "world-demographics/WPP2022_Demographic_Indicators_Medium.csv")
+```
+
+Here, `happinessData` and `demographicsData` refers to the datasets we previously downloaded, so they should live inside the `data` directory.
+
+We'll then load our raw world happiness files as Pandas DataFrames, and concatenate them so we end up with one single object containing all years:
+
+##### **Code**
+```Python
+df_list = []
+for file in os.listdir(happinessData):
+    year = file.split('.')[0]
+    print(f"Reading year: {year}")
+    df = pd.read_csv(os.path.join(happinessData, file))
+    df['Year'] = year
+    df_list.append(df)
+
+df_happiness_idx = pd.concat(df_list)
+df_happiness_idx.head()
+```
+
+Next, we can confirm the columns we have in our object, and only keep the ones we're interested in:
+- `Country`
+- `Region`
+- `Happiness Rank`
+- `Happiness Score`
+- `Standard Error`
+- `Economy (GDP per Capita)`
+- `Family`
+- `Health (Life Expectancy)`
+- `Freedom`
+- `Trust (Government Corruption)`
+- `Generosity`
+- `Dystopia Residual`
+
+##### **Code**
+```Python
+happiness_idx_columns = ['Country',
+                         'Region',
+                         'Year',
+                         'Happiness Rank',
+                         'Happiness Score',
+                         'Standard Error',
+                         'Economy (GDP per Capita)',
+                         'Family',
+                         'Health (Life Expectancy)',
+                         'Freedom',
+                         'Trust (Government Corruption)',
+                         'Generosity',
+                         'Dystopia Residual']
+
+df_happiness_idx = df_happiness_idx[happiness_idx_columns]
+```
+
+We'll then do some cleaning and renaming:
+
+##### **Code**
+```Python
+df_happiness_idx.dropna(subset = ['Country'], inplace=True)
+df_happiness_countries = list(df_happiness_idx['Country'].unique())
+df_happiness_countries.sort()
+df_happiness_countries
+```
+
+##### **Output**
+```
+['Afghanistan',
+ 'Albania',
+ 'Algeria',
+ 'Angola',
+ 'Argentina',
+ 'Armenia',
+ 'Australia',
+ 'Austria',
+ 'Azerbaijan',
+ 'Azerbaijan*',
+ 'Bahrain',
+ 'Bangladesh',
+ 'Belarus',
+ 'Belarus*',
+ 'Belgium',
+ 'Belize',
+ 'Benin',
+ 'Bhutan',
+ 'Bolivia',
+ 'Bosnia and Herzegovina',
+ 'Botswana',
+ 'Botswana*',
+ 'Brazil',
+ 'Bulgaria',
+ 'Burkina Faso',
+...
+ 'Yemen',
+ 'Yemen*',
+ 'Zambia',
+ 'Zimbabwe',
+ 'xx']
+```
+
+It appears we have some duplicates, as well as a `xx` country name. We'll remove those:
+
+##### **Code**
+```Python
+df_happiness_countries = [country for country in df_happiness_countries if '*' not in country and 'xx' not in country]
+df_happiness_idx = df_happiness_idx[df_happiness_idx['Country'].isin(df_happiness_countries)].reset_index(drop=True)
+```
+
+Great, so now what's left is to load the demographics dataset, keep only the columns we're interested in, compare countries, and select only the ones that are common to both sets:
+
+##### **Code**
+```Python
+df_demographics = pd.read_csv(demographicsData)
+df_demographics = df_demographics[(df_demographics['LocTypeName'] == 'Country/Area') & (df_demographics['Time'].isin([2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]))].reset_index(drop = True)
+df_demographics.rename(columns = {'Location': 'Country',
+                                  'Time': 'Year'},
+                                  inplace=True
+                        )
+df_demographics = df_demographics[['Country', 'Year', 'PopDensity', 'PopSexRatio', 'MedianAgePop', 'PopGrowthRate', 'Births', 'Deaths', 'DeathsMale', 'DeathsFemale', 'NetMigrations']]
+(df_demographics['Country'].nunique(), df_happiness_idx['Country'].nunique())
+```
+
+##### **Output**
+```
+(237, 170)
+```
+
+We can see that we have a larger number of unique countries / areas in the demographics dataset, so we'll need to filter out the ones that are unique to a given dataset:
+
+##### **Code**
+```Python
+countries_consolidated = [country for country in df_demographics['Country'].unique() if country in df_happiness_idx['Country'].unique()]
+df_demographics = df_demographics[df_demographics['Country'].isin(countries_consolidated)].reset_index(drop=True)
+df_happiness_idx = df_happiness_idx[df_happiness_idx['Country'].isin(countries_consolidated)].reset_index(drop=True)
+```
+
+Finally, we'll create a country ID number; this step is not required as we can create our connections in our model using the actual country name. However, it's always good practice to set up a unique numeric ID for fields that we'll use for relationships in our data model:
+
+##### **Code**
+```Python
+country_list = df_demographics['Country'].unique()
+country_list.sort()
+country_identifiers = list(range(1, len(country_list) + 1))
+country_ids = dict(zip(country_list, country_identifiers))
+```
+
+Since we have an identifier we can now use instead of the full country name, we can create a new DataFrame composed of all the unique countries, and add a `Region` column using the `df_happiness_idx` region mapping:
+
+##### **Code**
+```Python
+df_countries = pd.DataFrame(country_ids.items(), columns = ['Country', 'Country_ID'])
+df_happiness_idx['Country_ID'] = df_happiness_idx['Country'].map(country_ids)
+df_demographics['Country_ID'] = df_demographics['Country'].map(country_ids)
+regions = df_happiness_idx.drop_duplicates('Country_ID').set_index('Country_ID')['Region']
+df_countries['Region'] = df_countries['Country_ID'].map(regions)
+```
+
+Lastly, we simply drop the unnecessary columns from our original DataFrames, and write our results to CSV files:
+
+##### **Code**
+```Python
+df_happiness_idx.drop(columns = ['Country', 'Region'], inplace=True)
+df_demographics.drop(columns = ['Country'], inplace=True)
+```
+
+##### **Code**
+```Python
+df_countries.to_csv(os.path.join(wDir, 'countries.csv'), index=False)
+df_happiness_idx.to_csv(os.path.join(wDir, 'happiness_index.csv'), index=False)
+df_demographics.to_csv(os.path.join(wDir, 'demographics.csv'), index=False)
+```
+
+## 2. Creating our data model in Power BI
+The next step is to import our data to a Power BI file. For this, we follow the steps below:
+1. Head to Power BI Desktop
+2. Select "*Get data*"
+3. Select "*Text/CSV*"
+4. Select the first file we wish to import, which can be `countries.csv`.
+5. We'll select "*Transform Data*", and the Power Query Editor will open.
+6. We'll import the other two datasets into our model by repeating the steps 2 to 4 from inside the Power Query Editor.
+7. We'll finally make sure we have the correct data types for each column for each dataset:
+
+For `countries`:
+
+```
+{{"Country", type text}, {"Country_ID", Int64.Type}, {"Region", type text}})
+```
+
+For `happiness_index`:
+
+```
+{{"Year", Int64.Type}, {"Happiness Rank", Int64.Type}, {"Happiness Score", type number}, {"Standard Error", type number}, {"Economy (GDP per Capita)", type number}, {"Family", type number}, {"Health (Life Expectancy)", type number}, {"Freedom", type number}, {"Trust (Government Corruption)", type number}, {"Generosity", type number}, {"Dystopia Residual", type number}, {"Country_ID", Int64.Type}}
+```
+
+For `demographics`:
+
+```
+{{"Year", Int64.Type}, {"PopDensity", type number}, {"PopSexRatio", type number}, {"MedianAgePop", type number}, {"PopGrowthRate", type number}, {"Births", type number}, {"Deaths", type number}, {"DeathsMale", type number}, {"DeathsFemale", type number}, {"NetMigrations", type number}, {"Country_ID", Int64.Type}}
+```
+
+Once we're happy with our model, we simply select "*Close & Apply*".
+
+If we head to "*Model view*", we should have something like such:
+
+
+6109006_01.png
+
+###### Figure 1: Model view for Worldwide Demographics & Happiness Index Analysis 
+
+
+We can proceed to save our Power BI file.
+
+## 3. Creating a simple dashboard
+Since the focus of this segment is on DAX calculations, and not on the visualizations themselves, we'll limit the creation of visuals to very simple ones.
+
+We'll create five different groups of visualizations:
+- Population Density Index table & bar chart.
+- Net Migration vs. Happiness Score scatterplot & bar chart.
+- Life Expectancy in affinity by region & whole world.
+- Ranking of Life Expectancy percentage difference vs regions & entire world.
+
+### 3.1 Population Density Index
+We'll start by including a table with the following:
+- The `Country` field in our table.
+- The Population Density Index in our table:
+	- The index version of this indicator takes the previous year and calculates the percentage change vs. the current year.
+- The `Year` field as a filter.
+
+Since we have the Population Density indicator as an absolute value, we need to convert it to an index. For this we can head to the "*Data view*" pane, and create a new measure called `PopDensityIndex`. In this measure, we want to calculate the percentage change in population density taking the previous year as reference:
+
+##### **Code**
+```DAX
+PopDensityIndex = 
+VAR currYear = MAX(demographics[Year])
+VAR prevYear = currYear - 1
+VAR popDensityCurr = 
+CALCULATE(
+    AVERAGE(demographics[PopDensity]),
+    demographics[Year] = currYear
+)
+VAR popDensityPrev = 
+CALCULATE(
+    AVERAGE(demographics[PopDensity]),
+    demographics[Year] = prevYear
+)
+RETURN
+CALCULATE(
+    DIVIDE(popDensityCurr, popDensityPrev) - 1
+)
+```
+
+What we've done here is:
+- Create a new DAX measure, and name it `PopDensityIndex`
+- Create four variables:
+	- `currYear`: The current year (*selected year*) by our filter.
+	- `prevYear`: The previous year from the current selected year.
+	- `popDensityCurr`: The population density calculated for the current year.
+	- `popDensityPrev`: The population density calculated for the previous year.
+- Return the percentage change of the current density vs the previous one.
+
+As we've mentioned earlier, measures change depending on the filters we use. This means that we can include a filter containing the `Year` field, and the `currYear` & `prevYear` variables will change whenever we select a different year.
+
+Let us test this by creating two visuals and including a slicer including the `Year` field:
+
+6109006_02.png
+
+###### Figure 2: 
+
+Since we have selected the year 2022 in our slicer, the calculated measure will reflect this and set the current year as 2022. This is achieved by using the `MAX` function.
+
+If we select another year, the results will change accordingly, and the maximum year will now be the selected year:
+
+6109006_03.png
+
+###### Figure 3: 
+
+### 3.2 Net Migration vs. Happiness Score
+The Net Migration rate is defined as the number of immigrants minus the number of emigrants over a period, divided by the person-years lived by the population of the receiving country over that period. It is expressed as net number of migrants per 1,000 population.
+
+The Happiness Score is normally calculated using data from the Gallup World Poll surveys. They are based on answers to the main life evaluation question asked in the poll. This is called the [Cantril ladder](https://news.gallup.com/poll/122453/understanding-gallup-uses-cantril-scale.aspx): it asks respondents to think of a ladder, with the best possible life for them being a 10 and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. The rankings are from nationally representative samples.
+
+We would like to see if a low Happiness Score is correlated with the Net Migration rate on any given country.
+
+To do this, we can use a scatterplot:
+
+6109006_04.png
+
+This already looks somewhat promising, but we'd like to explore this further, maybe on a higher aggregation level. If we recall from our original data, we have a `Region` field which we can leverage in order to calculate averages by world regions. We can then vertically stack two bar charts containing:
+- Happiness Index
+- Net Migration Ratio
+
+6109006_05.png
+
+We're also coloring each bar by using a gradient that, in both cases, sets the lower values to red colors, and the higher values to blue colors. 
+
+### 3.3 Life Expectancy in Affinity by Region & Whole World
+Affinity is defined as a similarity with other units of aggregation. For example, affinity by region refers to countries that coexist on the same continent; this concept is extremely useful, since it lets us perform calculations on different levels of aggregation by similar units.
+
+Therefore, we can do the following:
+- Calculate life expectancy for each country
+- Calculate life expectancy for coexisting countries (*in the same region/continent*)
+- Calculate life expectancy for the entire world (*all regions grouped together*)
+
+This would quickly tell us, in a single visual, if a given country is above or below other similar countries in terms of life expectancy. For this, we'll first create a DAX measure that calculates the average life expectancy for coexisting countries:
+
+##### **Code**
+```DAX
+AffinityLifeExpectancy = 
+CALCULATE(
+    AVERAGE(happiness_index[Health (Life Expectancy)]),
+    ALL(countries),
+    VALUES(countries[Region])
+)
+```
+
+But we would also like to calculate the percentual difference between the country and its corresponding region, right? For that, we can create another DAX measure:
+
+##### **Code**
+```DAX
+LifeExpectancyPercDiffFromRegion = 
+CALCULATE(
+    DIVIDE(AVERAGE(happiness_index[Health (Life Expectancy)]), [AffinityLifeExpectancy]) - 1
+)
+```
+
+Great! Now we only need to calculate the world average and create the same percentual difference metric for this new implementation:
+
+##### **Code**
+```DAX
+LifeExpectancyWorldAverage = 
+CALCULATE(
+    AVERAGE(happiness_index[Health (Life Expectancy)]),
+    ALL(countries[Country])
+)
+```
+
+##### **Code**
+```DAX
+LifeExpectancyPercDiffFromWorld = 
+CALCULATE(
+    DIVIDE(AVERAGE(happiness_index[Health (Life Expectancy)]), [LifeExpectancyWorldAverage]) - 1
+)
+```
+
+So we now have a table visual as such:
+
+6109006_06.png
+
+Which includes:
+1. List of countries.
+2. Life expectancy by country.
+3. Average life expectancy by coexisting countries in region.
+4. Percentual difference between the last two measures.
+5. Average life expectancy for whole world.
+6. Percentual difference between each country's life expectancy and the average world's life expectancy.
+
+This gives us a really nice picture of:
+- How are countries doing in terms of life expectancy in general.
+- How are they doing when compared to their region.
+- How are they doing when compared to the entire world.
+
+These types of calculations are extremely valuable, since for example, we can easily spot countries with prevalent humanitarian crises by using the fourth indicator; the region is doing fine, but the country is presenting challenges. So, the lower the percentual difference, the more drastic the country is when compared to the total region.
+
+### 3.4 Ranking of Life Expectancy percentage difference vs regions & entire world.
+We can actually complement the chart above by ranking countries based on their life expectancy percentual difference vs their regions and vs the entire world:
+
+##### **Code**
+```DAX
+LifeExpectancyRegionRank = 
+RANKX(ALL(countries[Country]), [LifeExpectancyPercDiffFromRegion], , ASC, Dense)
+```
+
+##### **Code**
+```DAX
+LifeExpectancyWorldRank = 
+RANKX(ALL(countries[Country]), [LifeExpectancyPercDiffFromWorld], , ASC, Dense)
+```
+
+And generate a new table that contains both ranks, along with the Population Growth Rate index:
+
+6109006_07.png
+
+---
+
+# References
+- 
+
+---
+
+# Copyright
+Pablo Aguirre, Creative Commons Attribution 4.0 International, All Rights Reserved.

@@ -229,15 +229,15 @@ To install Rust, we will follow the steps below:
 10. If the installed `rustc` version appeared, the installation succeeded.
 
 If, instead, we got an error such as `rustc command not found`, it most probably means that the `.cargo/bin` directory was not added to the `Path` environment variable. To fix this, we will need to add it manually by following the steps below:
-	1. Open the Windows run command window by typing <kbd>WIN</kbd>+<kbd>r</kbd>.
-	2. Input the following: `"C:\Windows\system32\rundll32.exe" sysdm.cpl,EditEnvironmentVariables`
-	4. Select `Path`.
-	5. Click `Edit...`.
-	6. Click `New`.
-	7. Input the following: `C:\Users\username\.cargo\bin`.
-	8. Click `OK`.
-	9. Click `OK`.
-	10. Try to execute the `rustc --version` command again.
+1. Open the Windows run command window by typing <kbd>WIN</kbd>+<kbd>r</kbd>.
+2. Input the following: `"C:\Windows\system32\rundll32.exe" sysdm.cpl,EditEnvironmentVariables`
+3. Select `Path`.
+4. Click `Edit...`.
+5. Click `New`.
+6. Input the following: `C:\Users\username\.cargo\bin`.
+7. Click `OK`.
+8. Click `OK`.
+9. Try to execute the `rustc --version` command again.
 
 ## 2. Microsoft C++ Build Tools
 To compile Rust code, we will need to install the Microsoft C++ Build Tools. It is probable that we already have this installed. If we don't, we can follow the steps below:
