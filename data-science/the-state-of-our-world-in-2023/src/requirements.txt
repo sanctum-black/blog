@@ -1,0 +1,10 @@
+pandas
+numpy
+xlsxwriter
+scipy
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+tensorflow
+ipykernel

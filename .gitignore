@@ -29,3 +29,6 @@ desktop.ini
 
 # Ignore .pbix files
 **/*.pbix
+
+# Ignore Scala bloop
+**/.bloop/
