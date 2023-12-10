@@ -1,0 +1,152 @@
+﻿Metric Code,Segment,Subject,Source
+01_01,Macroeconomics,GDP,The World Bank
+01_02,Macroeconomics,GDP,The World Bank
+01_03,Macroeconomics,GDP,The World Bank
+01_04,Macroeconomics,GDP,The World Bank
+01_05,Macroeconomics,GDP,The World Bank
+01_06,Macroeconomics,Economic Metrics,The World Bank
+01_07,Macroeconomics,Economic Metrics,International Monetary Fund (IMF)
+01_08,Macroeconomics,Economic Metrics,The World Bank
+01_09,Macroeconomics,Economic Metrics,The Economist
+01_10,Macroeconomics,Economic Metrics,United Nations Environment Programme (UNEP)
+01_11,Macroeconomics,Economic Metrics,(blank)
+01_12,Macroeconomics,Economic Metrics,The World Bank
+01_13,Macroeconomics,Economic Metrics,The World Bank
+01_14,Macroeconomics,Unemployment & Underemployment,The World Bank
+01_15,Macroeconomics,Unemployment & Underemployment,The World Bank
+01_16,Macroeconomics,Unemployment & Underemployment,International Labor Organization (ILOSTAT)
+01_17,Macroeconomics,Debt & Deficit,International Monetary Fund (IMF)
+01_18,Macroeconomics,Debt & Deficit,Central Intelligence Agency (CIA)
+01_19,Macroeconomics,Income Inequality,The World Bank
+01_20,Macroeconomics,Income Inequality,The World Bank
+01_21,Macroeconomics,Income Inequality,The World Bank
+01_22,Macroeconomics,Income Inequality,United Nations Development Programme (UNDP)
+01_23,Macroeconomics,Poverty,United Nations Development Programme (UNDP)
+01_24,Macroeconomics,Poverty,International Labor Organization (ILOSTAT)
+01_25,Macroeconomics,Income Disparities & Wage Gap,Credit Suisse
+01_26,Macroeconomics,Income Disparities & Wage Gap,World Economic Forum
+01_27,Macroeconomics,Income Disparities & Wage Gap,Organisation for Economic Co-operation and Development (OECD)
+01_28,Macroeconomics,Currency Value Against USD,Organisation for Economic Co-operation and Development (OECD)
+01_29,Macroeconomics,Minimum Wage,International Labor Organization (ILOSTAT)
+01_30,Macroeconomics,Labor Force Participation,International Labor Organization (ILOSTAT)
+01_31,Macroeconomics,Labor Force Participation,International Labor Organization (ILOSTAT)
+01_32,Macroeconomics,Household Dynamics,Organisation for Economic Co-operation and Development (OECD)
+01_33,Macroeconomics,Household Dynamics,Organisation for Economic Co-operation and Development (OECD)
+01_34,Macroeconomics,Household Dynamics,Organisation for Economic Co-operation and Development (OECD)
+01_35,Macroeconomics,Household Dynamics,Organisation for Economic Co-operation and Development (OECD)
+01_36,Macroeconomics,Household Dynamics,Organisation for Economic Co-operation and Development (OECD)
+01_37,Macroeconomics,Household Dynamics,Organisation for Economic Co-operation and Development (OECD)
+01_38,Macroeconomics,Household Dynamics,Organisation for Economic Co-operation and Development (OECD)
+01_39,Macroeconomics,Non-performing Loans and Solvency,International Monetary Fund (IMF)
+02_01,Economic Indicators and Investment,Market and Consumer Indices,Organisation for Economic Co-operation and Development (OECD)
+02_02,Economic Indicators and Investment,Market and Consumer Indices,Organisation for Economic Co-operation and Development (OECD)
+02_03,Economic Indicators and Investment,Market and Consumer Indices,The World Bank
+02_04,Economic Indicators and Investment,Investment Trends,Organisation for Economic Co-operation and Development (OECD)
+02_05,Economic Indicators and Investment,Investment Trends,Organisation for Economic Co-operation and Development (OECD)
+02_06,Economic Indicators and Investment,Economic Metrics,United Nations World Tourism Organization
+03_01,Industrial and Trade,Trade Patterns,International Monetary Fund (IMF)
+03_02,Industrial and Trade,Industrial Environmental Impact,The World Bank
+03_03,Industrial and Trade,Industrial Environmental Impact,Our World in Data
+03_04,Industrial and Trade,Industrial Environmental Impact,Our World in Data
+03_05,Industrial and Trade,Industrial Environmental Impact,The World Bank
+03_06,Industrial and Trade,Consumption of Electricity,The World Bank
+03_07,Industrial and Trade,Agriculture,The World Bank
+04_01,Environmental Health,Air Quality and Pollution,IQAir
+04_02,Environmental Health,Climate Change Indicators,International Monetary Fund (IMF)
+04_03,Environmental Health,Climate Change Indicators,International Monetary Fund (IMF)
+04_04,Environmental Health,Climate Change Indicators,International Monetary Fund (IMF)
+04_05,Environmental Health,Climate Change Indicators,International Monetary Fund (IMF)
+04_06,Environmental Health,Extreme Weather Conditions,International Monetary Fund (IMF)
+04_07,Environmental Health,Extreme Weather Conditions,Germanwatch
+04_08,Environmental Health,Environmental Sustainability,Yale University
+04_09,Environmental Health,Environmental Sustainability,Dual Citizen Inc.
+04_10,Environmental Health,Environmental Sustainability,Vision of Humanity
+04_11,Environmental Health,Percentage of Renewable Resources,The World Bank
+05_01,Political Sociology,Corruption Overview,Transparency International
+05_02,Political Sociology,Political Landscape,Economist Intelligence Unit
+05_03,Political Sociology,Political Landscape,Freedom House
+05_04,Political Sociology,War and Armed Conflicts,Vision of Humanity
+05_05,Political Sociology,War and Armed Conflicts,Vision of Humanity
+05_06,Political Sociology,War and Armed Conflicts,Vision of Humanity
+05_07,Political Sociology,War and Armed Conflicts,Uppsala Universitet - Uppsala Conflict Data Program
+05_08,Political Sociology,War and Armed Conflicts,Uppsala Universitet - Uppsala Conflict Data Program
+05_09,Political Sociology,War and Armed Conflicts,Uppsala Universitet - Uppsala Conflict Data Program
+05_10,Political Sociology,War and Armed Conflicts,Uppsala Universitet - Uppsala Conflict Data Program
+05_11,Political Sociology,War and Armed Conflicts,Uppsala Universitet - Uppsala Conflict Data Program
+05_12,Political Sociology,War and Armed Conflicts,Uppsala Universitet - Uppsala Conflict Data Program
+05_13,Political Sociology,War and Armed Conflicts,Uppsala Universitet - Uppsala Conflict Data Program
+05_14,Political Sociology,War and Armed Conflicts,Uppsala Universitet - Uppsala Conflict Data Program
+05_15,Political Sociology,Political Inclinations,World Values Survey
+05_16,Political Sociology,Democracy and Governance,Electoral Integrity Global Report
+05_17,Political Sociology,Democracy and Governance,Varieties of Democracy (V-Dem)
+06_01,Health and Well-Being,Health,The World Bank
+06_02,Health and Well-Being,Health,The World Bank
+06_03,Health and Well-Being,Health,"World Health Organization (WHO), NCD Risk Factor Collaboration (NCD-RisC)"
+06_04,Health and Well-Being,Health,The World Bank
+06_05,Health and Well-Being,Health,MIMI
+06_06,Health and Well-Being,Health,International Labor Organization (ILOSTAT)
+06_07,Health and Well-Being,Health,International Labor Organization (ILOSTAT)
+06_08,Health and Well-Being,Global Burden of Disease,The Institute for Health Metrics and Evaluation (IHME)
+06_09,Health and Well-Being,Global Burden of Disease,The Institute for Health Metrics and Evaluation (IHME)
+06_10,Health and Well-Being,Global Burden of Disease,The Institute for Health Metrics and Evaluation (IHME)
+06_11,Health and Well-Being,Global Burden of Disease,The Institute for Health Metrics and Evaluation (IHME)
+06_12,Health and Well-Being,Well-Being,World Happiness Report
+06_13,Health and Well-Being,Mental Health,World Health Organization (WHO)
+06_14,Health and Well-Being,Healthcare Access and Disparities,World Health Organization (WHO)
+06_15,Health and Well-Being,Healthcare Access and Disparities,The World Bank
+06_16,Health and Well-Being,Substance Abuse,(blank)
+07_01,Educational Development,Worldwide Education Trends,The World Bank
+07_02,Educational Development,Education Disparities and Affordability,(blank)
+07_03,Educational Development,Education Disparities and Affordability,(blank)
+07_04,Educational Development,Maximum Degree of Studies,Organisation for Economic Co-operation and Development (OECD)
+07_05,Educational Development,Maximum Degree of Studies,Organisation for Economic Co-operation and Development (OECD)
+08_01,Demographic Trends,Population Dynamics and Migration,(blank)
+08_02,Demographic Trends,Population Dynamics and Migration,(blank)
+08_03,Demographic Trends,Refugee Crisis,United Nations High Commissioner for Refugees (UNHCR)
+08_04,Demographic Trends,Displaced Persons & Asylum Seekers,(blank)
+08_05,Demographic Trends,Immigration and Integration,Migrant Integration Policy Index (MIPEX)
+08_06,Demographic Trends,Natality Index,The World Bank
+08_07,Demographic Trends,Life Conditions,The World Bank
+08_08,Demographic Trends,Mortality Index,The World Bank
+08_09,Demographic Trends,Total Population,The World Bank
+08_10,Demographic Trends,Population Density,The World Bank
+08_11,Demographic Trends,Religious Inclinations,(blank)
+08_12,Demographic Trends,Race,(blank)
+09_01,Housing and Living Standards,Housing Trends and Security,(blank)
+09_02,Housing and Living Standards,Housing Trends and Security,(blank)
+09_03,Housing and Living Standards,Housing Trends and Security,(blank)
+09_04,Housing and Living Standards,Basic Amenities Access,(blank)
+09_05,Housing and Living Standards,Basic Amenities Access,(blank)
+10_01,Social and Humanitarian Issues,Violence and Crimes,(blank)
+10_02,Social and Humanitarian Issues,Violence and Crimes,(blank)
+10_03,Social and Humanitarian Issues,Violence and Crimes,Small Arms Survey
+10_04,Social and Humanitarian Issues,Violence and Crimes,Small Arms Survey
+10_05,Social and Humanitarian Issues,Violence and Crimes,(blank)
+10_06,Social and Humanitarian Issues,Violence and Crimes,United Nations Office on Drugs & Crime (UNODOC)
+10_07,Social and Humanitarian Issues,Violence and Crimes,United Nations Office on Drugs & Crime (UNODOC)
+10_08,Social and Humanitarian Issues,Violence and Crimes,United Nations Office on Drugs & Crime (UNODOC)
+10_09,Social and Humanitarian Issues,Violence and Crimes,United Nations Office on Drugs & Crime (UNODOC)
+10_10,Social and Humanitarian Issues,Drug-Related Metrics,United Nations Office on Drugs & Crime (UNODOC)
+10_11,Social and Humanitarian Issues,Drug-Related Metrics,United Nations Office on Drugs & Crime (UNODOC)
+10_12,Social and Humanitarian Issues,Drug-Related Metrics,United Nations Office on Drugs & Crime (UNODOC)
+10_13,Social and Humanitarian Issues,Drug-Related Metrics,United Nations Office on Drugs & Crime (UNODOC)
+10_14,Social and Humanitarian Issues,Drug-Related Metrics,United Nations Office on Drugs & Crime (UNODOC)
+10_15,Social and Humanitarian Issues,Drug-Related Metrics,United Nations Office on Drugs & Crime (UNODOC)
+10_16,Social and Humanitarian Issues,Child Welfare,United Nations International Children's Emergency Fund (UNICEF)
+10_17,Social and Humanitarian Issues,Child Welfare,United Nations International Children's Emergency Fund (UNICEF)
+10_18,Social and Humanitarian Issues,Child Welfare,United Nations International Children's Emergency Fund (UNICEF)
+10_19,Social and Humanitarian Issues,Child Welfare,United Nations International Children's Emergency Fund (UNICEF)
+10_20,Social and Humanitarian Issues,Nuclear and Security,Federation of American Scientists (FAS)
+10_21,Social and Humanitarian Issues,Nuclear and Security,NTI Nuclear Security Index
+10_22,Social and Humanitarian Issues,Social Injustice and Rights,Othering & Belonging Institute
+10_23,Social and Humanitarian Issues,Social Injustice and Rights,Equaldex
+10_24,Social and Humanitarian Issues,Social Injustice and Rights,United Nations Development Programme (UNDP)
+10_25,Social and Humanitarian Issues,Social Injustice and Rights,(blank)
+10_26,Social and Humanitarian Issues,Social Injustice and Rights,(blank)
+10_27,Social and Humanitarian Issues,Social Injustice and Rights,Reporters Without Borders (RSF)
+10_28,Social and Humanitarian Issues,Social Injustice and Rights,CATO Institute
+10_29,Social and Humanitarian Issues,Food Insecurity,Global Hunger Index
+10_30,Social and Humanitarian Issues,Food Insecurity,Food & Agriculture Organization of the United Nations
+10_31,Social and Humanitarian Issues,Food Insecurity,Economist Impact
+10_32,Social and Humanitarian Issues,Organized Crime,OC Index
+10_33,Social and Humanitarian Issues,Travel Danger,US Department of State
