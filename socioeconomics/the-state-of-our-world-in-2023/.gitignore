@@ -1,3 +1,5 @@
 .src/venv/
 featured_images/
 /data/
+.RData
+.Rhistory
